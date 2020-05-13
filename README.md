@@ -1,4 +1,4 @@
-<p align="center">![Ceph](https://i2.wp.com/ceph.io/wp-content/uploads/2016/07/Ceph_Logo_Standard_RGB_120411_fa.png?resize=322%2C148&ssl=1)</p>
+<p align="center"><img src="https://i2.wp.com/ceph.io/wp-content/uploads/2016/07/Ceph_Logo_Standard_RGB_120411_fa.png?resize=322%2C148&ssl=1" alt="Ceph" /></p>
 
 # ceph.io
 
@@ -24,7 +24,7 @@ Install all dependencies, as specified in `package.json`. The majority of these 
 
 ### Learn more
 
-Eleventy is a simple static site generator built on Node.js. It's a fast and flexible alternative to Jekyll and Hugo, and sits nicely alongside modern web projects. Visit the [Eleventy docs](https://www.11ty.dev/docs/) for detailed feature information and example projects. 
+Eleventy is a simple static site generator built on Node.js. It's a fast and flexible alternative to Jekyll and Hugo, and sits nicely alongside modern web projects. Visit the [Eleventy docs](https://www.11ty.dev/docs/) for detailed feature information and example projects.
 
 ## Local development
 
@@ -55,7 +55,6 @@ $ npm run debug
 Run a build with a verbose log of information on files and data being processed. This can be helpful for troubleshooting issues during development or when deploying via CI.
 
 More information is available in the [Debugging](https://www.11ty.dev/docs/debugging/) docs.
-
 
 ## Deployment
 
