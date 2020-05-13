@@ -1,0 +1,29 @@
+{
+  "name": "ceph.io",
+  "version": "0.1.0",
+  "description": "Static site for www.ceph.io",
+  "scripts": {
+    "start": "npm run serve",
+    "serve": "cross-env ELEVENTY_ENV=development npx eleventy --serve",
+    "build": "cross-env ELEVENTY_ENV=production npx eleventy",
+    "debug": "cross-env DEBUG=* npx eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ceph/ceph.io.git"
+  },
+  "author": "SoftIron Limited <info@softiron.com> (https://softiron.com)",
+  "contributors": [
+    "Adam Duncan <adam@softiron.com>"
+  ],
+  "bugs": {
+    "url": "https://github.com/ceph/ceph.io/issues"
+  },
+  "homepage": "https://github.com/ceph/ceph.io#readme",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "0.11.0",
+    "cross-env": "7.0.2",
+    "prettier": "2.0.5"
+  }
+}
