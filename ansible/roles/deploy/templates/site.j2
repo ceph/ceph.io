@@ -1,0 +1,10 @@
+# This file is managed by https://github.com/ceph/ceph.io.  Do not make changes manually.
+
+server {
+  listen 80;
+  listen [::]:80;
+  server_name {{ fqdn }};
+
+  root {{ install_dir }}/dist;
+  index index.html;
+}
