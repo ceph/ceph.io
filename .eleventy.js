@@ -20,6 +20,23 @@ module.exports = function (eleventyConfig) {
 
   // Plugins
 
+  // Browsersync
+  eleventyConfig.setBrowserSyncConfig({
+    callbacks: {
+      ready: function (err, bs) {
+        // Dev mode redirect for root path
+        bs.addMiddleware('*', (req, res) => {
+          if (req.url === '/') {
+            res.writeHead(302, {
+              location: '/en/'
+            });
+            res.end();
+          }
+        });
+      }
+    }
+  });
+
   // Configuration
   return {
     dir: {

@@ -2,15 +2,11 @@
 title: Public telemetry dashboards
 date: 2020-04-28
 layout: article
-# dir: rtl
-# lang: ar
-# locale: ar-AE
-# permalink: /ar/blog/2020/04/28/public-telemetry-dashboards
 ---
 
 # Public telemetry dashboards
 
-<time datetime="{{ date }}">{{ date | formatDate: locale }}</time>
+<time datetime="{{ page.date }}">{{ page.date | formatDate: locale }}</time>
 
 It is our pleasure to announce the immediate availability of [dashboards based on the data reported via Ceph’s telemetry feature](https://telemetry-public.ceph.com/).
 
