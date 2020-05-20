@@ -1,0 +1,15 @@
+---
+fqdn: beta.ceph.io
+install_dir: /opt/www
+branch: master
+update_frequency: 5
+letsencrypt_domains:
+  - beta.ceph.io
+letsencrypt_email: ceph-infra@redhat.com
+packages:
+  - nginx
+  - certbot
+  - python3-certbot-nginx
+  - npm
+  - vim
+  - net-tools
