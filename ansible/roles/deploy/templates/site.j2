@@ -14,7 +14,7 @@ server {
   listen [::]:443 ssl;
   server_name beta.ceph.io;
 
-  root {{ install_dir }}/{{ branch }}/dist;
+  root {{ install_dir }}/{{ branch }};
   index index.html;
 
   ## TODO: Change ceph.io to {{ fqdn }}?
@@ -53,7 +53,7 @@ server {
       set $branch {{ branch }};
   }
 
-  root {{ install_dir }}/$branch/dist;
+  root {{ install_dir }}/$branch;
   index index.html;
 
   ## TODO: Change ceph.io to {{ fqdn }}?

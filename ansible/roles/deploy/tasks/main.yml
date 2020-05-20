@@ -7,20 +7,24 @@
   tags:
     - packages
 
-- name: Ensure a home for the site
+- name: Ensure a home for site and tempdir to build in
   file:
-    path: "{{ install_dir }}/{{ branch }}"
+    path: "{{ item }}"
     state: directory
     owner: www-data
     group: www-data
     mode: '0777'
+  with_items:
+    - "{{ install_dir }}/{{ branch }}"
+# Trying to `npm install` in /tmp failed for some reason with https://github.com/nodejs/help/issues/2347
+    - "{{ install_dir }}/{{ branch }}.tmp"
   tags:
     - npm
 
 - name: Clone or update the repo
   git:
     repo: https://github.com/ceph/ceph.io
-    dest: "{{ install_dir }}/{{ branch }}"
+    dest: "{{ install_dir }}/{{ branch }}.tmp"
     force: yes
     update: yes
   tags:
@@ -29,7 +33,7 @@
 - name: Check out desired branch
   command:
     cmd: "git checkout {{ branch }}"
-    chdir: "{{ install_dir }}/{{ branch }}"
+    chdir: "{{ install_dir }}/{{ branch }}.tmp"
   tags:
     - npm
 
@@ -42,23 +46,36 @@
 - name: Install npm dependencies
   command:
     cmd: npm install
-    chdir: "{{ install_dir }}/{{ branch }}"
+    chdir: "{{ install_dir }}/{{ branch }}.tmp"
   tags:
     - npm
 
 - name: Compile site
   command:
     cmd: npm run build
-    chdir: "{{ install_dir }}/{{ branch }}"
+    chdir: "{{ install_dir }}/{{ branch }}.tmp"
   tags:
     - npm
 
 - name: Update file permissions
   file:
-    path: "{{ install_dir }}/{{ branch }}/dist"
+    path: "{{ install_dir }}/{{ branch }}.tmp/dist"
     owner: www-data
     group: www-data
     recurse: yes
+  tags:
+    - npm
+
+# --delete-after because if a file gets deleted from master, we don't want it to hang around
+- name: Copy built site to install_dir
+  shell: "rsync -a --delete-after {{ install_dir }}/{{ branch }}.tmp/dist/* {{ install_dir }}/{{ branch }}/"
+  tags:
+    - npm
+
+- name: Clean up tempdir
+  file:
+    path: "{{ install_dir }}/{{ branch }}.tmp"
+    state: absent
   tags:
     - npm
 
