@@ -9,8 +9,12 @@ Prerequisites
 - Ubuntu 20.04 server with a public IP
 - nginx is the only supported webserver
 - Run the ``users``, ``common``, and ``public_facing`` roles from the ceph-cm-ansible_ repo.  This is optional but is an easy way to set up user accounts, SSH keys, nagios monitoring, firewall, and fail2ban.
+- You **must** obtain a wildcard_ SSL certificate and put it in place on the server before running this role.
+- Run ``ansible-playbook -M ./library/ slave_static.yml -e ansible_ssh_user=cm -e grant_sudo=false --extra-vars '{"labels": "www"}' -e token=XXXXX --limit="www.ceph.io"`` from the ceph-build.git_ repo to set up the Jenkins agent process that will build the site when new branches get pushed to **this** repo.
 
 .. _ceph-cm-ansible: https://github.com/ceph/ceph-cm-ansible
+.. _wildcard: https://medium.com/@utkarsh_verma/how-to-obtain-a-wildcard-ssl-certificate-from-lets-encrypt-and-setup-nginx-to-use-wildcard-cfb050c8b33f
+.. _ceph-build.git: https://github.com/ceph/ceph-build
 
 Variables
 ---------

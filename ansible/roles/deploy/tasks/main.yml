@@ -7,19 +7,24 @@
   tags:
     - packages
 
-- name: Ensure a home for the site
+- name: Ensure a home for site and tempdir to build in
   file:
-    path: "{{ install_dir }}"
+    path: "{{ item }}"
     state: directory
     owner: www-data
     group: www-data
+    mode: '0777'
+  with_items:
+    - "{{ install_dir }}/{{ branch }}"
+# Trying to `npm install` in /tmp failed for some reason with https://github.com/nodejs/help/issues/2347
+    - "{{ install_dir }}/{{ branch }}.tmp"
   tags:
     - npm
 
 - name: Clone or update the repo
   git:
     repo: https://github.com/ceph/ceph.io
-    dest: "{{ install_dir }}"
+    dest: "{{ install_dir }}/{{ branch }}.tmp"
     force: yes
     update: yes
   tags:
@@ -28,7 +33,7 @@
 - name: Check out desired branch
   command:
     cmd: "git checkout {{ branch }}"
-    chdir: "{{ install_dir }}"
+    chdir: "{{ install_dir }}/{{ branch }}.tmp"
   tags:
     - npm
 
@@ -41,23 +46,36 @@
 - name: Install npm dependencies
   command:
     cmd: npm install
-    chdir: "{{ install_dir }}"
+    chdir: "{{ install_dir }}/{{ branch }}.tmp"
   tags:
     - npm
 
 - name: Compile site
   command:
     cmd: npm run build
-    chdir: "{{ install_dir }}"
+    chdir: "{{ install_dir }}/{{ branch }}.tmp"
   tags:
     - npm
 
 - name: Update file permissions
   file:
-    path: "{{ install_dir }}/dist"
+    path: "{{ install_dir }}/{{ branch }}.tmp/dist"
     owner: www-data
     group: www-data
     recurse: yes
+  tags:
+    - npm
+
+# --delete-after because if a file gets deleted from master, we don't want it to hang around
+- name: Copy built site to install_dir
+  shell: "rsync -a --delete-after {{ install_dir }}/{{ branch }}.tmp/dist/* {{ install_dir }}/{{ branch }}/"
+  tags:
+    - npm
+
+- name: Clean up tempdir
+  file:
+    path: "{{ install_dir }}/{{ branch }}.tmp"
+    state: absent
   tags:
     - npm
 
@@ -87,27 +105,32 @@
   tags:
     - nginx
 
-# At the time of role creation, I had to do this first: https://community.letsencrypt.org/t/ubuntu-20-04-any-tips-attributeerror-module-acme-challenges-has-no-attribute-tlssni01/115831/12
-- name: Get letsencrypt certs
-  command: certbot --nginx --agree-tos {% for domain in letsencrypt_domains %}-d {{ domain }} {% endfor %} -m {{ letsencrypt_email }} --redirect --reinstall
-  notify: Reload nginx
-  tags:
-    - letsencrypt
-
-- name: Put nginx security directives in place
-  blockinfile:
-    path: /etc/nginx/sites-available/site.conf
-    insertafter: ssl_dhparam*
-    block: |
-            add_header Strict-Transport-Security "max-age=31536000";
-            server_tokens off;
-            add_header X-Frame-Options SAMEORIGIN;
-            add_header X-Content-Type-Options nosniff;
-            add_header X-XSS-Protection "1; mode=block";
-            add_header Content-Security-Policy "default-src 'self'; script-src 'self'";
-            proxy_cookie_path / "/; HTTPOnly; Secure";
-  tags:
-    - nginx
+### TODO: Erase this if we'll never use it
+###
+### I wanted to automate this but unfortunately getting a wildcard SSL cert from letsencrypt requires some manual intervention.
+### I followed https://medium.com/@utkarsh_verma/how-to-obtain-a-wildcard-ssl-certificate-from-lets-encrypt-and-setup-nginx-to-use-wildcard-cfb050c8b33f
+### I left templates/site-nossl.j2 in place just in case we want to change up how we do this in the future but it wont' work very well without this letsencrypt task.
+## At the time of role creation, I had to do this first: https://community.letsencrypt.org/t/ubuntu-20-04-any-tips-attributeerror-module-acme-challenges-has-no-attribute-tlssni01/115831/12
+##- name: Get letsencrypt certs
+##  command: certbot --nginx --agree-tos {% for domain in letsencrypt_domains %}-d {{ domain }} {% endfor %} -m {{ letsencrypt_email }} --redirect --reinstall
+##  notify: Reload nginx
+##  tags:
+##    - letsencrypt
+##
+##- name: Put nginx security directives in place
+##  blockinfile:
+##    path: /etc/nginx/sites-available/site.conf
+##    insertafter: ssl_dhparam*
+##    block: |
+##            add_header Strict-Transport-Security "max-age=31536000";
+##            server_tokens off;
+##            add_header X-Frame-Options SAMEORIGIN;
+##            add_header X-Content-Type-Options nosniff;
+##            add_header X-XSS-Protection "1; mode=block";
+##            add_header Content-Security-Policy "default-src 'self'; script-src 'self'";
+##            proxy_cookie_path / "/; HTTPOnly; Secure";
+##  tags:
+##    - nginx
 
 - name: Validate nginx site config
   command: nginx -t
