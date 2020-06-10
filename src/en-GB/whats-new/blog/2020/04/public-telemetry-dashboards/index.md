@@ -4,7 +4,7 @@ date: 2020-04-28
 layout: article
 ---
 
-# Public telemetry dashboards
+# {{ title }}
 
 <time datetime="{{ page.date }}">{{ page.date | formatDate: locale }}</time>
 

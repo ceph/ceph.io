@@ -4,15 +4,15 @@
 
 <main>
 
-  <a href="..">&lt; Back to blog</a>
+  <a href="/{{ locale }}/whats-new/blog/">&lt; {{ 'back_to_blog' | i18n }}</a>
 
   {{ content | safe }}
 
   <aside>
-    <h2>Share this article</h2>
+    <h2>{{ 'share_this_article' | i18n }}</h2>
     <p>...</p>
 
-    <h2>Related</h2>
+    <h2>{{ 'related' | i18n }}</h2>
     <p>...</p>
   </aside>
 

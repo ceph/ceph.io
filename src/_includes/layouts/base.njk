@@ -1,11 +1,5 @@
----
-  dir: ltr
-  lang: en
-  locale: en-GB
----
-
 <!DOCTYPE html>
-<html lang="{{ lang }}" dir="{{ dir }}" class="no-js">
+<html lang="{{ locale }}" dir="{{ dir }}" class="no-js">
 <head prefix="og: http://ogp.me/ns">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -24,5 +18,7 @@
 </head>
 <body>
   {{ content | safe }}
+
+  {% include 'components/language-selector.njk' %}
 </body>
 </html>

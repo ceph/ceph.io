@@ -1,14 +1,11 @@
+const formatDate = require('./src/_11ty/filters/formatDate.js');
+
+const i18n = require('eleventy-plugin-i18n');
+const translations = require('./src/_data/i18n');
+
 module.exports = function (eleventyConfig) {
   // Filters
-  eleventyConfig.addFilter('formatDate', (date, locale = 'en-GB') => {
-    // We'll want to consider locales here based on multi-lingual content?
-    // May need to consider `timezone` option (defaults to UTC)
-    return new Intl.DateTimeFormat(locale, {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    }).format(date);
-  });
+  eleventyConfig.addFilter('formatDate', formatDate);
 
   // Layout aliases
   eleventyConfig.addLayoutAlias('base', 'layouts/base.njk'); // We probably won't use base directly, but until we have page-level templates...
@@ -19,6 +16,12 @@ module.exports = function (eleventyConfig) {
   // Passthrough copy
 
   // Plugins
+  eleventyConfig.addPlugin(i18n, {
+    translations,
+    fallbackLocales: {
+      '*': 'en-GB'
+    }
+  });
 
   // Browsersync
   eleventyConfig.setBrowserSyncConfig({
@@ -28,7 +31,7 @@ module.exports = function (eleventyConfig) {
         bs.addMiddleware('*', (req, res) => {
           if (req.url === '/') {
             res.writeHead(302, {
-              location: '/en/'
+              location: '/en-GB/'
             });
             res.end();
           }
