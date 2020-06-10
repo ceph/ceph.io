@@ -1,0 +1,5 @@
+---
+- hosts: beta.ceph.io
+  roles:
+    - deploy
+  become: true

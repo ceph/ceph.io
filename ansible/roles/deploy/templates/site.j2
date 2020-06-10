@@ -1,0 +1,71 @@
+# This file is managed by https://github.com/ceph/ceph.io.  Do not make changes manually.
+
+## Default beta.ceph.io block
+server {
+  listen 80;
+  listen [::]:80;
+  ## TODO: Change to ceph.io or {{ fqdn }} when we switch from beta.ceph.io to ceph.io
+  server_name beta.ceph.io;
+  return 301 https://$host$request_uri;
+}
+
+server {
+  listen 443 ssl;
+  listen [::]:443 ssl;
+  server_name beta.ceph.io;
+
+  root {{ install_dir }}/{{ branch }};
+  index index.html;
+
+  ## TODO: Change ceph.io to {{ fqdn }}?
+  ssl_certificate /etc/letsencrypt/live/ceph.io/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/ceph.io/privkey.pem;
+  include /etc/letsencrypt/options-ssl-nginx.conf;
+  ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+  add_header Strict-Transport-Security "max-age=31536000";
+  server_tokens off;
+  add_header X-Frame-Options SAMEORIGIN;
+  add_header X-Content-Type-Options nosniff;
+  add_header X-XSS-Protection "1; mode=block";
+  add_header Content-Security-Policy "default-src 'self'; script-src 'self'";
+  proxy_cookie_path / "/; HTTPOnly; Secure";
+}
+
+
+## Subdomain *.ceph.io block.  This will serve development branches of github.com/ceph/ceph.io
+## e.g., Joe Dev pushes 'wip-joe' branch.  Jenkins builds a site based on this branch and Joe
+## can see it at wip-joe.ceph.io.
+server {
+  listen 80;
+  listen [::]:80;
+  server_name ~^(?<branch>.+)\.ceph\.io$;
+  return 301 https://$host$request_uri;
+}
+
+server {
+  listen 443 ssl;
+  listen [::]:443 ssl;
+  server_name ~^(?<branch>.+)\.ceph\.io$;
+
+  ## TODO: Make this go to a pretty 404 page instead?
+  # If the dir doesn't exist, go to live site
+  if (!-d {{ install_dir }}/$branch) {
+      set $branch {{ branch }};
+  }
+
+  root {{ install_dir }}/$branch;
+  index index.html;
+
+  ## TODO: Change ceph.io to {{ fqdn }}?
+  ssl_certificate /etc/letsencrypt/live/ceph.io/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/ceph.io/privkey.pem;
+  include /etc/letsencrypt/options-ssl-nginx.conf;
+  ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+  add_header Strict-Transport-Security "max-age=31536000";
+  server_tokens off;
+  add_header X-Frame-Options SAMEORIGIN;
+  add_header X-Content-Type-Options nosniff;
+  add_header X-XSS-Protection "1; mode=block";
+  add_header Content-Security-Policy "default-src 'self'; script-src 'self'";
+  proxy_cookie_path / "/; HTTPOnly; Secure";
+}
