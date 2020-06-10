@@ -13,12 +13,25 @@
 
   {# Preload/dns-prefetch #}
   {# Stylesheet #}
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+    main {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 60rem;
+      padding: 1.25rem;
+    }
+  </style>
   {# Favicons #}
   {# Social meta #}
 </head>
 <body>
-  {{ content | safe }}
-
-  {% include 'components/language-selector.njk' %}
+  <main>
+    {{ content | safe }}
+  
+    {% include 'components/language-selector.njk' %}
+  </main>
 </body>
 </html>
