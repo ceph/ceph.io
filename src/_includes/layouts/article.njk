@@ -2,18 +2,14 @@
   layout: base
 ---
 
-<main>
+<a href="/{{ locale }}/whats-new/blog/">&lt; {{ 'back_to_blog' | i18n }}</a>
 
-  <a href="..">&lt; Back to blog</a>
+{{ content | safe }}
 
-  {{ content | safe }}
+<aside>
+  <h2>{{ 'share_this_article' | i18n }}</h2>
+  <p>...</p>
 
-  <aside>
-    <h2>Share this article</h2>
-    <p>...</p>
-
-    <h2>Related</h2>
-    <p>...</p>
-  </aside>
-
-</main>
+  <h2>{{ 'related' | i18n }}</h2>
+  <p>...</p>
+</aside>

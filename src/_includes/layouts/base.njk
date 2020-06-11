@@ -1,11 +1,5 @@
----
-  dir: ltr
-  lang: en
-  locale: en-GB
----
-
 <!DOCTYPE html>
-<html lang="{{ lang }}" dir="{{ dir }}" class="no-js">
+<html lang="{{ locale }}" dir="{{ dir }}" class="no-js">
 <head prefix="og: http://ogp.me/ns">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -19,10 +13,25 @@
 
   {# Preload/dns-prefetch #}
   {# Stylesheet #}
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+    main {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 60rem;
+      padding: 1.25rem;
+    }
+  </style>
   {# Favicons #}
   {# Social meta #}
 </head>
 <body>
-  {{ content | safe }}
+  <main>
+    {{ content | safe }}
+  
+    {% include 'components/language-selector.njk' %}
+  </main>
 </body>
 </html>
