@@ -11,8 +11,8 @@
   file:
     path: "{{ item }}"
     state: directory
-    owner: www-data
-    group: www-data
+    owner: jenkins-build
+    group: jenkins-build
     mode: '0777'
   with_items:
     - "{{ install_dir }}/{{ branch }}"
@@ -60,15 +60,15 @@
 - name: Update file permissions
   file:
     path: "{{ install_dir }}/{{ branch }}.tmp/dist"
-    owner: www-data
-    group: www-data
+    owner: jenkins-build
+    group: jenkins-build
     recurse: yes
   tags:
     - npm
 
 # --delete-after because if a file gets deleted from master, we don't want it to hang around
 - name: Copy built site to install_dir
-  shell: "rsync -a --delete-after {{ install_dir }}/{{ branch }}.tmp/dist/* {{ install_dir }}/{{ branch }}/"
+  shell: "rsync -a --delete-after {{ install_dir }}/{{ branch }}.tmp/dist/ {{ install_dir }}/{{ branch }}/"
   tags:
     - npm
 
@@ -141,4 +141,4 @@
   cron:
     name: "Update static site"
     minute: "*/{{ update_frequency }}"
-    job: "cd {{ install_dir }} && git pull && npm install && npm run build && chown -R www-data:www-data {{ install_dir }}"
+    job: "cd {{ install_dir }} && git pull && npm install && npm run build && chown -R jenkins-build:jenkins-build {{ install_dir }}"

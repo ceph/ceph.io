@@ -1,5 +1,13 @@
 # This file is managed by https://github.com/ceph/ceph.io.  Do not make changes manually.
 
+## Figure out what language to display the site in
+## I couldn't get the rewrites working but I'd prefer to do it this way so saving for later.
+#map $http_accept_language $lang {
+#    default en;
+#    ~en en-GB;
+#    ~ja ja-JP;
+#}
+
 ## Default beta.ceph.io block
 server {
   listen 80;
@@ -16,6 +24,20 @@ server {
 
   root {{ install_dir }}/{{ branch }};
   index index.html;
+
+  location = / {
+    rewrite_by_lua '
+      for lang in (ngx.var.http_accept_language .. ","):gmatch("([^,]*),") do
+        if string.sub(lang, 0, 2) == "en" then
+          ngx.redirect("/en-GB/index.html")
+        end
+        if string.sub(lang, 0, 2) == "ja" then
+          ngx.redirect("/ja-JP/index.html")
+        end
+      end
+      ngx.redirect("/en-GB/index.html")
+    ';
+  }
 
   ## TODO: Change ceph.io to {{ fqdn }}?
   ssl_certificate /etc/letsencrypt/live/ceph.io/fullchain.pem;
@@ -55,6 +77,20 @@ server {
 
   root {{ install_dir }}/$branch;
   index index.html;
+
+  location = / {
+    rewrite_by_lua '
+      for lang in (ngx.var.http_accept_language .. ","):gmatch("([^,]*),") do
+        if string.sub(lang, 0, 2) == "en" then
+          ngx.redirect("/en-GB/index.html")
+        end
+        if string.sub(lang, 0, 2) == "ja" then
+          ngx.redirect("/ja-JP/index.html")
+        end
+      end
+      ngx.redirect("/en-GB/index.html")
+    ';
+  }
 
   ## TODO: Change ceph.io to {{ fqdn }}?
   ssl_certificate /etc/letsencrypt/live/ceph.io/fullchain.pem;
