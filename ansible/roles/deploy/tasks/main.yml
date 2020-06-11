@@ -68,7 +68,7 @@
 
 # --delete-after because if a file gets deleted from master, we don't want it to hang around
 - name: Copy built site to install_dir
-  shell: "rsync -a --delete-after {{ install_dir }}/{{ branch }}.tmp/dist/* {{ install_dir }}/{{ branch }}/"
+  shell: "rsync -a --delete-after {{ install_dir }}/{{ branch }}.tmp/dist/ {{ install_dir }}/{{ branch }}/"
   tags:
     - npm
 
