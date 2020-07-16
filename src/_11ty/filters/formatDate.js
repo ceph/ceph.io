@@ -3,7 +3,7 @@ module.exports = (date, locale = 'en-GB') => {
   return new Intl.DateTimeFormat(locale, {
     year: 'numeric',
     month: 'long',
-    day: 'numeric'
+    day: 'numeric',
     // hour: 'numeric',
     // minute: 'numeric'
     // hour12: false,
