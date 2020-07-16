@@ -1,4 +1,4 @@
 {
   "layout": "article",
-  "permalink": "/{{ locale }}/news/press-releases/{{ title | slug }}/"
+  "permalink": "/{{ locale }}/news/press-releases/{{ page.fileSlug }}/"
 }
