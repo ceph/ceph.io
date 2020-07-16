@@ -1,5 +1,5 @@
 ---
-title: パブリックテレメトリダッシュボード
+title: Public telemetry dashboards
 date: 2020-04-28
 ---
 

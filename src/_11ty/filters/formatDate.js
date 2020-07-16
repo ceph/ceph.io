@@ -4,5 +4,10 @@ module.exports = (date, locale = 'en-GB') => {
     year: 'numeric',
     month: 'long',
     day: 'numeric'
-  }).format(date);
+    // hour: 'numeric',
+    // minute: 'numeric'
+    // hour12: false,
+    // timeZone: 'UTC',
+    // timeZoneName: 'short'
+  }).format(new Date(date));
 };

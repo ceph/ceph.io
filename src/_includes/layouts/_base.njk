@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}" dir="{{ dir }}" class="no-js">
+  <head prefix="og: http://ogp.me/ns">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f1726c">
+
+    <script>
+      (function (d) {
+        d.className = d
+          .className
+          .replace(/\bno-js/, 'js');
+      })(document.documentElement);
+    </script>
+
+    <title>Ceph.io — {{ title }}</title>
+    {# Canonical link? #}
+
+    {# Preload/dns-prefetch #}
+    {# Stylesheet #}
+
+    {# TEMP styles #}
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      .wrapper {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 60rem;
+        padding: 1.25rem;
+      }
+    </style>
+    {# Favicons #}
+    {# Social meta #}
+  </head>
+  <body>
+    {% include 'components/site-header.njk' %}
+
+    <main id="main">
+      <div class="wrapper">
+        {{ content | safe }}
+      </div>
+    </main>
+
+    {% include 'components/site-footer.njk' %}
+  </body>
+</html>
