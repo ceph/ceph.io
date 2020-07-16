@@ -1,0 +1,4 @@
+{
+  "tags": "legal",
+  "permalink": "/{{ locale }}/{{ page.fileSlug }}/"
+}
