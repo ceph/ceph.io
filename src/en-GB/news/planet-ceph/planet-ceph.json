@@ -1,4 +1,4 @@
 {
   "layout": "article",
-  "permalink": "/{{ locale }}/news/planet-ceph/{{ title | slug }}/"
+  "permalink": "/{{ locale }}/news/planet-ceph/{{ page.fileSlug }}/"
 }
