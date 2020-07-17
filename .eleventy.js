@@ -2,6 +2,7 @@ const fs = require('fs');
 
 // Filters
 const formatDate = require('./src/_11ty/filters/formatDate.js');
+const startsWith = require('./src/_11ty/filters/startsWith.js');
 
 // Plugins
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
@@ -11,6 +12,7 @@ const translations = require('./src/_data/i18n');
 module.exports = function (eleventyConfig) {
   // Filters
   eleventyConfig.addFilter('formatDate', formatDate);
+  eleventyConfig.addFilter('startsWith', startsWith);
 
   // Layout aliases — TBC if this is bringing enough benefit
   eleventyConfig.addLayoutAlias('_base', 'layouts/_base.njk');

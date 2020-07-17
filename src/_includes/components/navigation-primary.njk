@@ -1,11 +1,28 @@
-{# We'll likely use eleventy-navigation to generate this w/ order etc. #}
-{# But for now, so we can click around... #}
+{% set siteTree = collections[locale] | eleventyNavigation %}
+{% set navPages = siteTree[0].children %}
+
+{# TEMP #}
+<style>
+  [aria-label="Main"] ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  [aria-label="Main"] li {
+    display: inline-block;
+    margin-top: 0.5em;
+  }
+  [aria-label="Main"] [aria-current="page"] {
+    font-weight: bold;
+  }
+</style>
 
 <nav aria-label="Main">
-  <a href="/{{ locale }}/discover/">Discover</a>
-  <a href="/{{ locale }}/solutions/">Solutions</a>
-  <a href="/{{ locale }}/developers/">Developers</a>
-  <a href="/{{ locale }}/community/">Community</a>
-  <a href="/{{ locale }}/news/">News</a>
-  <a href="/{{ locale }}/foundation/">Foundation</a>
+  <ul>
+    {%- for item in navPages %}
+      <li>
+        <a href="{{ item.url | url }}" {% if page.url | startsWith(item.url) %} aria-current="page"{% endif %}>{{ item.title }}</a>
+      </li>
+    {%- endfor %}
+  </ul>
 </nav>
