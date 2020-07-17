@@ -22,8 +22,19 @@
 
     {# TEMP styles #}
     <style>
+      html {
+        box-sizing: border-box;
+      }
+      *,
+      *:after,
+      *:before {
+        box-sizing: inherit;
+      }
       body {
         font-family: sans-serif;
+      }
+      [id="main"] {
+        min-height: 60vh;
       }
       .wrapper {
         margin-left: auto;

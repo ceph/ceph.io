@@ -4,6 +4,7 @@ const fs = require('fs');
 const formatDate = require('./src/_11ty/filters/formatDate.js');
 
 // Plugins
+const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const i18n = require('eleventy-plugin-i18n');
 const translations = require('./src/_data/i18n');
 
@@ -21,6 +22,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias('hub-community', 'layouts/hub-community.njk');
   eleventyConfig.addLayoutAlias('hub-developers', 'layouts/hub-developers.njk');
   eleventyConfig.addLayoutAlias('hub-discover', 'layouts/hub-discover.njk');
+  eleventyConfig.addLayoutAlias('hub-foundation', 'layouts/hub-foundation.njk');
   eleventyConfig.addLayoutAlias('hub-news', 'layouts/hub-news.njk');
   eleventyConfig.addLayoutAlias('hub-solutions', 'layouts/hub-solutions.njk');
   eleventyConfig.addLayoutAlias('listing-blog', 'layouts/listing-blog.njk');
@@ -39,6 +41,8 @@ module.exports = function (eleventyConfig) {
   // Passthrough copy
 
   // Plugins
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
+
   eleventyConfig.addPlugin(i18n, {
     translations,
     fallbackLocales: {
