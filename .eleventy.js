@@ -15,7 +15,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('startsWith', startsWith);
 
   // Layout aliases — TBC if this is bringing enough benefit
-  eleventyConfig.addLayoutAlias('_base', 'layouts/_base.njk');
+  eleventyConfig.addLayoutAlias('base', 'layouts/_base.njk');
   eleventyConfig.addLayoutAlias('article', 'layouts/article.njk');
   eleventyConfig.addLayoutAlias('case-study', 'layouts/case-study.njk');
   eleventyConfig.addLayoutAlias('content', 'layouts/content.njk');
@@ -77,6 +77,10 @@ module.exports = function (eleventyConfig) {
   });
 
   // Configuration
+  eleventyConfig.setDataDeepMerge(true);
+  // TBC if this is a bit heavy-handed
+  // See https://www.11ty.dev/docs/data-deep-merge/
+
   return {
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
