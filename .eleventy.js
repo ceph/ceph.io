@@ -14,6 +14,14 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('formatDate', formatDate);
   eleventyConfig.addFilter('startsWith', startsWith);
 
+  // Collections
+  eleventyConfig.addCollection(`primary`, function (collectionApi) {
+    return collectionApi.getAll().filter(item => {
+      const { tags = [] } = item.data;
+      return !tags.includes('support');
+    });
+  });
+
   // Layout aliases — TBC if this is bringing enough benefit
   eleventyConfig.addLayoutAlias('base', 'layouts/_base.njk');
   eleventyConfig.addLayoutAlias('article', 'layouts/article.njk');
@@ -44,7 +52,6 @@ module.exports = function (eleventyConfig) {
 
   // Plugins
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
-
   eleventyConfig.addPlugin(i18n, {
     translations,
     fallbackLocales: {

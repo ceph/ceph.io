@@ -1,5 +1,6 @@
 ---
 title: Terms of use
+tags: 'support'
 order: 2
 ---
 

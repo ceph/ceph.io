@@ -1,6 +1,6 @@
 ---
 title: Code of conduct
-order: 1
+tags: 'support'
 ---
 
 # Code of conduct

@@ -5,13 +5,14 @@ module.exports = {
     key: data => data.key || data.page.url,
     parent: data => {
       // Only generate `parent` for pages with URL data
-      if (!data.page.url) return;
+      if (!data.page.url) return null;
 
       // Get path segments, no empty strings
       const pathSegments = data.page.url.split('/').filter(s => s);
 
       // Top-level pages (only have single `locale` segment) don't need parents
-      if (pathSegments.length <= 1) return;
+      const pageLevel = pathSegments.length;
+      if (pageLevel <= 1) return null;
 
       // Omit last segment to get parent URL
       const parentPath = `/${pathSegments.slice(0, -1).join('/')}/`;
