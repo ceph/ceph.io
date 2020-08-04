@@ -1,8 +1,14 @@
 {
   "singleQuote": true,
-  "trailingComma": "none",
   "arrowParens": "avoid",
   "overrides": [
+    {
+      "files": "*.html",
+      "options": {
+        "printWidth": 140,
+        "jsxBracketSameLine": true
+      }
+    },
     {
       "files": "*.css",
       "options": {

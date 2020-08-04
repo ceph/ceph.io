@@ -3,6 +3,11 @@ module.exports = (date, locale = 'en-GB') => {
   return new Intl.DateTimeFormat(locale, {
     year: 'numeric',
     month: 'long',
-    day: 'numeric'
-  }).format(date);
+    day: 'numeric',
+    // hour: 'numeric',
+    // minute: 'numeric'
+    // hour12: false,
+    // timeZone: 'UTC',
+    // timeZoneName: 'short'
+  }).format(new Date(date));
 };

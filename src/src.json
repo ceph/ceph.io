@@ -1,3 +1,8 @@
 {
-  "layout": "base"
+  "layout": "content",
+  "dir": "ltr",
+  "locale": "en-GB",
+  "meta": {
+    "description": "Ceph is a unified, distributed storage system designed for excellent performance, reliability and scalability."
+  }
 }

@@ -1,0 +1,28 @@
+{% set localeParentKey = '/' + locale + '/' %}
+{% set navPages = collections.primary | eleventyNavigation(localeParentKey) %}
+
+{# TEMP #}
+<style>
+  [aria-label="main"] ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  [aria-label="main"] li {
+    display: inline-block;
+    margin-top: 0.5em;
+  }
+  [aria-label="main"] [aria-current="page"] {
+    background-color: #ddd;
+  }
+</style>
+
+<nav aria-label="main">
+  <ul>
+    {%- for item in navPages %}
+      <li>
+        <a href="{{ item.url | url }}" {% if page.url | startsWith(item.url) %} aria-current="page"{% endif %}>{{ item.title }}</a>
+      </li>
+    {%- endfor %}
+  </ul>
+</nav>
