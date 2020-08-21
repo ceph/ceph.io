@@ -10,6 +10,11 @@ const i18n = require('eleventy-plugin-i18n');
 const translations = require('./src/_data/i18n');
 
 module.exports = function (eleventyConfig) {
+  console.log(process.env.NODE_ENV);
+
+  // Hot-reload site on CSS changes
+  eleventyConfig.addWatchTarget('src/css');
+
   // Filters
   eleventyConfig.addFilter('formatDate', formatDate);
   eleventyConfig.addFilter('startsWith', startsWith);
