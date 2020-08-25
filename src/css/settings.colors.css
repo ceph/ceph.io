@@ -1,0 +1,66 @@
+/* ---------- SETTINGS colors ---------- */
+
+:root {
+  /* negative */
+  --color-black-h: 0;
+  --color-black-s: 0%;
+  --color-black-l: 0%;
+  --color-black-hsl: var(--color-black-h), var(--color-black-s), var(--color-black-l);
+  --color-black: hsl(var(--color-black-hsl));
+
+  --color-white-h: 0;
+  --color-white-s: 0%;
+  --color-white-l: 100%;
+  --color-white-hsl: var(--color-white-h), var(--color-white-s), var(--color-white-l);
+  --color-white: hsl(var(--color-white-hsl));
+
+  /* brand */
+  --color-ceph-red-h: 5;
+  --color-ceph-red-s: 70%;
+  --color-ceph-red-l: 59%;
+  --color-ceph-red-hsl: var(--color-ceph-red-h), var(--color-ceph-red-s), var(--color-ceph-red-l);
+  --color-ceph-red: hsl(var(--color-ceph-red-hsl));
+
+  --color-ceph-blue-h: 221;
+  --color-ceph-blue-s: 70%;
+  --color-ceph-blue-l: 50%;
+  --color-ceph-blue-hsl: var(--color-ceph-blue-h), var(--color-ceph-blue-s), var(--color-ceph-blue-l);
+  --color-ceph-blue: hsl(var(--color-ceph-blue-hsl));
+
+  --color-ceph-navy-h: 236;
+  --color-ceph-navy-s: 57%;
+  --color-ceph-navy-l: 15%;
+  --color-ceph-navy-hsl: var(--color-ceph-navy-h), var(--color-ceph-navy-s), var(--color-ceph-navy-l);
+  --color-ceph-navy: hsl(var(--color-ceph-navy-hsl));
+
+  /* utility */
+  --color-grey-h: 0;
+  --color-grey-s: 0%;
+  --color-grey-100-l: 90%;
+  --color-grey-200-l: 80%;
+  --color-grey-300-l: 70%;
+  --color-grey-400-l: 60%;
+  --color-grey-500-l: 50%;
+  --color-grey-600-l: 40%;
+  --color-grey-700-l: 30%;
+  --color-grey-800-l: 20%;
+  --color-grey-900-l: 10%;
+  --color-grey-100-hsl: var(--color-grey-h), var(--color-grey-s), var(--color-grey-100-l);
+  --color-grey-100: hsl(var(--color-grey-100-hsl));
+  --color-grey-200-hsl: var(--color-grey-h), var(--color-grey-s), var(--color-grey-200-l);
+  --color-grey-200: hsl(var(--color-grey-200-hsl));
+  --color-grey-300-hsl: var(--color-grey-h), var(--color-grey-s), var(--color-grey-300-l);
+  --color-grey-300: hsl(var(--color-grey-300-hsl));
+  --color-grey-400-hsl: var(--color-grey-h), var(--color-grey-s), var(--color-grey-400-l);
+  --color-grey-400: hsl(var(--color-grey-400-hsl));
+  --color-grey-500-hsl: var(--color-grey-h), var(--color-grey-s), var(--color-grey-500-l);
+  --color-grey-500: hsl(var(--color-grey-500-hsl));
+  --color-grey-600-hsl: var(--color-grey-h), var(--color-grey-s), var(--color-grey-600-l);
+  --color-grey-600: hsl(var(--color-grey-600-hsl));
+  --color-grey-700-hsl: var(--color-grey-h), var(--color-grey-s), var(--color-grey-700-l);
+  --color-grey-700: hsl(var(--color-grey-700-hsl));
+  --color-grey-800-hsl: var(--color-grey-h), var(--color-grey-s), var(--color-grey-800-l);
+  --color-grey-800: hsl(var(--color-grey-800-hsl));
+  --color-grey-900-hsl: var(--color-grey-h), var(--color-grey-s), var(--color-grey-900-l);
+  --color-grey-900: hsl(var(--color-grey-900-hsl));
+}

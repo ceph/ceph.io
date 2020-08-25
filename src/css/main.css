@@ -1,14 +1,25 @@
 /* ---------- STYLES ENTRY POINT ---------- */
 
 /* https://www.npmjs.com/package/postcss-normalize#css-libraries */
-@import "sanitize";
-@import "sanitize/forms";
-@import "sanitize/typography";
+@import "sanitize.css";
+@import "sanitize.css/forms.css";
+@import "sanitize.css/typography.css";
 
 /* core */
+@import "settings.colors.css";
+@import "settings.media-queries.css";
+@import "settings.sizes.css";
+@import "settings.typography.css";
+
+@import "base.document.css";
+@import "base.typography.css";
 
 /* objects */
+@import "object.grid.css";
+@import "object.wrapper.css";
 
 /* components */
 
 /* utilities */
+@import "utilities.space.css";
+@import "utilities.typography.css";

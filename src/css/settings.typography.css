@@ -1,0 +1,28 @@
+/* ---------- SETTINGS typography ---------- */
+
+:root {
+  /* families */
+  --font-family-fallback: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-default: var(--font-family-fallback);
+  --font-family-brand: var(--font-family-default);
+
+  /* leading */
+  --font-leading-none: 1;
+  --font-leading-tighter: 1.25;
+  --font-leading-tight: 1.375;
+  --font-leading-normal: 1.5;
+
+  /* tracking */
+  --font-tracking-tighter: -0.05em;
+  --font-tracking-tight: -0.025em;
+  --font-tracking-normal: 0;
+  --font-tracking-wide: 0.025em;
+  --font-tracking-wider: 0.05em;
+  --font-tracking-widest: 0.1em;
+
+  /* weights */
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+}

@@ -1,0 +1,39 @@
+/* ---------- BASE document ---------- */
+
+html {
+  line-height: var(--font-leading-none);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html.no-scroll {
+  overflow: hidden;
+}
+
+body {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  display: grid;
+  font-family: var(--font-family-brand);
+  grid-template-rows: auto 1fr auto;
+  height: var(--size-h-screen);
+  line-height: var(--font-leading-none);
+  overflow-x: hidden;
+}
+
+a,
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+}
+
+img,
+canvas {
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+}

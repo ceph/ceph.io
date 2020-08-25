@@ -1,0 +1,35 @@
+/* ---------- OBJECT wrapper ---------- */
+
+.wrapper {
+  --wrapper-gutters: var(--size-3);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--size-256);
+  padding-left: var(--wrapper-gutters);
+  padding-right: var(--wrapper-gutters);
+  width: var(--size-full);
+}
+
+@media (--mq-sm) {
+  .wrapper {
+    --wrapper-gutters: var(--size-5);
+  }
+}
+
+@media (--mq-md) {
+  .wrapper {
+    --wrapper-gutters: var(--size-7);
+  }
+}
+
+@media (--mq-lg) {
+  .wrapper {
+    --wrapper-gutters: var(--size-9);
+  }
+}
+
+@media (--mq-xl) {
+  .wrapper {
+    --wrapper-gutters: var(--size-0);
+  }
+}

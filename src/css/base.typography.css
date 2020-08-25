@@ -1,0 +1,71 @@
+/* ---------- BASE typography ---------- */
+
+@custom-selector :--heading .h1, .h2, .h3, .h4, .h5, .h6;
+@custom-selector :--list .ul, .ol;
+
+/* headings */
+
+:--heading {
+  font-family: var(--font-family-brand);
+  font-weight: var(--font-weight-normal);
+  letter-spacing: var(--font-tracking-normal);
+}
+
+.h1 {
+  font-weight: var(--font-weight-bold);
+}
+
+.h1,
+.h2 {
+  font-size: var(--size-8);
+  line-height: var(--size-10);
+}
+
+.h3 {
+  font-size: var(--size-7);
+  line-height: var(--size-9);
+}
+
+.h4 {
+  font-size: var(--size-5);
+  line-height: var(--size-7);
+}
+
+.h5 {
+  font-size: var(--size-4);
+  line-height: var(--size-6);
+}
+
+.h6 {
+  font-size: var(--size-3);
+  letter-spacing: var(--font-tracking-wider);
+  line-height: var(--size-5);
+}
+
+/* paragraph */
+
+.p {
+  font-family: var(--font-family-brand);
+  font-size: var(--size-4);
+  font-weight: var(--font-weight-normal);
+  letter-spacing: var(--font-tracking-normal);
+  line-height: var(--size-6);
+}
+
+/* lists */
+
+:--list {
+  font-family: var(--font-family-brand);
+  font-size: var(--size-4);
+  font-weight: var(--font-weight-normal);
+  letter-spacing: var(--font-tracking-normal);
+  line-height: var(--size-6);
+}
+
+:--list li::marker {
+  color: var(--color-ceph-blue);
+}
+
+.ol li::marker {
+  font-weight: var(--font-weight-bold);
+}

@@ -1,5 +1,6 @@
 module.exports = ({ env }) => ({
   plugins: [
+    require('postcss-import'),
     require('postcss-normalize'),
     require('postcss-preset-env')({ stage: 1 }), // https://preset-env.cssdb.org/features#stage-1
     // Other plugins...

@@ -1,0 +1,107 @@
+/* ---------- UTILITIES typography ---------- */
+
+/* alignment */
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+/* families */
+.text-brand {
+  font-family: var(--font-family-brand);
+}
+
+.text-default {
+  font-family: var(--font-family-default);
+}
+
+/* leading */
+.text-leading-none {
+  line-height: var(--font-leading-none);
+}
+
+.text-leading-tighter {
+  line-height: var(--font-leading-tighter);
+}
+
+.text-leading-tight {
+  line-height: var(--font-leading-tight);
+}
+
+.text-leading-normal {
+  line-height: var(--font-leading-normal);
+}
+
+/* sizes */
+.text-3 {
+  font-size: var(--size-3);
+}
+
+.text-3 {
+  font-size: var(--size-3);
+}
+
+/* tracking */
+.text-tracking-tighter {
+  letter-spacing: var(--font-tracking-tighter);
+}
+
+.text-tracking-tight {
+  letter-spacing: var(--font-tracking-tight);
+}
+
+.text-tracking-normal {
+  letter-spacing: var(--font-tracking-normal);
+}
+
+.text-tracking-wide {
+  letter-spacing: var(--font-tracking-wide);
+}
+
+.text-tracking-wider {
+  letter-spacing: var(--font-tracking-wider);
+}
+
+.text-tracking-widest {
+  letter-spacing: var(--font-tracking-widest);
+}
+
+/* weights */
+.text-normal {
+  font-weight: var(--font-weight-normal);
+}
+
+.text-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.text-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.text-black {
+  font-weight: var(--font-weight-black);
+}
+
+@media (--mq-sm) {
+}
+
+@media (--mq-md) {
+}
+
+@media (--mq-lg) {
+}
+
+@media (--mq-xl) {
+}
