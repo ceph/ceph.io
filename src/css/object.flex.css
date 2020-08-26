@@ -1,0 +1,21 @@
+/* ---------- OBJECT flex ---------- */
+
+.flex {
+  display: flex;
+}
+
+.flex--justify-end {
+  justify-content: flex-end;
+}
+
+@media (--mq-sm) {
+}
+
+@media (--mq-md) {
+}
+
+@media (--mq-lg) {
+}
+
+@media (--mq-xl) {
+}

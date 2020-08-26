@@ -12,6 +12,25 @@
   --font-leading-tight: 1.375;
   --font-leading-normal: 1.5;
 
+  /* sizes */
+  --font-size-xs: 0.75rem; /* 12/16 */
+  --font-size-sm: 0.875rem; /* 14/16 */
+  --font-size-md: 1rem; /* 16/16 */
+  --font-size-lg: 1.125rem; /* 18/16 */
+  --font-size-xl: 1.25rem; /* 20/16 */
+  --font-size-2xl: 1.5rem; /* 24/16 */
+  --font-size-3xl: 1.75rem; /* 28/16 */
+  --font-size-4xl: 2rem; /* 32/16 */
+  --font-size-5xl: 2.25rem; /* 36/16 */
+  --font-size-6xl: 2.625rem; /* 42/16 */
+  --font-size-7xl: 3rem; /* 48/16 */
+  --font-size-8xl: 3.375rem; /* 54/16 */
+  --font-size-9xl: 3.75rem; /* 60/16 */
+  --font-size-10xl: 4.25rem; /* 68/16 */
+  --font-size-11xl: 4.75rem; /* 76/16 */
+  --font-size-12xl: 5.25rem; /* 84/16 */
+  --font-size-13xl: 5.75rem; /* 92/16 */
+
   /* tracking */
   --font-tracking-tighter: -0.05em;
   --font-tracking-tight: -0.025em;

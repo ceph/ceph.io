@@ -1,0 +1,264 @@
+/* ---------- UTILITIES colors ---------- */
+
+/* background color */
+.bg-black {
+  background-color: var(--color-black);
+}
+
+.bg-white {
+  background-color: var(--color-white);
+}
+
+.bg-grey-100 {
+  background-color: var(--color-grey-100);
+}
+
+.bg-grey-200 {
+  background-color: var(--color-grey-200);
+}
+
+/* border color */
+.border-black {
+  border-color: var(--color-black);
+}
+
+.border-white {
+  border-color: var(--color-white);
+}
+
+.border-grey-100 {
+  border-color: var(--color-grey-100);
+}
+
+.border-grey-200 {
+  border-color: var(--color-grey-200);
+}
+
+/* text color */
+.color-black {
+  color: var(--color-black);
+}
+
+.color-white {
+  color: var(--color-white);
+}
+
+.color-grey-100 {
+  color: var(--color-grey-100);
+}
+
+.color-grey-200 {
+  color: var(--color-grey-200);
+}
+
+@media (--mq-sm) {
+  /* background color */
+  .sm\:bg-black {
+    background-color: var(--color-black);
+  }
+
+  .sm\:bg-white {
+    background-color: var(--color-white);
+  }
+
+  .sm\:bg-grey-100 {
+    background-color: var(--color-grey-100);
+  }
+
+  .sm\:bg-grey-200 {
+    background-color: var(--color-grey-200);
+  }
+
+  /* border color */
+  .sm\:border-black {
+    border-color: var(--color-black);
+  }
+
+  .sm\:border-white {
+    border-color: var(--color-white);
+  }
+
+  .sm\:border-grey-100 {
+    border-color: var(--color-grey-100);
+  }
+
+  .sm\:border-grey-200 {
+    border-color: var(--color-grey-200);
+  }
+
+  /* text color */
+  .sm\:color-black {
+    color: var(--color-black);
+  }
+
+  .sm\:color-white {
+    color: var(--color-white);
+  }
+
+  .sm\:color-grey-100 {
+    color: var(--color-grey-100);
+  }
+
+  .sm\:color-grey-200 {
+    color: var(--color-grey-200);
+  }
+}
+
+@media (--mq-md) {
+  /* background color */
+  .md\:bg-black {
+    background-color: var(--color-black);
+  }
+
+  .md\:bg-white {
+    background-color: var(--color-white);
+  }
+
+  .md\:bg-grey-100 {
+    background-color: var(--color-grey-100);
+  }
+
+  .md\:bg-grey-200 {
+    background-color: var(--color-grey-200);
+  }
+
+  /* border color */
+  .md\:border-black {
+    border-color: var(--color-black);
+  }
+
+  .md\:border-white {
+    border-color: var(--color-white);
+  }
+
+  .md\:border-grey-100 {
+    border-color: var(--color-grey-100);
+  }
+
+  .md\:border-grey-200 {
+    border-color: var(--color-grey-200);
+  }
+
+  /* text color */
+  .md\:color-black {
+    color: var(--color-black);
+  }
+
+  .md\:color-white {
+    color: var(--color-white);
+  }
+
+  .md\:color-grey-100 {
+    color: var(--color-grey-100);
+  }
+
+  .md\:color-grey-200 {
+    color: var(--color-grey-200);
+  }
+}
+
+@media (--mq-lg) {
+  /* background color */
+  .lg\:bg-black {
+    background-color: var(--color-black);
+  }
+
+  .lg\:bg-white {
+    background-color: var(--color-white);
+  }
+
+  .lg\:bg-grey-100 {
+    background-color: var(--color-grey-100);
+  }
+
+  .lg\:bg-grey-200 {
+    background-color: var(--color-grey-200);
+  }
+
+  /* border color */
+  .lg\:border-black {
+    border-color: var(--color-black);
+  }
+
+  .lg\:border-white {
+    border-color: var(--color-white);
+  }
+
+  .lg\:border-grey-100 {
+    border-color: var(--color-grey-100);
+  }
+
+  .lg\:border-grey-200 {
+    border-color: var(--color-grey-200);
+  }
+
+  /* text color */
+  .lg\:color-black {
+    color: var(--color-black);
+  }
+
+  .lg\:color-white {
+    color: var(--color-white);
+  }
+
+  .lg\:color-grey-100 {
+    color: var(--color-grey-100);
+  }
+
+  .lg\:color-grey-200 {
+    color: var(--color-grey-200);
+  }
+}
+
+@media (--mq-xl) {
+  /* background color */
+  .xl\:bg-black {
+    background-color: var(--color-black);
+  }
+
+  .xl\:bg-white {
+    background-color: var(--color-white);
+  }
+
+  .xl\:bg-grey-100 {
+    background-color: var(--color-grey-100);
+  }
+
+  .xl\:bg-grey-200 {
+    background-color: var(--color-grey-200);
+  }
+
+  /* border color */
+  .xl\:border-black {
+    border-color: var(--color-black);
+  }
+
+  .xl\:border-white {
+    border-color: var(--color-white);
+  }
+
+  .xl\:border-grey-100 {
+    border-color: var(--color-grey-100);
+  }
+
+  .xl\:border-grey-200 {
+    border-color: var(--color-grey-200);
+  }
+
+  /* text color */
+  .xl\:color-black {
+    color: var(--color-black);
+  }
+
+  .xl\:color-white {
+    color: var(--color-white);
+  }
+
+  .xl\:color-grey-100 {
+    color: var(--color-grey-100);
+  }
+
+  .xl\:color-grey-200 {
+    color: var(--color-grey-200);
+  }
+}
