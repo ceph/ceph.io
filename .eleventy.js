@@ -3,6 +3,7 @@ const fs = require('fs');
 // Filters
 const formatDate = require('./src/_11ty/filters/formatDate.js');
 const startsWith = require('./src/_11ty/filters/startsWith.js');
+const localeSelector = require('./src/_11ty/filters/localeSelector.js');
 
 // Plugins
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
@@ -18,6 +19,7 @@ module.exports = function (eleventyConfig) {
   // Filters
   eleventyConfig.addFilter('formatDate', formatDate);
   eleventyConfig.addFilter('startsWith', startsWith);
+  eleventyConfig.addFilter('localeSelector', localeSelector);
 
   // Collections
   eleventyConfig.addCollection(`primary`, function (collectionApi) {
@@ -25,6 +27,11 @@ module.exports = function (eleventyConfig) {
       const { tags = [] } = item.data;
       return !tags.includes('support');
     });
+  });
+
+  // Returns a collection of blog posts in reverse date order
+  eleventyConfig.addCollection('blog', collection => {
+    return [...collection.getFilteredByGlob('./src/**/blog/**/*.md')].reverse();
   });
 
   // Layout aliases — TBC if this is bringing enough benefit

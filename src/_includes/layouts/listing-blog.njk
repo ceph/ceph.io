@@ -1,5 +1,16 @@
 ---
 layout: base
+pagination:
+  data: collections.blog
+  size: 3
 ---
+
+{% set blogListItems = pagination.items %}
+
+<h1>{{ title }}</h1>
+
+{% include "components/blog-list-items.njk" %}
+
+{% include "components/pagination.njk" %}
 
 {{ content | safe }}

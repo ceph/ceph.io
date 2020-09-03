@@ -1,15 +1,9 @@
 ---
-title: Blog
+title: Ceph Blog
 layout: listing-blog
-permalink: null
+paginationPrevText: 'Newer posts'
+paginationNextText: 'Older posts'
+paginationAnchor: '#post-list'
+permalink: '/{{ locale }}/news/blog{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber }}{% endif %}/index.html'
 order: 1
 ---
-
-<h1>Blog</h1>
-
-<ul>
-  <!-- Loop over blog collection -->
-  <li>
-    <a href="public-telemetry-dashboards/">Public telemetry dashboards</a>
-  </li>
-</ul>

@@ -1,6 +1,7 @@
 ---
 title: Public telemetry dashboards
 date: 2020-04-28
+author: Lars Marowsky-Brée
 ---
 
 # {{ title }}

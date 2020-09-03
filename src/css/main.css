@@ -23,5 +23,6 @@
 
 /* utilities */
 @import "utilities.colors.css";
+@import "utilities.layout.css";
 @import "utilities.space.css";
 @import "utilities.typography.css";
