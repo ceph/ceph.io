@@ -2,7 +2,8 @@
 layout: base
 pagination:
   data: collections.blog
-  size: 3
+  size: 2
+permalink: '/{{ locale }}/news/blog{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1}}{% endif %}/index.html'
 ---
 
 {% set blogListItems = pagination.items %}

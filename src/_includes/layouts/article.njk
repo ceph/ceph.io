@@ -11,6 +11,15 @@ layout: base
   <h2>{{ 'share_this_article' | i18n }}</h2>
   <p>...</p>
 
+  <h2>{{ 'tags' | i18n }}</h2>
+  <ul class="ul" aria-describedby="tags-desc">
+      {% for tag in tags %}
+        <li>
+          <a href="/{{ locale }}/news/blog/tag/{{ tag | slug }}/">#{{ tag }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+
   <h2>{{ 'related' | i18n }}</h2>
   <p>...</p>
 </aside>

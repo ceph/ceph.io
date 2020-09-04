@@ -1,14 +1,27 @@
-{% if pagination.href.next or pagination.href.previous %}
-  <nav class="pagination__inner" aria-label="Pagination links">
-    {% if pagination.href.previous %}
-      <a href="{{ pagination.href.previous }}{{ paginationAnchor }}" data-direction="backwards">
-        <span>{{ paginationPrevText if paginationPrevText else 'Previous' }}</span>
-      </a>
-    {% endif %}
-    {% if pagination.href.next %}
-      <a href="{{ pagination.href.next }}{{ paginationAnchor }}" data-direction="forwards">
-        <span>{{ paginationNextText if paginationNextText else 'Next' }}</span>
-      </a>
-    {% endif %}
-  </nav>
-{% endif %}
+
+{% set numberOfPages = pagination.pages.length %}
+{% set pageNumberIndex = pagination.pageNumber + 1 %}
+
+<nav class="pagination" aria-label="Pagination links">
+  {% if pagination.href.previous %}
+    <a href="{{ pagination.href.previous }}" data-direction="backwards">
+      <span class="block">{{ 'previous' | i18n }}</span>
+      {{ pageNumberIndex - 1}} of {{ numberOfPages }}
+    </a>
+  {% endif %}
+  <ol>
+    {%- for pageEntry in pagination.pages %}
+      <li>
+        <a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>
+          Page {{ loop.index }}
+        </a>
+      </li>
+    {%- endfor %}
+  </ol>
+  {% if pagination.href.next %}
+    <a href="{{ pagination.href.next }}" data-direction="forwards">
+      <span class="block">{{ 'next' | i18n }}</span>
+      {{ pageNumberIndex + 1}} of {{ numberOfPages }}
+    </a>
+  {% endif %}
+</nav>

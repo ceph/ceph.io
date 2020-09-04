@@ -16,6 +16,14 @@ module.exports = {
     'en-GB': 'Share this article',
     'ja-JP': 'この記事を共有する',
   },
+  next: {
+    'en-GB': 'Next',
+    'ja-JP': '次',
+  },
+  previous: {
+    'en-GB': 'Previous',
+    'ja-JP': '前',
+  },
 
   // i18n
   language: {
@@ -35,5 +43,9 @@ module.exports = {
   back_to_blog: {
     'en-GB': 'Back to blog',
     'ja-JP': 'ブログに戻る',
+  },
+  tags: {
+    'en-GB': 'Tags',
+    'ja-JP': 'タグ',
   },
 };

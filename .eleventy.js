@@ -57,6 +57,7 @@ module.exports = function (eleventyConfig) {
     'listing-press-releases',
     'layouts/listing-press-releases.njk'
   );
+  eleventyConfig.addLayoutAlias('listing-tags', 'layouts/listing-tags.njk');
 
   // Transforms
 
