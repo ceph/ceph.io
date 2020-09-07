@@ -2,6 +2,9 @@
 title: 'Ceph Dashboard: How to contribute translations'
 date: 2020-05-27
 author: Lenz Grimmer
+tags:
+  - 'dashboard'
+  - 'translation'
 ---
 
 # {{ title }}

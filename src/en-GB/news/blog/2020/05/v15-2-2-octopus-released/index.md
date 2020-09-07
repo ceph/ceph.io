@@ -2,6 +2,8 @@
 title: v15.2.2 Octopus released
 date: 2020-05-18
 author: abhishekl
+tags:
+  - 'octopus'
 ---
 
 # {{ title }}

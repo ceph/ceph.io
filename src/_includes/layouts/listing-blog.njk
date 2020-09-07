@@ -10,8 +10,24 @@ permalink: '/{{ locale }}/news/blog{% if pagination.pageNumber > 0 %}/page/{{ pa
 
 <h1>{{ title }}</h1>
 
+<ul class="ul">
+{% for blog in collections.blog %}
+<li>{{ blog.data.tags }}</li>
+{% endfor %}
+</ul>
+
+{# <ul class="ul">
+{% for tag in collections.blogCategories %}
+<li>
+ <a href="/{{ locale }}/news/blog/tag/{{ tag.title | slug }}/">#{{ tag.title }}</a>
+</li>
+{% endfor %}
+</ul> #}
+
 {% include "components/blog-list-items.njk" %}
 
 {% include "components/pagination.njk" %}
 
 {{ content | safe }}
+
+{{ collections.blogCategories | log }}

@@ -1,4 +1,5 @@
 const fs = require('fs');
+const lodash = require('lodash');
 
 // Filters
 const formatDate = require('./src/_11ty/filters/formatDate.js');
@@ -9,6 +10,20 @@ const localeSelector = require('./src/_11ty/filters/localeSelector.js');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const i18n = require('eleventy-plugin-i18n');
 const translations = require('./src/_data/i18n');
+
+function getAllKeyValues(collectionArray, key) {
+  // get all values from collection
+  let allValues = collectionArray.map(item => {
+    let values = item.data[key] ? item.data[key] : [];
+    return values;
+  });
+  allValues = lodash.flattenDeep(allValues);
+  // remove duplicates
+  allValues = [...new Set(allValues)];
+
+  // return
+  return allValues;
+}
 
 module.exports = function (eleventyConfig) {
   console.log(process.env.NODE_ENV);
@@ -33,6 +48,19 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection('blog', collection => {
     return [...collection.getFilteredByGlob('./src/**/blog/**/*.md')].reverse();
   });
+
+  // eleventyConfig.addCollection('blogCategories', function (collection) {
+  //   let allCategories = getAllKeyValues(
+  //     collection.getFilteredByGlob('./src/**/blog/**/*.md'),
+  //     'tags'
+  //   );
+
+  //   let blogCategories = allCategories.map(category => ({
+  //     title: category,
+  //   }));
+
+  //   return blogCategories;
+  // });
 
   // Layout aliases — TBC if this is bringing enough benefit
   eleventyConfig.addLayoutAlias('base', 'layouts/_base.njk');

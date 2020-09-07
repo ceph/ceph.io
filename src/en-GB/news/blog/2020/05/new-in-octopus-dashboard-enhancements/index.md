@@ -2,6 +2,9 @@
 title: 'New in Octopus: Dashboard Enhancements'
 date: 2020-05-26
 author: Lenz Grimmer
+tags:
+  - 'dashboard'
+  - 'octopus'
 ---
 
 # {{ title }}

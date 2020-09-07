@@ -2,6 +2,9 @@
 title: 'CDS Pacific: Dashboard planning summary'
 date: 2020-04-30
 author: Lenz Grimmer
+tags:
+  - 'dashboard'
+  - 'pacific'
 ---
 
 # {{ title }}
