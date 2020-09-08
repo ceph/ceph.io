@@ -1,0 +1,25 @@
+---
+layout: base
+pagination:
+  data: collections.blogPosts
+  size: 2
+permalink: '/{{ locale }}/news/blog{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1}}{% endif %}/index.html'
+---
+
+{% set blogPosts = pagination.items %}
+
+<h1>{{ title }}</h1>
+
+<ul class="ul">
+{% for blogTagsItem in collections.blogTags %}
+<li>
+ <a href="/{{ locale }}/news/blog/tag/{{ blogTagsItem.tag | slug }}/">#{{ blogTagsItem.tag }}</a>
+</li>
+{% endfor %}
+</ul>
+
+{% include "components/blog-posts.njk" %}
+
+{% include "components/pagination.njk" %}
+
+{{ content | safe }}

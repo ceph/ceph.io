@@ -11,20 +11,6 @@ const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const i18n = require('eleventy-plugin-i18n');
 const translations = require('./src/_data/i18n');
 
-function getAllKeyValues(collectionArray, key) {
-  // get all values from collection
-  let allValues = collectionArray.map(item => {
-    let values = item.data[key] ? item.data[key] : [];
-    return values;
-  });
-  allValues = lodash.flattenDeep(allValues);
-  // remove duplicates
-  allValues = [...new Set(allValues)];
-
-  // return
-  return allValues;
-}
-
 module.exports = function (eleventyConfig) {
   console.log(process.env.NODE_ENV);
 
@@ -44,23 +30,39 @@ module.exports = function (eleventyConfig) {
     });
   });
 
-  // Returns a collection of blog posts in reverse date order
-  eleventyConfig.addCollection('blog', collection => {
+  // Collection - returns a collection of blog posts in reverse date order
+  eleventyConfig.addCollection('blogPosts', collection => {
     return [...collection.getFilteredByGlob('./src/**/blog/**/*.md')].reverse();
   });
 
-  // eleventyConfig.addCollection('blogCategories', function (collection) {
-  //   let allCategories = getAllKeyValues(
-  //     collection.getFilteredByGlob('./src/**/blog/**/*.md'),
-  //     'tags'
-  //   );
+  // Collection - returns a collection of blog tags in alphabetical order
+  eleventyConfig.addCollection('blogTags', collection => {
+    // single array of all tags
+    const allTags = collection
+      .getFilteredByGlob('./src/**/blog/**/*.md')
+      .map(item => {
+        const { tags = [] } = item.data;
+        return tags;
+      })
+      .reduce((collectedTags, tags) => {
+        return [...collectedTags, ...tags];
+      }, [])
+      .map(item => item.toLowerCase());
 
-  //   let blogCategories = allCategories.map(category => ({
-  //     title: category,
-  //   }));
+    // remove duplicate tags
+    const uniqueTags = [...new Set(allTags)];
 
-  //   return blogCategories;
-  // });
+    // sort alphabetically
+    const tagsSorted = uniqueTags.sort((a, b) => {
+      return a.localeCompare(b);
+    });
+
+    let blogTag = tagsSorted.map(tag => ({
+      tag,
+    }));
+
+    return blogTag;
+  });
 
   // Layout aliases — TBC if this is bringing enough benefit
   eleventyConfig.addLayoutAlias('base', 'layouts/_base.njk');
@@ -75,17 +77,27 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias('hub-foundation', 'layouts/hub-foundation.njk');
   eleventyConfig.addLayoutAlias('hub-news', 'layouts/hub-news.njk');
   eleventyConfig.addLayoutAlias('hub-solutions', 'layouts/hub-solutions.njk');
-  eleventyConfig.addLayoutAlias('listing-blog', 'layouts/listing-blog.njk');
+  eleventyConfig.addLayoutAlias(
+    'listing-blog-posts',
+    'layouts/listing-blog-posts.njk'
+  );
+  eleventyConfig.addLayoutAlias(
+    'listing-blog-tags',
+    'layouts/listing-blog-tags.njk'
+  );
   eleventyConfig.addLayoutAlias(
     'listing-case-studies',
     'layouts/listing-case-studies.njk'
   );
   eleventyConfig.addLayoutAlias('listing-events', 'layouts/listing-events.njk');
   eleventyConfig.addLayoutAlias(
+    'listing-planet-ceph-articles',
+    'layouts/listing-planet-ceph-articles.njk'
+  );
+  eleventyConfig.addLayoutAlias(
     'listing-press-releases',
     'layouts/listing-press-releases.njk'
   );
-  eleventyConfig.addLayoutAlias('listing-tags', 'layouts/listing-tags.njk');
 
   // Transforms
 

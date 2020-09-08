@@ -5,6 +5,7 @@ author: Lenz Grimmer
 tags:
   - 'dashboard'
   - 'translation'
+  - 'ceph'
 ---
 
 # {{ title }}

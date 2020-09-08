@@ -1,5 +1,5 @@
 <ul class="ul">
-  {% for item in blogListItems | localeSelector(locale) %}
+  {% for item in blogPosts | localeSelector(locale) %}
     <li>
       <a href="{{ item.url }}">{{ item.data.title }}</a>
       <span class="block">{{ item.data.author }}</span>

@@ -1,0 +1,15 @@
+---
+layout: base
+title: Tag Archive
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter: ['all', 'blogPosts', 'blogTags', 'primary', 'support']
+---
+
+{% set blogTags = collections[tag] %}
+
+<h1>Tagged with "{{ tag }}"</h1>
+
+{% include "components/blog-tags.njk" %}
