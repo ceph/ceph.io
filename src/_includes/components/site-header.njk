@@ -1,11 +1,15 @@
+{% set localeParentKey = '/' + locale + '/' %}
+{% set primaryNav = collections.primary | eleventyNavigation(localeParentKey) %}
+
 <header>
   <div class="wrapper">
     <a href="/{{ locale }}/">Ceph.io Homepage</a>
-
     <div style="margin: 1rem 0">
       {% include 'components/navigation-primary.njk' %}
     </div>
 
     {% include 'components/language-selector.njk' %}
+
+    {% include 'components/navigation-secondary.njk' %}
   </div>
 </header>

@@ -37,7 +37,7 @@ module.exports = function (eleventyConfig) {
 
   // Collection - returns a collection of blog tags in alphabetical order
   eleventyConfig.addCollection('blogTags', collection => {
-    // single array of all tags
+    // single array of all tags in lowercase
     const allTags = collection
       .getFilteredByGlob('./src/**/blog/**/*.md')
       .map(item => {
@@ -47,7 +47,7 @@ module.exports = function (eleventyConfig) {
       .reduce((collectedTags, tags) => {
         return [...collectedTags, ...tags];
       }, [])
-      .map(item => item.toLowerCase());
+      .map(tag => tag.toLowerCase());
 
     // remove duplicate tags
     const uniqueTags = [...new Set(allTags)];
