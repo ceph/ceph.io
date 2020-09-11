@@ -1,7 +1,14 @@
 # ceph.io
 
-:warning: **To report an issue with the [ceph.io](https://ceph.io/) website**, email *Ceph Community Manager* Mike Perez at <miperez@redhat.com>. Please include a brief description of the problem and the link that led to it.
 
-This repository is for the *new website*, which is currently under development. All work happens in the `develop` branch.
+## :warning: Something wrong with ceph.io website?
 
-If you'd like to contribute, please see [WHAT].
+Report any website issues you experience by email to **Mike Perez** <miperez@redhat.com>, *Ceph Community Manager*. Please include a brief description of the problem and a link that led to it. 
+
+## :question: What's in this repository?
+
+This repository is for the *new website*, which is currently under development. The development activity is in the `develop` branch.
+
+## :octopus: Contributing to Ceph Project
+
+A great starting point for an aspiring contributor is the following guide: [Contributing to Ceph: A Guide for Developers](https://docs.ceph.com/docs/master/dev/developer_guide/).
