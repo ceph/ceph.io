@@ -1,10 +1,10 @@
 const fs = require('fs');
-const lodash = require('lodash');
 
 // Filters
 const formatDate = require('./src/_11ty/filters/formatDate.js');
 const startsWith = require('./src/_11ty/filters/startsWith.js');
 const localeSelector = require('./src/_11ty/filters/localeSelector.js');
+const squash = require('./src/_11ty/filters/squash.js');
 
 // Plugins
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
@@ -21,6 +21,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('formatDate', formatDate);
   eleventyConfig.addFilter('startsWith', startsWith);
   eleventyConfig.addFilter('localeSelector', localeSelector);
+  eleventyConfig.addFilter('squash', squash);
 
   // Collections
   eleventyConfig.addCollection(`primary`, function (collectionApi) {
@@ -102,6 +103,7 @@ module.exports = function (eleventyConfig) {
   // Transforms
 
   // Passthrough copy
+  eleventyConfig.addPassthroughCopy('src/js');
 
   // Plugins
   eleventyConfig.addPlugin(eleventyNavigationPlugin);

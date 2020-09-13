@@ -1,0 +1,7 @@
+---
+layout: null
+permalink: search.json
+---
+
+[ {% for item in collections.blogPosts %} { "title":"{{item.data.title}}", "author":"{{item.data.author}}", "date":"{{item.data.date}}",
+"url":"{{item.url}}", "content":"{{ item.templateContent | squash }}" }{% if loop.last != true %},{% endif %} {% endfor %} ]
