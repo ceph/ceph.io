@@ -11,12 +11,18 @@ permalink: '/{{ locale }}/news/blog{% if pagination.pageNumber > 0 %}/page/{{ pa
 <h1>{{ title }}</h1>
 
 <ul class="ul">
-{% for blogTagsItem in collections.blogTags %}
-<li>
- <a href="/{{ locale }}/news/blog/tag/{{ blogTagsItem.tag | slug }}/">#{{ blogTagsItem.tag }}</a>
-</li>
-{% endfor %}
+  {% for blogTagsItem in collections.blogTags %}
+    <li>
+    <a href="/{{ locale }}/news/blog/tag/{{ blogTagsItem.tag | slug }}/">#{{ blogTagsItem.tag }}</a>
+    </li>
+  {% endfor %}
 </ul>
+
+<form action="/{{ locale }}/news/blog/search/" method="get" class="search">
+  <label for="search-str">Search</label>
+  <input type="text" name="q" id="search-str" />
+  <button type="submit" id="search-submit" class="submit">Search</button>
+</form>
 
 {% include "components/blog-posts.njk" %}
 

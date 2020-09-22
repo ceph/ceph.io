@@ -65,6 +65,42 @@ module.exports = function (eleventyConfig) {
     return blogTag;
   });
 
+  // Collection - returns a collection of case studies in reverse date order
+  eleventyConfig.addCollection('caseStudies', collection => {
+    return [
+      ...collection.getFilteredByGlob('./src/**/case-studies/**/*.md'),
+    ].reverse();
+  });
+
+  // Collection - returns a collection of case study tags in alphabetical order
+  eleventyConfig.addCollection('caseStudyTags', collection => {
+    // single array of all tags in lowercase
+    const allTags = collection
+      .getFilteredByGlob('./src/**/case-studies/**/*.md')
+      .map(item => {
+        const { tags = [] } = item.data;
+        return tags;
+      })
+      .reduce((collectedTags, tags) => {
+        return [...collectedTags, ...tags];
+      }, [])
+      .map(tag => tag.toLowerCase());
+
+    // remove duplicate tags
+    const uniqueTags = [...new Set(allTags)];
+
+    // sort alphabetically
+    const tagsSorted = uniqueTags.sort((a, b) => {
+      return a.localeCompare(b);
+    });
+
+    let caseStudyTag = tagsSorted.map(tag => ({
+      tag,
+    }));
+
+    return caseStudyTag;
+  });
+
   // Layout aliases — TBC if this is bringing enough benefit
   eleventyConfig.addLayoutAlias('base', 'layouts/_base.njk');
   eleventyConfig.addLayoutAlias('article', 'layouts/article.njk');
@@ -89,6 +125,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias(
     'listing-case-studies',
     'layouts/listing-case-studies.njk'
+  );
+  eleventyConfig.addLayoutAlias(
+    'listing-case-study-tags',
+    'layouts/listing-case-study-tags.njk'
   );
   eleventyConfig.addLayoutAlias('listing-events', 'layouts/listing-events.njk');
   eleventyConfig.addLayoutAlias(

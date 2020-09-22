@@ -8,8 +8,8 @@ pagination:
   filter: ['all', 'blogPosts', 'blogTags', 'caseStudies', 'caseStudyTags', 'primary', 'support']
 ---
 
-{% set blogTags = collections[tag] %}
+{% set caseStudyTags = collections[tag] %}
 
 <h1>Tagged with "{{ tag }}"</h1>
 
-{% include "components/blog-tags.njk" %}
+{% include "components/case-study-tags.njk" %}

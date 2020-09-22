@@ -1,5 +1,25 @@
 ---
 layout: base
+pagination:
+  data: collections.caseStudies
+  size: 2
+permalink: '/{{ locale }}/solutions/case-studies{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1}}{% endif %}/index.html'
 ---
+
+{% set caseStudies = pagination.items %}
+
+<h1>{{ title }}</h1>
+
+<ul class="ul">
+  {% for caseStudyTagsItem in collections.caseStudyTags %}
+    <li>
+    <a href="/{{ locale }}/solutions/case-studies/tag/{{ caseStudyTagsItem.tag | slug }}/">#{{ caseStudyTagsItem.tag }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+{% include "components/case-studies.njk" %}
+
+{% include "components/pagination.njk" %}
 
 {{ content | safe }}
