@@ -22,14 +22,6 @@ async function initSearchIndex() {
   search(query);
 }
 
-searchSubmit.addEventListener('click', event => {
-  const searchQuery = searchInput.value.trim().toLowerCase();
-
-  search(searchQuery);
-
-  event.preventDefault();
-});
-
 function search(searchQuery) {
   const searchResults = searchIndex.search(searchQuery);
 

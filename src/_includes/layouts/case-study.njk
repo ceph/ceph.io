@@ -2,4 +2,13 @@
 layout: base
 ---
 
-{{ content | safe }}
+<div class="grid grid--cols-auto-72">
+  <div>
+    {{ content | safe }}
+  </div>
+  <div>
+    <h2 class="h3">{{ 'related' | i18n }}</h2>
+    <p>...</p>
+  </div>
+</div>
+

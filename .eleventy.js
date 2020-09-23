@@ -1,5 +1,12 @@
 const fs = require('fs');
 
+// Collections
+const blogPosts = require('./src/_11ty/collections/blogPosts.js');
+const blogTags = require('./src/_11ty/collections/blogTags.js');
+const caseStudies = require('./src/_11ty/collections/caseStudies.js');
+const caseStudyTags = require('./src/_11ty/collections/caseStudyTags.js');
+const primary = require('./src/_11ty/collections/primary.js');
+
 // Filters
 const formatDate = require('./src/_11ty/filters/formatDate.js');
 const startsWith = require('./src/_11ty/filters/startsWith.js');
@@ -17,89 +24,18 @@ module.exports = function (eleventyConfig) {
   // Hot-reload site on CSS changes
   eleventyConfig.addWatchTarget('src/css');
 
+  // Collections
+  eleventyConfig.addCollection('blogPosts', blogPosts);
+  eleventyConfig.addCollection('blogTags', blogTags);
+  eleventyConfig.addCollection('caseStudies', caseStudies);
+  eleventyConfig.addCollection('caseStudyTags', caseStudyTags);
+  eleventyConfig.addCollection('primary', primary);
+
   // Filters
   eleventyConfig.addFilter('formatDate', formatDate);
   eleventyConfig.addFilter('startsWith', startsWith);
   eleventyConfig.addFilter('localeSelector', localeSelector);
   eleventyConfig.addFilter('squash', squash);
-
-  // Collections
-  eleventyConfig.addCollection(`primary`, function (collectionApi) {
-    return collectionApi.getAll().filter(item => {
-      const { tags = [] } = item.data;
-      return !tags.includes('support');
-    });
-  });
-
-  // Collection - returns a collection of blog posts in reverse date order
-  eleventyConfig.addCollection('blogPosts', collection => {
-    return [...collection.getFilteredByGlob('./src/**/blog/**/*.md')].reverse();
-  });
-
-  // Collection - returns a collection of blog tags in alphabetical order
-  eleventyConfig.addCollection('blogTags', collection => {
-    // single array of all tags in lowercase
-    const allTags = collection
-      .getFilteredByGlob('./src/**/blog/**/*.md')
-      .map(item => {
-        const { tags = [] } = item.data;
-        return tags;
-      })
-      .reduce((collectedTags, tags) => {
-        return [...collectedTags, ...tags];
-      }, [])
-      .map(tag => tag.toLowerCase());
-
-    // remove duplicate tags
-    const uniqueTags = [...new Set(allTags)];
-
-    // sort alphabetically
-    const tagsSorted = uniqueTags.sort((a, b) => {
-      return a.localeCompare(b);
-    });
-
-    let blogTag = tagsSorted.map(tag => ({
-      tag,
-    }));
-
-    return blogTag;
-  });
-
-  // Collection - returns a collection of case studies in reverse date order
-  eleventyConfig.addCollection('caseStudies', collection => {
-    return [
-      ...collection.getFilteredByGlob('./src/**/case-studies/**/*.md'),
-    ].reverse();
-  });
-
-  // Collection - returns a collection of case study tags in alphabetical order
-  eleventyConfig.addCollection('caseStudyTags', collection => {
-    // single array of all tags in lowercase
-    const allTags = collection
-      .getFilteredByGlob('./src/**/case-studies/**/*.md')
-      .map(item => {
-        const { tags = [] } = item.data;
-        return tags;
-      })
-      .reduce((collectedTags, tags) => {
-        return [...collectedTags, ...tags];
-      }, [])
-      .map(tag => tag.toLowerCase());
-
-    // remove duplicate tags
-    const uniqueTags = [...new Set(allTags)];
-
-    // sort alphabetically
-    const tagsSorted = uniqueTags.sort((a, b) => {
-      return a.localeCompare(b);
-    });
-
-    let caseStudyTag = tagsSorted.map(tag => ({
-      tag,
-    }));
-
-    return caseStudyTag;
-  });
 
   // Layout aliases — TBC if this is bringing enough benefit
   eleventyConfig.addLayoutAlias('base', 'layouts/_base.njk');
