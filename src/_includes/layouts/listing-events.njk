@@ -1,5 +1,20 @@
 ---
 layout: base
+pagination:
+  data: collections.eventsPast
+  size: 12
+permalink: '/{{ locale }}/community/events{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1}}{% endif %}/index.html'
 ---
+
+{% set eventsFuture = collections.eventsFuture %}
+{% set eventsPast = pagination.items %}
+
+<h1>{{ title }}</h1>
+
+{% include "components/events-future.njk" %}
+
+{% include "components/events-past.njk" %}
+
+{% include "components/pagination.njk" %}
 
 {{ content | safe }}

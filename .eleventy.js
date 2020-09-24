@@ -5,13 +5,17 @@ const blogPosts = require('./src/_11ty/collections/blogPosts.js');
 const blogTags = require('./src/_11ty/collections/blogTags.js');
 const caseStudies = require('./src/_11ty/collections/caseStudies.js');
 const caseStudyTags = require('./src/_11ty/collections/caseStudyTags.js');
+const eventsFuture = require('./src/_11ty/collections/eventsFuture.js');
+const eventsPast = require('./src/_11ty/collections/eventsPast.js');
 const primary = require('./src/_11ty/collections/primary.js');
 
 // Filters
 const formatDate = require('./src/_11ty/filters/formatDate.js');
-const startsWith = require('./src/_11ty/filters/startsWith.js');
+const futureDate = require('./src/_11ty/filters/futureDate.js');
 const localeSelector = require('./src/_11ty/filters/localeSelector.js');
+const pastDate = require('./src/_11ty/filters/pastDate.js');
 const squash = require('./src/_11ty/filters/squash.js');
+const startsWith = require('./src/_11ty/filters/startsWith.js');
 
 // Plugins
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
@@ -29,13 +33,17 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection('blogTags', blogTags);
   eleventyConfig.addCollection('caseStudies', caseStudies);
   eleventyConfig.addCollection('caseStudyTags', caseStudyTags);
+  eleventyConfig.addCollection('eventsFuture', eventsFuture);
+  eleventyConfig.addCollection('eventsPast', eventsPast);
   eleventyConfig.addCollection('primary', primary);
 
   // Filters
   eleventyConfig.addFilter('formatDate', formatDate);
-  eleventyConfig.addFilter('startsWith', startsWith);
+  eleventyConfig.addFilter('futureDate', futureDate);
   eleventyConfig.addFilter('localeSelector', localeSelector);
+  eleventyConfig.addFilter('pastDate', pastDate);
   eleventyConfig.addFilter('squash', squash);
+  eleventyConfig.addFilter('startsWith', startsWith);
 
   // Layout aliases — TBC if this is bringing enough benefit
   eleventyConfig.addLayoutAlias('base', 'layouts/_base.njk');
