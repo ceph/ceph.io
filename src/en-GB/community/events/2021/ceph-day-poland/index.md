@@ -1,12 +1,12 @@
 ---
-title: Ceph Day London
-date: 2019-10-24
-end: 2019-10-24
+title: Ceph Day Poland
+date: 2021-02-20
+end: 2021-02-24
 ---
 
 # {{ title }}
 
-## Bringing Ceph to London
+## Bringing Ceph to Poland
 
 Come find out why leading enterprises are adopting Ceph, why Ceph is the lowest cost per gig storage solution, and how easy it is to deploy your own Ceph cluster!
 

@@ -1,6 +1,7 @@
 ---
 title: Ceph Day Vancouver
 date: 2019-10-07
+end: 2019-10-07
 ---
 
 # {{ title }}

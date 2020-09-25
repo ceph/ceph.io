@@ -15,7 +15,7 @@ module.exports = function (collectionApi) {
     .getFilteredByGlob('./src/**/events/**/*.md')
     .reverse()
     .filter(item => {
-      const formattedDate = new Date(item.data.date).setHours(0, 0, 0, 0);
+      const formattedDate = new Date(item.data.end).setHours(0, 0, 0, 0);
       return formattedDate >= currentDate;
     });
 };

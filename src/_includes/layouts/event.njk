@@ -7,9 +7,10 @@ layout: base
     {{ content | safe }}
   </div>
   <div>
-    <h2 class="h3">{{ 'related' | i18n }}</h2>
-    <p>...</p>
-    <h2 class="h3">{{ 'share_this_article' | i18n }}</h2>
+    <h3 class="h4">{{ 'event_details' | i18n }}</h3>
+    <time datetime="{{ date }}">{{ date | formatDate(locale) }}</time>
+    
+    <h3 class="h4">{{ 'share_this_article' | i18n }}</h3>
     <p>...</p>
   </div>
 </div>

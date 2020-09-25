@@ -48,4 +48,22 @@ module.exports = {
     'en-GB': 'Tags',
     'ja-JP': 'タグ',
   },
+
+  // Events
+  event: {
+    'en-GB': 'Event',
+    'ja-JP': 'イベント',
+  },
+  events: {
+    'en-GB': 'Events',
+    'ja-JP': 'イベント',
+  },
+  event_details: {
+    'en-GB': 'Event details',
+    'ja-JP': 'イベントの詳細',
+  },
+  event_sponsors: {
+    'en-GB': 'Event sponsors',
+    'ja-JP': 'イベントスポンサー',
+  },
 };

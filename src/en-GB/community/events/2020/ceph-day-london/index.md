@@ -1,6 +1,7 @@
 ---
 title: Ceph Day London
-date: 2020-10-24
+date: 2020-09-20
+end: 2020-09-24
 ---
 
 # {{ title }}
