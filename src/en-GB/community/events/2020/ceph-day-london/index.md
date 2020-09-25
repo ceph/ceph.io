@@ -1,7 +1,25 @@
 ---
 title: Ceph Day London
 date: 2020-09-20
-end: 2020-09-24
+end: 2020-09-26
+location: London, UK
+venue: Student Central, Malet Street, London
+map: 'https://goo.gl/maps/6isXCefxCPw6V6wu7'
+register: 'https://www.eventbrite.com/'
+sponsors:
+  - label: Platinum
+    list:
+      - name: SoftIron
+        logo: 'https://via.placeholder.com/50'
+        website: 'https://softiron.com'
+      - name: RedHat
+        logo: 'https://via.placeholder.com/50'
+        website: 'https://redhat.com'
+  - label: Gold
+    list:
+      - name: SUSE
+        logo: 'https://via.placeholder.com/50'
+        website: 'https://suse.com'
 ---
 
 # {{ title }}

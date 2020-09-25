@@ -2,6 +2,19 @@
 title: Ceph Day London
 date: 2019-10-24
 end: 2019-10-24
+location: London, UK
+venue: Student Central, Malet Street, London
+map: 'https://goo.gl/maps/6isXCefxCPw6V6wu7'
+register: 'https://www.eventbrite.com/'
+sponsors:
+  - label: Event sponsors
+    list:
+      - name: SoftIron
+        logo: 'https://via.placeholder.com/50'
+        website: 'https://softiron.com'
+      - name: RedHat
+        logo: 'https://via.placeholder.com/50'
+        website: 'https://redhat.co'
 ---
 
 # {{ title }}

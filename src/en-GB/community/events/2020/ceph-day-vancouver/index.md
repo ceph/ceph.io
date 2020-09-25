@@ -2,6 +2,10 @@
 title: Ceph Day Vancouver
 date: 2020-10-07
 end: 2020-10-07
+location: Vancouver, Canada
+venue: Student Central, Malet Street, Vancouver
+map: 'https://goo.gl/maps/6isXCefxCPw6V6wu7'
+register: 'https://www.eventbrite.com/'
 ---
 
 # {{ title }}

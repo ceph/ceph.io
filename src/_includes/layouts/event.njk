@@ -9,7 +9,26 @@ layout: base
   <div>
     <h3 class="h4">{{ 'event_details' | i18n }}</h3>
     <time datetime="{{ date }}">{{ date | formatDate(locale) }}</time>
-    
+    <p>{{ location }}</p>
+    <p>{{ venue }}</p>
+    <a href="{{ map }}" target="_blank" rel="noreferrer noopener">View map</a>
+    <hr>
+    <a href="{{ register }}" target="_blank" rel="noreferrer noopener">Register</a>
+    <hr>
+    {# <h3 class="h4">{{ 'event_sponsors' | i18n }}</h3> #}
+      {% for item in sponsors %}
+        <h3 class="h4">{{ item.label }}</h3>
+        <ul class="grid grid--cols-2">
+          {% for item in item.list %}
+            <li>
+              <a href="{{ item.website }}" target="_blank" rel="noreferrer noopener">
+                <img src="{{ item.logo }}" alt="{{ item.name }}" style="width: 50px;" />
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endfor %}
+    <hr>
     <h3 class="h4">{{ 'share_this_article' | i18n }}</h3>
     <p>...</p>
   </div>
