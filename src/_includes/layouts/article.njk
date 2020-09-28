@@ -15,9 +15,9 @@ layout: base
 
       <h2 class="h3">{{ 'tags' | i18n }}</h2>
       <ul class="ul" aria-describedby="tags-desc">
-          {% for tag in tags %}
+          {% for item in tags %}
             <li>
-              <a href="/{{ locale }}/news/blog/tag/{{ tag | slug }}/">#{{ tag }}</a>
+              <a href="/{{ locale }}/news/blog/tag/{{ item | slug }}/">#{{ item }}</a>
             </li>
           {% endfor %}
         </ul>

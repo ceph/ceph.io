@@ -11,9 +11,9 @@ permalink: '/{{ locale }}/news/blog{% if pagination.pageNumber > 0 %}/page/{{ pa
 <h1>{{ title }}</h1>
 
 <ul class="ul">
-  {% for blogTagsItem in collections.blogTags %}
+  {% for item in collections.blogTags %}
     <li>
-    <a href="/{{ locale }}/news/blog/tag/{{ blogTagsItem.tag | slug }}/">#{{ blogTagsItem.tag }}</a>
+    <a href="/{{ locale }}/news/blog/tag/{{ item.tag | slug }}/">#{{ item.tag }}</a>
     </li>
   {% endfor %}
 </ul>
