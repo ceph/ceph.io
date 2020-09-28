@@ -2,6 +2,10 @@
 title: Ceph drives savings for Bloomberg
 date: 2020-07-17
 author: Lenz Grimmer
+sponsor:
+  name: 'SUSE'
+  logo: 'https://via.placeholder.com/50'
+  website: 'https://www.suse.com'
 tags:
   - 'commerce'
 ---

@@ -7,8 +7,16 @@ layout: base
     {{ content | safe }}
   </div>
   <div>
-    <h2 class="h3">{{ 'related' | i18n }}</h2>
-    <p>...</p>
+    <h2 class="h4">{{ 'about_this_case_study' | i18n }}</h2>
+    <a href="{{ sponsor.website }}" target="_blank" rel="noreferrer noopener">
+      <img src="{{ sponsor.logo }}" alt="{{ sponsor.name }}" style="width: 50px;" />
+    </a>
+    <p>{{ 'this_case_study_is_sponsored_by' | i18n }} {{ sponsor.name }}.</p>
+    <a href="{{ sponsor.website }}">{{ 'find_out_more' | i18n }}</a>
+    <hr>
+    <h2 class="h4">{{ 'keep_reading' | i18n }}</h2>
+    <p class="p">{{ 'find_out_more_about_this_case_study_at_the' | i18n }} {{ sponsor.name }} <span class="text-lower">{{ 'website' | i18n }}</span>.</p>
+    <a href="{{ sponsor.website }}">{{ 'go_to' | i18n }} {{ sponsor.name }} <span class="text-lower">{{ 'website' | i18n }}</span></a>
   </div>
 </div>
 

@@ -17,6 +17,19 @@
   text-align: justify;
 }
 
+/* casing */
+.text-capitalise {
+  text-transform: capitalise;
+}
+
+.text-lower {
+  text-transform: lowercase;
+}
+
+.text-upper {
+  text-transform: uppercase;
+}
+
 /* families */
 .text-brand {
   font-family: var(--font-family-brand);
