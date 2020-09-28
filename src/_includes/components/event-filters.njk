@@ -1,0 +1,7 @@
+<ul class="ul">
+  {% for item in eventFilters %}
+    <li>
+    <a href="/{{ locale }}/community/events/tag/{{ item.tag | slug }}/">#{{ item.tag }}</a>
+    </li>
+  {% endfor %}
+</ul>

@@ -20,6 +20,8 @@ sponsors:
       - name: SUSE
         logo: 'https://via.placeholder.com/50'
         website: 'https://suse.com'
+tags:
+  - 'ceph days'
 ---
 
 # {{ title }}

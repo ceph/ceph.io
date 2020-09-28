@@ -16,6 +16,10 @@ module.exports = {
     'en-GB': 'Share this article',
     'ja-JP': 'この記事を共有する',
   },
+  read_more_articles_like_this: {
+    'en-GB': 'Read more articles like this',
+    'ja-JP': 'このような記事をもっと読む',
+  },
   next: {
     'en-GB': 'Next',
     'ja-JP': '次',

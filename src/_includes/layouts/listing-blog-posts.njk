@@ -7,16 +7,11 @@ permalink: '/{{ locale }}/news/blog{% if pagination.pageNumber > 0 %}/page/{{ pa
 ---
 
 {% set blogPosts = pagination.items %}
+{% set blogFilters = collections.blogTags %}
 
 <h1>{{ title }}</h1>
 
-<ul class="ul">
-  {% for item in collections.blogTags %}
-    <li>
-    <a href="/{{ locale }}/news/blog/tag/{{ item.tag | slug }}/">#{{ item.tag }}</a>
-    </li>
-  {% endfor %}
-</ul>
+{% include "components/blog-filters.njk" %}
 
 <form action="/{{ locale }}/news/blog/search/" method="get" class="search">
   <label for="search-str">Search</label>

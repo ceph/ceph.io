@@ -8,8 +8,11 @@ permalink: '/{{ locale }}/community/events{% if pagination.pageNumber > 0 %}/pag
 
 {% set eventsFuture = collections.eventsFuture %}
 {% set eventsPast = pagination.items %}
+{% set eventFilters = collections.eventTags %}
 
 <h1>{{ title }}</h1>
+
+{% include "components/event-filters.njk" %}
 
 {% include "components/events-future.njk" %}
 

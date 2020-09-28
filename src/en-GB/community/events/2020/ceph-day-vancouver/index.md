@@ -6,6 +6,8 @@ location: Vancouver, Canada
 venue: Student Central, Malet Street, Vancouver
 map: 'https://goo.gl/maps/6isXCefxCPw6V6wu7'
 register: 'https://www.eventbrite.com/'
+tags:
+  - 'ceph days'
 ---
 
 # {{ title }}

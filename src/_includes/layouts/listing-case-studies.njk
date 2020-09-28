@@ -7,16 +7,11 @@ permalink: '/{{ locale }}/solutions/case-studies{% if pagination.pageNumber > 0 
 ---
 
 {% set caseStudies = pagination.items %}
+{% set caseStudyFilters = collections.caseStudyTags %}
 
 <h1>{{ title }}</h1>
 
-<ul class="ul">
-  {% for item in collections.caseStudyTags %}
-    <li>
-    <a href="/{{ locale }}/solutions/case-studies/tag/{{ item.tag | slug }}/">#{{ item.tag }}</a>
-    </li>
-  {% endfor %}
-</ul>
+{% include "components/case-study-filters.njk" %}
 
 {% include "components/case-studies.njk" %}
 

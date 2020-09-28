@@ -7,6 +7,7 @@ const caseStudies = require('./src/_11ty/collections/caseStudies.js');
 const caseStudyTags = require('./src/_11ty/collections/caseStudyTags.js');
 const eventsFuture = require('./src/_11ty/collections/eventsFuture.js');
 const eventsPast = require('./src/_11ty/collections/eventsPast.js');
+const eventTags = require('./src/_11ty/collections/eventTags.js');
 const primary = require('./src/_11ty/collections/primary.js');
 
 // Filters
@@ -35,6 +36,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection('caseStudyTags', caseStudyTags);
   eleventyConfig.addCollection('eventsFuture', eventsFuture);
   eleventyConfig.addCollection('eventsPast', eventsPast);
+  eleventyConfig.addCollection('eventTags', eventTags);
   eleventyConfig.addCollection('primary', primary);
 
   // Filters
@@ -48,6 +50,7 @@ module.exports = function (eleventyConfig) {
   // Layout aliases — TBC if this is bringing enough benefit
   eleventyConfig.addLayoutAlias('base', 'layouts/_base.njk');
   eleventyConfig.addLayoutAlias('article', 'layouts/article.njk');
+  eleventyConfig.addLayoutAlias('blog-post', 'layouts/blog-post.njk');
   eleventyConfig.addLayoutAlias('case-study', 'layouts/case-study.njk');
   eleventyConfig.addLayoutAlias('content', 'layouts/content.njk');
   eleventyConfig.addLayoutAlias('event', 'layouts/event.njk');
@@ -75,6 +78,10 @@ module.exports = function (eleventyConfig) {
     'layouts/listing-case-study-tags.njk'
   );
   eleventyConfig.addLayoutAlias('listing-events', 'layouts/listing-events.njk');
+  eleventyConfig.addLayoutAlias(
+    'listing-event-tags',
+    'layouts/listing-event-tags.njk'
+  );
   eleventyConfig.addLayoutAlias(
     'listing-planet-ceph-articles',
     'layouts/listing-planet-ceph-articles.njk'

@@ -15,6 +15,8 @@ sponsors:
       - name: RedHat
         logo: 'https://via.placeholder.com/50'
         website: 'https://redhat.co'
+tags:
+  - 'ceph days'
 ---
 
 # {{ title }}

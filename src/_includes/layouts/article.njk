@@ -2,29 +2,7 @@
 layout: base
 ---
 
-{# This will likely change, as article layout serves Blogs, Press releases, etc. #}
+{# This will likely change, as article layout serves Press releases, etc. #}
 
-<div class="grid grid--cols-auto-72">
-  <div>
-    {{ content | safe }}
-  </div>
-  <div>
-    <aside>
-      <h2 class="h3">{{ 'share_this_article' | i18n }}</h2>
-      <p>...</p>
-
-      <h2 class="h3">{{ 'tags' | i18n }}</h2>
-      <ul class="ul" aria-describedby="tags-desc">
-          {% for item in tags %}
-            <li>
-              <a href="/{{ locale }}/news/blog/tag/{{ item | slug }}/">#{{ item }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-
-      <h2 class="h3">{{ 'related' | i18n }}</h2>
-      <p>...</p>
-    </aside>
-  </div>
-</div>
+{{ content | safe }}
 

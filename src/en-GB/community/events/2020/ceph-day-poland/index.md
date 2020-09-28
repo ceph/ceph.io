@@ -6,6 +6,8 @@ location: Wrocław, Poland
 venue: Hotel ibis Styles, Wrocław Centrum, Poland
 map: 'https://goo.gl/maps/6isXCefxCPw6V6wu7'
 register: 'https://www.eventbrite.com/'
+tags:
+  - 'ceph days'
 ---
 
 # {{ title }}

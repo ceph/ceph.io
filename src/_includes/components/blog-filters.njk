@@ -1,0 +1,7 @@
+<ul class="ul">
+  {% for item in blogFilters %}
+    <li>
+    <a href="/{{ locale }}/news/blog/tag/{{ item.tag | slug }}/">#{{ item.tag }}</a>
+    </li>
+  {% endfor %}
+</ul>

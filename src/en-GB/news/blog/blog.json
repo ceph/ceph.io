@@ -1,4 +1,4 @@
 {
-  "layout": "article",
+  "layout": "blog-post",
   "permalink": "/{{ locale }}/news/blog/{{ page.fileSlug }}/"
 }
