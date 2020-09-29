@@ -8,7 +8,7 @@ layout: base
   </div>
   <div>
     <h3 class="h4">{{ 'event_details' | i18n }}</h3>
-    <time datetime="{{ date }}">{{ date | formatDate(locale) }}</time>
+    <time datetime="{{ date }}">{{ date | formatDateRange(end, locale) }}</time>
     <p>{{ location }}</p>
     <p>{{ venue }}</p>
     <a href="{{ map }}" target="_blank" rel="noreferrer noopener">View map</a>

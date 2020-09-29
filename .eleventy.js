@@ -1,27 +1,33 @@
 const fs = require('fs');
 
 // Collections
-const blogPosts = require('./src/_11ty/collections/blogPosts.js');
-const blogTags = require('./src/_11ty/collections/blogTags.js');
-const caseStudies = require('./src/_11ty/collections/caseStudies.js');
-const caseStudyTags = require('./src/_11ty/collections/caseStudyTags.js');
-const eventsFuture = require('./src/_11ty/collections/eventsFuture.js');
-const eventsPast = require('./src/_11ty/collections/eventsPast.js');
-const eventTags = require('./src/_11ty/collections/eventTags.js');
-const primary = require('./src/_11ty/collections/primary.js');
+const collectionsDir = `./src/_11ty/collections`;
+const blogPosts = require(`${collectionsDir}/blogPosts.js`);
+const blogTags = require(`${collectionsDir}/blogTags.js`);
+const caseStudies = require(`${collectionsDir}/caseStudies.js`);
+const caseStudyTags = require(`${collectionsDir}/caseStudyTags.js`);
+const eventsFuture = require(`${collectionsDir}/eventsFuture.js`);
+const eventsPast = require(`${collectionsDir}/eventsPast.js`);
+const eventTags = require(`${collectionsDir}/eventTags.js`);
+const primary = require(`${collectionsDir}/primary.js`);
 
 // Filters
-const formatDate = require('./src/_11ty/filters/formatDate.js');
-const futureDate = require('./src/_11ty/filters/futureDate.js');
-const localeSelector = require('./src/_11ty/filters/localeSelector.js');
-const pastDate = require('./src/_11ty/filters/pastDate.js');
-const squash = require('./src/_11ty/filters/squash.js');
-const startsWith = require('./src/_11ty/filters/startsWith.js');
+const filtersDir = `./src/_11ty/filters`;
+const formatDate = require(`${filtersDir}/formatDate.js`);
+const formatDateRange = require(`${filtersDir}/formatDateRange.js`);
+const futureDate = require(`${filtersDir}/futureDate.js`);
+const localeSelector = require(`${filtersDir}/localeSelector.js`);
+const pastDate = require(`${filtersDir}/pastDate.js`);
+const squash = require(`${filtersDir}/squash.js`);
+const startsWith = require(`${filtersDir}/startsWith.js`);
 
 // Plugins
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const i18n = require('eleventy-plugin-i18n');
 const translations = require('./src/_data/i18n');
+
+// Shortcodes
+const shortcodesDir = `./src/_11ty/shortcodes`;
 
 module.exports = function (eleventyConfig) {
   console.log(process.env.NODE_ENV);
@@ -41,6 +47,7 @@ module.exports = function (eleventyConfig) {
 
   // Filters
   eleventyConfig.addFilter('formatDate', formatDate);
+  eleventyConfig.addFilter('formatDateRange', formatDateRange);
   eleventyConfig.addFilter('futureDate', futureDate);
   eleventyConfig.addFilter('localeSelector', localeSelector);
   eleventyConfig.addFilter('pastDate', pastDate);
@@ -90,6 +97,8 @@ module.exports = function (eleventyConfig) {
     'listing-press-releases',
     'layouts/listing-press-releases.njk'
   );
+
+  // Shortcodes
 
   // Transforms
 

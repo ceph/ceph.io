@@ -1,7 +1,7 @@
 ---
 title: Ceph Day Poland
 date: 2021-02-20
-end: 2021-02-24
+end: 2021-03-01
 location: Wrocław, Poland
 venue: Hotel ibis Styles, Wrocław Centrum, Poland
 map: 'https://goo.gl/maps/6isXCefxCPw6V6wu7'

@@ -6,7 +6,7 @@
       {% for item in eventsFuture | localeSelector(locale) %}
         <li>
           <a href="{{ item.url }}">{{ item.data.title }}</a>
-          <time datetime="{{ item.data.date }}">{{ item.data.date | formatDate(locale) }}</time>
+          <time datetime="{{ item.data.date }}">{{ item.data.date | formatDateRange(item.data.end, item.data.locale) }}</time>
         </li>
       {% endfor %}
     </ul>
