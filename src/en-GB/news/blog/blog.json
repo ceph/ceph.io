@@ -1,4 +1,3 @@
 {
-  "layout": "blog-post",
-  "permalink": "/{{ locale }}/news/blog/{{ page.fileSlug }}/"
+  "layout": "blog-post"
 }
