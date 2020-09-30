@@ -4,6 +4,8 @@ layout: base
 
 <div class="grid grid--cols-auto-72">
   <div>
+    <h1 class="h1">{{ title }}</h1>
+    <time datetime="{{ page.date }}">{{ page.date | formatDate(locale) }}</time>
     {{ content | safe }}
   </div>
   <div>
@@ -22,4 +24,3 @@ layout: base
     </aside>
   </div>
 </div>
-

@@ -13,6 +13,7 @@ const primary = require(`${collectionsDir}/primary.js`);
 
 // Filters
 const filtersDir = `./src/_11ty/filters`;
+const caption = require(`${filtersDir}/caption.js`);
 const formatDate = require(`${filtersDir}/formatDate.js`);
 const formatDateRange = require(`${filtersDir}/formatDateRange.js`);
 const futureDate = require(`${filtersDir}/futureDate.js`);
@@ -46,6 +47,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection('primary', primary);
 
   // Filters
+  eleventyConfig.addFilter('caption', caption);
   eleventyConfig.addFilter('formatDate', formatDate);
   eleventyConfig.addFilter('formatDateRange', formatDateRange);
   eleventyConfig.addFilter('futureDate', futureDate);

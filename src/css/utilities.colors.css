@@ -51,6 +51,18 @@
   color: var(--color-grey-200);
 }
 
+.color-grey-300 {
+  color: var(--color-grey-300);
+}
+
+.color-grey-400 {
+  color: var(--color-grey-400);
+}
+
+.color-grey-500 {
+  color: var(--color-grey-500);
+}
+
 @media (--mq-sm) {
   /* background color */
   .sm\:bg-black {
