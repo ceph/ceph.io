@@ -25,6 +25,19 @@
     {# Favicons #}
     
     {# Social meta #}
+    <meta property="og:locale" content="{{ locale }}">
+    <meta property="og:title" content="{{ title }} - {{ site.title }}" />
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="{% if image %}{{ image }}{% else %}https://via.placeholder.com/640x360{% endif %}" />
+    <meta property="og:site_name" content="{{ site.title }}">
+
+    <meta name="twitter:card" content="{% if image %}summary_large_image{% else %}summary{% endif %}" />
+    <meta name="twitter:site" content="@ceph" />
+    <meta name="twitter:title" content="{{ title }} - {{ site.title }}" />
+    <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
+    <meta name="twitter:image" content="{% if image %}{{ image }}{% else %}https://via.placeholder.com/640x360{% endif %}" />
+
   </head>
   <body>
     {% include 'components/site-header.njk' %}
