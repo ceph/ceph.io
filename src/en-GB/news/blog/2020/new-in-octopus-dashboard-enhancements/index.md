@@ -7,10 +7,6 @@ tags:
   - 'octopus'
 ---
 
-# {{ title }}
-
-<time datetime="{{ page.date }}">{{ page.date | formatDate(locale) }}</time>
-
 [Ceph Dashboard](https://docs.ceph.com/docs/master/mgr/dashboard/) is a built-in web-based management and monitoring application that is part of the open source Ceph distribution.
 
 Like in previous Ceph releases, the Dashboard developer community has been very active in adding new features and improving existing functionality.

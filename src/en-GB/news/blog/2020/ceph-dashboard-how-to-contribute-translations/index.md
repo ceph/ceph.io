@@ -8,10 +8,6 @@ tags:
   - 'ceph'
 ---
 
-# {{ title }}
-
-<time datetime="{{ page.date }}">{{ page.date | formatDate(locale) }}</time>
-
 _(This is a guest post by Sebastian Krah from the Ceph Dashboard Team. He is coordinating the efforts around localization and internationalization of the Dashboard)_
 
 Ceph Dashboard is the perfect entry point for everyone who is interested in Ceph and prefers working with a graphical user interface.

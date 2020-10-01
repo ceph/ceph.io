@@ -6,10 +6,6 @@ tags:
   - 'octopus'
 ---
 
-# {{ title }}
-
-<time datetime="{{ page.date }}">{{ page.date | formatDate(locale) }}</time>
-
 This is the second bugfix release of Ceph Octopus stable release series, we
 recommend that all Octopus users upgrade. This release has a range of fixes
 across all components and a security fix.

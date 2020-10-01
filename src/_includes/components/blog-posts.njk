@@ -1,12 +1,14 @@
 <ul class="ul grid grid--cols-4">
   {% for item in blogPosts | localeSelector(locale) %}
     <li>
-      <a href="{{ item.url }}"><img class="mb-2" src="{{ item.data.image }}" alt="" /></a>
+      <a href="{{ item.url }}">
+        <img class="mb-2" src="{% if item.data.image %}{{ item.data.image }}{% else %}https://via.placeholder.com/640x360{% endif %}" alt="" />
+      </a>
       <a href="{{ item.url }}">{{ item.data.title }}</a>
       <p class="p text-xs color-grey-500 mt-1">
         <time datetime="{{ item.data.date }}">{{ item.data.date | formatDate(locale) }}</time> by {{ item.data.author }}
       </p>
-      <p class="p text-sm text-leading-tighter">{{ item.templateContent | caption }}</p>
+      <p class="p text-sm text-leading-tighter">{{ item.templateContent | removeHtml | truncate }}</p>
     </li>
   {% endfor %}
 </ul>

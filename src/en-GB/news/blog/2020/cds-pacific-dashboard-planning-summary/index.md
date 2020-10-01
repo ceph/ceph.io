@@ -2,8 +2,6 @@
 title: 'CDS Pacific: Dashboard planning summary'
 date: 2020-04-30
 author: Lenz Grimmer
-description: 'A few weeks ago, a number of virtual [Ceph Developer Summit](https://pad.ceph.com/p/cds-pacific) meetings took place as a replacement for the in-person summit that was planned as part of Cephalocon in Seoul.'
-image: '/assets/placeholder-photo-1280x720.jpg'
 tags:
   - 'dashboard'
   - 'pacific'

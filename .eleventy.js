@@ -13,14 +13,15 @@ const primary = require(`${collectionsDir}/primary.js`);
 
 // Filters
 const filtersDir = `./src/_11ty/filters`;
-const caption = require(`${filtersDir}/caption.js`);
 const formatDate = require(`${filtersDir}/formatDate.js`);
 const formatDateRange = require(`${filtersDir}/formatDateRange.js`);
 const futureDate = require(`${filtersDir}/futureDate.js`);
 const localeSelector = require(`${filtersDir}/localeSelector.js`);
 const pastDate = require(`${filtersDir}/pastDate.js`);
+const removeHtml = require(`${filtersDir}/removeHtml.js`);
 const squash = require(`${filtersDir}/squash.js`);
 const startsWith = require(`${filtersDir}/startsWith.js`);
+const truncate = require(`${filtersDir}/truncate.js`);
 
 // Plugins
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
@@ -47,14 +48,15 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection('primary', primary);
 
   // Filters
-  eleventyConfig.addFilter('caption', caption);
   eleventyConfig.addFilter('formatDate', formatDate);
   eleventyConfig.addFilter('formatDateRange', formatDateRange);
   eleventyConfig.addFilter('futureDate', futureDate);
   eleventyConfig.addFilter('localeSelector', localeSelector);
   eleventyConfig.addFilter('pastDate', pastDate);
+  eleventyConfig.addFilter('removeHtml', removeHtml);
   eleventyConfig.addFilter('squash', squash);
   eleventyConfig.addFilter('startsWith', startsWith);
+  eleventyConfig.addFilter('truncate', truncate);
 
   // Layout aliases — TBC if this is bringing enough benefit
   eleventyConfig.addLayoutAlias('base', 'layouts/_base.njk');
