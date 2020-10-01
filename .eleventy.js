@@ -1,35 +1,9 @@
 const fs = require('fs');
 
-// Collections
-const collectionsDir = `./src/_11ty/collections`;
-const blogPosts = require(`${collectionsDir}/blogPosts.js`);
-const blogTags = require(`${collectionsDir}/blogTags.js`);
-const caseStudies = require(`${collectionsDir}/caseStudies.js`);
-const caseStudyTags = require(`${collectionsDir}/caseStudyTags.js`);
-const eventsFuture = require(`${collectionsDir}/eventsFuture.js`);
-const eventsPast = require(`${collectionsDir}/eventsPast.js`);
-const eventTags = require(`${collectionsDir}/eventTags.js`);
-const primary = require(`${collectionsDir}/primary.js`);
-
-// Filters
-const filtersDir = `./src/_11ty/filters`;
-const formatDate = require(`${filtersDir}/formatDate.js`);
-const formatDateRange = require(`${filtersDir}/formatDateRange.js`);
-const futureDate = require(`${filtersDir}/futureDate.js`);
-const localeSelector = require(`${filtersDir}/localeSelector.js`);
-const pastDate = require(`${filtersDir}/pastDate.js`);
-const removeHtml = require(`${filtersDir}/removeHtml.js`);
-const squash = require(`${filtersDir}/squash.js`);
-const startsWith = require(`${filtersDir}/startsWith.js`);
-const truncate = require(`${filtersDir}/truncate.js`);
-
 // Plugins
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const i18n = require('eleventy-plugin-i18n');
 const translations = require('./src/_data/i18n');
-
-// Shortcodes
-const shortcodesDir = `./src/_11ty/shortcodes`;
 
 module.exports = function (eleventyConfig) {
   console.log(process.env.NODE_ENV);
@@ -38,25 +12,69 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('src/css');
 
   // Collections
-  eleventyConfig.addCollection('blogPosts', blogPosts);
-  eleventyConfig.addCollection('blogTags', blogTags);
-  eleventyConfig.addCollection('caseStudies', caseStudies);
-  eleventyConfig.addCollection('caseStudyTags', caseStudyTags);
-  eleventyConfig.addCollection('eventsFuture', eventsFuture);
-  eleventyConfig.addCollection('eventsPast', eventsPast);
-  eleventyConfig.addCollection('eventTags', eventTags);
-  eleventyConfig.addCollection('primary', primary);
+  const collectionsDir = `./src/_11ty/collections`;
+  eleventyConfig.addCollection(
+    'blogPosts',
+    require(`${collectionsDir}/blogPosts.js`)
+  );
+  eleventyConfig.addCollection(
+    'blogTags',
+    require(`${collectionsDir}/blogTags.js`)
+  );
+  eleventyConfig.addCollection(
+    'caseStudies',
+    require(`${collectionsDir}/caseStudies.js`)
+  );
+  eleventyConfig.addCollection(
+    'caseStudyTags',
+    require(`${collectionsDir}/caseStudyTags.js`)
+  );
+  eleventyConfig.addCollection(
+    'eventsFuture',
+    require(`${collectionsDir}/eventsFuture.js`)
+  );
+  eleventyConfig.addCollection(
+    'eventsPast',
+    require(`${collectionsDir}/eventsPast.js`)
+  );
+  eleventyConfig.addCollection(
+    'eventTags',
+    require(`${collectionsDir}/eventTags.js`)
+  );
+  eleventyConfig.addCollection(
+    'primary',
+    require(`${collectionsDir}/primary.js`)
+  );
 
   // Filters
-  eleventyConfig.addFilter('formatDate', formatDate);
-  eleventyConfig.addFilter('formatDateRange', formatDateRange);
-  eleventyConfig.addFilter('futureDate', futureDate);
-  eleventyConfig.addFilter('localeSelector', localeSelector);
-  eleventyConfig.addFilter('pastDate', pastDate);
-  eleventyConfig.addFilter('removeHtml', removeHtml);
-  eleventyConfig.addFilter('squash', squash);
-  eleventyConfig.addFilter('startsWith', startsWith);
-  eleventyConfig.addFilter('truncate', truncate);
+  const filtersDir = `./src/_11ty/filters`;
+  eleventyConfig.addFilter(
+    'formatDate',
+    require(`${filtersDir}/formatDate.js`)
+  );
+  eleventyConfig.addFilter(
+    'formatDateRange',
+    require(`${filtersDir}/formatDateRange.js`)
+  );
+  eleventyConfig.addFilter(
+    'futureDate',
+    require(`${filtersDir}/futureDate.js`)
+  );
+  eleventyConfig.addFilter(
+    'localeSelector',
+    require(`${filtersDir}/localeSelector.js`)
+  );
+  eleventyConfig.addFilter('pastDate', require(`${filtersDir}/pastDate.js`));
+  eleventyConfig.addFilter(
+    'removeHtml',
+    require(`${filtersDir}/removeHtml.js`)
+  );
+  eleventyConfig.addFilter('squash', require(`${filtersDir}/squash.js`));
+  eleventyConfig.addFilter(
+    'startsWith',
+    require(`${filtersDir}/startsWith.js`)
+  );
+  eleventyConfig.addFilter('truncate', require(`${filtersDir}/truncate.js`));
 
   // Layout aliases — TBC if this is bringing enough benefit
   eleventyConfig.addLayoutAlias('base', 'layouts/_base.njk');
@@ -103,6 +121,7 @@ module.exports = function (eleventyConfig) {
   );
 
   // Shortcodes
+  const shortcodesDir = `./src/_11ty/shortcodes`;
 
   // Transforms
 
