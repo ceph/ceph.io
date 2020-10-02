@@ -1,0 +1,7 @@
+<ul class="ul">
+  {% for item in pressReleaseFilters %}
+    <li>
+      <a href="/{{ locale }}/news/press-releases/tag/{{ item.tag | slug }}/">#{{ item.tag }}</a>
+    </li>
+  {% endfor %}
+</ul>

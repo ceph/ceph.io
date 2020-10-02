@@ -1,0 +1,9 @@
+<ul class="ul">
+  {% for item in pressReleases | localeSelector(locale) %}
+    <li>
+      <a href="{{ item.url }}">{{ item.data.title }}</a>
+      <span class="block">{{ item.data.author }}</span>
+      <time datetime="{{ item.data.date }}">{{ item.data.date | formatDate(locale) }}</time>
+    </li>
+  {% endfor %}
+</ul>

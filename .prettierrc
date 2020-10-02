@@ -15,6 +15,18 @@
         "printWidth": 140,
         "singleQuote": false
       }
+    },
+    {
+      "files": ".eleventy.js",
+      "options": {
+        "printWidth": 140
+      }
+    },
+    {
+      "files": "*.md",
+      "options": {
+        "singleQuote": false
+      }
     }
   ]
 }

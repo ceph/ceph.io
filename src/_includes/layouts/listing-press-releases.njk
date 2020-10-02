@@ -1,5 +1,20 @@
 ---
 layout: base
+pagination:
+  data: collections.pressReleases
+  size: 2
+permalink: '/{{ locale }}/news/press-releases{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1}}{% endif %}/index.html'
 ---
+
+{% set pressReleases = pagination.items %}
+{% set pressReleaseFilters = collections.pressReleaseTags %}
+
+<h1>{{ title }}</h1>
+
+{% include "components/press-release-filters.njk" %}
+
+{% include "components/press-releases.njk" %}
+
+{% include "components/pagination.njk" %}
 
 {{ content | safe }}

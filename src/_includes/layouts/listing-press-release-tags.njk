@@ -8,8 +8,8 @@ pagination:
   filter: ['all', 'blogPosts', 'blogTags', 'caseStudies', 'caseStudyTags', 'events', 'eventTags', 'pressReleases', 'pressReleaseTags','primary', 'support']
 ---
 
-{% set eventTags = collections[tag] %}
+{% set pressReleaseTags = collections[tag] %}
 
 <h1>Tagged with "{{ tag }}"</h1>
 
-{% include "components/event-tags.njk" %}
+{% include "components/press-release-tags.njk" %}
