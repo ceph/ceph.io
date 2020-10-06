@@ -5,7 +5,8 @@ pagination:
   data: collections
   size: 1
   alias: tag
-  filter: ['all', 'blogPosts', 'blogTags', 'caseStudies', 'caseStudyTags', 'events', 'eventTags', 'pressReleases', 'pressReleaseTags','primary', 'support']
+  filter: ['all', 'blogPosts', 'blogTags', 'caseStudies', 'caseStudyTags', 'events', 'eventTags', 'pressReleases', 'pressReleaseTags', 'primary', 'support']
+permalink: '/{{ locale }}/solutions/case-studies/tag/{{ tag | slug }}/'
 ---
 
 {% set caseStudyTags = collections[tag] %}
