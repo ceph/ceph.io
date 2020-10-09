@@ -4,9 +4,16 @@ layout: base
 
 <div class="grid grid--cols-auto-72">
   <div>
-    {{ content | safe }}
+    <h1 class="h1">{{ title }}</h1>
+    <time class="block mb-2" datetime="{{ page.date }}">{{ page.date | formatDate(locale) }}</time>
+    {% if image %}
+      <img class="mb-2" src="{{ image }}" alt="" />
+    {% endif %}
+    <div class="intro-para">
+      {{ content | safe }}
+    </div>
   </div>
-  <div>
+  <aside>
     <h2 class="h4">{{ 'about_this_case_study' | i18n }}</h2>
     <a href="{{ sponsor.website }}" target="_blank" rel="noreferrer noopener">
       <img src="{{ sponsor.logo }}" alt="{{ sponsor.name }}" style="width: 50px;" />
@@ -17,6 +24,6 @@ layout: base
     <h2 class="h4">{{ 'keep_reading' | i18n }}</h2>
     <p class="p">{{ 'find_out_more_about_this_case_study_at_the' | i18n }} {{ sponsor.name }} <span class="text-lower">{{ 'website' | i18n }}</span>.</p>
     <a href="{{ sponsor.website }}">{{ 'go_to' | i18n }} {{ sponsor.name }} <span class="text-lower">{{ 'website' | i18n }}</span></a>
-  </div>
+  </aside>
 </div>
 

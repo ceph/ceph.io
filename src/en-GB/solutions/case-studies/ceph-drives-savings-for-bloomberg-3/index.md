@@ -10,8 +10,6 @@ tags:
   - "commerce"
 ---
 
-# {{ title }}
-
 Vestibulum auctor sem in nisi aliquet, non scelerisque tortor posuere. Aenean non erat efficitur, malesuada sapien porttitor, sollicitudin augue. In malesuada cursus massa, in aliquet leo maximus vitae.
 
 ![alt text](/assets/placeholder-photo-1280x720.jpg)

@@ -25,12 +25,12 @@ layout: base
     <h2 class="h4">{{ 'share_this_article' | i18n }}</h2>
     <p>...</p>
 
-    {% set blogLocaleTag = locale + '-blog-post' %}
+    {% set blogPostLocaleTag = locale + '-blog-post' %}
     {% set articleLocaleTag = locale + '-article' %}
 
     <h2 id="tags-desc" class="h4">{{ 'read_more_articles_like_this' | i18n }}</h2>
     <ul class="ul" aria-describedby="tags-desc">
-      {% for item in tags | removeTagsFromArray([blogLocaleTag, articleLocaleTag]) %}
+      {% for item in tags | removeTagsFromArray([blogPostLocaleTag, articleLocaleTag]) %}
         <li>
           <a href="/{{ locale }}/news/blog/tag/{{ item | slug }}/">#{{ item }}</a>
         </li>

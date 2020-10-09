@@ -1,19 +1,36 @@
 ---
 layout: base
 pagination:
-  data: collections.caseStudies
   size: 2
 permalink: '/{{ locale }}/solutions/case-studies{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1}}{% endif %}/index.html'
 ---
 
+{% set caseStudyLocaleTag = locale + '-case-study' %}
+{% set caseStudyFilters = collections[caseStudyLocaleTag] | collectionTags([caseStudyLocaleTag]) %}
+
+<div class="flex flex--justify-between">
+  <h1>{{ title }}</h1>
+  <div>
+    <select id="filters" onchange="javascript:location.href = this.value;">
+      <option value="" selected disabled hidden>Category</option>
+      {% for item in caseStudyFilters %}
+        <option value="/{{ locale }}/solutions/case-studies/category/{{ item | slug }}/">
+          {{ item }}</a>
+        </option>
+      {% endfor %}
+    </select>
+  </div>
+</div>
+
 {% set caseStudies = pagination.items %}
-{% set caseStudyFilters = collections.caseStudyTags %}
 
-<h1>{{ title }}</h1>
-
-{% include "components/case-study-filters.njk" %}
-
-{% include "components/case-studies.njk" %}
+<ul class="ul grid grid--cols-4">
+  {% for item in caseStudies %}
+    <li>
+      {% include "components/case-study-card.njk" %}
+    </li>
+  {% endfor %}
+</ul>
 
 {% include "components/pagination.njk" %}
 

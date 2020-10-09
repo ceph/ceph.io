@@ -5,16 +5,16 @@
   permalink: '/{{ locale }}/news/blog{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1}}{% endif %}/index.html'
 ---
 
-{% set blogLocaleTag = locale + '-blog-post' %}
+{% set blogPostLocaleTag = locale + '-blog-post' %}
 {% set articleLocaleTag = locale + '-article' %}
-{% set blogFilters = collections[blogLocaleTag] | collectionTags([blogLocaleTag, articleLocaleTag]) %}
+{% set blogPostFilters = collections[blogPostLocaleTag] | collectionTags([blogPostLocaleTag, articleLocaleTag]) %}
 
 <div class="flex flex--justify-between">
   <h1>{{ title }}</h1>
   <div>
-    <select id="filters" onchange="javascript:location.href = this.value;">
-      {% for item in blogFilters %}
-        <option value="/{{ locale }}/news/blog/tag/{{ item | slug }}/">
+    <select onchange="javascript:location.href = this.value;">
+      {% for item in blogPostFilters %}
+        <option value="/{{ locale }}/news/blog/category/{{ item | slug }}/">
           {{ item }}</a>
         </option>
       {% endfor %}

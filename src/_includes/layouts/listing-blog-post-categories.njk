@@ -34,17 +34,17 @@
       return tagsSorted;
     }
   },
-  permalink: '/{{ locale }}/news/blog/tag/{{ tag }}/'
+  permalink: '/{{ locale }}/news/blog/category/{{ tag | slug }}/'
 }
 ---
 
 <h1>{{ title }} "{{ tag }}"</h1>
 
-{% set blogLocaleTag = locale + '-blog-post' %}
-{% set blogCategories = collections[tag] | collectionIncludesTag(blogLocaleTag) %}
+{% set blogPostLocaleTag = locale + '-blog-post' %}
+{% set blogPostCategories = collections[tag] | collectionIncludesTag(blogPostLocaleTag) %}
 
 <ul class="ul grid grid--cols-4">
-  {% for item in blogCategories %}
+  {% for item in blogPostCategories %}
     <li>
       {% include "components/blog-post-card.njk" %}
     </li>

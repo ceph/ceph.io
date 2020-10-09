@@ -13,8 +13,6 @@ module.exports = function (eleventyConfig) {
 
   // Collections
   const collectionsDir = `./src/_11ty/collections`;
-  eleventyConfig.addCollection('caseStudies', require(`${collectionsDir}/caseStudies.js`));
-  eleventyConfig.addCollection('caseStudyTags', require(`${collectionsDir}/caseStudyTags.js`));
   eleventyConfig.addCollection('eventsFuture', require(`${collectionsDir}/eventsFuture.js`));
   eleventyConfig.addCollection('eventsPast', require(`${collectionsDir}/eventsPast.js`));
   eleventyConfig.addCollection('eventTags', require(`${collectionsDir}/eventTags.js`));
@@ -53,10 +51,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias('hub-news', 'layouts/hub-news.njk');
   eleventyConfig.addLayoutAlias('hub-solutions', 'layouts/hub-solutions.njk');
   eleventyConfig.addLayoutAlias('listing-blog-posts', 'layouts/listing-blog-posts.njk');
-  eleventyConfig.addLayoutAlias('listing-blog-categories', 'layouts/listing-blog-categories.njk');
+  eleventyConfig.addLayoutAlias('listing-blog-post-categories', 'layouts/listing-blog-post-categories.njk');
   eleventyConfig.addLayoutAlias('listing-blog-search', 'layouts/listing-blog-search.njk');
   eleventyConfig.addLayoutAlias('listing-case-studies', 'layouts/listing-case-studies.njk');
-  eleventyConfig.addLayoutAlias('listing-case-study-tags', 'layouts/listing-case-study-tags.njk');
+  eleventyConfig.addLayoutAlias('listing-case-study-categories', 'layouts/listing-case-study-categories.njk');
   eleventyConfig.addLayoutAlias('listing-events', 'layouts/listing-events.njk');
   eleventyConfig.addLayoutAlias('listing-event-tags', 'layouts/listing-event-tags.njk');
   eleventyConfig.addLayoutAlias('listing-planet-ceph-articles', 'layouts/listing-planet-ceph-articles.njk');
