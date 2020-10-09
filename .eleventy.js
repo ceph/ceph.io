@@ -13,8 +13,6 @@ module.exports = function (eleventyConfig) {
 
   // Collections
   const collectionsDir = `./src/_11ty/collections`;
-  eleventyConfig.addCollection('blogPosts', require(`${collectionsDir}/blogPosts.js`));
-  eleventyConfig.addCollection('blogTags', require(`${collectionsDir}/blogTags.js`));
   eleventyConfig.addCollection('caseStudies', require(`${collectionsDir}/caseStudies.js`));
   eleventyConfig.addCollection('caseStudyTags', require(`${collectionsDir}/caseStudyTags.js`));
   eleventyConfig.addCollection('eventsFuture', require(`${collectionsDir}/eventsFuture.js`));
@@ -26,12 +24,15 @@ module.exports = function (eleventyConfig) {
 
   // Filters
   const filtersDir = `./src/_11ty/filters`;
+  eleventyConfig.addFilter('collectionIncludesTag', require(`${filtersDir}/collectionIncludesTag.js`));
+  eleventyConfig.addFilter('collectionTags', require(`${filtersDir}/collectionTags.js`));
   eleventyConfig.addFilter('formatDate', require(`${filtersDir}/formatDate.js`));
   eleventyConfig.addFilter('formatDateRange', require(`${filtersDir}/formatDateRange.js`));
   eleventyConfig.addFilter('futureDate', require(`${filtersDir}/futureDate.js`));
   eleventyConfig.addFilter('localeSelector', require(`${filtersDir}/localeSelector.js`));
   eleventyConfig.addFilter('pastDate', require(`${filtersDir}/pastDate.js`));
   eleventyConfig.addFilter('removeHtml', require(`${filtersDir}/removeHtml.js`));
+  eleventyConfig.addFilter('removeTagsFromArray', require(`${filtersDir}/removeTagsFromArray.js`));
   eleventyConfig.addFilter('squash', require(`${filtersDir}/squash.js`));
   eleventyConfig.addFilter('startsWith', require(`${filtersDir}/startsWith.js`));
   eleventyConfig.addFilter('truncate', require(`${filtersDir}/truncate.js`));
@@ -52,7 +53,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias('hub-news', 'layouts/hub-news.njk');
   eleventyConfig.addLayoutAlias('hub-solutions', 'layouts/hub-solutions.njk');
   eleventyConfig.addLayoutAlias('listing-blog-posts', 'layouts/listing-blog-posts.njk');
-  eleventyConfig.addLayoutAlias('listing-blog-tags', 'layouts/listing-blog-tags.njk');
+  eleventyConfig.addLayoutAlias('listing-blog-categories', 'layouts/listing-blog-categories.njk');
+  eleventyConfig.addLayoutAlias('listing-blog-search', 'layouts/listing-blog-search.njk');
   eleventyConfig.addLayoutAlias('listing-case-studies', 'layouts/listing-case-studies.njk');
   eleventyConfig.addLayoutAlias('listing-case-study-tags', 'layouts/listing-case-study-tags.njk');
   eleventyConfig.addLayoutAlias('listing-events', 'layouts/listing-events.njk');

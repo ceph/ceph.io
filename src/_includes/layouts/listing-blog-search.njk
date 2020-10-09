@@ -1,0 +1,17 @@
+---
+layout: base
+permalink: '/{{ locale }}/news/blog/search/'
+---
+
+<h1 class="h1">Search</h1>
+
+<form action="/{{ locale }}/news/blog/search/" method="get" class="search">
+  <label for="search-str">Search</label>
+  <input type="text" name="q" id="search-str" />
+  <button type="submit" id="search-submit" class="submit">Search</button>
+</form>
+
+<div id="search-results"></div>
+
+<script src="https://unpkg.com/lunr/lunr.js"></script>
+<script src="/js/search.js"></script>

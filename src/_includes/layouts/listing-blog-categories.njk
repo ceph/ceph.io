@@ -1,0 +1,52 @@
+---js
+{
+  layout: 'base',
+  title: 'Category',
+  pagination: {
+    size: 1,
+    alias: 'tag',
+    before: function(data) {
+      // array tag suffixes
+      const filterSuffix = ['blog-post', 'article'];
+
+      // single array of all tags in lowercase
+      const allTags = data
+        .map(item => {
+          const { tags = [] } = item.data;
+          return tags;
+        })
+        .reduce((collectedTags, tags) => {
+          return [...collectedTags, ...tags];
+        }, [])
+        .map(tag => tag.toLowerCase())
+        .filter(tag => {
+          return !filterSuffix.some(suffix => tag.endsWith(suffix))
+        });
+
+      // remove duplicate tags
+      const uniqueTags = [...new Set(allTags)];
+
+      // sort alphabetically
+      const tagsSorted = uniqueTags.sort((a, b) => {
+        return a.localeCompare(b);
+      });
+
+      return tagsSorted;
+    }
+  },
+  permalink: '/{{ locale }}/news/blog/tag/{{ tag }}/'
+}
+---
+
+<h1>{{ title }} "{{ tag }}"</h1>
+
+{% set blogLocaleTag = locale + '-blog-post' %}
+{% set blogCategories = collections[tag] | collectionIncludesTag(blogLocaleTag) %}
+
+<ul class="ul grid grid--cols-4">
+  {% for item in blogCategories %}
+    <li>
+      {% include "components/blog-post-card.njk" %}
+    </li>
+  {% endfor %}
+</ul>

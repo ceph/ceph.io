@@ -3,7 +3,7 @@
 module.exports = function (collection) {
   // single array of all tags in lowercase
   const allTags = collection
-    .getFilteredByGlob('./src/**/blog/**/*.md')
+    .getFilteredByTag('blog-post')
     .map(item => {
       const { tags = [] } = item.data;
       return tags;
@@ -25,5 +25,5 @@ module.exports = function (collection) {
     tag,
   }));
 
-  return blogTag;
+  return blogTag.map(({ tag }) => tag);
 };

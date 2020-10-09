@@ -4,7 +4,7 @@
  *
  * Time is reset 00:00 so as not to override the month/day
  *
- * @param {collection} data
+ * @param {object} collection
  */
 
 module.exports = collection => {

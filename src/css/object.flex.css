@@ -8,6 +8,10 @@
   justify-content: flex-end;
 }
 
+.flex--justify-between {
+  justify-content: space-between;
+}
+
 @media (--mq-sm) {
 }
 

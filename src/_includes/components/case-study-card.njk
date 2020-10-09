@@ -1,0 +1,4 @@
+<a href="{{ item.url }}">
+  <img class="mb-2" src="{% if item.data.image %}{{ item.data.image }}{% else %}https://via.placeholder.com/640x360{% endif %}" alt="" />
+</a>
+<a href="{{ item.url }}">{{ item.data.title }}</a>

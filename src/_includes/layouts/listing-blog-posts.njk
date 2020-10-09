@@ -1,25 +1,41 @@
 ---
-layout: base
-pagination:
-  data: collections.blogPosts
-  size: 2
-permalink: '/{{ locale }}/news/blog{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1}}{% endif %}/index.html'
+  layout: base
+  pagination:
+    size: 2
+  permalink: '/{{ locale }}/news/blog{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1}}{% endif %}/index.html'
 ---
 
+{% set blogLocaleTag = locale + '-blog-post' %}
+{% set articleLocaleTag = locale + '-article' %}
+{% set blogFilters = collections[blogLocaleTag] | collectionTags([blogLocaleTag, articleLocaleTag]) %}
+
+<div class="flex flex--justify-between">
+  <h1>{{ title }}</h1>
+  <div>
+    <select id="filters" onchange="javascript:location.href = this.value;">
+      {% for item in blogFilters %}
+        <option value="/{{ locale }}/news/blog/tag/{{ item | slug }}/">
+          {{ item }}</a>
+        </option>
+      {% endfor %}
+    </select>
+    <form action="/{{ locale }}/news/blog/search/" method="get" class="search">
+      <label for="search-str">Search</label>
+      <input type="text" name="q" id="search-str" />
+      <button type="submit" id="search-submit" class="submit">Search</button>
+    </form>
+  </div>
+</div>
+
 {% set blogPosts = pagination.items %}
-{% set blogFilters = collections.blogTags %}
 
-<h1>{{ title }}</h1>
-
-{% include "components/blog-filters.njk" %}
-
-<form action="/{{ locale }}/news/blog/search/" method="get" class="search">
-  <label for="search-str">Search</label>
-  <input type="text" name="q" id="search-str" />
-  <button type="submit" id="search-submit" class="submit">Search</button>
-</form>
-
-{% include "components/blog-posts.njk" %}
+<ul class="ul grid grid--cols-4">
+  {% for item in blogPosts %}
+    <li>
+      {% include "components/blog-post-card.njk" %}
+    </li>
+  {% endfor %}
+</ul>
 
 {% include "components/pagination.njk" %}
 

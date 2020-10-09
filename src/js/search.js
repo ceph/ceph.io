@@ -1,3 +1,5 @@
+const urlPath = window.location.pathname.split('/');
+const urlLocale = urlPath[1]; 
 const searchInput = document.getElementById('search-str');
 const searchSubmit = document.getElementById('search-submit');
 const searchresultsContainer = document.getElementById('search-results');
@@ -8,7 +10,7 @@ const query = urlParams.get('q');
 let postsIndex, searchIndex, searchResults, searchResultsHtml;
 
 async function initSearchIndex() {
-  const response = await fetch('/search.json');
+  const response = await fetch(`/${urlLocale}/news/blog/search.json`);
   postsIndex = await response.json();
   searchIndex = lunr(function () {
     this.field('title');
@@ -23,6 +25,8 @@ async function initSearchIndex() {
 }
 
 function search(searchQuery) {
+  searchInput.value = searchQuery;
+
   const searchResults = searchIndex.search(searchQuery);
 
   searchResults.forEach(result => {
