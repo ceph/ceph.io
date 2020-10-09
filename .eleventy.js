@@ -16,8 +16,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection('eventsFuture', require(`${collectionsDir}/eventsFuture.js`));
   eleventyConfig.addCollection('eventsPast', require(`${collectionsDir}/eventsPast.js`));
   eleventyConfig.addCollection('eventTags', require(`${collectionsDir}/eventTags.js`));
-  eleventyConfig.addCollection('pressReleases', require(`${collectionsDir}/pressReleases.js`));
-  eleventyConfig.addCollection('pressReleaseTags', require(`${collectionsDir}/pressReleaseTags.js`));
   eleventyConfig.addCollection('primary', require(`${collectionsDir}/primary.js`));
 
   // Filters
@@ -59,7 +57,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias('listing-event-tags', 'layouts/listing-event-tags.njk');
   eleventyConfig.addLayoutAlias('listing-planet-ceph-articles', 'layouts/listing-planet-ceph-articles.njk');
   eleventyConfig.addLayoutAlias('listing-press-releases', 'layouts/listing-press-releases.njk');
-  eleventyConfig.addLayoutAlias('listing-press-release-tags', 'layouts/listing-press-release-tags.njk');
+  eleventyConfig.addLayoutAlias('listing-press-release-categories', 'layouts/listing-press-release-categories.njk');
 
   // Shortcodes
   const shortcodesDir = `./src/_11ty/shortcodes`;

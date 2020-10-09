@@ -1,0 +1,52 @@
+---js
+{
+  layout: 'base',
+  title: 'Category',
+  pagination: {
+    size: 1,
+    alias: 'tag',
+    before: function(data) {
+      // array tag suffixes
+      const filterSuffix = ['press-release'];
+
+      // single array of all tags in lowercase
+      const allTags = data
+        .map(item => {
+          const { tags = [] } = item.data;
+          return tags;
+        })
+        .reduce((collectedTags, tags) => {
+          return [...collectedTags, ...tags];
+        }, [])
+        .map(tag => tag.toLowerCase())
+        .filter(tag => {
+          return !filterSuffix.some(suffix => tag.endsWith(suffix))
+        });
+
+      // remove duplicate tags
+      const uniqueTags = [...new Set(allTags)];
+
+      // sort alphabetically
+      const tagsSorted = uniqueTags.sort((a, b) => {
+        return a.localeCompare(b);
+      });
+
+      return tagsSorted;
+    }
+  },
+  permalink: '/{{ locale }}/news/press-releases/category/{{ tag | slug }}/'
+}
+---
+
+<h1>{{ title }} "{{ tag }}"</h1>
+
+{% set pressReleaseLocaleTag = locale + '-press-release' %}
+{% set pressReleaseCategories = collections[tag] | collectionIncludesTag(pressReleaseLocaleTag) %}
+
+<ul class="ul grid grid--cols-4">
+  {% for item in pressReleaseCategories %}
+    <li>
+      {% include "components/press-release-card.njk" %}
+    </li>
+  {% endfor %}
+</ul>

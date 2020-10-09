@@ -13,6 +13,7 @@
   <h1>{{ title }}</h1>
   <div>
     <select onchange="javascript:location.href = this.value;">
+      <option value="" selected disabled hidden>Category</option>
       {% for item in blogPostFilters %}
         <option value="/{{ locale }}/news/blog/category/{{ item | slug }}/">
           {{ item }}</a>

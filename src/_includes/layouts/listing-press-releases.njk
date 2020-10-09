@@ -1,19 +1,36 @@
 ---
 layout: base
 pagination:
-  data: collections.pressReleases
   size: 2
 permalink: '/{{ locale }}/news/press-releases{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1}}{% endif %}/index.html'
 ---
 
+{% set pressReleaseLocaleTag = locale + '-press-release' %}
+{% set pressReleaseFilters = collections[pressReleaseLocaleTag] | collectionTags([pressReleaseLocaleTag]) %}
+
+<div class="flex flex--justify-between">
+  <h1>{{ title }}</h1>
+  <div>
+    <select id="filters" onchange="javascript:location.href = this.value;">
+      <option value="" selected disabled hidden>Category</option>
+      {% for item in pressReleaseFilters %}
+        <option value="/{{ locale }}/news/press-releases/category/{{ item | slug }}/">
+          {{ item }}</a>
+        </option>
+      {% endfor %}
+    </select>
+  </div>
+</div>
+
 {% set pressReleases = pagination.items %}
-{% set pressReleaseFilters = collections.pressReleaseTags %}
 
-<h1>{{ title }}</h1>
-
-{% include "components/press-release-filters.njk" %}
-
-{% include "components/press-releases.njk" %}
+<ul class="ul grid grid--cols-4">
+  {% for item in pressReleases %}
+    <li>
+      {% include "components/press-release-card.njk" %}
+    </li>
+  {% endfor %}
+</ul>
 
 {% include "components/pagination.njk" %}
 
