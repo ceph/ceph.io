@@ -1,22 +1,67 @@
----
-layout: base
-pagination:
-  data: collections.eventsPast
-  size: 12
-permalink: '/{{ locale }}/community/events{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1}}{% endif %}/index.html'
+---js
+{
+  layout: 'base',
+  pagination: {
+    size: 12,
+    reverse: true,
+    before: function(data) {
+      const currentDate = new Date().setHours(0, 0, 0, 0);
+
+      return data.filter(item => {
+        const formattedDate = new Date(item.data.date).setHours(0, 0, 0, 0);
+        return formattedDate < currentDate;
+      });
+    },
+  },
+  permalink: '/{{ locale }}/community/events{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1}}{% endif %}/index.html'
+}
 ---
 
-{% set eventsFuture = collections.eventsFuture %}
+{% set eventLocaleTag = locale + '-event' %}
+{% set eventFilters = collections[eventLocaleTag] | collectionTags([eventLocaleTag]) %}
+
+<div class="flex flex--justify-between">
+  <h1>{{ title }}</h1>
+  <div>
+    <select onchange="javascript:location.href = this.value;">
+      <option value="" selected disabled hidden>Category</option>
+      {% for item in eventFilters %}
+        <option value="/{{ locale }}/community/events/category/{{ item | slug }}/">
+          {{ item }}</a>
+        </option>
+      {% endfor %}
+    </select>
+  </div>
+</div>
+
+{% set eventsFuture = collections[eventLocaleTag] | futureDate | reverse %}
+
+{% if pagination.pageNumber === 0 %}
+  <h2 class="h3">Coming up</h2>
+  {% if eventsFuture.length > 0 %}
+    <ul class="ul grid grid--cols-4">
+      {% for item in eventsFuture %}
+        <li>
+          {% include "components/event-card.njk" %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="p">There are no upcoming events</p>
+  {% endif %}
+{% endif %}
+
 {% set eventsPast = pagination.items %}
-{% set eventFilters = collections.eventTags %}
 
-<h1>{{ title }}</h1>
+<h2 class="h3">Previous events</h2>
 
-{% include "components/event-filters.njk" %}
-
-{% include "components/events-future.njk" %}
-
-{% include "components/events-past.njk" %}
+<ul class="ul grid grid--cols-4">
+  {% for item in eventsPast %}
+    <li>
+      {% include "components/event-card.njk" %}
+    </li>
+  {% endfor %}
+</ul>
 
 {% include "components/pagination.njk" %}
 

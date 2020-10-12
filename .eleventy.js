@@ -13,9 +13,6 @@ module.exports = function (eleventyConfig) {
 
   // Collections
   const collectionsDir = `./src/_11ty/collections`;
-  eleventyConfig.addCollection('eventsFuture', require(`${collectionsDir}/eventsFuture.js`));
-  eleventyConfig.addCollection('eventsPast', require(`${collectionsDir}/eventsPast.js`));
-  eleventyConfig.addCollection('eventTags', require(`${collectionsDir}/eventTags.js`));
   eleventyConfig.addCollection('primary', require(`${collectionsDir}/primary.js`));
 
   // Filters
@@ -54,7 +51,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias('listing-case-studies', 'layouts/listing-case-studies.njk');
   eleventyConfig.addLayoutAlias('listing-case-study-categories', 'layouts/listing-case-study-categories.njk');
   eleventyConfig.addLayoutAlias('listing-events', 'layouts/listing-events.njk');
-  eleventyConfig.addLayoutAlias('listing-event-tags', 'layouts/listing-event-tags.njk');
+  eleventyConfig.addLayoutAlias('listing-event-categories', 'layouts/listing-event-categories.njk');
   eleventyConfig.addLayoutAlias('listing-planet-ceph-articles', 'layouts/listing-planet-ceph-articles.njk');
   eleventyConfig.addLayoutAlias('listing-press-releases', 'layouts/listing-press-releases.njk');
   eleventyConfig.addLayoutAlias('listing-press-release-categories', 'layouts/listing-press-release-categories.njk');

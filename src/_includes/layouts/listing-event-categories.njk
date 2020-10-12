@@ -7,7 +7,7 @@
     alias: 'tag',
     before: function(data) {
       // array tag suffixes
-      const filterSuffix = ['press-release'];
+      const filterSuffix = ['event'];
 
       // single array of all tags in lowercase
       const allTags = data
@@ -34,19 +34,19 @@
       return tagsSorted;
     }
   },
-  permalink: '/{{ locale }}/news/press-releases/category/{{ tag | slug }}/'
+  permalink: '/{{ locale }}/community/events/category/{{ tag | slug }}/'
 }
 ---
 
 <h1>{{ title }} "{{ tag }}"</h1>
 
-{% set pressReleaseLocaleTag = locale + '-press-release' %}
-{% set pressReleaseCategories = collections[tag] | collectionIncludesTag(pressReleaseLocaleTag) | reverse %}
+{% set eventLocaleTag = locale + '-event' %}
+{% set eventCategories = collections[tag] | collectionIncludesTag(eventLocaleTag) | reverse %}
 
 <ul class="ul grid grid--cols-4">
-  {% for item in pressReleaseCategories %}
+  {% for item in eventCategories %}
     <li>
-      {% include "components/press-release-card.njk" %}
+      {% include "components/event-card.njk" %}
     </li>
   {% endfor %}
 </ul>

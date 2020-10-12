@@ -4,13 +4,11 @@ date: 2019-10-07
 end: 2019-10-07
 location: Vancouver, Canada
 venue: Student Central, Malet Street, Vancouver
-map: 'https://goo.gl/maps/6isXCefxCPw6V6wu7'
-register: 'https://www.eventbrite.com/'
+map: "https://goo.gl/maps/6isXCefxCPw6V6wu7"
+register: "https://www.eventbrite.com/"
 tags:
-  - 'ceph days'
+  - "ceph days"
 ---
-
-# {{ title }}
 
 ## Bringing Ceph to Vancouver
 

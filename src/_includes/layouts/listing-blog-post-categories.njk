@@ -41,7 +41,7 @@
 <h1>{{ title }} "{{ tag }}"</h1>
 
 {% set blogPostLocaleTag = locale + '-blog-post' %}
-{% set blogPostCategories = collections[tag] | collectionIncludesTag(blogPostLocaleTag) %}
+{% set blogPostCategories = collections[tag] | collectionIncludesTag(blogPostLocaleTag) | reverse %}
 
 <ul class="ul grid grid--cols-4">
   {% for item in blogPostCategories %}

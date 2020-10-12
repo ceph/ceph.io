@@ -4,13 +4,11 @@ date: 2021-02-20
 end: 2021-03-01
 location: Wrocław, Poland
 venue: Hotel ibis Styles, Wrocław Centrum, Poland
-map: 'https://goo.gl/maps/6isXCefxCPw6V6wu7'
-register: 'https://www.eventbrite.com/'
+map: "https://goo.gl/maps/6isXCefxCPw6V6wu7"
+register: "https://www.eventbrite.com/"
 tags:
-  - 'ceph days'
+  - "ceph days"
 ---
-
-# {{ title }}
 
 ## Bringing Ceph to Poland
 

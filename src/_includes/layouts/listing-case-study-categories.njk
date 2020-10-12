@@ -41,7 +41,7 @@
 <h1>{{ title }} "{{ tag }}"</h1>
 
 {% set caseStudyLocaleTag = locale + '-case-study' %}
-{% set caseStudyCategories = collections[tag] | collectionIncludesTag(caseStudyLocaleTag) %}
+{% set caseStudyCategories = collections[tag] | collectionIncludesTag(caseStudyLocaleTag) | reverse %}
 
 <ul class="ul grid grid--cols-4">
   {% for item in caseStudyCategories %}

@@ -2,11 +2,25 @@
 layout: base
 ---
 
+{# TEMP #}
+{# Hands free way to target an intro paragraph #}
+<style>
+  .intro-para > p:first-child {
+    font-weight: bold;
+  }
+</style>
+
 <div class="grid grid--cols-auto-72">
   <div>
-    {{ content | safe }}
+    <h1 class="h1">{{ title }}</h1>
+    {% if image %}
+      <img class="mb-2" src="{{ image }}" alt="" />
+    {% endif %}
+    <div class="intro-para">
+      {{ content | safe }}
+    </div>
   </div>
-  <div>
+  <aside>
     <h3 class="h4">{{ 'event_details' | i18n }}</h3>
     <time datetime="{{ date }}">{{ date | formatDateRange(end, locale) }}</time>
     <p>{{ location }}</p>
@@ -31,5 +45,5 @@ layout: base
     <hr>
     <h3 class="h4">{{ 'share_this_article' | i18n }}</h3>
     <p>...</p>
-  </div>
+  </aside>
 </div>
