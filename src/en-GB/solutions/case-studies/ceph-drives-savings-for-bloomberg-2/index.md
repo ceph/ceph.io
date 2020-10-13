@@ -1,6 +1,6 @@
 ---
 title: Ceph drives savings for Bloomberg 2
-date: 2020-07-17
+date: 2020-07-16
 author: Lenz Grimmer
 sponsor:
   name: "SUSE"

@@ -1,9 +1,9 @@
 /**
  * Formats a date range in the most concise way based on the locale
  *
- * @param {date} date
- * @param {date} end
- * @param {string} locale
+ * @param {Date} date
+ * @param {Date} end
+ * @param {String} locale
  *
  */
 

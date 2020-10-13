@@ -5,3 +5,15 @@ order: 5
 ---
 
 <h1>What’s new</h1>
+
+<h2>Latest articles</h2>
+
+{% set articles = collections['en-GB-article'] | reverse | limitItems(4) %}
+
+<ul class="ul grid grid--cols-4">
+  {% for item in articles %}
+  <li>
+    {% include "components/article-card.njk" %}
+  </li>
+  {% endfor %}
+</ul>

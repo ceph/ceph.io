@@ -17,11 +17,13 @@ module.exports = function (eleventyConfig) {
 
   // Filters
   const filtersDir = `./src/_11ty/filters`;
+  eleventyConfig.addFilter('articleType', require(`${filtersDir}/articleType.js`));
   eleventyConfig.addFilter('collectionIncludesTag', require(`${filtersDir}/collectionIncludesTag.js`));
   eleventyConfig.addFilter('collectionTags', require(`${filtersDir}/collectionTags.js`));
   eleventyConfig.addFilter('formatDate', require(`${filtersDir}/formatDate.js`));
   eleventyConfig.addFilter('formatDateRange', require(`${filtersDir}/formatDateRange.js`));
   eleventyConfig.addFilter('futureDate', require(`${filtersDir}/futureDate.js`));
+  eleventyConfig.addFilter('limitItems', require(`${filtersDir}/limitItems.js`));
   eleventyConfig.addFilter('localeSelector', require(`${filtersDir}/localeSelector.js`));
   eleventyConfig.addFilter('pastDate', require(`${filtersDir}/pastDate.js`));
   eleventyConfig.addFilter('removeHtml', require(`${filtersDir}/removeHtml.js`));

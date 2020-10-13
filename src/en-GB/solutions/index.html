@@ -5,3 +5,15 @@ order: 2
 ---
 
 <h1>Solutions</h1>
+
+<h2>Recent case studies</h2>
+
+{% set caseStudies = collections['en-GB-case-study'] | reverse | limitItems(6) %}
+
+<ul class="ul grid grid--cols-6">
+  {% for item in caseStudies %}
+  <li>
+    {% include "components/case-study-card.njk" %}
+  </li>
+  {% endfor %}
+</ul>

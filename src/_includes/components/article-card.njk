@@ -1,0 +1,10 @@
+<a href="{{ item.url }}">
+  <img class="mb-2" src="{% if item.data.image %}{{ item.data.image }}{% else %}https://via.placeholder.com/640x360{% endif %}" alt="" />
+</a>
+<p>{{ item.data.tags | articleType }}</p>
+<a href="{{ item.url }}">{{ item.data.title }}</a>
+<p class="p text-xs color-grey-500 mt-1">
+  <time datetime="{{ item.data.date }}">{{ item.data.date | formatDate(locale) }}</time>{% if item.data.author %} by {{ item.data.author }}{% endif %}
+</p>
+<p class="p text-sm text-leading-tighter">{{ item.templateContent | removeHtml | truncate }}</p>
+

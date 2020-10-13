@@ -1,4 +1,3 @@
-//
 /**
  * Returns all tags from a specific collection flattened
  * into an single array keyed with only strings
@@ -7,14 +6,10 @@
  *
  * It provides an optional tags value to remove tag/s
  *
- * [
- *  string,
- *  string,
- *  string
- * ]
+ * ['string', 'string', 'string' ]
  *
- * @param {data} collection
- * @param {array} filterTags
+ * @param {Array} collection
+ * @param {Array} filterTags
  *
  */
 

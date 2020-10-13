@@ -1,10 +1,10 @@
 /**
- * Remove tag from an array tags
+ * Remove tags from an array of tags
  *
  * ['string', 'string', 'string' ]
  *
- * @param {array} tags
- * @param {array} filterTags
+ * @param {Array} tags
+ * @param {Array} filterTags
  *
  */
 

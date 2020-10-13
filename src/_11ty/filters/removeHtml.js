@@ -1,7 +1,7 @@
 /**
  * Remove all html elements from string
  *
- * @param {string} text
+ * @param {String} text
  *
  */
 

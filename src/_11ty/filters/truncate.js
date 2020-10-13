@@ -1,9 +1,9 @@
 /**
  * Truncates text to a specific length and appends ...
  *
- * @param {string} text
- * @param {number} length
- * @param {string} append
+ * @param {String} text
+ * @param {Number} length
+ * @param {String} append
  *
  */
 

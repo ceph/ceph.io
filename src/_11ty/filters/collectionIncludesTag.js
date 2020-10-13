@@ -2,8 +2,8 @@
  * Checks a collections tags to see if it contains a specific
  * tag and returns the collection if true
  *
- * @param {object} collection
- * @param {string} filterTag
+ * @param {Array} collection
+ * @param {String} filterTag
  *
  */
 
