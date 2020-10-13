@@ -19,7 +19,7 @@
 
 /* casing */
 .text-capitalise {
-  text-transform: capitalise;
+  text-transform: capitalize;
 }
 
 .text-lower {

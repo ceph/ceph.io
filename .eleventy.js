@@ -26,6 +26,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('limitItems', require(`${filtersDir}/limitItems.js`));
   eleventyConfig.addFilter('localeSelector', require(`${filtersDir}/localeSelector.js`));
   eleventyConfig.addFilter('pastDate', require(`${filtersDir}/pastDate.js`));
+  eleventyConfig.addFilter('randomOrder', require(`${filtersDir}/randomOrder.js`));
   eleventyConfig.addFilter('removeHtml', require(`${filtersDir}/removeHtml.js`));
   eleventyConfig.addFilter('removeTagsFromArray', require(`${filtersDir}/removeTagsFromArray.js`));
   eleventyConfig.addFilter('squash', require(`${filtersDir}/squash.js`));

@@ -1,5 +1,5 @@
 ---
-title: Ceph drives savings for Bloomberg 3
+title: Ceph drives savings for Bloomberg 5
 date: 2020-07-15
 author: Lenz Grimmer
 sponsor:
@@ -7,7 +7,7 @@ sponsor:
   logo: "https://via.placeholder.com/50"
   website: "https://www.suse.com"
 tags:
-  - "media"
+  - "technology"
 ---
 
 Vestibulum auctor sem in nisi aliquet, non scelerisque tortor posuere. Aenean non erat efficitur, malesuada sapien porttitor, sollicitudin augue. In malesuada cursus massa, in aliquet leo maximus vitae.

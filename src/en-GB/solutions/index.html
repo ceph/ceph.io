@@ -8,12 +8,25 @@ order: 2
 
 <h2>Recent case studies</h2>
 
-{% set caseStudies = collections['en-GB-case-study'] | reverse | limitItems(6) %}
+{% set recentCaseStudies = collections['en-GB-case-study'] | reverse | limitItems(6) %}
 
 <ul class="ul grid grid--cols-6">
-  {% for item in caseStudies %}
+  {% for item in recentCaseStudies %}
   <li>
     {% include "components/case-study-card.njk" %}
+  </li>
+  {% endfor %}
+</ul>
+
+{% set browseCaseStudies = collections['en-GB-case-study'] | collectionTags | removeTagsFromArray(['en-GB-case-study']) | randomOrder |
+limitItems(6) %}
+
+<h2>Browse more case studies</h2>
+
+<ul class="ul grid grid--cols-3">
+  {% for item in browseCaseStudies %}
+  <li>
+    {% include "components/case-study-category-card.njk" %}
   </li>
   {% endfor %}
 </ul>
