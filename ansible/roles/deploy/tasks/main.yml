@@ -7,6 +7,18 @@
   tags:
     - packages
 
+- name: node path permissions
+  file:
+    path: "{{ item }}"
+    recurse: yes
+    owner: jenkins-build
+  with_items:
+    - /home/jenkins-build/.npm
+    - /usr/lib/node_modules
+    - /usr/local
+  tags:
+    - npm
+
 - name: Ensure a home for site and tempdir to build in
   file:
     path: "{{ item }}"
