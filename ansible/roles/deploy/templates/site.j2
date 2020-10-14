@@ -29,13 +29,13 @@ server {
     rewrite_by_lua '
       for lang in (ngx.var.http_accept_language .. ","):gmatch("([^,]*),") do
         if string.sub(lang, 0, 2) == "en" then
-          ngx.redirect("/en-GB/index.html")
+          ngx.redirect("/en-GB/")
         end
         if string.sub(lang, 0, 2) == "ja" then
-          ngx.redirect("/ja-JP/index.html")
+          ngx.redirect("/ja-JP/")
         end
       end
-      ngx.redirect("/en-GB/index.html")
+      ngx.redirect("/en-GB/")
     ';
   }
 
@@ -82,13 +82,13 @@ server {
     rewrite_by_lua '
       for lang in (ngx.var.http_accept_language .. ","):gmatch("([^,]*),") do
         if string.sub(lang, 0, 2) == "en" then
-          ngx.redirect("/en-GB/index.html")
+          ngx.redirect("/en-GB/")
         end
         if string.sub(lang, 0, 2) == "ja" then
-          ngx.redirect("/ja-JP/index.html")
+          ngx.redirect("/ja-JP/")
         end
       end
-      ngx.redirect("/en-GB/index.html")
+      ngx.redirect("/en-GB/")
     ';
   }
 
