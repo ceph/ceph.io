@@ -17,6 +17,14 @@
   background-color: var(--color-grey-200);
 }
 
+.bg-grey-300 {
+  background-color: var(--color-grey-300);
+}
+
+.bg-grey-400 {
+  background-color: var(--color-grey-400);
+}
+
 /* border color */
 .border-black {
   border-color: var(--color-black);
