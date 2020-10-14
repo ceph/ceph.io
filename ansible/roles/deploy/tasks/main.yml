@@ -65,6 +65,7 @@
   command:
     cmd: npm install
     chdir: "{{ install_dir }}/{{ branch }}.tmp"
+  become_user: jenkins-build
   tags:
     - npm
 
@@ -72,6 +73,7 @@
   command:
     cmd: npm run build
     chdir: "{{ install_dir }}/{{ branch }}.tmp"
+  become_user: jenkins-build
   tags:
     - npm
 
