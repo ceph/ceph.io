@@ -19,6 +19,12 @@
   tags:
     - npm
 
+- name: Install desired node version
+  shell: "npm cache clean -f; npm install -g n; n {{ node_version }}"
+  become_user: jenkins-build
+  tags:
+    - npm
+
 - name: Ensure a home for site and tempdir to build in
   file:
     path: "{{ item }}"

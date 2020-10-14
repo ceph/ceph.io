@@ -47,6 +47,8 @@ I'd be surprised if this playbook got reused for any purpose other than setting 
 |     - certbot                                |                                                                                               |
 |     - npm                                    |                                                                                               |
 +----------------------------------------------+-----------------------------------------------------------------------------------------------+
+| ``node_version: 14.2.0``                     | Desired node version.                                                                         |
++----------------------------------------------+-----------------------------------------------------------------------------------------------+
 
 Note that ``ufw`` and ``fail2ban`` get installed by the afformentioned public_facing_ role.
 
