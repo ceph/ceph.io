@@ -8,7 +8,7 @@ order: 5
 
 <h2>Latest articles</h2>
 
-{% set articles = collections['en-GB-article'] | reverse | limitItems(4) %}
+{% set articleLocaleTag = locale + '-article' %} {% set articles = collections[articleLocaleTag] | reverse | limitItems(4) %}
 
 <ul class="ul grid grid--cols-4">
   {% for item in articles %}
@@ -16,4 +16,32 @@ order: 5
     {% include "components/article-card.njk" %}
   </li>
   {% endfor %}
+</ul>
+
+<h2>Find out more</h2>
+
+<ul class="ul grid grid--cols-3">
+  <li>
+    <p class="p text-sm text-leading-tighter">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a felis odio. Integer interdum ipsum sed ante luctus, quis
+      vehicula magna consequat. Donec dignissim vestibulum lorem, sed pulvinar erat consequat sed. Quisque elementum sem eget magna feugiat
+      mattis.
+    </p>
+  </li>
+  <li>
+    <img class="mb-2" src="https://via.placeholder.com/640x360" alt="" />
+    <h3>Planet Ceph</h3>
+    <p class="p text-sm text-leading-tighter">
+      Donec dignissim vestibulum lorem, sed pulvinar erat consequat sed. Quisque elementum sem eget magna feugiat mattis.
+    </p>
+    <a href="/{{ locale }}/news/planet-ceph/">View Planet Ceph articles</a>
+  </li>
+  <li>
+    <img class="mb-2" src="https://via.placeholder.com/640x360" alt="" />
+    <h3>Publications</h3>
+    <p class="p text-sm text-leading-tighter">
+      Donec dignissim vestibulum lorem, sed pulvinar erat consequat sed. Quisque elementum sem eget magna feugiat mattis.
+    </p>
+    <a href="/{{ locale }}/news/publications/" target="_blank" rel="noreferrer noopener">Download publications</a>
+  </li>
 </ul>

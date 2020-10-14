@@ -8,7 +8,8 @@ order: 2
 
 <h2>Recent case studies</h2>
 
-{% set recentCaseStudies = collections['en-GB-case-study'] | reverse | limitItems(6) %}
+{% set caseStudyLocaleTag = locale + '-case-study' %} {% set recentCaseStudies = collections[caseStudyLocaleTag] | reverse | limitItems(6)
+%}
 
 <ul class="ul grid grid--cols-6">
   {% for item in recentCaseStudies %}
@@ -18,7 +19,7 @@ order: 2
   {% endfor %}
 </ul>
 
-{% set browseCaseStudies = collections['en-GB-case-study'] | collectionTags | removeTagsFromArray(['en-GB-case-study']) | randomOrder |
+{% set browseCaseStudies = collections[caseStudyLocaleTag] | collectionTags | removeTagsFromArray([caseStudyLocaleTag]) | randomOrder |
 limitItems(6) %}
 
 <h2>Browse more case studies</h2>
