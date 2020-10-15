@@ -1,0 +1,40 @@
+---
+layout: base
+---
+
+{# TEMP #}
+{# Hands free way to target an intro paragraph #}
+<style>
+  .intro-para > p:first-child {
+    font-weight: bold;
+  }
+</style>
+
+<div class="grid grid--cols-auto-72">
+  <div>
+    <h1 class="h1">{{ title }}</h1>
+    <time class="block mb-2" datetime="{{ page.date }}">{{ page.date | formatDate(locale) }}</time>
+    {% if image %}
+      <img class="mb-2" src="{{ image }}" alt="" />
+    {% endif %}
+    <div class="intro-para">
+      {{ content | safe }}
+    </div>
+  </div>
+  <aside>
+    <h2 class="h4">{{ 'share_this_article' | i18n }}</h2>
+    {% include "components/social-shares.njk" %}
+
+    {% set blogPostLocaleTag = locale + '-blog-post' %}
+    {% set articleLocaleTag = locale + '-article' %}
+
+    <h2 id="tags-desc" class="h4">{{ 'read_more_articles_like_this' | i18n }}</h2>
+    <ul class="ul" aria-describedby="tags-desc">
+      {% for item in tags | removeTagsFromArray([blogPostLocaleTag, articleLocaleTag]) %}
+        <li>
+          <a href="/{{ locale }}/news/blog/tag/{{ item | slug }}/">#{{ item }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </aside>
+</div>
