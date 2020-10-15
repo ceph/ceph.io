@@ -2,10 +2,9 @@ module.exports = {
   title: 'Ceph',
   url: 'https://ceph.io',
   buildTime: new Date(),
-  languages: [
-    {
-      label: 'English',
-      code: 'en',
-    },
-  ],
+  defaultLanguage: 'en-GB',
+  social: {
+    facebook: '@cephstorage',
+    twitter: '@ceph'
+  }  
 };

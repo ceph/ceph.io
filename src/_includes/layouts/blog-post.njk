@@ -23,7 +23,7 @@ layout: base
   </div>
   <aside>
     <h2 class="h4">{{ 'share_this_article' | i18n }}</h2>
-    <p>...</p>
+    {% include "components/social-shares.njk" %}
 
     {% set blogPostLocaleTag = locale + '-blog-post' %}
     {% set articleLocaleTag = locale + '-article' %}

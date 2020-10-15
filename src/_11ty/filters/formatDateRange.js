@@ -7,7 +7,7 @@
  *
  */
 
-module.exports = (date, end, locale = 'en-GB') => {
+module.exports = (date, end, locale = site.defaultLanguage) => {
   const endDate = new Date(end || date);
 
   return new Intl.DateTimeFormat(locale, {
