@@ -31,6 +31,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('removeTagsFromArray', require(`${filtersDir}/removeTagsFromArray.js`));
   eleventyConfig.addFilter('squash', require(`${filtersDir}/squash.js`));
   eleventyConfig.addFilter('startsWith', require(`${filtersDir}/startsWith.js`));
+  eleventyConfig.addFilter('techTalkDate', require(`${filtersDir}/techTalkDate.js`));
   eleventyConfig.addFilter('truncate', require(`${filtersDir}/truncate.js`));
 
   // Layout aliases — TBC if this is bringing enough benefit

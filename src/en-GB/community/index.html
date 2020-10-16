@@ -112,3 +112,26 @@ order: 4
 {% else %}
 <p class="p">There are no upcoming events</p>
 {% endif %}
+
+<div class="grid grid--cols-2 grid--align-end mb-6">
+  <div>
+    <h2 class="h3 mb-0">Featured tech talks</h2>
+  </div>
+  <div class="text-right">
+    <a href="/{{ locale }}/community/tech-talks/" class="ml-6">See all tech talks</a>
+  </div>
+</div>
+
+<ul class="ul grid grid--cols-4">
+  {% for item in tech_talks %}
+  <li>
+    <img
+      class="mb-2"
+      src="{% if item.image %}{{ item.image }}{% else %}https://via.placeholder.com/640x360?text=placeholder{% endif %}"
+      alt=""
+    />
+    <time datetime="{{ item.date }}">{{ item.date | formatDate(locale) }}</time>
+    <a href="{{ item.url }}" target="_blank" rel="noreferrer noopener">{{ item.title }}</a> [{{ item.presenter }}]
+  </li>
+  {% endfor %}
+</ul>

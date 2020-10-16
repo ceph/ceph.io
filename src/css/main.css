@@ -15,6 +15,7 @@
 @import "base.typography.css";
 
 /* objects */
+@import "object.aspect-ratio.css";
 @import "object.flex.css";
 @import "object.grid.css";
 @import "object.wrapper.css";

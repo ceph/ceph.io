@@ -1,0 +1,71 @@
+{
+  "tech_talks": [
+    {
+      "date": "2020-10-30",
+      "title": "This is a dummy coming soon event",
+      "presenter": "Karan Singh",
+      "url": "https://www.youtube.com/watch?v=vQF17UBU4RE"
+    },
+    {
+      "date": "2020-10-01",
+      "title": "Scale Testing Ceph with 10Billion+ Objects",
+      "presenter": "Karan Singh",
+      "url": "https://www.youtube.com/watch?v=vQF17UBU4RE",
+      "image": "https://via.placeholder.com/640x360?text=Scale Testing Ceph"
+    },
+    {
+      "date": "2020-08-27",
+      "title": "STS ( Secure Token Service) in RGW",
+      "presenter": "Pritha Srivastava",
+      "url": "https://www.youtube.com/watch?v=Lc32meILfNI&list=PLrBUGiINAakM36YJiTT0qYepZTVncFDdc&index=1"
+    },
+    {
+      "date": "2020-08-20",
+      "title": "Edge Application: Streaming Multiple Video Sources",
+      "presenter": "Neeha Kompala & Jason Weng",
+      "url": "https://www.youtube.com/watch?v=Q8bU-m07Czo&list=PLrBUGiINAakM36YJiTT0qYepZTVncFDdc"
+    },
+    {
+      "date": "2020-07-23",
+      "title": "A Different Scale – Running small ceph clusters in multiple data centers",
+      "presenter": "Yuval Freund",
+      "url": "https://www.youtube.com/watch?list=PLrBUGiINAakM36YJiTT0qYepZTVncFDdc&v=XS7jpFxUYQ0&feature=emb_title"
+    },
+    {
+      "date": "2020-06-25",
+      "title": "Solving the Bug of the Year",
+      "presenter": "Dan van der Ster",
+      "url": "https://www.youtube.com/watch?v=_4HUR00oCGo"
+    },
+    {
+      "date": "2020-05-28",
+      "title": "What’s New In the Octopus Release",
+      "presenter": "Josh Durgin & Lenz Grimmer",
+      "url": "https://www.youtube.com/watch?v=UGU-rGiEex8"
+    },
+    {
+      "date": "2020-01-23",
+      "title": "Ceph for Storing MeerKAT Radio Telescope Data",
+      "presenter": "Thomas Bennett",
+      "url": "https://youtu.be/uhJBYhGoS40"
+    },
+    {
+      "date": "2019-10-24",
+      "title": "Ceph at NASA",
+      "presenter": "Kevin Hrpcek",
+      "url": "https://www.youtube.com/watch?list=PLrBUGiINAakM36YJiTT0qYepZTVncFDdc&time_continue=3&v=neRsay1Ql_U"
+    },
+    {
+      "date": "2019-06-27",
+      "title": "Intro to Ceph",
+      "presenter": "Sage Weil",
+      "url": "https://www.youtube.com/watch?list=PLrBUGiINAakM36YJiTT0qYepZTVncFDdc&v=PmLPbrf-x9g"
+    },
+    {
+      "date": "2019-01-27",
+      "title": "NooBaa Software Defined Storage",
+      "presenter": "GuyMargalit",
+      "url": "https://www.noobaa.com/"
+    }
+  ]
+}
