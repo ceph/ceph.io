@@ -1,17 +1,16 @@
 /**
- * Remove items that are older or not equal to the current date based on month/day
- * returning a collection of future items
+ * 
+ * Returns if the date is in the future compared to the build date.
  *
- * Time is reset 00:00 so as not to override the month/day
+ * Time is reset 00:00 so check is based soley on yyyy/mm
  *
- * @param {Array} collection
+ * @param {Date} date
+ * 
  */
 
-module.exports = collection => {
-  const currentDate = new Date().setHours(0, 0, 0, 0);
+module.exports = (date) => {
+  const buildDate = new Date().setHours(0, 0, 0, 0);
+  const itemDate = new Date(date).setHours(0, 0, 0, 0);
 
-  return collection.filter(item => {
-    const formattedDate = new Date(item.data.date).setHours(0, 0, 0, 0);
-    return formattedDate >= currentDate;
-  });
+  return itemDate >= buildDate;
 };

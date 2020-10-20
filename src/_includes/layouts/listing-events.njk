@@ -5,11 +5,11 @@
     size: 12,
     reverse: true,
     before: function(data) {
-      const currentDate = new Date().setHours(0, 0, 0, 0);
+      const buildDate = new Date().setHours(0, 0, 0, 0);
 
       return data.filter(item => {
         const formattedDate = new Date(item.data.date).setHours(0, 0, 0, 0);
-        return formattedDate < currentDate;
+        return formattedDate < buildDate;
       });
     },
   },
@@ -34,7 +34,7 @@
   </div>
 </div>
 
-{% set eventsFuture = collections[eventLocaleTag] | futureDate | reverse %}
+{% set eventsFuture = collections[eventLocaleTag] | futureItems | reverse %}
 
 {% if pagination.pageNumber === 0 %}
   <h2 class="h3">Coming up</h2>

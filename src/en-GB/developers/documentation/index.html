@@ -63,7 +63,7 @@ order: 1
   </li>
 </ul>
 
-{% set eventLocaleTag = locale + '-event' %} {% set eventsFuture = collections[eventLocaleTag] | futureDate | reverse | limitItems(4) %}
+{% set eventLocaleTag = locale + '-event' %} {% set eventsFuture = collections[eventLocaleTag] | futureItems | reverse | limitItems(4) %}
 
 <div class="grid grid--cols-2 grid--align-end mb-6">
   <div>

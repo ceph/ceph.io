@@ -85,7 +85,7 @@ order: 4
   </li>
 </ul>
 
-{% set eventLocaleTag = locale + '-event' %} {% set eventsFuture = collections[eventLocaleTag] | futureDate | reverse | limitItems(4) %}
+{% set eventLocaleTag = locale + '-event' %} {% set eventsFuture = collections[eventLocaleTag] | futureItems | reverse | limitItems(4) %}
 
 <div class="grid grid--cols-2 grid--align-end mb-6">
   <div>
@@ -123,13 +123,15 @@ order: 4
 </div>
 
 <ul class="ul grid grid--cols-4">
-  {% for item in tech_talks %}
+  {% for item in tech_talks | sort(true, false, 'date') | limitItems(4) %}
   <li>
     <img
       class="mb-2"
       src="{% if item.image %}{{ item.image }}{% else %}https://via.placeholder.com/640x360?text=placeholder{% endif %}"
       alt=""
     />
+    {% if item.date | futureDate %}<span class="block text-bold"><span class="text-bold">[Coming soon]</span></span
+    >{% endif %}
     <time datetime="{{ item.date }}">{{ item.date | formatDate(locale) }}</time>
     <a href="{{ item.url }}" target="_blank" rel="noreferrer noopener">{{ item.title }}</a> [{{ item.presenter }}]
   </li>

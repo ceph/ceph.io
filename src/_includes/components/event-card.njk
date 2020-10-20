@@ -5,5 +5,5 @@
 <p class="p text-xs color-grey-500 mt-1">
   <time datetime="{{ item.data.date }}">{{ item.data.date | formatDateRange(item.data.end, item.data.locale) }}</time>
 </p>
-<p class="p text-sm text-leading-tighter">{{ item.templateContent | removeHtml | truncate }}</p>
+<p class="p text-sm text-leading-tighter">{{ item.templateContent | removeHtml | truncate(100) }}</p>
 

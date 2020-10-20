@@ -6,5 +6,5 @@
 <p class="p text-xs color-grey-500 mt-1">
   <time datetime="{{ item.data.date }}">{{ item.data.date | formatDate(locale) }}</time>{% if item.data.author %} by {{ item.data.author }}{% endif %}
 </p>
-<p class="p text-sm text-leading-tighter">{{ item.templateContent | removeHtml | truncate }}</p>
+<p class="p text-sm text-leading-tighter">{{ item.templateContent | removeHtml | truncate(100) }}</p>
 

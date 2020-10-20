@@ -40,15 +40,15 @@ order: 2
   </div>
 </div>
 
-<h2 class="h2">Coming soon</h2>
-
-<h2 class="h2">History</h2>
-
+{% for item in tech_talks | chunkByYear | objectValues | reverse %}
+<h3>{{ item.name }}</h3>
 <ul>
-  {% for item in tech_talks %}
+  {% for item in item.results %}
   <li>
     <time datetime="{{ item.date }}">{{ item.date | formatDate(locale) }}</time>
-    <a href="{{ item.url }}" target="_blank" rel="noreferrer noopener">{{ item.title }}</a> [{{ item.presenter }}]
+    <a href="{{ item.url }}" target="_blank" rel="noreferrer noopener">{{ item.title }}</a> [{{ item.presenter }}] {% if item.date |
+    futureDate %}<span class="text-bold">[Coming soon]</span>{% endif %}
   </li>
   {% endfor %}
 </ul>
+{% endfor %}

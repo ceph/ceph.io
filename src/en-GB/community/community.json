@@ -50,12 +50,6 @@
       "url": "https://youtu.be/uhJBYhGoS40"
     },
     {
-      "date": "2019-10-24",
-      "title": "Ceph at NASA",
-      "presenter": "Kevin Hrpcek",
-      "url": "https://www.youtube.com/watch?list=PLrBUGiINAakM36YJiTT0qYepZTVncFDdc&time_continue=3&v=neRsay1Ql_U"
-    },
-    {
       "date": "2019-06-27",
       "title": "Intro to Ceph",
       "presenter": "Sage Weil",
@@ -66,6 +60,12 @@
       "title": "NooBaa Software Defined Storage",
       "presenter": "GuyMargalit",
       "url": "https://www.noobaa.com/"
+    },
+    {
+      "date": "2019-10-24",
+      "title": "Ceph at NASA",
+      "presenter": "Kevin Hrpcek",
+      "url": "https://www.youtube.com/watch?list=PLrBUGiINAakM36YJiTT0qYepZTVncFDdc&time_continue=3&v=neRsay1Ql_U"
     }
   ]
 }
