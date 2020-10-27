@@ -3,8 +3,7 @@
 :root {
   /* families */
   --font-family-fallback: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-family-default: var(--font-family-fallback);
-  --font-family-brand: var(--font-family-default);
+  --font-family-brand: "Inter", var(--font-family-fallback);
 
   /* leading */
   --font-leading-none: 1;
@@ -42,6 +41,4 @@
   /* weights */
   --font-weight-normal: 400;
   --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-  --font-weight-black: 900;
 }
