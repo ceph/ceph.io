@@ -30,9 +30,10 @@ module.exports = (async () => {
       );
     });
 
-    const copiedFiles = await Promise.all(filesToCopy);
+    await Promise.all(filesToCopy);
+
     console.log(
-      `Copied ${copiedFiles.length} to ${supportingLocales.join(', ')}`
+      `Copied files to ${supportingLocales.join(', ')} language sites`
     );
   } catch (error) {
     console.error(error);
