@@ -9,6 +9,7 @@
     "clean": "rimraf dist",
     "start": "npm run dev",
     "dev": "cross-env NODE_ENV=development npm-run-all clean --parallel 'site -- --serve' 'css -- --watch' assets",
+    "prebuild": "node scripts/prebuild",
     "build": "cross-env NODE_ENV=production npm-run-all clean --parallel site css assets",
     "debug": "cross-env DEBUG=* npx eleventy"
   },
@@ -30,8 +31,9 @@
   "homepage": "https://github.com/ceph/ceph.io#readme",
   "license": "CC-BY-SA-3.0",
   "devDependencies": {
-    "@11ty/eleventy": "0.11.0",
+    "@11ty/eleventy": "0.11.1",
     "@11ty/eleventy-navigation": "0.1.6",
+    "cpy": "8.1.1",
     "cross-env": "7.0.2",
     "cssnano": "^4.1.10",
     "eleventy-plugin-i18n": "0.1.0",
