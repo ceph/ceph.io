@@ -32,9 +32,9 @@ Cras et lacus quis erat accumsan venenatis ac aliquet dui.
 
 <div class="grid grid--cols-2-fit">
   <p>
-    <span class="block text-3xl text-bold">1,092,140</span> Maecenas sed blandit neque
+    <span class="block text-3xl text-semibold">1,092,140</span> Maecenas sed blandit neque
   </p>
   <p>
-    <span class="block text-3xl text-bold">3x</span> Maecenas sed blandit neque
+    <span class="block text-3xl text-semibold">3x</span> Maecenas sed blandit neque
   </p>
 </div>

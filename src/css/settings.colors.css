@@ -15,21 +15,21 @@
   --color-white: hsl(var(--color-white-hsl));
 
   /* brand */
-  --color-ceph-red-h: 5;
-  --color-ceph-red-s: 70%;
-  --color-ceph-red-l: 59%;
+  --color-ceph-red-h: 0;
+  --color-ceph-red-s: 84%;
+  --color-ceph-red-l: 50%;
   --color-ceph-red-hsl: var(--color-ceph-red-h), var(--color-ceph-red-s), var(--color-ceph-red-l);
   --color-ceph-red: hsl(var(--color-ceph-red-hsl));
 
-  --color-ceph-blue-h: 221;
-  --color-ceph-blue-s: 70%;
-  --color-ceph-blue-l: 50%;
+  --color-ceph-blue-h: 238;
+  --color-ceph-blue-s: 74%;
+  --color-ceph-blue-l: 19%;
   --color-ceph-blue-hsl: var(--color-ceph-blue-h), var(--color-ceph-blue-s), var(--color-ceph-blue-l);
   --color-ceph-blue: hsl(var(--color-ceph-blue-hsl));
 
-  --color-ceph-navy-h: 236;
-  --color-ceph-navy-s: 57%;
-  --color-ceph-navy-l: 15%;
+  --color-ceph-navy-h: 237;
+  --color-ceph-navy-s: 70%;
+  --color-ceph-navy-l: 13%;
   --color-ceph-navy-hsl: var(--color-ceph-navy-h), var(--color-ceph-navy-s), var(--color-ceph-navy-l);
   --color-ceph-navy: hsl(var(--color-ceph-navy-hsl));
 

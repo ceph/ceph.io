@@ -47,7 +47,7 @@ order: 2
   <li>
     <time datetime="{{ item.date }}">{{ item.date | formatDate(locale) }}</time>
     <a href="{{ item.url }}" target="_blank" rel="noreferrer noopener">{{ item.title }}</a> [{{ item.presenter }}] {% if item.date |
-    futureDate %}<span class="text-bold">[Coming soon]</span>{% endif %}
+    futureDate %}<span class="text-semibold">[Coming soon]</span>{% endif %}
   </li>
   {% endfor %}
 </ul>

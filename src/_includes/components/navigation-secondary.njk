@@ -18,7 +18,7 @@
   <ul>
     {%- for item in primaryNav %}
       {% if page.url | startsWith(item.url) %}
-        <li><a class="text-bold" href="{{ item.url | url }}">{{ item.title }}</a></li>
+        <li><a class="text-semibold" href="{{ item.url | url }}">{{ item.title }}</a></li>
         {%- if item.children %}
           {%- for subitem in item.children %}
             <li>

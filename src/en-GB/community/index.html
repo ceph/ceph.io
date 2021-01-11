@@ -130,7 +130,7 @@ order: 4
       src="{% if item.image %}{{ item.image }}{% else %}https://via.placeholder.com/640x360?text=placeholder{% endif %}"
       alt=""
     />
-    {% if item.date | futureDate %}<span class="block text-bold"><span class="text-bold">[Coming soon]</span></span
+    {% if item.date | futureDate %}<span class="block text-semibold"><span class="text-semibold">[Coming soon]</span></span
     >{% endif %}
     <time datetime="{{ item.date }}">{{ item.date | formatDate(locale) }}</time>
     <a href="{{ item.url }}" target="_blank" rel="noreferrer noopener">{{ item.title }}</a> [{{ item.presenter }}]

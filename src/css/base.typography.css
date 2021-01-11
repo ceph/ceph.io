@@ -7,38 +7,33 @@
 
 :--heading {
   font-family: var(--font-family-brand);
-  font-weight: var(--font-weight-normal);
+  font-weight: var(--font-weight-semibold);
   letter-spacing: var(--font-tracking-normal);
+  margin: var(--size-0);
 }
 
 .h1 {
-  font-weight: var(--font-weight-bold);
-}
-
-.h1,
-.h2 {
   font-size: var(--font-size-4xl);
   line-height: var(--size-10);
 }
 
+.h2 {
+  font-size: var(--font-size-2xl);
+  line-height: var(--size-8);
+}
+
 .h3 {
-  font-size: var(--font-size-3xl);
-  line-height: var(--size-9);
+  font-size: var(--font-size-xl);
+  line-height: var(--size-6);
 }
 
 .h4 {
-  font-size: var(--font-size-xl);
-  line-height: var(--size-7);
+  font-size: var(--font-size-lg);
+  line-height: var(--size-5);
 }
 
 .h5 {
   font-size: var(--font-size-md);
-  line-height: var(--size-6);
-}
-
-.h6 {
-  font-size: var(--font-size-xs);
-  letter-spacing: var(--font-tracking-wider);
   line-height: var(--size-5);
 }
 
@@ -50,6 +45,22 @@
   font-weight: var(--font-weight-normal);
   letter-spacing: var(--font-tracking-normal);
   line-height: var(--size-6);
+}
+
+/* link */
+
+.a {
+  color: var(--color-ceph-red);
+  font-family: var(--font-family-brand);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--font-tracking-normal);
+  line-height: var(--size-6);
+  text-decoration: none;
+}
+
+.a:hover {
+  text-decoration: underline; /* Let's come back to this. Maybe we'll use bottom-border? */
 }
 
 /* lists */
@@ -68,4 +79,58 @@
 
 .ol li::marker {
   font-weight: var(--font-weight-bold);
+}
+
+/* custom */
+
+.standout,
+.excerpt {
+  font-family: var(--font-family-brand);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-normal);
+  letter-spacing: var(--font-tracking-normal);
+  line-height: var(--size-7);
+}
+
+@media (--mq-md) {
+  /* headings */
+
+  .h1 {
+    font-size: var(--font-size-6xl);
+    line-height: var(--size-14);
+  }
+
+  .h2 {
+    font-size: var(--font-size-4xl);
+    line-height: var(--size-10);
+  }
+
+  .h4 {
+    font-size: var(--font-size-xl);
+    line-height: var(--size-6);
+  }
+}
+
+@media (--mq-lg) {
+  /* headings */
+
+  .h1 {
+    font-size: var(--font-size-8xl);
+    line-height: var(--size-16);
+  }
+
+  .h2 {
+    font-size: var(--font-size-5xl);
+    line-height: var(--size-11);
+  }
+
+  .h3 {
+    font-size: var(--font-size-2xl);
+    line-height: var(--size-8);
+  }
+
+  .h5 {
+    font-size: var(--font-size-lg);
+    line-height: var(--size-6);
+  }
 }

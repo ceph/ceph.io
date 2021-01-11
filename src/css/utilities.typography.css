@@ -159,14 +159,6 @@
   font-weight: var(--font-weight-semibold);
 }
 
-.text-bold {
-  font-weight: var(--font-weight-bold);
-}
-
-.text-black {
-  font-weight: var(--font-weight-black);
-}
-
 @media (--mq-sm) {
   /* alignment */
   .sm\:text-left {
@@ -312,14 +304,6 @@
 
   .sm\:text-semibold {
     font-weight: var(--font-weight-semibold);
-  }
-
-  .sm\:text-bold {
-    font-weight: var(--font-weight-bold);
-  }
-
-  .sm\:text-black {
-    font-weight: var(--font-weight-black);
   }
 }
 
@@ -469,14 +453,6 @@
   .md\:text-semibold {
     font-weight: var(--font-weight-semibold);
   }
-
-  .md\:text-bold {
-    font-weight: var(--font-weight-bold);
-  }
-
-  .md\:text-black {
-    font-weight: var(--font-weight-black);
-  }
 }
 
 @media (--mq-lg) {
@@ -625,14 +601,6 @@
   .lg\:text-semibold {
     font-weight: var(--font-weight-semibold);
   }
-
-  .lg\:text-bold {
-    font-weight: var(--font-weight-bold);
-  }
-
-  .lg\:text-black {
-    font-weight: var(--font-weight-black);
-  }
 }
 
 @media (--mq-xl) {
@@ -780,13 +748,5 @@
 
   .xl\:text-semibold {
     font-weight: var(--font-weight-semibold);
-  }
-
-  .xl\:text-bold {
-    font-weight: var(--font-weight-bold);
-  }
-
-  .xl\:text-black {
-    font-weight: var(--font-weight-black);
   }
 }
