@@ -2,10 +2,10 @@
  * Return a collection in random order
  *
  * @param {Array} collection
- * 
+ *
  */
 
-module.exports = collection => {  
+module.exports = (collection = []) => {
   let counter = collection.length;
 
   while (counter > 0) {

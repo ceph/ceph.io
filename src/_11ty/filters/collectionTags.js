@@ -13,7 +13,7 @@
  *
  */
 
-module.exports = (collection, filterTags = []) => {
+module.exports = (collection = [], filterTags = []) => {
   // filter tags to lowercase
   const lcFilterTags = filterTags.map(item => item.toLowerCase());
 
