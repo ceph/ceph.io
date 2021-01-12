@@ -50,7 +50,7 @@
 /* link */
 
 .a {
-  color: var(--color-ceph-red);
+  color: var(--color-red-500);
   font-family: var(--font-family-brand);
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-semibold);
@@ -74,7 +74,7 @@
 }
 
 :--list li::marker {
-  color: var(--color-ceph-blue);
+  color: var(--color-blue);
 }
 
 .ol li::marker {

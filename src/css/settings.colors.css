@@ -1,7 +1,7 @@
 /* ---------- SETTINGS colors ---------- */
 
 :root {
-  /* negative */
+  /* ---------- negative ---------- */
   --color-black-h: 0;
   --color-black-s: 0%;
   --color-black-l: 0%;
@@ -14,26 +14,59 @@
   --color-white-hsl: var(--color-white-h), var(--color-white-s), var(--color-white-l);
   --color-white: hsl(var(--color-white-hsl));
 
-  /* brand */
-  --color-ceph-red-h: 0;
-  --color-ceph-red-s: 84%;
-  --color-ceph-red-l: 50%;
-  --color-ceph-red-hsl: var(--color-ceph-red-h), var(--color-ceph-red-s), var(--color-ceph-red-l);
-  --color-ceph-red: hsl(var(--color-ceph-red-hsl));
+  /* ---------- blue ---------- */
+  --color-blue-h: 214;
+  --color-blue-s: 82%;
+  --color-blue-l: 51%;
+  --color-blue-hsl: var(--color-blue-h), var(--color-blue-s), var(--color-blue-l);
+  --color-blue: hsl(var(--color-blue-hsl));
 
-  --color-ceph-blue-h: 238;
-  --color-ceph-blue-s: 74%;
-  --color-ceph-blue-l: 19%;
-  --color-ceph-blue-hsl: var(--color-ceph-blue-h), var(--color-ceph-blue-s), var(--color-ceph-blue-l);
-  --color-ceph-blue: hsl(var(--color-ceph-blue-hsl));
+  /* ---------- gunmetal ---------- */
+  --color-gunmetal-h: 235;
+  --color-gunmetal-s: 16%;
+  --color-gunmetal-l: 16%;
+  --color-gunmetal-hsl: var(--color-gunmetal-h), var(--color-gunmetal-s), var(--color-gunmetal-l);
+  --color-gunmetal: hsl(var(--color-gunmetal-hsl));
 
-  --color-ceph-navy-h: 237;
-  --color-ceph-navy-s: 70%;
-  --color-ceph-navy-l: 13%;
-  --color-ceph-navy-hsl: var(--color-ceph-navy-h), var(--color-ceph-navy-s), var(--color-ceph-navy-l);
-  --color-ceph-navy: hsl(var(--color-ceph-navy-hsl));
+  /* ---------- navy ---------- */
+  --color-navy-h: 237;
+  --color-navy-s: 74%;
+  --color-navy-l: 13%;
+  --color-navy-hsl: var(--color-navy-h), var(--color-navy-s), var(--color-navy-l);
+  --color-navy: hsl(var(--color-navy-hsl));
 
-  /* utility */
+  /* ---------- red ---------- */
+  --color-red-h: 360;
+  --color-red-s: 84%;
+
+  --color-red-300-l: 83%;
+  --color-red-300-hsl: var(--color-red-h), var(--color-red-s), var(--color-red-300-l);
+  --color-red-300: hsl(var(--color-red-300-hsl));
+
+  --color-red-400-l: 67%;
+  --color-red-400-hsl: var(--color-red-h), var(--color-red-s), var(--color-red-400-l);
+  --color-red-400: hsl(var(--color-red-400-hsl));
+
+  --color-red-500-l: 50%;
+  --color-red-500-hsl: var(--color-red-h), var(--color-red-s), var(--color-red-500-l);
+  --color-red-500: hsl(var(--color-red-500-hsl));
+
+  --color-red-600-l: 33%;
+  --color-red-600-hsl: var(--color-red-h), var(--color-red-s), var(--color-red-600-l);
+  --color-red-600: hsl(var(--color-red-600-hsl));
+
+  --color-red-700-l: 17%;
+  --color-red-700-hsl: var(--color-red-h), var(--color-red-s), var(--color-red-700-l);
+  --color-red-700: hsl(var(--color-red-700-hsl));
+
+  /* ---------- royal ---------- */
+  --color-royal-h: 237;
+  --color-royal-s: 74%;
+  --color-royal-l: 25%;
+  --color-royal-hsl: var(--color-royal-h), var(--color-royal-s), var(--color-royal-l);
+  --color-royal: hsl(var(--color-royal-hsl));
+
+  /* ---------- utility ---------- */
   --color-grey-h: 0;
   --color-grey-s: 0%;
   --color-grey-100-l: 90%;

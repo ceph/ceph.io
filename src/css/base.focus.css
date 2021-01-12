@@ -1,0 +1,10 @@
+/* ---------- BASE focus ---------- */
+
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+.js-focus-visible .focus-visible {
+  box-shadow: 0 0 0 calc(2 * var(--size-px)) var(--color-blue);
+  outline: none;
+}

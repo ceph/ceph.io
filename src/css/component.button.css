@@ -1,44 +1,34 @@
 /* ---------- COMPONENT button ---------- */
 
 .button {
-  background: var(--color-ceph-red);
+  background: var(--color-red-500);
   border-radius: var(--size-1);
   color: var(--color-white);
+  display: inline-block;
   font-family: var(--font-family-brand);
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-semibold);
   letter-spacing: var(--font-tracking-normal);
   line-height: var(--font-leading-none);
-  padding: var(--size-4) var(--size-8);
+  padding: var(--size-5) var(--size-8);
+  text-align: center;
   text-decoration: none;
   transition: background-color var(--animation-easing) var(--animation-duration);
 }
 
-.button:hover {
-  background: hsl(var(--color-ceph-red-h), var(--color-ceph-red-s), 30%);
+.button--pill {
+  padding: var(--size-2) var(--size-4);
 }
 
-.button:focus,
-.test:focus {
-  box-shadow: 0 0 0 calc(2 * var(--size-px)) var(--color-ceph-blue);
+.button:not([disabled]):hover {
+  background: var(--color-red-600);
+}
+
+.button:not([disabled]):active {
+  background: var(--color-red-700);
   outline: none;
 }
 
-.button:active {
-  /* not sure how useful this is */
-  background: hsl(var(--color-ceph-red-h), var(--color-ceph-red-s), 30%);
-  box-shadow: none;
-  outline: none;
-}
-
-@media (--mq-sm) {
-}
-
-@media (--mq-md) {
-}
-
-@media (--mq-lg) {
-}
-
-@media (--mq-xl) {
+.button:disabled {
+  opacity: 0.25;
 }

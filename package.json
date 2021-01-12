@@ -51,6 +51,7 @@
     "rimraf": "3.0.2"
   },
   "dependencies": {
+    "focus-visible": "^5.2.0",
     "lunr": "^2.3.9"
   }
 }
