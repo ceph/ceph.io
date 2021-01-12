@@ -7,6 +7,7 @@
   /* pixels */
   --size-0: 0; /* 0px */
   --size-px: 1px; /* 1px */
+  --size-0_5: 2px; /* 2px */
   --size-1: 0.25rem; /* 4px */
   --size-2: 0.5rem; /* 8px */
   --size-3: 0.75rem; /* 12px */
@@ -42,6 +43,7 @@
   --size-224: 56rem; /* 896px */
   --size-256: 64rem; /* 1024px */
   --size-288: 72rem; /* 1152px */
+  --size-360: 90rem; /* 1440px */
 
   /* fractions */
   --size-1-12: 8.333%;

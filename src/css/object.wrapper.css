@@ -4,7 +4,7 @@
   --wrapper-gutters: var(--size-3);
   margin-left: auto;
   margin-right: auto;
-  max-width: var(--size-256);
+  max-width: var(--size-360);
   padding-left: var(--wrapper-gutters);
   padding-right: var(--wrapper-gutters);
   width: var(--size-full);
@@ -30,6 +30,6 @@
 
 @media (--mq-xl) {
   .wrapper {
-    --wrapper-gutters: var(--size-0);
+    --wrapper-gutters: var(--size-16);
   }
 }
