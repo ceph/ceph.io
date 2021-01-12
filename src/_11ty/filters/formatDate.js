@@ -1,4 +1,4 @@
-module.exports = (date, locale = site.defaultLanguage) => {
+module.exports = (date, locale = site.defaultLocale) => {
   // May need to consider `timezone` option (defaults to UTC)
   return new Intl.DateTimeFormat(locale, {
     year: 'numeric',
