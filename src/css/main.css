@@ -6,6 +6,7 @@
 @import "sanitize.css/typography.css";
 
 /* core */
+@import "settings.animation.css";
 @import "settings.colors.css";
 @import "settings.media-queries.css";
 @import "settings.sizes.css";
@@ -21,6 +22,7 @@
 @import "object.wrapper.css";
 
 /* components */
+@import "component.button.css";
 
 /* utilities */
 @import "utilities.colors.css";

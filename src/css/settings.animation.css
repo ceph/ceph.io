@@ -1,0 +1,9 @@
+/* ---------- SETTINGS animation ---------- */
+
+:root {
+  --animation-easing: cubic-bezier(0.215, 0.61, 0.355, 1); /* easeOutCubic */
+
+  --animation-duration-slow: 500ms;
+  --animation-duration: 250ms;
+  --animation-duration-fast: 125ms;
+}
