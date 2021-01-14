@@ -25,9 +25,11 @@
 /* components */
 @import "component.button.css";
 @import "component.section.css";
+@import "component.site-footer.css";
 
 /* utilities */
 @import "utilities.colors.css";
 @import "utilities.layout.css";
+@import "utilities.size.css";
 @import "utilities.space.css";
 @import "utilities.typography.css";

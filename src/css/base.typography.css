@@ -3,8 +3,7 @@
 @custom-selector :--heading .h1, .h2, .h3, .h4, .h5, .h6;
 @custom-selector :--list .ul, .ol;
 
-/* headings */
-
+/* ---------- headings ---------- */
 :--heading {
   font-family: var(--font-family-brand);
   font-weight: var(--font-weight-semibold);
@@ -37,18 +36,17 @@
   line-height: var(--size-5);
 }
 
-/* paragraph */
-
+/* ---------- paragraph ---------- */
 .p {
   font-family: var(--font-family-brand);
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-normal);
   letter-spacing: var(--font-tracking-normal);
   line-height: var(--size-6);
+  margin: 0 0 var(--size-4);
 }
 
-/* link */
-
+/* ---------- link ---------- */
 .a {
   color: var(--color-red-500);
   font-family: var(--font-family-brand);
@@ -63,14 +61,14 @@
   text-decoration: underline; /* Let's come back to this. Maybe we'll use bottom-border? */
 }
 
-/* lists */
-
+/* ---------- lists ---------- */
 :--list {
   font-family: var(--font-family-brand);
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-normal);
   letter-spacing: var(--font-tracking-normal);
   line-height: var(--size-6);
+  margin: 0 0 var(--size-4);
 }
 
 :--list li::marker {
@@ -81,8 +79,7 @@
   font-weight: var(--font-weight-bold);
 }
 
-/* custom */
-
+/* ---------- custom ---------- */
 .standout,
 .excerpt {
   font-family: var(--font-family-brand);
@@ -93,8 +90,7 @@
 }
 
 @media (--mq-md) {
-  /* headings */
-
+  /* ---------- headings ---------- */
   .h1 {
     font-size: var(--font-size-6xl);
     line-height: var(--size-14);
@@ -112,8 +108,7 @@
 }
 
 @media (--mq-lg) {
-  /* headings */
-
+  /* ---------- headings ---------- */
   .h1 {
     font-size: var(--font-size-8xl);
     line-height: var(--size-16);

@@ -21,6 +21,19 @@
   --color-blue-hsl: var(--color-blue-h), var(--color-blue-s), var(--color-blue-l);
   --color-blue: hsl(var(--color-blue-hsl));
 
+  /* ---------- grey ---------- */
+  --color-grey-h: 210;
+
+  --color-grey-300-s: 40%;
+  --color-grey-300-l: 94%;
+  --color-grey-300-hsl: var(--color-grey-h), var(--color-grey-300-s), var(--color-grey-300-l);
+  --color-grey-300: hsl(var(--color-grey-300-hsl));
+
+  --color-grey-500-s: 29%;
+  --color-grey-500-l: 87%;
+  --color-grey-500-hsl: var(--color-grey-h), var(--color-grey-500-s), var(--color-grey-500-l);
+  --color-grey-500: hsl(var(--color-grey-500-hsl));
+
   /* ---------- gunmetal ---------- */
   --color-gunmetal-h: 235;
   --color-gunmetal-s: 16%;
@@ -66,34 +79,22 @@
   --color-royal-hsl: var(--color-royal-h), var(--color-royal-s), var(--color-royal-l);
   --color-royal: hsl(var(--color-royal-hsl));
 
-  /* ---------- utility ---------- */
-  --color-grey-h: 0;
-  --color-grey-s: 0%;
-  --color-grey-100-l: 90%;
-  --color-grey-200-l: 80%;
-  --color-grey-300-l: 70%;
-  --color-grey-400-l: 60%;
-  --color-grey-500-l: 50%;
-  --color-grey-600-l: 40%;
-  --color-grey-700-l: 30%;
-  --color-grey-800-l: 20%;
-  --color-grey-900-l: 10%;
-  --color-grey-100-hsl: var(--color-grey-h), var(--color-grey-s), var(--color-grey-100-l);
-  --color-grey-100: hsl(var(--color-grey-100-hsl));
-  --color-grey-200-hsl: var(--color-grey-h), var(--color-grey-s), var(--color-grey-200-l);
-  --color-grey-200: hsl(var(--color-grey-200-hsl));
-  --color-grey-300-hsl: var(--color-grey-h), var(--color-grey-s), var(--color-grey-300-l);
-  --color-grey-300: hsl(var(--color-grey-300-hsl));
-  --color-grey-400-hsl: var(--color-grey-h), var(--color-grey-s), var(--color-grey-400-l);
-  --color-grey-400: hsl(var(--color-grey-400-hsl));
-  --color-grey-500-hsl: var(--color-grey-h), var(--color-grey-s), var(--color-grey-500-l);
-  --color-grey-500: hsl(var(--color-grey-500-hsl));
-  --color-grey-600-hsl: var(--color-grey-h), var(--color-grey-s), var(--color-grey-600-l);
-  --color-grey-600: hsl(var(--color-grey-600-hsl));
-  --color-grey-700-hsl: var(--color-grey-h), var(--color-grey-s), var(--color-grey-700-l);
-  --color-grey-700: hsl(var(--color-grey-700-hsl));
-  --color-grey-800-hsl: var(--color-grey-h), var(--color-grey-s), var(--color-grey-800-l);
-  --color-grey-800: hsl(var(--color-grey-800-hsl));
-  --color-grey-900-hsl: var(--color-grey-h), var(--color-grey-s), var(--color-grey-900-l);
-  --color-grey-900: hsl(var(--color-grey-900-hsl));
+  /* ---------- social ---------- */
+  --color-facebook-blue-h: 220;
+  --color-facebook-blue-s: 46%;
+  --color-facebook-blue-l: 48%;
+  --color-facebook-blue-hsl: var(--color-facebook-blue-h), var(--color-facebook-blue-s), var(--color-facebook-blue-l);
+  --color-facebook-blue: hsl(var(--color-facebook-blue-hsl));
+
+  --color-twitter-blue-h: 203;
+  --color-twitter-blue-s: 89%;
+  --color-twitter-blue-l: 53%;
+  --color-twitter-blue-hsl: var(--color-twitter-blue-h), var(--color-twitter-blue-s), var(--color-twitter-blue-l);
+  --color-twitter-blue: hsl(var(--color-twitter-blue-hsl));
+
+  --color-youtube-red-h: 360;
+  --color-youtube-red-s: 100%;
+  --color-youtube-red-l: 50%;
+  --color-youtube-red-hsl: var(--color-youtube-red-h), var(--color-youtube-red-s), var(--color-youtube-red-l);
+  --color-youtube-red: hsl(var(--color-youtube-red-hsl));
 }

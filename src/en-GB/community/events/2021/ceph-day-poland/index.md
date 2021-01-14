@@ -34,7 +34,7 @@ The expert Ceph team, Ceph’s customers and partners, and the Ceph community jo
   <tbody>
     <tr>
       <td>8:30 am</td>
-      <td class="bg-grey-100" rowspan="4">Registration and breakfast</td>
+      <td class="bg-grey-300" rowspan="4">Registration and breakfast</td>
     </tr>
     <tr>
       <td>8:45 am</td>
@@ -47,14 +47,14 @@ The expert Ceph team, Ceph’s customers and partners, and the Ceph community jo
     </tr>
     <tr>
       <td>9:30 am</td>
-      <td class="bg-grey-200" rowspan="2">Ceph Introduction and Community Update &mdash; Mike Perez (Red Hat)</td>
+      <td class="bg-grey-300" rowspan="2">Ceph Introduction and Community Update &mdash; Mike Perez (Red Hat)</td>
     </tr>
     <tr>
       <td>9:45 am</td>
     </tr>
     <tr>
       <td>10:00 am</td>
-      <td class="bg-grey-100" rowspan="2">Self-healing Ceph at scale &mdash; Flilp Dorosz (OVH)</td>
+      <td class="bg-grey-300" rowspan="2">Self-healing Ceph at scale &mdash; Flilp Dorosz (OVH)</td>
     </tr>
     <tr>
       <td>10:15 am</td>

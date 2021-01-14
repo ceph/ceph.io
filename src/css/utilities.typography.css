@@ -1,6 +1,6 @@
 /* ---------- UTILITIES typography ---------- */
 
-/* alignment */
+/* ---------- alignment ---------- */
 .text-left {
   text-align: left;
 }
@@ -17,7 +17,7 @@
   text-align: justify;
 }
 
-/* casing */
+/* ---------- casing ---------- */
 .text-capitalise {
   text-transform: capitalize;
 }
@@ -30,7 +30,7 @@
   text-transform: uppercase;
 }
 
-/* families */
+/* ---------- families ---------- */
 .text-brand {
   font-family: var(--font-family-brand);
 }
@@ -39,34 +39,20 @@
   font-family: var(--font-family-default);
 }
 
-/* leading */
-.text-leading-none {
-  line-height: var(--font-leading-none);
-}
-
-.text-leading-tighter {
-  line-height: var(--font-leading-tighter);
-}
-
-.text-leading-tight {
-  line-height: var(--font-leading-tight);
-}
-
-.text-leading-normal {
-  line-height: var(--font-leading-normal);
-}
-
-/* sizes */
+/* ---------- sizes ---------- */
 .text-xs {
   font-size: var(--font-size-xs);
+  line-height: var(--size-4);
 }
 
 .text-sm {
   font-size: var(--font-size-sm);
+  line-height: var(--size-5);
 }
 
 .text-md {
   font-size: var(--font-size-md);
+  line-height: var(--size-6);
 }
 
 .text-lg {
@@ -125,7 +111,24 @@
   font-size: var(--font-size-13xl);
 }
 
-/* tracking */
+/* ---------- leading ---------- */
+.text-leading-none {
+  line-height: var(--font-leading-none);
+}
+
+.text-leading-tighter {
+  line-height: var(--font-leading-tighter);
+}
+
+.text-leading-tight {
+  line-height: var(--font-leading-tight);
+}
+
+.text-leading-normal {
+  line-height: var(--font-leading-normal);
+}
+
+/* ---------- tracking ---------- */
 .text-tracking-tighter {
   letter-spacing: var(--font-tracking-tighter);
 }
@@ -150,603 +153,11 @@
   letter-spacing: var(--font-tracking-widest);
 }
 
-/* weights */
+/* ---------- weights ---------- */
 .text-normal {
   font-weight: var(--font-weight-normal);
 }
 
 .text-semibold {
   font-weight: var(--font-weight-semibold);
-}
-
-@media (--mq-sm) {
-  /* alignment */
-  .sm\:text-left {
-    text-align: left;
-  }
-
-  .sm\:text-center {
-    text-align: center;
-  }
-
-  .sm\:text-right {
-    text-align: right;
-  }
-
-  .sm\:text-justify {
-    text-align: justify;
-  }
-
-  /* families */
-  .sm\:text-brand {
-    font-family: var(--font-family-brand);
-  }
-
-  .sm\:text-default {
-    font-family: var(--font-family-default);
-  }
-
-  /* leading */
-  .sm\:text-leading-none {
-    line-height: var(--font-leading-none);
-  }
-
-  .sm\:text-leading-tighter {
-    line-height: var(--font-leading-tighter);
-  }
-
-  .sm\:text-leading-tight {
-    line-height: var(--font-leading-tight);
-  }
-
-  .sm\:text-leading-normal {
-    line-height: var(--font-leading-normal);
-  }
-
-  /* sizes */
-  .sm\:text-xs {
-    font-size: var(--font-size-xs);
-  }
-
-  .sm\:text-sm {
-    font-size: var(--font-size-sm);
-  }
-
-  .sm\:text-md {
-    font-size: var(--font-size-md);
-  }
-
-  .sm\:text-lg {
-    font-size: var(--font-size-lg);
-  }
-
-  .sm\:text-xl {
-    font-size: var(--font-size-xl);
-  }
-
-  .sm\:text-2xl {
-    font-size: var(--font-size-2xl);
-  }
-
-  .sm\:text-3xl {
-    font-size: var(--font-size-3xl);
-  }
-
-  .sm\:text-4xl {
-    font-size: var(--font-size-4xl);
-  }
-
-  .sm\:text-5xl {
-    font-size: var(--font-size-5xl);
-  }
-
-  .sm\:text-6xl {
-    font-size: var(--font-size-6xl);
-  }
-
-  .sm\:text-7xl {
-    font-size: var(--font-size-7xl);
-  }
-
-  .sm\:text-8xl {
-    font-size: var(--font-size-8xl);
-  }
-
-  .sm\:text-9xl {
-    font-size: var(--font-size-9xl);
-  }
-
-  .sm\:text-10xl {
-    font-size: var(--font-size-10xl);
-  }
-
-  .sm\:text-11xl {
-    font-size: var(--font-size-11xl);
-  }
-
-  .sm\:text-12xl {
-    font-size: var(--font-size-12xl);
-  }
-
-  .sm\:text-13xl {
-    font-size: var(--font-size-13xl);
-  }
-
-  /* tracking */
-  .sm\:text-tracking-tighter {
-    letter-spacing: var(--font-tracking-tighter);
-  }
-
-  .sm\:text-tracking-tight {
-    letter-spacing: var(--font-tracking-tight);
-  }
-
-  .sm\:text-tracking-normal {
-    letter-spacing: var(--font-tracking-normal);
-  }
-
-  .sm\:text-tracking-wide {
-    letter-spacing: var(--font-tracking-wide);
-  }
-
-  .sm\:text-tracking-wider {
-    letter-spacing: var(--font-tracking-wider);
-  }
-
-  .sm\:text-tracking-widest {
-    letter-spacing: var(--font-tracking-widest);
-  }
-
-  /* weights */
-  .sm\:text-normal {
-    font-weight: var(--font-weight-normal);
-  }
-
-  .sm\:text-semibold {
-    font-weight: var(--font-weight-semibold);
-  }
-}
-
-@media (--mq-md) {
-  /* alignment */
-  .md\:text-left {
-    text-align: left;
-  }
-
-  .md\:text-center {
-    text-align: center;
-  }
-
-  .md\:text-right {
-    text-align: right;
-  }
-
-  .md\:text-justify {
-    text-align: justify;
-  }
-
-  /* families */
-  .md\:text-brand {
-    font-family: var(--font-family-brand);
-  }
-
-  .md\:text-default {
-    font-family: var(--font-family-default);
-  }
-
-  /* leading */
-  .md\:text-leading-none {
-    line-height: var(--font-leading-none);
-  }
-
-  .md\:text-leading-tighter {
-    line-height: var(--font-leading-tighter);
-  }
-
-  .md\:text-leading-tight {
-    line-height: var(--font-leading-tight);
-  }
-
-  .md\:text-leading-normal {
-    line-height: var(--font-leading-normal);
-  }
-
-  /* sizes */
-  .md\:text-xs {
-    font-size: var(--font-size-xs);
-  }
-
-  .md\:text-sm {
-    font-size: var(--font-size-sm);
-  }
-
-  .md\:text-md {
-    font-size: var(--font-size-md);
-  }
-
-  .md\:text-lg {
-    font-size: var(--font-size-lg);
-  }
-
-  .md\:text-xl {
-    font-size: var(--font-size-xl);
-  }
-
-  .md\:text-2xl {
-    font-size: var(--font-size-2xl);
-  }
-
-  .md\:text-3xl {
-    font-size: var(--font-size-3xl);
-  }
-
-  .md\:text-4xl {
-    font-size: var(--font-size-4xl);
-  }
-
-  .md\:text-5xl {
-    font-size: var(--font-size-5xl);
-  }
-
-  .md\:text-6xl {
-    font-size: var(--font-size-6xl);
-  }
-
-  .md\:text-7xl {
-    font-size: var(--font-size-7xl);
-  }
-
-  .md\:text-8xl {
-    font-size: var(--font-size-8xl);
-  }
-
-  .md\:text-9xl {
-    font-size: var(--font-size-9xl);
-  }
-
-  .md\:text-10xl {
-    font-size: var(--font-size-10xl);
-  }
-
-  .md\:text-11xl {
-    font-size: var(--font-size-11xl);
-  }
-
-  .md\:text-12xl {
-    font-size: var(--font-size-12xl);
-  }
-
-  .md\:text-13xl {
-    font-size: var(--font-size-13xl);
-  }
-
-  /* tracking */
-  .md\:text-tracking-tighter {
-    letter-spacing: var(--font-tracking-tighter);
-  }
-
-  .md\:text-tracking-tight {
-    letter-spacing: var(--font-tracking-tight);
-  }
-
-  .md\:text-tracking-normal {
-    letter-spacing: var(--font-tracking-normal);
-  }
-
-  .md\:text-tracking-wide {
-    letter-spacing: var(--font-tracking-wide);
-  }
-
-  .md\:text-tracking-wider {
-    letter-spacing: var(--font-tracking-wider);
-  }
-
-  .md\:text-tracking-widest {
-    letter-spacing: var(--font-tracking-widest);
-  }
-
-  /* weights */
-  .md\:text-normal {
-    font-weight: var(--font-weight-normal);
-  }
-
-  .md\:text-semibold {
-    font-weight: var(--font-weight-semibold);
-  }
-}
-
-@media (--mq-lg) {
-  /* alignment */
-  .lg\:text-left {
-    text-align: left;
-  }
-
-  .lg\:text-center {
-    text-align: center;
-  }
-
-  .lg\:text-right {
-    text-align: right;
-  }
-
-  .lg\:text-justify {
-    text-align: justify;
-  }
-
-  /* families */
-  .lg\:text-brand {
-    font-family: var(--font-family-brand);
-  }
-
-  .lg\:text-default {
-    font-family: var(--font-family-default);
-  }
-
-  /* leading */
-  .lg\:text-leading-none {
-    line-height: var(--font-leading-none);
-  }
-
-  .lg\:text-leading-tighter {
-    line-height: var(--font-leading-tighter);
-  }
-
-  .lg\:text-leading-tight {
-    line-height: var(--font-leading-tight);
-  }
-
-  .lg\:text-leading-normal {
-    line-height: var(--font-leading-normal);
-  }
-
-  /* sizes */
-  .lg\:text-xs {
-    font-size: var(--font-size-xs);
-  }
-
-  .lg\:text-sm {
-    font-size: var(--font-size-sm);
-  }
-
-  .lg\:text-md {
-    font-size: var(--font-size-md);
-  }
-
-  .lg\:text-lg {
-    font-size: var(--font-size-lg);
-  }
-
-  .lg\:text-xl {
-    font-size: var(--font-size-xl);
-  }
-
-  .lg\:text-2xl {
-    font-size: var(--font-size-2xl);
-  }
-
-  .lg\:text-3xl {
-    font-size: var(--font-size-3xl);
-  }
-
-  .lg\:text-4xl {
-    font-size: var(--font-size-4xl);
-  }
-
-  .lg\:text-5xl {
-    font-size: var(--font-size-5xl);
-  }
-
-  .lg\:text-6xl {
-    font-size: var(--font-size-6xl);
-  }
-
-  .lg\:text-7xl {
-    font-size: var(--font-size-7xl);
-  }
-
-  .lg\:text-8xl {
-    font-size: var(--font-size-8xl);
-  }
-
-  .lg\:text-9xl {
-    font-size: var(--font-size-9xl);
-  }
-
-  .lg\:text-10xl {
-    font-size: var(--font-size-10xl);
-  }
-
-  .lg\:text-11xl {
-    font-size: var(--font-size-11xl);
-  }
-
-  .lg\:text-12xl {
-    font-size: var(--font-size-12xl);
-  }
-
-  .lg\:text-13xl {
-    font-size: var(--font-size-13xl);
-  }
-
-  /* tracking */
-  .lg\:text-tracking-tighter {
-    letter-spacing: var(--font-tracking-tighter);
-  }
-
-  .lg\:text-tracking-tight {
-    letter-spacing: var(--font-tracking-tight);
-  }
-
-  .lg\:text-tracking-normal {
-    letter-spacing: var(--font-tracking-normal);
-  }
-
-  .lg\:text-tracking-wide {
-    letter-spacing: var(--font-tracking-wide);
-  }
-
-  .lg\:text-tracking-wider {
-    letter-spacing: var(--font-tracking-wider);
-  }
-
-  .lg\:text-tracking-widest {
-    letter-spacing: var(--font-tracking-widest);
-  }
-
-  /* weights */
-  .lg\:text-normal {
-    font-weight: var(--font-weight-normal);
-  }
-
-  .lg\:text-semibold {
-    font-weight: var(--font-weight-semibold);
-  }
-}
-
-@media (--mq-xl) {
-  /* alignment */
-  .xl\:text-left {
-    text-align: left;
-  }
-
-  .xl\:text-center {
-    text-align: center;
-  }
-
-  .xl\:text-right {
-    text-align: right;
-  }
-
-  .xl\:text-justify {
-    text-align: justify;
-  }
-
-  /* families */
-  .xl\:text-brand {
-    font-family: var(--font-family-brand);
-  }
-
-  .xl\:text-default {
-    font-family: var(--font-family-default);
-  }
-
-  /* leading */
-  .xl\:text-leading-none {
-    line-height: var(--font-leading-none);
-  }
-
-  .xl\:text-leading-tighter {
-    line-height: var(--font-leading-tighter);
-  }
-
-  .xl\:text-leading-tight {
-    line-height: var(--font-leading-tight);
-  }
-
-  .xl\:text-leading-normal {
-    line-height: var(--font-leading-normal);
-  }
-
-  /* sizes */
-  .xl\:text-xs {
-    font-size: var(--font-size-xs);
-  }
-
-  .xl\:text-sm {
-    font-size: var(--font-size-sm);
-  }
-
-  .xl\:text-md {
-    font-size: var(--font-size-md);
-  }
-
-  .xl\:text-lg {
-    font-size: var(--font-size-lg);
-  }
-
-  .xl\:text-xl {
-    font-size: var(--font-size-xl);
-  }
-
-  .xl\:text-2xl {
-    font-size: var(--font-size-2xl);
-  }
-
-  .xl\:text-3xl {
-    font-size: var(--font-size-3xl);
-  }
-
-  .xl\:text-4xl {
-    font-size: var(--font-size-4xl);
-  }
-
-  .xl\:text-5xl {
-    font-size: var(--font-size-5xl);
-  }
-
-  .xl\:text-6xl {
-    font-size: var(--font-size-6xl);
-  }
-
-  .xl\:text-7xl {
-    font-size: var(--font-size-7xl);
-  }
-
-  .xl\:text-8xl {
-    font-size: var(--font-size-8xl);
-  }
-
-  .xl\:text-9xl {
-    font-size: var(--font-size-9xl);
-  }
-
-  .xl\:text-10xl {
-    font-size: var(--font-size-10xl);
-  }
-
-  .xl\:text-11xl {
-    font-size: var(--font-size-11xl);
-  }
-
-  .xl\:text-12xl {
-    font-size: var(--font-size-12xl);
-  }
-
-  .xl\:text-13xl {
-    font-size: var(--font-size-13xl);
-  }
-
-  /* tracking */
-  .xl\:text-tracking-tighter {
-    letter-spacing: var(--font-tracking-tighter);
-  }
-
-  .xl\:text-tracking-tight {
-    letter-spacing: var(--font-tracking-tight);
-  }
-
-  .xl\:text-tracking-normal {
-    letter-spacing: var(--font-tracking-normal);
-  }
-
-  .xl\:text-tracking-wide {
-    letter-spacing: var(--font-tracking-wide);
-  }
-
-  .xl\:text-tracking-wider {
-    letter-spacing: var(--font-tracking-wider);
-  }
-
-  .xl\:text-tracking-widest {
-    letter-spacing: var(--font-tracking-widest);
-  }
-
-  /* weights */
-  .xl\:text-normal {
-    font-weight: var(--font-weight-normal);
-  }
-
-  .xl\:text-semibold {
-    font-weight: var(--font-weight-semibold);
-  }
 }
