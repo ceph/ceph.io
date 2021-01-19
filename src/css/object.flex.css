@@ -4,6 +4,10 @@
   display: flex;
 }
 
+.flex--align-center {
+  align-items: center;
+}
+
 .flex--justify-end {
   justify-content: flex-end;
 }

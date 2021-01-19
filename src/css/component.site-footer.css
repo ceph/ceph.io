@@ -1,4 +1,5 @@
 /* ---------- COMPONENT site footer ---------- */
+
 .site-footer {
   --site-footer-gutters-y: var(--size-8);
   --site-footer-support-gap-x: var(--size-6);

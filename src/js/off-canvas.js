@@ -1,0 +1,48 @@
+"use strict";
+/*global document window*/
+
+(function() {
+
+  const html = document.querySelector('html');
+  const header = document.querySelector('.site-header');
+  const menu = document.querySelector('.site-header__menu');
+  const menu_open = document.querySelector('.site-header__menu-open');
+  const menu_close = document.querySelector('.site-header__menu-close');
+
+  const media_query = window.matchMedia('(width < 64em)')
+
+  function toggleMenu() {
+    menu_open.addEventListener('click', (e) => {
+      header.classList.add('site-header--opened');
+      menu.setAttribute("aria-hidden", "false");
+      html.classList.add('no-scroll');
+      e.preventDefault();
+    });
+
+    menu_close.addEventListener('click', (e) => {
+      header.classList.remove('site-header--opened');
+      menu.setAttribute("aria-hidden", "true");
+      html.classList.remove('no-scroll');
+      e.preventDefault();
+    });
+  }
+ 
+  function handle_size_change(e) {
+    if (e.matches) {
+      menu.setAttribute("aria-hidden", "true");
+      toggleMenu();
+    }
+    else {
+      menu.setAttribute("aria-hidden", "false");
+      header.classList.remove('site-header--opened');
+      html.classList.remove('no-scroll');
+    }
+  }
+  
+  // Register event listener
+  media_query.addListener(handle_size_change);
+  
+  // Initial check
+  handle_size_change(media_query);
+
+})();
