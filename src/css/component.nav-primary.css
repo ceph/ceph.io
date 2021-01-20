@@ -4,7 +4,7 @@
   color: var(--color-gunmetal);
   display: inline-block;
   text-decoration: none;
-  transition: color var(--animation-easing) var(--animation-duration);
+  transition: color var(--animation-duration) var(--animation-easing);
 }
 
 .nav-primary a:hover {
@@ -51,7 +51,7 @@
   }
 
   .home .site-header--stuck .nav-primary a {
-    color: var(--color-ggunmetal);
+    color: var(--color-gunmetal);
   }
 
   .home .site-header--stuck .nav-primary a:hover {

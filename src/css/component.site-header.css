@@ -10,8 +10,8 @@
   padding-top: var(--site-header-gutters-y);
   position: sticky;
   top: calc(-1 * var(--size-px));
-  transition: background-color var(--animation-easing) var(--animation-duration-fast),
-    border var(--animation-easing) var(--animation-duration-fast), box-shadow var(--animation-easing) var(--animation-duration-fast);
+  transition: background-color var(--animation-duration-fast) var(--animation-easing),
+    border var(--animation-duration-fast) var(--animation-easing), box-shadow var(--animation-duration-fast) var(--animation-easing);
 }
 
 .site-header__logo {
@@ -41,10 +41,12 @@
 
 .home .site-header__logo .logo-ceph__text path {
   fill: #e9eff6; /* TBC */
+  transition: fill var(--animation-duration) var(--animation-easing);
 }
 
 .home .site-header__menu-open svg g {
   stroke: #e9eff6; /* TBC */
+  transition: stroke var(--animation-duration) var(--animation-easing);
 }
 
 .home .site-header--stuck .site-header__logo .logo-ceph__text path,
@@ -80,7 +82,7 @@
     position: fixed;
     top: 0;
     transform: translateY(100%);
-    transition: transform var(--animation-easing) var(--animation-duration);
+    transition: transform var(--animation-duration) var(--animation-easing);
     visibility: hidden;
     width: 100vw;
     z-index: 10;

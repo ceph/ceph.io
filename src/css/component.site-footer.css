@@ -71,7 +71,7 @@
 }
 
 .site-footer__social svg {
-  transition: fill var(--animation-easing) var(--animation-duration);
+  transition: fill var(--animation-duration) var(--animation-easing);
 }
 
 .site-footer__facebook:hover svg {

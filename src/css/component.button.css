@@ -13,7 +13,7 @@
   padding: var(--size-5) var(--size-8);
   text-align: center;
   text-decoration: none;
-  transition: background-color var(--animation-easing) var(--animation-duration);
+  transition: background-color var(--animation-duration) var(--animation-easing);
 }
 
 .button--pill {

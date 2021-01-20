@@ -17,7 +17,7 @@ body {
   display: grid;
   font-family: var(--font-family-brand);
   grid-template-rows: auto 1fr auto;
-  height: var(--size-h-screen);
+  min-height: var(--size-h-screen);
   line-height: var(--font-leading-none);
   overflow-x: hidden;
 }

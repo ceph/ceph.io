@@ -1,5 +1,6 @@
 {% set localeParentKey = '/' + locale + '/' %}
 {% set primaryNav = collections.primary | eleventyNavigation(localeParentKey) %}
+{% set secondaryNav = primaryNav[0].children %}
 
 {# TEMP #}
 <style>

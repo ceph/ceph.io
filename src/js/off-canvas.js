@@ -4,10 +4,10 @@
 (function() {
 
   const html = document.querySelector('html');
-  const header = document.querySelector('.site-header');
-  const menu = document.querySelector('.site-header__menu');
-  const menu_open = document.querySelector('.site-header__menu-open');
-  const menu_close = document.querySelector('.site-header__menu-close');
+  const header = document.querySelector('[data-site-header]');
+  const menu = header.querySelector('[data-menu]');
+  const menu_open = header.querySelector('[data-menu-open]');
+  const menu_close = header.querySelector('[data-menu-close]');
 
   const media_query = window.matchMedia('(width < 64em)')
 
@@ -40,7 +40,7 @@
   }
   
   // Register event listener
-  media_query.addListener(handle_size_change);
+  media_query.addEventListener('change', handle_size_change);
   
   // Initial check
   handle_size_change(media_query);
