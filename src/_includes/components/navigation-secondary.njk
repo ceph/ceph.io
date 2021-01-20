@@ -1,3 +1,7 @@
+{% set localeParentKey = '/' + locale + '/' %}
+{% set primaryNav = collections.primary | eleventyNavigation(localeParentKey) %}
+{% set secondaryNav = primaryNav[0].children %}
+
 {# TEMP #}
 <style>
   [aria-label="secondary"] ul {
@@ -14,19 +18,22 @@
   }
 </style>
 
-<nav aria-label="secondary">
-  <ul>
-    {%- for item in primaryNav %}
-      {% if page.url | startsWith(item.url) %}
-        <li><a class="text-semibold" href="{{ item.url | url }}">{{ item.title }}</a></li>
-        {%- if item.children %}
-          {%- for subitem in item.children %}
-            <li>
-              <a href="{{ subitem.url | url }}" {% if page.url | startsWith(subitem.url) %} aria-current="page"{% endif %}>{{ subitem.title }}</a>
-            </li>
-          {%- endfor %}
+{# Not sure about this if layout != home as it feels a bit flimsy #}
+{% if layout != 'home' %}
+  <nav aria-label="secondary">
+    <ul>
+      {%- for item in primaryNav %}
+        {% if page.url | startsWith(item.url) %}
+          <li><a class="text-semibold" href="{{ item.url | url }}">{{ item.title }}</a></li>
+          {%- if item.children %}
+            {%- for subitem in item.children %}
+              <li>
+                <a href="{{ subitem.url | url }}" {% if page.url | startsWith(subitem.url) %} aria-current="page"{% endif %}>{{ subitem.title }}</a>
+              </li>
+            {%- endfor %}
+          {% endif %}
         {% endif %}
-      {% endif %}
-    {%- endfor %}
-  </ul>
-</nav>
+      {%- endfor %}
+    </ul>
+  </nav>
+{% endif %}

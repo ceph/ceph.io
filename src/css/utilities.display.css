@@ -1,0 +1,24 @@
+/* ---------- UTILITIES display ---------- */
+
+/* https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe */
+.visually-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  top: auto;
+  white-space: nowrap;
+  width: 0;
+}
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.inline {
+  display: inline;
+}

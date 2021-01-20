@@ -40,16 +40,19 @@
     <meta name="twitter:image" content="{% if image %}{{ image }}{% else %}https://via.placeholder.com/640x360{% endif %}" />
 
   </head>
-  <body>
+  <body class={{layout}}>
     {% include 'components/site-header.njk' %}
 
     <main id="main">
       <div class="wrapper">
+        {% include 'components/navigation-secondary.njk' %}
         {{ content | safe }}
       </div>
     </main>
 
     {% include 'components/site-footer.njk' %}
+    <script src="/js/sticky-scroll.js"></script>
+    <script src="/js/off-canvas.js"></script>
     <script src="/js/focus-visible.min.js"></script>
   </body>
 </html>

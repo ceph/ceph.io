@@ -24,12 +24,14 @@
 
 /* components */
 @import "component.button.css";
+@import "component.nav-primary.css";
 @import "component.section.css";
 @import "component.site-footer.css";
+@import "component.site-header.css";
 
 /* utilities */
 @import "utilities.colors.css";
-@import "utilities.layout.css";
+@import "utilities.display.css";
 @import "utilities.size.css";
 @import "utilities.space.css";
 @import "utilities.typography.css";
