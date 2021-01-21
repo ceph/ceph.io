@@ -1,0 +1,70 @@
+/* ---------- COMPONENT nav primary ---------- */
+
+.nav-primary a {
+  color: var(--color-gunmetal);
+  display: inline-block;
+  text-decoration: none;
+  transition: color var(--animation-duration) var(--animation-easing);
+}
+
+.nav-primary a:hover {
+  color: var(--color-red-500);
+  text-decoration: underline;
+}
+
+.nav-primary a:active {
+  color: var(--color-red-600);
+  text-decoration: underline;
+}
+
+.nav-primary [aria-current="page"] {
+  color: var(--color-red-500);
+}
+
+/* ---------- media queries ---------- */
+@media (--mq-to-lg) {
+  .nav-primary > li {
+    margin-bottom: var(--size-4);
+  }
+}
+
+@media (--mq-lg) {
+  .nav-primary {
+    --nav-primary-gap-x: var(--size-6);
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 0;
+    margin-left: calc(-1 * var(--nav-primary-gap-x));
+  }
+
+  .nav-primary > li {
+    margin-left: var(--nav-primary-gap-x);
+  }
+
+  .home .nav-primary a {
+    color: var(--color-grey-500);
+  }
+
+  .home .nav-primary a:hover,
+  .home .nav-primary a:active {
+    color: var(--color-white);
+  }
+
+  .home .site-header--stuck .nav-primary a {
+    color: var(--color-gunmetal);
+  }
+
+  .home .site-header--stuck .nav-primary a:hover {
+    color: var(--color-red-500);
+  }
+
+  .home .site-header--stuck .nav-primary a:active {
+    color: var(--color-red-600);
+  }
+}
+
+@media (--mq-xl) {
+  .nav-primary {
+    --nav-primary-gap-x: var(--size-8);
+  }
+}

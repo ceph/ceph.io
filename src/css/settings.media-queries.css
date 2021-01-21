@@ -1,6 +1,8 @@
 /* ---------- SETTINGS media queries ---------- */
 
 @custom-media --mq-sm (min-width: 23.375em); /* 374px */
+@custom-media --mq-to-md (width < 43.75em); /* <700px */
 @custom-media --mq-md (min-width: 43.75em); /* 700px */
+@custom-media --mq-to-lg (width < 64em); /* <1024px */
 @custom-media --mq-lg (min-width: 64em); /* 1024px */
 @custom-media --mq-xl (min-width: 90em); /* 1440px */

@@ -1,19 +1,24 @@
-<nav aria-label="secondary" class="nav-secondary">
-  <ul class="ul mb-0">
-    {%- for item in primaryNav %}
-      {% if page.url | startsWith(item.url) %}
-        <li class="nav-secondary__top"><a class="text-semibold" href="{{ item.url | url }}">{{ item.title }}</a>
-        {%- if item.children %}
-          <span>/</span>
-          <ul class="nav-secondary__sub ul">
-            {%- for subitem in item.children %}
-              <li><a href="{{ subitem.url | url }}" {% if page.url | startsWith(subitem.url) %} aria-current="page"{% endif %}>{{ subitem.title }}</a>
-              </li>
-            {%- endfor %}
-          </ul>
+
+
+{# Not sure about this if layout != home as it feels a bit flimsy #}
+{% if layout != 'home' %}
+  <nav aria-label="secondary" class="nav-secondary">
+    <ul class="ul mb-0">
+      {%- for item in primaryNav %}
+        {% if page.url | startsWith(item.url) %}
+          <li class="nav-secondary__top"><a class="text-semibold" href="{{ item.url | url }}">{{ item.title }}</a>
+          {%- if item.children %}
+            <span>/</span>
+            <ul class="nav-secondary__sub ul">
+              {%- for subitem in item.children %}
+                <li><a href="{{ subitem.url | url }}" {% if page.url | startsWith(subitem.url) %} aria-current="page"{% endif %}>{{ subitem.title }}</a>
+                </li>
+              {%- endfor %}
+            </ul>
+          {% endif %}
+          </li>
         {% endif %}
-        </li>
-      {% endif %}
-    {%- endfor %}
-  </ul>
-</nav>
+      {%- endfor %}
+    </ul>
+  </nav>
+{% endif %}
