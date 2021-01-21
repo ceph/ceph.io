@@ -1,0 +1,60 @@
+/* ---------- COMPONENT nav secondary ---------- */
+
+.nav-secondary {
+  --nav-secondary-sub-gap-x: var(--size-4);
+  background: var(--color-grey-300);
+}
+
+.nav-secondary a {
+  /* color: var(--color-gunmetal);
+    display: inline-block;
+    text-decoration: none;
+    transition: color var(--animation-easing) var(--animation-duration); */
+}
+
+/* [aria-label="secondary"] ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+[aria-label="secondary"] li {
+  display: inline-block;
+  margin-top: 0.5em;
+}
+
+[aria-label="secondary"] [aria-current="page"] {
+  background-color: #ddd;
+} */
+
+@media (--mq-lg) {
+  .nav-secondary__top {
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: var(--font-size-sm);
+    line-height: var(--size-5);
+    margin-left: calc(-1 * var(--nav-secondary-sub-gap-x));
+  }
+
+  .nav-secondary__top > * {
+    margin-left: var(--nav-secondary-sub-gap-x);
+  }
+
+  .nav-secondary__sub {
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: var(--font-size-sm);
+    line-height: var(--size-5);
+    margin-bottom: 0;
+  }
+
+  .nav-secondary__sub > li:not(:first-child) {
+    margin-left: var(--nav-secondary-sub-gap-x);
+  }
+}
+
+@media (--mq-xl) {
+  .nav-secondary {
+    --nav-secondary-sub-gap-x: var(--size-6);
+  }
+}
