@@ -9,7 +9,6 @@
         {%- if page.url | startsWith(item.url) -%}
           <li class="nav-secondary__wrapper"><a class="nav-secondary__top" href="{{ item.url | url }}" data-nav-secondary-toggle>{{ item.title }}</a>
           {%- if item.children %}
-            <span class="nav-secondary__pipe">/</span>
             <ul class="nav-secondary__sub ul" data-nav-secondary-sub>
               {%- for subitem in item.children %}
                 <li><a href="{{ subitem.url | url }}" {% if page.url | startsWith(subitem.url) %} aria-current="page"{% endif %}>{{ subitem.title }}</a>

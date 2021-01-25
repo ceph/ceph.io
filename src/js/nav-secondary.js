@@ -2,22 +2,22 @@
 /*global document window*/
 
 (function() {
-  const navigation = document.querySelector('[data-nav-secondary');
+  const navigation = document.querySelector('[data-nav-secondary]');
 
   if (navigation) {
     const toggle = navigation.querySelector('[data-nav-secondary-toggle]');
     const navigation_sub = navigation.querySelector('[data-nav-secondary-sub]');
     const media_query = window.matchMedia('(width < 64em)')
   
-    navigation.classList.add('js-nav-secondary');
-  
     function toggle_nav(e) {
-      if (navigation.classList.contains("js-nav-secondary--opened")) {
-        navigation.classList.remove('js-nav-secondary--opened');
-        navigation_sub.setAttribute("aria-hidden", "true");
+      if (toggle.getAttribute('aria-expanded') === 'true') {
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-pressed', 'false');
+        navigation_sub.setAttribute('aria-hidden', 'true');
       } else {
-        navigation.classList.add('js-nav-secondary--opened');
-        navigation_sub.setAttribute("aria-hidden", "false");
+        toggle.setAttribute('aria-expanded', 'true');
+        toggle.setAttribute('aria-pressed', 'true');
+        navigation_sub.setAttribute('aria-hidden', 'false');
       }
       e.preventDefault();
     }
@@ -25,12 +25,17 @@
     function handle_size_change(e) {
       if (e.matches) {
         toggle.addEventListener('click', toggle_nav);
-        navigation_sub.setAttribute("aria-hidden", "true");
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-pressed', 'false');
+        toggle.setAttribute('role', 'button');
+        navigation_sub.setAttribute('aria-hidden', 'true');
       }
       else {
         toggle.removeEventListener('click', toggle_nav);
-        navigation_sub.setAttribute("aria-hidden", "false");
-        navigation.classList.remove('js-nav-secondary--opened');
+        toggle.removeAttribute('aria-expanded');
+        toggle.removeAttribute('aria-pressed');
+        toggle.removeAttribute('role');
+        navigation_sub.setAttribute('aria-hidden', 'false');
       }
     }
     
