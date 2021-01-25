@@ -2,9 +2,9 @@
 
 :root {
   /* ---------- negative ---------- */
-  --color-black-h: 0;
-  --color-black-s: 0%;
-  --color-black-l: 0%;
+  --color-black-h: 235;
+  --color-black-s: 16%;
+  --color-black-l: 16%;
   --color-black-hsl: var(--color-black-h), var(--color-black-s), var(--color-black-l);
   --color-black: hsl(var(--color-black-hsl));
 

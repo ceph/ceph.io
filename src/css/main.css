@@ -24,6 +24,7 @@
 
 /* components */
 @import "component.button.css";
+@import "component.language-selector.css";
 @import "component.nav-primary.css";
 @import "component.section.css";
 @import "component.site-footer.css";
