@@ -1,6 +1,10 @@
 /* ---------- UTILITIES size ---------- */
 
 /* ---------- width ---------- */
+.w-12 {
+  width: var(--size-12);
+}
+
 .w-36 {
   width: var(--size-36);
 }

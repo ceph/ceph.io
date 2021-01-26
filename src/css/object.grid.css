@@ -319,7 +319,17 @@
 }
 
 @media (--mq-lg) {
+  .lg\:grid--cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:grid--gap-6 {
+    gap: var(--size-6);
+  }
 }
 
 @media (--mq-xl) {
+  .xl\:grid--gap-10 {
+    gap: var(--size-10);
+  }
 }

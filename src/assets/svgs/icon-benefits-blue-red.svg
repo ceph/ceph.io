@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+  <title>Benefits</title>
+  <g fill="none" fill-rule="evenodd" stroke-width="2">
+    <path stroke="#0A0C38" stroke-linecap="square" d="M15.075 27.675h18v18h-18zM15.075 45.675h-13.5v-12h13.5M33.075 38.175h13.5v7.5h-13.5"/>
+    <path stroke="#EB1414" d="M18.124 10.425h-1.549a3 3 0 01-3-3v-3.75h4.5M30.028 10.425h1.547a3 3 0 003-3v-3.75h-4.5"/>
+    <path stroke="#EB1414" stroke-linecap="square" d="M24.075 15.675h0a6 6 0 01-6-6v-7.5h12v7.5a6 6 0 01-6 6zM24.075 15.675v6M19.575 21.675h9"/>
+  </g>
+</svg>

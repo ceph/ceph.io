@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+  <title>Case study</title>
+  <g fill="none" fill-rule="evenodd" stroke-linecap="square" stroke-width="2">
+    <path stroke="#EB1414" d="M18 25.5h21M18 9.75h21v9.75H18zM39 37.5H18M39 31.5H18"/>
+    <path stroke="#0A0C38" d="M8.25 27H3v13.5A4.513 4.513 0 007.5 45M12 3v37.5A4.513 4.513 0 017.5 45h33a4.513 4.513 0 004.5-4.5V3H12z"/>
+  </g>
+</svg>

@@ -3,8 +3,8 @@
 .section {
   --section-gutters-x: var(--size-3);
   --section-gutters-y: var(--size-10);
-  margin-bottom: var(--section-gutters-y);
-  margin-top: var(--section-gutters-y);
+  padding-bottom: var(--section-gutters-y);
+  padding-top: var(--section-gutters-y);
 }
 
 .section--full {

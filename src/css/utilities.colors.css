@@ -32,6 +32,15 @@
   border-color: var(--color-white);
 }
 
+/* ---------- border grey ---------- */
+.border-grey-300 {
+  border-color: var(--color-grey-300);
+}
+
+.border-grey-500 {
+  border-color: var(--color-grey-500);
+}
+
 /* ---------- text negative ---------- */
 .color-black {
   color: var(--color-black);

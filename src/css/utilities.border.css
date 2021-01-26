@@ -1,0 +1,17 @@
+/* ---------- UTILITIES border ---------- */
+
+.border-px {
+  border-width: var(--size-px);
+}
+
+.border-solid {
+  border-style: solid;
+}
+
+.rounded-1 {
+  border-radius: var(--size-1);
+}
+
+.rounded-2 {
+  border-radius: var(--size-2);
+}
