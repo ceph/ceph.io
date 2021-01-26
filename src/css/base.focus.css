@@ -23,5 +23,9 @@
 
 .js-focus-visible .link-cover.focus-visible::before {
   outline: var(--size-0_5) solid var(--color-blue);
+  outline-offset: var(--size-1);
+}
+
+.js-focus-visible .link-cover--shadow.focus-visible::before {
   outline-offset: var(--size-0);
 }

@@ -4,30 +4,34 @@ layout: hub-solutions
 order: 2
 ---
 
-<h1>Solutions</h1>
-
-<h2>Recent case studies</h2>
-
-{% set caseStudyLocaleTag = locale + '-case-study' %} {% set recentCaseStudies = collections[caseStudyLocaleTag] | reverse | limitItems(6)
-%}
-
-<ul class="ul grid grid--cols-6">
-  {% for item in recentCaseStudies %}
-  <li>
-    {% include "components/case-study-card.njk" %}
-  </li>
-  {% endfor %}
-</ul>
-
+<!-- prettier-ignore -->
+{% set caseStudyLocaleTag = locale + '-case-study' %}
+{% set recentCaseStudies = collections[caseStudyLocaleTag] | reverse | limitItems(6) %}
 {% set browseCaseStudies = collections[caseStudyLocaleTag] | collectionTags | removeTagsFromArray([caseStudyLocaleTag]) | randomOrder |
 limitItems(6) %}
 
-<h2>Browse more case studies</h2>
+<h1 class="h1">Solutions</h1>
 
-<ul class="ul grid grid--cols-3">
-  {% for item in browseCaseStudies %}
-  <li>
-    {% include "components/case-study-category-card.njk" %}
-  </li>
-  {% endfor %}
-</ul>
+<section class="section">
+  <h2 class="h2">Recent case studies</h2>
+
+  <ul class="grid grid--cols-2 md:grid--cols-3 lg:grid--cols-6 lg:grid--gap-7 xl:grid--gap-14 list-none p-0 ul">
+    {% for item in recentCaseStudies %}
+    <li>
+      {% include "components/case-study-card.njk" %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="section">
+  <h2 class="h2">Browse more case studies</h2>
+
+  <ul class="grid md:grid--cols-2 lg:grid--cols-3 lg:grid--gap-7 xl:grid--gap-14 list-none p-0 ul">
+    {% for item in browseCaseStudies %}
+    <li>
+      {% include "components/case-study-category-card.njk" %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>

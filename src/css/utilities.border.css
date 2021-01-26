@@ -8,10 +8,11 @@
   border-style: solid;
 }
 
-.rounded-1 {
-  border-radius: var(--size-1);
-}
-
 .rounded-2 {
   border-radius: var(--size-2);
+}
+
+.rounded-t-2 {
+  border-top-left-radius: var(--size-2);
+  border-top-right-radius: var(--size-2);
 }

@@ -39,20 +39,34 @@
   font-family: var(--font-family-default);
 }
 
+/* ---------- leading ---------- */
+.text-leading-none {
+  line-height: var(--font-leading-none);
+}
+
+.text-leading-tighter {
+  line-height: var(--font-leading-tighter);
+}
+
+.text-leading-tight {
+  line-height: var(--font-leading-tight);
+}
+
+.text-leading-normal {
+  line-height: var(--font-leading-normal);
+}
+
 /* ---------- sizes ---------- */
 .text-xs {
   font-size: var(--font-size-xs);
-  line-height: var(--size-4);
 }
 
 .text-sm {
   font-size: var(--font-size-sm);
-  line-height: var(--size-5);
 }
 
 .text-md {
   font-size: var(--font-size-md);
-  line-height: var(--size-6);
 }
 
 .text-lg {
@@ -109,23 +123,6 @@
 
 .text-13xl {
   font-size: var(--font-size-13xl);
-}
-
-/* ---------- leading ---------- */
-.text-leading-none {
-  line-height: var(--font-leading-none);
-}
-
-.text-leading-tighter {
-  line-height: var(--font-leading-tighter);
-}
-
-.text-leading-tight {
-  line-height: var(--font-leading-tight);
-}
-
-.text-leading-normal {
-  line-height: var(--font-leading-normal);
 }
 
 /* ---------- tracking ---------- */

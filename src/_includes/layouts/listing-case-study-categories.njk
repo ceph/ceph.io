@@ -38,12 +38,13 @@
 }
 ---
 
-<h1>{{ title }} "{{ tag }}"</h1>
-
+<!-- prettier-ignore -->
 {% set caseStudyLocaleTag = locale + '-case-study' %}
 {% set caseStudyCategories = collections[tag] | collectionIncludesTag(caseStudyLocaleTag) | reverse %}
 
-<ul class="ul grid grid--cols-4">
+<h1 class="h1">{{ title }} "{{ tag }}"</h1>
+
+<ul class="grid grid--cols-4 list-none p-0 ul">
   {% for item in caseStudyCategories %}
     <li>
       {% include "components/case-study-card.njk" %}
