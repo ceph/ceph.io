@@ -15,7 +15,7 @@ limitItems(6) %}
 <section class="section">
   <h2 class="h2">Recent case studies</h2>
 
-  <ul class="grid grid--cols-2 md:grid--cols-3 lg:grid--cols-6 lg:grid--gap-7 xl:grid--gap-14 list-none p-0 ul">
+  <ul class="grid grid--cols-2 md:grid--cols-3 lg:grid--cols-6 list-none p-0 ul">
     {% for item in recentCaseStudies %}
     <li>
       {% include "components/case-study-card.njk" %}
@@ -27,7 +27,7 @@ limitItems(6) %}
 <section class="section">
   <h2 class="h2">Browse more case studies</h2>
 
-  <ul class="grid md:grid--cols-2 lg:grid--cols-3 lg:grid--gap-7 xl:grid--gap-14 list-none p-0 ul">
+  <ul class="grid md:grid--cols-2 lg:grid--cols-3 list-none p-0 ul">
     {% for item in browseCaseStudies %}
     <li>
       {% include "components/case-study-category-card.njk" %}

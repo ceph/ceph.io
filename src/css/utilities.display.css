@@ -23,10 +23,6 @@
   display: inline;
 }
 
-.absolute {
-  position: absolute;
-}
-
-.relative {
-  position: relative;
+.overflow-hidden {
+  overflow: hidden;
 }

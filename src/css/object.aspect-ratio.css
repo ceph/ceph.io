@@ -17,3 +17,11 @@
   top: 0;
   width: 100%;
 }
+
+.aspect-ratio--cover img {
+  object-fit: cover;
+}
+
+.aspect-ratio--contain img {
+  object-fit: contain;
+}

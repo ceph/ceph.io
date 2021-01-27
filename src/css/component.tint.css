@@ -1,0 +1,18 @@
+/* ---------- COMPONENT tint ---------- */
+
+.tint {
+  position: relative;
+}
+
+.tint::after {
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.tint--black-2::after {
+  background: hsla(var(--color-black-hsl), 0.2);
+}

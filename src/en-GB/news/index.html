@@ -4,7 +4,10 @@ layout: hub-news
 order: 5
 ---
 
-<h1>What’s new</h1>
+<!-- prettier-ignore -->
+{% set articleLocaleTag = locale + '-article' %} {% set articles = collections[articleLocaleTag] | reverse | limitItems(4) %}
+
+<h1 class="h1">What’s new</h1>
 
 <div class="grid grid--cols-2 grid--gap-0">
   <div class="bg-grey-300 p-10">
@@ -27,42 +30,60 @@ order: 5
   </div>
 </div>
 
-<h2>Latest articles</h2>
+<section class="section">
+  <h2 class="h2">Latest articles</h2>
 
-{% set articleLocaleTag = locale + '-article' %} {% set articles = collections[articleLocaleTag] | reverse | limitItems(4) %}
+  <ul class="grid md:grid--cols-2 lg:grid--cols-4 list-none p-0 ul">
+    {% for item in articles %}
+    <li>
+      {% include "components/article-card.njk" %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
 
-<ul class="ul grid grid--cols-4">
-  {% for item in articles %}
-  <li>
-    {% include "components/article-card.njk" %}
-  </li>
-  {% endfor %}
-</ul>
+<section class="bg-grey-300 section section--full">
+  <h2 class="h2 text-center">Find out more</h2>
 
-<h2>Find out more</h2>
-
-<ul class="ul grid grid--cols-3">
-  <li>
-    <p class="p text-sm text-leading-tighter">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a felis odio. Integer interdum ipsum sed ante luctus, quis
-      vehicula magna consequat. Donec dignissim vestibulum lorem, sed pulvinar erat consequat sed. Quisque elementum sem eget magna feugiat
-      mattis.
-    </p>
-  </li>
-  <li>
-    <img class="mb-2" src="https://via.placeholder.com/640x360" alt="" />
-    <h3>Planet Ceph</h3>
-    <p class="p text-sm text-leading-tighter">
-      Donec dignissim vestibulum lorem, sed pulvinar erat consequat sed. Quisque elementum sem eget magna feugiat mattis.
-    </p>
-    <a href="/{{ locale }}/news/planet-ceph/">View Planet Ceph articles</a>
-  </li>
-  <li>
-    <img class="mb-2" src="https://via.placeholder.com/640x360" alt="" />
-    <h3>Publications</h3>
-    <p class="p text-sm text-leading-tighter">
-      Donec dignissim vestibulum lorem, sed pulvinar erat consequat sed. Quisque elementum sem eget magna feugiat mattis.
-    </p>
-    <a href="/{{ locale }}/news/publications/" target="_blank" rel="noreferrer noopener">Download publications</a>
-  </li>
-</ul>
+  <ul class="grid lg:grid--cols-3 list-none p-0 ul">
+    <li class="bg-white border-grey-500 border-px border-solid p-5 rounded-2">
+      <p class="p mb-0">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a felis odio. Integer interdum ipsum sed ante luctus, quis
+        vehicula magna consequat. Donec dignissim vestibulum lorem, sed pulvinar erat consequat sed. Quisque elementum sem eget magna
+        feugiat mattis.
+      </p>
+    </li>
+    <li class="bg-white border-grey-500 border-px border-solid relative rounded-2">
+      <div class="grid grid--gap-0 md-to-lg:grid--cols-2 overflow-hidden rounded-2">
+        <div class="aspect-ratio aspect-ratio--16x9 aspect-ratio--cover md-to-lg:h-full tint tint--black-2">
+          <img alt="" class="absolute md-to-lg:h-full left-0 top-0" loading="lazy" src="https://via.placeholder.com/640x360" />
+          <img alt="" class="absolute bottom-0 left-0 m-4 w-12 z-1" src="/assets/svgs/icon-planet-ceph-white-red.svg" />
+        </div>
+        <div class="p-5">
+          <h3 class="h3">Planet Ceph</h3>
+          <p class="p">
+            Donec dignissim vestibulum lorem, sed pulvinar erat consequat sed. Quisque elementum sem eget magna feugiat mattis.
+          </p>
+          <a class="a link-cover link-cover--shadow" href="/{{ locale }}/news/planet-ceph/">View Planet Ceph articles</a>
+        </div>
+      </div>
+    </li>
+    <li class="bg-white border-grey-500 border-px border-solid relative rounded-2">
+      <div class="grid grid--gap-0 md-to-lg:grid--cols-2 overflow-hidden rounded-2">
+        <div class="aspect-ratio aspect-ratio--16x9 aspect-ratio--cover md-to-lg:h-full tint tint--black-2">
+          <img alt="" class="absolute md-to-lg:h-full left-0 top-0" loading="lazy" src="https://via.placeholder.com/640x360" />
+          <img alt="" class="absolute bottom-0 left-0 m-4 w-12 z-1" src="/assets/svgs/icon-documentation-white-red.svg" />
+        </div>
+        <div class="p-5">
+          <h3 class="h3">Publications</h3>
+          <p class="p">
+            Donec dignissim vestibulum lorem, sed pulvinar erat consequat sed. Quisque elementum sem eget magna feugiat mattis.
+          </p>
+          <a class="a link-cover link-cover--shadow" href="/{{ locale }}/news/publications/" target="_blank" rel="noreferrer noopener"
+            >Download publications</a
+          >
+        </div>
+      </div>
+    </li>
+  </ul>
+</section>

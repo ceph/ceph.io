@@ -59,9 +59,11 @@
   letter-spacing: var(--font-tracking-normal);
   line-height: var(--size-6);
   text-decoration: none;
+  transition: color var(--animation-duration) var(--animation-easing);
 }
 
 .a:hover {
+  color: var(--color-red-500);
   text-decoration: underline;
 }
 
