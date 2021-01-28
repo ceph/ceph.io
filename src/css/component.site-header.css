@@ -102,6 +102,11 @@
 }
 
 @media (--mq-lg) {
+  .site-header__menu {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
   .site-header__menu-open,
   .site-header__menu-close {
     display: none;
