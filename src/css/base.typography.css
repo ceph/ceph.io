@@ -8,32 +8,36 @@
   font-family: var(--font-family-brand);
   font-weight: var(--font-weight-semibold);
   letter-spacing: var(--font-tracking-normal);
-  margin: var(--size-0);
 }
 
 .h1 {
   font-size: var(--font-size-4xl);
   line-height: var(--size-10);
+  margin: 0 0 var(--size-4);
 }
 
 .h2 {
   font-size: var(--font-size-2xl);
   line-height: var(--size-8);
+  margin: 0 0 var(--size-4);
 }
 
 .h3 {
   font-size: var(--font-size-xl);
   line-height: var(--size-6);
+  margin: 0 0 var(--size-4);
 }
 
 .h4 {
   font-size: var(--font-size-lg);
   line-height: var(--size-5);
+  margin: 0 0 var(--size-4);
 }
 
 .h5 {
   font-size: var(--font-size-md);
   line-height: var(--size-5);
+  margin: 0 0 var(--size-4);
 }
 
 /* ---------- paragraph ---------- */
@@ -55,10 +59,17 @@
   letter-spacing: var(--font-tracking-normal);
   line-height: var(--size-6);
   text-decoration: none;
+  transition: color var(--animation-duration) var(--animation-easing);
 }
 
 .a:hover {
-  text-decoration: underline; /* Let's come back to this. Maybe we'll use bottom-border? */
+  color: var(--color-red-500);
+  text-decoration: underline;
+}
+
+.a:active {
+  color: var(--color-red-600);
+  text-decoration: underline;
 }
 
 /* ---------- lists ---------- */
@@ -89,16 +100,18 @@
   line-height: var(--size-7);
 }
 
-@media (--mq-md) {
+@media (--mq-lg) {
   /* ---------- headings ---------- */
   .h1 {
     font-size: var(--font-size-6xl);
     line-height: var(--size-14);
+    margin-bottom: var(--size-6);
   }
 
   .h2 {
     font-size: var(--font-size-4xl);
     line-height: var(--size-10);
+    margin-bottom: var(--size-5);
   }
 
   .h4 {
@@ -107,16 +120,18 @@
   }
 }
 
-@media (--mq-lg) {
+@media (--mq-xl) {
   /* ---------- headings ---------- */
   .h1 {
     font-size: var(--font-size-8xl);
     line-height: var(--size-16);
+    margin-bottom: var(--size-8);
   }
 
   .h2 {
     font-size: var(--font-size-5xl);
     line-height: var(--size-11);
+    margin-bottom: var(--size-6);
   }
 
   .h3 {

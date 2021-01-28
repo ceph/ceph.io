@@ -23,6 +23,11 @@
   background-color: var(--color-grey-500);
 }
 
+/* ----------  background red ---------- */
+.bg-red-500 {
+  background-color: var(--color-red-500);
+}
+
 /* ---------- border negative ---------- */
 .border-black {
   border-color: var(--color-black);
@@ -32,6 +37,15 @@
   border-color: var(--color-white);
 }
 
+/* ---------- border grey ---------- */
+.border-grey-300 {
+  border-color: var(--color-grey-300);
+}
+
+.border-grey-500 {
+  border-color: var(--color-grey-500);
+}
+
 /* ---------- text negative ---------- */
 .color-black {
   color: var(--color-black);
@@ -39,6 +53,11 @@
 
 .color-white {
   color: var(--color-white);
+}
+
+/* ---------- text navy ---------- */
+.color-navy {
+  color: var(--color-navy);
 }
 
 /* ---------- text grey ---------- */

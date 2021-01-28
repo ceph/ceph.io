@@ -1,7 +1,9 @@
 {# We will need a way to randomise the image as case study categories don't contain an image. 
 We should only need a selection of 6 assets as we only show 6 case study categories. #}
 
-<a href="/{{ locale }}/solutions/case-studies/category/{{ item | slug }}/">
-  <img class="mb-2" src="https://via.placeholder.com/640x360?text={{ item }}{{ loop.index }}" alt="" />
-</a>
-<a class="text-capitalise" href="/{{ locale }}/solutions/case-studies/category/{{ item | slug }}/">{{ item }}</a>
+<div class="bg-grey-300 border-grey-500 border-px border-solid relative rounded-2">
+  <div class="aspect-ratio aspect-ratio--16x9">
+    <img alt="" class="absolute left-0 rounded-t-2 top-0" loading="lazy" src="https://via.placeholder.com/640x360?text={{ item }}{{ loop.index }}" />
+  </div>
+  <a class="a block link-cover link-cover--shadow p-6 text-capitalise text-2xl" href="/{{ locale }}/solutions/case-studies/category/{{ item | slug }}/">{{ item }}</a>
+</div>

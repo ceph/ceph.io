@@ -13,7 +13,7 @@ html.no-scroll {
 
 body {
   background-color: var(--color-white);
-  color: var(--color-black);
+  color: var(--color-gunmetal);
   display: grid;
   font-family: var(--font-family-brand);
   grid-template-rows: auto 1fr auto;

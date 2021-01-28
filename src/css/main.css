@@ -24,16 +24,21 @@
 
 /* components */
 @import "component.button.css";
+@import "component.link-cover.css";
 @import "component.language-selector.css";
 @import "component.nav-primary.css";
 @import "component.nav-secondary.css";
 @import "component.section.css";
 @import "component.site-footer.css";
 @import "component.site-header.css";
+@import "component.tint.css";
 
 /* utilities */
+@import "utilities.border.css";
 @import "utilities.colors.css";
 @import "utilities.display.css";
+@import "utilities.layout.css";
+@import "utilities.list.css";
 @import "utilities.size.css";
 @import "utilities.space.css";
 @import "utilities.typography.css";
