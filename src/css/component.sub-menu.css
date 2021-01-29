@@ -26,15 +26,18 @@
     position: relative;
   }
 
-  .sub-menu--2 > li {
+  .sub-menu > li:nth-last-child(2):first-child,
+  .sub-menu > li:nth-last-child(2):first-child ~ li {
     flex: 1 0 var(--size-1-2);
   }
 
-  .sub-menu--3 > li {
+  .sub-menu > li:nth-last-child(3):first-child,
+  .sub-menu > li:nth-last-child(3):first-child ~ li {
     flex: 1 0 var(--size-1-3);
   }
 
-  .sub-menu--4 > li {
+  .sub-menu > li:nth-last-child(4):first-child,
+  .sub-menu > li:nth-last-child(4):first-child ~ li {
     flex: 1 0 var(--size-1-4);
   }
 

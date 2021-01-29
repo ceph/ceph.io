@@ -5,6 +5,7 @@
   --section-gutters-y: var(--size-10);
   padding-bottom: var(--section-gutters-y);
   padding-top: var(--section-gutters-y);
+  scroll-margin-top: var(--size-scroll-top);
 }
 
 .section--full {
