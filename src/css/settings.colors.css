@@ -97,4 +97,8 @@
   --color-youtube-red-l: 50%;
   --color-youtube-red-hsl: var(--color-youtube-red-h), var(--color-youtube-red-s), var(--color-youtube-red-l);
   --color-youtube-red: hsl(var(--color-youtube-red-hsl));
+
+  /* ---------- shadow ---------- */
+  --shadow-black: 0 0.0625rem 0.125rem hsla(var(--color-black-hsl), 0.05), 0 0.125rem 0.25rem hsla(var(--color-black-hsl), 0.05),
+    0 0.25rem 0.5rem hsla(var(--color-black-hsl), 0.05), 0 0.5rem 1rem hsla(var(--color-black-hsl), 0.05);
 }

@@ -4,6 +4,7 @@ html {
   line-height: var(--font-leading-none);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
 }
 

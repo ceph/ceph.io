@@ -16,7 +16,8 @@
   outline-offset: var(--size-0);
 }
 
-.js-focus-visible .nav-secondary .focus-visible {
+.js-focus-visible .nav-secondary .focus-visible,
+.js-focus-visible .sub-menu .focus-visible {
   outline-offset: calc(-1 * var(--size-0_5));
 }
 
