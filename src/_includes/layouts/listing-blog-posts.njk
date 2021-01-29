@@ -30,7 +30,7 @@
 
 {% set blogPosts = pagination.items %}
 
-<ul class="ul grid grid--cols-4">
+<ul class="grid grid--cols-4 list-none p-0 ul">
   {% for item in blogPosts %}
     <li>
       {% include "components/blog-post-card.njk" %}

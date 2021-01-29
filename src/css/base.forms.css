@@ -1,0 +1,22 @@
+/* ---------- BASE forms ---------- */
+
+/* ---------- select ---------- */
+.select:not([multiple]):not([size]) {
+  background: transparent
+    url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20aria-hidden%3D%22true%22%20focusable%3D%22false%22%3E%0A%20%20%3Ctitle%3EChevron%20down%3C/title%3E%0A%20%20%3Cpath%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20stroke%3D%22%230A0C38%22%20stroke-width%3D%222%22%20d%3D%22M7%2010l5%205%205-5%22/%3E%0A%3C/svg%3E")
+    no-repeat calc(100% - var(--size-2)) center;
+  border: var(--size-px) solid var(--color-gunmetal);
+  border-radius: var(--size-1);
+  cursor: pointer;
+  font-family: var(--font-family-brand);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-normal);
+  letter-spacing: var(--font-tracking-normal);
+  line-height: var(--size-6);
+  padding: var(--size-3) var(--size-10) var(--size-3) var(--size-3);
+  transition: background-color var(--animation-duration) var(--animation-easing);
+}
+
+.select:not([multiple]):not([size]):hover {
+  background-color: var(--color-grey-300);
+}

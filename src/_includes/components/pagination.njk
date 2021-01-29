@@ -2,26 +2,31 @@
 {% set numberOfPages = pagination.pages.length %}
 {% set pageNumberIndex = pagination.pageNumber + 1 %}
 
-<nav class="pagination" aria-label="Pagination links">
-  {% if pagination.href.previous %}
-    <a href="{{ pagination.href.previous }}" data-direction="backwards">
+<nav aria-label="Pagination links" class="pagination">
+  <a class="button pagination__button pagination__button--prev" data-direction="backwards" {% if pageNumberIndex === 1 %}disabled{% endif %} href="{{ pagination.href.previous }}">
+    <img alt="" src="/assets/svgs/icon-chevron-left-white.svg" />
+    <div>
       <span class="block">{{ 'previous' | i18n }}</span>
-      {{ pageNumberIndex - 1}} of {{ numberOfPages }}
-    </a>
-  {% endif %}
-  <ol>
-    {%- for item in pagination.pages %}
-      <li>
-        <a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>
-          Page {{ loop.index }}
-        </a>
-      </li>
-    {%- endfor %}
-  </ol>
-  {% if pagination.href.next %}
-    <a href="{{ pagination.href.next }}" data-direction="forwards">
+      <span class="text-xs text-normal">
+        ({% if pageNumberIndex === 1 %}1{% else %}{{ pageNumberIndex - 1}} {% endif %} of {{ numberOfPages }})
+      </span>
+    </div>
+  </a>
+
+  <select class="pagination__select select" onchange="javascript:location.href = this.value;">
+    <option value="" selected disabled hidden>Page {{ pageNumberIndex }}</option>
+    {% for item in pagination.pages %}
+      <option value="{{ pagination.hrefs[ loop.index0 ] }}">
+        {{ loop.index }}</a>
+      </option>
+    {% endfor %}
+  </select>
+  
+  <a class="button pagination__button pagination__button--next" data-direction="forwards" {% if pageNumberIndex === numberOfPages %}disabled{% endif %} href="{{ pagination.href.next }}">
+    <div>
       <span class="block">{{ 'next' | i18n }}</span>
-      {{ pageNumberIndex + 1}} of {{ numberOfPages }}
-    </a>
-  {% endif %}
+      <span class="text-xs text-normal">({% if pageNumberIndex === numberOfPages %}{{ pageNumberIndex}}{% else %}{{ pageNumberIndex + 1}} {% endif %} of {{ numberOfPages }})</span>
+    </div>
+    <img alt="" src="/assets/svgs/icon-chevron-right-white.svg" />
+  </a>
 </nav>
