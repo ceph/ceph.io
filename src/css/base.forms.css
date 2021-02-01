@@ -12,7 +12,7 @@
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-normal);
   letter-spacing: var(--font-tracking-normal);
-  line-height: var(--size-6);
+  line-height: var(--font-leading-none);
   padding: var(--size-3) var(--size-10) var(--size-3) var(--size-3);
   transition: background-color var(--animation-duration) var(--animation-easing);
 }

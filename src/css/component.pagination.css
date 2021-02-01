@@ -6,22 +6,24 @@
 }
 
 .pagination__button {
-  padding: var(--size-4);
+  padding: var(--size-2);
 }
 
 .pagination__button img {
   width: var(--size-6);
 }
 
-.pagination__button div {
+.pagination__button span {
   display: none;
 }
 
-.pagination__select {
+.pagination__select:not([multiple]):not([size]) {
   color: var(--color-red-500);
+  padding-bottom: var(--size-2);
+  padding-top: var(--size-2);
 }
 
-.pagination__select option:not(:first-child) {
+.pagination__select:not([multiple]):not([size]) option:not(:first-child) {
   color: var(--color-gunmetal);
 }
 
@@ -36,11 +38,14 @@
   }
 
   .pagination__button {
-    display: flex;
-    justify-content: center;
-    line-height: var(--size-4);
     min-width: var(--size-36);
     padding: var(--size-2) var(--size-4);
+  }
+
+  .pagination__button span {
+    display: inline-block;
+    position: relative;
+    top: var(--size-0_5);
   }
 
   .pagination__button--prev {
@@ -49,11 +54,6 @@
 
   .pagination__button--next {
     padding-left: var(--size-8);
-  }
-
-  .pagination__button div {
-    display: block;
-    flex: 0 0 content;
   }
 }
 

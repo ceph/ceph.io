@@ -3,18 +3,13 @@
 {% set pageNumberIndex = pagination.pageNumber + 1 %}
 
 <nav aria-label="Pagination links" class="pagination">
-  <a class="button pagination__button pagination__button--prev" data-direction="backwards" {% if pageNumberIndex === 1 %}disabled{% endif %} href="{{ pagination.href.previous }}">
+  <a class="button pagination__button pagination__button--prev" data-direction="backwards" href="{{ pagination.href.previous }}" {% if pageNumberIndex === 1 %}aria-disabled="true" aria-hidden="true" tabindex="-1"{% endif %}>
     <img alt="" src="/assets/svgs/icon-chevron-left-white.svg" />
-    <div>
-      <span class="block">{{ 'previous' | i18n }}</span>
-      <span class="text-xs text-normal">
-        ({% if pageNumberIndex === 1 %}1{% else %}{{ pageNumberIndex - 1}} {% endif %} of {{ numberOfPages }})
-      </span>
-    </div>
+    <span>{{ 'previous' | i18n }}</span>
   </a>
-
+  
   <select class="pagination__select select" onchange="javascript:location.href = this.value;">
-    <option value="" selected disabled hidden>Page {{ pageNumberIndex }}</option>
+    <option value="" selected disabled hidden>Page {{ pageNumberIndex }} of {{ numberOfPages }}</option>
     {% for item in pagination.pages %}
       <option value="{{ pagination.hrefs[ loop.index0 ] }}">
         {{ loop.index }}</a>
@@ -22,11 +17,8 @@
     {% endfor %}
   </select>
   
-  <a class="button pagination__button pagination__button--next" data-direction="forwards" {% if pageNumberIndex === numberOfPages %}disabled{% endif %} href="{{ pagination.href.next }}">
-    <div>
-      <span class="block">{{ 'next' | i18n }}</span>
-      <span class="text-xs text-normal">({% if pageNumberIndex === numberOfPages %}{{ pageNumberIndex}}{% else %}{{ pageNumberIndex + 1}} {% endif %} of {{ numberOfPages }})</span>
-    </div>
+  <a class="button pagination__button pagination__button--next" data-direction="forwards" href="{{ pagination.href.next }}" {% if pageNumberIndex === numberOfPages %}aria-disabled="true" aria-hidden="true" tabindex="-1"{% endif %}>
+    <span>{{ 'next' | i18n }}</span>
     <img alt="" src="/assets/svgs/icon-chevron-right-white.svg" />
   </a>
 </nav>
