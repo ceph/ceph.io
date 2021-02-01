@@ -5,13 +5,7 @@
   --nav-secondary-link-color: var(--color-gunmetal);
   --nav-secondary-link-hover-color: var(--color-red-500);
   --nav-secondary-link-active-color: var(--color-red-600);
-  margin: var(--size-8) 0;
-}
-
-.nav-secondary--transparent {
-  --nav-secondary-link-color: var(--color-grey-500);
-  --nav-secondary-link-hover-color: var(--color-white);
-  --nav-secondary-link-active-color: var(--color-white);
+  margin: var(--size-6) 0;
 }
 
 .nav-secondary a {
@@ -121,6 +115,14 @@
 }
 
 @media (--mq-lg) {
+  .nav-secondary--overlay {
+    --nav-secondary-link-color: var(--color-grey-500);
+    --nav-secondary-link-hover-color: var(--color-white);
+    --nav-secondary-link-active-color: var(--color-white);
+    position: absolute;
+    z-index: 1;
+  }
+
   .nav-secondary__wrapper {
     display: flex;
     flex-wrap: nowrap;
