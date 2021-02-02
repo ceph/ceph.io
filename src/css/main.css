@@ -35,6 +35,7 @@
 @import "component.site-header.css";
 @import "component.sub-menu.css";
 @import "component.tint.css";
+@import "component.tooltip.css";
 
 /* utilities */
 @import "utilities.border.css";

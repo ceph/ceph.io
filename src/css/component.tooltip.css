@@ -1,0 +1,68 @@
+/* ---------- COMPONENT tooltip ---------- */
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip__toggle {
+  cursor: pointer;
+  list-style: none;
+}
+
+.tooltip__toggle::-webkit-details-marker {
+  display: none;
+}
+
+.tooltip[open] .tooltip__toggle::before {
+  content: "";
+  height: var(--size-full);
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: var(--size-full);
+}
+
+.tooltip__content {
+  background: var(--color-grey-300);
+  border-radius: var(--size-1);
+  box-shadow: var(--shadow-black);
+  padding: var(--size-4);
+  position: absolute;
+}
+
+.tooltip__content::before {
+  background: var(--color-grey-300);
+  content: "";
+  height: var(--size-6);
+  position: absolute;
+  transform: rotate(45deg);
+  width: var(--size-6);
+}
+
+@media (--mq-sm) {
+  .tooltip__content {
+    left: 0;
+    top: var(--size-10);
+  }
+}
+
+@media (--mq-to-lg) {
+  .tooltip__content::before {
+    left: var(--size-10);
+    top: calc(-1 * var(--size-3));
+  }
+}
+
+@media (--mq-lg) {
+  .tooltip__content {
+    left: 0;
+    min-width: var(--size-112);
+    top: 50%;
+    transform: translate(calc(-100% - var(--size-6)), -50%);
+  }
+
+  .tooltip__content::before {
+    right: calc(-1 * var(--size-3));
+    top: calc(50% - var(--size-3));
+  }
+}
