@@ -1,0 +1,118 @@
+/* ---------- COMPONENT matrix ---------- */
+
+.matrix {
+  --matrix-gap-x: var(--size-4);
+  --matrix-gutters-x: var(--size-3);
+  --matrix-item-size: var(--size-72);
+
+  @media (--mq-sm) {
+    --matrix-gap-x: var(--size-7);
+    --matrix-gutters-x: var(--size-5);
+    --matrix-item-size: var(--size-80);
+  }
+
+  @media (--mq-md) {
+    --matrix-gutters-x: var(--size-7);
+    --matrix-item-size: var(--size-96);
+  }
+
+  @media (--mq-lg) {
+    --matrix-item-size: var(--size-72);
+  }
+
+  @media (--mq-xl) {
+    --matrix-item-size: var(--size-80);
+  }
+}
+
+.matrix__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.matrix__link {
+  color: var(--color-white);
+  text-decoration: none;
+  transition: color var(--animation-duration) var(--animation-easing);
+}
+
+.matrix__link:hover,
+.matrix__link:active {
+  text-decoration: underline;
+}
+
+@media (--mq-to-lg) {
+  .matrix {
+    display: flex;
+    margin-left: calc(-1 * var(--matrix-gutters-x));
+    margin-right: calc(-1 * var(--matrix-gutters-x));
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .matrix__list {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 0 var(--matrix-gutters-x);
+  }
+
+  .matrix__list > li {
+    display: flex;
+    flex-direction: column;
+    margin-right: var(--matrix-gap-x);
+    min-height: var(--matrix-item-size);
+    scroll-snap-align: center;
+    width: var(--matrix-item-size);
+  }
+
+  .matrix__list > li:last-child {
+    margin-right: 0;
+  }
+}
+
+@media (--mq-lg) {
+  .matrix__list {
+    display: grid;
+    grid-template-columns: repeat(4, var(--size-1-4));
+  }
+
+  .matrix__list > li {
+    min-height: var(--matrix-item-size);
+  }
+
+  .matrix__list > li:nth-last-child(4):first-child {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+  }
+
+  .matrix__list > li:nth-last-child(4):first-child ~ :nth-child(2) {
+    grid-column: 3 / span 2;
+  }
+
+  .matrix__list > li:nth-last-child(4):first-child ~ :nth-child(3) {
+    grid-column: 3;
+    grid-row: 2;
+  }
+
+  .matrix__list > li:nth-last-child(4):first-child ~ :nth-child(4) {
+    grid-column: 4;
+    grid-row: 2;
+  }
+
+  .matrix__list > li:nth-last-child(3):first-child {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+  }
+
+  .matrix__list > li:nth-last-child(3):first-child ~ :nth-child(2) {
+    grid-column: 3 / span 2;
+    grid-row: 1;
+  }
+
+  .matrix__list > li:nth-last-child(3):first-child ~ :nth-child(3) {
+    grid-column: 3 / span 2;
+    grid-row: 2;
+  }
+}

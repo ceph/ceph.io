@@ -4300,6 +4300,11 @@
     margin-bottom: var(--size-64);
   }
 
+  .lg\:my-auto {
+    margin-top: var(--size-auto);
+    margin-bottom: var(--size-auto);
+  }
+
   .lg\:mt-0 {
     margin-top: var(--size-0);
   }

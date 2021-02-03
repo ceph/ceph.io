@@ -56,6 +56,14 @@
   line-height: var(--font-leading-normal);
 }
 
+.text-leading-8 {
+  line-height: var(--size-8);
+}
+
+.text-leading-10 {
+  line-height: var(--size-10);
+}
+
 /* ---------- sizes ---------- */
 .text-xs {
   font-size: var(--font-size-xs);
