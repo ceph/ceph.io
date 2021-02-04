@@ -10,6 +10,8 @@ permalink: '/{{ locale }}/solutions/case-studies{% if pagination.pageNumber > 0 
 {% set caseStudyFilters = collections[caseStudyLocaleTag] | collectionTags([caseStudyLocaleTag]) %}
 {% set caseStudies = pagination.items %}
 
+{% include 'components/navigation-secondary.njk' %}
+
 <div class="flex flex--justify-between">
   <h1 class="h1">{{ title }}</h1>
   <div>

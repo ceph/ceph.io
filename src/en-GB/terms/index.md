@@ -1,6 +1,7 @@
 ---
+layout: support
 title: Terms of use
-tags: 'support'
+tags: "support"
 order: 2
 ---
 

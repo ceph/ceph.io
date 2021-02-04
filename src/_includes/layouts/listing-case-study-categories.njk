@@ -42,6 +42,8 @@
 {% set caseStudyLocaleTag = locale + '-case-study' %}
 {% set caseStudyCategories = collections[tag] | collectionIncludesTag(caseStudyLocaleTag) | reverse %}
 
+{% include 'components/navigation-secondary.njk' %}
+
 <h1 class="h1">{{ title }} "{{ tag }}"</h1>
 
 <ul class="grid grid--cols-4 list-none p-0 ul">

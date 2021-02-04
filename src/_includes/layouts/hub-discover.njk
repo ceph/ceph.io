@@ -2,11 +2,6 @@
 layout: base
 ---
 
-{% set localeParentKey = '/' + locale + '/' %}
-{% set primaryNav = collections.primary | eleventyNavigation(localeParentKey) %}
-
-{% from "components/navigation-secondary.njk" import navigationSecondary %}
-
-{{- navigationSecondary(primaryNav=primaryNav, page=page, class='nav-secondary--overlay') -}}
+{% include 'components/navigation-secondary.njk' %}
 
 {{ content | safe }}
