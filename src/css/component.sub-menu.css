@@ -20,6 +20,7 @@
     margin-top: calc(-1 * var(--size-10));
     overflow-x: auto;
     padding: var(--size-0);
+    position: relative;
   }
 
   .sub-menu > li {
