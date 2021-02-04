@@ -64,5 +64,5 @@
   --size-h-screen: 100vh;
   --size-w-screen: 100vw;
 
-  --size-scroll-top: 5.25rem; /* 84px */
+  --size-scroll-offset: 5.25rem; /* 84px */
 }

@@ -1,7 +1,7 @@
 /* ---------- SETTINGS colors ---------- */
 
 :root {
-  /* ---------- negative ---------- */
+  /* negative */
   --color-black-h: 235;
   --color-black-s: 16%;
   --color-black-l: 16%;
@@ -14,14 +14,14 @@
   --color-white-hsl: var(--color-white-h), var(--color-white-s), var(--color-white-l);
   --color-white: hsl(var(--color-white-hsl));
 
-  /* ---------- blue ---------- */
+  /* blue */
   --color-blue-h: 214;
   --color-blue-s: 82%;
   --color-blue-l: 51%;
   --color-blue-hsl: var(--color-blue-h), var(--color-blue-s), var(--color-blue-l);
   --color-blue: hsl(var(--color-blue-hsl));
 
-  /* ---------- grey ---------- */
+  /* grey */
   --color-grey-h: 210;
 
   --color-grey-300-s: 40%;
@@ -34,21 +34,21 @@
   --color-grey-500-hsl: var(--color-grey-h), var(--color-grey-500-s), var(--color-grey-500-l);
   --color-grey-500: hsl(var(--color-grey-500-hsl));
 
-  /* ---------- gunmetal ---------- */
+  /* gunmetal */
   --color-gunmetal-h: 235;
   --color-gunmetal-s: 16%;
   --color-gunmetal-l: 16%;
   --color-gunmetal-hsl: var(--color-gunmetal-h), var(--color-gunmetal-s), var(--color-gunmetal-l);
   --color-gunmetal: hsl(var(--color-gunmetal-hsl));
 
-  /* ---------- navy ---------- */
+  /* navy */
   --color-navy-h: 237;
   --color-navy-s: 74%;
   --color-navy-l: 13%;
   --color-navy-hsl: var(--color-navy-h), var(--color-navy-s), var(--color-navy-l);
   --color-navy: hsl(var(--color-navy-hsl));
 
-  /* ---------- red ---------- */
+  /* red */
   --color-red-h: 360;
   --color-red-s: 84%;
 
@@ -72,14 +72,14 @@
   --color-red-700-hsl: var(--color-red-h), var(--color-red-s), var(--color-red-700-l);
   --color-red-700: hsl(var(--color-red-700-hsl));
 
-  /* ---------- royal ---------- */
+  /* royal */
   --color-royal-h: 237;
   --color-royal-s: 74%;
   --color-royal-l: 25%;
   --color-royal-hsl: var(--color-royal-h), var(--color-royal-s), var(--color-royal-l);
   --color-royal: hsl(var(--color-royal-hsl));
 
-  /* ---------- social ---------- */
+  /* social */
   --color-facebook-blue-h: 220;
   --color-facebook-blue-s: 46%;
   --color-facebook-blue-l: 48%;
@@ -98,7 +98,20 @@
   --color-youtube-red-hsl: var(--color-youtube-red-h), var(--color-youtube-red-s), var(--color-youtube-red-l);
   --color-youtube-red: hsl(var(--color-youtube-red-hsl));
 
-  /* ---------- shadow ---------- */
+  /* ceph */
+  --color-ceph-grey-h: 208;
+  --color-ceph-grey-s: 11%;
+  --color-ceph-grey-l: 26%;
+  --color-ceph-grey-hsl: var(--color-ceph-grey-h), var(--color-ceph-grey-s), var(--color-ceph-grey-l);
+  --color-ceph-grey: hsl(var(--color-ceph-grey-hsl));
+
+  --color-ceph-grey-rev-h: 150;
+  --color-ceph-grey-rev-s: 4%;
+  --color-ceph-grey-rev-l: 91%;
+  --color-ceph-grey-rev-hsl: var(--color-ceph-grey-rev-h), var(--color-ceph-grey-rev-s), var(--color-ceph-grey-rev-l);
+  --color-ceph-grey-rev: hsl(var(--color-ceph-grey-rev-hsl));
+
+  /* shadow */
   --shadow-black: 0 0.0625rem 0.125rem hsla(var(--color-black-hsl), 0.05), 0 0.125rem 0.25rem hsla(var(--color-black-hsl), 0.05),
     0 0.25rem 0.5rem hsla(var(--color-black-hsl), 0.05), 0 0.5rem 1rem hsla(var(--color-black-hsl), 0.05);
 }
