@@ -1,9 +1,8 @@
-"use strict";
+'use strict';
 /*global document window*/
 
-(function() {
-
-  const scroll_offset = document.querySelector('[data-scroll-offset]')
+(function () {
+    const scroll_offset = document.querySelector('[data-scroll-offset]')
   const site_header = document.querySelector('[data-site-header]');
 
   const observer = new IntersectionObserver( 
@@ -12,5 +11,4 @@
   );
 
   observer.observe(scroll_offset);
-
 })();

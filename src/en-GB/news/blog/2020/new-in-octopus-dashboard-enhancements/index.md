@@ -1,10 +1,10 @@
 ---
-title: 'New in Octopus: Dashboard Enhancements'
+title: "New in Octopus: Dashboard Enhancements"
 date: 2020-05-26
 author: Lenz Grimmer
 tags:
-  - 'dashboard'
-  - 'octopus'
+  - "dashboard"
+  - "octopus"
 ---
 
 [Ceph Dashboard](https://docs.ceph.com/docs/master/mgr/dashboard/) is a built-in web-based management and monitoring application that is part of the open source Ceph distribution.

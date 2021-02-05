@@ -1,6 +1,6 @@
 ---
 title: Privacy policy
-tags: 'support'
+tags: "support"
 order: 3
 ---
 

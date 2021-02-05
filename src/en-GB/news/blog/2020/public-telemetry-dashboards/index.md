@@ -2,10 +2,10 @@
 title: Public telemetry dashboards
 date: 2020-04-28
 author: Lars Marowsky-Brée
-image: '/assets/placeholder-photo-1280x720.jpg'
+image: "/assets/placeholder-photo-1280x720.jpg"
 tags:
-  - 'dashboard'
-  - 'telemetry'
+  - "dashboard"
+  - "telemetry"
 ---
 
 It is our pleasure to announce the immediate availability of [dashboards based on the data reported via Ceph’s telemetry feature](https://telemetry-public.ceph.com/).
