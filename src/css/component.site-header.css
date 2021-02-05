@@ -83,10 +83,10 @@
 @media (--mq-to-lg) {
   .site-header__menu {
     background: var(--color-white);
+    display: flex;
+    flex-direction: column;
     height: 100vh;
     left: 0;
-    padding-left: var(--site-header-menu-gutters-x);
-    padding-right: var(--site-header-menu-gutters-x);
     position: fixed;
     top: 0;
     transform: translateY(100%);
@@ -103,8 +103,13 @@
 
   .site-header__menu-close {
     display: block;
-    margin: var(--size-7) 0 var(--size-16) auto;
+    margin: var(--size-7) var(--site-header-menu-gutters-x) var(--size-16) auto;
     width: var(--size-6);
+  }
+
+  .site-header__overflow {
+    flex: 1 1 0%;
+    overflow-y: auto;
   }
 }
 
@@ -117,5 +122,9 @@
   .site-header__menu-open,
   .site-header__menu-close {
     display: none;
+  }
+
+  .site-header__overflow {
+    display: flex;
   }
 }
