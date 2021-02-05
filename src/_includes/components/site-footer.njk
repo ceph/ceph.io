@@ -2,7 +2,8 @@
 {% set primaryNav = collections.primary | eleventyNavigation(localeParentKey) %}
 {% set supportNav = collections.support | eleventyNavigation(localeParentKey) %}
 
-<footer class="site-footer wrapper">
+<footer class="site-footer">
+  <div class="wrapper">
     <nav aria-label="site">
       <ul class="site-footer__site ul">
         {%- for item in primaryNav %}
@@ -52,4 +53,5 @@
         </li>
       </ul>
     </nav>
+  </div>
 </footer>

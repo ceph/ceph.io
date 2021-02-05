@@ -21,6 +21,7 @@
 @import "object.aspect-ratio.css";
 @import "object.flex.css";
 @import "object.grid.css";
+@import "object.section.css";
 @import "object.wrapper.css";
 
 /* components */
@@ -30,7 +31,6 @@
 @import "component.nav-primary.css";
 @import "component.nav-secondary.css";
 @import "component.pagination.css";
-@import "component.section.css";
 @import "component.site-footer.css";
 @import "component.site-header.css";
 @import "component.sub-menu.css";
