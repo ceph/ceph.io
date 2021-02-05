@@ -7,7 +7,7 @@
   if (navigation) {
     const toggle = navigation.querySelector('[data-nav-secondary-toggle]');
     const navigation_sub = navigation.querySelector('[data-nav-secondary-sub]');
-    const media_query = window.matchMedia('(width < 64em)');
+    const media_query = window.matchMedia('(max-width: 64em)');
 
     function toggle_nav(e) {
       if (toggle.getAttribute('aria-expanded') === 'true') {
