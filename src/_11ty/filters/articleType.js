@@ -16,8 +16,8 @@ module.exports = tags => {
   const lcTags = tags
     .map(tag => tag.toLowerCase().substr(6))
     .filter(tag => {
-      return tagSuffix.some(suffix => tag.includes(suffix))
+      return tagSuffix.some(suffix => tag.includes(suffix));
     });
 
-  return lcTags; 
+  return lcTags;
 };

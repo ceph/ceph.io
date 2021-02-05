@@ -1,6 +1,6 @@
 ---
 title: Trademarks
-tags: 'support'
+tags: "support"
 order: 4
 ---
 

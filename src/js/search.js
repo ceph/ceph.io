@@ -1,5 +1,5 @@
 const urlPath = window.location.pathname.split('/');
-const urlLocale = urlPath[1]; 
+const urlLocale = urlPath[1];
 const searchInput = document.getElementById('search-str');
 const searchSubmit = document.getElementById('search-submit');
 const searchresultsContainer = document.getElementById('search-results');
