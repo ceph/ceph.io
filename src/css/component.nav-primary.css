@@ -1,5 +1,25 @@
 /* ---------- COMPONENT nav primary ---------- */
 
+.nav-primary {
+  --nav-primary-gutters-x: var(--size-3);
+
+  @media (--mq-sm) {
+    --nav-primary-gutters-x: var(--size-5);
+  }
+
+  @media (--mq-md) {
+    --nav-primary-gutters-x: var(--size-7);
+  }
+
+  @media (--mq-lg) {
+    --nav-primary-gap-x: var(--size-6);
+  }
+
+  @media (--mq-xl) {
+    --nav-primary-gap-x: var(--size-8);
+  }
+}
+
 .nav-primary a {
   color: var(--color-gunmetal);
   display: inline-block;
@@ -23,6 +43,11 @@
 
 /* ---------- media queries ---------- */
 @media (--mq-to-lg) {
+  .nav-primary {
+    margin-bottom: var(--size-4);
+    padding: 0 var(--nav-primary-gutters-x);
+  }
+
   .nav-primary > li {
     margin-bottom: var(--size-4);
   }
@@ -30,7 +55,6 @@
 
 @media (--mq-lg) {
   .nav-primary {
-    --nav-primary-gap-x: var(--size-6);
     display: flex;
     flex-wrap: nowrap;
     margin-bottom: 0;
@@ -60,11 +84,5 @@
 
   .home .site-header--stuck .nav-primary a:active {
     color: var(--color-red-600);
-  }
-}
-
-@media (--mq-xl) {
-  .nav-primary {
-    --nav-primary-gap-x: var(--size-8);
   }
 }

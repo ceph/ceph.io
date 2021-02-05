@@ -1,5 +1,6 @@
-<header class="site-header" data-site-header>
-  <div class="flex flex--align-center flex--justify-between wrapper">
+<div class="scroll-offset" data-scroll-offset></div>
+<header class="site-header wrapper" data-site-header>
+  <div class="flex flex--align-center flex--justify-between">
     <a class="site-header__logo" href="/{{ locale }}/">
       <svg xmlns="http://www.w3.org/2000/svg" width="154" height="42" viewBox="0 0 154 42" aria-hidden="true" focusable="false">
         <g class="logo-ceph__icon">
@@ -36,8 +37,10 @@
         <span class="visually-hidden">Close menu</span>
       </a>
      
-      {% include 'components/navigation-primary.njk' %}
-      {% include 'components/language-selector.njk' %}
+      <div class="site-header__overflow">
+        {% include 'components/navigation-primary.njk' %}
+        {% include 'components/language-selector.njk' %}
+      </div>
     </div>
   </div>
 </header>
