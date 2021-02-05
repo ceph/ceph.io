@@ -17,7 +17,8 @@
 }
 
 .js-focus-visible .nav-secondary .focus-visible,
-.js-focus-visible .sub-menu .focus-visible {
+.js-focus-visible .sub-menu .focus-visible,
+.js-focus-visible .matrix .link-cover.focus-visible::before {
   outline-offset: calc(-1 * var(--size-0_5));
 }
 

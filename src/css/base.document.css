@@ -17,6 +17,7 @@ body {
   color: var(--color-gunmetal);
   display: grid;
   font-family: var(--font-family-brand);
+  grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto 1fr auto;
   min-height: var(--size-h-screen);
   line-height: var(--font-leading-none);
