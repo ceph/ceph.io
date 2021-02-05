@@ -1,11 +1,11 @@
 /**
- * 
+ *
  * Return items that are in the past compared to the build date.
  *
  * Time is reset 00:00 so check is based soley on yyyy/mm
  *
  * @param {Array} collection
- * 
+ *
  */
 
 module.exports = collection => {

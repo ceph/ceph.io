@@ -69,8 +69,8 @@ module.exports = function (eleventyConfig) {
 
   // Passthrough copy
   eleventyConfig.addPassthroughCopy('src/js');
-  eleventyConfig.addPassthroughCopy({'node_modules/focus-visible/dist/focus-visible.min.js': 'js/focus-visible.min.js'});
-  eleventyConfig.addPassthroughCopy({'node_modules/details-polyfill/index.js': 'js/detail-polyfill.js'});
+  eleventyConfig.addPassthroughCopy({ 'node_modules/focus-visible/dist/focus-visible.min.js': 'js/focus-visible.min.js' });
+  eleventyConfig.addPassthroughCopy({ 'node_modules/details-polyfill/index.js': 'js/detail-polyfill.js' });
 
   // Plugins
   eleventyConfig.addPlugin(eleventyNavigationPlugin);

@@ -5,6 +5,6 @@ module.exports = {
   defaultLocale: 'en-GB',
   social: {
     facebook: '@cephstorage',
-    twitter: '@ceph'
-  }  
+    twitter: '@ceph',
+  },
 };
