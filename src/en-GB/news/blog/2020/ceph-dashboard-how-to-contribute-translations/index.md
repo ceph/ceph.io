@@ -1,11 +1,11 @@
 ---
-title: 'Ceph Dashboard: How to contribute translations'
+title: "Ceph Dashboard: How to contribute translations"
 date: 2020-05-27
 author: Lenz Grimmer
 tags:
-  - 'dashboard'
-  - 'translation'
-  - 'ceph'
+  - "dashboard"
+  - "translation"
+  - "ceph"
 ---
 
 _(This is a guest post by Sebastian Krah from the Ceph Dashboard Team. He is coordinating the efforts around localization and internationalization of the Dashboard)_
