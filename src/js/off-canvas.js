@@ -8,7 +8,7 @@
   const menu_open = header.querySelector('[data-menu-open]');
   const menu_close = header.querySelector('[data-menu-close]');
 
-  const media_query = window.matchMedia('(max-width: 64em)');
+  const media_query = window.matchMedia('(max-width: 63.9375em)');
 
   function toggleMenu() {
     menu_open.addEventListener('click', e => {

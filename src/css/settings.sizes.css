@@ -64,5 +64,7 @@
   --size-h-screen: 100vh;
   --size-w-screen: 100vw;
 
-  --size-scroll-offset: 5.25rem; /* 84px */
+  /* site header magic number */
+  --header-height: 5.25rem; /* 84px */
+  --size-scroll-offset: var(--header-height);
 }
