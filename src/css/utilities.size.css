@@ -28,3 +28,9 @@
     height: var(--size-full);
   }
 }
+
+@media (--mq-lg) {
+  .lg\:h-full {
+    height: var(--size-full);
+  }
+}

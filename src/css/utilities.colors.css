@@ -23,9 +23,19 @@
   background-color: var(--color-grey-500);
 }
 
+/* ----------  background gunmetal ---------- */
+.bg-gunmetal {
+  background-color: var(--color-gunmetal);
+}
+
 /* ----------  background red ---------- */
 .bg-red-500 {
   background-color: var(--color-red-500);
+}
+
+/* ----------  background royal ---------- */
+.bg-royal {
+  background-color: var(--color-royal);
 }
 
 /* ---------- border negative ---------- */
