@@ -19,6 +19,7 @@
   top: 0;
   transition: background-color var(--animation-duration-fast) var(--animation-easing),
     border var(--animation-duration-fast) var(--animation-easing), box-shadow var(--animation-duration-fast) var(--animation-easing);
+  width: var(--size-full);
   z-index: 10;
 
   @media (--mq-sm) {
