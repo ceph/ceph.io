@@ -60,6 +60,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias('listing-planet-ceph-articles', 'layouts/listing-planet-ceph-articles.njk');
   eleventyConfig.addLayoutAlias('listing-press-releases', 'layouts/listing-press-releases.njk');
   eleventyConfig.addLayoutAlias('listing-press-release-categories', 'layouts/listing-press-release-categories.njk');
+  eleventyConfig.addLayoutAlias('support', 'layouts/support.njk');
 
   // Shortcodes
   const shortcodesDir = `./src/_11ty/shortcodes`;

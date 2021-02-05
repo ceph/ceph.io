@@ -1,24 +1,21 @@
 {% set localeParentKey = '/' + locale + '/' %}
 {% set primaryNav = collections.primary | eleventyNavigation(localeParentKey) %}
 
-{# Not sure about this if layout != home as it feels a bit flimsy #}
-{% if layout != 'home' %}
-  <nav aria-label="secondary">
-    <ul class="nav-secondary ul" data-nav-secondary>
-      {%- for item in primaryNav -%}
-        {%- if page.url | startsWith(item.url) -%}
-          <li class="nav-secondary__wrapper"><a class="nav-secondary__top" href="{{ item.url | url }}" data-nav-secondary-toggle>{{ item.title }}</a>
-          {%- if item.children %}
-            <ul class="nav-secondary__sub ul" data-nav-secondary-sub>
-              {%- for subitem in item.children %}
-                <li><a href="{{ subitem.url | url }}" {% if page.url | startsWith(subitem.url) %} aria-current="page"{% endif %}>{{ subitem.title }}</a>
-                </li>
-              {%- endfor %}
-            </ul>
-          {% endif %}
-          </li>
+<nav aria-label="secondary">
+  <ul class="nav-secondary {% if overlaySubMenu %}nav-secondary--overlay{% endif %} ul" data-nav-secondary>
+    {%- for item in primaryNav -%}
+      {%- if page.url | startsWith(item.url) -%}
+        <li class="nav-secondary__wrapper"><a class="nav-secondary__top" href="{{ item.url | url }}" data-nav-secondary-toggle>{{ item.title }}</a>
+        {%- if item.children %}
+          <ul class="nav-secondary__sub ul" data-nav-secondary-sub>
+            {%- for subitem in item.children %}
+              <li><a href="{{ subitem.url | url }}" {% if page.url | startsWith(subitem.url) %} aria-current="page"{% endif %}>{{ subitem.title }}</a>
+              </li>
+            {%- endfor %}
+          </ul>
         {% endif %}
-      {%- endfor %}
-    </ul>
-  </nav>
-{% endif %}
+        </li>
+      {% endif %}
+    {%- endfor %}
+  </ul>
+</nav>
