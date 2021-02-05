@@ -46,7 +46,22 @@
 @media (--mq-md) {
 }
 
-@media (--mq-lg) {
+@media (--mq-to-lg) {
+  .to-lg\:flex {
+    display: flex;
+  }
+
+  .to-lg\:flex--col {
+    flex-direction: column;
+  }
+
+  .to-lg\:flex--justify-between {
+    justify-content: space-between;
+  }
+
+  .to-lg\:flex-1 {
+    flex: 1 1 0%;
+  }
 }
 
 @media (--mq-xl) {

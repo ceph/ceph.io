@@ -14,9 +14,19 @@
   width: var(--size-36);
 }
 
+.w-full {
+  width: var(--size-full);
+}
+
 /* ---------- media queries ---------- */
 @media (--mq-md-to-lg) {
   .md-to-lg\:h-full {
+    height: var(--size-full);
+  }
+}
+
+@media (--mq-lg) {
+  .lg\:h-full {
     height: var(--size-full);
   }
 }
