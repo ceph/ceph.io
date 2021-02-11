@@ -5,7 +5,15 @@
   --nav-secondary-link-color: var(--color-gunmetal);
   --nav-secondary-link-hover-color: var(--color-red-500);
   --nav-secondary-link-active-color: var(--color-red-600);
-  margin: var(--size-6) 0;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  letter-spacing: var(--font-tracking-normal);
+  line-height: var(--size-5);
+  margin: var(--size-6) 0 0;
+
+  @media (--mq-xl) {
+    --nav-secondary-sub-gap-x: var(--size-6);
+  }
 }
 
 .nav-secondary a {
@@ -30,34 +38,39 @@
 }
 
 .nav-secondary__top {
-  font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
-  line-height: var(--size-5);
 }
 
 .nav-secondary__sub {
-  font-size: var(--font-size-sm);
-  line-height: var(--size-5);
-  margin-bottom: 0;
+  margin: var(--size-1) 0 0;
+}
+
+.nav-secondary__sub > li {
+  margin-bottom: var(--size-1);
 }
 
 .js .nav-secondary {
   --nav-secondary-gutters-x: var(--size-3);
-}
 
-@media (--mq-to-sm) {
-  .js .nav-secondary {
+  @media (--mq-to-sm) {
     --nav-secondary-gutters-x: var(--size-5);
+  }
+
+  @media (--mq-to-lg) {
+    --nav-secondary-gutters-x: var(--size-7);
+    --nav-secondary-link-color: var(--color-grey-500);
+    --nav-secondary-link-hover-color: var(--color-white);
+    --nav-secondary-link-active-color: var(--color-white);
   }
 }
 
 @media (--mq-to-lg) {
   .js .nav-secondary {
-    --nav-secondary-gutters-x: var(--size-7);
-    --nav-secondary-link-color: var(--color-grey-500);
-    --nav-secondary-link-hover-color: var(--color-white);
-    --nav-secondary-link-active-color: var(--color-white);
     margin: 0 calc(-1 * var(--nav-secondary-gutters-x));
+  }
+
+  .js .nav-secondary--overlay {
+    margin-bottom: 0;
   }
 
   .js .nav-secondary__wrapper {
@@ -99,6 +112,7 @@
     box-shadow: var(--shadow-black);
     display: none;
     left: 0;
+    margin-top: 0;
     position: absolute;
     top: var(--size-11);
     width: var(--size-full);
@@ -106,6 +120,10 @@
 
   .js .nav-secondary__top[aria-expanded="true"] + .nav-secondary__sub {
     display: block;
+  }
+
+  .js .nav-secondary__sub > li {
+    margin-bottom: 0;
   }
 
   .js .nav-secondary__sub a {
@@ -136,6 +154,7 @@
   .nav-secondary__sub {
     display: flex;
     flex-wrap: nowrap;
+    margin-top: 0;
     position: relative;
   }
 
@@ -151,12 +170,6 @@
   }
 
   .nav-secondary__sub > li {
-    margin-left: var(--nav-secondary-sub-gap-x);
-  }
-}
-
-@media (--mq-xl) {
-  .nav-secondary {
-    --nav-secondary-sub-gap-x: var(--size-6);
+    margin: 0 0 0 var(--nav-secondary-sub-gap-x);
   }
 }

@@ -2,10 +2,13 @@
 {% set primaryNav = collections.primary | eleventyNavigation(localeParentKey) %}
 
 <nav aria-label="main">
-  <ul class="nav-primary ul">
-    {%- for item in primaryNav %}
-      <li><a href="{{ item.url | url }}" {% if page.url | startsWith(item.url) %} aria-current="page"{% endif %}>{{ item.title }}</a>
+  <ul class="nav-primary">
+    {%- for item in primaryNav -%}
+      <li>
+        <a href="{{ item.url | url }}" {% if page.url | startsWith(item.url) %} aria-current="page"{% endif %}>
+          {{ item.title }}
+        </a>
       </li>
-    {%- endfor %}
+    {%- endfor -%}
   </ul>
 </nav>

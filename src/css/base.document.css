@@ -33,6 +33,15 @@ textarea {
   font-family: inherit;
 }
 
+/* 
+https://developer.mozilla.org/en-US/docs/Web/CSS/list-style#accessibility_concerns
+This is implemented by sanitize but it omits the position absolute. 
+Firefox needs the position absolute otherwise it adds whitespace.
+*/
+nav li::before {
+  position: absolute;
+}
+
 img,
 canvas {
   height: auto;

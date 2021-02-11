@@ -15,6 +15,7 @@
 @import "base.document.css";
 @import "base.focus.css";
 @import "base.forms.css";
+@import "base.media.css";
 @import "base.typography.css";
 
 /* objects */
@@ -26,6 +27,7 @@
 
 /* components */
 @import "component.button.css";
+@import "component.hr.css";
 @import "component.link-cover.css";
 @import "component.language-selector.css";
 @import "component.matrix.css";

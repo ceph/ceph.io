@@ -7,15 +7,19 @@
   scroll-margin-top: var(--size-scroll-top);
 
   @media (--mq-sm) {
-    --section-gutters-y: var(--size-12);
-  }
-
-  @media (--mq-md) {
     --section-gutters-y: var(--size-14);
   }
 
-  @media (--mq-lg) {
+  @media (--mq-md) {
     --section-gutters-y: var(--size-16);
+  }
+
+  @media (--mq-lg) {
+    --section-gutters-y: var(--size-20);
+  }
+
+  @media (--mq-xl) {
+    --section-gutters-y: var(--size-32);
   }
 }
 

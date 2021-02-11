@@ -1,47 +1,76 @@
 /* ---------- BASE typography ---------- */
 
 @custom-selector :--heading .h1, .h2, .h3, .h4, .h5, .h6;
+@custom-selector :--rt-heading h1, h2, h3, h4, h5, h6;
 @custom-selector :--list .ul, .ol;
+@custom-selector :--rt-list ul, ol;
 
-/* ---------- headings ---------- */
-:--heading {
+/* headings */
+:--heading,
+.richtext :--rt-heading {
   font-family: var(--font-family-brand);
   font-weight: var(--font-weight-semibold);
   letter-spacing: var(--font-tracking-normal);
 }
 
-.h1 {
+.h1,
+.richtext h1 {
   font-size: var(--font-size-4xl);
   line-height: var(--size-10);
   margin: 0 0 var(--size-4);
 }
 
-.h2 {
+.h2,
+.richtext h2 {
   font-size: var(--font-size-2xl);
   line-height: var(--size-8);
   margin: 0 0 var(--size-4);
 }
 
-.h3 {
+.h3,
+.richtext h3 {
   font-size: var(--font-size-xl);
   line-height: var(--size-6);
   margin: 0 0 var(--size-4);
 }
 
-.h4 {
+.h4,
+.richtext h4 {
   font-size: var(--font-size-lg);
   line-height: var(--size-5);
   margin: 0 0 var(--size-4);
 }
 
-.h5 {
+.h5,
+.h6,
+.richtext h5,
+.richtext h6 {
   font-size: var(--font-size-md);
   line-height: var(--size-5);
   margin: 0 0 var(--size-4);
 }
 
-/* ---------- paragraph ---------- */
-.p {
+.richtext p + h2,
+.richtext ul + h2,
+.richtext ol + h2,
+.richtext p + h3,
+.richtext ul + h3,
+.richtext ol + h3,
+.richtext p + h4,
+.richtext ul + h4,
+.richtext ol + h4,
+.richtext p + h5,
+.richtext ul + h5,
+.richtext ol + h5,
+.richtext p + h6,
+.richtext ul + h6,
+.richtext ol + h6 {
+  margin-top: var(--size-6);
+}
+
+/* paragraph */
+.p,
+.richtext p {
   font-family: var(--font-family-brand);
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-normal);
@@ -50,8 +79,27 @@
   margin: 0 0 var(--size-4);
 }
 
-/* ---------- link ---------- */
-.a {
+.p-sm {
+  font-family: var(--font-family-brand);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  letter-spacing: var(--font-tracking-normal);
+  line-height: var(--size-5);
+  margin: 0 0 var(--size-4);
+}
+
+.p-xs {
+  font-family: var(--font-family-brand);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-normal);
+  letter-spacing: var(--font-tracking-normal);
+  line-height: var(--size-4);
+  margin: 0 0 var(--size-4);
+}
+
+/* link */
+.a,
+.richtext a {
   color: var(--color-red-500);
   font-family: var(--font-family-brand);
   font-size: var(--font-size-md);
@@ -62,18 +110,21 @@
   transition: color var(--animation-duration) var(--animation-easing);
 }
 
-.a:hover {
+.a:hover,
+.richtext a:hover {
   color: var(--color-red-500);
   text-decoration: underline;
 }
 
-.a:active {
+.a:active,
+.richtext a:active {
   color: var(--color-red-600);
   text-decoration: underline;
 }
 
-/* ---------- lists ---------- */
-:--list {
+/* lists */
+:--list,
+.richtext :--rt-list {
   font-family: var(--font-family-brand);
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-normal);
@@ -82,65 +133,124 @@
   margin: 0 0 var(--size-4);
 }
 
-:--list li::marker {
-  color: var(--color-blue);
+:--list li,
+.richtext :--rt-list li {
+  margin: 0 0 var(--size-1);
 }
 
-.ol li::marker {
-  font-weight: var(--font-weight-bold);
+:--list li::marker,
+.richtext :--rt-list li::marker {
+  color: var(--color-navy);
 }
 
-/* ---------- custom ---------- */
+.ol li::marker,
+.richtext ol li::marker {
+  font-weight: var(--font-weight-semibold);
+}
+
+:--list li > :--list,
+.richtext :--rt-list li > :--rt-list {
+  margin: var(--size-1) 0 0;
+}
+
+.ol li > .ol,
+.richtext ol li > ol {
+  list-style-type: lower-alpha;
+}
+
+/* custom */
 .standout,
-.excerpt {
+.excerpt,
+.intro-para > p:first-child {
   font-family: var(--font-family-brand);
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-normal);
   letter-spacing: var(--font-tracking-normal);
-  line-height: var(--size-7);
+  line-height: var(--size-6);
 }
 
 @media (--mq-lg) {
-  /* ---------- headings ---------- */
-  .h1 {
+  /* headings */
+  .h1,
+  .richtext h1 {
     font-size: var(--font-size-6xl);
     line-height: var(--size-14);
     margin-bottom: var(--size-6);
   }
 
-  .h2 {
+  .h2,
+  .richtext h2 {
     font-size: var(--font-size-4xl);
     line-height: var(--size-10);
     margin-bottom: var(--size-5);
   }
 
-  .h4 {
+  .richtext p + h2,
+  .richtext ul + h2,
+  .richtext ol + h2 {
+    margin-top: var(--size-8);
+  }
+
+  .h4,
+  .richtext h4 {
     font-size: var(--font-size-xl);
     line-height: var(--size-6);
+  }
+
+  .richtext p + h3,
+  .richtext ul + h3,
+  .richtext ol + h3,
+  .richtext p + h4,
+  .richtext ul + h4,
+  .richtext ol + h4,
+  .richtext p + h5,
+  .richtext ul + h5,
+  .richtext ol + h5,
+  .richtext p + h6,
+  .richtext ul + h6,
+  .richtext ol + h6 {
+    margin-top: var(--size-6);
   }
 }
 
 @media (--mq-xl) {
-  /* ---------- headings ---------- */
-  .h1 {
+  /* headings */
+  .h1,
+  .richtext h1 {
     font-size: var(--font-size-8xl);
     line-height: var(--size-16);
     margin-bottom: var(--size-8);
   }
 
-  .h2 {
+  .h2,
+  .richtext h2 {
     font-size: var(--font-size-5xl);
     line-height: var(--size-11);
     margin-bottom: var(--size-6);
   }
 
-  .h3 {
+  .richtext p + h2,
+  .richtext ul + h2,
+  .richtext ol + h2 {
+    margin-top: var(--size-10);
+  }
+
+  .h3,
+  .richtext h3 {
     font-size: var(--font-size-2xl);
     line-height: var(--size-8);
   }
 
-  .h5 {
+  .h5,
+  .richtext h5 {
     font-size: var(--font-size-lg);
     line-height: var(--size-6);
+  }
+
+  /* custom */
+  .standout,
+  .intro-para > p:first-child {
+    font-size: var(--font-size-xl);
+    line-height: var(--size-7);
   }
 }

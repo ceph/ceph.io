@@ -20,18 +20,18 @@ permalink: '/{{ locale }}/solutions/case-studies{% if pagination.pageNumber > 0 
       {% for item in caseStudyFilters %}
         <option value="/{{ locale }}/solutions/case-studies/category/{{ item | slug }}/">
           {{ item }}</a>
-        </option>
-      {% endfor %}
-    </select>
-  </div>
+      </option>
+    {% endfor %}
+  </select>
+</div>
 </div>
 
-<ul class="grid grid--cols-4 list-none p-0 ul">
-  {% for item in caseStudies %}
-    <li>
-      {% include "components/case-study-card.njk" %}
-    </li>
-  {% endfor %}
+<ul class="grid grid--cols-4 list-none p-0">
+{% for item in caseStudies %}
+  <li>
+    {% include "components/case-study-card.njk" %}
+  </li>
+{% endfor %}
 </ul>
 
 {% include "components/pagination.njk" %}
