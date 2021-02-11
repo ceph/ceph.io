@@ -1,14 +1,12 @@
 ---
 title: Ceph drives savings for Bloomberg
-date: 2020-07-17
-author: Lenz Grimmer
 image: "/assets/placeholder-photo-1280x720.jpg"
 sponsor:
-  name: "SUSE"
+  name: SUSE
   logo: "https://via.placeholder.com/50"
   website: "https://www.suse.com"
 tags:
-  - "commerce"
+  - commerce
 ---
 
 Vestibulum auctor sem in nisi aliquet, non scelerisque tortor posuere. Aenean non erat efficitur, malesuada sapien porttitor, sollicitudin augue. In malesuada cursus massa, in aliquet leo maximus vitae.
@@ -28,11 +26,10 @@ Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac tu
 
 Cras et lacus quis erat accumsan venenatis ac aliquet dui.
 
-1. Mauris volutpat ornare tortor nec placerat
-   1. Duis in nisl et est dapibus mollis at vitae mauris
-1. Aliquam bibendum tempor orci in pharetra
-1. Duis in nisl et est dapibus mollis at vitae mauris
-1. Maecenas aliquet justo quam, eget gravida quam sodales a
+- Mauris volutpat ornare tortor nec placerat
+- Aliquam bibendum tempor orci in pharetra
+- Duis in nisl et est dapibus mollis at vitae mauris
+- Maecenas aliquet justo quam, eget gravida quam sodales a
 
 <div class="grid grid--cols-2-fit">
   <div>
