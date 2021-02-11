@@ -2,7 +2,16 @@
 
 /* image */
 .richtext img {
-  margin: var(--size-4) 0;
+  --richtext-img-gutters-y: var(--size-4);
+  margin: var(--richtext-img-gutters-y) 0;
+
+  @media (--mq-lg) {
+    --richtext-img-gutters-y: var(--size-6);
+  }
+
+  @media (--mq-xl) {
+    --richtext-img-gutters-y: var(--size-8);
+  }
 }
 
 @media (--mq-to-lg) {
@@ -14,23 +23,5 @@
     position: relative;
     right: 50%;
     width: var(--size-w-screen);
-  }
-}
-
-@media (--mq-lg) {
-  .richtext img {
-    margin: var(--size-6) 0;
-  }
-}
-
-@media (--mq-lg) {
-  .richtext img {
-    margin: var(--size-6) 0;
-  }
-}
-
-@media (--mq-xl) {
-  .richtext img {
-    margin: var(--size-8) 0;
   }
 }
