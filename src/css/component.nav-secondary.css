@@ -6,8 +6,6 @@
   --nav-secondary-link-hover-color: var(--color-red-500);
   --nav-secondary-link-active-color: var(--color-red-600);
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-normal);
-  letter-spacing: var(--font-tracking-normal);
   line-height: var(--size-5);
   margin: var(--size-6) 0 0;
 

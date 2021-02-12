@@ -8,9 +8,7 @@
 /* headings */
 :--heading,
 .richtext :--rt-heading {
-  font-family: var(--font-family-brand);
   font-weight: var(--font-weight-semibold);
-  letter-spacing: var(--font-tracking-normal);
 }
 
 .h1,
@@ -71,28 +69,19 @@
 /* paragraph */
 .p,
 .richtext p {
-  font-family: var(--font-family-brand);
   font-size: var(--font-size-md);
-  font-weight: var(--font-weight-normal);
-  letter-spacing: var(--font-tracking-normal);
   line-height: var(--size-6);
   margin: 0 0 var(--size-4);
 }
 
 .p-sm {
-  font-family: var(--font-family-brand);
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-normal);
-  letter-spacing: var(--font-tracking-normal);
   line-height: var(--size-5);
   margin: 0 0 var(--size-4);
 }
 
 .p-xs {
-  font-family: var(--font-family-brand);
   font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-normal);
-  letter-spacing: var(--font-tracking-normal);
   line-height: var(--size-4);
   margin: 0 0 var(--size-4);
 }
@@ -101,10 +90,8 @@
 .a,
 .richtext a {
   color: var(--color-red-500);
-  font-family: var(--font-family-brand);
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-semibold);
-  letter-spacing: var(--font-tracking-normal);
   line-height: var(--size-6);
   text-decoration: none;
   transition: color var(--animation-duration) var(--animation-easing);
@@ -125,10 +112,7 @@
 /* lists */
 :--list,
 .richtext :--rt-list {
-  font-family: var(--font-family-brand);
   font-size: var(--font-size-md);
-  font-weight: var(--font-weight-normal);
-  letter-spacing: var(--font-tracking-normal);
   line-height: var(--size-6);
   margin: 0 0 var(--size-4);
 }
@@ -162,10 +146,7 @@
 .standout,
 .excerpt,
 .intro-para > p:first-child {
-  font-family: var(--font-family-brand);
   font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-normal);
-  letter-spacing: var(--font-tracking-normal);
   line-height: var(--size-6);
 }
 

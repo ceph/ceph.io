@@ -14,7 +14,14 @@
   }
 }
 
-@media (--mq-to-lg) {
+/*
+We've removed this for now as the assumption that all 
+richtext imgs will go full width is a potential can of worms.
+
+It can always be re-instated if we need it.
+*/
+
+/* @media (--mq-to-lg) {
   .richtext img {
     left: 50%;
     margin-left: -50vw;
@@ -24,4 +31,4 @@
     right: 50%;
     width: var(--size-w-screen);
   }
-}
+} */
