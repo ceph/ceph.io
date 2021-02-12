@@ -18,6 +18,18 @@
   font-size: var(--font-size-4xl);
   line-height: var(--size-10);
   margin: 0 0 var(--size-4);
+
+  @media (--mq-lg) {
+    font-size: var(--font-size-6xl);
+    line-height: var(--size-14);
+    margin-bottom: var(--size-6);
+  }
+
+  @media (--mq-xl) {
+    font-size: var(--font-size-8xl);
+    line-height: var(--size-16);
+    margin-bottom: var(--size-8);
+  }
 }
 
 .h2,
@@ -25,6 +37,32 @@
   font-size: var(--font-size-2xl);
   line-height: var(--size-8);
   margin: 0 0 var(--size-4);
+
+  @media (--mq-lg) {
+    font-size: var(--font-size-4xl);
+    line-height: var(--size-10);
+    margin-bottom: var(--size-5);
+  }
+
+  @media (--mq-xl) {
+    font-size: var(--font-size-5xl);
+    line-height: var(--size-11);
+    margin-bottom: var(--size-6);
+  }
+}
+
+.richtext p + h2,
+.richtext ul + h2,
+.richtext ol + h2 {
+  margin-top: var(--size-6);
+
+  @media (--mq-lg) {
+    margin-top: var(--size-8);
+  }
+
+  @media (--mq-xl) {
+    margin-top: var(--size-10);
+  }
 }
 
 .h3,
@@ -32,6 +70,11 @@
   font-size: var(--font-size-xl);
   line-height: var(--size-6);
   margin: 0 0 var(--size-4);
+
+  @media (--mq-xl) {
+    font-size: var(--font-size-2xl);
+    line-height: var(--size-8);
+  }
 }
 
 .h4,
@@ -39,20 +82,32 @@
   font-size: var(--font-size-lg);
   line-height: var(--size-5);
   margin: 0 0 var(--size-4);
+
+  @media (--mq-lg) {
+    font-size: var(--font-size-xl);
+    line-height: var(--size-6);
+  }
 }
 
 .h5,
+.richtext h5 {
+  font-size: var(--font-size-md);
+  line-height: var(--size-5);
+  margin: 0 0 var(--size-4);
+
+  @media (--mq-xl) {
+    font-size: var(--font-size-lg);
+    line-height: var(--size-6);
+  }
+}
+
 .h6,
-.richtext h5,
 .richtext h6 {
   font-size: var(--font-size-md);
   line-height: var(--size-5);
   margin: 0 0 var(--size-4);
 }
 
-.richtext p + h2,
-.richtext ul + h2,
-.richtext ol + h2,
 .richtext p + h3,
 .richtext ul + h3,
 .richtext ol + h3,
@@ -77,6 +132,10 @@
   letter-spacing: var(--font-tracking-normal);
   line-height: var(--size-6);
   margin: 0 0 var(--size-4);
+}
+
+.richtext p:last-child {
+  margin-bottom: 0;
 }
 
 .p-sm {
@@ -160,7 +219,19 @@
 
 /* custom */
 .standout,
-.excerpt,
+.excerpt {
+  font-family: var(--font-family-brand);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-normal);
+  letter-spacing: var(--font-tracking-normal);
+  line-height: var(--size-6);
+
+  @media (--mq-xl) {
+    font-size: var(--font-size-xl);
+    line-height: var(--size-7);
+  }
+}
+
 .intro-para > p:first-child {
   font-family: var(--font-family-brand);
   font-size: var(--font-size-lg);
@@ -169,88 +240,10 @@
   line-height: var(--size-6);
 }
 
-@media (--mq-lg) {
-  /* headings */
-  .h1,
-  .richtext h1 {
-    font-size: var(--font-size-6xl);
-    line-height: var(--size-14);
-    margin-bottom: var(--size-6);
-  }
+.intro-para > p:first-child {
+  margin: 0 0 var(--size-6);
 
-  .h2,
-  .richtext h2 {
-    font-size: var(--font-size-4xl);
-    line-height: var(--size-10);
-    margin-bottom: var(--size-5);
-  }
-
-  .richtext p + h2,
-  .richtext ul + h2,
-  .richtext ol + h2 {
-    margin-top: var(--size-8);
-  }
-
-  .h4,
-  .richtext h4 {
-    font-size: var(--font-size-xl);
-    line-height: var(--size-6);
-  }
-
-  .richtext p + h3,
-  .richtext ul + h3,
-  .richtext ol + h3,
-  .richtext p + h4,
-  .richtext ul + h4,
-  .richtext ol + h4,
-  .richtext p + h5,
-  .richtext ul + h5,
-  .richtext ol + h5,
-  .richtext p + h6,
-  .richtext ul + h6,
-  .richtext ol + h6 {
-    margin-top: var(--size-6);
-  }
-}
-
-@media (--mq-xl) {
-  /* headings */
-  .h1,
-  .richtext h1 {
-    font-size: var(--font-size-8xl);
-    line-height: var(--size-16);
-    margin-bottom: var(--size-8);
-  }
-
-  .h2,
-  .richtext h2 {
-    font-size: var(--font-size-5xl);
-    line-height: var(--size-11);
-    margin-bottom: var(--size-6);
-  }
-
-  .richtext p + h2,
-  .richtext ul + h2,
-  .richtext ol + h2 {
-    margin-top: var(--size-10);
-  }
-
-  .h3,
-  .richtext h3 {
-    font-size: var(--font-size-2xl);
-    line-height: var(--size-8);
-  }
-
-  .h5,
-  .richtext h5 {
-    font-size: var(--font-size-lg);
-    line-height: var(--size-6);
-  }
-
-  /* custom */
-  .standout,
-  .intro-para > p:first-child {
-    font-size: var(--font-size-xl);
-    line-height: var(--size-7);
+  @media (--mq-lg) {
+    margin: 0 0 var(--size-8);
   }
 }

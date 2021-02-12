@@ -2,15 +2,13 @@
 title: Public telemetry dashboards
 date: 2020-04-28
 author: Lars Marowsky-Brée
-image: "/assets/placeholder-photo-1280x720.jpg"
+image: "https://i1.wp.com/ceph.io/wp-content/uploads/2020/04/Screenshot_2020-04-28-Telemetry-Grafana.png?fit=1024%2C628&ssl=1"
 tags:
-  - "dashboard"
-  - "telemetry"
+  - dashboard
+  - telemetry
 ---
 
 It is our pleasure to announce the immediate availability of [dashboards based on the data reported via Ceph’s telemetry feature](https://telemetry-public.ceph.com/).
-
-![](https://i1.wp.com/ceph.io/wp-content/uploads/2020/04/Screenshot_2020-04-28-Telemetry-Grafana.png?fit=1024%2C628&ssl=1)
 
 Ceph versions used by clusters, weighted by daemon, over time
 
