@@ -5,10 +5,8 @@
   border-radius: var(--size-1);
   color: var(--color-white);
   display: inline-block;
-  font-family: var(--font-family-brand);
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-semibold);
-  letter-spacing: var(--font-tracking-normal);
   line-height: var(--font-leading-none);
   padding: var(--size-5) var(--size-8);
   text-align: center;

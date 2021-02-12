@@ -18,7 +18,6 @@
     display: flex;
     font-size: var(--font-size-md);
     font-weight: var(--font-weight-semibold);
-    letter-spacing: var(--font-tracking-normal);
     line-height: var(--size-6);
     list-style: none;
     margin-top: calc(-1 * var(--size-10));

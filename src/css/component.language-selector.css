@@ -4,8 +4,6 @@
   --language-selector-gap-x: var(--size-6);
   --language-selector-gutters-x: var(--size-3);
   font-size: var(--font-size-md);
-  font-weight: var(--font-weight-normal);
-  letter-spacing: var(--font-tracking-normal);
   line-height: var(--size-6);
 
   @media (--mq-sm) {

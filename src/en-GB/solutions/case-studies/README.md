@@ -24,11 +24,11 @@ tags:
 ```
 
 - `title` (String) — Determines the link text as it appears in the case study navigation card. Also used as the `<title>` for the page.\*
-- `image` (Asset path) — Determines the image shown in the case study navigation card and the hero image beneath the title on the case study page.
+- `image` (String) — Determines the image shown in the case study navigation card and the hero image beneath the title on the case study page.
 - `sponsor` (Array) - This is an array of values that all contribute to the sponsor information on the case study page.
   - `name` (String) - Determines the sponsor name as it appears in the case study page.\*
-  - `logo` (Asset path) - Determines the sponsor logo shown in the case study page.
-  - `website` (URL) - Determines the URL for the sponsor’s website. This is applied to the sponsor logo and button shown in the case study page.
+  - `logo` (String) - Determines the sponsor logo shown in the case study page.
+  - `website` (String) - Determines the URL for the sponsor’s website. This is applied to the sponsor logo and button shown in the case study page.
 - `tags` (Array) - This is an array of values that determine the taxonomy of the case study page.
   - (String) - Choose from a pre-defined selection of values that apply only to case studies. You can apply as many values as required.\*
 
