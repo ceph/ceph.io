@@ -9,15 +9,17 @@ layout: base
 
 <section class="section">
   <div class="grid lg:grid--cols-auto-72">
-    <h1 class="h1">{{ title }}</h1>
+    <div>
+      <h1 class="h1">{{ title }}</h1>
+      <div class="flex flex--gap-8 flex--pipe mb-7 lg:mb-9 xl:mb-10">
+        <time class="mb-0 p-sm" datetime="{{ page.date }}">{{ page.date | formatDate(locale) }}</time>
+        <span class="mb-0 p-sm text-semibold">{{ author }}</span>
+      </div>
+    </div>
   </div>
 
   <div class="grid lg:grid--cols-auto-72 to-lg:grid--gap-0 lg:grid--gap-16 xl:grid--gap-20">
     <div>
-      <div class="flex flex--gap-8 flex--pipe mb-5 lg:mb-7 xl:mb-8">
-        <time class="mb-0 p-sm" datetime="{{ page.date }}">{{ page.date | formatDate(locale) }}</time>
-        <span class="mb-0 p-sm text-semibold">{{ author }}</span>
-      </div>
       {% if image %}
         <div class="to-lg:w-full-breakout">
           <div class="aspect-ratio aspect-ratio--16x9 aspect-ratio--contain bg-grey-500 mb-8 lg:mb-10 xl:mb-12">
