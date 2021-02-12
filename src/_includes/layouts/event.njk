@@ -4,19 +4,11 @@ layout: base
 
 {% include 'components/navigation-secondary.njk' %}
 
-{# TEMP #}
-{# Hands free way to target an intro paragraph #}
-<style>
-  .intro-para > p:first-child {
-    font-weight: bold;
-  }
-</style>
-
 <div class="grid grid--cols-auto-72">
   <div>
     <h1 class="h1">{{ title }}</h1>
     {% if image %}
-      <img class="mb-2" src="{{ image }}" alt="" />
+      <img class="mb-2" src="{{ image }}" alt=""/>
     {% endif %}
     <div class="intro-para">
       {{ content | safe }}
@@ -32,18 +24,18 @@ layout: base
     <a href="{{ register }}" target="_blank" rel="noreferrer noopener">Register</a>
     <hr>
     {# <h3 class="h4">{{ 'event_sponsors' | i18n }}</h3> #}
-      {% for item in sponsors %}
-        <h3 class="h4">{{ item.label }}</h3>
-        <ul class="grid grid--cols-2">
-          {% for item in item.list %}
-            <li>
-              <a href="{{ item.website }}" target="_blank" rel="noreferrer noopener">
-                <img src="{{ item.logo }}" alt="{{ item.name }}" style="width: 50px;" />
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      {% endfor %}
+    {% for item in sponsors %}
+      <h3 class="h4">{{ item.label }}</h3>
+      <ul class="grid grid--cols-2">
+        {% for item in item.list %}
+          <li>
+            <a href="{{ item.website }}" target="_blank" rel="noreferrer noopener">
+              <img src="{{ item.logo }}" alt="{{ item.name }}" style="width: 50px;"/>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
     <hr>
     <h3 class="h4">{{ 'share_this_article' | i18n }}</h3>
     {% include "components/social-shares.njk" %}

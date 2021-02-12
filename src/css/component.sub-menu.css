@@ -16,6 +16,9 @@
     background-size: 1em 100%, 1em 100%, 0.5em 100%, 0.5em 100%;
     box-shadow: var(--shadow-black);
     display: flex;
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--size-6);
     list-style: none;
     margin-top: calc(-1 * var(--size-10));
     overflow-x: auto;
@@ -59,7 +62,6 @@
   .sub-menu a {
     display: block;
     color: var(--color-red-500);
-    font-weight: var(--font-weight-semibold);
     height: var(--size-full);
     padding: var(--size-4);
     text-align: center;

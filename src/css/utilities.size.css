@@ -1,11 +1,11 @@
 /* ---------- UTILITIES size ---------- */
 
-/* ---------- height ---------- */
+/* height */
 .h-full {
   height: var(--size-full);
 }
 
-/* ---------- width ---------- */
+/* width */
 .w-12 {
   width: var(--size-12);
 }
@@ -22,10 +22,22 @@
   max-width: var(--size-160);
 }
 
-/* ---------- media queries ---------- */
+/* media queries */
 @media (--mq-md-to-lg) {
   .md-to-lg\:h-full {
     height: var(--size-full);
+  }
+}
+
+@media (--mq-to-lg) {
+  .to-lg\:w-full-breakout {
+    left: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    max-width: 100vw;
+    position: relative;
+    right: 50%;
+    width: 100vw;
   }
 }
 

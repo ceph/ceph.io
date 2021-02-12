@@ -4,20 +4,12 @@ layout: base
 
 {% include 'components/navigation-secondary.njk' %}
 
-{# TEMP #}
-{# Hands free way to target an intro paragraph #}
-<style>
-  .intro-para > p:first-child {
-    font-weight: bold;
-  }
-</style>
-
 <div class="grid grid--cols-auto-72">
   <div>
     <h1 class="h1">{{ title }}</h1>
     <time class="block mb-2" datetime="{{ page.date }}">{{ page.date | formatDate(locale) }}</time>
     {% if image %}
-      <img class="mb-2" src="{{ image }}" alt="" />
+      <img class="mb-2" src="{{ image }}" alt=""/>
     {% endif %}
     <div class="intro-para">
       {{ content | safe }}
@@ -40,4 +32,3 @@ layout: base
     </ul>
   </aside>
 </div>
-

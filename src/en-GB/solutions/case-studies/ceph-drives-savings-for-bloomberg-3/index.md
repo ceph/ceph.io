@@ -1,9 +1,8 @@
 ---
 title: Ceph drives savings for Bloomberg 3
-date: 2020-07-15
-author: Lenz Grimmer
+image: "/assets/placeholder-photo-1280x720.jpg"
 sponsor:
-  name: "SUSE"
+  name: SUSE
   logo: "https://via.placeholder.com/50"
   website: "https://www.suse.com"
 tags:
@@ -31,10 +30,10 @@ Cras et lacus quis erat accumsan venenatis ac aliquet dui.
 - Maecenas aliquet justo quam, eget gravida quam sodales a
 
 <div class="grid grid--cols-2-fit">
-  <p>
-    <span class="block text-3xl text-semibold">1,092,140</span> Maecenas sed blandit neque
-  </p>
-  <p>
-    <span class="block text-3xl text-semibold">3x</span> Maecenas sed blandit neque
-  </p>
+  <div>
+    <span class="block color-red-500 h1 mb-0">1,092,140</span> <span class="mb-0 p">Maecenas sed blandit neque</span>
+  </div>
+  <div>
+    <span class="block color-red-500 h1 mb-0">3x</span> <span class="mb-0 p">Maecenas sed blandit neque</span>
+  </div>
 </div>

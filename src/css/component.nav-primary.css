@@ -2,6 +2,8 @@
 
 .nav-primary {
   --nav-primary-gutters-x: var(--size-3);
+  font-size: var(--font-size-md);
+  line-height: var(--size-6);
 
   @media (--mq-sm) {
     --nav-primary-gutters-x: var(--size-5);
@@ -44,7 +46,7 @@
 /* ---------- media queries ---------- */
 @media (--mq-to-lg) {
   .nav-primary {
-    margin-bottom: var(--size-4);
+    margin: 0 0 var(--size-4);
     padding: 0 var(--nav-primary-gutters-x);
   }
 
@@ -57,7 +59,7 @@
   .nav-primary {
     display: flex;
     flex-wrap: nowrap;
-    margin-bottom: 0;
+    margin: 0;
     margin-left: calc(-1 * var(--nav-primary-gap-x));
   }
 

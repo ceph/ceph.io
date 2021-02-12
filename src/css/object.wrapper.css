@@ -27,9 +27,3 @@
     --wrapper-gutters: var(--size-9);
   }
 }
-
-@media (--mq-xl) {
-  .wrapper {
-    --wrapper-gutters: var(--size-16);
-  }
-}

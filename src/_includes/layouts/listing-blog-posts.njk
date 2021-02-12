@@ -19,25 +19,25 @@
       {% for item in blogPostFilters %}
         <option value="/{{ locale }}/news/blog/category/{{ item | slug }}/">
           {{ item }}</a>
-        </option>
-      {% endfor %}
-    </select>
-    <form action="/{{ locale }}/news/blog/search/" method="get" class="search">
-      <label for="search-str">Search</label>
-      <input type="text" name="q" id="search-str" />
-      <button type="submit" id="search-submit" class="submit">Search</button>
-    </form>
-  </div>
+      </option>
+    {% endfor %}
+  </select>
+  <form action="/{{ locale }}/news/blog/search/" method="get" class="search">
+    <label for="search-str">Search</label>
+    <input type="text" name="q" id="search-str"/>
+    <button type="submit" id="search-submit" class="submit">Search</button>
+  </form>
+</div>
 </div>
 
 {% set blogPosts = pagination.items %}
 
-<ul class="grid grid--cols-4 list-none p-0 ul">
-  {% for item in blogPosts %}
-    <li>
-      {% include "components/blog-post-card.njk" %}
-    </li>
-  {% endfor %}
+<ul class="grid grid--cols-4 list-none p-0">
+{% for item in blogPosts %}
+  <li>
+    {% include "components/blog-post-card.njk" %}
+  </li>
+{% endfor %}
 </ul>
 
 {% include "components/pagination.njk" %}

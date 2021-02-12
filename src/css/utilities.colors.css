@@ -65,6 +65,11 @@
   color: var(--color-white);
 }
 
+/* red */
+.color-red-500 {
+  color: var(--color-red-500);
+}
+
 /* ---------- text navy ---------- */
 .color-navy {
   color: var(--color-navy);

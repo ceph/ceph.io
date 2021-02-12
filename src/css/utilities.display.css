@@ -15,6 +15,10 @@
   display: block;
 }
 
+.hidden {
+  display: none;
+}
+
 .inline-block {
   display: inline-block;
 }
@@ -25,4 +29,14 @@
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+@media (--mq-lg) {
+  .lg\:block {
+    display: block;
+  }
+
+  .lg\:hidden {
+    display: none;
+  }
 }

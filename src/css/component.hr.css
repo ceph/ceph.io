@@ -1,0 +1,8 @@
+/* ---------- COMPONENT hr ---------- */
+
+.hr {
+  background: var(--color-grey-500);
+  border: 0;
+  height: var(--size-px);
+  margin: var(--size-8) 0;
+}
