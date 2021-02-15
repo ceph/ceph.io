@@ -1,0 +1,38 @@
+/* ---------- COMPONENT social shares ---------- */
+
+.social-shares {
+  --social-shares-gap: var(--size-2);
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(-1 * var(--social-shares-gap));
+  margin-top: calc(-1 * var(--social-shares-gap));
+}
+
+.social-shares > a {
+  margin-left: var(--social-shares-gap);
+  margin-top: var(--social-shares-gap);
+}
+
+.social-shares svg g {
+  transition: fill var(--animation-duration) var(--animation-easing);
+}
+
+.social-shares svg circle {
+  transition: stroke var(--animation-duration) var(--animation-easing);
+}
+
+.social-shares__facebook:hover svg g {
+  fill: var(--color-facebook-blue);
+}
+
+.social-shares__facebook:hover svg circle {
+  stroke: var(--color-facebook-blue);
+}
+
+.social-shares__twitter:hover svg g {
+  fill: var(--color-twitter-blue);
+}
+
+.social-shares__twitter:hover svg circle {
+  stroke: var(--color-twitter-blue);
+}
