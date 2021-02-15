@@ -2,33 +2,69 @@
 layout: base
 ---
 
+{% set blogPostLocaleTag = locale + '-blog-post' %}
+{% set articleLocaleTag = locale + '-article' %}
+
 {% include 'components/navigation-secondary.njk' %}
 
-<div class="grid grid--cols-auto-72">
-  <div>
-    <h1 class="h1">{{ title }}</h1>
-    <time class="block mb-2" datetime="{{ page.date }}">{{ page.date | formatDate(locale) }}</time>
-    {% if image %}
-      <img class="mb-2" src="{{ image }}" alt=""/>
-    {% endif %}
-    <div class="intro-para">
-      {{ content | safe }}
+<section class="section">
+  <div class="grid lg:grid--cols-auto-72">
+    <div>
+      <h1 class="h1">{{ title }}</h1>
+      <div class="flex flex--gap-8 flex--pipe mb-7 lg:mb-9 xl:mb-10">
+        <time class="mb-0 p-sm" datetime="{{ page.date }}">{{ page.date | formatDate(locale) }}</time>
+        <span class="mb-0 p-sm text-semibold">{{ author }}</span>
+      </div>
     </div>
   </div>
-  <aside>
-    <h2 class="h4">{{ 'share_this_article' | i18n }}</h2>
-    {% include "components/social-shares.njk" %}
 
-    {% set blogPostLocaleTag = locale + '-blog-post' %}
-    {% set articleLocaleTag = locale + '-article' %}
+  <div class="grid lg:grid--cols-auto-72 to-lg:grid--gap-0 lg:grid--gap-16 xl:grid--gap-20">
+    <div>
+      {% if image %}
+        <div class="to-lg:w-full-breakout">
+          <div class="aspect-ratio aspect-ratio--16x9 aspect-ratio--contain bg-grey-500 mb-8 lg:mb-10 xl:mb-12">
+            <img alt="" class="absolute h-full top-0" loading="lazy" src="{{ image }}" />
+          </div>
+        </div>
+      {% endif %}
+      <div class="intro-para richtext">
+        {{ content | safe }}
+      </div>
+    </div>
+    <aside>
+      <hr class="hr lg:hidden my-16">
+      <div class="grid md-to-lg:grid--cols-2 to-md:grid--gap-14 lg:grid--gap-0">
+        <div>
+          <h2 class="h5">{{ 'share_this_article' | i18n }}</h2>
+          {% include "components/social-shares.njk" %}
+          <hr class="hidden lg:block hr">
+        </div>
+        <div>
+          <h2 id="tags-desc" class="h5">{{ 'read_more_articles_like_this' | i18n }}</h2>
+          <ul class="list-none p-0" aria-describedby="tags-desc">
+            {% for item in tags | removeTagsFromArray([blogPostLocaleTag, articleLocaleTag]) %}
+              <li {% if loop.revindex0 %}class="mb-3"{% endif %}>
+                <a class="button button--pill" href="/{{ locale }}/news/blog/tag/{{ item | slug }}/">{{ item }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
 
-    <h2 id="tags-desc" class="h4">{{ 'read_more_articles_like_this' | i18n }}</h2>
-    <ul class="ul" aria-describedby="tags-desc">
-      {% for item in tags | removeTagsFromArray([blogPostLocaleTag, articleLocaleTag]) %}
-        <li>
-          <a href="/{{ locale }}/news/blog/tag/{{ item | slug }}/">#{{ item }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-  </aside>
-</div>
+<section class="pt-0 section">
+  <div class="bg-grey-300 border-grey-500 border-px border-solid p-5 rounded-2">
+    <div class="flex flex--align-center flex--gap-6 flex--justify-between flex--wrap">
+      <div>
+        <h2 class="h3">Subscribe to Ceph Announcements</h2>
+        <p class="p">Ned placerat est a augue pulvinar imperdiet quis in setiam euismod.</p>
+        <a class="a" href="#">Other ways to stay connected</a>
+      </div>
+      <div>
+        <a class="button" href="#">Subscribe to Ceph Announcements</a>
+      </div>
+    </div>
+  </div>
+</section>
