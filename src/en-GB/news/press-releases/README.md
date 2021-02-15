@@ -1,18 +1,18 @@
 <p align="center"><img src="https://i2.wp.com/ceph.io/wp-content/uploads/2016/07/Ceph_Logo_Standard_RGB_120411_fa.png?resize=322%2C148&ssl=1" alt="Ceph" /></p>
 
-# Blog posts
+# Press releases
 
 ## Page data
 
-At the beginning of all blog posts, there's a block of data wrapped with ---. This is called frontmatter, and defines data specific to that page in the site.
+At the beginning of all press releases, there's a block of data wrapped with ---. This is called frontmatter, and defines data specific to that page in the site.
 
-The frontmatter data is written in [YAML format](https://yaml.org/) using `key: value` pairs. Frontmatter for the blog post pages follows a specific schema:
+The frontmatter data is written in [YAML format](https://yaml.org/) using `key: value` pairs. Frontmatter for the press release pages follows a specific schema:
 
 ```yaml
 ---
-title: Blog post title
+title: Press release title
 date: yyyy-mm-dd
-author: Blog post author name
+author: Press release author name
 image: "/assets/image.jpg"
 tags:
   - taxonomy
@@ -21,12 +21,12 @@ tags:
 
 ```
 
-- `title` (String) — Determines the link text as it appears in the blog post navigation card. Also used as the `<title>` for the page.\*
-- `date` (Date) — Determines the published date of the blog post.
-- `author` (String) — Determines the name of the blog post author.
-- `image` (String) — Determines the image shown in the blog post navigation card and the hero image beneath the title on the blog post page.
-- `tags` (Array) - This is an array of values that determine the taxonomy of the blog post page.
-  - (String) - Choose from a pre-defined selection of values that apply only to blog posts. You can apply as many values as required.\*
+- `title` (String) — Determines the link text as it appears in the press release navigation card. Also used as the `<title>` for the page.\*
+- `date` (Date) — Determines the published date of the press release.
+- `author` (String) — Determines the name of the press release author.
+- `image` (String) — Determines the image shown in the press release navigation card and the hero image beneath the title on the press release page.
+- `tags` (Array) - This is an array of values that determine the taxonomy of the press release page.
+  - (String) - Choose from a pre-defined selection of values that apply only to press releases. You can apply as many values as required.\*
 
 \* Careful with any strings that include a colon `:`, as YAML uses this as the key-value pair delimiter. If the title needs to include colons, wrap the `title` string in double-quote marks `"` to ensure it renders as intended. E.g.
 
@@ -36,7 +36,7 @@ title: "Storage or: How I Learned to Stop Worrying and Love Ceph"
 
 ## Authoring pages
 
-While the blog post pages are all composed in Markdown `.md` files, there are a few bonus features.
+While the press release pages are all composed in Markdown `.md` files, there are a few bonus features.
 
 ### Markdown and HTML
 
@@ -79,12 +79,12 @@ Linking to pages throughout the site works in the same way as linking to pages i
 
 We'll most likely be using Markdown's link syntax to link to pages. The links we choose can be relative or absolute.
 
-If we were on a _blog-posts_ page (`/blog/yyyy/blog-post`), we could link to another blog post page in two ways:
+If we were on a _press-releases_ page (`/press-releases/yyyy/press-release`), we could link to another press release page in two ways:
 
 ```md
-[Relative link to blog post](../blog-post/)
+[Relative link to press release](../press-release/)
 
-[Root relative link to blog post](/blog/yyyy/blog-post/)
+[Root relative link to press release](/press-releases/yyyy/press-release/)
 ```
 
 If we need to link to another section/page within the site we can use either method shown above. The `../` prefix can be used to traverse further up the site tree:
@@ -125,12 +125,12 @@ title: Don't repeat yourself
 # {{ title }}
 ```
 
-## Blog post structure
+## Press release structure
 
-The contents of the blog posts can all be found in the `src/locale/news/blog/yyyy/` directories. Any folder/page created within these directories will generate a web page in the site.
+The contents of the press releases can all be found in the `src/locale/news/press-releases/yyyy/` directories. Any folder/page created within these directories will generate a web page in the site.
 
 ### Folders and file naming
 
-| Input File                          | Output URL                       |
-| ----------------------------------- | -------------------------------- |
-| /src/locale/news/blog/yyyy/index.md | /locale/news/blog/yyyy/blog-post |
+| Input File                                    | Output URL                                     |
+| --------------------------------------------- | ---------------------------------------------- |
+| /src/locale/news/press-releases/yyyy/index.md | /locale/news/press-releases/yyyy/press-release |
