@@ -6,6 +6,9 @@ location: London, UK
 venue: Student Central, Malet Street, London
 map: "https://goo.gl/maps/6isXCefxCPw6V6wu7"
 register: "https://www.eventbrite.com/"
+links:
+  videos: ""
+  slides: ""
 sponsors:
   - label: Platinum
     list:
@@ -21,7 +24,7 @@ sponsors:
         logo: "https://via.placeholder.com/50"
         website: "https://suse.com"
 tags:
-  - "ceph days"
+  - ceph days
 ---
 
 ## Bringing Ceph to London
