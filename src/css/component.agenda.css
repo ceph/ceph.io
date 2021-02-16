@@ -1,0 +1,20 @@
+/* ---------- COMPONENT agenda ---------- */
+
+.agenda {
+  font-size: var(--font-size-sm);
+  line-height: var(--size-5);
+  width: var(--size-full);
+}
+
+.agenda__intermission {
+  color: hsla(var(--color-gunmetal-hsl), 0.4);
+}
+
+.agenda td {
+  border-bottom: var(--size-px) solid var(--color-grey-500);
+  padding: var(--size-4) 0;
+}
+
+.agenda td:first-child {
+  width: var(--size-20);
+}

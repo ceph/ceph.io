@@ -14,6 +14,10 @@
   width: var(--size-36);
 }
 
+.w-3-4 {
+  width: var(--size-3-4);
+}
+
 .w-full {
   width: var(--size-full);
 }

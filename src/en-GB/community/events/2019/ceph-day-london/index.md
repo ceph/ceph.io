@@ -6,6 +6,10 @@ location: London, UK
 venue: Student Central, Malet Street, London
 map: "https://goo.gl/maps/6isXCefxCPw6V6wu7"
 register: "https://www.eventbrite.com/"
+image: "/assets/placeholder-photo-1280x720.jpg"
+links:
+  videos: "https://www.youtube.com/"
+  slides: ""
 sponsors:
   - label: Event sponsors
     list:
@@ -16,7 +20,7 @@ sponsors:
         logo: "https://via.placeholder.com/50"
         website: "https://redhat.co"
 tags:
-  - "ceph days"
+  - ceph days
 ---
 
 ## Bringing Ceph to London
@@ -38,3 +42,68 @@ The expert Ceph team, Ceph’s customers and partners, and the Ceph community jo
 ## CFP is now open!
 
 ### Agenda
+
+<table class="agenda">
+  <tbody>
+    <tr class="agenda__intermission">
+      <td>8:30am</td>
+      <td>Registration &amp; Breakfast</td>
+    </tr>
+    <tr>
+      <td>9:15am</td>
+      <td>Welcome words</td>
+    </tr>
+    <tr>
+      <td>9:30am</td>
+      <td>Deploying CloudStack and Ceph with flexible XLAN and BGp networking &ndash; Wido den Hollander</td>
+    </tr>
+    <tr>
+      <td>10:15am</td>
+      <td>Ceph with CloudStack &ndash; Andrija Panic</td>
+    </tr>
+    <tr class="agenda__intermission">
+      <td>11:00am</td>
+      <td>Coffee break</td>
+    </tr>
+    <tr>
+      <td>11:15am</td>
+      <td>Achieving the ultimate performance with KVM</td>
+    </tr>
+    <tr class="agenda__intermission">
+      <td>12:00pm</td>
+      <td>Lunch</td>
+    </tr>
+    <tr>
+      <td>1:00pm</td>
+      <td>Storage based snapshots</td>
+    </tr>
+    <tr>
+      <td>1:45pm</td>
+      <td>Cloud management portal</td>
+    </tr>
+    <tr>
+      <td>2:30pm</td>
+      <td>New stuff in CloudStack</td>
+    </tr>
+    <tr class="agenda__intermission">
+      <td>3:15pm</td>
+      <td>Coffee</td>
+    </tr>
+    <tr>
+      <td>3:30pm</td>
+      <td>Our journey with CloudStack</td>
+    </tr>
+    <tr>
+      <td>4:15pm</td>
+      <td>Running OpenShift clusters</td>
+    </tr>
+    <tr>
+      <td>5:00pm</td>
+      <td>Closing words</td>
+    </tr>
+    <tr class="agenda__intermission">
+      <td>5:15pm</td>
+      <td>Pub</td>
+    </tr>
+  </tbody>
+</table>
