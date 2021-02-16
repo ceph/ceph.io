@@ -9,8 +9,8 @@
   border-radius: var(--size-1);
   cursor: pointer;
   font-size: var(--font-size-md);
-  line-height: var(--font-leading-none);
-  padding: var(--size-3) var(--size-10) var(--size-3) var(--size-3);
+  line-height: var(--size-6);
+  padding: var(--size-2) var(--size-10) var(--size-2) var(--size-3);
   transition: background-color var(--animation-duration) var(--animation-easing);
 }
 

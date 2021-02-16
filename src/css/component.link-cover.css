@@ -1,5 +1,20 @@
 /* ---------- COMPONENT link cover ---------- */
 
+.link-cover {
+  text-decoration: none;
+  transition: color var(--animation-duration) var(--animation-easing);
+}
+
+.link-cover:hover {
+  color: var(--color-red-500);
+  text-decoration: underline;
+}
+
+.link-cover:active {
+  color: var(--color-red-600);
+  text-decoration: underline;
+}
+
 .link-cover::before {
   bottom: 0;
   content: "";
