@@ -35,9 +35,9 @@ permalink: '/{{ locale }}/news/press-releases{% if pagination.pageNumber > 0 %}/
     {% endfor %}
   </ul>
 
-  <hr class="hr mb-12 mt-16 lg:mt-24" />{% include "components/pagination.njk" %}
+  <hr class="hr mb-12 mt-16 lg:mt-24" />
+  
+  {% include "components/pagination.njk" %}
 </section>
-
-
 
 {{ content | safe }}
