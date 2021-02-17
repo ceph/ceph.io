@@ -17,10 +17,11 @@ permalink: '/{{ locale }}/news/press-releases{% if pagination.pageNumber > 0 %}/
     <h1 class="h1 mb-0">{{ title }}</h1>
     <div>
       <select class="select" id="filters" onchange="javascript:location.href = this.value;">
-        <option value="" selected disabled hidden>Category</option>
+        <option selected value="">Category</option>
         {% for item in pressReleaseFilters %}
-          <option value="/{{ locale }}/news/press-releases/category/{{ item | slug }}/">
-            {{ item }}</a>
+          {% set itemSlug = item | slug + '/'%}
+          <option {% if page.url | endsWith(itemSlug) %}selected{% endif %} value="/{{ locale }}/news/press-releases/category/{{ itemSlug }}">
+            {{ item }}
           </option>
         {% endfor %}
       </select>
