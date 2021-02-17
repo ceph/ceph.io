@@ -11,7 +11,6 @@ date: yyyy-mm-dd
 end: yyyy-mm-dd
 location: Event location
 venue: Event venue
-map: "https://www.google.com/maps"
 register: "https://www.eventbrite.com/"
 image: "/assets/image.jpg"
 links:
@@ -38,31 +37,30 @@ tags:
 
 ```
 
-- `title` (String) — Determines the link text as it appears in the event navigation card. Also used as the `<title>` for the page.\*
-- `date` (Date) — Determines the start date of the event.
-- `end` (Date) — Determines the end date of the event.
-- `location` (String) — Determines the location of the event, city and country.
-- `venue` (String) — Determines the venue of the event, building name and street.
-- `map` (String) — Determines the map of the event with a google maps link.\*
-- `register` (String) — Determines the website to register for the event. This is hidden once the end date of the event has pasted.
-- `image` (String) — Determines the asset path for the image shown in the event navigation card and the hero image beneath the title on the event page.
+- `title` (String) — Title text for the event and used as the `<title>` for the page. Also appears in the event card found on listing pages.\*
+- `date` (Date) — Start date of the event.
+- `end` (Date) — End date of the event.
+- `location` (String) — Location of the event, city and country.
+- `venue` (String) — Venue of the event, building name and street.
+- `register` (String) — Website URL to register for the event. This is hidden once the end date of the event has passed.\*
+- `image` (String) — Asset path for the hero image on the event page. Also appears in the event card found on listing pages.
 - `links` (List) - These only appear when the end date of the event has pasted.
-  - `videos` (String) — Determines the website showing videos of the event with a youtube/vimeo link.
-  - `slides` (String) — Determines the website or PDF showing slides of the event.
+  - `videos` (String) — Website URL with videos of the event.
+  - `slides` (String) — Website URL or PDF showing slides of the event.
 - `sponsors` (Array)
-  - `label` (String) — Determines the type of sponsors for the event.
+  - `label` (String) — Type of event sponsors.
     `list`
-    - `name` (String) — Determines the name of the sponsor.
-      `logo` (String) — Determines the asset path for the sponsor logo.
-      `website` (String) — Determines the URL of the sponsor website which is applied to the sponsor logo.
-- `tags` (Array) - This is an array of values that determine the taxonomy of the event.
+    - `name` (String) — Name of the sponsor.
+      `logo` (String) — Asset path for the sponsor logo.
+      `website` (String) — Website URL for the sponsor.
+- `tags` (Array) - Array of values that determine the taxonomy of the event.
   - (String) - Choose from a pre-defined selection of values that apply only to events. You can apply as many values as required.
 
 \* Careful with any strings that include a colon `:`, as YAML uses this as the key-value pair delimiter. A `URL` will always include a colon and possibly the other values will include them too. For example let's say the `title` needs to include colons, wrap the `title` string in double-quote marks `"` to ensure it renders as intended or if a URL contains.
 
 ```yaml
 title: "Storage or: How I Learned to Stop Worrying and Love Ceph"
-map: "https://www.google.com/maps"
+register: "https://www.eventbrite.com/"
 ```
 
 ## Events structure

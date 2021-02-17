@@ -4,7 +4,6 @@ date: 2020-09-20
 end: 2020-09-26
 location: London, UK
 venue: Student Central, Malet Street, London
-map: "https://goo.gl/maps/6isXCefxCPw6V6wu7"
 register: "https://www.eventbrite.com/"
 image: "/assets/placeholder-photo-1280x720.jpg"
 links:

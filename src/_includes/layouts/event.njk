@@ -2,6 +2,8 @@
 layout: base
 ---
 
+{% set map = venue + '-' + location %}
+
 {% include 'components/navigation-secondary.njk' %}
 
 <section class="section">
@@ -42,7 +44,7 @@ layout: base
             {{ location }}
           </p>
           <p class="p">{{ venue }}</p>
-          <a class="a" href="{{ map }}" rel="noreferrer noopener" target="_blank">View map</a>
+          <a class="a" href="https://www.google.com/maps/search/?api=1&query={{ map | slug }}" rel="noreferrer noopener" target="_blank">View map</a>
           <hr class="hidden lg:block hr">
         </div>
         {% if end | futureDate %}

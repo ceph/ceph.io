@@ -4,7 +4,6 @@ date: 2020-11-20
 end: 2020-11-24
 location: Wrocław, Poland
 venue: Hotel ibis Styles, Wrocław Centrum, Poland
-map: "https://goo.gl/maps/6isXCefxCPw6V6wu7"
 register: "https://www.eventbrite.com/"
 image: "/assets/placeholder-photo-1280x720.jpg"
 links:

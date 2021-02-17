@@ -17,11 +17,11 @@ tags:
 
 ```
 
-- `title` (String) — Determines the link text as it appears in the blog post navigation card. Also used as the `<title>` for the page.\*
-- `date` (Date) — Determines the published date of the blog post.
-- `author` (String) — Determines the name of the blog post author.
-- `image` (String) — Determines the asset path for the image shown in the blog post navigation card and the hero image beneath the title on the blog post page.\*
-- `tags` (Array) - This is an array of values that determine the taxonomy of the blog post.
+- `title` (String) — Title text for the blog post and used as the `<title>` for the page. Also appears in the blog post card found on listing pages.\*
+- `date` (Date) — Published date of the blog post.
+- `author` (String) — Name of the blog post author.
+- `image` (String) — Asset path for the hero image on the blog post page. Also appears in the blog post card found on listing pages.\*
+- `tags` (Array) - Array of values that determine the taxonomy of the blog post.
   - (String) - Choose from a pre-defined selection of values that apply only to blog posts. You can apply as many values as required.
 
 \* Careful with any strings that include a colon `:`, as YAML uses this as the key-value pair delimiter. A `URL` will always include a colon and possibly the other values will include them too. For example let's say the `title` needs to include colons, wrap the `title` string in double-quote marks `"` to ensure it renders as intended or if a URL contains.
