@@ -94,6 +94,10 @@ module.exports = {
     'en-GB': 'About this case study',
     'ja-JP': 'このケーススタディについて',
   },
+  case_studies_filtered_by: {
+    'en-GB': 'Case studies filtered by',
+    'ja-JP': 'によってフィルタリングされたケーススタディ',
+  },
   find_out_more_about_this_case_study_at_the: {
     'en-GB': 'Find out more about this case study at the',
     'ja-JP': 'このケーススタディの詳細については、',
