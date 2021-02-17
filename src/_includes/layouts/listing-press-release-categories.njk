@@ -49,7 +49,7 @@
     <h1 class="h1 mb-0">{{ title }}</h1>
     <div>
     <select class="select" id="filters" onchange="javascript:location.href = this.value;">
-        <option value="">Category</option>
+        <option value="">{{ 'category' | i18n }}</option>
         {% for item in pressReleaseFilters %}
           {% set itemSlug = item | slug + '/'%}
           <option {% if page.url | endsWith(itemSlug) %}selected{% endif %} value="/{{ locale }}/news/press-releases/category/{{ itemSlug }}">

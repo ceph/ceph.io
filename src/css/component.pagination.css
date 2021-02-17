@@ -17,6 +17,10 @@
   display: none;
 }
 
+.pagination__select {
+  text-transform: lowercase;
+}
+
 @media (--mq-md) {
   .pagination {
     justify-content: center;
