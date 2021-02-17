@@ -1,7 +1,6 @@
 ---js
 {
   layout: 'base',
-  title: 'Category',
   pagination: {
     size: 1,
     alias: 'tag',
@@ -45,22 +44,44 @@
 
 {% include 'components/navigation-secondary.njk' %}
 
-<h1>{{ title }} "{{ tag }}"</h1>
+<section class="section">
+  <div class="flex flex--gap-6 flex--align-center flex--justify-between flex--wrap mb-16 xl:mb-24">
+    <h1 class="h1 mb-0">{{ title }}</h1>
+    <div>
+    <select class="select" id="filters" onchange="javascript:location.href = this.value;">
+        <option value="">Category</option>
+        {% for item in pressReleaseFilters %}
+          {% set itemSlug = item | slug + '/'%}
+          <option {% if page.url | endsWith(itemSlug) %}selected{% endif %} value="/{{ locale }}/news/press-releases/category/{{ itemSlug }}">
+            {{ item }}
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+  <h2 class="h3 mb-8 xl:mb-10">{{ 'articles_filtered_by' | i18n }} ‘{{ tag }}’</h2>
+  <ul class="grid md:grid--cols-2 lg:grid--cols-3 xl:grid--cols-4 list-none m-0 p-0">
+    {% for item in pressReleaseCategories %}
+      <li>
+        {% include "components/press-release-card.njk" %}
+      </li>
+    {% endfor %}
+  </ul>
+</section>
 
-<select class="select" id="filters" onchange="javascript:location.href = this.value;">
-  <option value="">Category</option>
-  {% for item in pressReleaseFilters %}
-    {% set itemSlug = item | slug + '/'%}
-    <option {% if page.url | endsWith(itemSlug) %}selected{% endif %} value="/{{ locale }}/news/press-releases/category/{{ itemSlug }}">
-      {{ item }}
-    </option>
-  {% endfor %}
-</select>
+<section class="pt-0 section">
+  <div class="bg-grey-300 border-grey-500 border-px border-solid p-5 rounded-2">
+    <div class="flex flex--align-center flex--gap-6 flex--justify-between flex--wrap">
+      <div>
+        <h2 class="h3">Subscribe to Ceph Announcements</h2>
+        <p class="p">Ned placerat est a augue pulvinar imperdiet quis in setiam euismod.</p>
+        <a class="a" href="#">Other ways to stay connected</a>
+      </div>
+      <div>
+        <a class="button" href="#">Subscribe to Ceph Announcements</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-<ul class="ul grid grid--cols-4">
-  {% for item in pressReleaseCategories %}
-    <li>
-      {% include "components/press-release-card.njk" %}
-    </li>
-  {% endfor %}
-</ul>
+{{ content | safe }}

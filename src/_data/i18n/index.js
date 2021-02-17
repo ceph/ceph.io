@@ -1,5 +1,9 @@
 module.exports = {
   // General
+  articles_filtered_by: {
+    'en-GB': 'Articles filtered by',
+    'ja-JP': 'によってフィルタリングされた記事',
+  },
   find_out_more: {
     'en-GB': 'Find out more',
     'ja-JP': '詳細をご覧ください',
