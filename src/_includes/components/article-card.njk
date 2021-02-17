@@ -5,10 +5,10 @@
       {{ item.data.tags | articleType }}
     </span>
   </div>
-  <a class="a block color-navy link-cover mb-2 text-xl" href="{{ item.url }}">
+  <a class="block color-navy link-cover h3 mb-2" href="{{ item.url }}">
     {{ item.data.title }}
   </a>
-  <p class="p text-sm">
+  <p class="p-sm">
     <time datetime="{{ item.data.date }}">
       {{ item.data.date | formatDate(locale) }}
     </time>{% if item.data.author %} by {{ item.data.author }}{% endif %}

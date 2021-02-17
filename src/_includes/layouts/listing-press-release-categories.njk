@@ -38,12 +38,24 @@
 }
 ---
 
+{% set pressReleaseLocaleTag = locale + '-press-release' %}
+{% set articleLocaleTag = locale + '-article' %}
+{% set pressReleaseFilters = collections[pressReleaseLocaleTag] | collectionTags([pressReleaseLocaleTag, articleLocaleTag]) %}
+{% set pressReleaseCategories = collections[tag] | collectionIncludesTag(pressReleaseLocaleTag) | reverse %}
+
 {% include 'components/navigation-secondary.njk' %}
 
 <h1>{{ title }} "{{ tag }}"</h1>
 
-{% set pressReleaseLocaleTag = locale + '-press-release' %}
-{% set pressReleaseCategories = collections[tag] | collectionIncludesTag(pressReleaseLocaleTag) | reverse %}
+<select class="select" id="filters" onchange="javascript:location.href = this.value;">
+  <option value="">Category</option>
+  {% for item in pressReleaseFilters %}
+    {% set itemSlug = item | slug + '/'%}
+    <option {% if page.url | endsWith(itemSlug) %}selected{% endif %} value="/{{ locale }}/news/press-releases/category/{{ itemSlug }}">
+      {{ item }}
+    </option>
+  {% endfor %}
+</select>
 
 <ul class="ul grid grid--cols-4">
   {% for item in pressReleaseCategories %}

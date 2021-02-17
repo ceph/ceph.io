@@ -178,4 +178,8 @@
   .xl\:grid--gap-20 {
     --grid-gap: var(--size-20);
   }
+
+  .xl\:grid--cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }

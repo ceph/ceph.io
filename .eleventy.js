@@ -21,6 +21,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('chunkByYear', require(`${filtersDir}/chunkByYear.js`));
   eleventyConfig.addFilter('collectionIncludesTag', require(`${filtersDir}/collectionIncludesTag.js`));
   eleventyConfig.addFilter('collectionTags', require(`${filtersDir}/collectionTags.js`));
+  eleventyConfig.addFilter('endsWith', require(`${filtersDir}/endsWith.js`));
   eleventyConfig.addFilter('formatDate', require(`${filtersDir}/formatDate.js`));
   eleventyConfig.addFilter('formatDateRange', require(`${filtersDir}/formatDateRange.js`));
   eleventyConfig.addFilter('futureDate', require(`${filtersDir}/futureDate.js`));
