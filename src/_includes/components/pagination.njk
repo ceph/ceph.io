@@ -9,7 +9,7 @@
   </a>
   
   <select class="pagination__select select" onchange="javascript:location.href = this.value;">
-    <option value="" selected disabled hidden>Page {{ pageNumberIndex }} of {{ numberOfPages }}</option>
+    <option value="" selected disabled hidden>{{ 'page' | i18n }} {{ pageNumberIndex }} {{ 'of' | i18n }} {{ numberOfPages }}</option>
     {% for item in pagination.pages %}
       <option value="{{ pagination.hrefs[ loop.index0 ] }}">
         {{ loop.index }}</a>

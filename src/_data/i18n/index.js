@@ -4,6 +4,14 @@ module.exports = {
     'en-GB': 'Articles filtered by',
     'ja-JP': 'によってフィルタリングされた記事',
   },
+  category: {
+    'en-GB': 'Category',
+    'ja-JP': 'カテゴリー',
+  },
+  coming_up: {
+    'en-GB': 'Coming up',
+    'ja-JP': '来る',
+  },
   find_out_more: {
     'en-GB': 'Find out more',
     'ja-JP': '詳細をご覧ください',
@@ -23,6 +31,14 @@ module.exports = {
   next: {
     'en-GB': 'Next',
     'ja-JP': '次',
+  },
+  of: {
+    'en-GB': 'Of',
+    'ja-JP': 'の',
+  },
+  page: {
+    'en-GB': 'Page',
+    'ja-JP': 'ページ',
   },
   previous: {
     'en-GB': 'Previous',
@@ -100,8 +116,20 @@ module.exports = {
     'en-GB': 'Event details',
     'ja-JP': 'イベントの詳細',
   },
+  events_filtered_by: {
+    'en-GB': 'Events filtered by',
+    'ja-JP': 'によってフィルタリングされたイベント',
+  },
   event_sponsors: {
     'en-GB': 'Event sponsors',
     'ja-JP': 'イベントスポンサー',
+  },
+  previous_events: {
+    'en-GB': 'Previous events',
+    'ja-JP': '以前のイベント',
+  },
+  there_are_no_upcoming_events: {
+    'en-GB': 'There are no upcoming events',
+    'ja-JP': '今後のイベントはありません',
   },
 };
