@@ -3985,6 +3985,12 @@
   }
 }
 
+@media (--mq-to-lg) {
+  .to-lg\:mb-14 {
+    margin-bottom: var(--size-14);
+  }
+}
+
 @media (--mq-lg) {
   /* margin */
   .lg\:m-0 {

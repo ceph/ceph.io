@@ -1,6 +1,6 @@
 /* ---------- UTILITIES colors ---------- */
 
-/* ----------  background negative ---------- */
+/* negative */
 .bg-black {
   background-color: var(--color-black);
 }
@@ -9,36 +9,6 @@
   background-color: var(--color-white);
 }
 
-/* ----------  background navy ---------- */
-.bg-navy {
-  background-color: var(--color-navy);
-}
-
-/* ----------  background grey ---------- */
-.bg-grey-300 {
-  background-color: var(--color-grey-300);
-}
-
-.bg-grey-500 {
-  background-color: var(--color-grey-500);
-}
-
-/* ----------  background gunmetal ---------- */
-.bg-gunmetal {
-  background-color: var(--color-gunmetal);
-}
-
-/* ----------  background red ---------- */
-.bg-red-500 {
-  background-color: var(--color-red-500);
-}
-
-/* ----------  background royal ---------- */
-.bg-royal {
-  background-color: var(--color-royal);
-}
-
-/* ---------- border negative ---------- */
 .border-black {
   border-color: var(--color-black);
 }
@@ -47,16 +17,6 @@
   border-color: var(--color-white);
 }
 
-/* ---------- border grey ---------- */
-.border-grey-300 {
-  border-color: var(--color-grey-300);
-}
-
-.border-grey-500 {
-  border-color: var(--color-grey-500);
-}
-
-/* ---------- text negative ---------- */
 .color-black {
   color: var(--color-black);
 }
@@ -65,21 +25,63 @@
   color: var(--color-white);
 }
 
-/* red */
-.color-red-500 {
-  color: var(--color-red-500);
+/* navy */
+.bg-navy {
+  background-color: var(--color-navy);
 }
 
-/* ---------- text navy ---------- */
 .color-navy {
   color: var(--color-navy);
 }
 
-/* ---------- text grey ---------- */
+/* grey */
+.bg-grey-300 {
+  background-color: var(--color-grey-300);
+}
+
+.bg-grey-500 {
+  background-color: var(--color-grey-500);
+}
+
+.border-grey-300 {
+  border-color: var(--color-grey-300);
+}
+
+.border-grey-500 {
+  border-color: var(--color-grey-500);
+}
+
 .color-grey-300 {
   color: var(--color-grey-300);
 }
 
 .color-grey-500 {
   color: var(--color-grey-500);
+}
+
+/* gunmetal */
+.bg-gunmetal {
+  background-color: var(--color-gunmetal);
+}
+
+/* red */
+.bg-red-500 {
+  background-color: var(--color-red-500);
+}
+
+.color-red-400 {
+  color: var(--color-red-400);
+}
+
+.color-red-500 {
+  color: var(--color-red-500);
+}
+
+/* royal */
+.bg-royal {
+  background-color: var(--color-royal);
+}
+
+.color-royal {
+  color: var(--color-royal);
 }

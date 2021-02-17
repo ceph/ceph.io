@@ -26,6 +26,7 @@
 @import "object.wrapper.css";
 
 /* components */
+@import "component.agenda.css";
 @import "component.button.css";
 @import "component.hr.css";
 @import "component.link-cover.css";

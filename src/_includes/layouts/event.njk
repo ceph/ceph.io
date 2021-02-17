@@ -2,42 +2,78 @@
 layout: base
 ---
 
+{% set map = venue + '-' + location %}
+
 {% include 'components/navigation-secondary.njk' %}
 
-<div class="grid grid--cols-auto-72">
-  <div>
+<section class="section">
+  <div class="grid lg:grid--cols-auto-72">
     <h1 class="h1">{{ title }}</h1>
-    {% if image %}
-      <img class="mb-2" src="{{ image }}" alt=""/>
-    {% endif %}
-    <div class="intro-para">
-      {{ content | safe }}
-    </div>
   </div>
-  <aside>
-    <h3 class="h4">{{ 'event_details' | i18n }}</h3>
-    <time datetime="{{ date }}">{{ date | formatDateRange(end, locale) }}</time>
-    <p>{{ location }}</p>
-    <p>{{ venue }}</p>
-    <a href="{{ map }}" target="_blank" rel="noreferrer noopener">View map</a>
-    <hr>
-    <a href="{{ register }}" target="_blank" rel="noreferrer noopener">Register</a>
-    <hr>
-    {# <h3 class="h4">{{ 'event_sponsors' | i18n }}</h3> #}
-    {% for item in sponsors %}
-      <h3 class="h4">{{ item.label }}</h3>
-      <ul class="grid grid--cols-2">
-        {% for item in item.list %}
-          <li>
-            <a href="{{ item.website }}" target="_blank" rel="noreferrer noopener">
-              <img src="{{ item.logo }}" alt="{{ item.name }}" style="width: 50px;"/>
-            </a>
-          </li>
+
+  <div class="grid lg:grid--cols-auto-72 to-lg:grid--gap-0 lg:grid--gap-16 xl:grid--gap-20">
+    <div>
+      {% if links and not end | futureDate %}
+        <div class="flex flex--gap-6 mb-8 lg:mb-10">
+          {% if links.videos %}
+            <a class="button" href="{{ links.videos }}" rel="noreferrer noopener" target="_blank">Watch the videos</a>
+          {% endif %}
+          {% if links.slides %}
+            <a class="button" href="{{ links.slides }}" rel="noreferrer noopener" target="_blank">View presentation slides</a>
+          {% endif %}
+        </div>
+      {% endif %}
+      {% if image %}
+        <div class="to-lg:w-full-breakout">
+          <div class="aspect-ratio aspect-ratio--16x9 aspect-ratio--contain bg-grey-500 mb-8 lg:mb-10 xl:mb-12">
+            <img alt="" class="absolute h-full top-0" loading="lazy" src="{{ image }}" />
+          </div>
+        </div>
+      {% endif %}
+      <div class="intro-para richtext">
+        {{ content | safe }}
+      </div>
+    </div>
+    <aside>
+      <hr class="hr lg:hidden my-16">
+      <div class="grid md-to-lg:grid--cols-2 to-md:grid--gap-14 lg:grid--gap-0 to-lg:mb-14">
+        <div>
+          <h2 class="h5">{{ 'event_details' | i18n }}</h2>
+          <p class="mb-4 mt-0 standout">
+            <time class="block "datetime="{{ date }}">{{ date | formatDateRange(end, locale) }}</time>
+            {{ location }}
+          </p>
+          <p class="p">{{ venue }}</p>
+          <a class="a" href="https://www.google.com/maps/search/?api=1&query={{ map | slug }}" rel="noreferrer noopener" target="_blank">View map</a>
+          <hr class="hidden lg:block hr">
+        </div>
+        {% if end | futureDate %}
+          <div>
+            <a class="button w-full" href="{{ register }}" rel="noreferrer noopener" target="_blank">Register</a>
+            <hr class="hidden lg:block hr">
+          </div>
+        {% endif %}
+      </div>
+      <div class="grid md-to-lg:grid--cols-2 grid--gap-0 md-to-lg:grid--gap-7 to-lg:mb-14">
+        {% for item in sponsors %}
+          <div>
+            <h2 class="h5">{{ item.label }}</h2>
+            <ul class="grid grid--cols-2 grid--gap-7 list-none mb-4 mt-0 p-0 w-3-4">
+              {% for item in item.list %}
+                <li>
+                  <a href="{{ item.website }}" target="_blank" rel="noreferrer noopener">
+                    <img src="{{ item.logo }}" alt="{{ item.name }}" />
+                    <span class="visually-hidden">{{ item.name }}</span>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
         {% endfor %}
-      </ul>
-    {% endfor %}
-    <hr>
-    <h3 class="h4">{{ 'share_this_article' | i18n }}</h3>
-    {% include "components/social-shares.njk" %}
-  </aside>
-</div>
+      </div>
+      <hr class="hidden lg:block hr">
+      <h2 class="h5">{{ 'share_this_article' | i18n }}</h2>
+      {% include "components/social-shares.njk" %}
+    </aside>
+  </div>
+</section>
