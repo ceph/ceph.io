@@ -36,7 +36,7 @@ order: 5
   <ul class="grid md:grid--cols-2 lg:grid--cols-4 list-none p-0">
     {% for item in articles %}
     <li>
-      {% include "components/article-card.njk" %}
+      {% ArticleCard item, true %}
     </li>
     {% endfor %}
   </ul>

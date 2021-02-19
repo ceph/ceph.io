@@ -63,7 +63,7 @@
   <ul class="grid md:grid--cols-2 lg:grid--cols-3 xl:grid--cols-4 list-none m-0 p-0">
     {% for item in pressReleaseCategories %}
       <li>
-        {% include "components/press-release-card.njk" %}
+        {% ArticleCard item %}
       </li>
     {% endfor %}
   </ul>

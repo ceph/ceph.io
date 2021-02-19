@@ -1,3 +1,5 @@
+// import articleCard from '.src/_11ty/shortcodes/ArticleCard.js';
+
 const urlPath = window.location.pathname.split('/');
 const urlLocale = urlPath[1];
 const searchInput = document.getElementById('search-str');
@@ -62,14 +64,30 @@ function renderResults(results = [], searchQuery) {
     searchResultsHtml = `<p class="p">No results for "<strong>${searchQuery}</strong>"</p>`;
   } else {
     searchResultsHtml = `<p class="p">You searched for "<strong>${searchQuery}</strong>"</p>
-      <ul class="ul">${results
+      <ul class="grid md:grid--cols-2 lg:grid--cols-3 xl:grid--cols-4 list-none m-0 p-0">${results
         .map(({ data = {} }) => {
-          const { author, date, title, url } = data;
+          const { author, content, date, image, title, url } = data;
+
+          // return `<li>${articleCard(data)}</li>`;
+
           return `<li>
-                  <a href="${url}">${title}</a>
-                  <span class="block">${author}</span>
-                  <time datetime="${date}">${formatDate(date)}</time>
-                </li>`;
+                    <div class="relative">
+                      <div class="aspect-ratio aspect-ratio--16x9 aspect-ratio--contain bg-grey-500 mb-4">
+                        <img alt="" class="absolute h-full left-0 rounded-2 top-0" loading="lazy" src="${image}" />
+                      </div>
+                      <a class="block color-navy link-cover h4 mb-2" href="${url}">
+                        ${title}
+                      </a>
+                      <p class="p-sm">
+                        <time datetime="${date}">${formatDate(
+            date
+          )}</time> by ${author}
+                      </p>
+                      <p class="p">
+                      ${content}
+                      </p>
+                    </div>
+                 </li>`;
         })
         .join('')}</ul>`;
   }
