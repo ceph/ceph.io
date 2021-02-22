@@ -36,6 +36,14 @@
   --grid-gap: var(--size-7);
 }
 
+.grid--gap-8 {
+  --grid-gap: var(--size-8);
+}
+
+.grid--gap-14 {
+  --grid-gap: var(--size-14);
+}
+
 /* columns */
 .grid--cols-none {
   grid-template-columns: var(--size-none);
@@ -159,6 +167,10 @@
 
   .lg\:grid--gap-16 {
     --grid-gap: var(--size-16);
+  }
+
+  .lg\:grid--gap-28 {
+    --grid-gap: var(--size-28);
   }
 
   .lg\:grid--cols-2 {
