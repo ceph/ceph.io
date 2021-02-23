@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+  <title>Contribute</title>
+  <g fill="none" fill-rule="evenodd" stroke-linecap="square" stroke-width="2">
+    <path stroke="#FFF" d="M36.825 31.125l4.748-2.85a3.311 3.311 0 014.487 1.05h0a3.31 3.31 0 01-.76 4.406l-8.475 6.566a4.5 4.5 0 01-1.664.807L19.971 44.9a4.5 4.5 0 01-3.536-.587l-11.11-7.189h-3.75v-12l7.468-1.245a4.5 4.5 0 012.895.488l6.887 3.757 11.183.589a3.236 3.236 0 013.067 3.232h0a3.237 3.237 0 01-2.915 3.224l-12.085 1.205"/>
+    <circle cx="29.325" cy="12.375" r="9" stroke="#EB1414"/>
+    <path stroke="#EB1414" d="M25.574 12.375l3.75-3.75 3.75 3.75-3.75 3.75z"/>
+  </g>
+</svg>
