@@ -10,6 +10,10 @@
   width: var(--size-12);
 }
 
+.w-20 {
+  width: var(--size-20);
+}
+
 .w-36 {
   width: var(--size-36);
 }
@@ -24,6 +28,10 @@
 
 .max-w-160 {
   max-width: var(--size-160);
+}
+
+.max-w-192 {
+  max-width: var(--size-192);
 }
 
 /* media queries */

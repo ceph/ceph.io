@@ -84,3 +84,16 @@
     flex: 1 1 0%;
   }
 }
+
+@media (--mq-lg) {
+  .lg\:flex--gap-6 {
+    --flex-gap: var(--size-6);
+    margin-left: calc(-1 * var(--flex-gap));
+    margin-top: calc(-1 * var(--flex-gap));
+  }
+
+  .lg\:flex--gap-6 > * {
+    margin-left: var(--flex-gap);
+    margin-top: var(--flex-gap);
+  }
+}

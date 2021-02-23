@@ -206,7 +206,10 @@
 .excerpt {
   font-size: var(--font-size-lg);
   line-height: var(--size-6);
+  margin: 0 0 var(--size-6);
+}
 
+.standout {
   @media (--mq-xl) {
     font-size: var(--font-size-xl);
     line-height: var(--size-7);
