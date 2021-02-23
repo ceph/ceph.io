@@ -8,6 +8,10 @@ module.exports = {
     'en-GB': 'Category',
     'ja-JP': 'カテゴリー',
   },
+  coming_soon: {
+    'en-GB': 'Coming soon',
+    'ja-JP': '近日公開',
+  },
   coming_up: {
     'en-GB': 'Coming up',
     'ja-JP': '来る',
