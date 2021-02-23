@@ -1,9 +1,9 @@
 ---
-title: Ceph Day Poland
-date: 2021-02-28
-end: 2021-03-01
-location: Wrocław, Poland
-venue: Hotel ibis Styles, Wrocław Centrum, Poland
+title: Ceph Day London
+date: 2021-04-28
+end: 2021-05-01
+location: London, UK
+venue: Student Central, Malet Street, London
 register: "https://www.eventbrite.com/"
 image: "/assets/placeholder-photo-1280x720.jpg"
 links:
@@ -27,7 +27,7 @@ tags:
   - ceph days
 ---
 
-## Bringing Ceph to Poland
+## Bringing Ceph to London
 
 Come find out why leading enterprises are adopting Ceph, why Ceph is the lowest cost per gig storage solution, and how easy it is to deploy your own Ceph cluster!
 

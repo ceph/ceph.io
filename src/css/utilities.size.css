@@ -57,4 +57,8 @@
   .lg\:h-full {
     height: var(--size-full);
   }
+
+  .lg\:w-1-2 {
+    width: var(--size-1-2);
+  }
 }
