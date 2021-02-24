@@ -1,6 +1,7 @@
 /* ---------- COMPONENT button ---------- */
 
-.button {
+.button,
+.richtext .button {
   background: var(--color-red-500);
   border-radius: var(--size-1);
   color: var(--color-white);
@@ -8,13 +9,14 @@
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-semibold);
   line-height: var(--size-6);
-  padding: var(--size-5) var(--size-8);
+  padding: var(--size-4) var(--size-8);
   text-align: center;
   text-decoration: none;
   transition: background-color var(--animation-duration) var(--animation-easing);
 }
 
-.button--pill {
+.button--pill,
+.richtext .button--pill {
   padding: var(--size-2) var(--size-4);
 }
 
@@ -25,6 +27,12 @@
 .button:not([disabled]):active {
   background: var(--color-red-700);
   outline: none;
+}
+
+.richtext .button:not([disabled]):hover,
+.richtext .button:not([disabled]):active {
+  color: var(--color-white);
+  text-decoration: none;
 }
 
 .button[disabled],
