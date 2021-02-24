@@ -201,6 +201,11 @@
   list-style-type: lower-alpha;
 }
 
+.ol li > .ol li > .ol,
+.richtext ol li > ol li > ol {
+  list-style-type: lower-roman;
+}
+
 /* custom */
 .standout,
 .excerpt {
