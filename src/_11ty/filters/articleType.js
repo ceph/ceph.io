@@ -9,8 +9,14 @@
  */
 
 module.exports = tags => {
-  // array tag suffixes
+  // array of tag suffixes
   const tagSuffix = ['blog-post', 'press-release'];
+
+  // object of label text
+  const labelText = {
+    'blog-post': 'BLOG',
+    'press-release': 'PRESS RELEASE',
+  };
 
   // tags to lowercase, strip out the first 6 chars and check includes tag suffix
   const lcTags = tags
@@ -19,5 +25,5 @@ module.exports = tags => {
       return tagSuffix.some(suffix => tag.includes(suffix));
     });
 
-  return lcTags;
+  return labelText[lcTags];
 };
