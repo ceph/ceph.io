@@ -211,7 +211,7 @@ order: 4
       <a class="a" href="/{{ locale }}/community/tech-talks/" class="ml-6">See all tech talks</a>
     </div>
     <ul class="grid md:grid--cols-2 lg:grid--cols-4 list-none m-0 p-0">
-      {% for item in tech_talks | sort(true, false, 'date') | limitItems(4) %}
+      {% for item in tech_talks | sort(true, false, 'date') | limitItems(2) %}
       <li>
         <div class="relative">
           <div class="aspect-ratio aspect-ratio--16x9 mb-4 overflow-hidden rounded-2 tint tint--black-2">
