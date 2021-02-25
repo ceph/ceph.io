@@ -42,6 +42,10 @@
 }
 
 @media (--mq-to-lg) {
+  .to-lg\:max-w-160 {
+    max-width: var(--size-160);
+  }
+
   .to-lg\:w-full-breakout {
     left: 50%;
     margin-left: -50vw;
@@ -60,5 +64,9 @@
 
   .lg\:w-1-2 {
     width: var(--size-1-2);
+  }
+
+  .lg\:w-3-4 {
+    width: var(--size-3-4);
   }
 }
