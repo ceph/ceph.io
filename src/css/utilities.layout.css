@@ -30,6 +30,12 @@
   transform: translate(-50%, -50%);
 }
 
+@media (--mq-lg) {
+  .lg\:order-2 {
+    order: 2;
+  }
+}
+
 .z-1 {
   z-index: 1;
 }
