@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+  <title>Block</title>
+  <g fill="none" fill-rule="evenodd" stroke-width="2">
+    <path stroke="#EB1414" d="M24 3v6M1.5 40.5l6-3M46.5 40.5l-6-3"/>
+    <path stroke="#0A0C38" d="M7.5 16.5L24 24l16.5-7.5M24 24v21"/>
+    <path stroke="#0A0C38" stroke-linecap="square" d="M40.5 16.5L24 9 7.5 16.5v21L24 45l16.5-7.5z"/>
+  </g>
+</svg>

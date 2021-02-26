@@ -26,10 +26,6 @@
   width: var(--size-full);
 }
 
-.max-w-160 {
-  max-width: var(--size-160);
-}
-
 .max-w-192 {
   max-width: var(--size-192);
 }

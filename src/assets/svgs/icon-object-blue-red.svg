@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+  <title>Object</title>
+  <g fill="none" fill-rule="evenodd" stroke-width="2">
+    <path stroke="#EB1414" d="M4.852 41.414l7.031-3.516M44.227 41.414l-7.032-3.516"/>
+    <path stroke="#0A0C38" d="M11.883 18.914v18.984c0 3.608 5.44 6.329 12.656 6.329s12.656-2.72 12.656-6.329V18.914"/>
+    <path stroke="#EB1414" stroke-linecap="square" d="M24.539 4.852v7.734"/>
+    <ellipse cx="24.539" cy="18.914" stroke="#0A0C38" stroke-linecap="square" rx="12.656" ry="6.328"/>
+  </g>
+</svg>

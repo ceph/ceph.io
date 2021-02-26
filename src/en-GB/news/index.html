@@ -6,7 +6,7 @@ order: 5
 
 {% set articleLocaleTag = locale + '-article' %} {% set articles = collections[articleLocaleTag] | reverse | limitItems(4) %}
 
-<h1 class="h1 visually-hidden">News</h1>
+<h1 class="h1 visually-hidden">{{ title }}</h1>
 
 <section class="section">
   <div class="matrix">

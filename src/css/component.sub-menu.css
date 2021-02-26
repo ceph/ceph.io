@@ -45,6 +45,11 @@
     flex: 1 0 var(--size-1-4);
   }
 
+  .sub-menu > li:nth-last-child(5):first-child,
+  .sub-menu > li:nth-last-child(5):first-child ~ li {
+    flex: 1 0 var(--size-1-5);
+  }
+
   .sub-menu > li:not(:first-child) {
     padding-left: var(--size-px);
   }
