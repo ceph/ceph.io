@@ -6,7 +6,7 @@ order: 4
 
 {% set eventLocaleTag = locale + '-event' %} {% set eventsFuture = collections[eventLocaleTag] | futureItems | reverse | limitItems(4) %}
 
-<h1 class="h1 visually-hidden">Community</h1>
+<h1 class="h1 visually-hidden">{{ title }}</h1>
 
 <section class="section">
   <div class="matrix">

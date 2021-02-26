@@ -5,7 +5,7 @@ order: 1
 overlaySubMenu: true
 ---
 
-<h1 class="visually-hidden">Discover</h1>
+<h1 class="visually-hidden">{{ title }}</h1>
 
 <section class="py-0 section section--full">
   <div class="py-32 lg:py-56 relative">
@@ -13,7 +13,7 @@ overlaySubMenu: true
       <img alt="" class="absolute h-full left-0 top-0 w-full" src="/assets/placeholder-photo-1280x720.jpg" />
     </div>
     <div class="wrapper">
-      <div class="color-white max-w-192 mx-auto relative text-center z-1">
+      <div class="color-white max-w-224 mx-auto relative text-center z-1">
         <h2 class="h1 mb-0">Achieve excellent performance, reliability and scalability with&nbsp;Ceph.</h2>
       </div>
     </div>
@@ -164,10 +164,26 @@ overlaySubMenu: true
         world.
       </p>
       <div class="flex flex--gap-4 lg:flex--gap-6 flex--wrap mb-4">
-        <img alt="" class="rounded-full w-20" loading="lazy" src="https://via.placeholder.com/50x50" />
-        <img alt="" class="rounded-full w-20" loading="lazy" src="https://via.placeholder.com/50x50" />
-        <img alt="" class="rounded-full w-20" loading="lazy" src="https://via.placeholder.com/50x50" />
-        <img alt="" class="rounded-full w-20" loading="lazy" src="https://via.placeholder.com/50x50" />
+        <div>
+          <div class="aspect-ratio aspect-ratio--1x1 w-20">
+            <img alt="" class="absolute left-0 rounded-full top-0" loading="lazy" src="https://via.placeholder.com/50x50" />
+          </div>
+        </div>
+        <div>
+          <div class="aspect-ratio aspect-ratio--1x1 w-20">
+            <img alt="" class="absolute left-0 rounded-full top-0" loading="lazy" src="https://via.placeholder.com/50x50" />
+          </div>
+        </div>
+        <div>
+          <div class="aspect-ratio aspect-ratio--1x1 w-20">
+            <img alt="" class="absolute left-0 rounded-full top-0" loading="lazy" src="https://via.placeholder.com/50x50" />
+          </div>
+        </div>
+        <div>
+          <div class="aspect-ratio aspect-ratio--1x1 w-20">
+            <img alt="" class="absolute left-0 rounded-full top-0" loading="lazy" src="https://via.placeholder.com/50x50" />
+          </div>
+        </div>
       </div>
       <a class="a" href="/{{ locale }}/discover/customers/">See who’s using Ceph today</a>
     </div>

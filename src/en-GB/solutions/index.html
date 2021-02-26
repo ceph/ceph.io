@@ -9,7 +9,7 @@ overlaySubMenu: true
 %} {% set browseCaseStudies = collections[caseStudyLocaleTag] | collectionTags | removeTagsFromArray([caseStudyLocaleTag]) | randomOrder |
 limitItems(6) %}
 
-<h1 class="visually-hidden">Solutions</h1>
+<h1 class="visually-hidden">{{ title }}</h1>
 
 <section class="py-0 section section--full">
   <div class="py-32 lg:py-56 relative">
@@ -17,7 +17,7 @@ limitItems(6) %}
       <img alt="" class="absolute h-full left-0 top-0 w-full" src="/assets/placeholder-photo-1280x720.jpg" />
     </div>
     <div class="wrapper">
-      <div class="color-white max-w-192 mx-auto relative text-center z-1">
+      <div class="color-white max-w-224 mx-auto relative text-center z-1">
         <h2 class="h1 mb-0">Built for data, applied to businesses and&nbsp;more.</h2>
       </div>
     </div>
@@ -26,11 +26,11 @@ limitItems(6) %}
     <div class="max-w-192 mx-auto text-center">
       <p class="standout">
         Ceph is designed to be more than data storage. With Ceph, organisations benefit from scalable storage, meaningful data insights,
-        reliable management and security, and futureproof development.
+        reliable management and security, and futureproof&nbsp;development.
       </p>
       <p class="p">
         From start-ups to global enterprises, academic institutions to medium-sized businesses, Ceph is the future of data storage,
-        management and decision making.
+        management and decision&nbsp;making.
       </p>
       <a class="a" href="/{{ locale }}/discover/benefits/">Discover the benefits of Ceph</a>
     </div>

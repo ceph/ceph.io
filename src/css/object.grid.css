@@ -118,6 +118,12 @@
   justify-self: end;
 }
 
+@media (--mq-sm) {
+  .sm\:grid--cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 @media (--mq-to-md) {
   .to-md\:grid--gap-14 {
     --grid-gap: var(--size-14);
