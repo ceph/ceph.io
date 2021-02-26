@@ -1,5 +1,5 @@
 ---
-layout: support
+layout: content-support
 title: Terms of use
 tags: "support"
 order: 2

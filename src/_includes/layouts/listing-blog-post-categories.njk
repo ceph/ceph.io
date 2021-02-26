@@ -1,6 +1,6 @@
 ---js
 {
-  layout: 'base',
+  layout: 'navigation',
   title: 'Category',
   pagination: {
     size: 1,
@@ -37,8 +37,6 @@
   permalink: '/{{ locale }}/news/blog/category/{{ tag | slug }}/'
 }
 ---
-
-{% include 'components/navigation-secondary.njk' %}
 
 <h1>{{ title }} "{{ tag }}"</h1>
 
