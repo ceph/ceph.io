@@ -1,5 +1,5 @@
 ---
-layout: support
+layout: content-support
 title: Privacy policy
 tags: "support"
 order: 3

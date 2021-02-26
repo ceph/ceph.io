@@ -1,5 +1,5 @@
 ---
-layout: support
+layout: content-support
 title: Trademarks
 tags: "support"
 order: 4

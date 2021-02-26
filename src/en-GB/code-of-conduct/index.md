@@ -1,5 +1,5 @@
 ---
-layout: support
+layout: content-support
 title: Code of conduct
 tags: "support"
 ---
