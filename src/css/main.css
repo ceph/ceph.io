@@ -28,6 +28,7 @@
 /* components */
 @import "component.agenda.css";
 @import "component.button.css";
+@import "component.details.css";
 @import "component.hr.css";
 @import "component.link-cover.css";
 @import "component.language-selector.css";
