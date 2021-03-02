@@ -142,6 +142,10 @@
   .md\:grid--cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  .md\:grid--cols-56-auto {
+    grid-template-columns: var(--size-56) 1fr;
+  }
 }
 
 @media (--mq-md-to-lg) {
@@ -201,6 +205,10 @@
 
   .lg\:grid--cols-auto-72 {
     grid-template-columns: 1fr var(--size-72);
+  }
+
+  .lg\:grid--cols-72-auto {
+    grid-template-columns: var(--size-72) 1fr;
   }
 }
 

@@ -1,0 +1,14 @@
+/* ---------- BASE table ---------- */
+
+.table,
+.richtext table {
+  font-size: var(--font-size-md);
+  line-height: var(--size-6);
+  width: var(--size-full);
+}
+
+.table td,
+.richtext table td {
+  border-bottom: var(--size-px) solid var(--color-grey-500);
+  padding: var(--size-4) 0;
+}

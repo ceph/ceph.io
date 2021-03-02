@@ -39,6 +39,12 @@
 }
 
 /* media queries */
+@media (--mq-to-md) {
+  .to-md\:max-w-56 {
+    max-width: var(--size-56);
+  }
+}
+
 @media (--mq-md) {
   .md\:w-3-4 {
     width: var(--size-3-4);
