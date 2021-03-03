@@ -129,7 +129,8 @@
   margin: 0 0 var(--size-4);
 }
 
-.richtext p:last-child {
+.richtext p:last-child,
+.richtext li p {
   margin-bottom: 0;
 }
 
