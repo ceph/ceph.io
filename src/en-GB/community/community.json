@@ -50,6 +50,12 @@
       "url": "https://youtu.be/uhJBYhGoS40"
     },
     {
+      "date": "2019-10-24",
+      "title": "Ceph at NASA",
+      "presenter": "Kevin Hrpcek",
+      "url": "https://www.youtube.com/watch?list=PLrBUGiINAakM36YJiTT0qYepZTVncFDdc&time_continue=3&v=neRsay1Ql_U"
+    },
+    {
       "date": "2019-06-27",
       "title": "Intro to Ceph",
       "presenter": "Sage Weil",
@@ -58,14 +64,174 @@
     {
       "date": "2019-01-27",
       "title": "NooBaa Software Defined Storage",
-      "presenter": "GuyMargalit",
+      "presenter": "Guy Margalit",
       "url": "https://www.noobaa.com/"
     },
+
     {
-      "date": "2019-10-24",
-      "title": "Ceph at NASA",
-      "presenter": "Kevin Hrpcek",
-      "url": "https://www.youtube.com/watch?list=PLrBUGiINAakM36YJiTT0qYepZTVncFDdc&time_continue=3&v=neRsay1Ql_U"
+      "date": "2018-06-28",
+      "title": "Ceph used in Cancer Research at OICR",
+      "presenter": "George Mihaiescu",
+      "url": "https://www.youtube.com/watch?v=TL2Slb9UYLE&list=PLrBUGiINAakM36YJiTT0qYepZTVncFDdc"
+    },
+    {
+      "date": "2018-05-24",
+      "title": "Ceph with Rook on Kubernetes",
+      "presenter": "Travis Nielsen",
+      "url": "https://www.youtube.com/watch?v=IdX53Ddcd9E"
+    },
+    {
+      "date": "2017-05-25",
+      "title": "Ceph on ARM: State of the Union",
+      "url": "https://youtu.be/2i5H6gHG6xk?list=PLrBUGiINAakM36YJiTT0qYepZTVncFDdc"
+    },
+    {
+      "date": "2017-05-23",
+      "title": "Tricks for Deploying Ceph at Scale && Writing an Application with language bindings",
+      "presenter": "Chris Holcombe",
+      "url": "https://youtu.be/RK2SdQ1IYC0?list=PLrBUGiINAakM36YJiTT0qYepZTVncFDdc"
+    },
+    {
+      "date": "2017-02-23",
+      "title": "Enable Fast Big Data Analytics on Ceph with Alluxio",
+      "presenter": "Adit Madan",
+      "url": "https://youtu.be/kBYZ2ujxo-Y"
+    },
+    {
+      "date": "2017-01-26",
+      "title": "Getting Started with Ceph Development",
+      "presenter": "Sage Weil",
+      "url": "https://youtu.be/t5UIehZ1oLs?list=PLrBUGiINAakM36YJiTT0qYepZTVncFDdc"
+    },
+    {
+      "date": "2016-12-22",
+      "title": "Holiday"
+    },
+    {
+      "date": "2016-11-24",
+      "title": "Holiday"
+    },
+    {
+      "date": "2016-10-27",
+      "title": "OpenStack Barcelona"
+    },
+    {
+      "date": "2016-09-22",
+      "title": "CANCELLED"
+    },
+    {
+      "date": "2016-08-25",
+      "title": "Unified CI: transitioning away from gitbuilders",
+      "presenter": "Alfredo Deza",
+      "url": "https://youtu.be/j1Xmy79rVJk?list=PLrBUGiINAakM36YJiTT0qYepZTVncFDdc"
+    },
+    {
+      "date": "2016-07-28",
+      "title": "CANCELLED"
+    },
+    {
+      "date": "2016-06-23",
+      "title": "Managing Ceph with OpenATTIC",
+      "presenter": "Lenz Grimmer",
+      "url": "https://youtu.be/XFU3PckrPpo"
+    },
+    {
+      "date": "2016-06-21",
+      "title": "Bluestore",
+      "presenter": "Sage Weil",
+      "url": "https://youtu.be/kuacS4jw5pM"
+    },
+    {
+      "date": "2016-05-26",
+      "title": "Ceph Benchmarking Tool",
+      "presenter": "Kyle Bader",
+      "url": "https://youtu.be/7puwMpv1yh8?list=PLrBUGiINAakM36YJiTT0qYepZTVncFDdc",
+      "slides": "http://www.slideshare.net/Inktank_Ceph/ceph-tech-talk-ceph-benchmarking-tool"
+    },
+    {
+      "date": "2016-04-28",
+      "title": "Live from OpenStack",
+      "presenter": "Patrick McGarry"
+    },
+    {
+      "date": "2016-03-24",
+      "title": "CANCELLED"
+    },
+    {
+      "date": "2016-02-25",
+      "title": "CephFS development update",
+      "presenter": "John Spray",
+      "url": "https://youtu.be/GbdHxL0vc9I"
+    },
+    {
+      "date": "2016-01-28",
+      "title": "PostgreSQL on Ceph under Mesos/Aurora with Docker",
+      "presenter": "Thorvald Natvig",
+      "url": "https://youtu.be/OqlC7S3cUKs?list=PLrBUGiINAakM36YJiTT0qYepZTVncFDdc"
+    },
+    {
+      "date": "2015-12-01",
+      "title": "Happy holiday (no tech talk)"
+    },
+    {
+      "date": "2015-11-17",
+      "title": "CANCELLED"
+    },
+    {
+      "date": "2015-10-15",
+      "title": "CANCELLED"
+    },
+    {
+      "date": "2015-09-24",
+      "title": "Building a Ceph Reference Architecture",
+      "presenter": "Brent Compton",
+      "url": "https://youtu.be/F_zuXrkWo3U?list=PLrBUGiINAakM36YJiTT0qYepZTVncFDdc"
+    },
+    {
+      "date": "2015-08-27",
+      "title": "Ceph Performance: Recent Testing and Findings",
+      "presenter": "Mark Nelson",
+      "url": "http://youtu.be/oxixZPSTzDQ"
+    },
+    {
+      "date": "2015-07-30",
+      "title": "CephFS (Distributed POSIX file system)",
+      "presenter": "John Spray",
+      "url": "https://youtu.be/XwjgybyPraU"
+    },
+    {
+      "date": "2015-06-25",
+      "title": "CANCELLED"
+    },
+    {
+      "date": "2015-05-27",
+      "title": "An examination of Placement Groups",
+      "presenter": "Florian Haas",
+      "url": "https://www.youtube.com/watch?v=BPuaKErc0uA&index=1&list=PLrBUGiINAakM36YJiTT0qYepZTVncFDdc"
+    },
+    {
+      "date": "2015-04-23",
+      "title": "Calamari/Romana (Management API and GUIs)",
+      "presenter": "Gregory Meno",
+      "url": "http://youtu.be/3ppxtwuKwwI"
+    },
+    {
+      "date": "2015-03-26",
+      "title": "RGW (RADOS Gateway)",
+      "presenter": "Yehuda Sadeh",
+      "url": "https://www.youtube.com/watch?v=zvfv3pXq0Ww&list=PLrBUGiINAakM36YJiTT0qYepZTVncFDdc&index=1"
+    },
+    {
+      "date": "2015-02-26",
+      "title": "RBD (RADOS Block Device)",
+      "presenter": "Josh Durgin",
+      "url": "http://youtu.be/qA-Xqu2hCqU?list=PLrBUGiINAakM36YJiTT0qYepZTVncFDdc"
+    },
+    {
+      "date": "2015-01-22",
+      "title": "RADOS (Reliable Autonomic Distributed Object Store)",
+      "presenter": "Sam Just",
+      "url": "http://youtu.be/05spXfLKKVU"
     }
   ]
 }
