@@ -1,6 +1,7 @@
 /* ---------- COMPONENT hr ---------- */
 
-.hr {
+.hr,
+.richtext hr {
   background: var(--color-grey-500);
   border: 0;
   height: var(--size-px);
