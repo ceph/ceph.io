@@ -1,7 +1,7 @@
 export default {
-  input: 'src/js/main-module.mjs',
+  input: 'src/js/main.js',
   output: {
-    dir: 'dist/js',
+    file: 'dist/js/bundle.js',
     format: 'es',
   },
 };
