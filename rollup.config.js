@@ -31,7 +31,7 @@ const pluginsES5 = () => [
       ],
     ],
   }),
-  process.env.NODE_ENV === 'development' && terser(),
+  process.env.NODE_ENV === 'production' && terser(),
 ];
 
 function setupBuild(plugins, src, dist) {
@@ -40,7 +40,7 @@ function setupBuild(plugins, src, dist) {
     output: {
       file: distDir + dist,
       format: 'iife',
-      sourcemap: process.env.NODE_ENV === 'development' ? false : 'inline',
+      sourcemap: process.env.NODE_ENV === 'production' ? false : 'inline',
     },
     plugins: plugins,
   };
