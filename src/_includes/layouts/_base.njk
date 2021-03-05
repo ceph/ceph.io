@@ -50,6 +50,7 @@
     </main>
 
     {% include 'components/site-footer.njk' %}
-    <script src="/js/bundle-main.js"></script>
+    <script type="module" src="/js/bundle-main.mjs"></script>
+    <script nomodule src="/js/bundle-main.js"></script>
   </body>
 </html>
