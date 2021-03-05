@@ -1,4 +1,4 @@
-// import articleCard from '.src/_11ty/shortcodes/ArticleCard.js';
+// import articleCard from '/js/article-card.js';
 
 const urlPath = window.location.pathname.split('/');
 const urlLocale = urlPath[1];
@@ -9,7 +9,7 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const query = urlParams.get('q');
 
-let postsIndex, searchIndex, searchResults, searchResultsHtml;
+let postsIndex, searchIndex, searchResults, searchResultsHtml, hello;
 
 async function initSearchIndex() {
   const response = await fetch(`/${urlLocale}/news/blog/search.json`);
@@ -22,6 +22,17 @@ async function initSearchIndex() {
     this.field('content');
     postsIndex.forEach(post => this.add(post));
   });
+
+  // const response = await fetch(`/${urlLocale}/news/blog/index.json`);
+  // postsIndex = await response.json();
+  // searchIndex = lunr.Index.load(postsIndex);
+
+  // let index = await fetch(`/${urlLocale}/news/blog/index.json`);
+  // let indexData = await index.json();
+
+  // const docs = await fetch(`/${urlLocale}/news/blog/search.json`);
+  // hello = await docs.json();
+
   if (!urlParams.has('q')) return;
   search(query);
 }

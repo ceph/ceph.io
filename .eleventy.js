@@ -75,6 +75,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/js');
   eleventyConfig.addPassthroughCopy({ 'node_modules/focus-visible/dist/focus-visible.min.js': 'js/focus-visible.min.js' });
   eleventyConfig.addPassthroughCopy({ 'node_modules/details-polyfill/index.js': 'js/detail-polyfill.js' });
+  eleventyConfig.addPassthroughCopy({ 'src/_11ty/shortcodes/ArticleCard.js': 'js/article-card.js' });
 
   // Plugins
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
