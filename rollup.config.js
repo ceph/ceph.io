@@ -9,7 +9,7 @@ const distDir = 'dist/js/';
 const pluginsES = () => [
   resolve(),
   commonjs(),
-  process.env.NODE_ENV === 'development' && terser(),
+  process.env.NODE_ENV === 'production' ? terser({ output: { comments: false } }) : null,
 ];
 
 const pluginsES5 = () => [
