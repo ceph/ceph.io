@@ -50,10 +50,7 @@
     </main>
 
     {% include 'components/site-footer.njk' %}
-    <script src="/js/sticky-scroll.js"></script>
-    <script src="/js/off-canvas.js"></script>
-    <script src="/js/nav-secondary.js"></script>
-    <script src="/js/focus-visible.min.js"></script>
-    <script src="/js/detail-polyfill.js"></script>
+    <script type="module" src="/js/bundle-main.mjs"></script>
+    <script nomodule src="/js/bundle-main.js"></script>
   </body>
 </html>

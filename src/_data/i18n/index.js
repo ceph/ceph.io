@@ -8,6 +8,10 @@ module.exports = {
     'en-GB': 'Category',
     'ja-JP': 'カテゴリー',
   },
+  coming_soon: {
+    'en-GB': 'Coming soon',
+    'ja-JP': '近日公開',
+  },
   coming_up: {
     'en-GB': 'Coming up',
     'ja-JP': '来る',
@@ -60,13 +64,25 @@ module.exports = {
     'en-GB': 'Share this article',
     'ja-JP': 'この記事を共有する',
   },
+  slides: {
+    'en-GB': 'Slides',
+    'ja-JP': 'スライド',
+  },
   tags: {
     'en-GB': 'Tags',
     'ja-JP': 'タグ',
   },
+  upcoming: {
+    'en-GB': 'Upcoming',
+    'ja-JP': '今後の',
+  },
   website: {
     'en-GB': 'Website',
     'ja-JP': 'ウェブサイト',
+  },
+  with: {
+    'en-GB': 'With',
+    'ja-JP': 'と',
   },
 
   // i18n

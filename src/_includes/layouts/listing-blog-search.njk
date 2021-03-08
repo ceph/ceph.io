@@ -1,13 +1,11 @@
 ---
-layout: base
+layout: navigation
 permalink: '/{{ locale }}/news/blog/search/'
 ---
 
 {% set blogPostLocaleTag = locale + '-blog-post' %}
 {% set articleLocaleTag = locale + '-article' %}
 {% set blogPostFilters = collections[blogPostLocaleTag] | collectionTags([blogPostLocaleTag, articleLocaleTag]) %}
-
-{% include 'components/navigation-secondary.njk' %}
 
 <section class="section">
   <div class="grid grid--align-center lg:grid--cols-auto-160 mb-16 xl:mb-24">
@@ -64,5 +62,5 @@ permalink: '/{{ locale }}/news/blog/search/'
 
 {{ content | safe }}
 
-<script src="/js/lunr.js"></script>
-<script src="/js/search.js"></script>
+<script type="module" src="/js/bundle-search.mjs"></script>
+<script nomodule src="/js/bundle-search.js"></script>

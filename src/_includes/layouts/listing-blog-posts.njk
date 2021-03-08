@@ -1,5 +1,5 @@
 ---
-  layout: base
+  layout: navigation
   pagination:
     size: 12
   permalink: '/{{ locale }}/news/blog{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1}}{% endif %}/index.html'
@@ -9,8 +9,6 @@
 {% set articleLocaleTag = locale + '-article' %}
 {% set blogPostFilters = collections[blogPostLocaleTag] | collectionTags([blogPostLocaleTag, articleLocaleTag]) %}
 {% set blogPosts = pagination.items %}
-
-{% include 'components/navigation-secondary.njk' %}
 
 <section class="section">
   <div class="grid grid--align-center lg:grid--cols-auto-160 mb-16 xl:mb-24">

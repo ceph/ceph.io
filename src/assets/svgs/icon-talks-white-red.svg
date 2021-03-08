@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+  <title>Talks</title>
+  <g fill="none" fill-rule="evenodd" stroke-linecap="square" stroke-width="2">
+    <path stroke="#EB1414" d="M46.575 2.175h-25.5v21l7.5-6h18z"/>
+    <circle cx="37.575" cy="27.675" r="4.5" stroke="#FFF"/>
+    <circle cx="10.575" cy="27.675" r="4.5" stroke="#FFF"/>
+    <path stroke="#FFF" d="M19.575 45.675v-4.474a3 3 0 00-1.475-2.587c-1.459-.863-3.988-1.939-7.525-1.939-3.583 0-6.095 1.07-7.539 1.931a2.997 2.997 0 00-1.461 2.579v4.49h18zM46.575 45.675v-4.474a3 3 0 00-1.475-2.587c-1.459-.863-3.988-1.939-7.525-1.939-3.583 0-6.095 1.07-7.539 1.931a2.997 2.997 0 00-1.461 2.579v4.49h18z"/>
+  </g>
+</svg>

@@ -129,7 +129,8 @@
   margin: 0 0 var(--size-4);
 }
 
-.richtext p:last-child {
+.richtext p:last-child,
+.richtext li p {
   margin-bottom: 0;
 }
 
@@ -201,12 +202,20 @@
   list-style-type: lower-alpha;
 }
 
+.ol li > .ol li > .ol,
+.richtext ol li > ol li > ol {
+  list-style-type: lower-roman;
+}
+
 /* custom */
 .standout,
 .excerpt {
   font-size: var(--font-size-lg);
   line-height: var(--size-6);
+  margin: 0 0 var(--size-6);
+}
 
+.standout {
   @media (--mq-xl) {
     font-size: var(--font-size-xl);
     line-height: var(--size-7);

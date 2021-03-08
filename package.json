@@ -6,12 +6,13 @@
     "assets": "node scripts/images.js",
     "search": "node scripts/search-index.js",
     "css": "postcss src/css/main.css --output dist/css/main.css",
+    "js": "rollup --config",
     "site": "npx eleventy",
     "clean": "rimraf dist",
     "start": "npm run dev",
-    "dev": "cross-env NODE_ENV=development npm-run-all clean --parallel 'site -- --serve' 'css -- --watch' assets",
+    "dev": "cross-env NODE_ENV=development npm-run-all clean --parallel 'site -- --serve' 'css -- --watch' 'js -- --watch' assets",
     "prebuild": "node scripts/prebuild",
-    "build": "cross-env NODE_ENV=production npm-run-all clean --parallel site css assets",
+    "build": "cross-env NODE_ENV=production npm-run-all clean --parallel site css js assets",
     "debug": "cross-env DEBUG=* npx eleventy",
     "prettier": "prettier \"**/*.+(js|jsx|json|css|md|html)\"",
     "format": "npm run prettier -- --write"
@@ -36,6 +37,12 @@
   "devDependencies": {
     "@11ty/eleventy": "0.11.1",
     "@11ty/eleventy-navigation": "0.1.6",
+    "@babel/core": "^7.13.8",
+    "@babel/preset-env": "^7.13.9",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-node-resolve": "^11.2.0",
+    "core-js": "^3.9.1",
     "cpy": "8.1.1",
     "cross-env": "7.0.2",
     "cssnano": "^4.1.10",
@@ -51,7 +58,9 @@
     "postcss-normalize": "^9.0.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "2.0.5",
-    "rimraf": "3.0.2"
+    "rimraf": "3.0.2",
+    "rollup": "^2.40.0",
+    "rollup-plugin-terser": "^7.0.2"
   },
   "dependencies": {
     "details-polyfill": "^1.1.0",

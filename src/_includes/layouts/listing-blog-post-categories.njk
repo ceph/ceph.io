@@ -1,6 +1,7 @@
 ---js
 {
-  layout: 'base',
+  layout: 'navigation',
+  title: 'Category',
   pagination: {
     size: 1,
     alias: 'tag',
@@ -41,8 +42,6 @@
 {% set articleLocaleTag = locale + '-article' %}
 {% set blogPostFilters = collections[blogPostLocaleTag] | collectionTags([blogPostLocaleTag, articleLocaleTag]) %}
 {% set blogPostCategories = collections[tag] | collectionIncludesTag(blogPostLocaleTag) | reverse %}
-
-{% include 'components/navigation-secondary.njk' %}
 
 <section class="section">
   <div class="grid grid--align-center lg:grid--cols-auto-160 mb-16 xl:mb-24">

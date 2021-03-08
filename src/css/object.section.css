@@ -23,6 +23,13 @@
   }
 }
 
+.section:target:before {
+  content: "";
+  display: block;
+  height: var(--size-scroll-offset);
+  margin: calc(-1 * var(--size-scroll-offset)) 0 0;
+}
+
 .section--full {
   left: 50%;
   margin-left: -50vw;

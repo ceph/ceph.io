@@ -40,10 +40,11 @@ module.exports = function (eleventyConfig) {
 
   // Layout aliases — TBC if this is bringing enough benefit
   eleventyConfig.addLayoutAlias('base', 'layouts/_base.njk');
-  eleventyConfig.addLayoutAlias('article', 'layouts/article.njk');
   eleventyConfig.addLayoutAlias('blog-post', 'layouts/blog-post.njk');
   eleventyConfig.addLayoutAlias('case-study', 'layouts/case-study.njk');
   eleventyConfig.addLayoutAlias('content', 'layouts/content.njk');
+  eleventyConfig.addLayoutAlias('content-simple', 'layouts/content-simple.njk');
+  eleventyConfig.addLayoutAlias('content-support', 'layouts/content-support.njk');
   eleventyConfig.addLayoutAlias('event', 'layouts/event.njk');
   eleventyConfig.addLayoutAlias('home', 'layouts/home.njk');
   eleventyConfig.addLayoutAlias('press-release', 'layouts/press-release.njk');
@@ -63,7 +64,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias('listing-planet-ceph-articles', 'layouts/listing-planet-ceph-articles.njk');
   eleventyConfig.addLayoutAlias('listing-press-releases', 'layouts/listing-press-releases.njk');
   eleventyConfig.addLayoutAlias('listing-press-release-categories', 'layouts/listing-press-release-categories.njk');
-  eleventyConfig.addLayoutAlias('support', 'layouts/support.njk');
+  eleventyConfig.addLayoutAlias('navigation', 'layouts/navigation.njk');
 
   // Shortcodes
   const shortcodesDir = `./src/_11ty/shortcodes`;
@@ -72,10 +73,6 @@ module.exports = function (eleventyConfig) {
   // Transforms
 
   // Passthrough copy
-  eleventyConfig.addPassthroughCopy('src/js');
-  eleventyConfig.addPassthroughCopy({ 'node_modules/focus-visible/dist/focus-visible.min.js': 'js/focus-visible.min.js' });
-  eleventyConfig.addPassthroughCopy({ 'node_modules/details-polyfill/index.js': 'js/detail-polyfill.js' });
-  eleventyConfig.addPassthroughCopy({ 'src/_11ty/shortcodes/ArticleCard.js': 'js/article-card.js' });
 
   // Plugins
   eleventyConfig.addPlugin(eleventyNavigationPlugin);

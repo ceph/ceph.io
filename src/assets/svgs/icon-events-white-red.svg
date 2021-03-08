@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+  <title>Events</title>
+  <g fill="none" fill-rule="evenodd" stroke-width="2" >
+    <path stroke="#FFF" d="M45.375 17.175h-42"/>
+    <path stroke="#FFF" stroke-linecap="square" d="M22.125 41.925h-15a3.75 3.75 0 01-3.75-3.75v-27.75a3.75 3.75 0 013.75-3.75h34.5a3.75 3.75 0 013.75 3.75v15M13.125 2.175v9M35.625 2.175v9"/>
+    <circle cx="35.625" cy="36.675" r="9" stroke="#EB1414" stroke-linecap="square"/>
+    <path stroke="#EB1414" stroke-linecap="square" d="M31.875 37.425l2.25 2.25 5.25-5.25"/>
+  </g>
+</svg>

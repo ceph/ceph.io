@@ -16,6 +16,7 @@
 @import "base.focus.css";
 @import "base.forms.css";
 @import "base.media.css";
+@import "base.table.css";
 @import "base.typography.css";
 
 /* objects */
@@ -28,6 +29,7 @@
 /* components */
 @import "component.agenda.css";
 @import "component.button.css";
+@import "component.details.css";
 @import "component.hr.css";
 @import "component.link-cover.css";
 @import "component.language-selector.css";

@@ -36,6 +36,14 @@
   --grid-gap: var(--size-7);
 }
 
+.grid--gap-8 {
+  --grid-gap: var(--size-8);
+}
+
+.grid--gap-14 {
+  --grid-gap: var(--size-14);
+}
+
 /* columns */
 .grid--cols-none {
   grid-template-columns: var(--size-none);
@@ -110,6 +118,16 @@
   justify-self: end;
 }
 
+@media (--mq-sm) {
+  .sm\:grid--cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sm\:grid--cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 @media (--mq-to-md) {
   .to-md\:grid--gap-14 {
     --grid-gap: var(--size-14);
@@ -123,6 +141,10 @@
 
   .md\:grid--cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .md\:grid--cols-56-auto {
+    grid-template-columns: var(--size-56) 1fr;
   }
 }
 
@@ -161,6 +183,10 @@
     --grid-gap: var(--size-16);
   }
 
+  .lg\:grid--gap-28 {
+    --grid-gap: var(--size-28);
+  }
+
   .lg\:grid--cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -175,6 +201,10 @@
 
   .lg\:grid--cols-6 {
     grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .lg\:grid--cols-72-auto {
+    grid-template-columns: var(--size-72) 1fr;
   }
 
   .lg\:grid--cols-auto-72 {
