@@ -1,25 +1,41 @@
 const fs = require('fs');
 const lunr = require('lunr');
 
-const distDir = 'dist/en-GB/news/blog';
+const locales = require('../src/_data/locales');
 
-let data = fs.readFileSync(distDir + '/search.json', 'utf-8');
-// let postsIndex;
-let postsIndex = JSON.parse(data);
+function getData(distDir) {
+  let data = fs.readFileSync(distDir + '/search-raw.json', 'utf-8');
+  return JSON.parse(data);
+}
 
-let searchIndex = lunr(function () {
-  this.field('title');
-  this.field('author');
-  this.field('date');
-  this.ref('url');
-  this.field('content');
+function buildIndex(articles) {
+  let searchIndex = lunr(function () {
+    this.ref('id');
+    this.field('title');
+    this.field('author');
+    this.field('date');
+    this.field('url');
+    this.field('content');
 
-  postsIndex.forEach(post => this.add(post));
+    articles.forEach(function (article, searchIndex) {
+      article.id = searchIndex;
+      this.add(article);
+    }, this);
+  });
 
-  // docs.forEach(function (doc, idx) {
-  // 	doc.id = idx;
-  // 	this.add(doc);
-  // }, this);
+  return searchIndex;
+}
+
+function writeData(distDir, searchIndex) {
+  fs.writeFileSync(distDir + '/search-index.json', JSON.stringify(searchIndex));
+}
+
+locales.forEach(locale => {
+  const distDir = `dist/${locale.code}/news/blog`;
+
+  const data = getData(distDir);
+
+  const searchIndex = buildIndex(data);
+
+  writeData(distDir, searchIndex);
 });
-
-fs.writeFileSync(distDir + '/index.json', JSON.stringify(searchIndex));

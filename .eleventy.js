@@ -86,6 +86,11 @@ module.exports = function (eleventyConfig) {
     },
   });
 
+  // Run after the build ends
+  eleventyConfig.on('afterBuild', () => {
+    require('./scripts/search-index.js');
+  });
+
   // Browsersync
   eleventyConfig.setBrowserSyncConfig({
     callbacks: {

@@ -9,52 +9,33 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const query = urlParams.get('q');
 
-let postsIndex, searchIndex, searchResults, searchResultsHtml, hello;
-
 async function initSearchIndex() {
-  const response = await fetch(`/${urlLocale}/news/blog/search.json`);
-  postsIndex = await response.json();
-  searchIndex = lunr(function () {
-    this.field('title');
-    this.field('author');
-    this.field('date');
-    this.ref('url');
-    this.field('content');
-    postsIndex.forEach(post => this.add(post));
-  });
+  const searchIndexData = await fetch(
+    `/${urlLocale}/news/blog/search-index.json`
+  );
+  const index = await searchIndexData.json();
+  const lunrIndex = lunr.Index.load(index);
 
-  // const response = await fetch(`/${urlLocale}/news/blog/index.json`);
-  // postsIndex = await response.json();
-  // searchIndex = lunr.Index.load(postsIndex);
-
-  // let index = await fetch(`/${urlLocale}/news/blog/index.json`);
-  // let indexData = await index.json();
-
-  // const docs = await fetch(`/${urlLocale}/news/blog/search.json`);
-  // hello = await docs.json();
+  const searchOutputData = await fetch(
+    `/${urlLocale}/news/blog/search-output.json`
+  );
+  const output = await searchOutputData.json();
 
   if (!urlParams.has('q')) return;
-  search(query);
+  search(lunrIndex, query, output);
 }
 
-function search(searchQuery) {
+function search(lunrIndex, searchQuery, searchOutput) {
   searchInput.value = searchQuery;
 
-  const searchResults = searchIndex.search(searchQuery);
+  let searchResults = lunrIndex.search(query);
 
   searchResults.forEach(result => {
-    const matchingPost = postsIndex.find(post => post.url === result.ref);
-    if (!matchingPost) return;
-
-    const { title, author, date, url, content } = matchingPost;
-    const searchData = {
-      title,
-      author,
-      date,
-      url,
-      content,
-    };
-    result.data = searchData;
+    result.title = searchOutput[result.ref].title;
+    result.author = searchOutput[result.ref].author;
+    result.date = searchOutput[result.ref].date;
+    result.url = searchOutput[result.ref].url;
+    result.content = searchOutput[result.ref].content;
   });
 
   renderResults(searchResults, searchQuery);
@@ -76,8 +57,8 @@ function renderResults(results = [], searchQuery) {
   } else {
     searchResultsHtml = `<p class="p">You searched for "<strong>${searchQuery}</strong>"</p>
       <ul class="grid md:grid--cols-2 lg:grid--cols-3 xl:grid--cols-4 list-none m-0 p-0">${results
-        .map(({ data = {} }) => {
-          const { author, content, date, image, title, url } = data;
+        .map(result => {
+          const { author, content, date, image, title, url } = result;
 
           // return `<li>${articleCard(data)}</li>`;
 
@@ -90,7 +71,7 @@ function renderResults(results = [], searchQuery) {
                         ${title}
                       </a>
                       <p class="p-sm">
-                        <time datetime="${date}">${formatDate(
+                      <time datetime="${date}">${formatDate(
             date
           )}</time> by ${author}
                       </p>
