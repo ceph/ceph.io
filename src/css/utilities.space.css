@@ -279,6 +279,11 @@
   margin-bottom: var(--size-16);
 }
 
+.my-18 {
+  margin-top: var(--size-18);
+  margin-bottom: var(--size-18);
+}
+
 .my-20 {
   margin-top: var(--size-20);
   margin-bottom: var(--size-20);
@@ -4279,6 +4284,11 @@
   .lg\:my-24 {
     margin-top: var(--size-24);
     margin-bottom: var(--size-24);
+  }
+
+  .lg\:my-28 {
+    margin-top: var(--size-28);
+    margin-bottom: var(--size-28);
   }
 
   .lg\:my-32 {
