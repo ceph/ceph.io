@@ -14,7 +14,6 @@ function buildIndex(articles) {
     this.field('title');
     this.field('author');
     this.field('date');
-    this.field('url');
     this.field('content');
 
     articles.forEach(function (article, searchIndex) {

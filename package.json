@@ -4,7 +4,6 @@
   "description": "Static site for www.ceph.io",
   "scripts": {
     "assets": "node scripts/images.js",
-    "search": "node scripts/search-index.js",
     "css": "postcss src/css/main.css --output dist/css/main.css",
     "js": "rollup --config",
     "site": "npx eleventy",
