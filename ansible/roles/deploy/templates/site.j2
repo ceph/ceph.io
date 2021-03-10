@@ -56,6 +56,10 @@ server {
   types {
     application/javascript mjs;
   }
+
+  # https://github.com/ceph/ceph.io/issues/104
+  gzip on;
+  gzip_types text/css text/javascript;
 }
 
 
@@ -114,4 +118,8 @@ server {
   types {
     application/javascript mjs;
   }
+
+  # https://github.com/ceph/ceph.io/issues/104
+  gzip on;
+  gzip_types text/css text/javascript;
 }
