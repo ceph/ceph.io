@@ -51,6 +51,11 @@ server {
   add_header X-XSS-Protection "1; mode=block";
   add_header Content-Security-Policy "{{ content_security_policy }}";
   proxy_cookie_path / "/; HTTPOnly; Secure";
+
+  # https://github.com/ceph/ceph.io/issues/101
+  types {
+    application/javascript mjs;
+  }
 }
 
 
@@ -104,4 +109,9 @@ server {
   add_header X-XSS-Protection "1; mode=block";
   add_header Content-Security-Policy "{{ content_security_policy }}";
   proxy_cookie_path / "/; HTTPOnly; Secure";
+
+  # https://github.com/ceph/ceph.io/issues/101
+  types {
+    application/javascript mjs;
+  }
 }
