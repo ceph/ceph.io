@@ -5,13 +5,10 @@ const removeHtml = require(`${filtersDir}/removeHtml.js`);
 const truncate = require(`${filtersDir}/truncate.js`);
 
 module.exports = (
-  {
-    data: { author = '', date, image, tags, title = '', locale = '' },
-    templateContent,
-    url,
-  },
-  label = ''
+  { data = {}, templateContent, url } = {},
+  { showLabel } = {}
 ) => {
+  const { author = '', date, image, tags, title = '', locale = '' } = data;
   const imageSrc = image ? image : 'https://via.placeholder.com/640x360';
   const captionStrip = removeHtml(templateContent);
   const caption = truncate(captionStrip);
@@ -26,12 +23,13 @@ module.exports = (
           src="${imageSrc}" 
         />
         ${
-          label &&
-          `
+          showLabel
+            ? `
           <span class="absolute bg-red-500 block color-white m-4 p px-3 py-2 right-0 rounded-2 text-semibold top-0">
             ${articleType(tags)}
           </span>
         `
+            : ''
         }
       </div>
       ${

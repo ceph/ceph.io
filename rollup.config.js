@@ -10,8 +10,8 @@ const pluginsES = () => [
   resolve(),
   commonjs({
     dynamicRequireTargets: [
-      './src/_11ty/**/*.js',
-      '!./src/_11ty/collections/*.js',
+      './src/_11ty/filters/**/*.js',
+      './src/_11ty/shortcodes/**/*.js',
     ],
     transformMixedEsModules: true,
   }),
@@ -24,8 +24,8 @@ const pluginsES5 = () => [
   resolve(),
   commonjs({
     dynamicRequireTargets: [
-      './src/_11ty/**/*.js',
-      '!./src/_11ty/collections/*.js',
+      './src/_11ty/filters/**/*.js',
+      './src/_11ty/shortcodes/**/*.js',
     ],
     transformMixedEsModules: true,
   }),

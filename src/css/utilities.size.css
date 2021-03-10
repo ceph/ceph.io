@@ -5,6 +5,10 @@
   height: var(--size-full);
 }
 
+.min-h-80 {
+  min-height: var(--size-80);
+}
+
 /* width */
 .w-12 {
   width: var(--size-12);
