@@ -11,6 +11,7 @@
 
 /* should probably consider moving the declarations below to their relevant CSS files */
 .js-focus-visible .button.focus-visible,
+.js-focus-visible .input.focus-visible,
 .js-focus-visible .select.focus-visible,
 .js-focus-visible .link-cover--shadow.focus-visible::before {
   outline-offset: var(--size-0);

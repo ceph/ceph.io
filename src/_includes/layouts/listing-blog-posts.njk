@@ -1,43 +1,76 @@
 ---
   layout: navigation
   pagination:
-    size: 2
+    size: 12
   permalink: '/{{ locale }}/news/blog{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1}}{% endif %}/index.html'
 ---
 
 {% set blogPostLocaleTag = locale + '-blog-post' %}
 {% set articleLocaleTag = locale + '-article' %}
 {% set blogPostFilters = collections[blogPostLocaleTag] | collectionTags([blogPostLocaleTag, articleLocaleTag]) %}
-
-<div class="flex flex--justify-between">
-  <h1>{{ title }}</h1>
-  <div>
-    <select onchange="javascript:location.href = this.value;">
-      <option value="" selected disabled hidden>Category</option>
-      {% for item in blogPostFilters %}
-        <option value="/{{ locale }}/news/blog/category/{{ item | slug }}/">
-          {{ item }}</a>
-      </option>
-    {% endfor %}
-  </select>
-  <form action="/{{ locale }}/news/blog/search/" method="get" class="search">
-    <label for="search-str">Search</label>
-    <input type="text" name="q" id="search-str"/>
-    <button type="submit" id="search-submit" class="submit">Search</button>
-  </form>
-</div>
-</div>
-
 {% set blogPosts = pagination.items %}
 
-<ul class="grid grid--cols-4 list-none p-0">
-{% for item in blogPosts %}
-  <li>
-    {% include "components/blog-post-card.njk" %}
-  </li>
-{% endfor %}
-</ul>
+<section class="section">
+  <div class="grid grid--align-center lg:grid--cols-auto-160 mb-16 xl:mb-24">
+    <h1 class="h1 mb-0">{{ title }}</h1>
+    <div class="grid md:grid--cols-2">
+      <div>
+      <select class="select w-full" id="filters" onchange="javascript:location.href = this.value;">
+        <option selected value="">{{ 'category' | i18n }}</option>
+        {% for item in blogPostFilters %}
+          {% set itemSlug = item | slug + '/'%}
+          <option {% if page.url | endsWith(itemSlug) %}selected{% endif %} value="/{{ locale }}/news/blog/category/{{ itemSlug }}">
+            {{ item }}</a>
+          </option>
+        {% endfor %}
+      </select>
+      </div>
+      <form action="/{{ locale }}/news/blog/search/" class="relative" method="get">
+        <input aria-label="Search" class="input w-full" id="search-str" name="q" required type="search" />
+        <button class="input" id="search-reset" type="reset">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <g fill="none" fill-rule="evenodd" stroke="#0a0c38" stroke-linecap="square" stroke-width="2">
+              <path d="M16 8l-8 8M16 16L8 8"/>
+            </g>
+          </svg>
+          <span class="visually-hidden">Reset search</span>
+        </button>
+        <button class="input" id="search-submit" type="submit">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="#0a0c38">
+            <path d="M16.294 14.579h-.903l-.32-.31a7.4 7.4 0 001.795-4.836 7.433 7.433 0 10-7.433 7.433 7.4 7.4 0 004.837-1.796l.309.32v.904L20.296 22 22 20.296l-5.706-5.717zm-6.861 0a5.139 5.139 0 01-5.146-5.146 5.139 5.139 0 015.146-5.146 5.139 5.139 0 015.146 5.146 5.139 5.139 0 01-5.146 5.146z"/>
+          </svg>
+          <span class="visually-hidden">Submit search</span>
+        </button>
+      </form>
+    </div>
+  </div>
 
-{% include "components/pagination.njk" %}
+  <ul class="grid md:grid--cols-2 lg:grid--cols-3 xl:grid--cols-4 list-none m-0 p-0">
+    {% for item in blogPosts %}
+      <li>
+        {% ArticleCard item %}
+      </li>
+    {% endfor %}
+  </ul>
+
+  <hr class="hr mb-12 mt-16 lg:mt-24" />
+
+  {% include "components/pagination.njk" %}
+</section>
+
+<section class="pt-0 section">
+  <div class="bg-grey-300 border-grey-500 border-px border-solid p-5 rounded-2">
+    <div class="flex flex--align-center flex--gap-6 flex--justify-between flex--wrap">
+      <div>
+        <h2 class="h3">Subscribe to Ceph Announcements</h2>
+        <p class="p">Ned placerat est a augue pulvinar imperdiet quis in setiam euismod.</p>
+        <a class="a" href="#">Other ways to stay connected</a>
+      </div>
+      <div>
+        <a class="button" href="#">Subscribe to Ceph Announcements</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 {{ content | safe }}

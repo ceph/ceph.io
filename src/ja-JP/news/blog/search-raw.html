@@ -1,0 +1,8 @@
+---
+layout: null
+permalink: '/{{ locale }}/news/blog/search-raw.json'
+override:tags: []
+---
+
+[ {% for item in collections['ja-JP-blog-post'] %} { "title":"{{item.data.title}}", "author":"{{item.data.author}}",
+"date":"{{item.data.date}}", "content":"{{ item.templateContent | squash }}" }{% if loop.last != true %},{% endif %} {% endfor %} ]

@@ -8,13 +8,27 @@ const distDir = 'dist/js/';
 
 const pluginsES = () => [
   resolve(),
-  commonjs(),
-  process.env.NODE_ENV === 'production' ? terser({ output: { comments: false } }) : null,
+  commonjs({
+    dynamicRequireTargets: [
+      './src/_11ty/filters/**/*.js',
+      './src/_11ty/shortcodes/**/*.js',
+    ],
+    transformMixedEsModules: true,
+  }),
+  process.env.NODE_ENV === 'production'
+    ? terser({ output: { comments: false } })
+    : null,
 ];
 
 const pluginsES5 = () => [
   resolve(),
-  commonjs(),
+  commonjs({
+    dynamicRequireTargets: [
+      './src/_11ty/filters/**/*.js',
+      './src/_11ty/shortcodes/**/*.js',
+    ],
+    transformMixedEsModules: true,
+  }),
   babel({
     babelHelpers: 'bundled',
     exclude: 'node_modules/**',

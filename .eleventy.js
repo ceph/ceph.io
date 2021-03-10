@@ -10,6 +10,7 @@ module.exports = function (eleventyConfig) {
 
   // Hot-reload site on CSS changes
   eleventyConfig.addWatchTarget('src/css');
+  eleventyConfig.addWatchTarget('src/_11ty');
 
   // Collections
   const collectionsDir = `./src/_11ty/collections`;
@@ -35,6 +36,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('removeTagsFromArray', require(`${filtersDir}/removeTagsFromArray.js`));
   eleventyConfig.addFilter('squash', require(`${filtersDir}/squash.js`));
   eleventyConfig.addFilter('startsWith', require(`${filtersDir}/startsWith.js`));
+  eleventyConfig.addFilter('truncate', require(`${filtersDir}/truncate.js`));
 
   // Layout aliases — TBC if this is bringing enough benefit
   eleventyConfig.addLayoutAlias('base', 'layouts/_base.njk');
@@ -66,6 +68,7 @@ module.exports = function (eleventyConfig) {
 
   // Shortcodes
   const shortcodesDir = `./src/_11ty/shortcodes`;
+  eleventyConfig.addShortcode('ArticleCard', require(`${shortcodesDir}/ArticleCard.js`));
 
   // Transforms
 
@@ -78,6 +81,11 @@ module.exports = function (eleventyConfig) {
     fallbackLocales: {
       '*': 'en-GB',
     },
+  });
+
+  // Run after the build ends
+  eleventyConfig.on('afterBuild', () => {
+    require('./scripts/search-index.js');
   });
 
   // Browsersync

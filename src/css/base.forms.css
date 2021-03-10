@@ -1,6 +1,75 @@
 /* ---------- BASE forms ---------- */
 
-/* ---------- select ---------- */
+/* input-search */
+.input[type="search"] {
+  border: var(--size-px) solid var(--color-gunmetal);
+  border-radius: var(--size-1);
+  font-size: var(--font-size-md);
+  line-height: var(--size-6);
+  padding: var(--size-2) var(--size-24) var(--size-2) var(--size-3);
+  transition: background-color var(--animation-duration) var(--animation-easing);
+}
+
+.input[type="search"]:hover {
+  background: var(--color-grey-300);
+}
+
+.input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.input[type="reset"] {
+  border: 0;
+  cursor: pointer;
+  line-height: var(--size-6);
+  padding: var(--size-2);
+  position: absolute;
+  right: var(--size-14);
+  top: 0;
+}
+
+.input[type="reset"] svg g {
+  transition: stroke var(--animation-duration) var(--animation-easing);
+}
+
+.input[type="reset"]:hover svg g {
+  stroke: var(--color-red-500);
+}
+
+.input[type="search"]:not(:valid) ~ .input[type="reset"] {
+  display: none;
+}
+
+.input[type="submit"] {
+  border: 0;
+  cursor: pointer;
+  line-height: var(--size-6);
+  padding: var(--size-2) var(--size-4);
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.input[type="submit"] svg {
+  transition: fill var(--animation-duration) var(--animation-easing);
+}
+
+.input[type="submit"]:hover svg {
+  fill: var(--color-red-500);
+}
+
+.input[type="submit"]::before {
+  background: var(--color-grey-500);
+  content: "";
+  height: 60%;
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: var(--size-px);
+}
+
+/* select */
 .select:not([multiple]):not([size]) {
   background: transparent
     url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20aria-hidden%3D%22true%22%20focusable%3D%22false%22%3E%0A%20%20%3Ctitle%3EChevron%20down%3C/title%3E%0A%20%20%3Cpath%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20stroke%3D%22%230A0C38%22%20stroke-width%3D%222%22%20d%3D%22M7%2010l5%205%205-5%22/%3E%0A%3C/svg%3E")

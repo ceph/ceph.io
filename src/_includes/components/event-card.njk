@@ -9,7 +9,7 @@
     {{ item.data.date | formatDateRange(item.data.end, item.data.locale) }}
   </time>
   <p class="p">
-    {{ item.templateContent | removeHtml | truncate(100) }}
+    {{ item.templateContent | removeHtml | truncate }}
   </p>
 </div>
 

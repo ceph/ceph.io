@@ -1,9 +1,0 @@
----
-layout: null
-permalink: '/{{ locale }}/news/blog/search.json'
-override:tags: []
----
-
-[ {% for item in collections['en-GB-blog-post'] %} { "title":"{{item.data.title}}", "author":"{{item.data.author}}",
-"date":"{{item.data.date}}", "url":"{{item.url}}", "content":"{{ item.templateContent | squash }}" }{% if loop.last != true %},{% endif %}
-{% endfor %} ]
