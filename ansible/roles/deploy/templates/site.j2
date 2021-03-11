@@ -53,6 +53,7 @@ server {
   proxy_cookie_path / "/; HTTPOnly; Secure";
 
   # https://github.com/ceph/ceph.io/issues/101
+  include mime.types;
   types {
     application/javascript mjs;
   }
@@ -115,6 +116,7 @@ server {
   proxy_cookie_path / "/; HTTPOnly; Secure";
 
   # https://github.com/ceph/ceph.io/issues/101
+  include mime.types;
   types {
     application/javascript mjs;
   }
