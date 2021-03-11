@@ -5,8 +5,7 @@ const OffCanvas = {
     const menu = header.querySelector('[data-menu]');
     const menu_open = header.querySelector('[data-menu-open]');
     const menu_close = header.querySelector('[data-menu-close]');
-
-    const media_query = window.matchMedia('(max-width: 63.9375em)');
+    const mediaQueryList = window.matchMedia('(max-width: 63.9375em)');
 
     function toggleMenu() {
       menu_open.addEventListener('click', e => {
@@ -36,10 +35,15 @@ const OffCanvas = {
     }
 
     // Register event listener
-    media_query.addEventListener('change', handle_size_change);
+    // Includes fallback for Safari <14
+    if (mediaQueryList.addEventListener) {
+      mediaQueryList.addEventListener('change', handle_size_change);
+    } else {
+      mediaQueryList.addListener(handle_size_change);
+    }
 
     // Initial check
-    handle_size_change(media_query);
+    handle_size_change(mediaQueryList);
   },
 };
 
