@@ -4,7 +4,7 @@ layout: hub-news
 order: 5
 ---
 
-{% set articleLocaleTag = locale + '-article' %} {% set articles = collections[articleLocaleTag] | reverse | limitItems(4) %}
+{% set articleLocaleTag = locale + '-article' %} {% set articles = collections[articleLocaleTag] | reverse | getItems(4) %}
 
 <h1 class="h1 visually-hidden">{{ title }}</h1>
 

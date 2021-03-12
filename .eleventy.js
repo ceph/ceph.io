@@ -18,23 +18,23 @@ module.exports = function (eleventyConfig) {
 
   // Filters
   const filtersDir = `./src/_11ty/filters`;
-  eleventyConfig.addFilter('articleType', require(`${filtersDir}/articleType.js`));
   eleventyConfig.addFilter('chunkByYear', require(`${filtersDir}/chunkByYear.js`));
-  eleventyConfig.addFilter('collectionIncludesTag', require(`${filtersDir}/collectionIncludesTag.js`));
-  eleventyConfig.addFilter('collectionTags', require(`${filtersDir}/collectionTags.js`));
   eleventyConfig.addFilter('endsWith', require(`${filtersDir}/endsWith.js`));
   eleventyConfig.addFilter('formatDate', require(`${filtersDir}/formatDate.js`));
   eleventyConfig.addFilter('formatDateRange', require(`${filtersDir}/formatDateRange.js`));
-  eleventyConfig.addFilter('futureDate', require(`${filtersDir}/futureDate.js`));
-  eleventyConfig.addFilter('futureItems', require(`${filtersDir}/futureItems.js`));
-  eleventyConfig.addFilter('limitItems', require(`${filtersDir}/limitItems.js`));
-  eleventyConfig.addFilter('localeSelector', require(`${filtersDir}/localeSelector.js`));
+  eleventyConfig.addFilter('getArticleType', require(`${filtersDir}/getArticleType.js`));
+  eleventyConfig.addFilter('getCollectionByTag', require(`${filtersDir}/getCollectionByTag.js`));
+  eleventyConfig.addFilter('getCollectionTags', require(`${filtersDir}/getCollectionTags.js`));
+  eleventyConfig.addFilter('getItems', require(`${filtersDir}/getItems.js`));
+  eleventyConfig.addFilter('getItemsByLocale', require(`${filtersDir}/getItemsByLocale.js`));
+  eleventyConfig.addFilter('getItemsInFuture', require(`${filtersDir}/getItemsInFuture.js`));
+  eleventyConfig.addFilter('getItemsInPast', require(`${filtersDir}/getItemsInPast.js`));
+  eleventyConfig.addFilter('isInFuture', require(`${filtersDir}/isInFuture.js`));
   eleventyConfig.addFilter('objectValues', require(`${filtersDir}/objectValues.js`));
-  eleventyConfig.addFilter('pastItems', require(`${filtersDir}/pastItems.js`));
-  eleventyConfig.addFilter('randomOrder', require(`${filtersDir}/randomOrder.js`));
+  eleventyConfig.addFilter('randomize', require(`${filtersDir}/randomize.js`));
   eleventyConfig.addFilter('removeHtml', require(`${filtersDir}/removeHtml.js`));
-  eleventyConfig.addFilter('removeTagsFromArray', require(`${filtersDir}/removeTagsFromArray.js`));
-  eleventyConfig.addFilter('squash', require(`${filtersDir}/squash.js`));
+  eleventyConfig.addFilter('removeTags', require(`${filtersDir}/removeTags.js`));
+  eleventyConfig.addFilter('removeWords', require(`${filtersDir}/removeWords.js`));
   eleventyConfig.addFilter('startsWith', require(`${filtersDir}/startsWith.js`));
   eleventyConfig.addFilter('truncate', require(`${filtersDir}/truncate.js`));
 

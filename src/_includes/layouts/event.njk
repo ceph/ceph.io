@@ -11,7 +11,7 @@ layout: navigation
 
   <div class="grid lg:grid--cols-auto-72 to-lg:grid--gap-0 lg:grid--gap-16 xl:grid--gap-20">
     <div>
-      {% if links and not end | futureDate %}
+      {% if links and not end | isInFuture %}
         <div class="flex flex--gap-6 mb-8 lg:mb-10">
           {% if links.videos %}
             <a class="button" href="{{ links.videos }}" rel="noreferrer noopener" target="_blank">Watch the videos</a>
@@ -45,7 +45,7 @@ layout: navigation
           <a class="a" href="https://www.google.com/maps/search/?api=1&query={{ map | slug }}" rel="noreferrer noopener" target="_blank">View map</a>
           <hr class="hidden lg:block hr">
         </div>
-        {% if end | futureDate %}
+        {% if end | isInFuture %}
           <div>
             <a class="button w-full" href="{{ register }}" rel="noreferrer noopener" target="_blank">Register</a>
             <hr class="hidden lg:block hr">

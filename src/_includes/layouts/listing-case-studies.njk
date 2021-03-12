@@ -6,7 +6,7 @@ permalink: '/{{ locale }}/solutions/case-studies{% if pagination.pageNumber > 0 
 ---
 
 {% set caseStudyLocaleTag = locale + '-case-study' %}
-{% set caseStudyFilters = collections[caseStudyLocaleTag] | collectionTags([caseStudyLocaleTag]) %}
+{% set caseStudyFilters = collections[caseStudyLocaleTag] | getCollectionTags([caseStudyLocaleTag]) %}
 {% set caseStudies = pagination.items %}
 
 <section class="section">

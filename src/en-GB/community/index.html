@@ -4,7 +4,7 @@ layout: hub-community
 order: 4
 ---
 
-{% set eventLocaleTag = locale + '-event' %} {% set eventsFuture = collections[eventLocaleTag] | futureItems | reverse | limitItems(4) %}
+{% set eventLocaleTag = locale + '-event' %} {% set eventsFuture = collections[eventLocaleTag] | getItemsInFuture | reverse | getItems(4) %}
 
 <h1 class="h1 visually-hidden">{{ title }}</h1>
 
@@ -209,7 +209,7 @@ order: 4
       <a class="a" href="/{{ locale }}/community/tech-talks/" class="ml-6">See all tech talks</a>
     </div>
     <ul class="grid md:grid--cols-2 lg:grid--cols-4 list-none m-0 p-0">
-      {% for item in tech_talks | sort(true, false, 'date') | limitItems(2) %}
+      {% for item in tech_talks | sort(true, false, 'date') | getItems(2) %}
       <li>
         <div class="relative">
           <div class="aspect-ratio aspect-ratio--16x9 mb-4 overflow-hidden rounded-2 tint tint--black-2">
@@ -224,7 +224,7 @@ order: 4
           <a class="block color-navy link-cover h4 mb-2" href="{{ item.url }}" rel="noreferrer noopener" target="_blank">
             {{ item.title }}
           </a>
-          {% if item.date | futureDate %}
+          {% if item.date | isInFuture %}
           <div class="h6">
             <span>{{ 'coming_soon' | i18n }}:</span>
             <time datetime="{{ item.date }}">

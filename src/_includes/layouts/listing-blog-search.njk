@@ -5,7 +5,7 @@ permalink: '/{{ locale }}/news/blog/search/'
 
 {% set blogPostLocaleTag = locale + '-blog-post' %}
 {% set articleLocaleTag = locale + '-article' %}
-{% set blogPostFilters = collections[blogPostLocaleTag] | collectionTags([blogPostLocaleTag, articleLocaleTag]) %}
+{% set blogPostFilters = collections[blogPostLocaleTag] | getCollectionTags([blogPostLocaleTag, articleLocaleTag]) %}
 
 <section class="section">
   <div class="grid grid--align-center lg:grid--cols-auto-160 mb-16 xl:mb-24">
