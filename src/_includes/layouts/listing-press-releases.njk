@@ -7,7 +7,7 @@ permalink: '/{{ locale }}/news/press-releases{% if pagination.pageNumber > 0 %}/
 
 {% set pressReleaseLocaleTag = locale + '-press-release' %}
 {% set articleLocaleTag = locale + '-article' %}
-{% set pressReleaseFilters = collections[pressReleaseLocaleTag] | collectionTags([pressReleaseLocaleTag, articleLocaleTag]) %}
+{% set pressReleaseFilters = collections[pressReleaseLocaleTag] | getCollectionTags([pressReleaseLocaleTag, articleLocaleTag]) %}
 {% set pressReleases = pagination.items %}
 
 <section class="section">

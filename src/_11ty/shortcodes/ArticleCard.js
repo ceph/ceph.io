@@ -1,5 +1,5 @@
 const filtersDir = `../filters`;
-const articleType = require(`${filtersDir}/articleType.js`);
+const getArticleType = require(`${filtersDir}/getArticleType.js`);
 const formatDate = require(`${filtersDir}/formatDate.js`);
 const removeHtml = require(`${filtersDir}/removeHtml.js`);
 const truncate = require(`${filtersDir}/truncate.js`);
@@ -26,7 +26,7 @@ module.exports = (
           showLabel
             ? `
           <span class="absolute bg-red-500 block color-white m-4 p px-3 py-2 right-0 rounded-2 text-semibold top-0">
-            ${articleType(tags)}
+            ${getArticleType(tags)}
           </span>
         `
             : ''

@@ -5,9 +5,9 @@ order: 2
 overlaySubMenu: true
 ---
 
-{% set caseStudyLocaleTag = locale + '-case-study' %} {% set recentCaseStudies = collections[caseStudyLocaleTag] | reverse | limitItems(6)
-%} {% set browseCaseStudies = collections[caseStudyLocaleTag] | collectionTags | removeTagsFromArray([caseStudyLocaleTag]) | randomOrder |
-limitItems(6) %}
+{% set caseStudyLocaleTag = locale + '-case-study' %} {% set recentCaseStudies = collections[caseStudyLocaleTag] | reverse | getItems(6) %}
+{% set browseCaseStudies = collections[caseStudyLocaleTag] | getCollectionTags | removeTags([caseStudyLocaleTag]) | randomize | getItems(6)
+%}
 
 <h1 class="visually-hidden">{{ title }}</h1>
 

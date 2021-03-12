@@ -18,8 +18,8 @@
 ---
 
 {% set eventLocaleTag = locale + '-event' %}
-{% set eventFilters = collections[eventLocaleTag] | collectionTags([eventLocaleTag]) %}
-{% set eventsFuture = collections[eventLocaleTag] | futureItems | reverse %}
+{% set eventFilters = collections[eventLocaleTag] | getCollectionTags([eventLocaleTag]) %}
+{% set eventsFuture = collections[eventLocaleTag] | getItemsInFuture | reverse %}
 {% set eventsPast = pagination.items %}
 
 <section class="section">

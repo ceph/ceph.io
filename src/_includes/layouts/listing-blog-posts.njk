@@ -7,7 +7,7 @@
 
 {% set blogPostLocaleTag = locale + '-blog-post' %}
 {% set articleLocaleTag = locale + '-article' %}
-{% set blogPostFilters = collections[blogPostLocaleTag] | collectionTags([blogPostLocaleTag, articleLocaleTag]) %}
+{% set blogPostFilters = collections[blogPostLocaleTag] | getCollectionTags([blogPostLocaleTag, articleLocaleTag]) %}
 {% set blogPosts = pagination.items %}
 
 <section class="section">

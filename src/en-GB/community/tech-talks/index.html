@@ -79,7 +79,7 @@ order: 2
               >{% endif %} {% if item.presenter %}<span class="inline-block text-lower">{{ 'with' | i18n }} {{ item.presenter }}</span>{%
               endif %} {% if item.slides %}|
               <a class="a" href="{{ item.slides }}" target="_blank" rel="noreferrer noopener">{{ 'slides' | i18n }}</a>{% endif %}{% if
-              item.date | futureDate %}| <strong>{{ 'upcoming' | i18n }}</strong>{% endif %}
+              item.date | isInFuture %}| <strong>{{ 'upcoming' | i18n }}</strong>{% endif %}
             </td>
           </tr>
           {% endfor %}

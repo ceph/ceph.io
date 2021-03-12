@@ -5,4 +5,4 @@ override:tags: []
 ---
 
 [ {% for item in collections['en-GB-blog-post'] %} { "title":"{{item.data.title}}", "author":"{{item.data.author}}",
-"date":"{{item.data.date}}", "content":"{{ item.templateContent | squash }}" }{% if loop.last != true %},{% endif %} {% endfor %} ]
+"date":"{{item.data.date}}", "content":"{{ item.templateContent | removeWords }}" }{% if loop.last != true %},{% endif %} {% endfor %} ]
