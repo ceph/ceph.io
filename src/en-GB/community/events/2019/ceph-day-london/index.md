@@ -5,7 +5,7 @@ end: 2019-10-24
 location: London, UK
 venue: Student Central, Malet Street, London
 register: "https://www.eventbrite.com/"
-image: "/assets/placeholder-photo-1280x720.jpg"
+image: "/assets/bitmaps/photo-sea-life-01.jpg"
 links:
   videos: "https://www.youtube.com/"
   slides: ""
@@ -13,10 +13,10 @@ sponsors:
   - label: Event sponsors
     list:
       - name: SoftIron
-        logo: "https://via.placeholder.com/50"
+        logo: "/assets/bitmaps/logo-softiron.png"
         website: "https://softiron.com"
       - name: RedHat
-        logo: "https://via.placeholder.com/50"
+        logo: "/assets/bitmaps/logo-redhat.png"
         website: "https://redhat.co"
 tags:
   - ceph days

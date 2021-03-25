@@ -9,7 +9,7 @@ module.exports = (
   { showLabel } = {}
 ) => {
   const { author = '', date, image, tags, title = '', locale = '' } = data;
-  const imageSrc = image ? image : 'https://via.placeholder.com/640x360';
+  const imageSrc = image ? image : '/assets/bitmaps/photo-water-02.jpg';
   const captionStrip = removeHtml(templateContent);
   const caption = truncate(captionStrip);
 

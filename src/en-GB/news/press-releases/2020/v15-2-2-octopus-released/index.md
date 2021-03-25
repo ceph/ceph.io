@@ -2,7 +2,7 @@
 title: v15.2.2 Octopus released
 date: 2020-07-16
 author: abhishekl
-image: "/assets/placeholder-photo-1280x720.jpg"
+image: "/assets/bitmaps/photo-squid-01.jpg"
 tags:
   - "octopus"
 ---
