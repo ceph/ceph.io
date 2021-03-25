@@ -5,7 +5,7 @@ end: 2020-09-26
 location: London, UK
 venue: Student Central, Malet Street, London
 register: "https://www.eventbrite.com/"
-image: "/assets/placeholder-photo-1280x720.jpg"
+image: "/assets/bitmaps/photo-coral-03.jpg"
 links:
   videos: "https://www.youtube.com/"
   slides: ""
@@ -13,15 +13,15 @@ sponsors:
   - label: Platinum
     list:
       - name: SoftIron
-        logo: "https://via.placeholder.com/50"
+        logo: "/assets/bitmaps/logo-softiron.png"
         website: "https://softiron.com"
       - name: RedHat
-        logo: "https://via.placeholder.com/50"
-        website: "https://redhat.com"
+        logo: "/assets/bitmaps/logo-redhat.png"
+        website: "https://redhat.co"
   - label: Gold
     list:
       - name: SUSE
-        logo: "https://via.placeholder.com/50"
+        logo: "/assets/bitmaps/logo-suse.png"
         website: "https://suse.com"
 tags:
   - ceph days

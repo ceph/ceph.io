@@ -1,9 +1,9 @@
 ---
 title: Ceph drives savings for Bloomberg 4
-image: "/assets/placeholder-photo-1280x720.jpg"
+image: "/assets/bitmaps/photo-squid-01.jpg"
 sponsor:
   name: SUSE
-  logo: "https://via.placeholder.com/50"
+  logo: "/assets/bitmaps/logo-suse.png"
   website: "https://www.suse.com"
 tags:
   - "government"
@@ -11,7 +11,7 @@ tags:
 
 Vestibulum auctor sem in nisi aliquet, non scelerisque tortor posuere. Aenean non erat efficitur, malesuada sapien porttitor, sollicitudin augue. In malesuada cursus massa, in aliquet leo maximus vitae.
 
-![alt text](/assets/placeholder-photo-1280x720.jpg)
+![alt text](/assets/bitmaps/photo-water-02.jpg)
 
 ## Cras et lacus quis erat accumsan
 

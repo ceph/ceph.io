@@ -5,7 +5,7 @@ end: 2019-10-07
 location: Vancouver, Canada
 venue: Student Central, Malet Street, Vancouver
 register: "https://www.eventbrite.com/"
-image: "/assets/placeholder-photo-1280x720.jpg"
+image: "/assets/bitmaps/photo-coral-02.jpg"
 links:
   videos: "https://www.youtube.com/"
   slides: ""
@@ -13,10 +13,10 @@ sponsors:
   - label: Event sponsors
     list:
       - name: SoftIron
-        logo: "https://via.placeholder.com/50"
+        logo: "/assets/bitmaps/logo-softiron.png"
         website: "https://softiron.com"
       - name: RedHat
-        logo: "https://via.placeholder.com/50"
+        logo: "/assets/bitmaps/logo-redhat.png"
         website: "https://redhat.co"
 tags:
   - ceph days
