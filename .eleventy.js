@@ -19,6 +19,7 @@ module.exports = function (eleventyConfig) {
   // Filters
   const filtersDir = `./src/_11ty/filters`;
   eleventyConfig.addFilter('chunkByYear', require(`${filtersDir}/chunkByYear.js`));
+  eleventyConfig.addFilter('cleanIndex', require(`${filtersDir}/cleanIndex.js`));
   eleventyConfig.addFilter('endsWith', require(`${filtersDir}/endsWith.js`));
   eleventyConfig.addFilter('formatDate', require(`${filtersDir}/formatDate.js`));
   eleventyConfig.addFilter('formatDateRange', require(`${filtersDir}/formatDateRange.js`));
@@ -34,7 +35,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('randomize', require(`${filtersDir}/randomize.js`));
   eleventyConfig.addFilter('removeHtml', require(`${filtersDir}/removeHtml.js`));
   eleventyConfig.addFilter('removeTags', require(`${filtersDir}/removeTags.js`));
-  eleventyConfig.addFilter('removeWords', require(`${filtersDir}/removeWords.js`));
   eleventyConfig.addFilter('startsWith', require(`${filtersDir}/startsWith.js`));
   eleventyConfig.addFilter('truncate', require(`${filtersDir}/truncate.js`));
 
