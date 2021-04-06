@@ -1,0 +1,10 @@
+/* ---------- BASE codeblock ---------- */
+
+.richtext blockquote {
+  border-left: var(--size-0_5) solid var(--color-grey-500);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--size-6);
+  margin: var(--size-6) 0;
+  padding: var(--size-4) var(--size-6);
+}

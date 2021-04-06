@@ -1,13 +1,33 @@
 /* ---------- BASE table ---------- */
 
-.table,
-.richtext table {
+.table {
   font-size: var(--font-size-md);
   line-height: var(--size-6);
   width: var(--size-full);
 }
 
-.table td,
+.table td {
+  border-bottom: var(--size-px) solid var(--color-grey-500);
+  padding: var(--size-4) 0;
+  vertical-align: top;
+}
+
+/* richtext */
+.richtext table {
+  font-size: var(--font-size-md);
+  line-height: var(--size-6);
+  margin: var(--size-6) 0;
+  width: var(--size-full);
+}
+
+.richtext table th {
+  border-bottom: var(--size-0_5) solid var(--color-grey-500);
+  font-weight: var(--font-weight-semibold);
+  padding: 0 0 var(--size-4);
+  text-align: left;
+  vertical-align: top;
+}
+
 .richtext table td {
   border-bottom: var(--size-px) solid var(--color-grey-500);
   padding: var(--size-4) 0;
