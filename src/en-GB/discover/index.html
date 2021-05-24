@@ -5,6 +5,8 @@ order: 1
 overlaySubMenu: true
 ---
 
+{% set caseStudyLocaleTag = locale + '-case-study' %} {% set recentCaseStudies = collections[caseStudyLocaleTag] | reverse | getItems(6) %}
+
 <h1 class="visually-hidden">{{ title }}</h1>
 
 <section class="py-0 section section--full">
@@ -185,7 +187,7 @@ overlaySubMenu: true
           </div>
         </div>
       </div>
-      <a class="a" href="/{{ locale }}/discover/customers/">See who’s using Ceph today</a>
+      <a class="a" href="/{{ locale }}/discover/use-cases/">See who’s using Ceph today</a>
     </div>
     <div>
       <h3 class="h3">Any use case</h3>
@@ -195,7 +197,7 @@ overlaySubMenu: true
         their data, Ceph provides reassurance organisations need, including automatic data redundancy, no single point of failure and
         self-managing clusters.
       </p>
-      <a class="a inline-block mb-8 lg:mb-12" href="/{{ locale }}/solutions/">Find out how Ceph is used</a>
+      <a class="a inline-block mb-8 lg:mb-12" href="/{{ locale }}/discover/use-cases/">Find out how Ceph is used</a>
       <h3 class="h3">Start up to enterprise</h3>
       <p class="mb-8 lg:mb-12 p">
         From humble beginnings as a PhD thesis, to becoming an established and acclaimed enterprise storage solution, Ceph has undergone
@@ -212,4 +214,17 @@ overlaySubMenu: true
       <a class="a" href="/{{ locale }}/discover/vision/">See our vision for Ceph</a>
     </div>
   </div>
+</section>
+
+<hr class="hr" />
+
+<section class="section">
+  <h2 class="h2 mb-12 lg:mb-16">Recent case studies</h2>
+  <ul class="grid grid--cols-2 md:grid--cols-3 lg:grid--cols-6 list-none m-0 p-0">
+    {% for item in recentCaseStudies %}
+    <li>
+      {% include "components/case-study-card.njk" %}
+    </li>
+    {% endfor %}
+  </ul>
 </section>

@@ -2,7 +2,7 @@
 layout: navigation
 pagination:
   size: 12
-permalink: '/{{ locale }}/solutions/case-studies{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1}}{% endif %}/index.html'
+permalink: '/{{ locale }}/discover/case-studies{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1}}{% endif %}/index.html'
 ---
 
 {% set caseStudyLocaleTag = locale + '-case-study' %}
@@ -17,7 +17,7 @@ permalink: '/{{ locale }}/solutions/case-studies{% if pagination.pageNumber > 0 
         <option selected value="">{{ 'category' | i18n }}</option>
         {% for item in caseStudyFilters %}
           {% set itemSlug = item | slug + '/'%}
-          <option {% if page.url | endsWith(itemSlug) %}selected{% endif %} value="/{{ locale }}/solutions/case-studies/category/{{ itemSlug }}">
+          <option {% if page.url | endsWith(itemSlug) %}selected{% endif %} value="/{{ locale }}/discover/case-studies/category/{{ itemSlug }}">
             {{ item }}</a>
         </option>
       {% endfor %}
