@@ -37,10 +37,10 @@ image: "https://via.placeholder.com/50"
 
 ## Case study structure
 
-The content of the case studies can be found in the `src/{locale}/solutions/case-studies/case-study` directories. Any folder/page created within these directories will generate a web page in the site.
+The content of the case studies can be found in the `src/{locale}/discover/case-studies/case-study` directories. Any folder/page created within these directories will generate a web page in the site.
 
 ### Folders and file naming
 
-| Input File                                               | Output URL                                  |
-| -------------------------------------------------------- | ------------------------------------------- |
-| /src/{locale}/solutions/case-studies/case-study/index.md | /{locale}/solutions/case-studies/case-study |
+| Input File                                              | Output URL                                 |
+| ------------------------------------------------------- | ------------------------------------------ |
+| /src/{locale}/discover/case-studies/case-study/index.md | /{locale}/discover/case-studies/case-study |

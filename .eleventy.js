@@ -53,7 +53,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias('hub-discover', 'layouts/hub-discover.njk');
   eleventyConfig.addLayoutAlias('hub-foundation', 'layouts/hub-foundation.njk');
   eleventyConfig.addLayoutAlias('hub-news', 'layouts/hub-news.njk');
-  eleventyConfig.addLayoutAlias('hub-solutions', 'layouts/hub-solutions.njk');
+  eleventyConfig.addLayoutAlias('hub-users', 'layouts/hub-users.njk');
   eleventyConfig.addLayoutAlias('listing-blog-posts', 'layouts/listing-blog-posts.njk');
   eleventyConfig.addLayoutAlias('listing-blog-post-categories', 'layouts/listing-blog-post-categories.njk');
   eleventyConfig.addLayoutAlias('listing-blog-search', 'layouts/listing-blog-search.njk');
