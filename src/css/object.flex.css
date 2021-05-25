@@ -8,6 +8,10 @@
   align-items: center;
 }
 
+.flex--justify-center {
+  justify-content: center;
+}
+
 .flex--justify-end {
   justify-content: flex-end;
 }
