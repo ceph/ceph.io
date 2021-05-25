@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+  <title>Tarball</title>
+  <g fill="none" fill-rule="evenodd">
+    <path stroke="#0A0C38" stroke-width="2" d="M30.36 1.26v12h12"/>
+    <path stroke="#0A0C38" stroke-linecap="square" stroke-width="2" d="M42.36 23.76v-10.5l-12-12h-24v22.5M6.36 39.54v6.72h36v-6.72"/>
+    <path stroke="#0A0C38" stroke-width="2" d="M46.14 23.76H2.64M6.36 20.04l-3.72 3.72v15.78h43.5V23.76l-3.78-3.72"/>
+    <g fill="#EB1414" fill-rule="nonzero">
+      <path d="M20.76 28.02h-5.7v1.26h2.16v5.76h1.44v-5.76h2.1zM22.92 28.02l-2.4 6.96h1.56l.54-1.62h2.52l.54 1.62h1.56l-2.4-6.96h-1.92zm.06 4.26l.84-2.64h.06l.84 2.64h-1.74zM31.92 35.04h1.62l-1.5-2.7h.06c.36-.18.66-.42.84-.78.18-.36.3-.72.3-1.2s-.12-.84-.3-1.2-.48-.6-.84-.78c-.36-.18-.84-.3-1.38-.3h-2.76v6.96h1.5v-2.46h1.08l1.38 2.46zm-2.4-5.76h1.02c.3 0 .54.06.72.12.18.06.3.18.42.36s.12.36.12.6-.06.42-.12.6c-.12.18-.24.3-.42.36s-.42.12-.72.12h-1.02v-2.16z"/>
+    </g>
+  </g>
+</svg>

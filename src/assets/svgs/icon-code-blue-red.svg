@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+  <title>Code</title>
+  <g fill="none" fill-rule="evenodd" stroke-linecap="square" stroke-width="2">
+    <path stroke="#EB1414" d="M7.575 20.325h4.5M7.575 29.325h3M7.575 24.825h1.5M7.575 33.825h1.5M7.575 38.325h4.5M24.075 20.325h3.75M27.075 24.825h6M30.075 29.325h10.5M27.075 33.825h6M24.075 38.325h3.75"/>
+    <path stroke="#0A0C38" d="M18.075 15.075v28.5"/>
+    <path stroke="#EB1414" d="M7.575 9.825h3"/>
+    <path stroke="#0A0C38" d="M1.575 15.075h45M1.575 4.575h45v39h-45z"/>
+  </g>
+</svg>
