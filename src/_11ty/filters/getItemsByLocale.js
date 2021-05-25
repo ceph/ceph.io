@@ -1,4 +1,4 @@
-module.exports = (collection, locale = 'en-GB') => {
+module.exports = (collection, locale = 'en') => {
   return collection.filter(item => {
     return item.data.locale === locale;
   });
