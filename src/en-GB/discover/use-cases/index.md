@@ -1,6 +1,6 @@
 ---
 layout: content-simple
-title: Customers
+title: Use cases
 order: 4
 ---
 
@@ -38,7 +38,7 @@ Innovating for the future, evolving with data, establishing enterprise data stor
 
 Developing software and exploring possibilities to create futureproof solutions for modern demands.
 
-[See Ceph case studies](../../solutions/case-studies/)
+[See Ceph case studies](../case-studies/)
 
 ## Use Ceph and achieve…
 

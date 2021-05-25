@@ -12,7 +12,7 @@ order: 1
 
 The Ceph Foundation is made up of organizations, stakeholders, and industry leaders who collaborate and coordinate the investment, development, and community activities of Ceph. Under the Linux Foundation, The Ceph Foundation operates as a collaboration to maintain Ceph’s ecosystem, consolidate funds solely for the community and support Open Source processes.
 
-Ceph stays true to its Open Source philosophy by leaving technical development in the hands of the global community. The technical direction of Ceph is handled by Ceph’s Leadership Team (CLT), which you can find out more about [here](../ceph-team/).
+Ceph stays true to its Open Source philosophy by leaving technical development in the hands of the global community. The technical direction of Ceph is handled by Ceph’s Leadership Team (CLT), which you can find out more about [here](../../community/team/).
 
 ### Ceph Foundation Membership
 

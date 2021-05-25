@@ -1,5 +1,5 @@
 ---
-title: Documentation
+title: Getting started
 order: 1
 ---
 
