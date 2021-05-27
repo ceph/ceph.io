@@ -4,7 +4,7 @@
  * @param {String} text
  */
 
- module.exports = function (text) {
+module.exports = function (text) {
   // all lower case
   var content = new String(text);
   var content = content.toLowerCase();
@@ -27,7 +27,7 @@
   result = result.replace(unicode, '');
 
   // remove punctuation
-  var punctuation = /[!“”‘’"#$%&'()*+,-./\\:;<=>?@[\]^_–`{|}~]/g;
+  var punctuation = /[!“”‘’"#$%&'()*+,-./\\:;<=>?@[\]^_`{|}~]/g;
   result = result.replace(punctuation, '');
 
   // replace line breaks
