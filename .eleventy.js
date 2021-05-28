@@ -69,6 +69,7 @@ module.exports = function (eleventyConfig) {
   // Shortcodes
   const shortcodesDir = `./src/_11ty/shortcodes`;
   eleventyConfig.addShortcode('ArticleCard', require(`${shortcodesDir}/ArticleCard.js`));
+  eleventyConfig.addShortcode('YouTube', require(`${shortcodesDir}/YouTube.js`));
 
   // Transforms
 

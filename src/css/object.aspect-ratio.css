@@ -13,6 +13,19 @@
   padding-top: 100%;
 }
 
+.richtext .aspect-ratio {
+  --richtext-img-gutters-y: var(--size-6);
+  margin: var(--richtext-img-gutters-y) 0;
+
+  @media (--mq-lg) {
+    --richtext-img-gutters-y: var(--size-10);
+  }
+
+  @media (--mq-xl) {
+    --richtext-img-gutters-y: var(--size-14);
+  }
+}
+
 .aspect-ratio iframe {
   display: block;
   height: 100%;
