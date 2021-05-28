@@ -1,6 +1,7 @@
 const filtersDir = `../filters`;
-const getArticleType = require(`${filtersDir}/getArticleType.js`);
 const formatDate = require(`${filtersDir}/formatDate.js`);
+const getArticleType = require(`${filtersDir}/getArticleType.js`);
+const getSingleDigitFromDate = require(`${filtersDir}/getSingleDigitFromDate.js`);
 const removeHtml = require(`${filtersDir}/removeHtml.js`);
 const truncate = require(`${filtersDir}/truncate.js`);
 
@@ -9,7 +10,9 @@ module.exports = (
   { showLabel } = {}
 ) => {
   const { author = '', date, image, tags, title = '', locale = '' } = data;
-  const imageSrc = image ? image : '/assets/bitmaps/photo-water-02.jpg';
+  const imageSrc = image
+    ? image
+    : `/assets/bitmaps/photo-fabric-0${getSingleDigitFromDate(date)}.jpg`;
   const captionStrip = removeHtml(templateContent);
   const caption = truncate(captionStrip);
 

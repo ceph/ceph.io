@@ -30,6 +30,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('getItemsByLocale', require(`${filtersDir}/getItemsByLocale.js`));
   eleventyConfig.addFilter('getItemsInFuture', require(`${filtersDir}/getItemsInFuture.js`));
   eleventyConfig.addFilter('getItemsInPast', require(`${filtersDir}/getItemsInPast.js`));
+  eleventyConfig.addFilter('getSingleDigitFromDate', require(`${filtersDir}/getSingleDigitFromDate.js`));
   eleventyConfig.addFilter('isInFuture', require(`${filtersDir}/isInFuture.js`));
   eleventyConfig.addFilter('objectValues', require(`${filtersDir}/objectValues.js`));
   eleventyConfig.addFilter('randomize', require(`${filtersDir}/randomize.js`));
