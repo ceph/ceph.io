@@ -15,6 +15,10 @@
   }
 }
 
+.richtext img:not([height]) {
+  height: auto;
+}
+
 .richtext img:not([width]) {
   width: auto;
 }
