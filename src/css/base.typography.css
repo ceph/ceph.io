@@ -169,6 +169,17 @@
   text-decoration: underline;
 }
 
+.richtext .link-anchor {
+  font: inherit;
+  opacity: 0;
+  transition: opacity var(--animation-duration) var(--animation-easing);
+}
+
+.richtext *:hover > .link-anchor,
+.richtext *:focus > .link-anchor {
+  opacity: 1;
+}
+
 /* lists */
 :--list,
 .richtext :--rt-list {
