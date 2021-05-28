@@ -7,7 +7,10 @@
  *
  */
 
-module.exports = (date, end, locale = site.defaultLocale) => {
+const site = require('../../_data/site');
+const { defaultLocale } = site;
+
+module.exports = (date, end, locale = defaultLocale) => {
   const endDate = new Date(end || date);
 
   return new Intl.DateTimeFormat(locale, {
