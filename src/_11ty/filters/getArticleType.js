@@ -18,9 +18,9 @@ module.exports = tags => {
     'press-release': 'PRESS RELEASE',
   };
 
-  // tags to lowercase, strip out the first 6 chars and check includes tag suffix
+  // tags to lowercase, strip out the first 3 chars and check includes tag suffix
   const lcTags = tags
-    .map(tag => tag.toLowerCase().substr(6))
+    .map(tag => tag.toLowerCase().substr(3))
     .filter(tag => {
       return tagSuffix.some(suffix => tag.includes(suffix));
     });
