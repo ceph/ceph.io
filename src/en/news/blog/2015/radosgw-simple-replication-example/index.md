@@ -3,7 +3,6 @@ title: "RadosGW: Simple Replication Example"
 date: "2015-03-13"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 This is a simple example of federated gateways config to make an asynchonous replication between two Ceph clusters.

@@ -6,7 +6,6 @@ tags:
   - "ceph"
   - "internship"
   - "open-source"
-  - "planet"
   - "storage"
 ---
 

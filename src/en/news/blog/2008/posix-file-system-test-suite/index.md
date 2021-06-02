@@ -3,7 +3,6 @@ title: "POSIX file system test suite"
 date: "2008-04-18"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 A few weeks back a [POSIX file system test suite was announced](http://marc.info/?l=linux-fsdevel&m=120717468905606&w=2) on linux-fsdevel. Some 1700 tests of return values, error codes, and side effects for things like unlink, chmod, and so forth. The suite turned up a number of minor bugs in the MDS and client (mostly relating to things like legal file modes), and what appears to be a VFS bug with rename (affecting only a few filesystems, Ceph included). The Ceph kernel client now passes all but a handful of tests. Yay!

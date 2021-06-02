@@ -3,7 +3,6 @@ title: "Inktank Ceph Enterprise 1.2 arrives with erasure coding and cache-tierin
 date: "2014-07-16"
 author: "nwl"
 tags: 
-  - "planet"
 ---
 
 Today, we’re proud to announce the availability of Red Hat’s Inktank Ceph Enterprise 1.2, a solution based on the Firefly release from the Ceph community. This latest version brings some major new features to enterprises – ones we believe will both further cement Ceph’s position as a leading storage solution for OpenStack infrastructure while promoting its adoption among enterprises looking to manage the explosion of unstructured data.

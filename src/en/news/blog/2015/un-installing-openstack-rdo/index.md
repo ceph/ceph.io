@@ -3,7 +3,6 @@ title: "Un-installing OpenStack RDO"
 date: "2015-07-19"
 author: "syndicated"
 tags: 
-  - "planet"
 ---
 
 ![Uninstalling OpenStack](images/uninstalling-openstack-rdo.jpeg "Uninstalling OpenStack")

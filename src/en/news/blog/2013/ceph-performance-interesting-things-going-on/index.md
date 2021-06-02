@@ -3,7 +3,6 @@ title: "Ceph performance: interesting things going on"
 date: "2013-12-01"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/ceph-kvs-filestore.png "Ceph performance: interesting things going on")

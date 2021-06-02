@@ -3,7 +3,6 @@ title: "v0.52 released"
 date: "2012-09-26"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 After several weeks of testing v0.52 is ready!  This is a big release for RBD and radosgw users.  Highlights include:

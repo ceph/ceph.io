@@ -6,7 +6,6 @@ tags:
   - "ami"
   - "aws"
   - "ec2"
-  - "planet"
 ---
 
 In an effort to show people how OpenStack and Ceph work together I decided it would be fun to build an Amazon Machine Image (AMI) for their Elastic Compute Cloud (EC2). This would give folks the ability to showcase the integration, end users a working example, and developers a potentially easy starting environment to build on. Of course, I’m not a devops expert, so many of the assumptions and init scripts will probably make the seasoned experts cringe and gnash their teeth. Just remember, patches welcome! ![:)](http://ceph.com/wp-includes/images/smilies/icon_smile.gif)

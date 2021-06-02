@@ -3,7 +3,6 @@ title: "v0.27 released"
 date: "2011-04-24"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 v0.27 is done!  This mostly bugfixes, cleanups, and incremental

@@ -3,7 +3,6 @@ title: "v0.29.1 released"
 date: "2011-06-16"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 We’ve released 0.29.1 with a few fixes. The main thing is a fix for a  

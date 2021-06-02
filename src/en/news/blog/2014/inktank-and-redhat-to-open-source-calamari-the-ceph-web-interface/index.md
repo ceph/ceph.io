@@ -5,7 +5,6 @@ author: "dmsimard"
 tags: 
   - "ceph"
   - "inktank"
-  - "planet"
 ---
 
 You might have heard this already but [Redhat](http://www.redhat.com/) made an [annoucement](http://www.redhat.com/about/news/press-archive/2014/4/red-hat-to-acquire-inktank-provider-of-ceph) last week that they will be acquiring [Inktank](http://www.inktank.com/), the company behind [Ceph](http://ceph.com/).

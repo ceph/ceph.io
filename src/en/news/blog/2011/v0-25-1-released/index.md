@@ -3,7 +3,6 @@ title: "v0.25.1 released"
 date: "2011-03-15"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 This a bugfix release.  If you’re using librados or librbd, please

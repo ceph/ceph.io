@@ -4,7 +4,6 @@ date: "2013-02-13"
 author: "syndicated"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 So many people have been asking us for more details on CRUSH, I thought it would be worthwhile to share more about it on our blog. If you have not heard of CRUSH, it stands for “**C**ontrolled **R**eplication **U**nder **S**calable **H**ashing”. CRUSH is the pseudo-random data placement algorithm that efficiently distributes object replicas across a Ceph storage cluster.

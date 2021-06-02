@@ -3,7 +3,6 @@ title: "v0.56.2 released"
 date: "2013-01-30"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 The next bobtail point release is ready, and it’s looking pretty good.  This is an important update for the 0.56.x backport series that fixes a number of bugs and several performance issues.  All v0.56.x users are encouraged to upgrade.

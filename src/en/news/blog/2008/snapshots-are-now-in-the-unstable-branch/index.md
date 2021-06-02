@@ -3,7 +3,6 @@ title: "Snapshots are now in the ‘unstable’ branch"
 date: "2008-08-18"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 I’ve just merged the snapshot support into the unstable branch.  It’s not  

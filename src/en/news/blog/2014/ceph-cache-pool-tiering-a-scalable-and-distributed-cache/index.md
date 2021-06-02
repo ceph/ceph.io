@@ -3,7 +3,6 @@ title: "Ceph cache pool tiering: a scalable and distributed cache"
 date: "2014-06-10"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![Ceph cache pool tiering: scalable cache](http://sebastien-han.fr/images/ceph-cache-pool-scalable.jpg)

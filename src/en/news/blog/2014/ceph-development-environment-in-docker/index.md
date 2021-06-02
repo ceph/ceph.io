@@ -4,7 +4,6 @@ date: "2014-09-28"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 The [Docker](http://docker.io/) package is installed with

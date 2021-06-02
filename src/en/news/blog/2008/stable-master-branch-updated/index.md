@@ -3,7 +3,6 @@ title: "Stable (‘master’) branch updated"
 date: "2008-05-23"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 I’ve just merged a bunch of recent changes into the ‘master’ branch in git.  The big items are

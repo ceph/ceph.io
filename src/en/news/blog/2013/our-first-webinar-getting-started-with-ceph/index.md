@@ -4,7 +4,6 @@ date: "2013-01-18"
 author: "syndicated"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 [![](images/Workplace-Violence-Webinar-e1358536924128.png "Workplace-Violence-Webinar")](http://www.inktank.com/wp-content/uploads/2013/01/Workplace-Violence-Webinar-e1358536924128.png "Workplace-Violence-Webinar")

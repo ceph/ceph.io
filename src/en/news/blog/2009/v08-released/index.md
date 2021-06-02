@@ -3,7 +3,6 @@ title: "v0.8 released"
 date: "2009-05-19"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 Ceph v0.8 has been released.  [Debian packages for amd64 and i386](http://ceph.newdream.net/wiki/Debian) have been built and there is a [tarball](http://ceph.newdream.net/download/), or you can [pull the ‘master’ branch from Git](http://ceph.newdream.net/wiki/Checking_out).  This update has a lot of important protocol changes and corresponding performance improvements:

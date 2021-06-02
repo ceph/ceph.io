@@ -4,7 +4,6 @@ date: "2014-03-28"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 The [jerasure](http://jerasure.org/jerasure/jerasure) library [is the default erasure code plugin](https://github.com/ceph/ceph/tree/v0.78/src/erasure-code/jerasure/) of [Ceph](http://ceph.com/). The [gf-complete](http://jerasure.org/jerasure/gf-complete) companion library supports SSE optimizations at compile time, when the compiler provides them (**\-msse4.2** etc.). The jerasure (and gf-complete with it) plugin is compiled multiple times with various levels of [SSE features](http://en.wikipedia.org/wiki/CPUID#EAX.3D1:_Processor_Info_and_Feature_Bits):

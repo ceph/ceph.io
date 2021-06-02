@@ -4,7 +4,6 @@ date: "2015-05-29"
 author: "dalgaaf"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 [![](images/OpenStack%2BVancouver.theme.png)](http://3.bp.blogspot.com/-obGvuJAs61A/VWiwgTHydOI/AAAAAAAAFVA/1p5YOMJe_jY/s1600/OpenStack%2BVancouver.theme.png)Finally back from Vancouver, back from an interesting week at the OpenStack Summit including a quite packed schedule with many interesting presentations, work sessions and meetings. 

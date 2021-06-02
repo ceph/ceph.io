@@ -3,7 +3,6 @@ title: "Map a RBD device inside a Docker container"
 date: "2015-06-26"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![Map a RBD device inside a Docker container](http://sebastien-han.fr/images/map-rbd-device-inside-docker-container.jpg)

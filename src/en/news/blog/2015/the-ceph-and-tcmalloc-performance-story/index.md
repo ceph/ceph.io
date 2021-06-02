@@ -3,7 +3,6 @@ title: "The Ceph and TCMalloc performance story"
 date: "2015-09-07"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![The Ceph and TCMalloc performance store](http://sebastien-han.fr/images/ceph-tcmalloc-performance.jpg)

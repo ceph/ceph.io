@@ -3,7 +3,6 @@ title: "OpenStack summit Vancouver talks: Ceph and OpenStack upgrades"
 date: "2015-02-16"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![OpenStack summit talks: Ceph and OpenStack upgrades](http://sebastien-han.fr/images/openstack-summit-vancouver.jpg)

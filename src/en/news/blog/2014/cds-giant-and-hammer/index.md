@@ -4,7 +4,6 @@ date: "2014-06-25"
 author: "dalgaaf"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 [![](images/logo.png)](https://wiki.ceph.com/@api/deki/site/logo.png)

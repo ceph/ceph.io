@@ -4,7 +4,6 @@ date: "2014-01-04"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 Sage Weil and Greg Farnum [presentation during the](http://www.youtube.com/watch?v=DWK5RrNRhHU&feature=share&%23038;t=2h29m18s&%23038;html5=True) [Firefly Ceph Developer Summit](http://wiki.ceph.com/Planning/CDS/CDS_Firefly) in 2013 is used as an introduction to the cache pool that is being implemented for the upcoming Firefly release.  

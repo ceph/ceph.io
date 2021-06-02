@@ -4,7 +4,6 @@ date: "2014-06-22"
 author: "dmsimard"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 # Some context

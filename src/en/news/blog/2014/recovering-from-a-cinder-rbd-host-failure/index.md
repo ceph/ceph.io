@@ -4,7 +4,6 @@ date: "2014-05-05"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 [OpenStack Havana](https://www.openstack.org/software/havana/) [Cinder](https://wiki.openstack.org/wiki/Cinder) volumes associated with a [RBD](http://ceph.com/docs/master/rbd/rbd/) Ceph pool are bound to a host.

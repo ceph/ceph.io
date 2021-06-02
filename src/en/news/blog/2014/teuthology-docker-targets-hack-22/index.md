@@ -4,7 +4,6 @@ date: "2014-11-17"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 The [teuthology](https://github.com/ceph/teuthology/) [container hack](http://dachary.org/?p=3330) is [improved](https://github.com/dachary/teuthology/compare/wip-container) to snapshot the container after [Ceph](http://ceph.com/) and its dependencies have been installed. It helps quickly testing [ceph-qa-suite tasks](https://github.com/ceph/ceph-qa-suite/tree/master/tasks). A job doing nothing but install the Firefly version of Ceph takes **14 seconds** after the initial installation (which can take between 5 to 15 minutes depending on how fast is the machine and how much bandwidth is available).

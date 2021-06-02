@@ -4,7 +4,6 @@ date: "2014-01-10"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 [shortlog](https://www.kernel.org/pub/software/scm/git/docs/git-shortlog.html) is convenient to print a leader board counting contributions. For instance to display the top ten commiters of [Ceph](http://ceph.com/) over the past year:

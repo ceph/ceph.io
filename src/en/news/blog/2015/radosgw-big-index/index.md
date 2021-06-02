@@ -3,7 +3,6 @@ title: "RadosGW Big Index"
 date: "2015-05-12"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 ```

@@ -3,7 +3,6 @@ title: "Recursive accounting for size, ctime, etc."
 date: "2008-05-23"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 Watch the size on the directories:

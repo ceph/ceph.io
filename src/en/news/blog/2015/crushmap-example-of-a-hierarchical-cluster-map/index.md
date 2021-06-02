@@ -3,7 +3,6 @@ title: "CRUSHMAP : Example of a Hierarchical Cluster Map"
 date: "2015-02-02"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 It is not always easy to know how to organize your data in the Crushmap, especially when trying to distribute the data geographically while separating different types of discs, eg SATA, SAS and SSD. Let’s see what we can imagine as Crushmap hierarchy.

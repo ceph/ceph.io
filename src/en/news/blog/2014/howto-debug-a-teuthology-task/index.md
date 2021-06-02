@@ -4,7 +4,6 @@ date: "2014-11-25"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 To debug a modification to a [ceph-qa-suite](https://github.com/ceph/ceph-qa-suite/) task ( for instance [repair\_test.py](https://github.com/ceph/ceph-qa-suite/blob/master/tasks/repair_test.py)), a [teuthology](https://github.com/ceph/teuthology/) target is locked with:

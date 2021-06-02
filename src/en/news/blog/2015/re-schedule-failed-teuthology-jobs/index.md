@@ -4,7 +4,6 @@ date: "2015-03-03"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 The [Ceph](http://ceph.com/) [integration tests](http://dachary.org/?p=3575) may fail because of environmental problems (network not available, packages not built, etc.). If six jobs failed out of seventy, these failed test can be re-run instead of re-scheduling the whole suite. It can be done using the \*\*–filter\*\* option of [teuthology-suite](https://github.com/ceph/teuthology/blob/4023eb974afd049602cbc48b0a85b2caa6eaaac1/teuthology/suite.py#L483) with a comma separated list of the job description that failed.  

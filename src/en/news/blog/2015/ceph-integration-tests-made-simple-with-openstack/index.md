@@ -4,7 +4,6 @@ date: "2015-07-24"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 If an [OpenStack](http://openstack.org/) tenant (account in the OpenStack parlance) is available, the [Ceph](http://ceph.com/) [integration tests](https://github.com/ceph/ceph-qa-suite) can be run with the **teuthology-openstack** command , which will create the necessary virtual machines automatically (see [the detailed instructions to get started](https://github.com/dachary/teuthology/tree/wip-6502-openstack-v2/#openstack-backend)). To do its work, it uses the [teuthology OpenStack backend](http://dachary.org/?p=3767) behind the scenes so the user does not need to know about it.  

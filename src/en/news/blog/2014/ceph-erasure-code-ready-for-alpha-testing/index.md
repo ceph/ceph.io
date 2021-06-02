@@ -4,7 +4,6 @@ date: "2014-03-03"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 The addition of [erasure code](http://en.wikipedia.org/wiki/Erasure_code) in Ceph started in [april 2013](https://wiki.ceph.com/Planning/Blueprints/Dumpling/Erasure_encoding_as_a_storage_backend) and was discussed during the [first Ceph Developer Summit](https://wiki.ceph.com/Planning/CDS/Dumpling). The implementation reached an important milestone a few days ago and it is now [ready for alpha testing](http://permalink.gmane.org/gmane.comp.file-systems.ceph.devel/18760).  

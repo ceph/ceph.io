@@ -4,7 +4,6 @@ date: "2014-07-04"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 A datacenter containing three hosts [of a non profit Ceph and OpenStack cluster](http://dachary.org/?p=2969) suddenly lost connectivity and it could not be restored within 24h. The corresponding OSDs were marked out manually. The [Ceph](http://ceph.com/) pool dedicated to this datacenter became unavailable as expected. However, a pool that was supposed to have at most one copy per datacenter turned out to have a faulty [crush ruleset](http://ceph.com/docs/master/rados/operations/crush-map/). As a result some [placement groups](http://ceph.com/docs/master/rados/operations/placement-groups/) in this pool were stuck.

@@ -3,7 +3,6 @@ title: "DreamObjects Case Study Webinar"
 date: "2013-02-06"
 author: "syndicated"
 tags: 
-  - "planet"
 ---
 
 [![](images/do.png)](http://www.inktank.com/wp-content/uploads/2013/02/do.png "DreamObjects Case Study Webinar")

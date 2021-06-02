@@ -3,7 +3,6 @@ title: "Kernel client git trees have moved"
 date: "2009-10-16"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 The kernel client git trees have moved to kernel.org.  The main line of development is in a kernel tree that contains the Ceph client:

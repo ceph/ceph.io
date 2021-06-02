@@ -4,7 +4,6 @@ date: "2013-12-02"
 author: "syndicated"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 I have just come back from the OpenStack summit in Hong Kong. As always it was a blast talking to lot of people and listening to presentations or designing the future of the software we all love.

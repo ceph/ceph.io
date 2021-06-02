@@ -4,7 +4,6 @@ date: "2014-09-16"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 The [crushtool](http://ceph.com/docs/master/man/8/crushtool/) utility can be used to test [Ceph](http://ceph.com/) crush rules before applying them to a cluster.

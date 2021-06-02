@@ -3,7 +3,6 @@ title: "Ceph: mix SATA and SSD within the same box"
 date: "2014-08-25"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/ceph-mix-sata-ssd-disks-same-box.jpg "Ceph mix SATA and SSD within the same box")

@@ -3,7 +3,6 @@ title: "Next up: snapshots!"
 date: "2008-07-11"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 One of the last intrusive additions I have planned is a flexible snapshot mechanism.  I haven’t been able to figure out how to map writeable snapshots onto the current object and metadata storage model, unfortunately, so it’ll be read-only snapshots for now.  Ceph snapshots will be significantly more flexible than what you find with WAFL or ZFS, though.  The goal is to get behavior like:

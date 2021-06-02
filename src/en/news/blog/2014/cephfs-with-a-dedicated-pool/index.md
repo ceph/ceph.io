@@ -4,7 +4,6 @@ date: "2014-01-10"
 author: "syndicated"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
   

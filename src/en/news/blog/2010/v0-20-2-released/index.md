@@ -3,7 +3,6 @@ title: "v0.20.2 released"
 date: "2010-05-27"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 We’ve released v0.20.2 with a few bug fixes.  These include

@@ -3,7 +3,6 @@ title: "Some performance comparisons"
 date: "2009-01-30"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 I did a few basic tests comparing Ceph to NFS on a simple benchmark, a Linux kernel untar.  I tried to get as close as possible to an “apples to apples” comparison.  The same client machine is used for NFS and Ceph; another machine is either the NFS server or the Ceph MDS.  The same disk type is used for both tests.  The underlying file system for the NFS server was ext2. In the Ceph case, additional machines were used for the OSDs (each using btrfs).  Ceph came in somewhere in between NFS sync and async:

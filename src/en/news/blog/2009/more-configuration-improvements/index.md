@@ -3,7 +3,6 @@ title: "More configuration improvements"
 date: "2009-03-12"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 We’ve updated the configuration framework (again) so that only a single configuration file is needed for the entire cluster.

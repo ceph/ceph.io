@@ -3,7 +3,6 @@ title: "CephFS: determine a file location"
 date: "2015-08-31"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![CephFS determine a file location](http://sebastien-han.fr/images/cephfs-file-location.jpg)

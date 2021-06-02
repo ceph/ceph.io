@@ -3,7 +3,6 @@ title: "v0.56.3 released"
 date: "2013-02-14"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 We’ve fixed an important bug that a few users were hitting with unresponsive OSDs and internal heartbeat timeouts.  This, along with a range of less critical fixes, was sufficient to justify another point release.  Any production users should upgrade.

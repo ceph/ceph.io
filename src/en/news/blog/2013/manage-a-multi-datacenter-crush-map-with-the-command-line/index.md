@@ -4,7 +4,6 @@ date: "2013-11-21"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 A new datacenter is added to the [crush map](http://ceph.com/docs/master/rados/operations/crush-map/) of a [Ceph](http://ceph.com/) cluster:

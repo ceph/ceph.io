@@ -4,7 +4,6 @@ date: "2013-04-15"
 author: "debbie"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 [Ceph](http://www.ceph.com/) is super hot. When people tell me that storage can’t be sexy, I can’t help but feel like Ceph can be! I was out in our L.A. office last week, and the first thing I saw when I showed up was this:

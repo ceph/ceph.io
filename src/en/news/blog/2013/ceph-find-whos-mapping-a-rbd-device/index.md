@@ -3,7 +3,6 @@ title: "Ceph: find who's mapping a RBD device"
 date: "2013-11-25"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/ceph-whos-mapping-rbd.jpg "Ceph: find who's mapping a RBD device")

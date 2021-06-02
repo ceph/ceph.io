@@ -4,7 +4,6 @@ date: "2013-11-18"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 When a new [Ceph](http://ceph.com/) OSD is setup with ceph-disk on a designated disk partition ( say /dev/sdc3 ), it will [not be prepared](https://github.com/ceph/ceph/blob/v0.67.4/src/ceph-disk#L1027) and the [sgdisk command](https://github.com/ceph/ceph/blob/v0.67.4/src/ceph-disk#L1034) must be run manually:

@@ -4,7 +4,6 @@ date: "2015-03-11"
 author: "dmsimard"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 I’ve just drafted a new release of [python-cephclient](https://github.com/dmsimard/python-cephclient) on [PyPi](https://pypi.python.org/pypi/python-cephclient/0.1.0.5): v0.1.0.5.

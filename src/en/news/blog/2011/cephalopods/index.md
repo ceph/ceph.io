@@ -3,7 +3,6 @@ title: "Cephalopods"
 date: "2011-11-06"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 The name Ceph comes from [cephalopod](http://en.wikipedia.org/wiki/Cephalopod), a class of mollusks that includes the octopus and squid.  The suggestion came from [Carlos Maltzahn](http://users.soe.ucsc.edu/~carlosm/UCSC/Home/Home.html), a professor in our research group at UCSC, sometime in 2006.  My memory is a bit hazy, but if memory serves the reasoning had something to do with their high level of intelligence and many-tentacled–ahem, “distributed”–physiology \[insert hand waving here\].

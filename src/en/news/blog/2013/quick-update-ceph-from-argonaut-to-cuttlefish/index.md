@@ -3,7 +3,6 @@ title: "Quick update Ceph: from Argonaut to Cuttlefish"
 date: "2013-11-27"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/ceph-argonaut-to-cuttlefish.jpg "Quick update Ceph: from Argonaut to Cuttlefish")

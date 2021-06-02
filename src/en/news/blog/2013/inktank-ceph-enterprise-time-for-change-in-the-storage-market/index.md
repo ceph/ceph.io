@@ -3,7 +3,6 @@ title: "Inktank Ceph Enterprise: time for change in the storage market"
 date: "2013-10-30"
 author: "nwl"
 tags: 
-  - "planet"
 ---
 
 In April 2012, Inktank was launched to transform the storage industry by driving the widespread adoption of Ceph. We wanted to bring the benefits of open source to an industry that had long held out against its disruptive effects and to help companies handle the explosion in data with a radical new way of storing and managing information.

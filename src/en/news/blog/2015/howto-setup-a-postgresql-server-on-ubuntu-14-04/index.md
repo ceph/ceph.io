@@ -4,7 +4,6 @@ date: "2015-07-21"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 In the context of the [teuthology](http://github.com/ceph/teuthology) (the integration test framework for [Ceph](http://ceph.com/), there needs to be a [PostgreSQL](http://www.postgresql.org/) available, locally only, with a single user dedicated to **teuthology**. It can be setup from a new Ubuntu 14.04 install with:

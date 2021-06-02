@@ -3,7 +3,6 @@ title: "Ceph Over Fibre for VMWare"
 date: "2012-12-24"
 author: "scuttlemonkey"
 tags: 
-  - "planet"
 ---
 
 We always love it when Ceph users choose to share what they have been doing with the community. Recently, a couple of regulars to the #ceph [IRC channel](http://ceph.com/resources/mailing-list-irc/) were good enough to give us a very detailed look at how they were using Ceph to power their VMWare infrastructure. So, without further ado, read on for a great visual representation and quick summary of Chris Holcombe and Robert Blair’s pet Ceph project!

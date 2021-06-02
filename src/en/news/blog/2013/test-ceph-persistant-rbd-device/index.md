@@ -3,7 +3,6 @@ title: "Test Ceph Persistant Rbd Device"
 date: "2013-08-03"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 ## Create persistant rbd device

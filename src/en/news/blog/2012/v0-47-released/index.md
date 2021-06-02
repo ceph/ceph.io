@@ -3,7 +3,6 @@ title: "v0.47 released"
 date: "2012-05-21"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 It’s been another three weeks and v0.47 is ready.  The highlights include:

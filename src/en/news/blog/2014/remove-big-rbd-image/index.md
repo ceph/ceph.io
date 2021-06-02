@@ -3,7 +3,6 @@ title: "Remove Big RBD Image"
 date: "2014-07-04"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 Create a disk with an insane size can be fun, but a little hard to remove.

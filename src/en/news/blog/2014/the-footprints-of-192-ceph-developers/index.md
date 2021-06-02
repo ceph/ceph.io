@@ -4,7 +4,6 @@ date: "2014-03-23"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 [Gource](https://code.google.com/p/gource/) is [run](http://dachary.org/wp-uploads/2014/03/footprint.txt) on the [Ceph](http://ceph.com/) git repository for each of the 192 developers who contributed to its development over the past six years. Their footprint is the last image of a video clip created from all the commits they authored.  

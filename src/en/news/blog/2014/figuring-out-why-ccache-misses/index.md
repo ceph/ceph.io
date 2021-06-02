@@ -4,7 +4,6 @@ date: "2014-02-09"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 When compiling [Ceph](http://ceph.com/), [ccache](http://ccache.samba.org/) may appear to miss more than expected, as shown by the **cache miss** line of **ccache -s**

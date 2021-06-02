@@ -3,7 +3,6 @@ title: "v0.56.1 released"
 date: "2013-01-08"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 We found a few critical problems with v0.56, and fixed a few outstanding problems.  v0.56.1 is ready, and we’re pretty pleased with it!

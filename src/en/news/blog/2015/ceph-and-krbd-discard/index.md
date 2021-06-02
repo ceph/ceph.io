@@ -3,7 +3,6 @@ title: "Ceph and KRBD discard"
 date: "2015-01-25"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![Ceph and KRBD discard](http://sebastien-han.fr/images/ceph-krbd-discard-support.jpg)

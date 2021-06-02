@@ -7,7 +7,6 @@ tags:
   - "ods"
   - "openworld"
   - "owf"
-  - "planet"
 ---
 
 As Ceph development continues to move forward at an astonishing rate we’re working hard to share both our passion for what’s here and our vision of things to come via as many conduits as we can manage. If you are interested in hearing about the latest Ceph dev work, asking questions of some of the folks behind it, or just want to tell us the awesome things you are building with Ceph, keep an eye on our marathon event schedule and stop on by.

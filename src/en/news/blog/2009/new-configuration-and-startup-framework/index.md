@@ -3,7 +3,6 @@ title: "New configuration and startup framework"
 date: "2009-03-06"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 Yehuda and I spent last week polishing his configuration framework and reworking the way everything is configured and started up.  I think the end result is pretty slick:

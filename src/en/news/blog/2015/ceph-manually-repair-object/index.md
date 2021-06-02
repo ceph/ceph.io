@@ -3,7 +3,6 @@ title: "Ceph: manually repair object"
 date: "2015-04-27"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![Ceph: manually repair object](http://sebastien-han.fr/images/ceph-manually-repair-objects.jpg)

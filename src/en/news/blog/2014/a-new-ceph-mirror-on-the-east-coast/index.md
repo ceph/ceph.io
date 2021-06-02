@@ -4,7 +4,6 @@ date: "2014-08-10"
 author: "dmsimard"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 I’m glad to announce that Ceph is now part of the mirrors [iWeb](http://iweb.com/) provides.

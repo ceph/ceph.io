@@ -3,7 +3,6 @@ title: "Introducing ceph-users"
 date: "2013-02-08"
 author: "rturk"
 tags: 
-  - "planet"
 ---
 
 ### Hi!

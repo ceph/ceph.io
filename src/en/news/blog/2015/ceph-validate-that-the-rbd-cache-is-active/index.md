@@ -3,7 +3,6 @@ title: "Ceph: validate that the RBD cache is active"
 date: "2015-09-02"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![Ceph validate that the RBD cache is active](http://sebastien-han.fr/images/ceph-check-rbd-cache-isenabled.jpg)

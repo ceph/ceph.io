@@ -3,7 +3,6 @@ title: "Ceph RBD objects placement"
 date: "2013-11-19"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 Quick script to evaluate the placement of the objects contained in a RBD image.

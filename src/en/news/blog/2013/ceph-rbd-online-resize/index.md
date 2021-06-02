@@ -3,7 +3,6 @@ title: "Ceph RBD Online Resize"
 date: "2013-06-11"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 ## Extend rbd drive with libvirt and XFS

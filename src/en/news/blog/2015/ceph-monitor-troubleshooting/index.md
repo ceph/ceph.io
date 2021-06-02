@@ -3,7 +3,6 @@ title: "Ceph: Monitor Troubleshooting"
 date: "2015-05-30"
 author: "syndicated"
 tags: 
-  - "planet"
 ---
 
 ![Ceph monitor ip change](images/monitor-troubleshooting.jpg "Ceph monitor ip change")

@@ -4,7 +4,6 @@ date: "2015-03-09"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 When a [teuthology](https://github.com/ceph/teuthology/) target (i.e. machine) is provisioned with **teuthology-lock** for the purpose of testing [Ceph](http://ceph.com/), there is no way to choose the kernel. But it can be installed afterwards using the following:

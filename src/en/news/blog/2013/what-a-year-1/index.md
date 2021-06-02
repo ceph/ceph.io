@@ -3,7 +3,6 @@ title: "What a Year 1!"
 date: "2013-05-11"
 author: "bryan"
 tags: 
-  - "planet"
 ---
 
 [![](images/DSC_0166.png)](http://www.inktank.com/wp-content/uploads/2013/05/DSC_0166.png "What a Year 1!")

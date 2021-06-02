@@ -3,7 +3,6 @@ title: "Bootstrap your Ceph cluster in Docker"
 date: "2015-06-22"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![Bootstrap your Ceph cluster in Docker](http://sebastien-han.fr/images/bootstrap-ceph-cluster-docker.jpg)

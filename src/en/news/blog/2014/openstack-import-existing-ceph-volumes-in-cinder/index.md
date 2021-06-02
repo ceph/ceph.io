@@ -3,7 +3,6 @@ title: "OpenStack: import existing Ceph volumes in Cinder"
 date: "2014-12-09"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![OpenStack: import existing Ceph volumes in Cinder](http://sebastien-han.fr/images/openstack-import-existing-vol-ceph-cinder.jpg)

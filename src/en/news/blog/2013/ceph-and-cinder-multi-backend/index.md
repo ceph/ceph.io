@@ -3,7 +3,6 @@ title: "Ceph and Cinder multi-backend"
 date: "2013-04-25"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/ceph-cinder-multi-backed.jpg)

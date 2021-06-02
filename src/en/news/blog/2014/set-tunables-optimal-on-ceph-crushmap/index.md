@@ -3,7 +3,6 @@ title: "Set Tunables Optimal on Ceph Crushmap"
 date: "2014-01-16"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 Il you just upgrade to Ceph 0.75, you can see this message :

@@ -3,7 +3,6 @@ title: "OpenStack Summit Vancouver: Ceph and OpenStack current integration and r
 date: "2015-05-19"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 Date: 19/05/2015

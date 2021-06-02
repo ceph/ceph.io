@@ -3,7 +3,6 @@ title: "What’s New in the Land of OSD?"
 date: "2012-12-18"
 author: "sajust"
 tags: 
-  - "planet"
 ---
 
 It’s been a few months since the last named release, Argonaut, and we’ve been busy! Well, in retrospect, most of the time was spent on finding a cephalopod name that starts with “b”, but once we got that done, we still had a few weeks left to devote to technical improvements. In particular, the OSD has seen some new and interesting developments.

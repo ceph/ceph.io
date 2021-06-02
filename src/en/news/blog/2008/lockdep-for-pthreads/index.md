@@ -3,7 +3,6 @@ title: "lockdep for pthreads"
 date: "2008-11-06"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 Linux has a great tool called lockdep for identifying locking dependency problems.  Instead of waiting until an actual deadlock occurs (which may be extremely difficult when it is a timing-sensitive thing), lockdep keeps track of which locks are already held when any new lock is taken, and ensures that there are no cycles in the dependency graph.

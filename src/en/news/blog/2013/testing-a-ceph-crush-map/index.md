@@ -4,7 +4,6 @@ date: "2013-12-09"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 After [modifying a crush map](http://ceph.com/docs/master/rados/operations/crush-map/) it should be tested to check that all rules can provide the specified number of replicas. If a pool is created to use the **metadata** rule with seven replicas, could it fail to find enough devices ? The [crushtool](http://ceph.com/docs/master/man/8/crushtool/) test mode can be used to simulate the situation as follows:

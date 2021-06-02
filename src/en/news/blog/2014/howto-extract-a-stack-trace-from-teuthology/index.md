@@ -4,7 +4,6 @@ date: "2014-09-23"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 When a [teuthology](https://github.com/ceph/teuthology/) test suite fails on [Ceph](http://ceph.com/), it shows in [pulpito](http://pulpito.ceph.com/). For instance there is one failure in the [monthrash test suite](http://pulpito.ceph.com/ubuntu-2014-09-19_04:50:17-rados:monthrash-wip-9343-erasure-code-feature-testing-basic-multi/) with [details](http://pulpito.ceph.com/ubuntu-2014-09-19_04:50:17-rados:monthrash-wip-9343-erasure-code-feature-testing-basic-multi/497498/) and a [link to the logs](http://qa-proxy.ceph.com/teuthology/ubuntu-2014-09-19_04:50:17-rados:monthrash-wip-9343-erasure-code-feature-testing-basic-multi/497498/teuthology.log). By removing the **teuthology.log** part of the link a directory listing shows all informations [archived for this run are available](http://qa-proxy.ceph.com/teuthology/ubuntu-2014-09-19_04:50:17-rados:monthrash-wip-9343-erasure-code-feature-testing-basic-multi/497498/).  

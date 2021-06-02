@@ -3,7 +3,6 @@ title: "Ceph cluster on Docker for testing"
 date: "2015-08-24"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![Ceph cluster on Docker for testing](http://sebastien-han.fr/images/ceph-docker-demo.jpg)

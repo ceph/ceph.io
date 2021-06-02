@@ -4,7 +4,6 @@ date: "2014-11-29"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 The [gitlab-mirrors](https://github.com/samrocketman/gitlab-mirrors) scripts are [installed](https://github.com/samrocketman/gitlab-mirrors#three-easy-steps) to setup a [a read-only Ceph mirror](http://workbench.dachary.org/ceph/ceph/), updated hourly. It is used for permalinks such as [src/osd/ClassHandler.cc#L170](http://workbench.dachary.org/ceph/ceph/blob/master/src/osd/ClassHandler.cc#L170).  

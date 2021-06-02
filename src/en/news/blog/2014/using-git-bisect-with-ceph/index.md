@@ -4,7 +4,6 @@ date: "2014-10-16"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 When investingating a [a problem](http://tracker.ceph.com/issues/9794) using the latest [Ceph](http://ceph.com/) sources, it was discovered that the problem only shows in the **master** branch and appeared after the **v0.85** tag. The following script reproduces the problem and logs the result:

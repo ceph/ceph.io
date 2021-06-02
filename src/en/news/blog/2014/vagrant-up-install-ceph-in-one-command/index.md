@@ -3,7 +3,6 @@ title: "Vagrant up: install Ceph in one command"
 date: "2014-04-30"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![Vagrant up: install Ceph in one command](http://sebastien-han.fr/images/ceph-vagrant-up.jpg)

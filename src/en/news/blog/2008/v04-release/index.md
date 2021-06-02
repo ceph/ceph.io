@@ -3,7 +3,6 @@ title: "v0.4 Release"
 date: "2008-10-07"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 I’ve tagged v0.4.  New in this release:

@@ -3,7 +3,6 @@ title: "OpenStack Cinder with Ceph under the hood"
 date: "2015-01-23"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![OpenStack Cinder with Ceph under the hood](http://sebastien-han.fr/images/cinder-ceph-under-the-hood.jpg)

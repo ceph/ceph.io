@@ -3,7 +3,6 @@ title: "DevStack and remote Ceph cluster"
 date: "2014-12-11"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![DevStack and remote Ceph cluster](http://sebastien-han.fr/images/devstack-ceph-remote-cluster.jpg)

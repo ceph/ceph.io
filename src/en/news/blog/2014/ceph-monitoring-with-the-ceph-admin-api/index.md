@@ -3,7 +3,6 @@ title: "Ceph: monitoring with the Ceph Admin API"
 date: "2014-04-14"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/ceph-monitor-with-admin-api.jpg "Ceph: monitoring with the Ceph Admin API")

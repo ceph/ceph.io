@@ -3,7 +3,6 @@ title: "Announcing Ansible playbooks for Ceph!"
 date: "2014-03-03"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![Announcing Ansible playbooks for Ceph!](http://sebastien-han.fr/images/ansible-ceph.jpg)

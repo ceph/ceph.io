@@ -3,7 +3,6 @@ title: "v0.19 released"
 date: "2010-02-17"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 The v0.19 release is finally here.  The focus this past cycle was on stability and the disk format, and things have improved greatly in that area.  Our plan is to make any future disk format changes roll forward, so that users won’t need to rebuild their file systems.  The protocol has also grown feature bits that so it is at least possible to make protocol changes transparent; whether we do so or not will depend on the severity of the change and cost of maintaining compatibility.

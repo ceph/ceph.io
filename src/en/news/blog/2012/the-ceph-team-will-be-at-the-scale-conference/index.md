@@ -3,7 +3,6 @@ title: "The Ceph team will be at the SCALE conference"
 date: "2012-01-18"
 author: "dona"
 tags: 
-  - "planet"
 ---
 
 Ceph will be at the SCALE conference this Fri, Sat and Sun to promote the Ceph project, our involvement with OpenStack and to recruit the great talent that we know will be swarming to this conference. We have several activities planned for the SCALE conference so we hope to see you there!

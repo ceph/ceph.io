@@ -3,7 +3,6 @@ title: "Inktank at OpenStack Summit 2014"
 date: "2014-05-10"
 author: "syndicated"
 tags: 
-  - "planet"
 ---
 
 By now you’ve no doubt heard we were [acquired by Red Hat](http://www.redhat.com/about/news/press-archive/2014/4/red-hat-to-acquire-inktank-provider-of-ceph) last month, so our coming-out party of sorts? This year’s [OpenStack Summit](https://www.openstack.org/summit/openstack-summit-atlanta-2014/) in Atlanta. And boy, do we have a lot planned…

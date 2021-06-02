@@ -3,7 +3,6 @@ title: "v0.16 released"
 date: "2009-10-05"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 We’ve released v0.16.  The release primarily incorporates feedback on the Linux kernel client from LKML.  Changes since v0.15 include:

@@ -3,7 +3,6 @@ title: "v0.48.3 argonaut update released"
 date: "2013-01-09"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 After several months, we have an important update for the argonaut v0.48.x series.  This release contains a **critical fix that can prevent data loss or corruption** in a power loss or kernel panic situation.  There are also several fixes for the OSDs and for the radosgw.  We recommend all v0.48.x users upgrade.

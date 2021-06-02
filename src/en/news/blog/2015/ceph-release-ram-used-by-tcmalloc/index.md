@@ -3,7 +3,6 @@ title: "Ceph: release RAM used by TCMalloc"
 date: "2015-09-09"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![Ceph release RAM used by TCMalloc](http://sebastien-han.fr/images/ceph-release-memory-tcmalloc.jpg)

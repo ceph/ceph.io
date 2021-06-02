@@ -4,7 +4,6 @@ date: "2014-12-21"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 The [automated make check for Ceph](https://github.com/loic-bot) bot runs on [Ceph](http://ceph.com/) [pull requests](https://github.com/ceph/ceph/pulls). It is still experimental and will not be triggered by all pull requests yet.

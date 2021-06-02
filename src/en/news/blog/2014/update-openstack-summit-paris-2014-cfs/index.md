@@ -4,7 +4,6 @@ date: "2014-08-24"
 author: "dalgaaf"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 An update on my talk submission for the OpenStack summit this year in Paris: my speech about [Ceph performance analysis](https://www.openstack.org/vote-paris/Presentation/performance-analysis-on-ceph-for-a-live-openstack-platform) was not chosen by the committee for the official agenda. 

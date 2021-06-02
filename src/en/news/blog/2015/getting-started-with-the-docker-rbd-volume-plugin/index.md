@@ -3,7 +3,6 @@ title: "Getting started with the Docker RBD volume plugin"
 date: "2015-08-17"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![Getting started with Docker RBD volume plugin](http://sebastien-han.fr/images/docker-ceph-rbd-volume-plugin.jpg)

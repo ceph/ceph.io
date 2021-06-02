@@ -3,7 +3,6 @@ title: "Ceph Bobtail Performance – IO Scheduler Comparison"
 date: "2013-01-22"
 author: "MarkNelson"
 tags: 
-  - "planet"
 ---
 
 Contents

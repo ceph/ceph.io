@@ -4,7 +4,6 @@ date: "2013-12-21"
 author: "dmsimard"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 Like I mentioned in my [previous post](http://dmsimard.com/2013/12/06/ceph-has-a-rest-api/), Ceph has a [REST API](http://ceph.com/docs/master/man/8/ceph-rest-api/) now. That opens a lot of possibilities.

@@ -3,7 +3,6 @@ title: "Stretching Ceph networks"
 date: "2015-04-17"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 This is a quick note about Ceph networks, so do not expect anything lengthy here :).

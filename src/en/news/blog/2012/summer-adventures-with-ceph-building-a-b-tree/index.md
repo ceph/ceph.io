@@ -8,7 +8,6 @@ tags:
   - "inktank"
   - "internship"
   - "key-value-store"
-  - "planet"
   - "storage"
 ---
 

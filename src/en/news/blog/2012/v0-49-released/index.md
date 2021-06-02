@@ -3,7 +3,6 @@ title: "v0.49 released"
 date: "2012-07-24"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 This release is a bit less exciting than most because it is the first development release since argonaut, and much of our time has been spent working on stability.  Most of those fixes have been backported and slated for the next argonaut point release (v0.48.1).   I’ll include both below; see the 0.48.1 release notes (when it’s available later this week) to see what changes with argonaut.

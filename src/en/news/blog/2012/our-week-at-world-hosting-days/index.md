@@ -3,7 +3,6 @@ title: "Our Week at World Hosting Days"
 date: "2012-03-28"
 author: "syndicated"
 tags: 
-  - "planet"
 ---
 
 After a long journey to Germany, the Ceph team were welcomed with open arms by the service provider community.

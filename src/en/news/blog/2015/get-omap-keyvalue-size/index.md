@@ -3,7 +3,6 @@ title: "Get OMAP Key/value Size"
 date: "2015-06-25"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 List the total size of all keys for each object on a pool.

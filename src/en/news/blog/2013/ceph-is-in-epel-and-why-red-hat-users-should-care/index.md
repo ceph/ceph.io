@@ -4,7 +4,6 @@ date: "2013-03-28"
 author: "sage"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 EPEL is [Extra Packages for Enterprise Linux](http://fedoraproject.org/wiki/EPEL), a project that ports software that is part of the Fedora community distribution to the slower-moving RHEL ([Red Hat Enterprise Linux](http://www.redhat.com/products/enterprise-linux/)) distribution (and its derivatives) used by many enterprises. One problem for RHEL users is that although the distribution tends to be rock solid, that stability comes at a price: it can be very difficult to run newer software (like all this newfangled “cloud” stuff). Many organizations adopting Ceph face this challenge, particularly when it comes to support for librbd in the Qemu/KVM hypervisor.

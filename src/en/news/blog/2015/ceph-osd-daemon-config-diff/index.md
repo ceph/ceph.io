@@ -3,7 +3,6 @@ title: "Ceph OSD daemon config diff"
 date: "2015-06-01"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![Ceph OSD daemon config diff](http://sebastien-han.fr/images/ceph-osd-config-diff.jpg)

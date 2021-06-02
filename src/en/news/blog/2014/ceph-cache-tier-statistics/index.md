@@ -3,7 +3,6 @@ title: "Ceph: Cache Tier Statistics"
 date: "2014-12-15"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![Ceph: Cache Tier Statistics](http://sebastien-han.fr/images/ceph-cache-statistics.jpg)

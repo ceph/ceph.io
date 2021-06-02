@@ -3,7 +3,6 @@ title: "v0.7 release"
 date: "2009-03-10"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 I’ve tagged a v0.7 release.  Probably the biggest change in this release (aside from the usual bug fixes and performance improvements) is the new start/stop and configuration framework.  Notably, the entire cluster configuration can be described by a single cluster.conf file that is shared by all nodes (distributed via scp or NFS or whatever) and used for mkfs, startup, and shutdown.

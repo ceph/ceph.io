@@ -4,7 +4,6 @@ date: "2015-06-06"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 The [teuthology](https://github.com/ceph/teuthology/) [container hack](http://dachary.org/?p=3441) is improved [to run teuthology-suite](https://github.com/ceph/teuthology/compare/master...dachary:wip-docker-integration-v2). For instance:

@@ -3,7 +3,6 @@ title: "RBD Replication"
 date: "2014-08-12"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 A simple exemple to make Replication for RBD.

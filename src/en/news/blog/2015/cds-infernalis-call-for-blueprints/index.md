@@ -4,7 +4,6 @@ date: "2015-02-24"
 author: "dalgaaf"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 [![](images/Ceph_Logo_Standard_RGB_Reversed_120411_fa.png)](http://2.bp.blogspot.com/-uySM4AVDAio/VOy0ER59bSI/AAAAAAAAFUY/72oUo89mFJo/s1600/Ceph_Logo_Standard_RGB_Reversed_120411_fa.png)

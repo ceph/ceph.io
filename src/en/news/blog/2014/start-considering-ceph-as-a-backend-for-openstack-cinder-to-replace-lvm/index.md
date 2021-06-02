@@ -3,7 +3,6 @@ title: "Start considering Ceph as a backend for OpenStack Cinder (to replace LVM
 date: "2014-06-02"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![Please drop LVM and use Ceph as a backend for OpenStack Cinder](http://sebastien-han.fr/images/drop-lvm-for-ceph-cinder-openstack.jpg)

@@ -3,7 +3,6 @@ title: "OpenStack Heat and Ceilometer got their dashboard panel"
 date: "2013-09-06"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 The Havana milestone release of the Horizon dashboard brought an absolutely wonderful panel for Heat, the orchestration service and Ceilometer, the metering service. Quick preview before the Havana’s official release.

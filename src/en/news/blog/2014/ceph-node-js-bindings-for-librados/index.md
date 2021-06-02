@@ -3,7 +3,6 @@ title: "Ceph Node.js Bindings for Librados"
 date: "2014-08-25"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 <table><tbody><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>

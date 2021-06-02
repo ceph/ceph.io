@@ -3,7 +3,6 @@ title: "Remove Snapshot Before Rbd"
 date: "2013-07-30"
 author: "syndicated"
 tags: 
-  - "planet"
 ---
 
 <table><tbody><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>

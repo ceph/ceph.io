@@ -4,7 +4,6 @@ date: "2014-02-27"
 author: "dalgaaf"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 Since running benchmarks against Ceph was a topic in the "Best Practices with Ceph as Distributed, Intelligent, Unified Cloud Storage (Dieter Kasper, Fujitsu)" talk on the Ceph day in Frankfurt today, I would like to point you to a blog post about the outcome of the time we spend on benchmarking Ceph performance to find bottlenecks at the Platform Engineering team for the Business Marketplace at Deutsche Telekom AG: ["Ceph Performance Analysis: fio and RBD"](http://telekomcloud.github.io/ceph/2014/02/26/ceph-performance-analysis_fio_rbd.html)

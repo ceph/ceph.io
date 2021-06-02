@@ -3,7 +3,6 @@ title: "New 10-Minute Ceph Webinar Series"
 date: "2014-03-25"
 author: "syndicated"
 tags: 
-  - "planet"
 ---
 
 We know time is at a premium, and we also know there’s a thirst for Ceph knowledge. That’s why we’ve put together a series of 10-minute, on-demand webinars designed both to fit into hectic schedules and to deliver the targeted Ceph information you’re looking for.

@@ -3,7 +3,6 @@ title: "Ceph: collect Kernel RBD logs"
 date: "2014-12-17"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![Ceph: collect Kernel RBD logs](http://sebastien-han.fr/images/ceph-collect-krbd-logs.jpg)

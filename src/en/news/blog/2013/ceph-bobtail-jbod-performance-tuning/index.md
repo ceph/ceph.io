@@ -3,7 +3,6 @@ title: "Ceph Bobtail JBOD Performance Tuning"
 date: "2013-02-04"
 author: "MarkNelson"
 tags: 
-  - "planet"
 ---
 
 Contents

@@ -4,7 +4,6 @@ date: "2014-07-31"
 author: "shan"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 For more than a year, Ceph has become increasingly popular and saw several deployments inside and outside OpenStack. For those of you who do not know Ceph is unified, distributed and massively scalable open source storage technology that provides several ways to access and consume your data such as object, block and filesystem. The community and Ceph itself has greatly matured. More developers have joined the project as well. Since I joined eNovance, I have been thinking about building a Ceph support for DevStack. DevStack is a documented collection of shell scripts to build complete OpenStack development environments. I finally got some time to make this happening. It was not easy though, after 7 months and 42 patch sets (42 was the answer I guess), my patch got merged into DevStack. Here is the link of the review: [https://review.openstack.org/#/c/65113/](https://review.openstack.org/#/c/65113/)

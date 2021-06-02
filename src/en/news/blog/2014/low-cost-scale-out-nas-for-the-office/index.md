@@ -3,7 +3,6 @@ title: "Low Cost Scale-Out Nas for the Office"
 date: "2014-08-07"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 The aim is showing that it is possible to create a low-cost storage, efficient and scalable, using opensource solutions. In the example below, I am using [Ceph](http://ceph.com/) for scalability and reliability, combined with [EnhanceIO](https://github.com/stec-inc/EnhanceIO/) to ensure very good performance.

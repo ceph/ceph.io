@@ -3,7 +3,6 @@ title: "File system creation and scaling"
 date: "2008-03-19"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 I’ve spent the last week or so revamping the whole “mkfs” process and some of the machinery needed to adjust data distribution when the size of the cluster changes by an order of magnitude or more. The basic problem is that data is distributed in a two-step process: objects are first statically mapped into one of many “placement groups” (PGs), and PGs then move somewhat dynamically between storage nodes as storage is added or removed from the system, disks fail, and so forth.

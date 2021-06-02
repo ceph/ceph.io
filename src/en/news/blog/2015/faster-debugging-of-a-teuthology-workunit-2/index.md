@@ -4,7 +4,6 @@ date: "2015-08-22"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 The [Ceph](http://ceph.com/) [integration tests](https://github.com/ceph/ceph-qa-suite) run via [teuthology](https://github.com/ceph/teuthology/) rely on [workunits](https://github.com/ceph/ceph/blob/master/qa/workunits/) found in the Ceph repository. For instance:

@@ -3,7 +3,6 @@ title: "Samba Shadow_copy and Ceph RBD"
 date: "2013-08-09"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 I add script to create snapshot on rbd for use with samba shadow\_copy2. For more details go on [https://github.com/ksperis/autosnap-rbd-shadow-copy](https://github.com/ksperis/autosnap-rbd-shadow-copy)

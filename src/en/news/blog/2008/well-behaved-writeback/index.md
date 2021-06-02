@@ -3,7 +3,6 @@ title: "Well-behaved writeback"
 date: "2008-04-08"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 We reached an exciting milestone for the Ceph kernel client this week: file data writeback is working, and well-behaved.  In particular, the speed of a tar file extraction is limited primarily by MDS latency for file creation.  File data is written asynchronously to OSDs in nice big I/Os (based on the striping parameters… 4 MB objects by default).  File capabilities are released to the MDS only after all dirty data is written, and intervening operations (e.g. a file stat by another client) will properly pause other clients with the file open in order to return a correct result.

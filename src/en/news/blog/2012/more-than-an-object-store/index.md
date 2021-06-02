@@ -3,7 +3,6 @@ title: "More Than an Object Store"
 date: "2012-10-02"
 author: "rturk"
 tags: 
-  - "planet"
 ---
 
 Today, Dmitry Ukov wrote a great post on the Mirantis Blog entitled [Object Storage approaches for OpenStack Cloud: Understanding Swift and Ceph](http://www.mirantis.com/blog/object-storage-openstack-cloud-swift-ceph/trackback/). Dmitry’s overview on Ceph was a solid introduction to those needing an object store for their OpenStack deployment, and it was an interesting read. Thanks, Dmitry!

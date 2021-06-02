@@ -3,7 +3,6 @@ title: "Ceph using Monitor key/value store"
 date: "2015-05-04"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/ceph-monitors-kv-store.jpg "Ceph using Monitor key value store")

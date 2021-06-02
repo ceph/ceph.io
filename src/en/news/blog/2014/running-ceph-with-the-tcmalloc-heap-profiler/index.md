@@ -4,7 +4,6 @@ date: "2014-10-02"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 When running a [Ceph](http://ceph.com/) cluster from sources, the [tcmalloc heap profiler](https://google-perftools.googlecode.com/svn/trunk/doc/heap_checker.html) can be [started](https://github.com/ceph/ceph/blob/giant/src/perfglue/heap_profiler.cc#L32) for all daemons with:

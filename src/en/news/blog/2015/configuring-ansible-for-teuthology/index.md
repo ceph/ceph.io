@@ -4,7 +4,6 @@ date: "2015-07-08"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 As of July 8th, 2015, [teuthology](https://github.com/ceph/teuthology/) (the [Ceph](http://ceph.com/) integration test software) switched from using Chef to using Ansible. To keep it working, two files must be created. The **/etc/ansible/hosts/group\_vars/all.yml** file with:

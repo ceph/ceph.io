@@ -3,7 +3,6 @@ title: "Deploy a Ceph MDS server"
 date: "2013-05-13"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 **How-to quickly deploy a MDS server.**
