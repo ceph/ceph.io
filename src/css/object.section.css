@@ -4,7 +4,6 @@
   --section-gutters-y: var(--size-10);
   padding-bottom: var(--section-gutters-y);
   padding-top: var(--section-gutters-y);
-  /* scroll-margin-top: var(--size-scroll-top); */
 
   @media (--mq-sm) {
     --section-gutters-y: var(--size-14);
@@ -22,13 +21,6 @@
     --section-gutters-y: var(--size-32);
   }
 }
-
-/* .section:target:before {
-  content: "";
-  display: block;
-  height: var(--size-header-height);
-  margin: calc(-1 * var(--size-scroll-offset)) 0 0;
-} */
 
 .section--full {
   left: 50%;
