@@ -11,6 +11,11 @@
   font-weight: var(--font-weight-semibold);
 }
 
+:--heading[id],
+.richtext :--rt-heading[id] {
+  scroll-margin-top: var(--size-scroll-offset);
+}
+
 .h1,
 .richtext h1 {
   font-size: var(--font-size-4xl);
