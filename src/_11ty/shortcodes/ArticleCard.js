@@ -4,11 +4,8 @@ const formatDate = require(`${filtersDir}/formatDate.js`);
 const removeHtml = require(`${filtersDir}/removeHtml.js`);
 const truncate = require(`${filtersDir}/truncate.js`);
 
-module.exports = (
-  { data = {}, templateContent, url } = {},
-  { showLabel } = {}
-) => {
-  const { author = '', date, image, tags, title = '', locale = '' } = data;
+module.exports = ({ data = {}, templateContent, url } = {}, { label } = {}) => {
+  const { author = '', date, image, title = '', locale = '' } = data;
   const imageSrc = image ? image : '/assets/bitmaps/photo-water-02.jpg';
   const captionStrip = removeHtml(templateContent);
   const caption = truncate(captionStrip);
@@ -23,10 +20,10 @@ module.exports = (
           src="${imageSrc}" 
         />
         ${
-          showLabel
+          label
             ? `
-          <span class="absolute bg-red-500 block color-white m-4 p px-3 py-2 right-0 rounded-2 text-semibold top-0">
-            ${getArticleType(tags)}
+          <span class="absolute bg-red-500 block color-white m-4 p px-3 py-2 right-0 rounded-2 text-semibold text-upper top-0">
+            ${label}
           </span>
         `
             : ''

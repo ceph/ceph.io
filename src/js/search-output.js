@@ -1,8 +1,10 @@
 import lunr from 'lunr';
 import articleCard from '../_11ty/shortcodes/ArticleCard.js';
+import translations from '../_data/i18n';
 
 const SearchOutput = {
   init: () => {
+    console.log(translations);
     const urlPath = window.location.pathname.split('/');
     const urlLocale = urlPath[1];
     const searchInput = document.getElementById('search-str');
@@ -47,12 +49,20 @@ const SearchOutput = {
     function renderResults(results = [], searchQuery) {
       let searchResultsHtml;
 
+      const { blog_search_no_results = {} } = translations || {};
+      const noResultsString =
+        blog_search_no_results[urlLocale] || 'No results for';
+
+      const { blog_searched_for = {} } = translations || {};
+      const searchedForString =
+        blog_searched_for[urlLocale] || 'You searched for';
+
       if (!searchresultsContainer) return;
 
       if (!results.length) {
-        searchResultsHtml = `<p class="h3 mb-8 xl:mb-10">No results for “${searchQuery}”</p>`;
+        searchResultsHtml = `<p class="h3 mb-8 xl:mb-10">${noResultsString} “${searchQuery}”</p>`;
       } else {
-        searchResultsHtml = `<p class="h3 mb-8 xl:mb-10">You searched for “${searchQuery}”</p>
+        searchResultsHtml = `<p class="h3 mb-8 xl:mb-10">${searchedForString} “${searchQuery}”</p>
       <ul class="grid md:grid--cols-2 lg:grid--cols-3 xl:grid--cols-4 list-none m-0 p-0">${results
         .map(result => {
           const { author, content, date, image, title, url } = result;
