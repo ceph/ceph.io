@@ -18,10 +18,10 @@ module.exports = (
 
   return `
     <div class="relative">
-      <div class="aspect-ratio aspect-ratio--16x9 aspect-ratio--contain bg-grey-500 mb-4 rounded-2">
+      <div class="aspect-ratio aspect-ratio--16x9 aspect-ratio--cover mb-4 rounded-2">
         <img
           alt="" 
-          class="absolute h-full left-0 rounded-2 top-0"
+          class="absolute h-full left-0 rounded-2 top-0 w-full"
           loading="lazy"
           src="${imageSrc}" 
         />
