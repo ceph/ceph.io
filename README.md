@@ -161,7 +161,7 @@ title: Don't repeat yourself
 
 Shortcodes are reusable code snippets that allow us to sweep away complicated markup into a nice, easy user interface.
 
-For example this is the script for a YouTube embed.
+#### YouTube video player embed
 
 ```
 <iframe
