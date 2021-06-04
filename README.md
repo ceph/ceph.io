@@ -175,7 +175,7 @@ Shortcodes are reusable code snippets that allow us to sweep away complicated ma
 ></iframe>
 ```
 
-We can capture this script in a shortcode so we don't need to repeat it everytime we want to embed a YouTube video. It accepts two values, the `id` and the `title` of the video and uses the following syntax.
+We can capture this markup in a shortcode so we don't need to repeat it everytime we want to embed a YouTube video. It accepts two values, the `id` and the `title` of the video, and uses the following syntax:
 
 ```
 {% YouTube 'vQF17UBU4RE', 'Ceph Tech Talk: Karan Singh - Scale Testing Ceph with 10Billion+ Objects 2020-10-01' %}
