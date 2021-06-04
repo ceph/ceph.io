@@ -183,4 +183,4 @@ We can capture this markup in a shortcode so we don't need to repeat it everytim
 
 The first argument is the name of the shortcode `YouTube` and then we pass it the id of the video `vQF17UBU4RE` followed by the title `Ceph Tech Talk: Karan Singh - Scale Testing Ceph with 10Billion+ Objects 2020-10-01`.
 
-We now have a single source of truth for the YouTube embed script making it easy to maintain and easy to reuse with a simple, clean interface.
+We now have a single source of truth for the YouTube embed code making it easy to maintain and easy to reuse with a simple, clean interface.
