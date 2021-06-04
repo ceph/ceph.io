@@ -5,38 +5,30 @@
  */
 
 module.exports = function (text) {
-  // all lower case
   var content = new String(text);
+
+  // all lower case
   var content = content.toLowerCase();
 
   // remove all html elements and new lines
-  var html = /(&lt;.*?&gt;)|(<.*?>)/gi;
-  var plain = unescape(content.replace(html, ''));
+  const html = /(&lt;.*?&gt;)|(<.*?>)/gi;
+  const plain = unescape(content.replace(html, ''));
 
   // remove duplicated words
-  var words = plain.split(' ');
-  var deduped = [...new Set(words)];
-  var dedupedStr = deduped.join(' ');
+  const words = plain.split(' ');
+  const deduped = [...new Set(words)];
+  const result = deduped.join(' ');
 
-  // remove short and less meaningful words
-  var shortWords = /\b(the|a|an|and|am|you|I|to|if|of|off|me|my|on|in|it|is|at|as|we|do|be|has|but|was|so|no|not|or|up|for|ve|ll|re|s)\b/gi;
-  var result = dedupedStr.replace(shortWords, '');
+  const shortWords = /\b(the|a|an|and|am|you|I|to|if|of|off|me|my|on|in|it|is|at|as|we|do|be|has|but|was|so|no|not|or|up|for|ve|ll|re|s)\b/gi;
+  const unicode = /[\u0000-\u001F\u007F-\u009F]/g;
+  const punctuation = /[!“”‘’"#$%&'()*+,-./\\:;<=>?@[\]^_`{|}~]/g;
+  const lineBreaks = /[\r\n]+/gm;
+  const extraSpaces = /\s+/g;
 
-  // remove unicode characters
-  var unicode = /[\u0000-\u001F\u007F-\u009F]/g;
-  result = result.replace(unicode, '');
-
-  // remove punctuation
-  var punctuation = /[!“”‘’"#$%&'()*+,-./\\:;<=>?@[\]^_`{|}~]/g;
-  result = result.replace(punctuation, '');
-
-  // replace line breaks
-  var lineBreaks = /[\r\n]+/gm;
-  result = result.replace(lineBreaks, ' ');
-
-  // replace extra spaces
-  var extraSpaces = /\s+/g;
-  result = result.replace(extraSpaces, ' ');
-
-  return result;
+  return result
+    .replace(shortWords, '')
+    .replace(unicode, '')
+    .replace(punctuation, '')
+    .replace(lineBreaks, ' ')
+    .replace(extraSpaces, ' ');
 };

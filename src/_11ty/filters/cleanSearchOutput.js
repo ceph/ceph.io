@@ -9,23 +9,16 @@ module.exports = function (text) {
 
   // remove all html elements and new lines
   var html = /(&lt;.*?&gt;)|(<.*?>)/gi;
-  var plain = unescape(content.replace(html, ''));
+  var result = unescape(content.replace(html, ''));
 
-  // remove unicode characters
-  var unicode = /[\u0000-\u001F\u007F-\u009F]/g;
-  result = plain.replace(unicode, '');
+  const unicode = /[\u0000-\u001F\u007F-\u009F]/g;
+  const punctuation = /[#$%&()*+,-./\\:;<=>@[\]^_`{|}~]/g;
+  const lineBreaks = /[\r\n]+/gm;
+  const extraSpaces = /\s+/g;
 
-  // remove punctuation
-  var punctuation = /[#$%&()*+,-./\\:;<=>@[\]^_`{|}~]/g;
-  result = result.replace(punctuation, '');
-
-  // replace line breaks
-  var lineBreaks = /[\r\n]+/gm;
-  result = result.replace(lineBreaks, ' ');
-
-  // replace extra spaces
-  var extraSpaces = /\s+/g;
-  result = result.replace(extraSpaces, ' ');
-
-  return result;
+  return result
+    .replace(unicode, '')
+    .replace(punctuation, '')
+    .replace(lineBreaks, ' ')
+    .replace(extraSpaces, ' ');
 };
