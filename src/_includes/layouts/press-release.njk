@@ -3,6 +3,7 @@ layout: navigation
 ---
 
 {% set pressReleaseLocaleTag = locale + '-press-release' %}
+{% set pressReleaseTag = 'press-release' %}
 {% set articleLocaleTag = locale + '-article' %}
 
 <section class="section">
@@ -38,7 +39,7 @@ layout: navigation
         <div>
           <h2 id="tags-desc" class="h5">{{ 'read_more_articles_like_this' | i18n }}</h2>
           <ul class="list-none p-0" aria-describedby="tags-desc">
-            {% for item in tags | removeTags([pressReleaseLocaleTag, articleLocaleTag]) %}
+            {% for item in tags | removeTags([pressReleaseLocaleTag, pressReleaseTag, articleLocaleTag]) %}
               <li {% if loop.revindex0 %}class="mb-3"{% endif %}>
                 <a class="button button--pill" href="/{{ locale }}/news/blog/category/{{ item | slug }}/">{{ item }}</a>
               </li>
