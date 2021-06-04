@@ -181,6 +181,8 @@ We can capture this markup in a shortcode so we don't need to repeat it everytim
 {% YouTube 'vQF17UBU4RE', 'Ceph Tech Talk: Karan Singh - Scale Testing Ceph with 10Billion+ Objects 2020-10-01' %}
 ```
 
-The first argument is the name of the shortcode `YouTube` and then we pass it the id of the video `vQF17UBU4RE` followed by the title `Ceph Tech Talk: Karan Singh - Scale Testing Ceph with 10Billion+ Objects 2020-10-01`.
+We call shortcodes by name with the Nunjucks block syntax: `{% YouTube %}`. The first argument we pass is the `id` of the video (e.g. `'vQF17UBU4RE'`). The second (optional) argument will set the `title` attribute of the iframe embed (e.g. `'Ceph Tech Talk: Karan Singh - Scale Testing Ceph with 10Billion+ Objects 2020-10-01'`).
+
+_Note:_ Shortcode arguments are type-/space-sensitive, so should should include surrounding `'` quote marks.
 
 We now have a single source of truth for the YouTube embed code making it easy to maintain and easy to reuse with a simple, clean interface.
