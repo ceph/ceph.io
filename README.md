@@ -156,3 +156,33 @@ title: Don't repeat yourself
 
 # {{ title }}
 ```
+
+### Shortcodes
+
+Shortcodes are reusable code snippets that allow us to sweep away complicated markup into a nice, easy user interface.
+
+#### YouTube video player embed
+
+```
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/vQF17UBU4RE"
+  title="Ceph Tech Talk: Karan Singh - Scale Testing Ceph with 10Billion+ Objects 2020-10-01"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+```
+
+We can capture this markup in a shortcode so we don't need to repeat it everytime we want to embed a YouTube video. It accepts two values, the `id` and the `title` of the video, and uses the following syntax:
+
+```
+{% YouTube 'vQF17UBU4RE', 'Ceph Tech Talk: Karan Singh - Scale Testing Ceph with 10Billion+ Objects 2020-10-01' %}
+```
+
+We call shortcodes by name with the Nunjucks block syntax: `{% YouTube %}`. The first argument we pass is the `id` of the video (e.g. `'vQF17UBU4RE'`). The second (optional) argument will set the `title` attribute of the iframe embed (e.g. `'Ceph Tech Talk: Karan Singh - Scale Testing Ceph with 10Billion+ Objects 2020-10-01'`).
+
+_Note:_ Shortcode arguments are type-/space-sensitive, so should should include surrounding `'` quote marks.
+
+We now have a single source of truth for the YouTube embed code making it easy to maintain and easy to reuse with a simple, clean interface.

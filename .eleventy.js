@@ -3,6 +3,8 @@ const fs = require('fs');
 // Plugins
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const i18n = require('eleventy-plugin-i18n');
+const markdownIt = require('markdown-it');
+const markdownItAnchor = require('markdown-it-anchor');
 const translations = require('./src/_data/i18n');
 
 module.exports = function (eleventyConfig) {
@@ -31,6 +33,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('getItemsByLocale', require(`${filtersDir}/getItemsByLocale.js`));
   eleventyConfig.addFilter('getItemsInFuture', require(`${filtersDir}/getItemsInFuture.js`));
   eleventyConfig.addFilter('getItemsInPast', require(`${filtersDir}/getItemsInPast.js`));
+  eleventyConfig.addFilter('getSingleDigitFromDate', require(`${filtersDir}/getSingleDigitFromDate.js`));
   eleventyConfig.addFilter('isInFuture', require(`${filtersDir}/isInFuture.js`));
   eleventyConfig.addFilter('objectValues', require(`${filtersDir}/objectValues.js`));
   eleventyConfig.addFilter('randomize', require(`${filtersDir}/randomize.js`));
@@ -70,6 +73,7 @@ module.exports = function (eleventyConfig) {
   // Shortcodes
   const shortcodesDir = `./src/_11ty/shortcodes`;
   eleventyConfig.addShortcode('ArticleCard', require(`${shortcodesDir}/ArticleCard.js`));
+  eleventyConfig.addShortcode('YouTube', require(`${shortcodesDir}/YouTube.js`));
 
   // Transforms
 
@@ -83,6 +87,19 @@ module.exports = function (eleventyConfig) {
       '*': 'en',
     },
   });
+
+  // Markdown overrides
+  let markdownLibrary = markdownIt({
+    html: true,
+    linkify: true,
+  }).use(markdownItAnchor, {
+    level: [2, 3, 4, 5, 6],
+    permalink: true,
+    permalinkClass: 'link-anchor',
+    permalinkSymbol: '¶',
+  });
+
+  eleventyConfig.setLibrary('md', markdownLibrary);
 
   // Run after the build ends
   eleventyConfig.on('afterBuild', () => {

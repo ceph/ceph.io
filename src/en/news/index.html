@@ -69,9 +69,9 @@ order: 5
   </div>
 
   <ul class="grid md:grid--cols-2 lg:grid--cols-4 list-none p-0">
-    {% for item in articles %}
+    {% for item in articles %} {% set articleTag = item.data.tags | getArticleType | i18n %}
     <li>
-      {% ArticleCard item, {showLabel: true} %}
+      {% ArticleCard item, {label: articleTag} %}
     </li>
     {% endfor %}
   </ul>
@@ -86,7 +86,7 @@ order: 5
         <a class="a" href="#">Other ways to stay connected</a>
       </div>
       <div>
-        <a class="button" href="#">Subscribe to Ceph Announcements</a>
+        <a class="button" href="https://lists.ceph.io/postorius/lists/ceph-announce.ceph.io/">Subscribe to Ceph Announcements</a>
       </div>
     </div>
   </div>

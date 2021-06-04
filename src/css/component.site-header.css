@@ -1,7 +1,7 @@
 /* ---------- COMPONENT site header ---------- */
 
 .scroll-offset {
-  height: var(--size-scroll-offset);
+  height: var(--size-header-height);
   position: relative;
   top: 0;
   width: var(--size-px);
