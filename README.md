@@ -156,3 +156,31 @@ title: Don't repeat yourself
 
 # {{ title }}
 ```
+
+### Shortcodes
+
+Shortcodes are reusable code snippets that allow us to sweep away complicated scripts into a nice, easy user interface.
+
+For example this is the script for a YouTube embed.
+
+```
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/vQF17UBU4RE"
+  title="Ceph Tech Talk: Karan Singh - Scale Testing Ceph with 10Billion+ Objects 2020-10-01"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+```
+
+We can capture this script in a shortcode so we don't need to repeat it everytime we want to embed a YouTube video. It accepts two values, the `id` and the `title` of the video and uses the following syntax.
+
+```
+{% YouTube 'vQF17UBU4RE', 'Ceph Tech Talk: Karan Singh - Scale Testing Ceph with 10Billion+ Objects 2020-10-01' %}
+```
+
+The first argument is the name of the shortcode `YouTube` and then we pass it the id of the video `vQF17UBU4RE` followed by the title `Ceph Tech Talk: Karan Singh - Scale Testing Ceph with 10Billion+ Objects 2020-10-01`.
+
+We now have a single source of truth for the YouTube embed script making it easy to maintain and easy to reuse with a simple, clean interface.
