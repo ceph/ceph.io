@@ -4,8 +4,8 @@
 ## I couldn't get the rewrites working but I'd prefer to do it this way so saving for later.
 #map $http_accept_language $lang {
 #    default en;
-#    ~en en-GB;
-#    ~ja ja-JP;
+#    ~en en;
+#    ~ja jp;
 #}
 
 ## Default beta.ceph.io block
@@ -29,14 +29,21 @@ server {
     rewrite_by_lua '
       for lang in (ngx.var.http_accept_language .. ","):gmatch("([^,]*),") do
         if string.sub(lang, 0, 2) == "en" then
-          ngx.redirect("/en-GB/")
+          ngx.redirect("/en/")
         end
         if string.sub(lang, 0, 2) == "ja" then
-          ngx.redirect("/ja-JP/")
+          ngx.redirect("/jp/")
         end
       end
-      ngx.redirect("/en-GB/")
+      ngx.redirect("/en/")
     ';
+  }
+
+  # https://stackoverflow.com/a/43392815/6225562
+  error_page 404 @error404;
+  location @error404 {
+      rewrite ^/(en|jp) /$1/404.html last;
+      rewrite ^ /en/404.html last;
   }
 
   ## TODO: Change ceph.io to {{ fqdn }}?
@@ -55,12 +62,12 @@ server {
   # https://github.com/ceph/ceph.io/issues/101
   include mime.types;
   types {
-    application/javascript mjs;
+    text/javascript mjs;
   }
 
   # https://github.com/ceph/ceph.io/issues/104
   gzip on;
-  gzip_types text/css text/javascript;
+  gzip_types application/json text/css text/javascript;
 }
 
 
@@ -92,14 +99,21 @@ server {
     rewrite_by_lua '
       for lang in (ngx.var.http_accept_language .. ","):gmatch("([^,]*),") do
         if string.sub(lang, 0, 2) == "en" then
-          ngx.redirect("/en-GB/")
+          ngx.redirect("/en/")
         end
         if string.sub(lang, 0, 2) == "ja" then
-          ngx.redirect("/ja-JP/")
+          ngx.redirect("/jp/")
         end
       end
-      ngx.redirect("/en-GB/")
+      ngx.redirect("/en/")
     ';
+  }
+
+  # https://stackoverflow.com/a/43392815/6225562
+  error_page 404 @error404;
+  location @error404 {
+      rewrite ^/(en|jp) /$1/404.html last;
+      rewrite ^ /en/404.html last;
   }
 
   ## TODO: Change ceph.io to {{ fqdn }}?
@@ -118,10 +132,10 @@ server {
   # https://github.com/ceph/ceph.io/issues/101
   include mime.types;
   types {
-    application/javascript mjs;
+    text/javascript mjs;
   }
 
   # https://github.com/ceph/ceph.io/issues/104
   gzip on;
-  gzip_types text/css text/javascript;
+  gzip_types application/json text/css text/javascript;
 }

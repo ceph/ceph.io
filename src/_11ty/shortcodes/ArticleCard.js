@@ -1,32 +1,31 @@
 const filtersDir = `../filters`;
-const articleType = require(`${filtersDir}/articleType.js`);
 const formatDate = require(`${filtersDir}/formatDate.js`);
+const getSingleDigitFromDate = require(`${filtersDir}/getSingleDigitFromDate.js`);
 const removeHtml = require(`${filtersDir}/removeHtml.js`);
 const truncate = require(`${filtersDir}/truncate.js`);
 
-module.exports = (
-  { data = {}, templateContent, url } = {},
-  { showLabel } = {}
-) => {
-  const { author = '', date, image, tags, title = '', locale = '' } = data;
-  const imageSrc = image ? image : 'https://via.placeholder.com/640x360';
+module.exports = ({ data = {}, templateContent, url } = {}, { label } = {}) => {
+  const { author = '', date, image, title = '', locale = '' } = data;
+  const imageSrc = image
+    ? image
+    : `/assets/bitmaps/photo-fabric-0${getSingleDigitFromDate(date)}.jpg`;
   const captionStrip = removeHtml(templateContent);
   const caption = truncate(captionStrip);
 
   return `
     <div class="relative">
-      <div class="aspect-ratio aspect-ratio--16x9 aspect-ratio--contain bg-grey-500 mb-4 rounded-2">
+      <div class="aspect-ratio aspect-ratio--16x9 aspect-ratio--cover mb-4 rounded-2">
         <img
           alt="" 
-          class="absolute h-full left-0 rounded-2 top-0"
+          class="absolute h-full left-0 rounded-2 top-0 w-full"
           loading="lazy"
           src="${imageSrc}" 
         />
         ${
-          showLabel
+          label
             ? `
-          <span class="absolute bg-red-500 block color-white m-4 p px-3 py-2 right-0 rounded-2 text-semibold top-0">
-            ${articleType(tags)}
+          <span class="absolute bg-red-500 block color-white m-4 p px-3 py-2 right-0 rounded-2 text-semibold text-upper top-0">
+            ${label}
           </span>
         `
             : ''

@@ -33,13 +33,13 @@
       return tagsSorted;
     }
   },
-  permalink: '/{{ locale }}/solutions/case-studies/category/{{ tag | slug }}/'
+  permalink: '/{{ locale }}/discover/case-studies/category/{{ tag | slug }}/'
 }
 ---
 
 {% set caseStudyLocaleTag = locale + '-case-study' %}
-{% set caseStudyFilters = collections[caseStudyLocaleTag] | collectionTags([caseStudyLocaleTag]) %}
-{% set caseStudyCategories = collections[tag] | collectionIncludesTag(caseStudyLocaleTag) | reverse %}
+{% set caseStudyFilters = collections[caseStudyLocaleTag] | getCollectionTags([caseStudyLocaleTag]) %}
+{% set caseStudyCategories = collections[tag] | getCollectionByTag(caseStudyLocaleTag) | reverse %}
 
 <section class="section">
   <div class="flex flex--gap-6 flex--align-center flex--justify-between flex--wrap mb-16 xl:mb-24"> 
@@ -49,7 +49,7 @@
         <option value="">{{ 'category' | i18n }}</option>
         {% for item in caseStudyFilters %}
           {% set itemSlug = item | slug + '/'%}
-          <option {% if page.url | endsWith(itemSlug) %}selected{% endif %} value="/{{ locale }}/solutions/case-studies/category/{{ itemSlug }}">
+          <option {% if page.url | endsWith(itemSlug) %}selected{% endif %} value="/{{ locale }}/discover/case-studies/category/{{ itemSlug }}">
             {{ item }}
           </option>
         {% endfor %}
