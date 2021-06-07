@@ -39,6 +39,13 @@ server {
     ';
   }
 
+  # https://stackoverflow.com/a/43392815/6225562
+  error_page 404 @error404;
+  location @error404 {
+      rewrite ^/(en|jp) /$1/404.html last;
+      rewrite ^ /en/404.html last;
+  }
+
   ## TODO: Change ceph.io to {{ fqdn }}?
   ssl_certificate /etc/letsencrypt/live/ceph.io/fullchain.pem;
   ssl_certificate_key /etc/letsencrypt/live/ceph.io/privkey.pem;
@@ -100,6 +107,13 @@ server {
       end
       ngx.redirect("/en/")
     ';
+  }
+
+  # https://stackoverflow.com/a/43392815/6225562
+  error_page 404 @error404;
+  location @error404 {
+      rewrite ^/(en|jp) /$1/404.html last;
+      rewrite ^ /en/404.html last;
   }
 
   ## TODO: Change ceph.io to {{ fqdn }}?
