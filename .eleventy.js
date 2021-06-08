@@ -121,7 +121,7 @@ module.exports = function (eleventyConfig) {
 
           // 404 on --serve
           // https://www.11ty.dev/docs/quicktips/not-found/#with-serve
-          const content_404 = fs.readFileSync('dist/404.html');
+          const content_404 = fs.readFileSync('dist/en/404.html');
           res.write(content_404);
           res.writeHead(404);
           res.end();
