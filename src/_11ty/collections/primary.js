@@ -3,6 +3,9 @@
 module.exports = function (collectionApi) {
   return collectionApi.getAll().filter(item => {
     const { tags = [] } = item.data;
-    return !tags.includes('support');
+
+    const excludeTags = ['support', 'error'];
+
+    return !tags.some(tag => excludeTags.includes(tag));
   });
 };
