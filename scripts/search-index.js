@@ -1,14 +1,20 @@
+const chalk = require('chalk');
 const fs = require('fs');
 const lunr = require('lunr');
 
 const locales = require('../src/_data/locales');
 
 function getData(distDir) {
-  let data = fs.readFileSync(distDir + '/search-raw.json', 'utf-8');
-  return JSON.parse(data);
+  try {
+    let data = fs.readFileSync(distDir + '/search-raw.json', 'utf-8');
+    return JSON.parse(data);
+  } catch (e) {
+    console.log(chalk.red(`Error building search index: ${e.toString()}`));
+    process.exit(1);
+  }
 }
 
-function buildIndex(articles) {
+function buildIndex(articles = []) {
   let searchIndex = lunr(function () {
     this.ref('id');
     this.field('title');

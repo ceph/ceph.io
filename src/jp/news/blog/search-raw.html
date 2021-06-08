@@ -6,4 +6,4 @@ eleventyExcludeFromCollections: true
 ---
 
 [ {% for item in collections['jp-blog-post'] %} { "title":"{{item.data.title}}", "author":"{{item.data.author}}",
-"date":"{{item.data.date}}", "content":"{{ item.templateContent | cleanIndex }}" }{% if loop.last != true %},{% endif %} {% endfor %} ]
+"date":"{{item.data.date}}", "content":"{{ item.templateContent | cleanSearchRaw }}" }{% if loop.last != true %},{% endif %} {% endfor %} ]

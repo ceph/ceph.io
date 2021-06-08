@@ -6,5 +6,5 @@ eleventyExcludeFromCollections: true
 ---
 
 [ {% for item in collections['en-blog-post'] %} { "image":"{{item.data.image}}", "title":"{{item.data.title}}",
-"author":"{{item.data.author}}", "date":"{{item.data.date}}", "url":"{{item.url}}", "content":"{{ item.templateContent | removeHtml |
+"author":"{{item.data.author}}", "date":"{{item.data.date}}", "url":"{{item.url}}", "content":"{{ item.templateContent | cleanSearchOutput |
 truncate }}" }{% if loop.last != true %},{% endif %} {% endfor %} ]
