@@ -15,7 +15,25 @@
     </script>
 
     <title>Ceph.io — {{ title }}</title>
+
+    {% for lang in locales -%}
+
+      {# loop through all the content of the site #}
+      {% for item in collections.all -%}
+
+        {# for each item in the loop, check if
+        - its translationKey matches the current item translationKey
+        - its locale matches the code of the language we are looping through #}
+        {%- if item.data.translationKey == translationKey and item.data.locale == lang.code -%}
+          <link rel="alternate" hreflang="{{ item.data.locale }}" href="{{ item.url }}" />
+        {%- endif -%}
+
+      {%- endfor -%}
+
+    {%- endfor -%}
+
     {# Canonical link? #}
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 
     {# Preload/dns-prefetch #}
 
