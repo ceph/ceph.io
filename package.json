@@ -10,7 +10,6 @@
     "clean": "rimraf dist",
     "start": "npm run dev",
     "dev": "cross-env NODE_ENV=development npm-run-all clean --parallel 'site -- --serve' 'css -- --watch' 'js -- --watch' assets",
-    "prebuild": "node scripts/prebuild",
     "build": "cross-env NODE_ENV=production npm-run-all clean --parallel site css js assets",
     "debug": "cross-env DEBUG=* npx eleventy",
     "prettier": "prettier \"**/*.+(js|jsx|json|css|md|html)\"",
