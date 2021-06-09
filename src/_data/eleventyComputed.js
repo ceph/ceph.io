@@ -1,3 +1,6 @@
+const { page } = require('./i18n');
+const locales = require('./locales');
+
 module.exports = {
   eleventyNavigation: {
     title: data => data.title,
@@ -20,5 +23,11 @@ module.exports = {
       return data.parent || parentPath;
     },
     order: data => data.order || 0,
+  },
+  translationKey: data => {
+    const url = data.page.url;
+
+    // Return everything after the 2nd instance of /
+    return url.substring(url.indexOf('/', 2));
   },
 };

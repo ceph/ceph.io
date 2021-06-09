@@ -2,6 +2,7 @@ const fs = require('fs');
 
 // Plugins
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
+const sitemap = require('@quasibit/eleventy-plugin-sitemap');
 const i18n = require('eleventy-plugin-i18n');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
@@ -17,6 +18,7 @@ module.exports = function (eleventyConfig) {
   // Collections
   const collectionsDir = `./src/_11ty/collections`;
   eleventyConfig.addCollection('primary', require(`${collectionsDir}/primary.js`));
+  eleventyConfig.addCollection('sitemap', require(`${collectionsDir}/sitemap.js`));
 
   // Filters
   const filtersDir = `./src/_11ty/filters`;
@@ -85,6 +87,11 @@ module.exports = function (eleventyConfig) {
     translations,
     fallbackLocales: {
       '*': 'en',
+    },
+  });
+  eleventyConfig.addPlugin(sitemap, {
+    sitemap: {
+      hostname: 'https://ceph.io',
     },
   });
 
