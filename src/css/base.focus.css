@@ -31,3 +31,7 @@
   outline: var(--size-0_5) solid var(--color-blue);
   outline-offset: var(--size-1);
 }
+
+.js-focus-visible .link-anchor.focus-visible {
+  opacity: 1;
+}

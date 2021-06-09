@@ -3,6 +3,8 @@ const fs = require('fs');
 // Plugins
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const i18n = require('eleventy-plugin-i18n');
+const markdownIt = require('markdown-it');
+const markdownItAnchor = require('markdown-it-anchor');
 const translations = require('./src/_data/i18n');
 
 module.exports = function (eleventyConfig) {
@@ -19,7 +21,8 @@ module.exports = function (eleventyConfig) {
   // Filters
   const filtersDir = `./src/_11ty/filters`;
   eleventyConfig.addFilter('chunkByYear', require(`${filtersDir}/chunkByYear.js`));
-  eleventyConfig.addFilter('cleanIndex', require(`${filtersDir}/cleanIndex.js`));
+  eleventyConfig.addFilter('cleanSearchOutput', require(`${filtersDir}/cleanSearchOutput.js`));
+  eleventyConfig.addFilter('cleanSearchRaw', require(`${filtersDir}/cleanSearchRaw.js`));
   eleventyConfig.addFilter('endsWith', require(`${filtersDir}/endsWith.js`));
   eleventyConfig.addFilter('formatDate', require(`${filtersDir}/formatDate.js`));
   eleventyConfig.addFilter('formatDateRange', require(`${filtersDir}/formatDateRange.js`));
@@ -70,6 +73,7 @@ module.exports = function (eleventyConfig) {
   // Shortcodes
   const shortcodesDir = `./src/_11ty/shortcodes`;
   eleventyConfig.addShortcode('ArticleCard', require(`${shortcodesDir}/ArticleCard.js`));
+  eleventyConfig.addShortcode('YouTube', require(`${shortcodesDir}/YouTube.js`));
 
   // Transforms
 
@@ -83,6 +87,19 @@ module.exports = function (eleventyConfig) {
       '*': 'en',
     },
   });
+
+  // Markdown overrides
+  let markdownLibrary = markdownIt({
+    html: true,
+    linkify: true,
+  }).use(markdownItAnchor, {
+    level: [2, 3, 4, 5, 6],
+    permalink: true,
+    permalinkClass: 'link-anchor',
+    permalinkSymbol: '¶',
+  });
+
+  eleventyConfig.setLibrary('md', markdownLibrary);
 
   // Run after the build ends
   eleventyConfig.on('afterBuild', () => {
@@ -104,7 +121,7 @@ module.exports = function (eleventyConfig) {
 
           // 404 on --serve
           // https://www.11ty.dev/docs/quicktips/not-found/#with-serve
-          const content_404 = fs.readFileSync('dist/404.html');
+          const content_404 = fs.readFileSync('dist/en/404.html');
           res.write(content_404);
           res.writeHead(404);
           res.end();
