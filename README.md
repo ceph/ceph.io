@@ -46,7 +46,7 @@ Build the site for production. This will build, optimise and generate a complete
 
 Files are output to the `dist` directory, which is excluded from version control.
 
-:warning: **Important to note:** The `npm run build` action is intended for the build server and production environment only. Building the site isn't necessary during development. Running a build will initiate [`scripts/prebuild.js`](https://github.com/ceph/ceph.io/blob/develop/scripts/images.js), which is responsible for duplicating any missing pages from the default language site (`en`) to all supporting language sites (as determined by the `_data/locales`). This additional script ensures that we have content parity across all sites in production, falling back to English where content is not available. The files generated across the supporting language site directories should not be committed to version control.
+:warning: **Important to note:** The `npm run build` action is intended for the build server and production environment only. Building the site isn't necessary during development. In the future when there are multiple languages running a build will also initiate [`scripts/prebuild.js`](https://github.com/ceph/ceph.io/blob/develop/scripts/images.js), which is responsible for duplicating any missing pages from the default language site (`en`) to all supporting language sites (as determined by the `_data/locales`). This additional script ensures that we have content parity across all sites in production, falling back to English where content is not available. The files generated across the supporting language site directories should not be committed to version control.
 
 ## Debugging
 
