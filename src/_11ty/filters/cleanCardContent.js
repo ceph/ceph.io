@@ -1,5 +1,5 @@
 /**
- * Clean search output data so it's more efficient
+ * Clean template content
  *
  * @param {String} text
  */
@@ -12,7 +12,7 @@ module.exports = function (text) {
   var result = unescape(content.replace(html, ''));
 
   const unicode = /[\u0000-\u001F\u007F-\u009F]/g;
-  const punctuation = /[#$%&()*+,-./\\:;<=>@[\]^_`{|}~]/g;
+  const punctuation = /[#$%()*+/\\<=>@[\]^_`{|}~¶]/g;
   const lineBreaks = /[\r\n]+/gm;
   const extraSpaces = /\s+/g;
 
