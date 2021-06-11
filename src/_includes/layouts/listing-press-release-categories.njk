@@ -39,7 +39,7 @@
 
 {% set pressReleaseLocaleTag = locale + '-press-release' %}
 {% set articleLocaleTag = locale + '-article' %}
-{% set pressReleaseFilters = collections[pressReleaseLocaleTag] | getCollectionTags([pressReleaseLocaleTag, articleLocaleTag]) %}
+{% set pressReleaseFilters = collections[pressReleaseLocaleTag] | getCollectionTags([pressReleaseLocaleTag, articleLocaleTag, 'press-release']) %}
 {% set pressReleaseCategories = collections[tag] | getCollectionByTag(pressReleaseLocaleTag) | reverse %}
 
 <section class="section">
