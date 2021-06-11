@@ -61,6 +61,11 @@
     
     <link rel="manifest" href="/assets/favicons/manifest.json">
 
+    {# Robots #}
+    {% if not site.isProduction %}
+      <meta name="robots" content="noindex, nofollow">
+    {% endif %}
+
     {# Social meta #}
     <meta property="og:locale" content="{{ locale }}">
     <meta property="og:title" content="{% if title %}{{ title }} - {% endif %}{{ site.title }}" />

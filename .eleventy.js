@@ -6,6 +6,7 @@ const sitemap = require('@quasibit/eleventy-plugin-sitemap');
 const i18n = require('eleventy-plugin-i18n');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
+const site = require('./src/_data/site');
 const translations = require('./src/_data/i18n');
 
 module.exports = function (eleventyConfig) {
@@ -91,7 +92,7 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.addPlugin(sitemap, {
     sitemap: {
-      hostname: 'https://ceph.io',
+      hostname: site.isProduction ? 'https://ceph.io' : 'https://develop.ceph.io',
     },
   });
 

@@ -7,4 +7,5 @@ module.exports = {
     facebook: '@cephstorage',
     twitter: '@ceph',
   },
+  isProduction: process.env.NODE_ENV === 'production',
 };
