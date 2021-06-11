@@ -12,6 +12,9 @@ module.exports = {
   coming_up: {
     en: 'Coming up',
   },
+  filter_by_topic: {
+    en: 'Filter by topic',
+  },
   find_out_more: {
     en: 'Find out more',
   },
@@ -88,6 +91,9 @@ module.exports = {
   blog_searched_for: {
     en: 'You searched for',
   },
+  search_all_blog_posts: {
+    en: 'Search all blog posts',
+  },
 
   // Case study
   about_this_case_study: {
@@ -118,6 +124,9 @@ module.exports = {
   },
   event_sponsors: {
     en: 'Event sponsors',
+  },
+  filter_by_event_type: {
+    en: 'Filter by event type',
   },
   previous_events: {
     en: 'Previous events',
