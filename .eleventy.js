@@ -23,7 +23,7 @@ module.exports = function (eleventyConfig) {
   // Filters
   const filtersDir = `./src/_11ty/filters`;
   eleventyConfig.addFilter('chunkByYear', require(`${filtersDir}/chunkByYear.js`));
-  eleventyConfig.addFilter('cleanSearchOutput', require(`${filtersDir}/cleanSearchOutput.js`));
+  eleventyConfig.addFilter('cleanCardContent', require(`${filtersDir}/cleanCardContent.js`));
   eleventyConfig.addFilter('cleanSearchRaw', require(`${filtersDir}/cleanSearchRaw.js`));
   eleventyConfig.addFilter('endsWith', require(`${filtersDir}/endsWith.js`));
   eleventyConfig.addFilter('formatDate', require(`${filtersDir}/formatDate.js`));
