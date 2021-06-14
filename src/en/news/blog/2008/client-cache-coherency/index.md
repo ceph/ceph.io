@@ -3,7 +3,6 @@ title: "Client cache coherency"
 date: "2008-03-24"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 I’ve been shying away from the question of how to manage the client metadata cache consistency for ages, now, under the assumption that it was going to complicate the client/MDS protocol and MDS significantly. Zach’s progress on CRFS got me thinking about it again, though, and I had a realization the other night that most of the complex parts have already been dealt with in the course of making replication across the MDS cluster and client capabilities on file data work:

@@ -4,7 +4,6 @@ date: "2014-05-03"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 A few non profit organizations ([April](http://april.org/), [FSF France](http://fsffrance.org/), [tetaneutral.net](http://tetaneutral.net/)…) and volunteers constantly research how to get compute, storage and bandwidth that are:

@@ -3,7 +3,6 @@ title: "UNSTABLE: test the dynamic tree partitionning with multiple Ceph MDS"
 date: "2014-07-02"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 {% img center http://sebastien-han.fr/images/ceph-mds-unstable-dynamic-subtree-partionning.jpg UNSTABLE: test the dynamic tree partitionning of the Ceph MDS %}

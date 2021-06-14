@@ -3,7 +3,6 @@ title: "Ceph is complaining: too many PGs"
 date: "2015-06-16"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/ceph-complaining-too-many-pgs.jpg "Ceph is complaining: too many PGs")

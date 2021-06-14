@@ -3,7 +3,6 @@ title: "Recursive accounting"
 date: "2008-06-16"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 This is somewhat old news, but the recursive accounting changes have been merged into both the ‘unstable’ and ‘master’ branches, and the feature is [documented in the wiki](http://ceph.newdream.net/wiki/Recursive_accounting).

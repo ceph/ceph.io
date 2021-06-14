@@ -3,7 +3,6 @@ title: "Add Support of Curl_multi_wait for RadosGW on Debian Wheezy"
 date: "2015-06-18"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 ```

@@ -4,7 +4,6 @@ date: "2013-12-21"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 The [erasure code](http://dachary.org/?p=2171) implementation in [Ceph](http://ceph.com/) relies on the jerasure library. It is packaged into a [plugin](https://github.com/ceph/ceph/blob/v0.75/src/osd/ErasureCodePluginJerasure/) that is dynamically loaded by erasure coded pools.  

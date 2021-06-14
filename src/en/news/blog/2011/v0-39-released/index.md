@@ -3,7 +3,6 @@ title: "v0.39 released"
 date: "2011-12-02"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 v0.39 has been tagged and uploaded.  There was a lot of bug fixing going on that isn’t terribly exciting.  That aside, the highlights include:

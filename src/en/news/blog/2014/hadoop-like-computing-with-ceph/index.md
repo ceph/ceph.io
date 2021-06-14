@@ -4,7 +4,6 @@ date: "2014-01-30"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 Computation can be co-located on the machine where a [Ceph](http://ceph.com/) object resides and access it from the local disk instead of going through the network. Noah Watkins [explains it in great detail](http://ceph.com/rados/dynamic-object-interfaces-with-lua/) and it can be experimented with a [Hello World](https://github.com/ceph/ceph/tree/v0.72/examples/librados) example which calls the [hello](https://github.com/ceph/ceph/blob/v0.72/src/cls/hello/cls_hello.cc) plugin included in the [Emperor](http://ceph.com/releases/v0-68-released/) release.  

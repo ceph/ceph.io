@@ -3,7 +3,6 @@ title: "Linus vs FUSE"
 date: "2011-07-08"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 I can’t decide whether Linus is amused or annoyed by the extent to which people hang on his every word, or go nuts over his random rants about this or that. People still talk about his pronouncement about [O\_DIRECT and tripping monkeys](http://lkml.org/lkml/2002/5/11/58) (which has now found a home on [the open(2) man page](http://linux.die.net/man/2/open)). The latest hullabaloo is about his decree that all [FUSE-based file systems are toys](https://lkml.org/lkml/2011/6/9/462).

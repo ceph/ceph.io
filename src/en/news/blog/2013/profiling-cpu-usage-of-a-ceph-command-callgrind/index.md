@@ -4,7 +4,6 @@ date: "2013-12-12"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 After [compiling Ceph](http://ceph.com/docs/master/install/) from sources with:

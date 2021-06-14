@@ -3,7 +3,6 @@ title: "v0.61.7 Cuttlefish update released"
 date: "2013-07-25"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 This release fixes another regression preventing monitors to start after undergoing certain upgrade sequences, as well as some corner cases with Paxos and unusual device names in ceph-disk/cephde-loy.

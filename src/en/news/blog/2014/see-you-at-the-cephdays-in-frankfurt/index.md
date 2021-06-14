@@ -3,7 +3,6 @@ title: "See you at the Cephdays in Frankfurt"
 date: "2014-02-24"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 {% img center http://sebastien-han.fr/images/cephday.png See you at the cephday in London %}

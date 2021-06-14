@@ -3,7 +3,6 @@ title: "Fix nova-scheduler issue with RBD and UUID not found"
 date: "2015-01-14"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/fix-uuid-nova-ceph.jpg "Fix nova-scheduler issue with RBD and UUID not found")

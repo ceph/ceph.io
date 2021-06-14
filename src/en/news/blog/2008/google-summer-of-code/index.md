@@ -3,7 +3,6 @@ title: "Google Summer of Code"
 date: "2008-03-13"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 We’re applying for the Google Summer of Code this year. [Some project ideas](http://ceph.newdream.net/wiki/index.php?title=GSoC08) are posted in the [wiki](http://ceph.newdream.net/wiki/), although of course it is by no means an exhaustive list. From what I’ve read, some of the most successful GSoC projects are proposed by the students. That said, there are lots of interesting projects on the list that could use some love.

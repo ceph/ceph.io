@@ -3,7 +3,6 @@ title: "Ceph: managing CRUSH with the CLI"
 date: "2014-01-13"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/crush-map-cli.jpg "Ceph: managing CRUSH with the CLI")

@@ -3,7 +3,6 @@ title: "Ceph: monitor store taking up a lot of space"
 date: "2014-10-27"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/ceph-big-lvldb-ssts.jpg "Ceph monitor store taking up a lot of space")

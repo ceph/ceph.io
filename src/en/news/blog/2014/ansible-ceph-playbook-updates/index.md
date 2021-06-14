@@ -3,7 +3,6 @@ title: "Ansible Ceph playbook updates"
 date: "2014-03-17"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/ceph-ansible-updates.jpg "Ansible Ceph playbook updates")

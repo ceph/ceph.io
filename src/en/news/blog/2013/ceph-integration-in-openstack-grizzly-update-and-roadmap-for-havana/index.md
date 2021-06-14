@@ -3,7 +3,6 @@ title: "Ceph integration in OpenStack: Grizzly update and roadmap for Havana"
 date: "2013-06-03"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/ceph-openstack-update-roadmap-havana.jpg "Ceph integration in OpenStack: Grizzly update and roadmap for Havana")

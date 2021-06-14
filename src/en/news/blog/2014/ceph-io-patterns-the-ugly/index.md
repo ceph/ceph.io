@@ -3,7 +3,6 @@ title: "Ceph IO patterns: the ugly"
 date: "2014-02-24"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 {% img center http://sebastien-han.fr/images/ceph-io-the-good-the-bad-the-ugly-details.jpg Ceph IO patterns: the good, the bad and the ugly details %}

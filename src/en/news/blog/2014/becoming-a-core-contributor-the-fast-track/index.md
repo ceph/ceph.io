@@ -4,7 +4,6 @@ date: "2014-01-07"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 Anyone willing to become a better Free Software contributor is invited to attend the next session of [Upstream University](http://upstream-university.org/) in advance of [FOSDEM](http://fosdem.org/). The training starts January 30th, 2014 in the morning, at a walking distance from [Grand Place in Brussels](http://www.openstreetmap.org/#map=17/50.84641/4.35933).

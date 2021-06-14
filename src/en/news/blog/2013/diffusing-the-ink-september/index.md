@@ -3,7 +3,6 @@ title: "Diffusing the Ink – September"
 date: "2013-09-04"
 author: "scuttlemonkey"
 tags: 
-  - "planet"
 ---
 
 If you have ventured out under the bright lights of a convention hall in recent months there is a good chance you have had a close encounter with one of the Inktankians spreading the Ceph gospel. From OSCON to a Ceph Day in NYC and Dreamcon to the largest Boston OpenStack meetup to date, we have been busy spreading the good word. The good news is that this trend seems to be continuing for the forseeable future.

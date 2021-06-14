@@ -3,7 +3,6 @@ title: "Start with the RBD support for TGT"
 date: "2014-07-07"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 {% img center http://sebastien-han.fr/images/ceph-rbd-tgt.jpg Start with the RBD support for TGT %}

@@ -4,7 +4,6 @@ date: "2013-11-19"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 Ceph pools are defined to [collocate volumes and instances](http://dachary.org/?p=2494) in [OpenStack](http://openstack.org/) [Havana](http://www.openstack.org/software/havana/). For volumes that do not need the resilience provided by Ceph, a [LVM](http://en.wikipedia.org/wiki/Logical_Volume_Manager_%28Linux%29) [cinder backend](http://docs.openstack.org/admin-guide-cloud/content/managing-volumes.html#multi_backend) is defined in **/etc/cinder/cinder.conf**:

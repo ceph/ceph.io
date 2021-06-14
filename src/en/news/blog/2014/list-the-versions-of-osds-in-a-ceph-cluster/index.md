@@ -4,7 +4,6 @@ date: "2014-09-24"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 List the versions that each OSD in a [Ceph](http://ceph.com/) cluster is running. It is handy to find out how mixed the cluster is.

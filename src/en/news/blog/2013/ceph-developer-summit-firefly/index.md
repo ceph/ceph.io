@@ -3,7 +3,6 @@ title: "Ceph Developer Summit: Firefly"
 date: "2013-11-01"
 author: "scuttlemonkey"
 tags: 
-  - "planet"
 ---
 
 They say “time flies when you’re having fun,” and we have certainly been having fun. Another Ceph Developer Summit is fast approaching. If you didn’t see the announcement on the mailing list we are [accepting community blueprints](http://wiki.ceph.com/01Planning/02Blueprints/Firefly) for ‘Firefly,’ the next major release of Ceph slated for release Feb 2014. We will be sticking with the format from last CDS with two half day sessions hosted in a virtual setting (although this time it looks like we have found something to replace Google Hangouts!). Below you will find the timeline for all summit activities:

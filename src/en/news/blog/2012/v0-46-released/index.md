@@ -3,7 +3,6 @@ title: "v0.46 released"
 date: "2012-04-30"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 Another sprint, and v0.46 is ready.  Big items in this release include:

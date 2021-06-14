@@ -3,7 +3,6 @@ title: "First Impressions Through Fscache and Ceph"
 date: "2013-11-05"
 author: "scuttlemonkey"
 tags: 
-  - "planet"
 ---
 
 It’s always great when we can single out the development efforts of our community (there are so many good ones!). But it’s even better when the developers of our community feel brave enough to share their hard work with the community directly. Recently Milosz Tanski has been putting in some hard work to combine the magic of Ceph and fscache to help CephFS along the path to success. The result is some great work on both projects, and a far better cache than even a squirrel could come up with, read on for details!

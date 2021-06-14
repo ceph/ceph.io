@@ -3,7 +3,6 @@ title: "OpenVZ: Kernel 3.10 With Rbd Module"
 date: "2015-05-04"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 3.X Kernel for OpenVZ is out and it is compiled with rbd module:

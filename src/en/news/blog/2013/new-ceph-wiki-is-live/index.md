@@ -3,7 +3,6 @@ title: "New Ceph Wiki is Live"
 date: "2013-12-30"
 author: "scuttlemonkey"
 tags: 
-  - "planet"
 ---
 
 For those who have used the wiki in recent history you may have noticed that it had been sitting in a read-only state for a little bit around the holidays here. Today the wiki is [back in action](http://wiki.ceph.com) and better than ever! While we are still using MindTouch, we have moved to the SaaS version that allows us to offload the physical infrastructure and gain a few nice features as well.

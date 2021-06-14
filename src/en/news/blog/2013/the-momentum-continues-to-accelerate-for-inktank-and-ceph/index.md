@@ -5,7 +5,6 @@ author: "bryan"
 tags: 
   - "ceph"
   - "inktank"
-  - "planet"
 ---
 
 We launched Inktank in 2012 to provide enterprise-level support for the [Ceph](http://ceph.com/) distributed storage system. Last year we witnessed a major increase in the adoption and interest in Ceph. It truly was a momentous year for us and I am thrilled to be able to share with you some of those highlights as we start 2013 together.

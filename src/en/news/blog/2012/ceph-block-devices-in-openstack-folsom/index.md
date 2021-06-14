@@ -4,7 +4,6 @@ date: "2012-10-15"
 author: "josh"
 tags: 
   - "folsom"
-  - "planet"
 ---
 
 The latest version of OpenStack, Folsom, was recently released. This release makes block devices in general, and Ceph block devices (RBD) in particular, much easier to use. If you’re not familiar with OpenStack terminology, there are a few things you should know before proceeding:

@@ -3,7 +3,6 @@ title: "Map/unmap RBD device on boot/shutdown"
 date: "2013-11-22"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/ceph-automount-at-boot.jpg "Map-unmap RBD device on boot-shutdown")

@@ -3,7 +3,6 @@ title: "Distributed storage and thinking inside the box"
 date: "2013-09-12"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 I usually try to ignore all of [the silly things that people say on the internet](http://xkcd.com/386/), but every once in a while there is something from a reputable source that is sufficiently misleading that I feel obliged to respond.  [Cloudscaling](http://www.cloudscaling.com/) CEO Randy Bias’s whitepaper [Converged Storage, Wishful Thinking & Reality](http://cloudscaling.com/wp-content/themes/cloudscaling/assets/downloads/cloudscaling_whitepaper_converged_storage.pdf) is an example of the sort of paper that deserves a proper rebuttal, if only because it comes from someone who normally provides keen observations and interesting perspectives.  Jeff Darcy (of [GlusterFS](http://www.gluster.org/)) has already posted [a frank response](http://pl.atyp.us/2013-09-wistful-thinking.html) summarizing his problems with Randy’s reasoning (in his signature style), but there are a few things I’d like to highlight here.

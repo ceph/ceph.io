@@ -3,7 +3,6 @@ title: "Deploying Ceph with ComodIT"
 date: "2013-02-14"
 author: "scuttlemonkey"
 tags: 
-  - "planet"
 ---
 
 At this year’s [Cloud Expo Europe](http://www.cloudexpoeurope.com/) I had a nice chat with the guys from ComodIT who are making some interesting deployment and orchestration tools. They were kind enough to include their work in a blog post earlier this week and give me permission to replicate it here for your consumption.

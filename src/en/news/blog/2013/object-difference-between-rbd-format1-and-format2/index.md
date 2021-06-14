@@ -3,7 +3,6 @@ title: "Object Difference Between RBD Format1 and Format2"
 date: "2013-09-10"
 author: "syndicated"
 tags: 
-  - "planet"
 ---
 
 Lets take a look how rbd object are store on rados and the difference between format 1 and format 2.

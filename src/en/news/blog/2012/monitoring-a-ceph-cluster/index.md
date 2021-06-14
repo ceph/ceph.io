@@ -3,7 +3,6 @@ title: "Monitoring a Ceph Cluster"
 date: "2012-12-06"
 author: "scuttlemonkey"
 tags: 
-  - "planet"
 ---
 
 [![](images/rtfm.png "Inktank will help even if you don't RTFM.")](http://www.xkcd.org/293/)

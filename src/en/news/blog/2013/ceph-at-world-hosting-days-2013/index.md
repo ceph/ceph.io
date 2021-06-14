@@ -3,7 +3,6 @@ title: "Ceph at World Hosting Days 2013"
 date: "2013-03-28"
 author: "scuttlemonkey"
 tags: 
-  - "planet"
   - "whd"
   - "whd2013"
 ---

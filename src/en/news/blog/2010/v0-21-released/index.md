@@ -3,7 +3,6 @@ title: "v0.21 released"
 date: "2010-07-29"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 It’s been a while, but v0.21 is ready.  Most of the work this time around has been on stability. There is one key new feature, however: RBD, the rados block device, which let you create a virtual disk backed by objects stored in the Ceph cluster.  The images can be mapped natively by the ceph kernel module or via a driver in qemu/KVM.  Although neither of those drivers is upstream yet, the server side functionality and admin tools are in place.

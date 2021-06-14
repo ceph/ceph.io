@@ -3,7 +3,6 @@ title: "Asynchronous metadata operations"
 date: "2009-01-12"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 The focus for the last few weeks has been on speeding up metadata operations.  The problem has been that the focus was first and foremost on reliability and recoverability.  Each metadata operation was performed by the MDS, and it was journaled safely to the OSDs before being applied.  This meant that every metadata operation went something like client -> mds -> primary osd -> replica osd -> primary osd -> mds -> client.  This was very safe (a failure of the client, mds, or osd would not cause any problems) but was especially slow for things like untar (open/create, chmod, chown).

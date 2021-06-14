@@ -3,7 +3,6 @@ title: "Rados Block Device merged for 2.6.37"
 date: "2010-10-29"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 The Linux kernel merge window is open for v2.6.37, and RBD (rados block device) has finally been merged.  RBD lets you create a block device in Linux that is striped over objects stored in a Ceph distributed object store.  This basic approach gives you some nice features:

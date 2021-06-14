@@ -4,7 +4,6 @@ date: "2014-06-25"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 **Note:** this is only useful for people with access to the Ceph lab.

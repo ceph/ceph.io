@@ -3,7 +3,6 @@ title: "Quick analysis of the Ceph IO layer"
 date: "2013-10-02"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/ceph-io-layer-analysis.jpg "Quick analysis of the Ceph IO layer")

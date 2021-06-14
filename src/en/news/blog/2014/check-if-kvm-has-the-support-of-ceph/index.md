@@ -3,7 +3,6 @@ title: "Check if KVM has the support of Ceph"
 date: "2014-01-17"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/debian-ceph.png "Check if KVM has the support of Ceph")

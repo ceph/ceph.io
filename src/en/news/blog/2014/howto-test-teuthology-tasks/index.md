@@ -4,7 +4,6 @@ date: "2014-09-10"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 The [Ceph](http://ceph.com/) integration tests run by [teuthology](https://github.com/ceph/teuthology/) are described with YAML files in the [ceph-qa-suite](https://github.com/ceph/ceph-qa-suite/) repository. The actual work is carried out on machines provisioned by teuthology via [tasks](https://github.com/ceph/ceph-qa-suite/tree/master/tasks). For instance, the [workunit](https://github.com/dachary/ceph-qa-suite/blob/wip-workunit/tasks/workunit.py) task runs a script found in the [qa/workunits](https://github.com/ceph/ceph/tree/firefly/qa/workunits/) directory of the [Ceph repository](https://github.com/ceph/ceph/).  

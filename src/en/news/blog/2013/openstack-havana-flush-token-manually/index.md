@@ -3,7 +3,6 @@ title: "OpenStack Havana flush token manually"
 date: "2013-09-06"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 It has always been a huge pain to manage token in MySQL espacially with PKI token since they are larger than UUID token. Almost a year ago I wrote [an article to purge token via a script](http://www.sebastien-han.fr/blog/2012/12/12/cleanup-keystone-tokens/). So finally, we have an easy option to purge all expired token.

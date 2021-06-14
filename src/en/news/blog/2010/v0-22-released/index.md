@@ -3,7 +3,6 @@ title: "v0.22 released"
 date: "2010-10-15"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 It’s a bit late, but v0.22 is here.  The original goal for this release was to have a stable clustered MDS that we can encourage users to test.  Unfortunately, we did not quite make that mark: there are still a couple significant bugs we’re working on, and I don’t want to push this release back any farther.  In retrospect, having such an infrequent release schedule to begin with (>2 months since v0.21!) makes our life a bit harder because we are tracking bug fixes in both branches, and end up with a long delay between a new feature being merged and most users testing it.  For the next release (and the immediate future), we will be aiming for more frequent releases, and will stick as close as possible to the original timeline.

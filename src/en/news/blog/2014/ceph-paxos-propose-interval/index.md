@@ -4,7 +4,6 @@ date: "2014-02-01"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 When a command is sent to the [Ceph](http://ceph.com/) monitor, such as [ceph osd pool create](https://github.com/ceph/ceph/blob/v0.75/src/mon/OSDMonitor.cc#L3960), it will [add a pool](https://github.com/ceph/ceph/blob/v0.75/src/mon/OSDMonitor.cc#L3960) to the pending changes of the maps. The modification is [stashed](https://github.com/ceph/ceph/blob/v0.75/src/mon/OSDMonitor.cc#L4053) for [paxos propose interval](https://github.com/ceph/ceph/blob/master/src/common/config_opts.h#L218) seconds before it is used to build new maps and becomes effective. This guarantees that the mons are not updated more than once a second ( the default value of **paxos propose interval** ).  

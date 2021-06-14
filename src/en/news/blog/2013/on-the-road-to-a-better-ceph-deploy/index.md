@@ -3,7 +3,6 @@ title: "On the Road to a Better Ceph-Deploy"
 date: "2013-09-26"
 author: "alfredo"
 tags: 
-  - "planet"
 ---
 
 [Ceph-deploy](https://github.com/ceph/ceph-deploy) is the easy deployment tool for Ceph, but for a while it caused more than one headache: almost no logging and no clear error messages when something went wrong.

@@ -4,7 +4,6 @@ date: "2013-11-12"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 [OpenStack Havana](http://redmine.the.re/projects/there/wiki/HOWTO_setup_OpenStack) is installed on machines rented from [OVH](http://ovh.com) and [Hetzner](http://hetzner.de). An [aggregate is created](http://russellbryantnet.wordpress.com/2013/05/21/availability-zones-and-host-aggregates-in-openstack-compute-nova/) for machines hosted at OVH and another for machines hosted at Hetzner. A [Ceph](http://ceph.com) cluster is created with a pool using disks from OVH and another pool using disks from Hetzner. A [cinder](https://en.wikipedia.org/wiki/OpenStack#Block_Storage_.28Cinder.29) backend is created for each Ceph pool. From the [dashboard](https://en.wikipedia.org/wiki/OpenStack#Dashboard_.28Horizon.29), an instance can be created in the OVH availability zone using a Ceph volume provided by the matching OVH pool.  

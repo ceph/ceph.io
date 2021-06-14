@@ -3,7 +3,6 @@ title: "v0.42.2 released"
 date: "2012-02-24"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 This release contains a few key fixes for v0.42:

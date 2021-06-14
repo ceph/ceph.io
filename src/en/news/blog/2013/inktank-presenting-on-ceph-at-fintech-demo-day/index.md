@@ -4,7 +4,6 @@ date: "2013-07-11"
 author: "bryan"
 tags: 
   - "open-source"
-  - "planet"
   - "storage"
 ---
 

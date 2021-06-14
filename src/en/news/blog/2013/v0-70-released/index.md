@@ -3,7 +3,6 @@ title: "v0.70 released"
 date: "2013-10-06"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 Another development release is out.  Our timing on these has been slightly erratic.  As a result, this one has a bit less stuff than 0.69 did or 0.71 will.  The highlights are some rgw and mon fixes, and the architecture detection for enabling the optimized Intel CRC32c code is now working (which is nice: it’s about 8x faster than the generic code!).  This is one minor librados API fix; librados users should check the [release notes](http://ceph.com/docs/master/release-notes/#v0-70).

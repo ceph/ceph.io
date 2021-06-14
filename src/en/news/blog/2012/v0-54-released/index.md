@@ -3,7 +3,6 @@ title: "v0.54 released"
 date: "2012-11-14"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 The v0.54 development release is ready!  This will be the last development release before v0.55 “bobtail,” our next long-term stable release, is ready.  Notable changes this time around include:

@@ -3,7 +3,6 @@ title: "State of the union: Ceph and Citrix"
 date: "2013-05-23"
 author: "scuttlemonkey"
 tags: 
-  - "planet"
 ---
 
 Since last month saw huge amounts of OpenStack news coming out of the Developer Summit in Portland, I thought it might be worth spending some time on CloudStack and its ecosystem this month. With the Citrix Synergy event in full swing, a ‘State of the Union’ with respect to Ceph and Citrix is probably the easiest way to look at all the great things going on.

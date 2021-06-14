@@ -3,7 +3,6 @@ title: "Ceph Loves Jumbo Frames"
 date: "2015-04-25"
 author: "syndicated"
 tags: 
-  - "planet"
 ---
 
 ![Ceph Loves Jumbo Frames](images/jumbo-frames.png "Ceph Loves Jumbo Frames") Who doesn’t loves a high performing Ceph storage cluster. To get this you need to tame it , i mean not only Ceph tuning but also Network needs to be tuned. The quickest way to tune your network is to enable Jumbo Frames.

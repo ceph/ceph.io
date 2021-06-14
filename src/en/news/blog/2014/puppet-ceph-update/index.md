@@ -4,7 +4,6 @@ date: "2014-06-28"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 End of last year, a new [puppet-ceph module](https://github.com/ceph/puppet-ceph/) was bootstrapped with the ambitious goal to re-unite the dozens of individual efforts. I’m very happy with what we’ve accomplished. We are [making progress](https://github.com/ceph/puppet-ceph/graphs/commit-activity) although [our community is mixed](https://github.com/ceph/puppet-ceph/graphs/contributors), but more importantly, we do things differently.  

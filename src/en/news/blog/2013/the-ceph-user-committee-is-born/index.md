@@ -3,7 +3,6 @@ title: "The Ceph User Committee is born"
 date: "2013-12-10"
 author: "scuttlemonkey"
 tags: 
-  - "planet"
 ---
 
 If you have been keeping an eye on the [Ceph mailing lists](http://ceph.com/resources/mailing-list-irc/) you probably noticed the recent launch of the Ceph User Committee that was [discussed](http://wiki.ceph.com/01Planning/02Blueprints/Firefly/Ceph_User_Committee) at the Firefly user summit. This is an exciting development in the Ceph community as it gives us many more hands to make sure that Ceph users around the world have the ability to collaborate and further the technology in any way that they are able.

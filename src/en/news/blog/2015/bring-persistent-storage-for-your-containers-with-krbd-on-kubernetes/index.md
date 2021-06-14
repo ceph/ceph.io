@@ -3,7 +3,6 @@ title: "Bring persistent storage for your containers with KRBD on Kubernetes"
 date: "2015-06-28"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 {% img center http://sebastien-han.fr/images/kubernetes-ceph-krbd.png Bring persistent storage for your containers with KRBD on Kubernetes %}

@@ -4,7 +4,6 @@ date: "2015-07-11"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 **Note: this is obsoleted by [Ceph integration tests made simple with OpenStack](http://dachary.org/?p=3828)**

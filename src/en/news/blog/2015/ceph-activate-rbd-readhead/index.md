@@ -3,7 +3,6 @@ title: "Ceph: activate RBD readahead"
 date: "2015-06-03"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 {% img center http://sebastien-han.fr/images/ceph-rbd-readhead.jpg Ceph: activate RBD readhead %}

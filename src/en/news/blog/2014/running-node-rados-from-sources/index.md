@@ -4,7 +4,6 @@ date: "2014-09-17"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 The [nodejs rados](https://github.com/ksperis/node-rados) module comes [with an example](https://github.com/ksperis/node-rados/blob/master/example.js) that requires a Ceph cluster.  

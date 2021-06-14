@@ -3,7 +3,6 @@ title: "Use existing RBD images and put it into Glance"
 date: "2013-05-07"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/glance-location-rbd.jpg "Use existing RBD images and put it into Glance")

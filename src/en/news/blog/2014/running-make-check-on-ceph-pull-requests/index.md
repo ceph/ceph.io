@@ -4,7 +4,6 @@ date: "2014-11-10"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 Each [Ceph](http://ceph.com/) contribution is expected to successfully run **make check** and pass all the unit tests it contains. The developer runs **make check** locally before [submitting his changes](https://github.com/ceph/ceph/pulls) but the result may be influenced by the development environment. A [draft bot](http://dachary.org/wp-uploads/2014/11/cephbot.txt) is proposed to watch the list of pull requests on a github repository and run a script based on [github3.py](https://github.com/sigmavirus24/github3.py) each time a new patch is uploaded.

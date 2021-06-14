@@ -3,7 +3,6 @@ title: "v0.62 released"
 date: "2013-05-14"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 This is the first release after cuttlefish. Since most of this window was spent on stabilization, there isn’t a lot of new stuff here aside from cleanups and fixes (most of which are backported to v0.61). v0.63 is due out in 2 weeks and will have more goodness.

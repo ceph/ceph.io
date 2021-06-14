@@ -4,7 +4,6 @@ date: "2014-10-07"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 The disk I/O of a [Ceph](http://ceph.com/) [OSD](http://ceph.com/docs/master/man/8/ceph-osd/) thread [scrubbing](http://ceph.com/docs/giant/dev/osd_internals/scrub/) is the same as all other threads by default. It can be lowered with [ioprio options](http://ceph.com/docs/master/rados/configuration/osd-config-ref/) for all OSDs with:

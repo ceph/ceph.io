@@ -3,7 +3,6 @@ title: "A gentle introduction to the erasure coding"
 date: "2013-09-09"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/erasure-coding-intro.jpg "A gentle introduction to the erasure coding")

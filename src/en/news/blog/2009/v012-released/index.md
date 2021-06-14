@@ -3,7 +3,6 @@ title: "v0.12 released"
 date: "2009-08-05"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 I’ve just tagged a v0.12 released, and sent the kernel client patchset off to the Linux kernel and fsdevel lists again.  There was a v0.11 a week ago as well that incorporated some earlier feedback from the kernel lists.

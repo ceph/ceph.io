@@ -3,7 +3,6 @@ title: "Congratulations to Apache CloudStack!"
 date: "2013-03-26"
 author: "rturk"
 tags: 
-  - "planet"
 ---
 
 Today the Apache Software Foundation [announced](http://blogs.apache.org/cloudstack/entry/the_apache_software_foundation_announces) that Apache CloudStack has graduated from the Apache Incubator and become a Top Level Project.

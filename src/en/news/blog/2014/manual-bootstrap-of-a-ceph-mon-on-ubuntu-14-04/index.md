@@ -4,7 +4,6 @@ date: "2014-10-14"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 A [Ceph](http://ceph.com/) MON can be created and run manually for test purposes on Ubuntu-14.04 with:

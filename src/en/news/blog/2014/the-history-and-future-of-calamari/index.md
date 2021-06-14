@@ -3,7 +3,6 @@ title: "The History and Future of Calamari"
 date: "2014-05-30"
 author: "nwl"
 tags: 
-  - "planet"
 ---
 
 Calamari was started in the summer of 2013 with the goal of creating a Ceph management platform that, while not necessary to run Ceph, would make it easier and more efficient to do so. It’s exciting to see the project [open-sourced](http://ceph.com/?p=5862%20%E2%80%8E) with so many eager to contribute.

@@ -3,7 +3,6 @@ title: "Ceph: recover OSDs after SSD journal failure"
 date: "2014-11-27"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/ceph-recover-osd-ssd-journal.jpg "Ceph: recover OSDs after SSD journal failure")

@@ -3,7 +3,6 @@ title: "v0.61.8 Cuttlefish released"
 date: "2013-08-19"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 We’ve made another point release for Cuttlefish.  This release contains a number of fixes that are generally not individually critical, but do trip up users from time to time, are non-intrusive, and have held up under testing.

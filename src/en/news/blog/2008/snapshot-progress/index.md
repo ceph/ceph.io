@@ -3,7 +3,6 @@ title: "Snapshot progress"
 date: "2008-07-24"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 If things seem a bit slow lately, it’s because I’ve been primarily working  

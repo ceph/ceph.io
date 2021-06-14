@@ -3,7 +3,6 @@ title: "v0.30 released"
 date: "2011-06-28"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 We’re pushing out v0.30. Highlights include:

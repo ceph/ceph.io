@@ -3,7 +3,6 @@ title: "CephDays Paris slides"
 date: "2014-09-28"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 My slides from the CephDays in Paris. Main topics were:

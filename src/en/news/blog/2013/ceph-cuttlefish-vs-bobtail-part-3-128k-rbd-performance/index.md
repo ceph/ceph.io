@@ -3,7 +3,6 @@ title: "Ceph Cuttlefish VS Bobtail Part 3: 128K RBD Performance"
 date: "2013-07-11"
 author: "MarkNelson"
 tags: 
-  - "planet"
 ---
 
 Contents

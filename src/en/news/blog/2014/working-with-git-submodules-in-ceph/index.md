@@ -4,7 +4,6 @@ date: "2014-03-21"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 The [gf-complete](http://jerasure.org/jerasure/gf-complete) and [jerasure](http://jerasure.org/jerasure/jerasure) libraries implement the [erasure code](http://en.wikipedia.org/wiki/Erasure_code) functions used in [Ceph](http://ceph.com/). They were copied in Ceph in 2013 because there were no reference repositories at the time. The copy was [removed from the Ceph repository](https://github.com/ceph/ceph/commit/5c34a0f01aa5d0ff6c3027cba1a5248699cf7e39) and [replaced by git submodules](https://github.com/ceph/ceph/commit/ddbb2f7b0ad825bba9a616ba4815b25f80ea525a) to decouple the release cycles.  

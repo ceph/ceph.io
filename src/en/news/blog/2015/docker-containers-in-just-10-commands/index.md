@@ -3,7 +3,6 @@ title: "Docker Containers in Just 10 Commands"
 date: "2015-05-31"
 author: "syndicated"
 tags: 
-  - "planet"
 ---
 
 ![Docker container in 10 commands](images/docker.png "Docker container in 10 commands")

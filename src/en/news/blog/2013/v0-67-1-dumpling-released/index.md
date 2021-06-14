@@ -3,7 +3,6 @@ title: "v0.67.1 Dumpling released"
 date: "2013-08-17"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 This is a bug fix release for Dumpling that resolves a problem with the librbd python bindings (triggered by OpenStack) and a hang in librbd when caching is disabled.

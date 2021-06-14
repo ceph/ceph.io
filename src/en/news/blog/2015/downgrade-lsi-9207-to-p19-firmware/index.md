@@ -3,7 +3,6 @@ title: "Downgrade LSI 9207 to P19 Firmware"
 date: "2015-08-13"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 After numerous problems encountered with the P20 firmware on this card model, here are the steps I followed to flash in P19 Version.

@@ -3,7 +3,6 @@ title: "Updates to Ceph tgt (iSCSI) support"
 date: "2013-11-12"
 author: "dmick"
 tags: 
-  - "planet"
 ---
 
 In [a previous blog post](http://ceph.com/dev-notes/adding-support-for-rbd-to-stgt/) I introduced work we’ve done to the user-space [tgt iSCSI project](http://stgt.sourceforge.net/) to allow exporting RADOS block device (rbd) images as iSCSI targets. I’ve recently taken a short break from working on the [Calamari](http://www.inktank.com/enterprise/) project to update that support to bypass some limitations and add some functionality.

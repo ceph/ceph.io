@@ -3,7 +3,6 @@ title: "How I barely got my first Ceph monitor running in Docker"
 date: "2013-09-19"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/docker-ceph-mon.jpg "Your first ceph-mon with Docker")

@@ -7,7 +7,6 @@ tags:
   - "cloudstack"
   - "eucalyptus"
   - "opennebula"
-  - "planet"
   - "snapshots"
 ---
 

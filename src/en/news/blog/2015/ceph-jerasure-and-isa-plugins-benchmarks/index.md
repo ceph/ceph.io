@@ -4,7 +4,6 @@ date: "2015-05-12"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 In [Ceph](http://ceph.com/), a [pool](http://ceph.com/docs/hammer/rados/operations/pools/) can be configured to use [erasure coding instead of replication](http://ceph.com/docs/hammer/rados/operations/erasure-code/) to save space. When used with Intel processors, the default [Jerasure](http://ceph.com/docs/hammer/rados/operations/erasure-code-jerasure/) plugin that computes erasure code can be replaced by the [ISA](http://ceph.com/docs/hammer/rados/operations/erasure-code-isa//) plugin for better write performances. Here is how they compare on a **Intel(R) Xeon(R) CPU E3-1245 V2 @ 3.40GHz**.

@@ -3,7 +3,6 @@ title: "Ceph Comes to Synnefo and Ganeti"
 date: "2013-02-12"
 author: "scuttlemonkey"
 tags: 
-  - "planet"
 ---
 
 During my most recent schlep through Europe I met some really great people, and heard some awesome Ceph use cases. One particularly interesting case was the work the guys at Synnefo shared with me at [FOSDEM](https://fosdem.org/2013/) that they have been doing with Ganeti and RADOS. They were nice enough to write up some of the details on their blog and give me permission to repost here.

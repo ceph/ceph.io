@@ -3,7 +3,6 @@ title: "Ceph “Office Hours” Announced"
 date: "2013-03-14"
 author: "scuttlemonkey"
 tags: 
-  - "planet"
 ---
 
 If you watch the mailing lists closely you will already have seen the new “[Office Hours](http://www.mail-archive.com/ceph-devel@vger.kernel.org/msg13155.html)” announcement that went out yesterday. We are very excited about the opportunities this provides our larger community for getting directly involved. While Inktank may be the first, we’re hoping that many other organizations will help to “man the rails” in order to answer Ceph questions at times convenient to all parts of the world! Read on for Ross Turk’s unveiling of the program:

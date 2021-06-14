@@ -3,7 +3,6 @@ title: "Why Not Open Source?"
 date: "2013-09-16"
 author: "scuttlemonkey"
 tags: 
-  - "planet"
 ---
 
 In recent history it seems that open source is becoming much more of a household name (are we sick of blog entries titled “Open Source on the Desktop” yet?). From Linux to WordPress and everything in between, there are a myriad of projects that are both successful and freely available via source to anyone who might want to modify or contribute to the project. The question these days is becoming less about “why open source” and more about “why do developers choose to build closed software?’

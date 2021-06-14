@@ -4,7 +4,6 @@ date: "2013-11-26"
 author: "dmsimard"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 Thanks to the hard work of the puppet-openstack community, Puppet was the preferred method of deployment for Openstack in the latest [Openstack User Survey](http://www.openstack.org/blog/2013/11/openstack-user-survey-october-2013/).

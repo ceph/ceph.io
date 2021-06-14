@@ -3,7 +3,6 @@ title: "Ceph OSD : Where Is My Data ?"
 date: "2013-08-20"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 The purpose is to verify where my data is stored on the Ceph cluster.

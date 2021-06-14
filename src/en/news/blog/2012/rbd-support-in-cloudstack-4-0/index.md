@@ -3,7 +3,6 @@ title: "RBD support in CloudStack 4.0"
 date: "2012-10-26"
 author: "widodh"
 tags: 
-  - "planet"
 ---
 
 For the past few months I have been working towards a way to use Ceph for virtual machine images in Apache CloudStack. This integration is important to end users because it allows them to use Ceph’s distributed block device (RBD) to speed up provisioning of virtual machines.

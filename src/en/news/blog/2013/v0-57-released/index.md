@@ -3,7 +3,6 @@ title: "v0.57 released"
 date: "2013-02-19"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 We’ve been spending a lot of time working on bobtail-related stabilization and bug fixes, but our next development release v0.57 is finally here!  Notable changes include:

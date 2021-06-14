@@ -4,7 +4,6 @@ date: "2014-10-07"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 After [Ceph](http://ceph.com/) is built from sources, unit and functional tests can be run with **make check**. Delegating the execution to a container makes it possible to:

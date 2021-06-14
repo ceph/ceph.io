@@ -3,7 +3,6 @@ title: "Deploying Ceph with a Crowbar"
 date: "2012-12-13"
 author: "scuttlemonkey"
 tags: 
-  - "planet"
 ---
 
 We have seen users deploying Ceph in a number of different ways, which is just plain awesome! I have spoken with people deploying with [makecephfs](http://ceph.com/docs/master/rados/deployment/mkcephfs/), [ceph-deploy](http://ceph.com/docs/master/rados/deployment/ceph-deploy/), [Juju](http://jujucharms.com/~james-page/quantal/ceph), [Chef](http://ceph.com/docs/master/rados/deployment/chef/), and even the beginnings of some [Puppet](https://github.com/fcharlier/puppet-ceph) work. However, thanks to collaboration between Inktank and Dell there is a really solid deployment pathway using Dell’s Crowbar tool and a Ceph “barclamp.”

@@ -3,7 +3,6 @@ title: "Map Rbd Kernel Without Install Ceph-common"
 date: "2014-01-09"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 It is not mandatory to install Ceph binaries (especially ceph-common) to be able to map a Rbd blocdevice you can also use the kernel path /sys/bus/rbd provided by rbd module.

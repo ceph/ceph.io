@@ -4,7 +4,6 @@ date: "2013-11-26"
 author: "shan"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 The summit was exciting and full of good things and announcements. We had great Cinder sessions and an amazing Ceph/OpenStack integration session. I’ve led the Ceph/OpenStack integration session with Josh Durgin (Inktank). We had a good participation from the audience. I would like to specially thank Sage Weil, Haomai Wang, Edward Hope-Morley for their good inputs. The main purpose of this session was to gather ideas to improve the Ceph integration into Openstack. Eventually, we built a draft of the Icehouse’s roadmap.

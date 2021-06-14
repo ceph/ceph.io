@@ -3,7 +3,6 @@ title: "Ceph IO patterns: the good"
 date: "2014-02-10"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/ceph-io-the-good-the-bad-the-ugly-details.jpg "Ceph IO patterns: the good, the bad and the ugly details")

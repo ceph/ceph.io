@@ -3,7 +3,6 @@ title: "Ada Initiative Donation Results"
 date: "2012-02-14"
 author: "dona"
 tags: 
-  - "planet"
 ---
 
 Last month, we sponsored the Ada Initiative as a Bronze level sponsor. Ada is an organization that encourages and supports women to join the open technology and culture which is typically dominated by men. It’s not just about balancing out the demographic. Having more women in technology opens up a vast new source for talent. As Sage said in a recent [interview](https://adainitiative.org/2012/01/interview-with-ceph-first-ada-initiative-bronze-sponsor/) for Ada, “It’s hard to find people who are qualified for these jobs, and frustrating when half the human population is excluded and disadvantaged because of the nature of the community. We want to do whatever we can to set an example and change that perspective.”

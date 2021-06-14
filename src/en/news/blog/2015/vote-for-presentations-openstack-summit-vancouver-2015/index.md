@@ -4,7 +4,6 @@ date: "2015-02-17"
 author: "dalgaaf"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 The next OpenStack summit is planed to take place in Vancouver from 18 - 22 May 2015. The  "Call for Speakers" ended last week. The [vote for presentation](https://openstack.org/vote-vancouver/) period started today and will end 23. February, 23:00 UTC (00:00 CEST, [05:00 CST](http://lists.openstack.org/pipermail/openstack/2015-February/011571.html)). 

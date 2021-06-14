@@ -3,7 +3,6 @@ title: "Ceph at the OpenStack Summit Tokyo 2015"
 date: "2015-09-04"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 {% img center http://sebastien-han.fr/images/openstack-summit-tokyo.jpg OpenStack Summit Tokyo: time to vote %}

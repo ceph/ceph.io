@@ -3,7 +3,6 @@ title: "Ceph Osd Reweight"
 date: "2013-12-09"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 ```

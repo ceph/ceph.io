@@ -3,7 +3,6 @@ title: "v0.61.4 released"
 date: "2013-06-20"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 We have resolved a number of issues that v0.61.x Cuttlefish users have been hitting and have prepared another point release, v0.61.4.  This release fixes a rare data corruption during power cycle when using the XFS file system, a few monitor sync problems, several issues with ceph-disk and ceph-deploy on RHEL/CentOS, and a problem with OSD memory utilization during scrub.

@@ -3,7 +3,6 @@ title: "Countdown to Ceph Day: NYC"
 date: "2013-07-25"
 author: "scuttlemonkey"
 tags: 
-  - "planet"
 ---
 
 The time is fast approaching when legacy storage, like all mothers, must say farewell to her children. To help facilitate that process Inktank is kicking off another Ceph day next week (Aug 1st) in New York, NY. This gathering is for everyone from the inquisitive and uninitiated to the experienced and opinionated. If you have any interest in Ceph we would love for you to join us for a full day of Inktank engineers, partners, and all manner of Ceph users talking about Ceph.

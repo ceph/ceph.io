@@ -3,7 +3,6 @@ title: "XenServer Support for RBD"
 date: "2013-07-08"
 author: "nwl"
 tags: 
-  - "planet"
 ---
 
 Ceph has been enjoying tremendous success in the Openstack and Cloudstack communities, and a large part of this is due to the ease of using the Ceph block device (RBD) with the KVM or the open-source Xen hypervisor . This was achieved through patches that were made by Josh Durgin, an Inktank engineer, to Qemu and libvirt which are two generic virtualizations tools used by the hypervisors.

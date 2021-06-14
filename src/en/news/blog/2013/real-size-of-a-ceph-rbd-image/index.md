@@ -3,7 +3,6 @@ title: "Real size of a Ceph RBD image"
 date: "2013-12-19"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/real-size-rbd-image.jpg "Real size of a Ceph RBD image")

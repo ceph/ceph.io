@@ -3,7 +3,6 @@ title: "dbench performance"
 date: "2009-03-11"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 Yehuda and I did some performance tuning with dbench a couple weeks back and made some significant improvements.  Here are the rough numbers, before I forget.  We were testing on a simple client/server setup to make a reasonable comparison with NFS: single server on a single SATA disk, and a single client. Since we were mainly interested in metadata latency, we were using just a single thread (‘dbench 1′).

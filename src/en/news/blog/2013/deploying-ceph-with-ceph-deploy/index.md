@@ -3,7 +3,6 @@ title: "Deploying Ceph with ceph-deploy"
 date: "2013-05-16"
 author: "scuttlemonkey"
 tags: 
-  - "planet"
 ---
 
 If you have deployed Ceph recently without the assistance of an orchestration tool like [Chef](http://wiki.ceph.com/02Guides/Deploying_Ceph_with_Chef) or [Juju](http://ceph.com/dev-notes/deploying-ceph-with-juju/) you may have noticed there has been a lot of attention on [ceph-deploy](https://github.com/ceph/ceph-deploy). Ceph-deploy is the new stand-alone way to deploy Ceph (replacing [mkcephfs](http://ceph.com/docs/master/man/8/mkcephfs/)) that relies only on ssh, sudo, and some Python to get the job done. If you are experimenting with Ceph or find yourself deploying and tearing down Ceph clusters a lot and don’t want the added overhead of an orchestration framework, this is probably the tool for you.

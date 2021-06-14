@@ -4,7 +4,6 @@ date: "2013-11-13"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 On [ganeti](http://code.google.com/p/ganeti/), shutdown the instance and activate its disks:

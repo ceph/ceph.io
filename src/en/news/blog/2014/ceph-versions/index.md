@@ -3,7 +3,6 @@ title: "Ceph Versions"
 date: "2014-06-27"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 6 months since my last post… Firefly is released. [http://ceph.com/releases/v0-80-firefly-released/](http://ceph.com/releases/v0-80-firefly-released/)

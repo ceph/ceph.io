@@ -3,7 +3,6 @@ title: "RBD Client Kernel 3.10.26"
 date: "2014-01-10"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 I take opportunity to the new kernel release 3.10.26 to advise the person using the client rbd kernel update to this version. Indeed a number of fixes have been applied to this version making use of rbd kernel particularly stable.

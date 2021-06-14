@@ -3,7 +3,6 @@ title: "The git repositories have moved"
 date: "2012-03-02"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 We’ve renamed our ‘org’ on github.com, so the new URLs are

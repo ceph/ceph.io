@@ -4,7 +4,6 @@ date: "2013-10-10"
 author: "shan"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 CephDays is the only official event entirely devoted to Ceph. It’s usually one day long, organised by our partner Inktank where several speakers perform talks about Ceph. In a nutshell, it’s a good event to share thoughts, ideas, experiences and debate about Ceph in general with the community. The first event was held last year in the beautiful center of Amsterdam (and we were already present). The last European event was yesterday in London. This conference was pretty exciting since we had a large panel of excellent sessions.

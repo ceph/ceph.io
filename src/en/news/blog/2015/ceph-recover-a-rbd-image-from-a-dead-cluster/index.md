@@ -3,7 +3,6 @@ title: "Ceph recover a RBD image from a dead cluster"
 date: "2015-01-29"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/ceph-recover-rbd.jpg)

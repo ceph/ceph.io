@@ -4,7 +4,6 @@ date: "2015-03-27"
 author: "dmsimard"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 Calculating the storage overhead of a replicated pool in [Ceph](http://ceph.com/) is easy. You divide the amount of space you have by the “size” (amount of replicas) parameter of your storage pool.

@@ -4,7 +4,6 @@ date: "2013-03-28"
 author: "debbie"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 Today, I am excited to announce our partnership with [hastexo](http://www.hastexo.com/) who provides Ceph-related professional services world-wide. We have been working closely with hastexo for some time, including collaboration on the development of new Ceph courseware for new [Inktank training courses](http://www.inktank.com/ceph-training/) that are now available.

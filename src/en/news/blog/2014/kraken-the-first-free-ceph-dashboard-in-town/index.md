@@ -3,7 +3,6 @@ title: "Kraken :: The First Free Ceph Dashboard in Town"
 date: "2014-01-09"
 author: "syndicated"
 tags: 
-  - "planet"
 ---
 
   

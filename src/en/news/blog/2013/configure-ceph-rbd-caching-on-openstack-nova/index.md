@@ -3,7 +3,6 @@ title: "Configure Ceph RBD caching on OpenStack Nova"
 date: "2013-08-22"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/rbd-caching-nova.jpg "Configure RBD caching on Nova")

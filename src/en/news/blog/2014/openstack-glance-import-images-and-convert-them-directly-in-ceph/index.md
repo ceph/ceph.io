@@ -3,7 +3,6 @@ title: "OpenStack Glance: import images and convert them directly in Ceph"
 date: "2014-11-11"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/glance-convert-in-ceph.jpg "OpenStack Glance: import images and convert them directly in Ceph")

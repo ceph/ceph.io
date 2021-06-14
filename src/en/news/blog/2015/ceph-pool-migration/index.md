@@ -3,7 +3,6 @@ title: "Ceph Pool Migration"
 date: "2015-04-15"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 You have probably already be faced to migrate all objects from a pool to another, especially to change parameters that can not be modified on pool. For example, to migrate from a replicated pool to an EC pool, change EC profile, or to reduce the number of PGs… There are different methods, depending on the contents of the pool (RBD, objects), size…

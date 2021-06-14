@@ -3,7 +3,6 @@ title: "v0.24.3 released"
 date: "2011-02-11"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 We’ve released v0.24.3 with more bug fixes, including one that loses data in certain cases when OSDs restart during recovery. It’s pretty much all OSD stuff, which is where we’re focusing our testing efforts currently.

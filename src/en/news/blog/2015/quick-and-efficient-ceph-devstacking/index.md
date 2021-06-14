@@ -3,7 +3,6 @@ title: "Quick and efficient Ceph DevStacking"
 date: "2015-02-24"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 {% img center http://sebastien-han.fr/images/devstack.png Quick and efficient Ceph DevStacking %}

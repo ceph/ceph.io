@@ -3,7 +3,6 @@ title: "Ceph RADOS benchmarks replica impacts"
 date: "2013-12-09"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/ceph-replicaz-impact.jpg "Ceph RADOS benchmarks replica impacts")

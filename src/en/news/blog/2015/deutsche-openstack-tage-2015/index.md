@@ -4,7 +4,6 @@ date: "2015-06-15"
 author: "dalgaaf"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
   

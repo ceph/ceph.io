@@ -6,7 +6,6 @@ tags:
   - "argonaut"
   - "bobtail"
   - "ceph"
-  - "planet"
 ---
 
 Contents

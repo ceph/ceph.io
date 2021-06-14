@@ -5,7 +5,6 @@ author: "shan"
 tags: 
   - "bobtail"
   - "ceph"
-  - "planet"
   - "storage"
 ---
 

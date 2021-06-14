@@ -3,7 +3,6 @@ title: "Ceph Developer Summit Looms"
 date: "2013-05-02"
 author: "scuttlemonkey"
 tags: 
-  - "planet"
 ---
 
 The Ceph developer summit that we [announced](http://ceph.com/events/ceph-developer-summit/) a few weeks ago is nearly upon us! Since the event is next week we wanted to make sure that everyone was aware of the details for participation and attendence.

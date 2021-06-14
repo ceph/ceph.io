@@ -4,7 +4,6 @@ date: "2015-07-29"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 When there are many [backports](http://ceph.com/) in flight, they are more likely to overlap and conflict with each other. When a conflict can be trivially resolved because it comes from the context of a hunk, it’s often enough to just swap the two commits to avoid the conflict entirely. For instance let say a commit on

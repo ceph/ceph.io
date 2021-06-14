@@ -3,7 +3,6 @@ title: "Analyse OpenStack guest writes and reads running on Ceph"
 date: "2015-02-27"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 {% img center http://sebastien-han.fr/images/librbd-io-pattern.jpg Analyse OpenStack guest writes and reads running on Ceph %}

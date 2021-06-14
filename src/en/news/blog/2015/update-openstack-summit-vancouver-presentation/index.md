@@ -4,7 +4,6 @@ date: "2015-03-27"
 author: "dalgaaf"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 The [schedule](https://openstacksummitmay2015vancouver.sched.org/) for the upcoming OpenStack Summit 2015 in Vancouver is finally available. Sage and I submitted a presentation about "[Storage security in a critical enterprise OpenStack environment](https://openstacksummitmay2015vancouver.sched.org/event/0a7288766971898f7515b1d9cc6b96a4)". The submission was accepted and the talk is scheduled for Monday, May 18th, 15:40 - 16:20. 

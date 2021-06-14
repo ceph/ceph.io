@@ -4,7 +4,6 @@ date: "2014-03-06"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 The Ceph erasure code plugin [benchmark for jerasure version 1](http://dachary.org/?p=2594) are compared after an [upgrade to jerasure version 2](http://tracker.ceph.com/issues/7599), using the same command, on the same hardware.

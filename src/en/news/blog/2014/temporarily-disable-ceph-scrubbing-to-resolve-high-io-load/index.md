@@ -4,7 +4,6 @@ date: "2014-08-02"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 In a [Ceph](http://ceph.com/) cluster with [low bandwidth](http://dachary.org/?p=2969), the root disk of an OpenStack instance became extremely slow during days.  

@@ -3,7 +3,6 @@ title: "Multiple Clusters on the Same Hardware: OSD Isolation With LXC"
 date: "2015-01-29"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 Ceph makes it easy to create multiple cluster on the same hardware with the naming of clusters. If you want a better insolation you can use LXC, for example to allow a different version of Ceph between your clusters.

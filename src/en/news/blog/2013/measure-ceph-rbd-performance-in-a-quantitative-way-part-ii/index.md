@@ -3,7 +3,6 @@ title: "Measure Ceph RBD performance in a quantitative way (part II)"
 date: "2013-11-21"
 author: "syndicated"
 tags: 
-  - "planet"
 ---
 
 This is the 2nd post about Ceph RBD performance. In [part1](http://software.intel.com/en-us/blogs/2013/10/25/measure-ceph-rbd-performance-in-a-quantitative-way-part-i), we go talk about random IO perforamnce on Ceph. This time we share the sequential read/write testing data. In case you forget our hardware configurations, we use 40x 1TB SATA disks for data disk plus 12 SSD as journal. And 4x 10Gb links are used to connect the storage clusters with clients together, which provides enough network bandwidth. Below figures show the SR and SW performance with QD=64 and CAP=60MB/s per VM. With the number of Volume/VM increases, the per-VM throughput drops gradually. The SR max total throughput 2759MB/sec happens at VM=80 and SW peak total throughput 1487MB/sec happens at VM=50. However consider our pre-defined QoS requirement (Per-VM throughput is larger than 90% of the pre-defined target), we pick up VM=40 for SR and VM=30 for SW, which results in reported metrics as 2263MB/sec (SR) and 1197MB/sec (SW).

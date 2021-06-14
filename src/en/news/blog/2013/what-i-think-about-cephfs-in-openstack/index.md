@@ -3,7 +3,6 @@ title: "What I think about CephFS in OpenStack"
 date: "2013-06-23"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/what-I-think-about-ceph-and-openstack.jpg "What I think about CephFS in OpenStack")

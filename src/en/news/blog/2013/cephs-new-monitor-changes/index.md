@@ -3,7 +3,6 @@ title: "Ceph’s New Monitor Changes"
 date: "2013-03-07"
 author: "joao"
 tags: 
-  - "planet"
 ---
 
 Back in May 2012, after numerous hours confined to a couple of planes since departing Lisbon, I arrived at Los Angeles to meet most of the folks from Inktank. During my stay I had the chance to meet everybody on the team, attend the company’s launch party and start a major and well deserved rework of some key aspects of the Ceph Monitor. These changes were merged into Ceph for v0.58.

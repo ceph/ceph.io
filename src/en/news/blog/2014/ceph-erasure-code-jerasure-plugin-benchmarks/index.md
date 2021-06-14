@@ -4,7 +4,6 @@ date: "2014-05-27"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 On a **Intel(R) Xeon(R) CPU E5-2630 0 @ 2.30GHz** processor (and all [SIMD](http://en.wikipedia.org/wiki/SIMD) capable Intel processors) the **Reed Solomon Vandermonde** technique of the [jerasure](http://jerasure.org/jerasure/jerasure) plugin, which is [the default](https://github.com/ceph/ceph/blob/firefly/src/common/config_opts.h#L433) in [Ceph Firefly](http://ceph.com/), performs better.

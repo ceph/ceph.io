@@ -4,7 +4,6 @@ date: "2015-08-01"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 [Ceph](http://ceph.com/) [integration tests](https://github.com/ceph/teuthology/) are vital and expensive. Contrary to unit tests that can be run on a laptop, they require multiple machines to deploy an actual Ceph cluster. As the community of Ceph developers expands, the [community lab](http://ceph.github.io/sepia/) needs to expand.

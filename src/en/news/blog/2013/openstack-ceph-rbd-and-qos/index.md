@@ -3,7 +3,6 @@ title: "OpenStack, Ceph RBD and QoS"
 date: "2013-12-22"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/openstack-cinder-rate-limiting.jpg "OpenStack, Ceph RBD and QoS")

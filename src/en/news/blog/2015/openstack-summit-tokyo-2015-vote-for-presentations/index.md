@@ -4,7 +4,6 @@ date: "2015-07-24"
 author: "dalgaaf"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 As mentioned [before](http://blog.bisect.de/2015/07/openstack-summit-tokyo-call-for-speakers.html): then next OpenStack Summit will take place in Tokyo, Japan from 27-30 October 2015. The "Call for Speakers" ended some days ago and now the vote for presentation period started and will end 30. July, 11:59 PDT (31. July  6:59 UTC / 08:59 CEST). 

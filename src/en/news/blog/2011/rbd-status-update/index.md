@@ -3,7 +3,6 @@ title: "RBD Status Update"
 date: "2011-10-11"
 author: "yehudasa"
 tags: 
-  - "planet"
 ---
 
 _Just a quick update on the current status of RBD.  

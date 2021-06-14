@@ -3,7 +3,6 @@ title: "v0.44 released"
 date: "2012-03-21"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 v0.44 is ready!  Changes since v0.43 include:

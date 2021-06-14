@@ -3,7 +3,6 @@ title: "Interested in Ceph? Join us at the OpenStack summit in Paris!"
 date: "2014-10-26"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/openstack-summit-paris.jpg "Interested in Ceph? Join us at the OpenStack summit in Paris")

@@ -4,7 +4,6 @@ date: "2013-11-16"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 The [ceph-conf](http://ceph.com/docs/master/man/8/ceph-conf/) command line queries the **/etc/ceph/ceph.conf** file.

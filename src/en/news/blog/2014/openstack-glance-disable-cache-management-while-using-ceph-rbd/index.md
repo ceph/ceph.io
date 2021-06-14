@@ -3,7 +3,6 @@ title: "OpenStack Glance: disable cache management while using Ceph RBD"
 date: "2014-11-03"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/glance-rbd-disable-cache.jpg "OpenStack Glance: disable cache management while using Ceph RBD")

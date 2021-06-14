@@ -3,7 +3,6 @@ title: "Ceph Community Expands “Geek on Duty”"
 date: "2013-04-25"
 author: "scuttlemonkey"
 tags: 
-  - "planet"
 ---
 
 Last month Inktank launched a community help program that we called “[Office Hours](http://ceph.com/community/ceph-office-hours-announced)” in an attempt to provide specific hours where an engineer would be available to answer questions from the community. These efforts have done a lot for both the ability to answer questions, as well as the ability for our engineers to focus their attention on development while _not_ on duty. Our hope was that the community would jump in and participate in these efforts just like they have done with development efforts. We were not disappointed!

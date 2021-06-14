@@ -3,7 +3,6 @@ title: "Ceph at the Red Hat Summit"
 date: "2014-04-22"
 author: "syndicated"
 tags: 
-  - "planet"
 ---
 
 Last week in San Francisco, we attended the [2014 Red Hat Summit](http://www.redhat.com/summit/). This event, in its tenth year, is a gathering of Red Hat customers and partners looking for information and best practices that help them build better infrastructure.

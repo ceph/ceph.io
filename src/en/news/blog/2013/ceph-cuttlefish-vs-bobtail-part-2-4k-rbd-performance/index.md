@@ -3,7 +3,6 @@ title: "Ceph Cuttlefish VS Bobtail Part 2: 4K RBD Performance"
 date: "2013-07-10"
 author: "MarkNelson"
 tags: 
-  - "planet"
 ---
 
 Contents

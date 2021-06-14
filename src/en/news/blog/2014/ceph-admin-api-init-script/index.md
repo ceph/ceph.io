@@ -3,7 +3,6 @@ title: "Ceph admin API init script"
 date: "2014-01-08"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/ceph-api-init.jpg "Ceph admin API init script")

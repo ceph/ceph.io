@@ -3,7 +3,6 @@ title: "v0.48.2 ‘argonaut’ stable update released"
 date: "2012-09-20"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 Another update to the stable “argonaut” series has been released. This fixes a few important bugs in rbd and radosgw and includes a series of changes to upstart and deployment related scripts that will allow the upcoming ‘ceph-deploy’ tool to work with the argonaut release.

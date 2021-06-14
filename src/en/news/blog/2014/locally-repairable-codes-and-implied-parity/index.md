@@ -4,7 +4,6 @@ date: "2014-06-09"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 When a [Ceph](http://ceph.com/) OSD is lost in an [erasure coded pool](http://ceph.com/docs/master/architecture/#reading-and-writing-encoded-chunks), it can be recovered using the others.

@@ -3,7 +3,6 @@ title: "Getting Involved with Ceph"
 date: "2012-11-19"
 author: "scuttlemonkey"
 tags: 
-  - "planet"
 ---
 
 The Ceph community is made up of many individuals with a wide variety of backgrounds, from FOSS hacker to corporate architect. We feel very fortunate to have such a great, and active, community. Even more so lately, as we have been fielding a number of questions on how best to become a more active participant in the Ceph community. With that in mind we decided it was time to sketch out a brief menu of different engagement opportunities to make it easy for anyone (not just developers) to take part in our digital revolution.

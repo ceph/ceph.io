@@ -3,7 +3,6 @@ title: "v0.5 release sent to linux-fsdevel, -kernel"
 date: "2008-11-14"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 I’ve tagged a v0.5 release, and this time sent the client portion in patch form to linux-kernel and linux-fsdevel for review.  We’ll see what happens!  It weights in a 20k lines of code, so I’ll be impressed if anyone decides to wade through it immediately.

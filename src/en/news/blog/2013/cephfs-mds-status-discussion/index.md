@@ -3,7 +3,6 @@ title: "CephFS MDS Status Discussion"
 date: "2013-03-05"
 author: "gfarnum"
 tags: 
-  - "planet"
 ---
 
 There have been a lot of questions lately about the current status of the Ceph MDS and when to expect a stable release. Inktank has been having some internal discussions around CephFS release development, and I’d like to share them with you and ask for feedback!

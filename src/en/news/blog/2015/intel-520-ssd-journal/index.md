@@ -3,7 +3,6 @@ title: "Intel 520 SSD Journal"
 date: "2015-05-19"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 A quick check of my Intel 520 SSD that running since 2 years on a small cluster.

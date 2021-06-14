@@ -3,7 +3,6 @@ title: "Ceph Journal Migration"
 date: "2014-06-29"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 An exemple for migrating journal from file on the default location to a dedicated partition on /dev/sde1.

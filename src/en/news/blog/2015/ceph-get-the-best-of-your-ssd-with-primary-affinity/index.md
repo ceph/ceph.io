@@ -3,7 +3,6 @@ title: "Ceph: get the best of your SSD with primary affinity"
 date: "2015-08-06"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/ceph-ssd-primary-affinity.jpg "Ceph: get the best of your SSD with primary affinity")

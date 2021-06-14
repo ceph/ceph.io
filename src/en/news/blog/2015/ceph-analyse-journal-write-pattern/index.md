@@ -3,7 +3,6 @@ title: "Ceph: analyse journal write pattern"
 date: "2015-04-13"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/ceph-analyse-journal-writes.jpg "Ceph: analyse journal write pattern")

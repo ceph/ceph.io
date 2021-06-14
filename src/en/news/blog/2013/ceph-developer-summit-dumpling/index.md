@@ -3,7 +3,6 @@ title: "Ceph Developer Summit: Dumpling"
 date: "2013-04-12"
 author: "scuttlemonkey"
 tags: 
-  - "planet"
 ---
 
 Come one, come all, to the world’s first (virtual) Ceph Developer Summit! Now that the Ceph project has moved to a regular release schedule we are trying to be more transparent about the [planning process](http://www.inktank.com/about-inktank/roadmap/). To that end, we would like to invite participation from any interested parties as the next release of Ceph (and beyond) is planned.

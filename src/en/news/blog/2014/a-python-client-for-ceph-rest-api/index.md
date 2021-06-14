@@ -4,7 +4,6 @@ date: "2014-01-01"
 author: "dmsimard"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 After learning there was an [API](http://dmsimard.com/2014/01/01/documentation-for-ceph-rest-api/) for Ceph, it was clear to me that I was going to write a client to wrap around it and use it for various purposes.

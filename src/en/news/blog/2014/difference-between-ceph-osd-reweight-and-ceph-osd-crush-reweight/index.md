@@ -3,7 +3,6 @@ title: "Difference Between 'Ceph Osd Reweight' and 'Ceph Osd Crush Reweight'"
 date: "2014-12-23"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 From Gregory and Craig in mailing list…

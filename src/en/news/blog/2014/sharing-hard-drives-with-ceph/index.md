@@ -4,7 +4,6 @@ date: "2014-04-22"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 A group of users give hard drives to the system administrator of the [Ceph](http://ceph.com/) cluster. In exchange, each of them get credentials to access a dedicated [pool](http://ceph.com/docs/master/rados/operations/pools/) of a given size from the Ceph cluster.  

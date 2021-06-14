@@ -3,7 +3,6 @@ title: "v0.74 released"
 date: "2014-01-02"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 This release includes a few substantial pieces for Firefly, including a long-overdue switch to 3x replication by default and a switch to the “new” CRUSH tunables by default (supported since bobtail). There is also a fix for a long-standing radosgw bug (stalled GET) that has already been backported to emperor and dumpling.

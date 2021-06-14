@@ -3,7 +3,6 @@ title: "Ceph support in OpenNebula 4.0"
 date: "2013-04-04"
 author: "scuttlemonkey"
 tags: 
-  - "planet"
 ---
 
 The Ceph team has been extremely blessed with the number of new people who choose to become involved with our community in some way. Even more exciting are the sheer numbers of people committing code and integration work, and the folks from OpenNebula are a great example of this in action.
