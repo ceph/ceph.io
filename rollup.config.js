@@ -10,8 +10,12 @@ const pluginsES = () => [
   resolve(),
   commonjs({
     dynamicRequireTargets: [
-      './src/_11ty/filters/**/*.js',
-      './src/_11ty/shortcodes/**/*.js',
+      './src/_11ty/filters/formatDate.js',
+      './src/_11ty/filters/formatDateRange.js',
+      './src/_11ty/filters/getItemsByLocale.js',
+      './src/_11ty/filters/getSingleDigitFromDate.js',
+      './src/_11ty/filters/formatDateRange.js',
+      './src/_11ty/shortcodes/ArticleCard.js',
     ],
     transformMixedEsModules: true,
   }),
@@ -24,8 +28,12 @@ const pluginsES5 = () => [
   resolve(),
   commonjs({
     dynamicRequireTargets: [
-      './src/_11ty/filters/**/*.js',
-      './src/_11ty/shortcodes/**/*.js',
+      './src/_11ty/filters/formatDate.js',
+      './src/_11ty/filters/formatDateRange.js',
+      './src/_11ty/filters/getItemsByLocale.js',
+      './src/_11ty/filters/getSingleDigitFromDate.js',
+      './src/_11ty/filters/formatDateRange.js',
+      './src/_11ty/shortcodes/ArticleCard.js',
     ],
     transformMixedEsModules: true,
   }),
