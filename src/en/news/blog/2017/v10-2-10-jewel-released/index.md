@@ -6,7 +6,7 @@ author: "TheAnalyst"
 
 This point release brings a number of important bugfixes in all major components of Ceph, we recommend all Jewel 10.2.x users to upgrade.
 
-### Notable Changes[¶](#id353 "Permalink to this headline")
+### Notable Changes
 
 - build/ops: Add fix subcommand to ceph-disk, fix SELinux denials, and speed up upgrade from non-SELinux enabled ceph to an SELinux enabled one ([issue#20077](http://tracker.ceph.com/issues/20077), [issue#20184](http://tracker.ceph.com/issues/20184), [issue#19545](http://tracker.ceph.com/issues/19545), [pr#14346](https://github.com/ceph/ceph/pull/14346), Boris Ranto)
 - build/ops: deb: Fix logrotate packaging ([issue#19938](http://tracker.ceph.com/issues/19938), [pr#15428](https://github.com/ceph/ceph/pull/15428), Nathan Cutler)

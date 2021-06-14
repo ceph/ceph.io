@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/devstack.png Quick and efficient Ceph DevStacking %}
+![Quick and efficient Ceph DevStacking](http://sebastien-han.fr/images/devstack.png)
 
 Recently I built a little repository on github/ceph where I put two files to help you building your DevStack Ceph.
 

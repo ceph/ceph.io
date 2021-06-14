@@ -8,7 +8,7 @@ We're glad to announce the first release of Nautilus v14.2.0 stable series. Ther
 
 ## [![](images/nautilus.svg_.png)](http://ceph.com/wp-content/uploads/2019/03/nautilus.svg_.png)
 
-## Major Changes from Mimic[¶](#major-changes-from-mimic "Permalink to this headline")
+## Major Changes from Mimic
 
 - _Dashboard_:
     
@@ -76,15 +76,15 @@ We're glad to announce the first release of Nautilus v14.2.0 stable series. Ther
     
     - Ceph has a new set of [orchestrator modules](https://docs.ceph.com/docs/nautilus/mgr/orchestrator_cli/#orchestrator-cli-module) to directly interact with external orchestrators like ceph-ansible, DeepSea, Rook, or simply ssh via a consistent CLI (and, eventually, Dashboard) interface.
 
-## Upgrading from Mimic or Luminous[¶](#upgrading-from-mimic-or-luminous "Permalink to this headline")
+## Upgrading from Mimic or Luminous
 
-### Notes[¶](#notes "Permalink to this headline")
+### Notes
 
 - During the upgrade from Luminous to Nautilus, it will not be possible to create a new OSD using a Luminous ceph-osd daemon after the monitors have been upgraded to Nautilus. We recommend you avoid adding or replacing any OSDs while the upgrade is in progress.
 - We recommend you avoid creating any RADOS pools while the upgrade is in progress.
 - You can monitor the progress of your upgrade at each stage with the `ceph versions` command, which will tell you what ceph version(s) are running for each type of daemon.
 
-### Instructions[¶](#instructions "Permalink to this headline")
+### Instructions
 
 1. If your cluster was originally installed with a version prior to Luminous, ensure that it has completed at least one full scrub of all PGs while running Luminous. Failure to do so will cause your monitor daemons to refuse to join the quorum on start, leaving them non-functional.
     
@@ -242,11 +242,11 @@ We're glad to announce the first release of Nautilus v14.2.0 stable series. Ther
     
     For more information about the telemetry module, see the documentation.
 
-## Upgrading from pre-Luminous releases (like Jewel)[¶](#upgrading-from-pre-luminous-releases-like-jewel "Permalink to this headline")
+## Upgrading from pre-Luminous releases (like Jewel)
 
 You _must_ first upgrade to Luminous (12.2.z) before attempting an upgrade to Nautilus. In addition, your cluster must have completed at least one scrub of all PGs while running Luminous, setting the `recovery_deletes` and `purged_snapdirs` flags in the OSD map.
 
-## Upgrade compatibility notes[¶](#upgrade-compatibility-notes "Permalink to this headline")
+## Upgrade compatibility notes
 
 These changes occurred between the Mimic and Nautilus releases.
 

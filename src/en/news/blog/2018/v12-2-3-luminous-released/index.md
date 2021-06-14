@@ -6,12 +6,12 @@ author: "TheAnalyst"
 
 This is the third bugfix release of Luminous v12.2.x long term stable release series. It contains a range of bug fixes and a few features across Bluestore, CephFS, RBD & RGW. We recommend all the users of 12.2.x series update.
 
-### Notable Changes[¶](#notable-changes "Permalink to this headline")
+### Notable Changes
 
 - _CephFS_:
     - The CephFS client now checks for older kernels’ inability to reliably clear dentries from the kernel dentry cache. The new option client\_die\_on\_failed\_dentry\_invalidate (default: true) may be turned off to allow the client to proceed (dangerous!).
 
-### Other Notable Changes[¶](#other-notable-changes "Permalink to this headline")
+### Other Notable Changes
 
 - bluestore: do not crash on over-large objects ([issue#22161](http://tracker.ceph.com/issues/22161), [pr#19630](https://github.com/ceph/ceph/pull/19630), Sage Weil)
 - bluestore: OSD crash on boot with assert caused by Bluefs on flush write ([issue#21932](http://tracker.ceph.com/issues/21932), [pr#19047](https://github.com/ceph/ceph/pull/19047), Jianpeng Ma)

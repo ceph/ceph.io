@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/openstack-nova-configure-multiple-ceph-backends.jpg OpenStack Nova configure multiple Ceph backends on one hypervisor %}
+![OpenStack Nova configure multiple Ceph backends on one hypervisor](http://sebastien-han.fr/images/openstack-nova-configure-multiple-ceph-backends.jpg)
 
 Configure a Nova hypervisor with more than one backend to store the instance's root ephemeral disks.
 
@@ -13,7 +13,7 @@ Configure a Nova hypervisor with more than one backend to store the instance's r
 
 # I. Rationale
 
-{% img center http://sebastien-han.fr/images/overview-openstack-nova-multi-ceph-backends.png Overview OpenStack Nova configure multiple Ceph backends on one hypervisor %}
+![Overview OpenStack Nova configure multiple Ceph backends on one hypervisor](http://sebastien-han.fr/images/overview-openstack-nova-multi-ceph-backends.png)
 
 The main idea here is to be able to properly use the resources on your hypervisors. Currently, Nova does not support multiple `image_type` backends, which means different root ephemeral disks depending on the instance's flavor and this from a single compute node only. It is a bit like having a multi-backend support similar to Cinder where we could assign types. Since I do not want to have dedicated compute nodes per backend, I had to investigate a little bit to see if I could find a suitable solution. The solution works but is a little unconventional, however I believe it will be useful to anyone with limited number of compute nodes and various use cases.
 

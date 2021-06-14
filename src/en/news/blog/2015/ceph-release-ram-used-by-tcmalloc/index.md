@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/ceph-release-memory-tcmalloc.jpg Ceph release RAM used by TCMalloc %}
+![Ceph release RAM used by TCMalloc](http://sebastien-han.fr/images/ceph-release-memory-tcmalloc.jpg)
 
 Quick tip to release the memory that tcmalloc has allocated but which is not being used by the Ceph daemon itself.
 

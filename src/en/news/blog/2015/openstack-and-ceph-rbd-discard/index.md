@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/openstack-ceph-discard.jpg OpenStack and Ceph: RBD space reclamation %}
+![OpenStack and Ceph: RBD space reclamation](http://sebastien-han.fr/images/openstack-ceph-discard.jpg)
 
 Only Magic Card player might recognize that post picture :) ([if you're interested](http://gatherer.wizards.com/Pages/Card/Details.aspx?name=reclaim))
 

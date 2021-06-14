@@ -6,11 +6,11 @@ author: "TheAnalyst"
 
 This is the second bugfix release of Ceph Octopus stable release series, we recommend that all Octopus users upgrade. This release has a range of fixes across all components and a security fix.
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 - CVE-2020-10736: Fixed an authorization bypass in mons & mgrs (Olle SegerDahl, Josh Durgin)
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - ceph-volume/batch: check lvs list before access ([pr#34480](https://github.com/ceph/ceph/pull/34480), Jan Fajerski)
 - ceph-volume/batch: return success when all devices are filtered ([pr#34477](https://github.com/ceph/ceph/pull/34477), Jan Fajerski)

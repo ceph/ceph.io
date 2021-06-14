@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/openstack-summit-vancouver.jpg OpenStack summit talks: Ceph and OpenStack upgrades %}
+![OpenStack summit talks: Ceph and OpenStack upgrades](http://sebastien-han.fr/images/openstack-summit-vancouver.jpg)
 
 Self promotion ahead :) For the next OpenStack summit I have submitted two talks.
 

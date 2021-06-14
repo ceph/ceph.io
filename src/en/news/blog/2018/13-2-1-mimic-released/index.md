@@ -6,13 +6,13 @@ author: "TheAnalyst"
 
 This is the first bugfix release of the Mimic v13.2.x long term stable release series. This release contains many fixes across all components of Ceph, including a few security fixes. We recommend that all users upgrade.
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 - CVE 2018-1128: auth: cephx authorizer subject to replay attack ([issue#24836](http://tracker.ceph.com/issues/24836), Sage Weil)
 - CVE 2018-1129: auth: cephx signature check is weak ([issue#24837](http://tracker.ceph.com/issues/24837), Sage Weil)
 - CVE 2018-10861: mon: auth checks not correct for pool ops ([issue#24838](http://tracker.ceph.com/issues/24838), Jason Dillaman)
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - - bluestore: common/hobject: improved hash calculation for hobject\_t etc ([pr#22777](https://github.com/ceph/ceph/pull/22777), Adam Kupczyk, Sage Weil)
     - bluestore,core: mimic: os/bluestore: don’t store/use path\_block.{db,wal} from meta ([pr#22477](https://github.com/ceph/ceph/pull/22477), Sage Weil, Alfredo Deza)

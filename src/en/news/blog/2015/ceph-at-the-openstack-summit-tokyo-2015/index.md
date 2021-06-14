@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/openstack-summit-tokyo.jpg OpenStack Summit Tokyo: time to vote %}
+![OpenStack Summit Tokyo: time to vote](http://sebastien-han.fr/images/openstack-summit-tokyo.jpg)
 
 With this article, I would like to take the opportunity to thank you all for voting for our presentation. It is always with a great pleasure that we will give you the last updates of Ceph developments happening in OpenStack.
 

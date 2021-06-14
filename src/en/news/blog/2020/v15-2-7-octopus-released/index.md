@@ -8,6 +8,6 @@ This is the 7th backport release in the Octopus series. This release fixes a ser
 
   
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - rgw: during GC defer, prevent new GC enqueue ([pr#38249](https://github.com/ceph/ceph/pull/38249), Eric Ivancich, Casey Bodley)

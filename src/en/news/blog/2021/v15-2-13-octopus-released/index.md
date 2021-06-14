@@ -17,7 +17,7 @@ This is the 13th backport release in the Octopus series. We recommend all users 
   
   
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - blk/kernel: fix io\_uring got (4) Interrupted system call ([pr#39899](https://github.com/ceph/ceph/pull/39899), Yanhu Cao)
     

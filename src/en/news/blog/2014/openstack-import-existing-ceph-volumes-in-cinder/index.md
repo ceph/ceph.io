@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/openstack-import-existing-vol-ceph-cinder.jpg OpenStack: import existing Ceph volumes in Cinder %}
+![OpenStack: import existing Ceph volumes in Cinder](http://sebastien-han.fr/images/openstack-import-existing-vol-ceph-cinder.jpg)
 
 This method can be useful while migrating from one OpenStack to another.
 

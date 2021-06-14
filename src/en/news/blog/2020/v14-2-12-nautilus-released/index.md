@@ -6,7 +6,7 @@ author: "TheAnalyst"
 
 This is the 12th backport release in the Nautilus series. This release brings a number of bugfixes across all major components of Ceph. We recommend that all Nautilus users upgrade to this release.
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 - The `ceph df` command now lists the number of pgs in each pool.
     
@@ -15,7 +15,7 @@ This is the 12th backport release in the Nautilus series. This release brings a 
 - It is now possible to specify the initial monitor to contact for Ceph tools and daemons using the `mon_host_override` config option or `--mon-host-override <ip>` command-line switch. This generally should only be used for debugging and only affects initial communication with Ceph’s monitor cluster.
     
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - bluestore/bluefs: make accounting resiliant to unlock() ([pr#36909](https://github.com/ceph/ceph/pull/36909), Adam Kupczyk)
     

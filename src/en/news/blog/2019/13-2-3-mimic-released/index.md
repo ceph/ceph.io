@@ -13,7 +13,7 @@ This is the third bugfix release of the Mimic v13.2.x long term stable release s
 - The bluestore\_cache\_\* options are no longer needed. They are replaced by osd\_memory\_target, defaulting to 4GB. BlueStore will expand and contract its cache to attempt to stay within this limit. Users upgrading should note this is a higher default than the previous bluestore\_cache\_size of 1GB, so OSDs using BlueStore will use more memory by default. For more details, see the [BlueStore docs](http://docs.ceph.com/docs/mimic/rados/configuration/bluestore-config-ref/#automatic-cache-sizing).
 - This version contains an upgrade bug, [http://tracker.ceph.com/issues/36686](http://tracker.ceph.com/issues/36686), due to which upgrading during recovery/backfill can cause OSDs to fail. This bug can be worked around, either by restarting all the OSDs after the upgrade, or by upgrading when all PGs are in “active+clean” state. If you have already successfully upgraded to 13.2.2, this issue should not impact you. Going forward, we are working on a clean upgrade path for this feature.
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - build/ops: Can’t compile Ceph on Fedora 29 as it doesn’t recognize python\*3\*-tox as an install Tox ([issue#18163](http://tracker.ceph.com/issues/18163), [issue#37301](http://tracker.ceph.com/issues/37301), [issue#37422](http://tracker.ceph.com/issues/37422), [pr#25294](https://github.com/ceph/ceph/pull/25294), Nathan Cutler, Brad Hubbard)
 - build/ops: debian: correct ceph-common relationship with older radosgw package ([pr#25115](https://github.com/ceph/ceph/pull/25115), Matthew Vernon)

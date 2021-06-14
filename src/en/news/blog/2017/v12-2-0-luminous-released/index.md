@@ -8,7 +8,7 @@ author: "TheAnalyst"
 
 This is the first release of Luminous v12.2.x long term stable release series. There have been major changes since Kraken (v11.2.z) and Jewel (v10.2.z), and the upgrade process is non-trivial. Please read these release notes carefully. The next stable release will be named Mimic.
 
-### Major Changes from Kraken[¶](#major-changes-from-kraken "Permalink to this headline")
+### Major Changes from Kraken
 
 - _General_:
     
@@ -120,7 +120,7 @@ This is the first release of Luminous v12.2.x long term stable release series. T
         - New “ceph -w” behavior - the “ceph -w” output no longer contains I/O rates, available space, pg info, etc. because these are no longer logged to the central log (which is what `ceph -w` shows). The same information can be obtained by running `ceph pg stat`; alternatively, I/O rates per pool can be determined using `ceph osd pool stats`. Although these commands do not self-update like `ceph -w` did, they do have the ability to return formatted output by providing a `--format=<format>` option.
         - Added new commands `pg force-recovery` and `pg-force-backfill`. Use them to boost recovery or backfill priority of specified pgs, so they’re recovered/backfilled before any other. Note that these commands don’t interrupt ongoing recovery/backfill, but merely queue specified pgs before others so they’re recovered/backfilled as soon as possible. New commands `pg cancel-force-recovery` and `pg cancel-force-backfill` restore default recovery/backfill priority of previously forced pgs.
 
-### Major Changes from Jewel[¶](#major-changes-from-jewel "Permalink to this headline")
+### Major Changes from Jewel
 
 - _RADOS_:
     - We now default to the AsyncMessenger (`ms type = async`) instead of the legacy SimpleMessenger.  The most noticeable difference is that we now use a fixed sized thread pool for network connections (instead of two threads per socket with SimpleMessenger).
@@ -148,7 +148,7 @@ This is the first release of Luminous v12.2.x long term stable release series. T
     - A new pg\_files subcommand to cephfs-data-scan can identify files affected by a damaged or lost RADOS PG.
     - The false-positive “failing to respond to cache pressure” warnings have been fixed.
 
-### Upgrade from Jewel or Kraken[¶](#upgrading "Permalink to this headline")
+### Upgrade from Jewel or Kraken
 
 1. Ensure that the `sortbitwise` flag is enabled:
     
@@ -227,11 +227,11 @@ This is the first release of Luminous v12.2.x long term stable release series. T
 12. Verify the cluster is healthy with `ceph health`.
     
 
-### Upgrading from pre-Jewel releases (like Hammer)[¶](#upgrading-from-pre-jewel-releases-like-hammer "Permalink to this headline")
+### Upgrading from pre-Jewel releases (like Hammer)
 
 You _must_ first upgrade to Jewel (10.2.z) before attempting an upgrade to Luminous.
 
-### Upgrade compatibility notes, Kraken to Luminous[¶](#upgrade-compatibility-notes-kraken-to-luminous "Permalink to this headline")
+### Upgrade compatibility notes, Kraken to Luminous
 
 - The configuration option `osd pool erasure code stripe width` has been replaced by `osd pool erasure code stripe unit`, and given the ability to be overridden by the erasure code profile setting `stripe_unit`. For more details see [Erasure code profiles](http://docs.ceph.com/docs/luminous/rados/operations/erasure-code-profile/#erasure-code-profiles).
     
@@ -281,7 +281,7 @@ You _must_ first upgrade to Jewel (10.2.z) before attempting an upgrade to Lumin
     - The “ceph mds tell …” command has been removed. It is superceded by “ceph tell mds.<id> …”
     - The `apply` mode of cephfs-journal-tool has been removed
 
-### Other Notable Changes[¶](#other-notable-changes "Permalink to this headline")
+### Other Notable Changes
 
 - async: Fixed compilation error when enable -DWITH\_DPDK ([pr#12660](https://github.com/ceph/ceph/pull/12660), Pan Liu)
 - async: fixed coredump when enable dpdk ([pr#12854](https://github.com/ceph/ceph/pull/12854), Pan Liu)

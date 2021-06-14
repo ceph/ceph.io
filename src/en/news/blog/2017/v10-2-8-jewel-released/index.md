@@ -10,7 +10,7 @@ That being said, the v10.2.8 release notes do contain important information, so 
 
 For more detailed information, see [the complete changelog](../_downloads/v10.2.8.txt).
 
-### OSD Removal Caveat[¶](#osd-removal-caveat "Permalink to this headline")
+### OSD Removal Caveat
 
 There was a bug introduced in Jewel (#19119) that broke the mapping behavior when an “out” OSD that still existed in the CRUSH map was removed with ‘osd rm’. This could result in ‘misdirected op’ and other errors. The bug is now fixed, but the fix itself introduces the same risk because the behavior may vary between clients and OSDs. To avoid problems, please ensure that all OSDs are removed from the CRUSH map before deleting them. That is, be sure to do:
 
@@ -20,11 +20,11 @@ before:
 
 ceph osd rm osd.123
 
-### Snap Trimmer Improvements[¶](#snap-trimmer-improvements "Permalink to this headline")
+### Snap Trimmer Improvements
 
 This release greatly improves control and throttling of the snap trimmer. It introduces the “osd max trimming pgs” option (defaulting to 2), which limits how many PGs on an OSD can be trimming snapshots at a time. And it restores the safe use of the “osd snap trim sleep” option, wihch defaults to 0 but otherwise adds the given number of seconds in delay between every dispatch of trim operations to the underlying system.
 
-### Other Notable Changes[¶](#id101 "Permalink to this headline")
+### Other Notable Changes
 
 - build/ops: “osd marked itself down” will not recognised if host runs mon + osd on shutdown/reboot ([issue#18516](http://tracker.ceph.com/issues/18516), [pr#13492](https://github.com/ceph/ceph/pull/13492), Boris Ranto)
 - build/ops: ceph-base package missing dependency for psmisc ([issue#19129](http://tracker.ceph.com/issues/19129), [pr#13786](https://github.com/ceph/ceph/pull/13786), Nathan Cutler)

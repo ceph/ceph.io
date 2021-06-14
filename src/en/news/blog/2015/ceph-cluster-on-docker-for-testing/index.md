@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/ceph-docker-demo.jpg Ceph cluster on Docker for testing %}
+![Ceph cluster on Docker for testing](http://sebastien-han.fr/images/ceph-docker-demo.jpg)
 
 I haven't advertised this one really much (even if I've been using it in some articles). Since people are still wondering how to quickly get a full Ceph cluster up and running for testing, I believe it deserves its own article so it will get more visibility. Re-introducing the [Ceph demo container](https://github.com/ceph/ceph-docker/tree/master/demo). This is going to be a really short article :).
 

@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/ansible-ceph.jpg Announcing Ansible playbooks for Ceph! %}
+![Announcing Ansible playbooks for Ceph!](http://sebastien-han.fr/images/ansible-ceph.jpg)
 
 Ceph: cow based deployment with Ansible :-).
 

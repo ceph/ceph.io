@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/kubernetes-ceph-krbd.png Bring persistent storage for your containers with KRBD on Kubernetes %}
+![Bring persistent storage for your containers with KRBD on Kubernetes](http://sebastien-han.fr/images/kubernetes-ceph-krbd.png)
 
 Use RBD device to provide persistent storage to your containers. This work was initiated by a colleague of mine [Huamin Chen](https://huaminchen.wordpress.com/). I would like to take the opportunity to thank him for the troubleshooting session we had. Having the ability to use persistent volume for your containers is critical, containers can be ephemeral since they are immutable. If they did on a machine they can be bootstrapped on another host without any problem. The only problem here is we need to ensure that somehow the data that come with this container will follow it no matter where it goes. This is exactly what we want to achieve with this implementation.
 

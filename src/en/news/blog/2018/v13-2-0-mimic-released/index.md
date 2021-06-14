@@ -8,7 +8,7 @@ This is the first stable release of Mimic, the next long term release series. Pl
 
 [![](images/mimc-1024x329.png)](http://ceph.com/wp-content/uploads/2018/05/mimc.png)
 
-## Major Changes from Luminous[¶](#major-changes-from-luminous "Permalink to this headline")
+## Major Changes from Luminous
 
 - _Dashboard_:
     - The (read-only) Ceph manager dashboard introduced in Ceph Luminous has been replaced with a new implementation inspired by and derived from the [openATTIC](https://openattic.org) Ceph management tool, providing a drop-in replacement offering a [number of additional management features](http://docs.ceph.com/docs/mimic/mgr/dashboard/#mgr-dashboard-overview).
@@ -27,14 +27,14 @@ This is the first stable release of Mimic, the next long term release series. Pl
     - Image clones no longer require explicit _protect_ and _unprotect_ steps.
     - Images can be deep-copied (including any clone linkage to a parent image and associated snapshots) to new pools or with altered data layouts.
 
-## Upgrading from Luminous[¶](#upgrading-from-luminous "Permalink to this headline")
+## Upgrading from Luminous
 
-### Notes[¶](#notes "Permalink to this headline")
+### Notes
 
 - We recommend you avoid creating any RADOS pools while the upgrade is in process.
 - You can monitor the progress of your upgrade at each stage with the `ceph versions` command, which will tell you what ceph version(s) are running for each type of daemon.
 
-### Instructions[¶](#instructions "Permalink to this headline")
+### Instructions
 
 1. Make sure your cluster is stable and healthy (no down or recoverying OSDs). (Optional, but recommended.)
     
@@ -128,11 +128,11 @@ This is the first stable release of Mimic, the next long term release series. Pl
 10. Verify the cluster is healthy with `ceph health`.
     
 
-## Upgrading from pre-Luminous releases (like Jewel)[¶](#upgrading-from-pre-luminous-releases-like-jewel "Permalink to this headline")
+## Upgrading from pre-Luminous releases (like Jewel)
 
 You _must_ first upgrade to Luminous (12.2.z) before attempting an upgrade to Mimic.
 
-## Upgrade compatibility notes[¶](#upgrade-compatibility-notes "Permalink to this headline")
+## Upgrade compatibility notes
 
 These changes occurred between the Luminous and Mimic releases.
 
@@ -248,7 +248,7 @@ These changes occurred between the Luminous and Mimic releases.
     - Ceph codebase has now moved to the C++-17 standard.
     - The Ceph LZ4 compression plugin is now enabled by default, and introduces a new build dependency.
 
-## Detailed Changelog[¶](#detailed-changelog "Permalink to this headline")
+## Detailed Changelog
 
  
 

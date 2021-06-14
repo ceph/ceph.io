@@ -5,8 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/docker-ceph-rbd-volume-plugin.jpg Getting started with the Docker RBD volume plugin %}
-
+![Getting started with the Docker RBD volume plugin](http://sebastien-han.fr/images/docker-ceph-rbd-volume-plugin.jpg)
 Docker 1.8 was just released a week ago and with it came the support for volume plugin. Several volume plugins are available but today I will be introducing the Ceph RBD ones (yes there are currently 3 different drivers).
 
   

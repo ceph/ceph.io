@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/ceph-manually-repair-objects.jpg Ceph: manually repair object %}
+![Ceph: manually repair object](http://sebastien-han.fr/images/ceph-manually-repair-objects.jpg)
 
 Debugging scrubbing errors can be tricky and you don't necessary know how to proceed.
 

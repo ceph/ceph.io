@@ -6,7 +6,7 @@ author: "dgalloway"
 
 This is the 8th backport release in the Octopus series. This release fixes a security flaw in CephFS and includes a number of bug fixes. We recommend users to update to this release.
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 - CVE-2020-27781 : OpenStack Manila use of ceph\_volume\_client.py library allowed tenant access to any Ceph credential's secret. (Kotresh Hiremath Ravishankar, Ramana Raja)
     
@@ -21,7 +21,7 @@ This is the 8th backport release in the Octopus series. This release fixes a sec
 - It is now possible to specify the initial monitor to contact for Ceph tools and daemons using the `mon_host_override` config option or `--mon-host-override` command-line switch. This generally should only be used for debugging and only affects initial communication with Ceph's monitor cluster.
     
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - pybind/cephvolumeclient: disallow authorize on existing auth ids (Kotresh Hiremath Ravishankar, Ramana Raja)
 

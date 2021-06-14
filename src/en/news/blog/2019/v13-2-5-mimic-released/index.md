@@ -6,13 +6,13 @@ author: "TheAnalyst"
 
 This is the fifth bugfix release of the Mimic v13.2.x long term stable release series. We recommend all Mimic users upgrade.
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 - This release fixes the pg log hard limit bug that was introduced in 13.2.2, [https://tracker.ceph.com/issues/36686](https://tracker.ceph.com/issues/36686). A flag called pglog\_hardlimit has been introduced, which is off by default. Enabling this flag will limit the length of the pg log. In order to enable that, the flag must be set by running ceph osd set pglog\_hardlimit after completely upgrading to 13.2.2. Once the cluster has this flag set, the length of the pg log will be capped by a hard limit. Once set, this flag _must not_ be unset anymore. In luminous, this feature was introduced in 12.2.11. Users who are running 12.2.11, and want to continue to use this feauture, should upgrade to 13.2.5 or later.
 - This release also fixes a CVE on civetweb, CVE-2019-3821 where SSL file descriptors were not closed in civetweb in case the initial negotiation fails.
 - There have been fixes to RGW dynamic and manual resharding, which no longer leaves behind stale bucket instances to be removed manually. For finding and cleaning up older instances from a reshard a radosgw-admin command reshard stale-instances list and reshard stale-instances rm should do the necessary cleanup. These commands should _not_ be used on a multisite setup as the stale instances may be unlikely to be from a reshard and can have consequences. In the next version the admin CLI will prevent this command to be run on a multisite cluster, however for the current release users are urged not to use the delete command on a multisite cluster.
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - - build/ops: Destruction of basic\_string \_GLIBCXX\_USE\_CXX11\_ABI=0 and C++17 mode results in invalid delete ([issue#38177](http://tracker.ceph.com/issues/38177), [pr#26593](https://github.com/ceph/ceph/pull/26593), Kefu Chai, Jason Dillaman)
     - build/ops: rpm: require ceph-base instead of ceph-common ([issue#37620](http://tracker.ceph.com/issues/37620), [pr#25809](https://github.com/ceph/ceph/pull/25809), Sébastien Han)

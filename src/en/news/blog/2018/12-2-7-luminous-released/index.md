@@ -8,7 +8,7 @@ This is the seventh bugfix release of Luminous v12.2.x long term stable release 
 
 <table class="docutils field-list" frame="void" rules="none"><colgroup><col class="field-name"> <col class="field-body"> </colgroup><tbody valign="top"><tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">The v12.2.6 release has serious known regressions. While 12.2.6 wasn't formally announced, if you've still installed this release, please see the upgrade procedure below.</td></tr><tr class="field-even field"><th class="field-name">note:</th><td class="field-body">The v12.2.5 release has a potential data corruption issue with erasure coded pools. If you ran v12.2.5 with erasure coding, please see below.</td></tr></tbody></table>
 
-## Upgrading from v12.2.6[¶](#upgrading-from-v12-2-6 "Permalink to this headline")
+## Upgrading from v12.2.6
 
 v12.2.6 included an incomplete backport of an optimization for BlueStore OSDs that avoids maintaining both the per-object checksum and the internal BlueStore checksum. Due to the accidental omission of a critical follow-on patch, v12.2.6 corrupts (fails to update) the stored per-object checksum value for some objects. This can result in an EIO error when trying to read those objects.
 
@@ -29,7 +29,7 @@ If your cluster includes BlueStore OSDs and was affected, deep scrubs will gener
 
 Additionally, see the notes below, which apply to both v12.2.5 and v12.2.6.
 
-## Upgrading from v12.2.5 or v12.2.6[¶](#upgrading-from-v12-2-5-or-v12-2-6 "Permalink to this headline")
+## Upgrading from v12.2.5 or v12.2.6
 
 If you used v12.2.5 or v12.2.6 in combination with erasure coded pools, there is a small risk of corruption under certain workloads. Specifically, when:
 
@@ -68,11 +68,11 @@ This will cause an availability outage for the duration of the OSD restarts. If 
 
 5\. Restart all radosgw daemons
 
-## Upgrading from other versions[¶](#upgrading-from-other-versions "Permalink to this headline")
+## Upgrading from other versions
 
 If your cluster did not run v12.2.5 or v12.2.6 then none of the above issues apply to you and you should upgrade normally.
 
-## v12.2.7 Changelog[¶](#notable-changes "Permalink to this headline")
+## v12.2.7 Changelog
 
 - mon/AuthMonitor: improve error message ([issue#21765](http://tracker.ceph.com/issues/21765), [pr#22963](https://github.com/ceph/ceph/pull/22963), Douglas Fuller)
 - osd/PG: do not blindly roll forward to log.head ([issue#24597](http://tracker.ceph.com/issues/24597), [pr#22976](https://github.com/ceph/ceph/pull/22976), Sage Weil)
@@ -80,7 +80,7 @@ If your cluster did not run v12.2.5 or v12.2.6 then none of the above issues app
 - osd: work around data digest problems in 12.2.6 (version 2) ([issue#24922](http://tracker.ceph.com/issues/24922), [pr#23055](https://github.com/ceph/ceph/pull/23055), Sage Weil)
 - rgw: objects in cache never refresh after rgw\_cache\_expiry\_interval ([issue#24346](http://tracker.ceph.com/issues/24346), [pr#22369](https://github.com/ceph/ceph/pull/22369), Casey Bodley, Matt Benjamin)
 
-## Notable Changes in v12.2.6[¶](#v12-2-6-luminous "Permalink to this headline")
+## Notable Changes in v12.2.6
 
 <table class="docutils field-list" frame="void" rules="none"><colgroup><col class="field-name"> <col class="field-body"> </colgroup><tbody valign="top"><tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">This is a broken release with serious known regressions. Do not install it. The release notes below are to track the fixes that were a part of 12.2.6 (and hence 12.2.7)</td></tr></tbody></table>
 
@@ -92,7 +92,7 @@ If your cluster did not run v12.2.5 or v12.2.6 then none of the above issues app
 
 - The config-key interface can store arbitrary binary blobs but JSON can only express printable strings. If binary blobs are present, the ‘ceph config-key dump’ command will show them as something like `<<< binary blob of length N >>>`.
 
-## v12.2.6 Changelog[¶](#other-notable-changes "Permalink to this headline")
+## v12.2.6 Changelog
 
 - build/ops: build-integration-branch script ([issue#24003](http://tracker.ceph.com/issues/24003), [pr#21919](https://github.com/ceph/ceph/pull/21919), Nathan Cutler, Kefu Chai, Sage Weil)
 - cephfs-journal-tool: wait prezero ops before destroying journal ([issue#20549](http://tracker.ceph.com/issues/20549), [pr#21874](https://github.com/ceph/ceph/pull/21874), “Yan, Zheng”)

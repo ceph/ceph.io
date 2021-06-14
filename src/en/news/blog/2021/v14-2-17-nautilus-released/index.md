@@ -6,7 +6,7 @@ author: "dgalloway"
 
 This is the 17th backport release in the Nautilus series. We recommend users to update to this release
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 - $pid expansion in config paths like `admin_socket` will now properly expand to the daemon pid for commands like `ceph-mds` or `ceph-osd`. Previously only `ceph-fuse`/`rbd-nbd` expanded `$pid` with the actual daemon pid.
     
@@ -17,7 +17,7 @@ This is the 17th backport release in the Nautilus series. We recommend users to 
 - cephfs: clients which acquire capabilities too quickly are throttled to prevent instability. See new config option `mds_session_cap_acquisition_throttle` to control this behavior.
     
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - Do not add sensitive information in Ceph log files ([pr#38614](https://github.com/ceph/ceph/pull/38614), Neha Ojha)
     

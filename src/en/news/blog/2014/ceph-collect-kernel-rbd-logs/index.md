@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/ceph-collect-krbd-logs.jpg Ceph: collect Kernel RBD logs %}
+![Ceph: collect Kernel RBD logs](http://sebastien-han.fr/images/ceph-collect-krbd-logs.jpg)
 
 Quick tip to collect Kernel RBD logs.
 

@@ -6,7 +6,7 @@ author: "TheAnalyst"
 
 This is the eighth update to the Ceph Nautilus release series. This release fixes issues across a range of subsystems. We recommend that all users upgrade to this release.
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 - The default value of `bluestore_min_alloc_size_ssd` has been changed to 4K to improve performance across all workloads.
 - The following OSD memory config options related to bluestore cache autotuning can now be configured during runtime:
@@ -34,7 +34,7 @@ This is the eighth update to the Ceph Nautilus release series. This release fixe
     ceph config set global mon\_warn\_on\_pool\_pg\_num\_not\_power\_of\_two false
     
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - bluestore: common/options: bluestore 4k min\_alloc\_size for SSD ([pr#32998](https://github.com/ceph/ceph/pull/32998), Mark Nelson, Sage Weil)
 - bluestore: os/bluestore: Add config observer for osd memory specific options ([pr#31852](https://github.com/ceph/ceph/pull/31852), Sridhar Seshasayee)

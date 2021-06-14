@@ -133,7 +133,7 @@ Ceph Luminous (v12.2.0) will be the foundation for the next long-term stable rel
         - ceph mon feature ls will list monitor features recorded in the MonMap. ceph mon feature set will set an optional feature (none of these exist yet).
         - ceph tell <daemon> help will now return a usage summary.
 
-### Major Changes from Jewel[¶](#major-changes-from-jewel "Permalink to this headline")
+### Major Changes from Jewel
 
 - _RADOS_:
     - We now default to the AsyncMessenger (ms type \= async) instead of the legacy SimpleMessenger.  The most noticeable difference is that we now use a fixed sized thread pool for network connections (instead of two threads per socket with SimpleMessenger).
@@ -161,7 +161,7 @@ Ceph Luminous (v12.2.0) will be the foundation for the next long-term stable rel
     - A new pg\_files subcommand to cephfs-data-scan can identify files affected by a damaged or lost RADOS PG.
     - The false-positive “failing to respond to cache pressure” warnings have been fixed.
 
-### Upgrade from Jewel or Kraken[¶](#upgrade-from-jewel-or-kraken "Permalink to this headline")
+### Upgrade from Jewel or Kraken
 
 1. Ensure that the sortbitwise flag is enabled:
     
@@ -240,11 +240,11 @@ Ceph Luminous (v12.2.0) will be the foundation for the next long-term stable rel
 12. Verify the cluster is healthy with ceph health.
     
 
-### Upgrading from pre-Jewel releases (like Hammer)[¶](#upgrading-from-pre-jewel-releases-like-hammer "Permalink to this headline")
+### Upgrading from pre-Jewel releases (like Hammer)
 
 You _must_ first upgrade to Jewel (10.2.z) before attempting an upgrade to Luminous.
 
-### Upgrade compatibility notes, Kraken to Luminous[¶](#upgrade-compatibility-notes-kraken-to-luminous "Permalink to this headline")
+### Upgrade compatibility notes, Kraken to Luminous
 
 - We no longer test the FileStore ceph-osd backend in combination with btrfs. We recommend against using btrfs. If you are using btrfs-based OSDs and want to upgrade to luminous you will need to add the follwing to your ceph.conf:
     
@@ -278,7 +278,7 @@ You _must_ first upgrade to Jewel (10.2.z) before attempting an upgrade to Lumin
     - CephFS will generate a health warning if you have fewer standby daemons than it thinks you wanted. By default this will be 1 if you ever had a standby, and 0 if you did not. You can customize this using ceph fs set <fs> standby\_count\_wanted <number>. Setting it to zero will effectively disable the health check.
     - The “ceph mds tell ...” command has been removed. It is superceded by “ceph tell mds.<id> ...”
 
-### Notable Changes since v12.1.0 (RC1)[¶](#notable-changes-since-v12-1-1-rc1 "Permalink to this headline")
+### Notable Changes since v12.1.0 (RC1)
 
 - choose\_args encoding has been changed to make it architecture-independent. If you deployed Luminous dev releases or 12.1.0 rc release and made use of the CRUSH choose\_args feature, you need to remove all choose\_args mappings from your CRUSH map before starting the upgrade.
 - The ‘ceph health’ structured output (JSON or XML) no longer contains a ‘timechecks’ section describing the time sync status. This information is now available via the ‘ceph time-sync-status’ command.
@@ -293,7 +293,7 @@ You _must_ first upgrade to Jewel (10.2.z) before attempting an upgrade to Lumin
 - Specifying user authorization capabilities for RBD clients has been simplified. The general syntax for using RBD capability profiles is “mon ‘profile rbd’ osd ‘profile rbd\[-read-only\]\[ pool={pool-name}\[, ...\]\]’”. For more details see “User Management” in the documentation.
 - ceph config-key put has been deprecated in favor of ceph config-key set.
 
-### Notable Changes since v12.1.1 (RC2)[¶](#notable-changes-since-v12-1-1-rc2 "Permalink to this headline")
+### Notable Changes since v12.1.1 (RC2)
 
 - New “ceph -w” behavior - the “ceph -w” output no longer contains I/O rates, available space, pg info, etc. because these are no longer logged to the central log (which is what “ceph -w” shows). The same information can be obtained by running “ceph pg stat”; alternatively, I/O rates per pool can be determined using “ceph osd pool stats”. Although these commands do not self-update like “ceph -w” did, they do have the ability to return formatted output by providing a “–format=<format>” option.
 - Pools are now expected to be associated with the application using them. Upon completing the upgrade to Luminous, the cluster will attempt to associate existing pools to known applications (i.e. CephFS, RBD, and RGW). In-use pools that are not associated to an application will generate a health warning. Any unassociated pools can be manually associated using the new “ceph osd pool application enable” command. For more details see “Associate Pool to Application” in the documentation.
@@ -303,7 +303,7 @@ You _must_ first upgrade to Jewel (10.2.z) before attempting an upgrade to Lumin
 - RGW: bucket index resharding now uses the reshard namespace in log pool upgrade scenarios as well this is a changed behaviour from RC1 where a new pool for reshard was created
 - RGW multisite now supports for enabling or disabling sync at a bucket level.
 
-### Other Notable Changes[¶](#other-notable-changes "Permalink to this headline")
+### Other Notable Changes
 
 - bluestore: bluestore/BlueFS: pass string as const ref ([pr#16600](https://github.com/ceph/ceph/pull/16600), dingdangzhang)
 - bluestore: common/options: make “blue{fs,store}\_allocator” LEVEL\_DEV ([issue#20660](http://tracker.ceph.com/issues/20660), [pr#16645](https://github.com/ceph/ceph/pull/16645), Kefu Chai)

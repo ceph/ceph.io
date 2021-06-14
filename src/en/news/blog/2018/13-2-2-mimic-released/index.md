@@ -6,7 +6,7 @@ author: "TheAnalyst"
 
 This is the second bugfix release of the Mimic v13.2.x long term stable release series. This release contains many fixes across all components of Ceph. We recommend that all users upgrade.
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - build/ops: Boost system library is no longer required to compile and link example librados program ([issue#25073](http://tracker.ceph.com/issues/25073), [issue#25054](http://tracker.ceph.com/issues/25054), [pr#23201](https://github.com/ceph/ceph/pull/23201), Nathan Cutler)
 - build/ops: debian/rules: fix ceph-mgr .pyc files left behind ([issue#27059](http://tracker.ceph.com/issues/27059), [issue#26883](http://tracker.ceph.com/issues/26883), [pr#23831](https://github.com/ceph/ceph/pull/23831), Dan Mick)

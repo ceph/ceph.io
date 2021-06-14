@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/ceph-vagrant-up.jpg Vagrant up: install Ceph in one command" %}
+![Vagrant up: install Ceph in one command](http://sebastien-han.fr/images/ceph-vagrant-up.jpg)
 
 A simple script to bootstrap a Ceph cluster and start playing with it. The script heavily relies on:
 

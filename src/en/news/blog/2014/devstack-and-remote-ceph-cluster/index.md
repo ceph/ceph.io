@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/devstack-ceph-remote-cluster.jpg DevStack and remote Ceph cluster %}
+![DevStack and remote Ceph cluster](http://sebastien-han.fr/images/devstack-ceph-remote-cluster.jpg)
 
 Introducing the ability to connect DevStack to a remote Ceph cluster. So DevStack won't bootstrap any Ceph cluster, it will simply connect to a remote one.
 

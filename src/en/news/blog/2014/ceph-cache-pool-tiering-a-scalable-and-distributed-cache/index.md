@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/ceph-cache-pool-scalable.jpg Ceph cache pool tiering: scalable cache %}
+![Ceph cache pool tiering: scalable cache](http://sebastien-han.fr/images/ceph-cache-pool-scalable.jpg)
 
 Moving further on the Software Defined Storage principles, Ceph, with its latest stable version introduced a new mechanism called cache pool tiering. It brings a really interesting concept that will help us to provide scalable distributed caching.
 
@@ -30,7 +30,7 @@ Now that you got the big picture, let's talk design! This will nicely fit into y
 
   
 
-{% img center http://sebastien-han.fr/images/ceph-cache-pool-compute-design.png Ceph cache pool compute design %}
+![Ceph cache pool compute design](http://sebastien-han.fr/images/ceph-cache-pool-compute-design.png)
 
   
 

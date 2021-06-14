@@ -5,15 +5,12 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/epheremal-persistent-root-storage-different-hypervisor.jpg OpenStack: use ephemeral and persistent root storage for different hypervisors %}
+![OpenStack: use ephemeral and persistent root storage for different hypervisors](http://sebastien-han.fr/images/epheremal-persistent-root-storage-different-hypervisor.jpg)
 
 Computes with Ceph image backend and computes with local image backend. At some point, you might want to build hypervisor and use their local storage for virtual machine root disks. Using local storage will help you maximasing your IOs and will reduce IO latentcies to the minimum (compare to network block storage). However you will lose handy features like the live-migration (block migration is still an option but slower). Data on the hypervisors will not have a good availability level too. If the compute node crashes the user will not be able to access his virtual machines for a certain amount of time. On another hand, you want to build hypervisors that where virtual machine root disks will live into Ceph. Then you will be able to seemlessly move virtual machine with the live-migration. Virtual machine disks will be highly available so if a compute node crashes you can quickly evacuate the virtual machine disk to another compute node. Ultimately, your goal is to dissociate them, fortunately for you OpenStack provides a mechanism based on host agregate that will help you achieve your objective. Thanks agregate filters you will be able to expose these hypervisors.
 
-  
 
-{% img center http://sebastien-han.fr/images/agregate-local-ceph-storage.png Local storage and Ceph agregate %}
-
-  
+![Local storage and Ceph agregate](http://sebastien-han.fr/images/agregate-local-ceph-storage.png)
 
 # I. Compute nodes configuration
 

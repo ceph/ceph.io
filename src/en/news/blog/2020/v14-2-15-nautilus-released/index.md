@@ -6,7 +6,7 @@ author: "dgalloway"
 
 This is the 15th backport release in the Nautilus series. This release fixes a ceph-volume regression introduced in v14.2.13 and includes few other fixes. We recommend users to update to this release.
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 - ceph-volume: Fixes lvm batch --auto, which breaks backward compatibility when using non rotational devices only (SSD and/or NVMe).
     
@@ -15,7 +15,7 @@ This is the 15th backport release in the Nautilus series. This release fixes a c
 
 - MGR: progress module can now be turned on/off, using the commands: `ceph progress on` and `ceph progress off`.
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - ceph-volume: fix filestore/dmcrypt activate ([pr#38198](https://github.com/ceph/ceph/pull/38198), Guillaume Abrioux)
     

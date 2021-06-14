@@ -6,7 +6,7 @@ author: "TheAnalyst"
 
 This is the first release candidate for mimic, the next long term release. While this is not the final production release yet, consider testing this on your testing and non production clusters for a preview of upcoming features and importantly report any bugs in the tracker.
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 - _core_:
     
@@ -95,7 +95,7 @@ This is the first release candidate for mimic, the next long term release. While
     - Ceph codebase has now moved to the C++-17 standard.
     - The Ceph LZ4 compression plugin is now enabled by default, and introduces a new build dependency.
 
-## Other Notable Changes[¶](#other-notable-changes "Permalink to this headline")
+## Other Notable Changes
 
 - bluestore: BlueStore::ExtentMap::dup impl ([pr#19719](https://github.com/ceph/ceph/pull/19719), Shinobu Kinjo)
 - bluestore: bluestore/NVMEDevice: accurate the latency perf counter of queue latency ([pr#17435](https://github.com/ceph/ceph/pull/17435), Ziye Yang, Pan Liu)

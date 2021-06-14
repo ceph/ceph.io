@@ -6,7 +6,7 @@ author: "TheAnalyst"
 
 This is the fifth release of the Ceph Octopus stable release series. This release brings a range of fixes across all components. We recommend that all Octopus users upgrade to this release.
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 - CephFS: Automatic static subtree partitioning policies may now be configured using the new distributed and random ephemeral pinning extended attributes on directories. See the documentation for more information: [https://docs.ceph.com/docs/master/cephfs/multimds/](https://docs.ceph.com/docs/master/cephfs/multimds/)
     
@@ -17,7 +17,7 @@ This is the fifth release of the Ceph Octopus stable release series. This releas
 - Fix an issue with osdmaps not being trimmed in a healthy cluster ( [issue#47297](https://tracker.ceph.com/issues/47297), [pr#36981](https://github.com/ceph/ceph/pull/36981))
     
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - bluestore,core: bluestore: blk:BlockDevice.cc: use pending\_aios instead of iovec size as ios num ([pr#36668](https://github.com/ceph/ceph/pull/36668), weixinwei)
     

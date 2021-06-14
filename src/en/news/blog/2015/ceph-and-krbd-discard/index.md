@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/ceph-krbd-discard-support.jpg Ceph and KRBD discard %}
+![Ceph and KRBD discard](http://sebastien-han.fr/images/ceph-krbd-discard-support.jpg)
 
 Space reclamation mechanism for the Kernel RBD module. Having this kind of support is really crucial for operators and ease your capacity planing. RBD images are sparse, thus size after creation is equal to 0 MB. The main issue with sparse images is that images grow to eventually reach their entire size. The thing is Ceph doesn't know anything that this happening on top of that block especially if you have a filesystem. You can easily write the entire filesystem and then delete everything, Ceph will still believe that the block is fully used and will keep that metric. However thanks to the discard support on the block device, the filesystem can send discard flush commands to the block. In the end, the storage will free up blocks.
 

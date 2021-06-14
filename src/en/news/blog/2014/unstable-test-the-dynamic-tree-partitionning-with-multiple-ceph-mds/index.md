@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/ceph-mds-unstable-dynamic-subtree-partionning.jpg UNSTABLE: test the dynamic tree partitionning of the Ceph MDS %}
+![UNSTABLE: test the dynamic tree partitionning of the Ceph MDS](http://sebastien-han.fr/images/ceph-mds-unstable-dynamic-subtree-partionning.jpg)
 
 Quick tip to enable the dynamic subtree tree partitionning with multiple Ceph MDS servers.
 

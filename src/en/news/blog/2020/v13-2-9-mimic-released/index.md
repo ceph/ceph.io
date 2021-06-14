@@ -6,13 +6,13 @@ author: "TheAnalyst"
 
 This is the ninth and very likely the last stable release in the Ceph Mimic stable release series. This release fixes bugs across all components and also contains a RGW security fix. We recommend all mimic users to upgrade to this version.
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 - CVE-2020-1760: Fixed XSS due to RGW GetObject header-splitting
 - The configuration value `osd_calc_pg_upmaps_max_stddev` used for upmap balancing has been removed. Instead use the mgr balancer config `upmap_max_deviation` which now is an integer number of PGs of deviation from the target PGs per OSD. This can be set with a command like `ceph config set mgr mgr/balancer/upmap_max_deviation 2`. The default `upmap_max_deviation` is 1. There are situations where crush rules would not allow a pool to ever have completely balanced PGs. For example, if crush requires 1 replica on each of 3 racks, but there are fewer OSDs in 1 of the racks. In those cases, the configuration value can be increased.
 - The `cephfs-data-scan scan_links` command now automatically repair inotables and snaptable.
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - bluestore: os/bluestore: fix improper setting of STATE\_KV\_SUBMITTED ([pr#31673](https://github.com/ceph/ceph/pull/31673), Igor Fedotov)
 - ceph-volume/batch: check lvs list before access ([pr#34479](https://github.com/ceph/ceph/pull/34479), Jan Fajerski)

@@ -6,7 +6,7 @@ author: "TheAnalyst"
 
 This point releases brings a number of important bugfixes and has a few important security fixes. This is expected to be the last Jewel release. We recommend all Jewel 10.2.x users to upgrade.
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 - CVE 2018-1128: auth: cephx authorizer subject to replay attack ([issue#24836](http://tracker.ceph.com/issues/24836), Sage Weil)
 - CVE 2018-1129: auth: cephx signature check is weak ([issue#24837](http://tracker.ceph.com/issues/24837), Sage Weil)
@@ -16,7 +16,7 @@ This point releases brings a number of important bugfixes and has a few importan
 - The CephFS client now catches failures to clear dentries during startup and refuses to start as consistency and untrimmable cache issues may develop. The new option client\_die\_on\_failed\_dentry\_invalidate (default: true) may be turned off to allow the client to proceed (dangerous!).
 - In 10.2.10 and earlier releases, keyring caps were not checked for validity, so the caps string could be anything. As of 10.2.11, caps strings are validated and providing a keyring with an invalid caps string to, e.g., “ceph auth add” will result in an error.
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - admin: bump sphinx to 1.6 ([issue#21717](http://tracker.ceph.com/issues/21717), [pr#18166](https://github.com/ceph/ceph/pull/18166), Kefu Chai, Alfredo Deza)
 - auth: ceph auth add does not sanity-check caps ([issue#22525](http://tracker.ceph.com/issues/22525), [pr#21367](https://github.com/ceph/ceph/pull/21367), Jing Li, Nathan Cutler, Kefu Chai, Sage Weil)

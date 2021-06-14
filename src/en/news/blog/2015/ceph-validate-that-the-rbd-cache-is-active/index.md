@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/ceph-check-rbd-cache-isenabled.jpg Ceph validate that the RBD cache is active %}
+![Ceph validate that the RBD cache is active](http://sebastien-han.fr/images/ceph-check-rbd-cache-isenabled.jpg)
 
 Quick and simple test to validate if the RBD cache is enabled on your client.
 
