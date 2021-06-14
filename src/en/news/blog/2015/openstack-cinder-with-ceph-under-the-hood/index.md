@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/cinder-ceph-under-the-hood.jpg OpenStack Cinder with Ceph under the hood %}
+![OpenStack Cinder with Ceph under the hood](http://sebastien-han.fr/images/cinder-ceph-under-the-hood.jpg)
 
 What's happening under the hood while playing with Cinder and Ceph? Answer table :-).
 

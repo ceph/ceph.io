@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/bootstrap-ceph-cluster-docker.jpg Bootstrap your Ceph cluster in Docker %}
+![Bootstrap your Ceph cluster in Docker](http://sebastien-han.fr/images/bootstrap-ceph-cluster-docker.jpg)
 
 Almost two years have passed since my first attempt to [run Ceph inside Docker](http://www.sebastien-han.fr/blog/2013/09/19/how-I-barely-got-my-first-ceph-mon-running-in-docker/). Time has elapsed and I haven't really got the time to resume this work until recently. For the last couple of months, I have been devoting a third part of my time to contributing on deploying [Ceph in Docker](https://github.com/ceph/ceph-docker). Before we start, I would like to highlight that nothing of this work would have been possible without the help of [Seán C. McCord](http://www.cycoresys.com/). Indeed the current ceph-docker repository is based on Seán's initial work. Let's see how you can get this running!
 
@@ -182,11 +182,7 @@ There is not much to do here as you can simply port your Docker images into Rock
 
 # Bonus video
 
-A video demo is available:
-
-{% youtube FUSTjTBA8f8 %}
-
-  
+[A video demo is available](https://www.youtube.com/watch?v=FUSTjTBA8f8)
   
 
 > Once again, I would like to take the opportunity to thank Seán C. McCord who has made it possible. Seán is a nice person to work with and I'm looking forward to contributing with him to ceph-docker!

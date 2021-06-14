@@ -6,7 +6,7 @@ author: "TheAnalyst"
 
 This is the fifth release of the Ceph Nautilus release series. Among the many notable changes, this release fixes a critical BlueStore bug that was introduced in 14.2.3. All Nautilus users are advised to upgrade to this release.
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 Critical fix:
 
@@ -99,7 +99,7 @@ RGW:
 - RGW now supports S3 Object Lock set of APIs allowing for a WORM model for storing objects. 6 new APIs have been added put/get bucket object lock, put/get object retention, put/get object legal hold.
 - RGW now supports List Objects V2
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - bluestore/KernelDevice: fix RW\_IO\_MAX constant ([pr#31397](https://github.com/ceph/ceph/pull/31397), Sage Weil)
 - bluestore: Don’t forget sub kv\_submitted\_waiters ([pr#30048](https://github.com/ceph/ceph/pull/30048), Jianpeng Ma)

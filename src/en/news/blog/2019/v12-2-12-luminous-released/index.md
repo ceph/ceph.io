@@ -6,11 +6,11 @@ author: "TheAnalyst"
 
 This is the twelfth bug fix release of the Luminous v12.2.x long term stable release series. We recommend that all users upgrade to this release.
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 - In 12.2.11 and earlier releases, keyring caps were not checked for validity, so the caps string could be anything. As of 12.2.12, caps strings are validated and providing a keyring with an invalid caps string to, e.g., ceph auth add will result in an error.
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - auth: ceph auth add does not sanity-check caps ([issue#22525](https://tracker.ceph.com/issues/22525), [pr#24906](https://github.com/ceph/ceph/pull/24906), Jing Li, Nathan Cutler, Sage Weil)
 - build/ops: Allow multi instances of “make tests” on the same machine ([issue#36737](https://tracker.ceph.com/issues/36737), [pr#26186](https://github.com/ceph/ceph/pull/26186), Kefu Chai)

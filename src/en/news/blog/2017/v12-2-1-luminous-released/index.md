@@ -6,7 +6,7 @@ author: "TheAnalyst"
 
 This is the first bugfix release of Luminous v12.2.x long term stable release series. It contains a range of bug fixes and a few features across CephFS, RBD & RGW. We recommend all the users of 12.2.x series update.
 
-### Notable Changes[¶](#notable-changes "Permalink to this headline")
+### Notable Changes
 
 - Dynamic resharding is now enabled by default for RGW, RGW will now automatically reshard there bucket index once the index grows beyond rgw\_max\_objs\_per\_shard
 - Limiting MDS cache via a memory limit is now supported using the new mds\_cache\_memory\_limit config option (1GB by default). A cache reservation can also be specified using mds\_cache\_reservation as a percentage of the limit (5% by default). Limits by inode count are still supported using mds\_cache\_size. Setting mds\_cache\_size to 0 (the default) disables the inode limit.
@@ -15,7 +15,7 @@ This is the first bugfix release of Luminous v12.2.x long term stable release se
 - There was a bug in the PG mapping behavior of the new _upmap_ feature. If you made use of this feature (e.g., via the ceph osd pg-upmap-items command), we recommend that all mappings be removed (via the ceph osd rm-pg-upmap-items command) before upgrading to this point release.
 - A stall in BlueStore IO submission that was affecting many users has been resolved.
 
-### Other Notable Changes[¶](#other-notable-changes "Permalink to this headline")
+### Other Notable Changes
 
 For more details refer to [the complete changelog](https://github.com/ceph/ceph/blob/master/doc/changelog/v12.2.1.txt)
 

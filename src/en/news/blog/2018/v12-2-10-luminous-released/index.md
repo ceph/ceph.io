@@ -6,7 +6,7 @@ author: "TheAnalyst"
 
 This is the tenth bug fix release of the Luminous v12.2.x long term stable release series. The previous release, v12.2.9, introduced the PG hard-limit patches which were found to cause an issue in certain upgrade scenarios, and this release was expedited to revert those patches. If you already successfully upgraded to v12.2.9, you should **not** upgrade to v12.2.10, but rather **wait** for a release in which [http://tracker.ceph.com/issues/36686](http://tracker.ceph.com/issues/36686) is addressed. All other users are encouraged to upgrade to this release.
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 OSD
 
@@ -20,7 +20,7 @@ See also: [http://tracker.ceph.com/issues/36686](http://tracker.ceph.com/issues/
     
     For more details, see [BlueStore docs](http://docs.ceph.com/docs/master/rados/configuration/bluestore-config-ref/#cache-size) 
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - ceph-volume: add some choose\_disk capabilities ([issue#36446](http://tracker.ceph.com/issues/36446), [pr#24783](https://github.com/ceph/ceph/pull/24783), Erwan Velu)
 - ceph-volume: remove version reporting from help menu ([issue#36386](http://tracker.ceph.com/issues/36386), [pr#24754](https://github.com/ceph/ceph/pull/24754), Alfredo Deza)
@@ -57,7 +57,7 @@ See also: [http://tracker.ceph.com/issues/36686](http://tracker.ceph.com/issues/
 - segv in BlueStore::OldExtent::create ([issue#36526](http://tracker.ceph.com/issues/36526), [issue#36591](http://tracker.ceph.com/issues/36591), [pr#24746](https://github.com/ceph/ceph/pull/24746), Sage Weil)
 - test/common: unittest\_mclock\_priority\_queue builds with “make” command ([pr#24808](https://github.com/ceph/ceph/pull/24808), J. Eric Ivancich)
 
-## Changelog for v12.2.9[¶](#id2 "Permalink to this headline")
+## Changelog for v12.2.9
 
 - build/ops: add e2fsprogs runtime dependency ([pr#24663](https://github.com/ceph/ceph/pull/24663), Guillaume Abrioux, Alfredo Deza)
 - build/ops: deb: fix ceph-mgr .pyc files left behind ([issue#26883](http://tracker.ceph.com/issues/26883), [pr#23832](https://github.com/ceph/ceph/pull/23832), Dan Mick)

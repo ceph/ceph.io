@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/ceph-io-the-good-the-bad-the-ugly-details.jpg Ceph IO patterns: the good, the bad and the ugly details %}
+![Ceph IO patterns: the good, the bad and the ugly details](http://sebastien-han.fr/images/ceph-io-the-good-the-bad-the-ugly-details.jpg)
 
 Ceph IO patterns analysis part 2: **The Bad**.
 
@@ -23,7 +23,7 @@ Ceph IO patterns analysis part 2: **The Bad**.
 
 This statement only concerns the Journal.
 
-{% img center http://sebastien-han.fr/images/ceph-a-single-io.png Ceph single IO %}
+![Ceph single IO](http://sebastien-han.fr/images/ceph-a-single-io.png)
 
 ### I.1.1. A single write...
 

@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/map-rbd-device-inside-docker-container.jpg Map a RBD device inside a Docker container %}
+![Map a RBD device inside a Docker container](http://sebastien-han.fr/images/map-rbd-device-inside-docker-container.jpg)
 
 People have been having trouble to map a RBD device in a container. Quick tip on how to map a Rados Block Device into a container:
 

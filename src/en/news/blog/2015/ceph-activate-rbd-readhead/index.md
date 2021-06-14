@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/ceph-rbd-readhead.jpg Ceph: activate RBD readhead %}
+![Ceph: activate RBD readhead](http://sebastien-han.fr/images/ceph-rbd-readhead.jpg)
 
 RBD readahead was introduced with Giant.
 
@@ -71,6 +71,6 @@ Unfortunately I don't see to get anything interesting, ideally I'd have gotten a
 
 Here are the results:
 
-{% img center http://sebastien-han.fr/images/ceph-rbd-readahead-boot-time-comp.jpg Ceph RBD readahead boot time comparison %}
+![Ceph RBD readahead boot time comparison](http://sebastien-han.fr/images/ceph-rbd-readahead-boot-time-comp.jpg)
 
 > My second optimisation attempt was clearly the most successful since we are almost below 23 seconds to boot a virtual machine. In the meantime the default values are not that bad and sound pretty reasonnable. Thus sticking with the default should not be an issue.

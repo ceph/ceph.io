@@ -6,7 +6,7 @@ author: "TheAnalyst"
 
 This is the 13th bug fix release of the Luminous v12.2.x long term stable release series. We recommend that all users upgrade to this release.
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 - Ceph now packages python bindings for python3.6 instead of python3.4, because EPEL7 recently switched from python3.4 to python3.6 as the native python3. see the [announcement](https://lists.fedoraproject.org/archives/list/epel-announce@lists.fedoraproject.org/message/EGUMKAIMPK2UD5VSHXM53BH2MBDGDWMO)  for more details on the background of this change.
 - We now have telemetry support via a ceph-mgr module. The telemetry module is absolutely on an opt-in basis, and is meant to collect generic cluster information and push it to a central endpoint. By default, we’re pushing it to a project endpoint at [https://telemetry.ceph.com/report](https://telemetry.ceph.com/report), but this is customizable using by setting the ‘url’ config option with:
@@ -42,7 +42,7 @@ This is the 13th bug fix release of the Luminous v12.2.x long term stable releas
 - A health warning is now generated if the average osd heartbeat ping time exceeds a configurable threshold for any of the intervals computed. The OSD computes 1 minute, 5 minute and 15 minute intervals with average, minimum and maximum values. New configuration option `mon_warn_on_slow_ping_ratio` specifies a percentage of `osd_heartbeat_grace` to determine the threshold. A value of zero disables the warning. New configuration option `mon_warn_on_slow_ping_time` specified in milliseconds over-rides the computed value, causes a warning when OSD heartbeat pings take longer than the specified amount. New admin command `ceph daemon mgr.# dump_osd_network [threshold]` command will list all connections with a ping time longer than the specified threshold or value determined by the config options, for the average for any of the 3 intervals. New admin command `ceph daemon osd.# dump_osd_network [threshold]` will do the same but only including heartbeats initiated by the specified OSD.
 - The configuration value `osd_calc_pg_upmaps_max_stddev` used for upmap balancing has been removed. Instead use the mgr balancer config `upmap_max_deviation` which now is an integer number of PGs of deviation from the target PGs per OSD. This can be set with a command like `ceph config set mgr mgr/balancer/upmap_max_deviation 2`. The default `upmap_max_deviation` is 1. There are situations where crush rules would not allow a pool to ever have completely balanced PGs. For example, if crush requires 1 replica on each of 3 racks, but there are fewer OSDs in 1 of the racks. In those cases, the configuration value can be increased.
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - bluestore: >2GB bluefs writes ([pr#28965](https://github.com/ceph/ceph/pull/28965), kungf, Kefu Chai, Sage Weil)
 - bluestore: Inspect allocations ([pr#29539](https://github.com/ceph/ceph/pull/29539), Neha Ojha, Adam Kupczyk)

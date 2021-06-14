@@ -6,7 +6,7 @@ author: "dgalloway"
 
 This is the 10th backport release in the Octopus series. We recommend users to update to this release.
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 - The containers include an updated tcmalloc that avoids crashes seen on 15.2.9 (see [issue#49618](https://tracker.ceph.com/issues/49618) for details.
 - RADOS: BlueStore handling of huge(>4GB) writes from RocksDB to BlueFS has been fixed.
@@ -19,7 +19,7 @@ This is the 10th backport release in the Octopus series. We recommend users to u
 `ceph orch redeploy grafana`  
 `ceph orch redeploy alertmanager`
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - .github: add workflow for adding label and milestone ([pr#39890](https://github.com/ceph/ceph/pull/39890), Kefu Chai, Ernesto Puerta)
     
@@ -85,7 +85,7 @@ This is the 10th backport release in the Octopus series. We recommend users to u
     
 - mgr/volume: subvolume auth\_id management and few bug fixes ([pr#39390](https://github.com/ceph/ceph/pull/39390), Rishabh Dave, Patrick Donnelly, Kotresh HR, Ramana Raja)
     
-- mgr/zabbix: format ceph.\[{#POOL},percent\_used as float ([pr#39235](https://github.com/ceph/ceph/pull/39235), Kefu Chai)
+- mgr/zabbix: format ceph.\[{\#POOL},percent\_used as float ([pr#39235](https://github.com/ceph/ceph/pull/39235), Kefu Chai)
     
 - os/bluestore: Add option to check BlueFS reads ([pr#39754](https://github.com/ceph/ceph/pull/39754), Adam Kupczyk)
     

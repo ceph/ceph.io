@@ -6,7 +6,7 @@ author: "TheAnalyst"
 
 This is the third bug fix release of Ceph Nautilus release series. We recommend all Nautilus users upgrade to this release. This release fixes a security issue.  For upgrading from older releases of ceph, general guidelines for upgrade to nautilus must be followed
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 - _CVE-2019-10222-_ Fixed a denial of service vulnerability where an unauthenticated client of Ceph Object Gateway could trigger a crash from an uncaught exception
 - Nautilus-based librbd clients can now open images on Jewel clusters.
@@ -15,7 +15,7 @@ This is the third bug fix release of Ceph Nautilus release series. We recommend 
 - “osd\_deep\_scrub\_large\_omap\_object\_key\_threshold” has been lowered to detect an object with large number of omap keys more easily.
 - The ceph dashboard now supports silencing Prometheus notifications
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - bluestore: 50-100% iops lost due to bluefs\_preextend\_wal\_files = false ([issue#38559](http://tracker.ceph.com/issues/38559), [pr#28573](https://github.com/ceph/ceph/pull/28573), Vitaliy Filippov)
 - bluestore: add slow op detection for collection\_listing ([pr#29227](https://github.com/ceph/ceph/pull/29227), Igor Fedotov)

@@ -6,12 +6,12 @@ author: "dgalloway"
 
 This is the 9th backport release in the Octopus series. We recommend users to update to this release.
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 - MGR: progress module can now be turned on/off, using the commands: `ceph progress on` and `ceph progress off`.
 - OSD: PG removal has been optimized in this release.
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - Do not add sensitive information in Ceph log files ([pr#38620](https://github.com/ceph/ceph/pull/38620), Neha Ojha)
 - PendingReleaseNotes: mgr/pg\_autoscaler ([pr#39393](https://github.com/ceph/ceph/pull/39393), Kamoltat)

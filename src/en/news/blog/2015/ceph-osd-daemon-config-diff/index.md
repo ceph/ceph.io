@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/ceph-osd-config-diff.jpg Ceph OSD daemon config diff %}
+![Ceph OSD daemon config diff](http://sebastien-han.fr/images/ceph-osd-config-diff.jpg)
 
 Quick tip. Simply check the diff between the applied configuration in your `ceph.conf` and the default values on an OSD.
 

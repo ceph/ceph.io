@@ -6,12 +6,12 @@ author: "TheAnalyst"
 
 This is the 14th backport release in the Nautilus series. This releases fixes a security flaw affecting Messenger V2 for Octopus & Nautilus, among other fixes across components. We recommend users to update to this release.
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 - CVE 2020-25660: Fix a regression in Messenger V2 replay attacks
     
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - mgr/dashboard: Strange iSCSI discovery auth behavior ([pr#37333](https://github.com/ceph/ceph/pull/37333), Volker Theile)
     

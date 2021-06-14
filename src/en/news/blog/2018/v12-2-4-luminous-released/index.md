@@ -6,7 +6,7 @@ author: "TheAnalyst"
 
 This is the fourth bugfix release of Luminous v12.2.x long term stable release series. This was primarily intended to fix a few build, ceph-volume/ceph-disk and RGW issues. We recommend all the users of 12.2.x series to update.
 
-### Notable Changes[¶](#notable-changes "Permalink to this headline")
+### Notable Changes
 
 - ceph-volume: adds support to zap encrypted devices ([issue#22878](http://tracker.ceph.com/issues/22878), [pr#20545](https://github.com/ceph/ceph/pull/20545), Andrew Schoen)
 - ceph-volume: log the current running command for easier debugging ([issue#23004](http://tracker.ceph.com/issues/23004), [pr#20597](https://github.com/ceph/ceph/pull/20597), Andrew Schoen)

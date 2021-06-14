@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/ansible-ceph-upgrades.jpg Ceph rolling upgrades with Ansible %}
+![Ceph rolling upgrades with Ansible](http://sebastien-han.fr/images/ansible-ceph-upgrades.jpg)
 
 Recently I improved a playbook that I wrote a couple of months ago regarding Ceph rolling upgrades. This playbook is part of the [Ceph Ansible repository](https://github.com/ceph/ceph-ansible) and available as [rolling\_update.yml](https://github.com/ceph/ceph-ansible/blob/master/rolling_update.yml) Let's have a look at it.
 
@@ -33,7 +33,7 @@ During this process, one monitor will be out of the quorum, depending on the num
 But let's be optimistic, this process is not that risky and is quite fast anyway. When the upgrade of the node is done and the monitor has been restarted, we must make sure that monitor rejoins the quorum. So basically we are looping over the following command and wait until the monitor is back in the quorum.
 
 ```
-ceph -s | grep monmap | sed 's/.*quorum//' | egrep -q {{ ansible_hostname }}
+ceph -s | grep monmap | sed 's/.*quorum//' | egrep -q \{\{ ansible_hostname \}\}
 ```
 
 > We could potentially try to start with a peon, I'm just not sure if this really matters.

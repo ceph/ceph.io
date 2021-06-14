@@ -6,9 +6,9 @@ author: "TheAnalyst"
 
 This is the first stable release of Ceph Octopus.
 
-### Major Changes from Nautilus[¶](#major-changes-from-nautilus "Permalink to this headline")
+### Major Changes from Nautilus
 
-### General[¶](#general "Permalink to this headline")
+### General
 
 - A new deployment tool called **cephadm** has been introduced that integrates Ceph daemon deployment and management via containers into the orchestration layer. For more information see [Cephadm](https://docs.ceph.com/docs/octopus/cephadm/#cephadm).
 - Health alerts can now be muted, either temporarily or permanently.
@@ -28,7 +28,7 @@ This is the first stable release of Ceph Octopus.
     - Fedora (rawhide/33)
     - openSUSE (15.2, Tumbleweed)
 
-### Dashboard[¶](#dashboard "Permalink to this headline")
+### Dashboard
 
 The [Ceph Dashboard](https://docs.ceph.com/docs/octopus/mgr/dashboard/#mgr-dashboard) has gained a lot of new features and functionality:
 
@@ -75,7 +75,7 @@ New and enhanced management of Ceph features/services:
 - Prometheus alert management
     - List configured Prometheus alerts
 
-### RADOS[¶](#rados "Permalink to this headline")
+### RADOS
 
 - Objects can now be brought in sync during recovery by copying only the modified portion of the object, reducing tail latencies during recovery.
 - Ceph will allow recovery below _min\_size_ for Erasure coded pools, wherever possible.
@@ -83,7 +83,7 @@ New and enhanced management of Ceph features/services:
 - BlueStore has received several improvements and performance updates, including improved accounting for “omap” (key/value) object data by pool, improved cache memory management, and a reduced allocation unit size for SSD devices. (Note that by default, the first time each OSD starts after upgrading to octopus it will trigger a conversion that may take from a few minutes to a few hours, depending on the amount of stored “omap” data.)
 - Snapshot trimming metadata is now managed in a more efficient and scalable fashion.
 
-### RBD block storage[¶](#rbd-block-storage "Permalink to this headline")
+### RBD block storage
 
 - Mirroring now supports a new snapshot-based mode that no longer requires the journaling feature and its related impacts in exchange for the loss of point-in-time consistency (it remains crash consistent).
 - Clone operations now preserve the sparseness of the underlying RBD image.
@@ -95,13 +95,13 @@ New and enhanced management of Ceph features/services:
 - `rbd-mirror` automatically adjusts its per-image memory usage based upon its memory target.
 - A new persistent read-only caching daemon is available to offload reads from shared parent images.
 
-### RGW object storage[¶](#rgw-object-storage "Permalink to this headline")
+### RGW object storage
 
 - Multi-site replication can now be managed on a per-bucket basis (EXPERIMENTAL).
 - WORM?
 - bucket tagging?
 
-### CephFS distributed file system[¶](#cephfs-distributed-file-system "Permalink to this headline")
+### CephFS distributed file system
 
 - Inline data support in CephFS has been deprecated and will likely be removed in a future release.
 - MDS daemons can now be assigned to manage a particular file system via the new `mds_join_fs` option.
@@ -109,13 +109,13 @@ New and enhanced management of Ceph features/services:
 - The mgr volumes plugin has received numerous improvements to support CephFS via CSI, including snapshots and cloning.
 - cephfs-shell has had numerous incremental improvements and bug fixes.
 
-### Upgrading from Mimic or Nautilus[¶](#upgrading-from-mimic-or-nautilus "Permalink to this headline")
+### Upgrading from Mimic or Nautilus
 
 Note
 
 You can monitor the progress of your upgrade at each stage with the `ceph versions` command, which will tell you what ceph version(s) are running for each type of daemon.
 
-### Instructions[¶](#instructions "Permalink to this headline")
+### Instructions
 
 1. Make sure your cluster is stable and healthy (no down or recovering OSDs). (Optional, but recommended.)
 2. Set the `noout` flag for the duration of the upgrade. (Optional, but recommended.):
@@ -241,11 +241,11 @@ You can monitor the progress of your upgrade at each stage with the `ceph versio
     
     For more information about the telemetry module, see [the documentation](https://docs.ceph.com/docs/octopus/mgr/telemetry/#telemetry).
 
-### Upgrading from pre-Mimic releases (like Luminous)[¶](#upgrading-from-pre-mimic-releases-like-luminous "Permalink to this headline")
+### Upgrading from pre-Mimic releases (like Luminous)
 
 You _must_ first upgrade to Mimic (13.2.z) or Nautilus (14.2.z) before upgrading to Octopus.
 
-### Upgrade compatibility notes[¶](#upgrade-compatibility-notes "Permalink to this headline")
+### Upgrade compatibility notes
 
 - Starting with Octopus, there is now a separate repository directory for each version on download.ceph.com (e.g., `rpm-15.2.0` and `debian-15.2.0`). The traditional package directory that is named after the release (e.g., `rpm-octopus` and `debian-octopus`) is now a symlink to the most recently bug fix version for that release. We no longer generate a single repository that combines all bug fix versions for a single named release.
 - The RGW “num\_rados\_handles” has been removed. If you were using a value of “num\_rados\_handles” greater than 1 multiply your current “objecter\_inflight\_ops” and “objecter\_inflight\_op\_bytes” paramaeters by the old “num\_rados\_handles” to get the same throttle behavior.
@@ -322,7 +322,7 @@ You _must_ first upgrade to Mimic (13.2.z) or Nautilus (14.2.z) before upgrading
 - `mClockClientQueue` and `mClockClassQueue` OpQueue implementations have been removed in favor of of a single `mClockScheduler` implementation of a simpler OSD interface. Accordingly, the `osd_op_queue_mclock*` family of config options has been removed in favor of the `osd_mclock_scheduler*` family of options.
 - The config subsystem now searches dot (‘.’) delimited prefixes for options. That means for an entity like `client.foo.bar`, its overall configuration will be a combination of the global options, `client`, `client.foo`, and `client.foo.bar`. Previously, only global, `client`, and `client.foo.bar` options would apply. This change may affect the configuration for clients that include a `.` in their name.
 
-### Changelog[¶](#changelog "Permalink to this headline")
+### Changelog
 
 - .gitignore: add more stuff ([pr#29568](https://github.com/ceph/ceph/pull/29568), Volker Theile)
 - async/dpdk: fix compile errors from ceph::mutex update ([pr#30066](https://github.com/ceph/ceph/pull/30066), yehu)

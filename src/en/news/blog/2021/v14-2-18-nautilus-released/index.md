@@ -6,12 +6,12 @@ author: "dgalloway"
 
 This is the 18th backport release in the Nautilus series. It fixes a regression introduced in 14.2.17 in which the manager module tries to use a couple python modules that do not exist in some environments. We recommend users to update to this release
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 - This release fixes issues loading the dashboard and volumes manager modules in some environments.
     
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - nautilus: .github: add workflow for adding labels and milestone ([pr#39926](https://github.com/ceph/ceph/pull/39926), Kefu Chai, Ernesto Puerta)
     

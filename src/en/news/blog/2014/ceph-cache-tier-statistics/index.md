@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/ceph-cache-statistics.jpg Ceph: Cache Tier Statistics %}
+![Ceph: Cache Tier Statistics](http://sebastien-han.fr/images/ceph-cache-statistics.jpg)
 
 Quick tip on how to retrieve cache statistics from the a cache pool.
 

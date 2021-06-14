@@ -8,7 +8,7 @@ tags:
 
 This is the second bug fix release of Ceph Nautilus release series. We recommend all Nautilus users upgrade to this release. For upgrading from older releases of ceph, general guidelines for upgrade to nautilus must be followed [Upgrading from Mimic or Luminous](#nautilus-old-upgrade).
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 - The `no{up,down,in,out}` related commands have been revamped. There are now 2 ways to set the `no{up,down,in,out}` flags: the old `ceph osd [un]set <flag>` command, which sets cluster-wide flags; and the new `ceph osd [un]set-group <flags> <who>` command, which sets flags in batch at the granularity of any crush node, or device class.
     
@@ -28,7 +28,7 @@ This is the second bug fix release of Ceph Nautilus release series. We recommend
     
     The newer straw2 CRUSH bucket type was introduced in hammer, and ensuring that all clients are hammer or newer allows new features only supported for straw2 buckets to be used, including the crush-compat mode for the [Balancer](../../rados/operations/balancer/#balancer).
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - bluestore: backport more bluestore alerts ([pr#27645](https://github.com/ceph/ceph/pull/27645), Sage Weil, Igor Fedotov)
 - bluestore: call fault\_range prior to looking for blob to reuse ([pr#27525](https://github.com/ceph/ceph/pull/27525), Igor Fedotov)

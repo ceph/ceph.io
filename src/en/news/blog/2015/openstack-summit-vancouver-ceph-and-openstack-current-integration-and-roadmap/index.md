@@ -7,9 +7,7 @@ tags:
 
 Date: 19/05/2015
 
-Video:
-
-{% youtube PhxVPEZeHp4 %}
+[Video](https://www.youtube.com/watch?v=PhxVPEZeHp4)
 
 Slides:
 

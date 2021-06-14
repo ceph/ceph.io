@@ -6,7 +6,7 @@ author: "TheAnalyst"
 
 This is the fourth release of the Ceph Octopus stable release series. In addition to a security fix in RGW, this release brings a range of fixes across all components. We recommend that all Octopus users upgrade to this release.
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 - CVE-2020-10753: rgw: sanitize newlines in s3 CORSConfiguration’s ExposeHeader (William Bowling, Adam Mohammed, Casey Bodley)
     
@@ -44,7 +44,7 @@ This is the fourth release of the Ceph Octopus stable release series. In additio
     or use any other convenient way to restore the schedule after the upgrade.
     
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - build/ops: address SElinux denials observed in rgw/multisite test run ([pr#34538](https://github.com/ceph/ceph/pull/34538), Kefu Chai, Kaleb S. Keithley)
     

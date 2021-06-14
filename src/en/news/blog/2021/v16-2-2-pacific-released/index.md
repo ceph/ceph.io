@@ -9,7 +9,7 @@ This is the second backport release in the Pacific stable series. We recommend a
   
   
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 - Cephadm now supports an **ingress** service type that provides load balancing and HA (via haproxy and keepalived on a virtual IP) for RGW service. The experimental **rgw-ha** service has been removed.
     
@@ -17,7 +17,7 @@ This is the second backport release in the Pacific stable series. We recommend a
   
   
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - ceph-fuse: src/include/buffer.h: 1187: FAILED ceph\_assert(\_num <= 1024) ([pr#40628](https://github.com/ceph/ceph/pull/40628), Yanhu Cao)
     

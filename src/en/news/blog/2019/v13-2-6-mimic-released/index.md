@@ -6,11 +6,11 @@ author: "TheAnalyst"
 
 This is the sixth bugfix release of the Mimic v13.2.x long term stable release series. We recommend all Mimic users upgrade.
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 - Ceph v13.2.6 now packages python bindings for python3.6 instead of python3.4, because EPEL7 recently switched from python3.4 to python3.6 as the native python3. See the [announcement](https://lists.fedoraproject.org/archives/list/epel-announce@lists.fedoraproject.org/message/EGUMKAIMPK2UD5VSHXM53BH2MBDGDWMO) for more details on the background of this change.
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - cephfs: MDSMonitor: do not assign standby-replay when degraded ([issue#36384](http://tracker.ceph.com/issues/36384), [pr#26643](https://github.com/ceph/ceph/pull/26643), Patrick Donnelly)
 - ceph-volume: add –all flag to simple activate ([pr#26655](https://github.com/ceph/ceph/pull/26655), Jan Fajerski)

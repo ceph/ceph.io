@@ -6,7 +6,7 @@ author: "TheAnalyst"
 
 This is the eleventh bug fix release of the Luminous v12.2.x long term stable release series. We recommend that all users upgrade to this release. Please note the following precautions while upgrading.
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 - This release fixes the pg log hard limit bug from v12.2.9 ([https://tracker.ceph.com/issues/36686](https://tracker.ceph.com/issues/36686)). A flag called pglog\_hardlimit has been introduced, which is off by default. This flag enables the feature that limits the length of the pg log. Users should run ceph osd set pglog\_hardlimit after completely upgrading to 12.2.11. Once the cluster has this flag set, the length of the pg log will be capped by a hard limit. Once set, the flag _must not_ be unset anymore.
 - There have been fixes to RGW dynamic and manual resharding, which no longer leaves behind stale bucket instances to be removed manually. For finding and cleaning up older instances from a reshard a radosgw-admin command reshard stale-instances list and reshard stale-instances rm should do the necessary cleanup.
@@ -14,7 +14,7 @@ This is the eleventh bug fix release of the Luminous v12.2.x long term stable re
 - CVE-2018-16846: rgw: enforce bounds on max-keys/max-uploads/max-parts [issue#35994](http://tracker.ceph.com/issues/35994)
 - CVE-2018-16889: rgw: sanitize customer encryption keys from log output in v4 auth [issue#37847](http://tracker.ceph.com/issues/37847)
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - build/ops: cmake: link unittest\_compression against gtest ([pr#24921](https://github.com/ceph/ceph/pull/24921), Willem Jan Withagen)
 - build/ops: run-make-check.sh ccache tweaks ([issue#24826](http://tracker.ceph.com/issues/24826), [issue#24817](http://tracker.ceph.com/issues/24817), [issue#24777](http://tracker.ceph.com/issues/24777), [pr#23902](https://github.com/ceph/ceph/pull/23902), Nathan Cutler, Erwan Velu)

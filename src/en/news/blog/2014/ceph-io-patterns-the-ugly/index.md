@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/ceph-io-the-good-the-bad-the-ugly-details.jpg Ceph IO patterns: the good, the bad and the ugly details %}
+![Ceph IO patterns: the good, the bad and the ugly details](http://sebastien-han.fr/images/ceph-io-the-good-the-bad-the-ugly-details.jpg)
 
 Ceph IO patterns analysis final part: **The Ugly**.
 
@@ -27,7 +27,7 @@ Ceph IO patterns analysis final part: **The Ugly**.
 
 Principle:
 
-{% img center http://sebastien-han.fr/images/ceph-io-random-osd.png IO patterns on RBD %}
+![IO patterns on RBD](http://sebastien-han.fr/images/ceph-io-random-osd.png)
 
 During my last benchmarking session we had a similar assumption, however we didn't get the chance to bring to light this fact. Fortunately people from Intel transformed this assumption into a reality. The phenomena is pretty easy to understand. Basically and due to its distributed nature Ceph deterministically stores objects. Thus, objects (from diverse clients) will map to the same OSD disk. Eventually sequential streams get mixed all together. Ceph queues IO operation, for instance you could get the following one:
 
@@ -47,7 +47,7 @@ Since I hate paraphrasing, I'm gonna guide you to the excellent blog post from I
 
 Reusing [Loic Dachary's](http://dachary.org/?p=2171) picture.
 
-{% img center http://sebastien-han.fr/images/erasure-vs-replication.png Erasure VS replication %}
+![Erasure VS replication](http://sebastien-han.fr/images/erasure-vs-replication.png)
 
 **This is just an assumption**. The previous phenomena could potentially get amplified, since erasure code doesn chunks of chunks. As shown on the picture, instead of writing 3 objects we write 13 objects: 10 x 1M (cut) + 3 (parity). I believe erasure code will save you space but it will also bring down your performance.
 

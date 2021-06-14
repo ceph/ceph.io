@@ -9,7 +9,7 @@ This is a hotfix release addressing a number of security issues and regressions.
   
   
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - mgr/dashboard: fix base-href: revert it to previous approach ([issue#50684](https://tracker.ceph.com/issues/50684), Avan Thakkar)
     

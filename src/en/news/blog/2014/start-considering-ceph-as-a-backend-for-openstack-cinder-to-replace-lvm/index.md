@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/drop-lvm-for-ceph-cinder-openstack.jpg Please drop LVM and use Ceph as a backend for OpenStack Cinder %}
+![Please drop LVM and use Ceph as a backend for OpenStack Cinder](http://sebastien-han.fr/images/drop-lvm-for-ceph-cinder-openstack.jpg)
 
 Just back from the Juno summit, I attended most of the storage sessions and was extremely shocked how Ceph was avoided by storage vendors. However LVM, the reference storage backend for Cinder was always mentioned. Maybe, is it a sign that Ceph is taking over? Talking about LVM, the last OpenStack survey showed that it was the more used backend.
 

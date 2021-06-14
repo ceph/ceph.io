@@ -6,7 +6,7 @@ author: "TheAnalyst"
 
 This is the first bug fix release of Ceph Nautilus release series. We recommend all nautilus users upgrade to this release. For upgrading from older releases of ceph, general guidelines for upgrade to nautilus must be followed [Upgrading from Mimic or Luminous](http://docs.ceph.com/master/releases/nautilus/#nautilus-old-upgrade).
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 - The default value for mon\_crush\_min\_required\_version has been changed from firefly to hammer, which means the cluster will issue a health warning if your CRUSH tunables are older than hammer. There is generally a small (but non-zero) amount of data that will move around by making the switch to hammer tunables; for more information, see [Tunables](../../rados/operations/crush-map/#crush-map-tunables).
     
@@ -22,11 +22,11 @@ This is the first bug fix release of Ceph Nautilus release series. We recommend 
 - Ceph now packages python bindings for python3.6 instead of python3.4, because EPEL7 recently switched from python3.4 to python3.6 as the native python3. see the [epel lists announcement](https://lists.fedoraproject.org/archives/list/epel-announce@lists.fedoraproject.org/message/EGUMKAIMPK2UD5VSHXM53BH2MBDGDWMO/) for more details on the background of this change.
     
 
-## Known Issues[¶](#known-issues "Permalink to this headline")
+## Known Issues
 
 - Nautilus-based librbd clients cannot open images stored on pre-Luminous clusters
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - mgr/dashboard: readonly user can’t see any pages ([issue#39240](http://tracker.ceph.com/issues/39240), [pr#27611](https://github.com/ceph/ceph/pull/27611), Stephan Müller)
 - mgr/dashboard: Filter iSCSI target images based on required features ([issue#39002](http://tracker.ceph.com/issues/39002), [pr#27363](https://github.com/ceph/ceph/pull/27363), Ricardo Marques)

@@ -9,6 +9,6 @@ This is the third backport release in the Pacific series. We recommend all Pacif
   
   
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 - This release fixes a cephadm upgrade bug that caused some systems to get stuck in a loop restarting the first mgr daemon.

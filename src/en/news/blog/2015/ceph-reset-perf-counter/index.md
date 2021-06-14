@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/ceph-reset-perf-counter.jpg Ceph reset perf counter %}
+![Ceph reset perf counter](http://sebastien-han.fr/images/ceph-reset-perf-counter.jpg)
 
 OSD performance counters tend to stack up and sometimes the value shown is not really representative of the current environment. Thus it is quite useful to reset the counters to get the last values. This feature was added in the **Ceph 0.90, so you must wait for the Hammer release.**
 

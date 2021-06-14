@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center https://sebastien-han.fr/images/cephday.png See you at the CephDays in Paris %}
+![See you at the CephDays in Paris](https://sebastien-han.fr/images/cephday.png)
 
 This second edition of the CephDay London looks really promising. You should definitely look at the agenda! Talks go from OpenStack to deep performance studies and crossing CephFS news!
 

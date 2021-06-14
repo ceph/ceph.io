@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/ceph-tcmalloc-performance.jpg The Ceph and TCMalloc performance store %}
+![The Ceph and TCMalloc performance store](http://sebastien-han.fr/images/ceph-tcmalloc-performance.jpg)
 
 This article simply relays some recent discovery made around Ceph performance. The finding behind this story is one of the biggest improvement in Ceph performance that has been seen in years. So I will just highlight and summarize the study in case you do not want to read it entirely.
 

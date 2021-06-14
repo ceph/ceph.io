@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/librbd-io-pattern.jpg Analyse OpenStack guest writes and reads running on Ceph %}
+![Analyse OpenStack guest writes and reads running on Ceph](http://sebastien-han.fr/images/librbd-io-pattern.jpg)
 
 Analyse IO pattern of all your guest machines.
 

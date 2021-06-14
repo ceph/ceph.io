@@ -6,7 +6,7 @@ author: "TheAnalyst"
 
 This is the tenth release in the Nautilus series. In addition to fixing a security-related bug in RGW, this release brings a number of bugfixes across all major components of Ceph. We recommend that all Nautilus users upgrade to this release.
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 - CVE-2020-10753: rgw: sanitize newlines in s3 CORSConfiguration’s ExposeHeader (William Bowling, Adam Mohammed, Casey Bodley)
     
@@ -31,7 +31,7 @@ This is the tenth release in the Nautilus series. In addition to fixing a securi
 - RGW: bucket listing performance on sharded bucket indexes has been notably improved by heuristically – and significantly, in many cases – reducing the number of entries requested from each bucket index shard.
     
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - build/ops: address SElinux denials observed in rgw/multisite test run ([pr#34539](https://github.com/ceph/ceph/pull/34539), Kefu Chai, Kaleb S. Keithley)
     

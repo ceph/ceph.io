@@ -11,7 +11,7 @@ We recommend all Octopus users upgrade.
   
   
 
-## Security Fixes[¶](#notable-changes "Permalink to this headline")
+## Security Fixes
 
 - This release includes a security fix that ensures the global\_id value (a numeric value that should be unique for every authenticated client or daemon in the cluster) is reclaimed after a network disconnect or ticket renewal in a secure fashion. Two new health alerts may appear during the upgrade indicating that there are clients or daemons that are not yet patched with the appropriate fix.  
       

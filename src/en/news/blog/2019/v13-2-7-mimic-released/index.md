@@ -6,7 +6,7 @@ author: "dgalloway"
 
 This is the seventh bugfix release of the Mimic v13.2.x long term stable release series. We recommend all Mimic users upgrade.
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 MDS:
 
@@ -25,7 +25,7 @@ RGW:
 
 - radosgw-admin introduces two subcommands that allow the managing of expire-stale objects that might be left behind after a bucket reshard in earlier versions of RGW. One subcommand lists such objects and the other deletes them. Read the troubleshooting section of the dynamic resharding docs for details.
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - bluestore: 50-100% iops lost due to bluefs\_preextend\_wal\_files = false ([issue#40280](http://tracker.ceph.com/issues/40280), [pr#28574](https://github.com/ceph/ceph/pull/28574), Vitaliy Filippov)
 - bluestore: Change default for bluestore\_fsck\_on\_mount\_deep as false ([pr#29699](https://github.com/ceph/ceph/pull/29699), Neha Ojha)

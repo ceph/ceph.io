@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/openstack-summit-vancouver.jpg OpenStack Summit Vancouver: thanks for your votes %}
+![OpenStack Summit Vancouver: thanks for your votes](http://sebastien-han.fr/images/openstack-summit-vancouver.jpg)
 
 Bonjour, bonjour ! Quick post to let you know that my talk submission has been accepted, so I'd like to thank you all for voting. As a reminder, our [talk](https://openstacksummitmay2015vancouver.sched.org/event/d3d4a3e4b0418624b0a235d39df86805) (Josh Durgin and I) is scheduled Tuesday, May 19 between 11:15am - 11:55am.
 

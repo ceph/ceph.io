@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/ceph-rbd-tgt.jpg Start with the RBD support for TGT %}
+![Start with the RBD support for TGT](http://sebastien-han.fr/images/ceph-rbd-tgt.jpg)
 
 A couple a months ago, [Dan Mick](http://ceph.com/dev-notes/adding-support-for-rbd-to-stgt/) posted a nice article that introduced the RBD support for iSCSI / TGT. In this article, I will have a look at it.
 

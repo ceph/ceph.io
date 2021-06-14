@@ -6,14 +6,14 @@ author: "TheAnalyst"
 
 This is the 13th backport release in the Nautilus series. This release fixes a regression introduced in v14.2.12, and a few ceph-volume & RGW fixes. We recommend users to update to this release.
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 - Fixed a regression that caused breakage in clusters that referred to ceph-mon hosts using dns names instead of ip addresses in the `mon_host` param in `ceph.conf` ([issue#47951](https://tracker.ceph.com/issues/47951))
     
 - ceph-volume: the `lvm batch` subcommand received a major rewrite
     
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - ceph-volume: major batch refactor ([pr#37522](https://github.com/ceph/ceph/pull/37522), Jan Fajerski)
     

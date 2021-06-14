@@ -5,7 +5,7 @@ author: "shan"
 tags: 
 ---
 
-{% img center http://sebastien-han.fr/images/cephfs-file-location.jpg CephFS determine a file location %}
+![CephFS determine a file location](http://sebastien-han.fr/images/cephfs-file-location.jpg)
 
 Quick tip to determine the location of a file stored on CephFS.
 

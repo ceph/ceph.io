@@ -6,7 +6,7 @@ author: "TheAnalyst"
 
 This is the eleventh release in the Nautilus series. This release brings a number of bugfixes across all major components of Ceph. We recommend that all Nautilus users upgrade to this release.
 
-## Notable Changes[¶](#notable-changes "Permalink to this headline")
+## Notable Changes
 
 - RGW: The `radosgw-admin` sub-commands dealing with orphans – `radosgw-admin orphans find`, `radosgw-admin orphans finish`, `radosgw-admin orphans list-jobs` – have been deprecated. They have not been actively maintained and they store intermediate results on the cluster, which could fill a nearly-full cluster. They have been replaced by a tool, currently considered experimental, `rgw-orphan-list`.
     
@@ -15,7 +15,7 @@ This is the eleventh release in the Nautilus series. This release brings a numbe
 - Fixed a ceph-osd crash in committed osd maps when there is a failure to encode the first incremental map. [issue#46443](https://tracker.ceph.com/issues/46443)
     
 
-## Changelog[¶](#changelog "Permalink to this headline")
+## Changelog
 
 - bluestore: core: os/bluestore: fix large (>2GB) writes when bluefs\_buffered\_io = true ([pr#35404](https://github.com/ceph/ceph/pull/35404), Igor Fedotov)
     
