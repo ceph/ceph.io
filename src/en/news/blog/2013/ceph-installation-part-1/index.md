@@ -1,0 +1,140 @@
+---
+title: "Ceph Installation :: Part-1"
+date: "2013-12-05"
+author: "syndicated"
+tags: 
+  - "ceph"
+  - "planet"
+---
+
+Ceph Installation Step by Step  
+
+This quick start setup helps to deploy ceph with 3 Monitors and 2 OSD nodes with 4 OSD each node. In this we are using commodity hardware running CentOS 6.4  
+  
+
+**Ceph-mon1** : First Monitor + Ceph-deploy machine (will be used to deploy ceph to other nodes )  
+
+**Ceph-mon2** : Second Monitor ( for monitor quorum )  
+
+**Ceph-mon3** : Third Monitor ( for monitor quorum )  
+
+**Ceph-node1** : OSD node 1 with 10G X 1 for OS , 440G X 4 for 4 OSD  
+
+**Ceph-node2** : OSD node 2 with 10G X 1 for OS , 440G X 4 for 4 OSD  
+
+Ceph-Deploy Version is 1.3.2 , Ceph Version 0.67.4 ( Dumpling )  
+  
+  
+
+### [](https://draft.blogger.com/blogger.g?blogID=6067449713794600812)Preflight Checklist [![](images/pencil.png)](https://wiki.csc.fi/wiki/CloudComputing/CEPHStorage# "Preflight Checklist") 
+
+All the Ceph Nodes may require some basic configuration work prior to deploying a Ceph Storage Cluster.  
+  
+  
+
+#### [](https://draft.blogger.com/blogger.g?blogID=6067449713794600812)CEPH node setup[![](images/pencil.png)](https://wiki.csc.fi/wiki/CloudComputing/CEPHStorage# "CEPH node setup")
+
+- Create a user on each Ceph Node.
+
+sudo useradd -d /home/ceph -m ceph  
+sudo passwd ceph  
+
+- Add root privileges for the user on each Ceph Node.
+
+echo "ceph ALL = (root) NOPASSWD:ALL" | sudo tee /etc/sudoers  
+sudo chmod 0440 /etc/sudoers  
+
+- Configure your ceph-deploy node ( ceph-mon1) with password-less SSH access to each Ceph Node. Leave the passphrase empty , repeat this step for CEPH and ROOT users.
+
+ceph@ceph-admin:~ \[ceph@ceph-admin ~\]$ ssh-keygen  
+Generating public/private rsa key pair.  
+Enter file in which to save the key (/home/ceph/.ssh/id\_rsa): yes           
+Created directory '/home/ceph/.ssh'.  
+Enter passphrase (empty for no passphrase):   
+Enter same passphrase again:   
+Your identification has been saved in /home/ceph/.ssh/id\_rsa.  
+Your public key has been saved in /home/ceph/.ssh/id\_rsa.pub.  
+The key fingerprint is:  
+48:86:ff:4e:ab:c3:f6:cb:7f:ba:46:33:10:e6:22:52 ceph@ceph-admin.csc.fi  
+The key's randomart image is:  
++--\[ RSA 2048\]----+  
+|                 |  
+|    E.  o        |  
+|   .. oo .       |  
+|  . .+..o        |  
+|   . .o.S.       |  
+|       .  +      |  
+|     .  o. o     |  
+|      ++ .. .    |  
+|     ..+\*+++     |  
++-----------------+  
+  
+
+- Copy the key to each Ceph Node. ( Repeat this step for ceph and root users )
+
+\[ceph@ceph-mon1 ~\]$ ssh-copy-id ceph@ceph-node2  
+The authenticity of host 'ceph-node2 (192.168.1.38)' can't be established.  
+RSA key fingerprint is ac:31:6f:e7:bb:ed:f1:18:9e:6e:42:cc:48:74:8e:7b.  
+Are you sure you want to continue connecting (yes/no)? y  
+Please type 'yes' or 'no': yes  
+Warning: Permanently added 'ceph-node2,192.168.1.38' (RSA) to the list of known hosts.  
+ceph@ceph-node2's password:   
+Now try logging into the machine, with "ssh 'ceph@ceph-node2'", and check in:  .ssh/authorized\_keys  
+to make sure we haven't added extra keys that you weren't expecting.  
+\[ceph@ceph-mon1 ~\]$ 
+
+- Ensure connectivity using ping with hostnames , for convenience we have used local host file , update host file of every node with details of other nodes. PS : Use of DNS is recommended
+- Packages are cryptographically signed with the release.asc key. Add release key to your system’s list of trusted keys to avoid a security warning:
+
+sudo rpm --import 'https://ceph.com/git/?p=ceph.git;a=blob\_plain;f=keys/release.asc'
+
+- Ceph may require additional additional third party libraries. To add the EPEL repository, execute the following:
+
+su -c 'rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86\_64/epel-release-6-8.noarch.rpm'  
+sudo yum install snappy leveldb gdisk python-argparse gperftools-libs  
+
+- Installing Release packages , Dumpling is the most recent stable release of Ceph. ( by the time i am creating this wiki )
+
+su -c 'rpm -Uvh http://ceph.com/rpm-dumpling/el6/noarch/ceph-release-1-0.el6.noarch.rpm'
+
+- Adding ceph to YUM , create repository file for ceph /etc/yum.repos.d/ceph.repo
+
+\[ceph\]  
+name=Ceph packages for $basearch  
+baseurl=http://ceph.com/rpm-dumpling/el6/$basearch  
+enabled=1  
+gpgcheck=1  
+type=rpm-md  
+gpgkey=https://ceph.com/git/?p=ceph.git;a=blob\_plain;f=keys/release.asc  
+  
+\[ceph-noarch\]  
+name=Ceph noarch packages  
+baseurl=http://ceph.com/rpm-dumpling/el6/noarch  
+enabled=1  
+gpgcheck=1  
+type=rpm-md  
+gpgkey=https://ceph.com/git/?p=ceph.git;a=blob\_plain;f=keys/release.asc  
+  
+\[ceph-source\]  
+name=Ceph source packages  
+baseurl=http://ceph.com/rpm-dumpling/el6/SRPMS  
+enabled=0  
+gpgcheck=1  
+type=rpm-md  
+gpgkey=https://ceph.com/git/?p=ceph.git;a=blob\_plain;f=keys/release.asc  
+
+- For best results, create directories on your nodes for maintaining the configuration generated by ceph . These should get auto created by ceph however in may case it gave me problems. So creating manually.
+
+mkdir -p /etc/ceph /var/lib/ceph/{tmp,mon,mds,bootstrap-osd} /var/log/ceph
+
+- By default, daemons bind to ports within the 6800:7100 range. You may configure this range at your discretion. Before configuring your IP tables, check the default iptables configuration. ::ports within the 6800:7100 range. You may configure this range at your discretion. Since we are performing test deployment we can disable iptables on ceph nodes . For moving to production this need to be attended.
+
+  
+
+#### Please Follow [Ceph Installation :: Part-2](http://karan-mj.blogspot.fi/2013/12/ceph-installation-part-2.html) for next step in installation
+
+  
+
+  
+
+![](http://feeds.feedburner.com/~r/CephStorageNextBigThing/~4/wAIbXpzeoA4)
