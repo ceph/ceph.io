@@ -1,10 +1,40 @@
 {
   "tech_talks": [
     {
-      "date": "2021-10-30",
-      "title": "This is a dummy coming soon event",
-      "presenter": "Karan Singh",
-      "url": "https://www.youtube.com/watch?v=vQF17UBU4RE"
+      "date": "2021-06-02",
+      "title": "Ceph Month 2021: Call for Participation: Ceph Stable Releases Team",
+      "presenter": "Loïc Dachary",
+      "url": "https://youtu.be/KGFfDguicWk"
+    },
+    {
+      "date": "2021-06-02",
+      "title": "Ceph Month 2021: Week 1 Open Discussion",
+      "presenter": "Sage and colleagues",
+      "url": "https://youtu.be/BM9jliLsFUc"
+    },
+    {
+      "date": "2021-06-02",
+      "title": "Ceph Month 2021: RADOS Update",
+      "presenter": "Neja Ojha",
+      "url": "https://youtu.be/HmgYLx0rn2w"
+    },
+    {
+      "date": "2021-06-02",
+      "title": "Ceph Month 2021: Ceph on Windows",
+      "presenter": "Alessandro Pilotti",
+      "url": "https://youtu.be/OjhMTyvI33w"
+    },
+    {
+      "date": "2021-06-02",
+      "title": "Ceph Month 2021: Ceph Project Update",
+      "presenter": "Sage Weil and Josh Durgin",
+      "url": "https://www.youtube.com/watch?v=8odwBgOfRAM"
+    },
+    {
+      "date": "2021-03-10",
+      "title": "What's New in Pacific Ceph Release",
+      "presenter": "Sage Weil",
+      "url": "https://www.youtube.com/watch?v=PVtn53MbxTc"
     },
     {
       "date": "2020-10-01",
