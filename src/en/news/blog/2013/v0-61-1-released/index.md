@@ -3,7 +3,6 @@ title: "v0.61.1 released"
 date: "2013-05-09"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 This release is a small update to Cuttlefish that fixes a problem when upgrading a bobtail cluster that had snapshots. Please use this instead of v0.61 if you are upgrading to avoid possible ceph-osd daemon crashes. There is also fix for a problem deploying monitors and generating new authentication keys.

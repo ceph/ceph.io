@@ -3,7 +3,6 @@ title: "See you at the cephday in London"
 date: "2013-10-01"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/cephday.png "See you at the cephday in London")

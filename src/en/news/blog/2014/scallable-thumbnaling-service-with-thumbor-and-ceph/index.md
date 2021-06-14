@@ -3,7 +3,6 @@ title: "Scallable Thumbnaling Service With Thumbor and Ceph"
 date: "2014-08-18"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 An example of using the python-ceph library for thumbnailing service.

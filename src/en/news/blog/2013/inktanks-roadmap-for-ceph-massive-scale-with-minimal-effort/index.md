@@ -4,7 +4,6 @@ date: "2013-03-21"
 author: "nwl"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 It’s been just over a year since Inktank was formed with a goal of making Ceph the ‘Linux of Storage’. But while Inktank is a young company, Ceph itself has a longer history, going back to Sage Weil’s PhD in 2005. The intervening years saw much of the engineering work focused on building the foundations for an architecture that can scale to meet the demands of today’s data growth. The design of that architecture both reflects the cutting edge of academic research into distributed storage systems and the experience of people running hosting providers, who continue to be in the vanguard of handling storage scaling issues.

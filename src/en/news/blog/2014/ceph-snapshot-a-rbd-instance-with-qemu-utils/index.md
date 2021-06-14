@@ -3,7 +3,6 @@ title: "Ceph: snapshot a RBD instance with QEMU-UTILS"
 date: "2014-01-20"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/rbd-instance-snap-qemu-utils.jpg "Ceph: snapshot a RBD instance with QEMU-UTILS")

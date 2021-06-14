@@ -3,7 +3,6 @@ title: "Ceph RBD With LXC Containers"
 date: "2014-11-17"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 A simple way to secure your data with containers is to use a distributed storage such as Ceph for LXC root storage.

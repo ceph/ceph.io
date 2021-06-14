@@ -3,7 +3,6 @@ title: "Who You Callin’ Wimpy? Storage on ARM-based Servers Is Brawny!"
 date: "2013-09-03"
 author: "syndicated"
 tags: 
-  - "planet"
 ---
 
 [![](images/Registered-Calxeda-Logo.png)](http://calxeda.com/)

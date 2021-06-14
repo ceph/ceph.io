@@ -3,7 +3,6 @@ title: "Announcing the Ceph.com Refresh"
 date: "2012-05-03"
 author: "rturk"
 tags: 
-  - "planet"
 ---
 
 Hello, everyone! I’m the new community guy for Ceph, and it’s my honor to announce the refresh of our website.

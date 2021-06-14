@@ -3,7 +3,6 @@ title: "RADOS snapshots"
 date: "2009-06-06"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 Some interesting issues came up when we started considering how to expose the RADOS snapshot functionality to librados users.  The object store exposes a pretty low-level interface to control when objects are cloned (i.e. when an object snapshot is taken via the btrfs copy-on-write ioctls).  The basic design in Ceph is that the client provides a “SnapContext” with each write operation that indicates which snapshots logically exist for the given object; if the version already stored by the OSD is older than the newest snapshot in the SnapContext, a clone is created before the write is applied.  It is the Ceph MDS’s responsibility to keep track of which snapshots apply to which objects (remember, Ceph lets you snapshot any subdirectory) and to do all the synchronization that ensures mounted clients have up to date SnapContexts.

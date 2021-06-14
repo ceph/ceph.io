@@ -4,7 +4,6 @@ date: "2014-06-22"
 author: "dmsimard"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 I’ve always been a fan of [nginx](http://nginx.org/), it was love at first sight.

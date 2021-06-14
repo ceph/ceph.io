@@ -3,7 +3,6 @@ title: "v0.23.1 released"
 date: "2010-11-23"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 This release includes some bug fixes for v0.23, although there’s nothing here that too many people have been hitting, fortunately.

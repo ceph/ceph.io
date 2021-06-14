@@ -3,7 +3,6 @@ title: "OpenStack at the CephDays Paris"
 date: "2014-09-05"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/cephday.png "See you at the CephDays in Paris")

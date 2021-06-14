@@ -3,7 +3,6 @@ title: "v0.55 released"
 date: "2012-12-04"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 We had originally planned to make v0.55 a long-term stable release, but a lot of last-minute changes and fixes went into this cycle, so we are going to wait another cycle and make v0.56 bobtail.   A lot of work went into v0.55, however.  If you aren’t running argonaut (v0.48.\*), please give v0.55 a try and help us make sure it is rock solid!

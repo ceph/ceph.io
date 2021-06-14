@@ -3,7 +3,6 @@ title: "Using Ceph-deploy"
 date: "2013-07-30"
 author: "syndicated"
 tags: 
-  - "planet"
 ---
 
 ## Install the ceph cluster

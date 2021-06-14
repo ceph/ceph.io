@@ -4,7 +4,6 @@ date: "2014-03-26"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 $ rbd create --size $((1024 \* 1024 \* 1024 \* 1024)) tiny

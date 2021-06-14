@@ -3,7 +3,6 @@ title: "v0.55.1 released"
 date: "2012-12-13"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 There were some packaging and init script issues with v0.55, so a small point release is out. It fixes a few odds and ends:

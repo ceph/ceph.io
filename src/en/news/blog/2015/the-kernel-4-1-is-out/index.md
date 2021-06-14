@@ -3,7 +3,6 @@ title: "The Kernel 4.1 Is Out"
 date: "2015-06-22"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 This kernel version support all features for Hammer, in particular straw v2.

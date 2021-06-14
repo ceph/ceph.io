@@ -3,7 +3,6 @@ title: "v0.35 released"
 date: "2011-09-21"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 **WARNING: There is a disk format change in this release that requires a bit of extra care to upgrade safely.  Please see below.**

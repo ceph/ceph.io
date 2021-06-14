@@ -3,7 +3,6 @@ title: "OpenStack: use ephemeral and persistent root storage for different hyper
 date: "2014-09-01"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 {% img center http://sebastien-han.fr/images/epheremal-persistent-root-storage-different-hypervisor.jpg OpenStack: use ephemeral and persistent root storage for different hypervisors %}

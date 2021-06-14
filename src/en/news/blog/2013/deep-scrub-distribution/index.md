@@ -3,7 +3,6 @@ title: "Deep Scrub Distribution"
 date: "2013-08-27"
 author: "syndicated"
 tags: 
-  - "planet"
 ---
 
 To verify the integrity of data, Ceph uses a mechanism called deep scrubbing which browse all your data once per week for each placement group. This can be the cause of overload when all osd running deep scrubbing at the same time.

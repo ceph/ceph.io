@@ -3,7 +3,6 @@ title: "v0.38 released"
 date: "2011-11-11"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 It”s a week delayed, but v0.38 is ready.  The highlights:

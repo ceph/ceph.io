@@ -4,7 +4,6 @@ date: "2015-03-09"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 When handling a [Ceph](http://ceph.com/) OSD, it is convenient to assign it a symbolic name that can be chosen even before it is created. That’s what the **uuid** argument for **ceph osd create** is for. Without a **uuid** argument, a random uuid will be assigned to the OSD and can be used later. Since the **ceph osd create uuid** is idempotent, it can also be used to lookup the id of a given OSD.

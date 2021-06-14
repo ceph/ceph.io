@@ -4,7 +4,6 @@ date: "2014-12-13"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 The [ceph-disk](http://workbench.dachary.org/ceph/ceph/blob/giant/src/ceph-disk) script manages [Ceph](http://ceph.com/) devices and rely on the content of the **/dev/disk/by-partuuid** directory which is updated by [udev](https://en.wikipedia.org/wiki/Udev) rules. For instance:

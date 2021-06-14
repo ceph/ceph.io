@@ -3,7 +3,6 @@ title: "v0.33 released"
 date: "2011-08-17"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 v0.33 is out. Notable changes this time around:

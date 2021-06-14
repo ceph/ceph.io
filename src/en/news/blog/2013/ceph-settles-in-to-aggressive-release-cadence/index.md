@@ -3,7 +3,6 @@ title: "Ceph Settles in to Aggressive Release Cadence"
 date: "2013-03-12"
 author: "scuttlemonkey"
 tags: 
-  - "planet"
 ---
 
 Since its inception, Ceph has always had a fast-paced rolling release tempo. However, with the amount of adoption that Ceph has had over the last year (including continued integration work with several other open source projects), we wanted to move to a more reliable, and predictable, release schedule.

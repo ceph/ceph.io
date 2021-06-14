@@ -3,7 +3,6 @@ title: "Inktank Hardware Configuration Guide"
 date: "2014-03-06"
 author: "syndicated"
 tags: 
-  - "planet"
 ---
 
 Many customers ask, “How do I best configure the hardware in my environment for Ceph?” Inktank is in a unique position to help answer this question, because we’ve been helping many customers evaluate and deploy Ceph into production environments for block and object storage at major financial institutions, large and small service providers, and public enterprises.

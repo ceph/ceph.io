@@ -3,7 +3,6 @@ title: "Ceph early adopter: Université de Nantes"
 date: "2013-07-16"
 author: "scuttlemonkey"
 tags: 
-  - "planet"
 ---
 
 In case you missed Loic’s account of a recent visit to the Université de Nantes, we are replicating his blog here. It’s always great to see the community adopting Ceph and doing great things with it, even if they are doing it without [Inktank support](http://www.inktank.com/support-services/). Read on for a great look at a Ceph early adopter.

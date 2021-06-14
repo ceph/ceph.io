@@ -3,7 +3,6 @@ title: "Use Trim/discard With Rbd Kernel Client (Since Kernel 3.18)"
 date: "2014-12-18"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 Realtime :

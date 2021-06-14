@@ -4,7 +4,6 @@ date: "2014-10-28"
 author: "dalgaaf"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 The Ceph Developer Summit (CDS) for the next major Ceph release called Hammer started today some hours ago (2014/10/28). It's again a virtual summit via video conference calls.

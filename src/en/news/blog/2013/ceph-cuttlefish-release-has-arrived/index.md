@@ -4,7 +4,6 @@ date: "2013-05-07"
 author: "nwl"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 ­­Today marks another milestone for Ceph with the release of Cuttlefish (v0.61), the third stable release of Ceph. Inktank’s development efforts for the Cuttlefish release have been focused around Red Hat support and making it easier to install and configure Ceph while improving the operational ease of integrating with 3rd party tools, such as provisioning and billing systems. As ever, there have also been a ton of new features we have added to the object and block capabilities of Ceph, as well as with the underlying storage cluster (RADOS), alongside some great contributions from the community.

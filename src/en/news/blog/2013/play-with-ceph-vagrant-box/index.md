@@ -3,7 +3,6 @@ title: "Play with Ceph - Vagrant Box"
 date: "2013-04-22"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/vagrant-logo.png "Play with Ceph - Vagrant Box")

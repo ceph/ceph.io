@@ -3,7 +3,6 @@ title: "Ceph Storage :: Next Big Thing 2015-02-25 20:10:00"
 date: "2015-02-25"
 author: "syndicated"
 tags: 
-  - "planet"
 ---
 
 ## _Now Showing_ : Learning Ceph

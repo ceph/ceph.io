@@ -3,7 +3,6 @@ title: "v0.48.1 ‘argonaut’ stable update released"
 date: "2012-08-14"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 We’ve built and pushed the first update to the argonaut stable release.  This branch has a range of small fixes for stability, compatibility, and performance, but no major changes in functionality.  The stability fixes are particularly important for large clusters with many OSDs, and for network environments where intermittent network failures are more common.

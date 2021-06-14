@@ -3,7 +3,6 @@ title: "v0.18 released"
 date: "2009-12-04"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 There’s a v0.18 release to match the latest posting of the kernel client code on the Linux email lists.  If there are no final issues there, that will be what I send to Linus for 2.6.33.

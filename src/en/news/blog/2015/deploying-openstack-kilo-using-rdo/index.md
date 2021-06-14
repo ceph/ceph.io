@@ -3,7 +3,6 @@ title: "Deploying OpenStack KILO Using RDO"
 date: "2015-07-11"
 author: "syndicated"
 tags: 
-  - "planet"
 ---
 
 ![Deploying OpenStack KILO using RDO](images/openstack-kilo-architecture.png "Deploying OpenStack KILO using RDO")

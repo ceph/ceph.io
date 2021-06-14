@@ -3,7 +3,6 @@ title: "Don't Forget Unmap Before Remove Rbd"
 date: "2013-08-02"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 <table><tbody><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>

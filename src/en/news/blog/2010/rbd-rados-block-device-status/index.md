@@ -3,7 +3,6 @@ title: "rbd (rados block device) status"
 date: "2010-08-30"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 The [rados block device (rbd)](http://ceph.newdream.net/wiki/Rbd) is looking pretty good at this point.  The basic feature set:

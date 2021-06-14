@@ -3,7 +3,6 @@ title: "Delayed capability release"
 date: "2008-04-18"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 The Ceph MDS server issues “capabilities” to clients to grant them permission to read or write objects for a particular file. I’ve added a delayed release of capabilities after a file is closed, as many workloads will quickly reopen the same file. In that case, we can re-use our existing capabilities (and be assured by the metadata leases that we’re correctly resolved the pathname to the correct inode) without any additional MDS interaction. This is a big win for, surprisingly, find, which has a pretty peculiar access pattern when descending out of directories:

@@ -3,7 +3,6 @@ title: "Atomicity of RESTful radosgw operations"
 date: "2011-11-07"
 author: "yehudasa"
 tags: 
-  - "planet"
 ---
 
 A while back we worked on radosgw doing atomic reads and writes.

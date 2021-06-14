@@ -3,7 +3,6 @@ title: "Ceph rolling upgrades with Ansible"
 date: "2015-03-30"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 {% img center http://sebastien-han.fr/images/ansible-ceph-upgrades.jpg Ceph rolling upgrades with Ansible %}

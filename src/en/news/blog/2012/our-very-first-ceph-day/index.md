@@ -3,7 +3,6 @@ title: "Our Very First Ceph Day"
 date: "2012-11-06"
 author: "rturk"
 tags: 
-  - "planet"
 ---
 
 Last Friday we had our very first day-long workshop dedicated to Ceph…in beautiful Amsterdam! The Ceph project has had a nice, long string of “firsts” lately and it was exciting to witness this one in person.

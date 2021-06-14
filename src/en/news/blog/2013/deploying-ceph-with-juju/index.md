@@ -3,7 +3,6 @@ title: "Deploying Ceph with Juju"
 date: "2013-02-21"
 author: "scuttlemonkey"
 tags: 
-  - "planet"
 ---
 
 **NOTE:** This guide is out of date.  Please see the included documentation on the [more recent charms](http://manage.jujucharms.com/charms/precise/ceph) in the charmstore.

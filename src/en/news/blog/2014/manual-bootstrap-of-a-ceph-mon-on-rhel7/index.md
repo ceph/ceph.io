@@ -4,7 +4,6 @@ date: "2014-10-11"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 A [Ceph](http://ceph.com/) MON can be created and run manually for test purposes on RHEL7 with:

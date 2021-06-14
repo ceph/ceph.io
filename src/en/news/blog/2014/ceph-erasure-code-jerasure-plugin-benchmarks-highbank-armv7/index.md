@@ -4,7 +4,6 @@ date: "2014-06-28"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 The benchmark [described for Intel Xeon](http://dachary.org/?p=3042) is run with a **Highbank ARMv7 Processor rev 0 (v7l)** processor (the maker of the processor was [Calxeda](http://en.wikipedia.org/wiki/Calxeda) ), using the [same codebase](https://github.com/ceph/ceph/commit/2bd3b5050bd8a28e45b51abb55226bd97f1ef75f):

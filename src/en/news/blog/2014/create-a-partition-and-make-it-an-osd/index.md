@@ -4,7 +4,6 @@ date: "2014-05-08"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 _Note: it is similar to [Creating a Ceph OSD from a designated disk partition](http://dachary.org/?p=2548) but simpler._  

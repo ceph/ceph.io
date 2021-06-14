@@ -3,7 +3,6 @@ title: "v0.67-rc2 Dumpling release candidate"
 date: "2013-07-25"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 Hi everyone,

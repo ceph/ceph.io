@@ -3,7 +3,6 @@ title: "Ceph: real men use the memstore backend"
 date: "2014-04-03"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/ceph-memory-backend.jpg "Ceph: real men use the memstore backend")

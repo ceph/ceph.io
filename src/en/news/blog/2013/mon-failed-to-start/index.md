@@ -3,7 +3,6 @@ title: "Mon Failed to Start"
 date: "2013-08-29"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 Some common problems when adding a monitor to an existing cluster, for example if config is not found :

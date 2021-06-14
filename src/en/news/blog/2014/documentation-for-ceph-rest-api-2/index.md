@@ -4,7 +4,6 @@ date: "2014-01-01"
 author: "dmsimard"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 I learned that there was a Ceph REST API and I [experimented](http://dmsimard.com/2013/12/21/experimenting-with-the-ceph-rest-api/) with it a bit.

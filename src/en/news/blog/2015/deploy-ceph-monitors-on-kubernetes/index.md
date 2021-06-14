@@ -3,7 +3,6 @@ title: "Deploy Ceph monitors on Kubernetes"
 date: "2015-06-18"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/ceph-monitors-kubernetes.png "Deploy Ceph monitors on Kubernetes")

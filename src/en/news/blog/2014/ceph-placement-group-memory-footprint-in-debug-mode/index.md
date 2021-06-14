@@ -4,7 +4,6 @@ date: "2014-09-19"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 A [Ceph](http://ceph.com/) cluster is run from sources with

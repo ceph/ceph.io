@@ -3,7 +3,6 @@ title: "Ceph reset perf counter"
 date: "2015-01-16"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 {% img center http://sebastien-han.fr/images/ceph-reset-perf-counter.jpg Ceph reset perf counter %}

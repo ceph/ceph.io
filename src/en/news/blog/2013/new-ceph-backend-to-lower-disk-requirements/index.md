@@ -5,7 +5,6 @@ author: "scuttlemonkey"
 tags: 
   - "ceph"
   - "erasure-encoding"
-  - "planet"
   - "scality"
 ---
 

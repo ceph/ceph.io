@@ -3,7 +3,6 @@ title: "Ceph Calamari Packages for Community"
 date: "2015-07-12"
 author: "syndicated"
 tags: 
-  - "planet"
 ---
 
 ![Ceph Calamari Packages for Community](images/ceph-calamari-packages-for-community.png "Ceph Calamari Packages for Community")

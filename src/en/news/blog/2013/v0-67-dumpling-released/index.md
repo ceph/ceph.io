@@ -3,7 +3,6 @@ title: "v0.67 Dumpling released"
 date: "2013-08-14"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 Another three months have gone by, and the next stable release of Ceph is ready: Dumpling!  Thank you to everyone who has contributed to this release (42 authors in all)!

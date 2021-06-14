@@ -3,7 +3,6 @@ title: "OpenStack and Ceph: RBD discard"
 date: "2015-02-02"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 {% img center http://sebastien-han.fr/images/openstack-ceph-discard.jpg OpenStack and Ceph: RBD space reclamation %}

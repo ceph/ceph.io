@@ -4,7 +4,6 @@ date: "2014-05-29"
 author: "shan"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 Six months have passed since Hong Kong and it is always really exciting to see all the folks from the community gathered all-together in a (bit chilly) convention center. As far I saw from the submitted and accepted talks, Ceph continues its road to the top. There is still a huge growing interest about Ceph.  

@@ -3,7 +3,6 @@ title: "First glimpse at CoreOS"
 date: "2013-09-02"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/coreos.png "First step with CoreOS")

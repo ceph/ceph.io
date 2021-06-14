@@ -4,7 +4,6 @@ date: "2014-02-21"
 author: "syndicated"
 tags: 
   - "ceph"
-  - "planet"
   - "storage"
 ---
 

@@ -4,7 +4,6 @@ date: "2014-03-16"
 author: "dmsimard"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 The second meetup of [Openstack Montreal](http://montrealopenstack.org/), in collaboration with [iWeb](http://blog.iweb.com/en/2014/03/register-openstack-montreal-2014/13258.html), [Enovance](https://www.enovance.com/) and [Savoir-faire Linux](https://www.savoirfairelinux.com/), will happen at the [Université du Québec à Montréal](http://www.uqam.ca/) (UQAM) monday march 17th.

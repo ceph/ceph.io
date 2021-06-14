@@ -3,7 +3,6 @@ title: "Placement_pools on Rados-GW"
 date: "2014-11-28"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 The purpose of this test is to map a RadosGw Bucket to a specific Ceph pool. For exemple, if using a fast pool with ssd and a low pool for archive…

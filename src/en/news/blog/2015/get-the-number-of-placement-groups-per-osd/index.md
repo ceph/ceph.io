@@ -3,7 +3,6 @@ title: "Get the Number of Placement Groups Per Osd"
 date: "2015-02-23"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 Get the PG distribution per osd in command line :

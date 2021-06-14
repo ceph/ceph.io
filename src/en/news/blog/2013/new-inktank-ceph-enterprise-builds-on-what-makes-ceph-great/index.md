@@ -3,7 +3,6 @@ title: "New “Inktank Ceph Enterprise” Builds on What Makes Ceph Great"
 date: "2013-10-30"
 author: "scuttlemonkey"
 tags: 
-  - "planet"
 ---
 
 Today Inktank announced the latest offering for their Enterprise Subscription customers, “[Inktank Ceph Enterprise](http://www.inktank.com/enterprise/).” This release couples the existing power of Ceph with Inktank’s unparalleled support and a monitoring and analytics GUI. Inktank Ceph Enterprise aims to enhance the Ceph experience for enterprise customers using the same underlying APIs, tools, and commands that are available to the Open Source community, packaged in a single SKU for easy purchasing.

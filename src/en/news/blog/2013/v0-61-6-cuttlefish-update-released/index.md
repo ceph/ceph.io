@@ -3,7 +3,6 @@ title: "v0.61.6 Cuttlefish update released"
 date: "2013-07-24"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 There was a problem with the monitor daemons in v0.61.5 that would prevent them from restarting after some period of time.  This release fixes the bug and works around the issue to allow affected monitors to restart.  All v0.61.5 users are strongly recommended to upgrade.

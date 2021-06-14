@@ -3,7 +3,6 @@ title: "Clustering the office"
 date: "2013-08-29"
 author: "scuttlemonkey"
 tags: 
-  - "planet"
 ---
 
 Ceph community member Loic Dachary posted a fun entry this week about using the hardware you already have in the office, your desktops, to make a cluster. Turns out it’s a pretty easy setup, and it can handle if random machines disappear for reboots. Take a look.

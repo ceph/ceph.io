@@ -3,7 +3,6 @@ title: "Ceph: RBD import and export get parallelized in Giant"
 date: "2014-09-28"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 Features for the seventh Ceph release (Giant) have been frozen 3 weeks ago. Thus Giant is just around the corners and bugs are currently being fixed. This article is a quick preview on a new feature.

@@ -3,7 +3,6 @@ title: "Ceph maintenance with Ansible"
 date: "2014-04-09"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/ceph-maintenance-with-ansible.jpg "Ceph maintenance with Ansible")

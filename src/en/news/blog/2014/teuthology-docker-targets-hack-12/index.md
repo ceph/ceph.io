@@ -4,7 +4,6 @@ date: "2014-10-29"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 [teuthology](https://github.com/ceph/teuthology/) runs [jobs](https://github.com/ceph/ceph-qa-suite) testing the [Ceph](http://ceph.com/) integration on **targets** that can either be virtual machines or bare metal. The [container hack](https://github.com/dachary/teuthology/blob/wip-container/teuthology/containers.py) adds support for docker containers as a replacement.

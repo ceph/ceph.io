@@ -3,7 +3,6 @@ title: "v0.72.2 Emperor released"
 date: "2013-12-22"
 author: "sage"
 tags: 
-  - "planet"
   - "release"
 ---
 

@@ -3,7 +3,6 @@ title: "Ceph: how to test if your SSD is suitable as a journal device?"
 date: "2014-10-10"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/ceph-ssd-approved.jpg "Ceph: how to test if your SSD is suitable as a journal device?")

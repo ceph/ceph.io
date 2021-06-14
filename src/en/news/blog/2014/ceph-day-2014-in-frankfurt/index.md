@@ -4,7 +4,6 @@ date: "2014-02-27"
 author: "dalgaaf"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 Back again on my blog ... as you may know I work since a while now on the topic of Cloud Storage and especially on [Ceph](http://ceph.com/). I didn't add new posts about this topic since a long time, but I plan to do so.

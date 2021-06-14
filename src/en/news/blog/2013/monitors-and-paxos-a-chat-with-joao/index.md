@@ -3,7 +3,6 @@ title: "Monitors and Paxos, a chat with Joao"
 date: "2013-09-10"
 author: "scuttlemonkey"
 tags: 
-  - "planet"
 ---
 
 This is a dialog where Joao Luis, Ceph core developer with an intimate knowledge of the monitor, answers [Loïc Dachary](http://dachary.org/)’s questions who discovers this area of the Ceph code base. Many answers are covered in Joao’s article [Ceph’s New Monitor Changes](http://ceph.com/dev-notes/cephs-new-monitor-changes/) (March 2013), with a different angle.

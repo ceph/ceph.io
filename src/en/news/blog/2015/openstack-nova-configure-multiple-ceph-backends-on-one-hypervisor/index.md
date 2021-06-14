@@ -3,7 +3,6 @@ title: "OpenStack Nova: configure multiple Ceph backends on one hypervisor"
 date: "2015-09-15"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 {% img center http://sebastien-han.fr/images/openstack-nova-configure-multiple-ceph-backends.jpg OpenStack Nova configure multiple Ceph backends on one hypervisor %}

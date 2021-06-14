@@ -3,7 +3,6 @@ title: "Ceph Primary Affinity"
 date: "2014-08-20"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 This option allows you to answer a fairly constant worry in the case of heterogeneous cluster. Indeed, all HDD do not have the same performance or not the same ratio performance / size. With this option, it is possible to reduce the load on a specific disk without reducing the amount of data it contains. Furthermore, the option is easy to modify because it does not result in data migration. Only preference between primary / secondary will be modified and propagated to clients.

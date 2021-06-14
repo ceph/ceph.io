@@ -3,7 +3,6 @@ title: "v0.26 released"
 date: "2011-04-05"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 We tagged v0.26 a few days ago.  Changes since the last release include:

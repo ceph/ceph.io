@@ -4,7 +4,6 @@ date: "2015-01-01"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 The following script explains how to create Debian GNU/Linux packages for [Ceph](http://dachary.org/http;//ceph.com/) from a [clone of the sources](https://github.com/ceph/ceph.git).

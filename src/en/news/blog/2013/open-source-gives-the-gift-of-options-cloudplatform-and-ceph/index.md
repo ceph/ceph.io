@@ -3,7 +3,6 @@ title: "CloudPlatform and Ceph: Delivering the Power of Choice"
 date: "2013-09-24"
 author: "scuttlemonkey"
 tags: 
-  - "planet"
 ---
 
 The [CloudPlatform 4.2](http://blogs.citrix.com/2013/09/24/future-proof-your-cloud-strategy-with-citrix-cloudplatform-4-2/) eagle has landed! This is especially exciting for Ceph users as it expands the integration footprint to give much better breadth and depth. The best part? The Ceph community was leading the charge on the integration work, and has done an amazing job in delivering powerful options to the end users.

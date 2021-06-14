@@ -3,7 +3,6 @@ title: "Ceph Developer Summit: Emperor"
 date: "2013-07-18"
 author: "scuttlemonkey"
 tags: 
-  - "planet"
 ---
 
 It’s that time again! Time for the (virtual) Ceph Developer Summit. We are currently [accepting community blueprints](http://wiki.ceph.com/01Planning/02Blueprints/Emperor) for ‘Emperor,’ the next stable release of Ceph, which is due out in November. This summit will be slightly different from the Dumpling summit in that it will be spread over two days to give some of our more geographically disparate community members the opportunity to participate. Below you can find the timeline for all summit activities.

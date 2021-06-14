@@ -3,7 +3,6 @@ title: "Live Demo : OpenStack and Ceph"
 date: "2015-07-31"
 author: "syndicated"
 tags: 
-  - "planet"
 ---
 
 ![openstack and ceph live demonstration](images/live-demo-openstack-ceph.jpg "openstack and ceph live demonstration")

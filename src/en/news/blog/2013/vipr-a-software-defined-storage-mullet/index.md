@@ -3,7 +3,6 @@ title: "ViPR: A software-defined storage mullet?"
 date: "2013-05-16"
 author: "nwl"
 tags: 
-  - "planet"
   - "storage"
 ---
 

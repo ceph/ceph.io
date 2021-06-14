@@ -4,7 +4,6 @@ date: "2014-08-31"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 Although it is extremely unlikely to loose an object stored in [Ceph](http://ceph.com/), it is not impossible. When it happens to a [Cinder volume](http://docs.openstack.org/developer/cinder/api/cinder.volume.drivers.rbd.html) based on [RBD](http://ceph.com/docs/master/rbd/rbd/), knowing which has an object missing will help with disaster recovery.  

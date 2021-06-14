@@ -3,7 +3,6 @@ title: "v0.21.1 released"
 date: "2010-08-16"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 We’ve made a bugfix release for v0.21 last week.  Changes include:

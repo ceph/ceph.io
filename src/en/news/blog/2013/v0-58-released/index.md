@@ -3,7 +3,6 @@ title: "v0.58 released"
 date: "2013-03-05"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 It’s been two weeks and v0.58 is baked.  Notable changes since v0.57 include:

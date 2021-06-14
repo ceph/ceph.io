@@ -3,7 +3,6 @@ title: "Ceph: update Cephx Keys"
 date: "2013-07-26"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/cephx-update-keys.jpg "Ceph update Cephx Keys")

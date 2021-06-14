@@ -3,7 +3,6 @@ title: "RBD image bigger than your Ceph cluster"
 date: "2013-12-12"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/gigantic-rbd-images.jpg "RBD image bigger than your Ceph cluster")

@@ -4,7 +4,6 @@ date: "2013-01-14"
 author: "shan"
 tags: 
   - "ceph-user-story"
-  - "planet"
 ---
 
 [![](images/ceph-poc-prod-460x197.jpg)](http://ceph.com/user-story/ceph-from-poc-to-production/attachment/ceph-poc-prod/)

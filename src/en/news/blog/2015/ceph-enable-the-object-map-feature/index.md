@@ -3,7 +3,6 @@ title: "Ceph enable the object map feature"
 date: "2015-07-06"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/ceph-enable-the-object-map-feature.jpg "Ceph enable the object map feature")

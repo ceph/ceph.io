@@ -3,7 +3,6 @@ title: "Our weekend at SCALE 10x"
 date: "2012-01-25"
 author: "dona"
 tags: 
-  - "planet"
 ---
 
 Ceph had its arms in a little bit of everything at SCALE 10x last weekend.  

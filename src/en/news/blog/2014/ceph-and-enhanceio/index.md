@@ -3,7 +3,6 @@ title: "Ceph and Enhanceio"
 date: "2014-10-05"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/ceph-enhanceio.jpg "Ceph and Enhanceio")

@@ -3,7 +3,6 @@ title: "RBD: rados block driver"
 date: "2010-03-19"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 Christian Brunner sent an initial implementation of ‘rbd’, a librados-based block driver for qemu/KVM, to the ceph-devel list last week.   A few minor nits aside, it looks pretty good and works well.  The basic idea is to stripe a VM block device over (by default) 4MB objects stored in the Ceph distributed object store.  This gives you shared block storage to facilitate VM migration between hosts and fancy things like that.  The implementation is super simple: it’s just a few hundred lines wiring the qemu storage abstraction up to librados. (This is very similar to what the [Sheepdog](http://www.osrg.net/sheepdog/) folks are doing.)

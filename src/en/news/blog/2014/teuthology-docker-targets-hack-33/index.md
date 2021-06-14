@@ -4,7 +4,6 @@ date: "2014-12-15"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 The [teuthology](https://github.com/ceph/teuthology/) [container hack](http://dachary.org/?p=3354) is [improved](https://github.com/dachary/teuthology/compare/wip-container?w=1) so each [Ceph](http://ceph.com/) command is run via **docker exec -i** which can [read from stdin](https://github.com/docker/docker/issues/9286) as of [docker 1.4](http://docs.docker.com/release-notes/) released in December 2014. 

@@ -4,7 +4,6 @@ date: "2014-11-06"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 A [power8](https://en.wikipedia.org/wiki/POWER8) machine was [recently donated](https://mail.gna.org/public/gcc-cfarm-users/2014-11/msg00000.html) to the [GCC compile farm](https://gcc.gnu.org/wiki/CompileFarm) and **/proc/cpuinfo** shows 160 processors. Compiling [Ceph](http://ceph.com/) from sources with **make -j150** makes for a nice [htop](http://hisham.hm/htop/) display.

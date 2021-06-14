@@ -3,7 +3,6 @@ title: "v0.71 released"
 date: "2013-10-18"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 This development release includes a significant amount of new code and refactoring, as well as a lot of preliminary functionality that will be needed for erasure coding and tiering support. There are also several significant patch sets improving this with the MDS.

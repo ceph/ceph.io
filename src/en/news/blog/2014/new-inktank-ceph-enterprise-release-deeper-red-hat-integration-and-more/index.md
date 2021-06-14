@@ -3,7 +3,6 @@ title: "New Inktank Ceph Enterprise Release: Deeper Red Hat Integration and More
 date: "2014-02-04"
 author: "nwl"
 tags: 
-  - "planet"
 ---
 
 Last fall, when we launched Inktank Ceph Enterprise, our flagship product, our goal was to shake up the storage industry by bringing the flexibility and power of open source to enterprises who understand that existing storage solutions won’t scale much longer. Since launch, we’ve seen incredible demand and adoption from Fortune 500 companies who appreciate that storage in the next 10 to 20 years requires an open, software-defined technology with solid enterprise backing.

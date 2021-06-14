@@ -3,7 +3,6 @@ title: "Adding Support for RBD to stgt"
 date: "2013-03-21"
 author: "dmick"
 tags: 
-  - "planet"
 ---
 
 [tgt](http://stgt.sourceforge.net), the Linux SCSI target framework (well, one of them) is an iSCSI target implementation whose goals include implementing a large portion of the SCSI emulation code in userland. tgt can provide iSCSI over Ethernet or iSER (iSCSI extensions for RDMA) over Infiniband. It can emulate various SCSI target types (really  

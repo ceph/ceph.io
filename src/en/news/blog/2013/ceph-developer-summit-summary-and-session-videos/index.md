@@ -3,7 +3,6 @@ title: "Ceph Developer Summit – Summary and Session Videos"
 date: "2013-05-09"
 author: "scuttlemonkey"
 tags: 
-  - "planet"
 ---
 
 Contents

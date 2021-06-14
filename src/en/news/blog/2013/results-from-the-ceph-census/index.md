@@ -3,7 +3,6 @@ title: "Results From the Ceph Census"
 date: "2013-03-01"
 author: "rturk"
 tags: 
-  - "planet"
 ---
 
 Hi!

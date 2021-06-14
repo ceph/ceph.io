@@ -4,7 +4,6 @@ date: "2014-09-20"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 When [Ceph](http://ceph.com/) is built from sources, **make check** will not run the [test\_rados.py](https://github.com/ceph/ceph/blob/giant/src/test/pybind/test_rados.py) tests.  

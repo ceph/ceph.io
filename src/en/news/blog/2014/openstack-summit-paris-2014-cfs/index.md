@@ -4,7 +4,6 @@ date: "2014-08-02"
 author: "dalgaaf"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 The Call for Speakers period for the [OpenStack Summit](https://www.openstack.org/summit/openstack-paris-summit-2014/) from 03. - 07.11.2014 in Paris ended this week. Now the voting for the submitted talks started and ends at 11:59pm CDT on August 6. (6:59 am CEST on 7. August).

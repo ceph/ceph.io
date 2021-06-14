@@ -3,7 +3,6 @@ title: "Analyse Ceph object directory mapping on disk"
 date: "2014-09-08"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/analyse-ceph-object-directory-mapping-on-disk.jpg "Analyse Ceph object directory mapping on disk")

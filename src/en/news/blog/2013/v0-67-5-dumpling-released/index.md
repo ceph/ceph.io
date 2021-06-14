@@ -3,7 +3,6 @@ title: "v0.67.5 Dumpling released"
 date: "2013-12-22"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 This release includes a few critical bug fixes for the radosgw, including a fix for hanging operations on large objects. There are also several bug fixes for radosgw multi-site replications, and a few backported features. Also, notably, the ‘osd perf’ command (which dumps recent performance information about active OSDs) has been backported.

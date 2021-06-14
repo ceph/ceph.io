@@ -4,7 +4,6 @@ date: "2013-10-29"
 author: "noah"
 tags: 
   - "lua"
-  - "planet"
 ---
 
 In this post I’m going to demonstrate how to dynamically extend the interface of objects in RADOS using the [Lua](http://www.lua.org/) scripting language, and then build an example service for image thumbnail generation and storage that performs remote image processing inside a target object storage device (OSD). We’re gonna have a lot of fun.

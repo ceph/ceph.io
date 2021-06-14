@@ -4,7 +4,6 @@ date: "2014-08-14"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 By default [teuthology](https://github.com/ceph/teuthology/) will [clone](https://github.com/ceph/teuthology/blob/master/teuthology/repo_utils.py#L61) the [ceph-qa-suite](https://github.com/ceph/ceph-qa-suite) repository and use the [tasks](https://github.com/ceph/ceph-qa-suite/tree/master/tasks) it contains. If tasks have been modified localy, teuthology can be instructed to [use a local directory](https://github.com/ceph/teuthology/blob/master/teuthology/run.py#L77) by inserting something like:

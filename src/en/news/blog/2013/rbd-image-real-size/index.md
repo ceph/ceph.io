@@ -3,7 +3,6 @@ title: "RBD Image Real Size"
 date: "2013-08-28"
 author: "syndicated"
 tags: 
-  - "planet"
 ---
 
 To get the real size used by a rbd image :

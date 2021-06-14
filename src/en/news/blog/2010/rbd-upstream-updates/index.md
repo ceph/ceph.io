@@ -3,7 +3,6 @@ title: "RBD upstream updates"
 date: "2010-12-22"
 author: "yehudasa"
 tags: 
-  - "planet"
 ---
 
 QEMU-RBD

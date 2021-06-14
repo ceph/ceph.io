@@ -3,7 +3,6 @@ title: "Roadmap update"
 date: "2011-09-03"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 We spent some time this week working on our technical roadmap for the next few months. It’s all been mostly translated into issues and priorities in the tracker ([here’s a sorted priority list](http://tracker.newdream.net/rb/master_backlogs/ceph)), but from that level of gory detail it’s hard to see the forest for the trees.

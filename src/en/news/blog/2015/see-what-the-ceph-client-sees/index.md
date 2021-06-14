@@ -3,7 +3,6 @@ title: "See what the Ceph client sees"
 date: "2015-07-08"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 ![](images/see-what-the-ceph-client-sees.jpg "See what the Ceph client sees")

@@ -3,7 +3,6 @@ title: "OpenNebula 4.8 With Ceph Support on Debian Wheezy"
 date: "2014-11-14"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 A quick howto to install OpenNebula 4.8 with support for Ceph on Debian Wheezy.

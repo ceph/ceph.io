@@ -3,7 +3,6 @@ title: "S3-compatible object storage with radosgw"
 date: "2010-11-13"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 The [radosgw](http://ceph.newdream.net/wiki/RADOS_Gateway) has been around for a while, but it hasn’t been well publicized or documented, so I thought I’d mention it here.  The idea is this:

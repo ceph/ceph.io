@@ -4,7 +4,6 @@ date: "2015-05-07"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 The [Ceph](http://ceph.com/) [command line](https://git.ceph.com/?p=ceph.git;a=blob;f=src/ceph.in;hb=hammer) and [ceph-disk](https://git.ceph.com/?p=ceph.git;a=blob;f=src/ceph-disk;hb=hammer) helper are python scripts for which there are integration tests ([ceph-disk.sh](https://git.ceph.com/?p=ceph.git;a=blob;f=src/test/ceph-disk.sh;hb=hammer) and [test.sh](https://git.ceph.com/?p=ceph.git;a=blob;f=qa/workunits/cephtool/test.sh;hb=hammer)). It would be useful to add unit tests and [pep8](http://pep8.readthedocs.org/en/latest/intro.html) checks.  

@@ -3,7 +3,6 @@ title: "Using Ceph Rbd With Libvirt on Debian Wheezy"
 date: "2013-09-12"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 Howto add support of rbd device on debian wheezy.

@@ -3,7 +3,6 @@ title: "Feature Set Mismatch Error on Ceph Kernel Client"
 date: "2014-01-21"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 Depending on the kernel version you may be missing some features required by the cluster (or vice versa, required by client but not available on the cluster). Hence the errors “feature set mismatch”.

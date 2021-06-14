@@ -4,7 +4,6 @@ date: "2014-12-09"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 To display how many [PGs](http://ceph.com/docs/master/rados/operations/placement-groups/) in each [OSD](http://ceph.com/docs/master/glossary/#term-ceph-osd-daemon) of a [Ceph](http://ceph.com/) cluster:

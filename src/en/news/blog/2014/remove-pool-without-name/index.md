@@ -3,7 +3,6 @@ title: "Remove Pool Without Name"
 date: "2014-10-29"
 author: "laurentbarbe"
 tags: 
-  - "planet"
 ---
 
 For exemple :

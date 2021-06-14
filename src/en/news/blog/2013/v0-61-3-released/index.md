@@ -3,7 +3,6 @@ title: "v0.61.3 released"
 date: "2013-06-06"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 This is a much-anticipated point release for the v0.61 Cuttlefish stable series.  It resolves a number of issues, primarily with monitor stability and leveldb trimming.  All v0.61.x uses are encouraged to upgrade.

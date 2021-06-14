@@ -3,7 +3,6 @@ title: "The RADOS distributed object store"
 date: "2009-05-19"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 The Ceph architecture can be pretty neatly broken into two key layers.  The first is RADOS, a reliable autonomic distributed object store, which provides an extremely scalable storage service for variably sized objects.  The Ceph file system is built on top of that underlying abstraction: file data is striped over objects, and the MDS (metadata server) cluster provides distributed access to a POSIX file system namespace (directory hierarchy) that’s ultimately backed by more objects.

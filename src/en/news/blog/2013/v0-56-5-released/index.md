@@ -3,7 +3,6 @@ title: "v0.56.5 released"
 date: "2013-05-03"
 author: "sage"
 tags: 
-  - "planet"
 ---
 
 Behold, another Bobtail update!  This one serves three main purposes: it fixes a small issue with monitor features that is important when upgrading from argonaut -> bobtail -> cuttlefish, it backports many changes to the ceph-disk helper scripts that allow bobtail clusters to be deployed with [the new ceph-deploy tool](http://ceph.com/docs/master/rados/deployment/) or [our chef cookbooks](https://github.com/ceph/ceph-cookbooks), and it fixes several important bugs in librbd.  There is also, of course, the usual collection of important bug fixes in other parts of the system.

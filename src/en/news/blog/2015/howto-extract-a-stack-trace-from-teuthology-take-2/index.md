@@ -4,7 +4,6 @@ date: "2015-02-28"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 When a [Ceph](http://ceph.com/) [teuthology](https://github.com/ceph/teuthology/) integration test fails (for instance [a rados jobs](http://pulpito.ceph.com/loic-2015-02-27_20:22:09-rados-firefly-backports---basic-multi/)), it will collect core dumps which can be downloaded from [the same directory](http://qa-proxy.ceph.com/teuthology/loic-2015-02-27_20:22:09-rados-firefly-backports---basic-multi/781780/) where the logs and config.yaml files can be found, under the [remote/mira076/coredump](http://qa-proxy.ceph.com/teuthology/loic-2015-02-27_20:22:09-rados-firefly-backports---basic-multi/781780/remote/mira076/coredump/) directory.  

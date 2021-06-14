@@ -3,7 +3,6 @@ title: "Ceph : Reduce OSD Scrub Priority"
 date: "2015-05-08"
 author: "syndicated"
 tags: 
-  - "planet"
 ---
 
 ![Ceph : Reduce OSD Scrub Priority](images/scrubbing.jpg "Ceph : Reduce OSD Scrub Priority") Let’s assume ! on a nice sunny day , you receives complaints that your Ceph storage cluster is not performing as it was performing yesterday. After checking cluster status you found that placement groups scrubbing is going on and depending on your scenario , you would like to decrease its priority. Here is how you can do it.

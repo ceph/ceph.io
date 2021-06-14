@@ -3,7 +3,6 @@ title: "OpenStack Summit Vancouver: thanks for your votes"
 date: "2015-03-29"
 author: "shan"
 tags: 
-  - "planet"
 ---
 
 {% img center http://sebastien-han.fr/images/openstack-summit-vancouver.jpg OpenStack Summit Vancouver: thanks for your votes %}

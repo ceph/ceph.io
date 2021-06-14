@@ -4,7 +4,6 @@ date: "2015-07-30"
 author: "dalgaaf"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 In a few hours the voting period for the next OpenStack Summit in Tokyo ends at 30. July, 11:59 PDT (31. July  6:59 UTC / 08:59 CEST).

@@ -4,7 +4,6 @@ date: "2013-12-06"
 author: "dmsimard"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 [Ceph](http://ceph.com/) is a distributed object store and file system designed to provide excellent performance, reliability and scalability.  

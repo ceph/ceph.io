@@ -4,7 +4,6 @@ date: "2015-04-10"
 author: "loic"
 tags: 
   - "ceph"
-  - "planet"
 ---
 
 When running tests from the [Ceph](http://ceph.com/) sources, the disk is used intensively and a ram disk can be used to reduce the latency. The kernel must be rebooted to set the [ramdisk maximum size](https://www.kernel.org/doc/Documentation/blockdev/ramdisk.txt) to 16GB. For instance on Ubuntu 14.04 in **/etc/default/grub** (the module name which could be **rb** or **brd** depending).
