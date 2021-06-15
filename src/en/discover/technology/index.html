@@ -9,14 +9,9 @@ overlaySubMenu: true
 <section class="bg-navy section section--full">
   <div class="wrapper">
     <div class="max-w-224 mx-auto py-16 text-center">
-      <h2 class="color-white h1">Infinitely scalable data storage for object, block and file&nbsp;types.</h2>
+      <h2 class="color-white h1">Ceph delivers object, block, and file storage in a single, unified system.</h2>
       <p class="color-white standout">
-        Ceph provides a flexible, scalable, reliable and intelligent solution for data storage, regardless of data&nbsp;type.
-      </p>
-      <p class="color-white mb-0 standout">
-        Ceph does more than store data, and provides effective self-management and innovative algorithms to secure, manage and protect data.
-        From unifying various data types in one unified RADOS cluster to allowing infinite scalability, Ceph is intelligent and innovative
-        data&nbsp;technology.
+       Ceph is highly reliable, easy to manage, and free. Ceph delivers extraordinary scalability: thousands of clients accessing exabytes of data.
       </p>
     </div>
   </div>
@@ -42,10 +37,10 @@ overlaySubMenu: true
 
 <section class="section">
   <div class="max-w-192 mx-auto text-center">
-    <h2 class="h2">Store Data in the Cloud</h2>
+    <h2 class="h2">The Ceph Stack -- Architectural Overview</h2>
+    <a href="#object"><img alt="" src="/assets/stack.png" /></a>
     <p class="standout">
-      Ceph allows for hybrid-cloud data storage, with reliable and secure management. Organizations can take their applications into the
-      future, whether on-prem, or in the public or private&nbsp;cloud.
+    The RADOS-based Ceph Stack 
     </p>
     <p class="mb-0 p">
       Whatever delivery framework you require, Ceph can be adapted and applied&nbsp;accordingly.
@@ -58,15 +53,20 @@ overlaySubMenu: true
   <div class="grid lg:grid--cols-2 grid--gap-14 lg:grid--gap-28">
     <div>
       <p class="standout">
-        For businesses requiring seamless access to objects, Ceph provide comprehensive storage compatible with popular interfaces including
-        Amazon S3.
+      The Ceph RGW object storage service provides industry-leading S3 API
+      compatibility with a robust set of security, tiering, and
+      interoperability features. Applications written to use S3 or Swift object
+      storage can take advantage of Ceph's scalability and performance within a
+      single datacenter, or federate multiple Ceph clusters across the globe to
+      create a global storage namespace with an extensive set of replication,
+      migration, and other data services.
       </p>
       <div class="grid sm:grid--cols-3">
         <div class="relative">
           <div class="aspect-ratio aspect-ratio--16x9 mb-4">
             <img alt="" class="absolute left-0 rounded-2 top-0" loading="lazy" src="/assets/bitmaps/photo-coral-01.jpg" />
           </div>
-          <a class="a link-cover" href="/{{ locale }}/discover/technology/">Lorem ipsum dolor set</a>
+          <a class="a link-cover" href="https://docs.ceph.com/en/latest/architecture/#ceph-object-storage">Read more about Ceph object storage</a>
         </div>
         <div class="relative">
           <div class="aspect-ratio aspect-ratio--16x9 mb-4">
@@ -114,21 +114,27 @@ overlaySubMenu: true
   <div class="grid lg:grid--cols-2 grid--gap-14 lg:grid--gap-28">
     <div>
       <p class="standout">
-        Access to block device images through Ceph’s thinly provisioned RADOS Block Device (RBD), with capabilities including snapshotting,
-        replication and striping for maximised availability.
+       Ceph RBD (RADOS Block Device) block storage is a technology that stripes
+       virtual disks over objects in the Ceph storage cluster, distributing
+       data and workload across all available devices for extreme scalability
+       and performance.  RBD disk images are thinly provisioned, support both
+       read-only snapshots and writable clones, and can be asynchronously
+       mirrored to remote Ceph clusters in other data centers for disaster
+       recovery or backup, making Ceph RBD the leading choice for block storage
+       in public/private cloud and virtualization environments.
       </p>
       <div class="grid sm:grid--cols-3">
         <div class="relative">
           <div class="aspect-ratio aspect-ratio--16x9 mb-4">
             <img alt="" class="absolute left-0 rounded-2 top-0" loading="lazy" src="/assets/bitmaps/photo-ink-01.jpg" />
           </div>
-          <a class="a link-cover" href="/{{ locale }}/discover/technology/">Lorem ipsum dolor set</a>
+          <a class="a link-cover" href="https://docs.ceph.com/en/latest/architecture/#ceph-block-device">Block device summary (short)</a>
         </div>
         <div class="relative">
           <div class="aspect-ratio aspect-ratio--16x9 mb-4">
             <img alt="" class="absolute left-0 rounded-2 top-0" loading="lazy" src="/assets/bitmaps/photo-ink-02.jpg" />
           </div>
-          <a class="a link-cover" href="/{{ locale }}/discover/technology/">Lorem ipsum dolor set</a>
+          <a class="a link-cover" href="https://docs.ceph.com/en/latest/rbd/">RBD documentation (in depth)</a>
         </div>
       </div>
     </div>
@@ -164,15 +170,19 @@ overlaySubMenu: true
   <div class="grid lg:grid--cols-2 grid--gap-14 lg:grid--gap-28">
     <div>
       <p class="standout">
-        Traditional file system interface (CephFS) with POSIX compliance allowing for detailed metadata, dynamic rebalancing and high
-        performance within the same scalable system as object and block storage.
+      The Ceph File System (CephFS) is a robust, fully-featured POSIX-compliant
+      distributed filesystem as a service with snapshots, quotas, and
+      multi-cluster mirroring capabilities. CephFS files are striped across
+      objects stored by Ceph for extreme scale and performance. Linux systems
+      can mount CephFS filesystems natively, via a FUSE-based client, or via an
+      NFSv4 gateway. 
       </p>
       <div class="grid sm:grid--cols-3">
         <div class="relative">
           <div class="aspect-ratio aspect-ratio--16x9 mb-4">
             <img alt="" class="absolute left-0 rounded-2 top-0" loading="lazy" src="/assets/bitmaps/photo-water-01.jpg" />
           </div>
-          <a class="a link-cover" href="/{{ locale }}/discover/technology/">Lorem ipsum dolor set</a>
+          <a class="a link-cover" href="https://docs.ceph.com/en/latest/architecture/#ceph-file-system">Learn more about CephFS</a>
         </div>
         <div class="relative">
           <div class="aspect-ratio aspect-ratio--16x9 mb-4">
@@ -212,23 +222,34 @@ overlaySubMenu: true
     <div>
       <h2 class="h3" id="crush-rados">CRUSH Algorithm</h2>
       <p class="p">
-        The CRUSH (Controlled Replication Under Scalable Hashing) algorithm keeps organizations’ data safe and storage scalable through
-        automatic replication. Using the CRUSH algorithm, Ceph’s storage clusters are liberated from scalability and performance
-        limitations. By replicating and rebalancing data within the cluster automatically, the CRUSH algorithm alleviates administrants of
-        tedious tasks.
+	The CRUSH (Controlled Replication Under Scalable Hashing) algorithm
+	keeps organizations’ data safe and storage scalable through automatic
+	replication. Using the CRUSH algorithm, Ceph clients and Ceph OSD
+	daemons are able to track the location of storage objects, avoiding the
+	problems inherent to architectures dependent upon central lookup
+	tables. 
       </p>
-      <a class="a" href="/{{ locale }}/discover/technology/">Lorem ipsum dolor set</a>
+      <a class="a" href="https://docs.ceph.com/en/latest/architecture/#crush-introduction">Introduction to the CRUSH algorithm</a>
     </div>
     <div>
       <h2 class="h3">Reliable Autonomic Distributed Object Store (RADOS)</h2>
       <p class="p">
-        Through RADOS, organizations can store and access object, block and file types in one unified storage cluster, making data and
-        monitoring easy to manage. Each one of your applications can use the object, block or file system interfaces to the same RADOS
-        cluster simultaneously, which means your Ceph storage system serves as a flexible foundation for all of your data storage needs.
-        Additionally, Ceph’s RADOS provides you with extraordinary data storage scalability, able to store petabytes to exabytes of data,
-        using widely aware hardware.
+	RADOS (Reliable Autonomic Distributed Object Store) seeks to leverage
+	device intelligence to distribute the complexity surrounding consistent
+	data access, redundant storage, failure detection, and failure recovery
+	in clusters consisting of many thousands of storage devices. RADOS is
+	designed for storage systems at the petabyte scale: such systems are
+	necessarily dynamic as they incrementally grow and contract with the
+	deployment of new storage and the decommissioning of old devices. RADOS
+	ensures that there is a consistent view of the data distribution while
+	maintaining consistent read and write access to data objects. 
       </p>
-      <a class="a" href="/{{ locale }}/discover/technology/">Lorem ipsum dolor set</a>
+      <p>
+      <a class="a" href="https://docs.ceph.com/en/latest/rados/">RADOS documentation (docs.ceph.com)</a>
+      </p>
+      <p>
+      <a class="a" href="https://ceph.com/wp-content/uploads/2016/08/weil-rados-pdsw07.pdf">RADOS: A Scalable, Reliable Storage Service for Petabyte-scale Storage Clusters (academic paper)</a>
+      </p>
     </div>
   </div>
 </section>
