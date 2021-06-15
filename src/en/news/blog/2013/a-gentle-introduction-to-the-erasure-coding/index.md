@@ -11,7 +11,7 @@ The erasure coding is currently a very hot topic for distributed storage systems
 
   
 
-# I. Introduction
+## I. Introduction
 
 An erasure code provides redundancy without the overhead of strict repli-cation. Erasure codes divide an object into `m` fragments and recode them into `n` fragments, where `n` > `m`. We call `r = m/n < 1` the rate of encoding.
 
@@ -19,7 +19,7 @@ A rate `r` code increases the storage cost by a factor of `1/r`. The key propert
 
   
 
-# II. Data Integrity
+## II. Data Integrity
 
 Erasure coding in a malicious environment requires the precise identification of failed or corrupted fragments. Without the ability to identify try to reconstruct the block; that is, `(n, m)` combinations. As a result, the system corrupted fragments, there is potentially a factorial combination of fragments to needs to detect when a fragment has been corrupted and discard it. A secure ver- ification hashing scheme can serve the dual purpose of identifying and verifying each fragment. It is necessarily the case that any `m` correctly verified fragments can be used to reconstruct the block. Such a scheme is likely to increase the bandwidth and storage requirements, but can be shown to still be many times less than replication.
 
