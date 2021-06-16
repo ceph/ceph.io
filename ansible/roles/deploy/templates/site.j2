@@ -31,9 +31,10 @@ server {
         if string.sub(lang, 0, 2) == "en" then
           ngx.redirect("/en/")
         end
-        if string.sub(lang, 0, 2) == "ja" then
-          ngx.redirect("/jp/")
-        end
+--      https://github.com/ceph/ceph.io/issues/154
+--      if string.sub(lang, 0, 2) == "ja" then
+--        ngx.redirect("/jp/")
+--      end
       end
       ngx.redirect("/en/")
     ';
@@ -42,7 +43,8 @@ server {
   # https://stackoverflow.com/a/43392815/6225562
   error_page 404 @error404;
   location @error404 {
-      rewrite ^/(en|jp) /$1/404.html last;
+#     https://github.com/ceph/ceph.io/issues/154
+#     rewrite ^/(en|jp) /$1/404.html last;
       rewrite ^ /en/404.html last;
   }
 
@@ -101,9 +103,10 @@ server {
         if string.sub(lang, 0, 2) == "en" then
           ngx.redirect("/en/")
         end
-        if string.sub(lang, 0, 2) == "ja" then
-          ngx.redirect("/jp/")
-        end
+--      https://github.com/ceph/ceph.io/issues/154
+--      if string.sub(lang, 0, 2) == "ja" then
+--        ngx.redirect("/jp/")
+--      end
       end
       ngx.redirect("/en/")
     ';
@@ -112,7 +115,8 @@ server {
   # https://stackoverflow.com/a/43392815/6225562
   error_page 404 @error404;
   location @error404 {
-      rewrite ^/(en|jp) /$1/404.html last;
+#     https://github.com/ceph/ceph.io/issues/154
+#     rewrite ^/(en|jp) /$1/404.html last;
       rewrite ^ /en/404.html last;
   }
 
