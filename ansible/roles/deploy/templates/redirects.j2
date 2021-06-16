@@ -1,0 +1,108 @@
+  # Redirects https://github.com/ceph/ceph.io/issues/129
+  # These get templated into the site.conf in multiple places
+
+  # The /?$ bit at the end of each location will match with or without trailing slash
+  # but nothing beyond that.  e.g.,
+  # ceph.io/get     -> ceph.io/en/users/getting-started
+  # ceph.io/get/    -> ceph.io/en/users/getting-started
+  # ceph.io/get/foo -> 404
+
+  location ~ ^/get/?$ {
+      return 301 /en/users/getting-started;
+  }
+
+  location ~ ^/community/blog/?$ {
+      return 301 /en/news/blog;
+  }
+
+  location ~ ^/careers/?$ {
+      return 301 /en/developers/career-opportunities;
+  }
+
+  location ~ ^/use-cases/cephhome-the-domestication-of-a-wild-cephalopod/?$ {
+      return 301 /en/discover/use-cases;
+  }
+
+  location ~ ^/community/code-of-conduct/?$ {
+      return 301 /en/code-of-conduct;
+  }
+
+  location ~ ^/(trademarks|logos)/?$ {
+      return 301 /en/trademarks;
+  }
+
+  location ~ ^/discover/?$ {
+      return 301 /en/discover;
+  }
+
+  location ~ ^/(use|users)/?$ {
+      return 301 /en/users;
+  }
+
+  location ~ ^/get-involved/?$ {
+      return 301 /en/community;
+  }
+
+  location ~ ^/code/?$ {
+      return 301 /en/developers/code;
+  }
+
+  location ~ ^/(cephalocon|cephdays|events|cephalocon/.*)/?$ {
+      return 301 /en/community/events;
+  }
+
+  location ~ ^/ceph-storage/?$ {
+      return 301 /en/discover/technology;
+  }
+
+  location ~ ^/privacy/?$ {
+      return 301 /en/privacy;
+  }
+
+  location ~ ^/publications/?$ {
+      return 301 /en/news/publications;
+  }
+
+  location ~ ^/community/?$ {
+      return 301 /en/community;
+  }
+
+  location ~ ^/irc/?$ {
+      return 301 /en/community/connect;
+  }
+
+  location ~ ^/jobs/?$ {
+      return 301 /en/developers/career-opportunities;
+  }
+
+  location ~ ^/team/?$ {
+      return 301 /en/community/team;
+  }
+
+  location ~ ^/community/meetings/?$ {
+      return 301 /en/community/meetups;
+  }
+
+  location ~ ^/security/?$ {
+      return 301 /en/security;
+  }
+
+  location ~ ^/(contribute|contributors)/?$ {
+      return 301 /en/developers/contribute;
+  }
+
+  location ~ ^/ceph-storage/(block-storage|object-storage|file-system)/?$ {
+      return 301 /en/discover/technology;
+  }
+
+  location ~ ^/use-cases/?$ {
+      return 301 /en/discover/use-cases;
+  }
+
+  location ~ ^/(arm|ceph-tech-talks)/?$ {
+      return 301 /en/community/tech-talks;
+  }
+
+  location ~ ^/foundation/?$ {
+      return 301 /en/foundation;
+  }
