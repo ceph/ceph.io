@@ -106,3 +106,63 @@
   location ~ ^/foundation/?$ {
       return 301 /en/foundation;
   }
+
+  # When the blog was exported from the old Wordpress site, it was organized into
+  # subdirectories by year.  This makes redirecting a little difficult.  e.g.,
+  # Old URL: https://ceph.com/releases/v15-2-13-octopus-released
+  # New URL: https://ceph.io/en/news/blog/2021/v15-2-13-octopus-released
+  #
+  # The @blogtree location block just searches every year with 2008 being
+  # the oldest blog post.
+  location ~ ^/ceph-management/?(.*) {
+      try_files _ @blogtree;
+  }
+
+  location ~ ^/community/?(.*) {
+      try_files _ @blogtree;
+  }
+
+  location ~ ^/cds/?(.*) {
+      try_files _ @blogtree;
+  }
+
+  location ~ ^/releases/?(.*) {
+      try_files _ @blogtree;
+  }
+
+  location ~ ^/geen-categorie/?(.*) {
+      try_files _ @blogtree;
+  }
+
+  location ~ ^/newsletter/?(.*) {
+      try_files _ @blogtree;
+  }
+
+  location ~ ^/rados/?(.*) {
+      try_files _ @blogtree;
+  }
+
+  location ~ ^/rgw/?(.*) {
+      try_files _ @blogtree;
+  }
+
+  location ~ ^/update/?(.*) {
+      try_files _ @blogtree;
+  }
+
+  location @blogtree {
+      try_files /en/news/blog/2008/$1/
+                /en/news/blog/2009/$1/
+                /en/news/blog/2010/$1/
+                /en/news/blog/2011/$1/
+                /en/news/blog/2012/$1/
+                /en/news/blog/2013/$1/
+                /en/news/blog/2014/$1/
+                /en/news/blog/2015/$1/
+                /en/news/blog/2016/$1/
+                /en/news/blog/2017/$1/
+                /en/news/blog/2018/$1/
+                /en/news/blog/2019/$1/
+                /en/news/blog/2020/$1/
+                /en/news/blog/2021/$1/;
+  }
