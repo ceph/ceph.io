@@ -11,11 +11,6 @@ module.exports = function (text) {
   const html = /(&lt;.*?&gt;)|(<.*?>)/gi;
   const plain = unescape(content.replace(html, ''));
 
-  // remove duplicated words
-  const words = plain.split(' ');
-  const deduped = [...new Set(words)];
-  const result = deduped.join(' ');
-
   const shortWords =
     /\b(the|a|an|and|am|you|I|to|if|of|off|me|my|on|in|it|is|at|as|we|do|be|has|but|was|so|no|not|or|up|for|ve|ll|re|s)\b/gi;
   const unicode = /[\u0000-\u001F\u007F-\u009F]/g;
@@ -23,7 +18,7 @@ module.exports = function (text) {
   const lineBreaks = /[\r\n]+/gm;
   const extraSpaces = /\s+/g;
 
-  return result
+  return plain
     .replace(shortWords, ' ')
     .replace(unicode, ' ')
     .replace(punctuation, ' ')
