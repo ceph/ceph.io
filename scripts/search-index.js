@@ -19,13 +19,12 @@ function buildIndex(articles = []) {
     this.ref('id');
     this.field('title');
     this.field('author');
-    this.field('date');
     this.field('content');
 
-    articles.forEach(function (article, searchIndex) {
+    articles.forEach((article, searchIndex) => {
       article.id = searchIndex;
       this.add(article);
-    }, this);
+    });
   });
 
   return searchIndex;
