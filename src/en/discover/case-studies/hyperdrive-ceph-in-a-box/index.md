@@ -1,6 +1,6 @@
 ---
 title: "HyperDrive: Ceph-in-a-box"
-image: "/assets/bitmaps/ceph-in-a-box.jpg"
+image: "/assets/bitmaps/photo-ceph-in-a-box.jpg"
 sponsor:
   name: SoftIron
   logo: "/assets/bitmaps/logo-softiron.png"
