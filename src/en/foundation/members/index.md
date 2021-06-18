@@ -13,7 +13,6 @@ order: 3
 ### Premier Members
 
 <div class="grid grid--align-center grid--cols-2 md:grid--cols-3 md:w-3-4">
-  <a href="https://amihan.net/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-amihan.png" /></a>
   <a href="https://bloomberg.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-bloomberg.png" /></a>
   <a href="https://www.chinamobileltd.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-china-mobile.png" /></a>
   <a href="https://www.digitalocean.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-digital-ocean.png" /></a>
@@ -23,7 +22,6 @@ order: 3
   <a href="https://samsung.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-samsung.png" /></a>
   <a href="https://softiron.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-softiron.png" /></a>
   <a href="http://www.suse.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-suse.png" /></a>
-  <a href="https://www.canonical.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-ubuntu.png" /></a>
   <a href="https://www.wdc.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-western-digital.png" /></a>
   <a href="https://www.xsky.com/en/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-xsky.png" /></a>
   <a href="https://www.zte.com.cn/global/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-zte.png" /></a>
@@ -33,11 +31,11 @@ order: 3
 
 <div class="grid grid--align-center grid--cols-2 md:grid--cols-3 md:w-3-4">
   <a href="http://www.arm.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-arm.png" /></a>
-  <a href="http://bocloud.com.cn/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-bo-cloud.png" /></a>
-  <a href="https://catalystcloud.nz/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-catalyst-cloud-group.png" /></a>
   <a href="https://cloudbase.it/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-cloudbase.png" /></a>
   <a href="https://www.clyso.com/en/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-clyso.png" /></a>
+  <a href="https://www.canonical.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-ubuntu.png" /></a>
   <a href="http://www.croit.io/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-croit.png" /></a>
+  <a href="https://www.didiglobal.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-didi.png" /></a>
   <a href="https://www.easystack.io/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-easystack.png" /></a>
   <a href="http://iss-integration.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-intelligent-systems.png" /></a>
   <a href="https://www.qct.io/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-qct.png" /></a>
