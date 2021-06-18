@@ -21,9 +21,7 @@ order: 5
               >New in Octopus: Dashboard Enhancements</a
             >
           </h3>
-          <p class="color-grey-500 mb-0 p">
-            Discover the new Dashboard management features in Ceph Octopus.
-          </p>
+          <p class="color-grey-500 mb-0 p">Discover the new Dashboard management features in Ceph Octopus.</p>
         </div>
       </li>
       <li class="bg-navy p-4 md:p-6 lg:p-8 relative">
@@ -32,9 +30,7 @@ order: 5
             >Ceph drives savings for Bloomberg</a
           >
         </h3>
-        <p class="color-grey-500 p">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id eleifend sem, nec auctor sapien.
-        </p>
+        <p class="color-grey-500 p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id eleifend sem, nec auctor sapien.</p>
       </li>
       <li class="bg-gunmetal p-4 md:p-6 lg:p-8 relative">
         <h3 class="h3">
@@ -60,19 +56,12 @@ order: 5
 <section class="pt-0 section">
   <div class="flex flex--gap-6 flex--align-center flex--justify-between flex--wrap mb-12 lg:mb-16">
     <h2 class="h2 mb-0">Latest articles</h2>
-    <div>
-      <div class="flex flex--gap-6 flex--wrap">
-        <a class="a" href="/{{ locale }}/news/blog/">View blog</a>
-        <a class="a" href="/{{ locale }}/news/press-releases/">Press releases</a>
-      </div>
-    </div>
+    <a class="a" href="/{{ locale }}/news/blog/">View blog</a>
   </div>
 
   <ul class="grid md:grid--cols-2 lg:grid--cols-4 list-none p-0">
     {% for item in articles %} {% set articleTag = item.data.tags | getArticleType | i18n %}
-    <li>
-      {% ArticleCard item, {label: articleTag} %}
-    </li>
+    <li>{% ArticleCard item, {label: articleTag} %}</li>
     {% endfor %}
   </ul>
 </section>
@@ -115,16 +104,17 @@ order: 5
       <li class="bg-white border-grey-500 border-px border-solid relative rounded-2">
         <div class="grid grid--gap-0 md-to-lg:grid--cols-2 overflow-hidden rounded-2">
           <div class="aspect-ratio aspect-ratio--16x9 aspect-ratio--cover md-to-lg:h-full tint tint--black-2">
-            <img alt="" class="absolute md-to-lg:h-full left-0 top-0" loading="lazy" src="/assets/bitmaps/photo-water-01.jpg" />
-            <img alt="" class="absolute bottom-0 left-0 m-4 w-12 z-1" src="/assets/svgs/icon-planet-ceph-white-red.svg" />
+            <img alt="" class="absolute md-to-lg:h-full left-0 top-0" loading="lazy" src="/assets/bitmaps/photo-coral-01.jpg" />
+            <img alt="" class="absolute bottom-0 left-0 m-4 w-12 z-1" src="/assets/svgs/icon-events-white-red.svg" />
           </div>
           <div class="p-5">
-            <h3 class="h3">Planet Ceph</h3>
+            <h3 class="h3">Events</h3>
             <p class="p">
-              Check Planet Ceph for community-lead content featuring industry developments, interesting stories and Ceph-related
-              experiences.
+              From Ceph Days and conferences, to Cephalocon, Ceph aims to bring the community face-to-face where possible. With engaging
+              content, critical discussions and opportunities to network with other community members, Ceph events combine the best of
+              software with excitement and fun.
             </p>
-            <a class="a link-cover link-cover--shadow" href="/{{ locale }}/news/planet-ceph/">View Planet Ceph articles</a>
+            <a class="a link-cover link-cover--shadow" href="/{{ locale }}/community/events/">Ceph events</a>
           </div>
         </div>
       </li>
