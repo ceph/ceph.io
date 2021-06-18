@@ -1,6 +1,11 @@
 ---
 layout: navigation
 permalink: '/{{ locale }}/news/blog/search/'
+preload:
+  - href: ../search-index.json
+    as: fetch
+  - href: ../search-output.json
+    as: fetch
 ---
 
 {% set blogPostLocaleTag = locale + '-blog-post' %}
