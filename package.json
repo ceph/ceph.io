@@ -12,7 +12,7 @@
     "dev": "cross-env NODE_ENV=development npm-run-all clean --parallel 'site -- --serve' 'css -- --watch' 'js -- --watch' assets",
     "build": "cross-env NODE_ENV=production npm-run-all clean --parallel site css js assets",
     "debug": "cross-env DEBUG=* npx eleventy",
-    "prettier": "prettier \"**/*.+(js|jsx|json|css|md|html)\"",
+    "prettier": "prettier \"**/*.+(js|json|css|md|html)\"",
     "format": "npm run prettier -- --write",
     "prepare": "husky install"
   },
