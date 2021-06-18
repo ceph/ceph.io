@@ -6,17 +6,19 @@ order: 3
 
 # {{ title }}
 
-## The Future of Storage
+## The future of storage
 
-### Ceph evolves with data, utilising industry leading expertise to anticipate and accommodate the growth of big data.
+### Ceph is an industry leader for effortless data storage and management at any scale, independent of hardware reliance 
 
-As data grows exponentially, Ceph is designed to cope with progression and overcome limitations of previous systems. For any business, be it a start-up or well-established enterprise, data management demands have never been so challenging. Ceph takes these demands and creates performant, reliable and scalable solutions.
+- Ceph enables organisations to work with data at any scale, and any budget
+- Ceph offers unified block, file and object storage, allowing for more efficient data backup and interopability
+- Ceph prioritises data durability and availability through 'self-healing' monitoring and data placement algorithms
 
-## Open Source Innovation
+## Open source innovation
 
 ### As an open source platform with a community spanning the globe, Ceph always stays one step ahead.
 
-The worldwide network behind Ceph ensures development, growth and improvement is instantaneous. Without the confines of belonging to an internal team, Ceph’s community is free to create and explore as desired, when desired. With Ceph, you can take your imagined solutions and construct tangible technology.
+The worldwide network behind Ceph ensures continual development, growth and improvement. Without the confines of a proprietary business model, Ceph’s community is free to create and explore, innovating outside of traditional development structures. With Ceph, you can take your imagined solutions, and construct tangible technology.
 
 Want to be at the forefront of innovation?
 

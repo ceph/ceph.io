@@ -6,15 +6,20 @@ import { terser } from 'rollup-plugin-terser';
 const srcDir = `./src/js/`;
 const distDir = 'dist/js/';
 
+const commonjsOptions = {
+  dynamicRequireTargets: [
+    './src/_11ty/filters/cleanCardContent.js',
+    './src/_11ty/filters/formatDate.js',
+    './src/_11ty/filters/getSingleDigitFromDate.js',
+    './src/_11ty/filters/truncate.js',
+    './src/_11ty/shortcodes/ArticleCard.js',
+  ],
+  transformMixedEsModules: true,
+};
+
 const pluginsES = () => [
   resolve(),
-  commonjs({
-    dynamicRequireTargets: [
-      './src/_11ty/filters/**/*.js',
-      './src/_11ty/shortcodes/**/*.js',
-    ],
-    transformMixedEsModules: true,
-  }),
+  commonjs(commonjsOptions),
   process.env.NODE_ENV === 'production'
     ? terser({ output: { comments: false } })
     : null,
@@ -22,13 +27,7 @@ const pluginsES = () => [
 
 const pluginsES5 = () => [
   resolve(),
-  commonjs({
-    dynamicRequireTargets: [
-      './src/_11ty/filters/**/*.js',
-      './src/_11ty/shortcodes/**/*.js',
-    ],
-    transformMixedEsModules: true,
-  }),
+  commonjs(commonjsOptions),
   babel({
     babelHelpers: 'bundled',
     exclude: 'node_modules/**',
