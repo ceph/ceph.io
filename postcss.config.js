@@ -5,9 +5,14 @@ module.exports = ({ env }) => ({
     require('postcss-preset-env')({ stage: 1 }), // https://preset-env.cssdb.org/features#stage-1
     // Other plugins...
     require('@fullhuman/postcss-purgecss')({
-      content: ['./src/**/*.html', './src/**/*.njk', './src/**/*.js'],
+      content: [
+        './src/**/*.html',
+        './src/**/*.md',
+        './src/**/*.njk',
+        './src/**/*.js',
+      ],
       defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
-      safelist: { deep: [/^js-/] },
+      safelist: { deep: [/^js-/], greedy: [/anchor$/] },
     }),
     env === 'production' ? require('cssnano')({ preset: 'default' }) : null,
   ],
