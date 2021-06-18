@@ -11,7 +11,7 @@ overlaySubMenu: true
     <div class="max-w-224 mx-auto py-16 text-center">
       <h2 class="color-white h1">Get started with Ceph</h2>
       <p class="color-white mb-0 standout">
-        Ceph is a unified, distributed storage system designed for excellent performance, reliability and scalability.
+        Ceph. All storage problems should be solvable with open-source software.
       </p>
     </div>
   </div>
@@ -34,39 +34,33 @@ overlaySubMenu: true
         The quickest way to get a Ceph cluster up and running is to follow the Getting Started guides.
       </p>
       <p class="p">
-        These guides will show you how to build a working clusted, deploy gateways, and configure clients.
+        These guides will show you how to build a working cluster, deploy gateways, and configure clients.
       </p>
-      <a class="button" href="/{{ locale }}/users/documentation/">Getting started guide</a>
+      <a class="button" href="https://docs.ceph.com/en/latest/start/intro/">Getting started guide</a>
     </div>
     <div class="bg-grey-300 p-5 rounded-2">
       <h3 class="h3">Getting Ceph</h3>
       <p class="mb-8 lg:mb-12 p">
-        Pellentesque ornare sem lacinia quam venenatis vestibulum stibulum id ligula porta euismod semper.
+      Ceph offers Ceph packages, Ceph container images, clones of the Ceph project from Github, and Ceph tarballs.
       </p>
       <div class="flex flex--gap-4 lg:flex--gap-6 flex--justify-between flex--wrap mb-8 lg:mb-12">
         <div class="relative text-center">
           <img alt="" class="block mb-2 mx-auto w-12" src="/assets/svgs/icon-git-blue-red.svg" />
-          <a class="a link-cover" href="/{{ locale }}/users/getting-started/">GIT</a>
+          <a class="a link-cover" href="https://docs.ceph.com/en/latest/install/get-packages/"/>Packages</a>
+        </div>
+        <div class="relative text-center">
+          <img alt="" class="block mb-2 mx-auto w-12" src="/assets/svgs/icon-git-blue-red.svg" />
+          <a class="a link-cover" href="https://docs.ceph.com/en/latest/install/containers/"/>Containers</a>
+        </div>
+        <div class="relative text-center">
+          <img alt="" class="block mb-2 mx-auto w-12" src="/assets/svgs/icon-git-blue-red.svg" />
+          <a class="a link-cover" href="https://github.com/ceph/ceph"/>GIT</a>
         </div>
         <div class="relative text-center">
           <img alt="" class="block mb-2 mx-auto w-12" src="/assets/svgs/icon-tar-blue-red.svg" />
-          <a class="a link-cover" href="/{{ locale }}/users/getting-started/">Tarball</a>
-        </div>
-        <div class="relative text-center">
-          <img alt="" class="block mb-2 mx-auto w-12" src="/assets/svgs/icon-package-blue-red.svg" />
-          <a class="a link-cover" href="/{{ locale }}/users/getting-started/">Package</a>
-        </div>
-        <div class="relative text-center">
-          <img alt="" class="block mb-2 mx-auto w-12" src="/assets/svgs/icon-ceph-deploy-blue-red.svg" />
-          <a class="a link-cover" href="/{{ locale }}/users/getting-started/">Ceph-deploy</a>
+          <a class="a link-cover" href="https://download.ceph.com/tarballs/">Tarball</a>
         </div>
       </div>
-      <h3 class="h3">Mirrors</h3>
-      <p class="p">
-        In addition to the base of download.ceph.com, the Ceph community also provides a number of regional mirrors.
-      </p>
-      <a class="a" href="/{{ locale }}/users/getting-started/">View mirror information</a>
-    </div>
   </div>
 </section>
 
@@ -77,31 +71,9 @@ overlaySubMenu: true
   <div class="grid lg:grid--cols-2 grid--gap-14 lg:grid--gap-28">
     <div>
       <p class="standout">
-        Pellentesque ornare sem lacinia quam venenatis vestibulum stibulum id ligula porta euismod semper.
+      Learn the technical details of the various methods of deploying Ceph before you choose the one that is right for your circumstances. 
       </p>
-      <a class="button" href="/{{ locale }}/users/documentation/">Getting started with Ceph</a>
-    </div>
-    <div class="bg-grey-300 p-5 rounded-2">
-      <h3 class="h3">Getting Ceph</h3>
-      <p class="p">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in dui sed arcu ullamcorper rhoncus. Maecenas lacus ligula, aliquam
-        quis elit vitae, congue viverra libero.
-      </p>
-      <a class="a inline-block mb-8 lg:mb-12" href="/{{ locale }}/users/getting-started/">Read the instructions</a>
-      <div class="mb-8 lg:mb-12 relative">
-        <div class="sm:w-1-2">
-          <div class="aspect-ratio aspect-ratio--16x9 mb-4 tint tint--black-2">
-            <img alt="" class="absolute left-0 rounded-2 top-0" loading="lazy" src="/assets/bitmaps/photo-squid-03.jpg" />
-            <img alt="" class="absolute center w-12 z-1" src="/assets/svgs/icon-play-white-red.svg" />
-          </div>
-        </div>
-        <a class="a link-cover" href="/{{ locale }}/users/getting-started/">Watch the quick installation video</a>
-      </div>
-      <h3 class="h3">Manual installation</h3>
-      <p class="p">
-        Pellentesque ornare sem lacinia quam venenatis vestibulum stibulum id ligula porta euismod semper.
-      </p>
-      <a class="a" href="/{{ locale }}/users/getting-started/">Manual installation instructions</a>
+      <a class="button" href="https://docs.ceph.com/en/latest/install/">Ceph Installation Guide</a>
     </div>
   </div>
 </section>
@@ -114,8 +86,9 @@ overlaySubMenu: true
         <img class="mb-4 w-12" src="/assets/svgs/icon-code-blue-red.svg" alt="" />
         <h3 class="h3">Code</h3>
         <p class="p">
-          Explore and create novel, innovative functions with the support and expertise of a global community. Whether you are new to coding
-          or a seasoned expert, input is always valuable.
+	  Fork and clone the Ceph repository to begin contributing to the Ceph
+	  project today. Read the Developer Guide in the documentation to learn
+	  the rules governing contributions.
         </p>
         <p class="p">Find out where Ceph is headed and where your coding skill could be applied.</p>
         <a class="a link-cover link-cover--shadow" href="/{{ locale }}/developers/code/">Code Ceph</a>
@@ -124,8 +97,10 @@ overlaySubMenu: true
         <img class="mb-4 w-12" src="/assets/svgs/icon-documentation-blue-red.svg" alt="" />
         <h3 class="h3">Documentation</h3>
         <p class="p">
-          Find out everything you need to know about Ceph, including component, guides, coding and more, with our extensive documentation
-          library. From here you can get started with Ceph.
+	The installation guide ("Installing Ceph") explains how you can deploy
+	a Ceph cluster. For more in-depth information about what Ceph
+	fundamentally is and how it does what it does, read the architecture
+	documentation ("Architecture").
         </p>
         <a class="a link-cover link-cover--shadow" href="/{{ locale }}/users/documentation/">Get started with Ceph (documentation)</a>
       </li>
@@ -133,10 +108,10 @@ overlaySubMenu: true
         <img class="mb-4 w-12" src="/assets/svgs/icon-contribute-blue-red.svg" alt="" />
         <h3 class="h3">Contribute</h3>
         <p class="p">
-          If you use Ceph, you can contribute in a variety of ways. Log user problems directly with our live issue tracker or join in on the
-          Ceph Developer Monthly call to stay updated and discuss ideas with the community.
+	  If you use Ceph, you can contribute to its development. Log problems
+	  by using Ceph's live issue tracker, or join the Ceph Developer
+	  Monthly call to stay updated and discuss ideas with the community.
         </p>
-        <p class="p">How ever you get involved, with whatever skills you present, Ceph would be glad to have you.</p>
         <a class="a link-cover link-cover--shadow" href="/{{ locale }}/developers/contribute/">Contribute</a>
       </li>
     </ul>
