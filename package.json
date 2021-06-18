@@ -73,6 +73,6 @@
     "lunr": "^2.3.9"
   },
   "lint-staged": {
-    "*.--write": "prettier --write"
+    "**/*.+(js|json|css|md|html)": "prettier --write"
   }
 }
