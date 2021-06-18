@@ -40,3 +40,8 @@
     display: none;
   }
 }
+
+.js .hide-js,
+.no-js .hide-no-js {
+  display: none;
+}

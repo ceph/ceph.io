@@ -15,17 +15,16 @@ function getData(distDir) {
 }
 
 function buildIndex(articles = []) {
-  let searchIndex = lunr(function () {
+  const searchIndex = lunr(function () {
     this.ref('id');
-    this.field('title');
-    this.field('author');
-    this.field('date');
+    this.field('title', { boost: 10 });
+    this.field('author', { boost: 5 });
     this.field('content');
 
-    articles.forEach(function (article, searchIndex) {
+    articles.forEach((article, searchIndex) => {
       article.id = searchIndex;
       this.add(article);
-    }, this);
+    });
   });
 
   return searchIndex;
