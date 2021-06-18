@@ -1,57 +1,41 @@
 ---
-title: "Ceph Community Newsletter, July 2020 Edition"
-date: "2020-08-01"
+title: "Ceph Community Newsletter, August 2020 Edition"
+date: "2020-09-01"
 author: "thingee"
 ---
 
 ## Announcements
 
-#### Ceph Tech Talk for July 2020: A Different Scale - Running small ceph clusters in multiple data centers
+#### Outeachy December 2020
 
-Yuval Freund presented a different perspective of smaller Ceph clusters running in multiple data centers.
+We’re excited to announce that Ceph and [Rook](https://rook.io) will participate in this next Outreachy December 2020 round! See our latest [blog post](https://ceph.io/community/december-2020-outreachy-ceph-rook/) for more details.
 
-[More on Ceph Tech Talks](https://ceph.io/ceph-tech-talks/)
+#### [Code Walkthrough: KRBD I/O Flow](https://www.youtube.com/watch?v=XClnvd_BX6I)
+
+Illya Dryomov gives a code walkthrough of the Linux Kernel RBD client. Catch our next walkthrough with Patrick Donnelly on the metadata servers with Ceph FS September 29th at 17:00 UTC.
+
+[View archive](https://tracker.ceph.com/projects/ceph/wiki/Code_Walkthroughs)
 
 * * *
 
 ## Project updates
 
-### CephFS
+### RADOS
 
-- Continuing work on \`ceph fs top\`
-- master/slave terminology removed from CephFS codebase
-- New cephfs required features command: [https://docs.ceph.com/docs/master/cephfs/administration/#minimum-client-version](https://docs.ceph.com/docs/master/cephfs/administration/#minimum-client-version)
-- New automatic subtree pinning policies: [https://docs.ceph.com/docs/master/cephfs/multimds/#setting-subtree-partitioning-policies](https://docs.ceph.com/docs/master/cephfs/multimds/#setting-subtree-partitioning-policies)
+- Racially charged terms have been eliminated from the Ceph codebase. A few configuration options and commands have been renamed. Details in [https://github.com/ceph/ceph/blob/master/PendingReleaseNotes](https://github.com/ceph/ceph/blob/master/PendingReleaseNotes)
 
 ### Dashboard
 
-- Lots of ongoing work to establish the dashboard’s API backend as the new Ceph REST API (see [https://tracker.ceph.com/issues/40907](https://tracker.ceph.com/issues/40907) for the epic)
-- UI framework refactoring (using SCSS, more Bootstrap variables)
-- Improving cephadm integration (e.g. service deployment)
-- New landing page design under review (see [https://github.com/ceph/ceph/pull/36476](https://github.com/ceph/ceph/pull/36476) for the proposal)
-- New feature: assigning flags to individual OSDs (see [https://github.com/ceph/ceph/pull/36449](https://github.com/ceph/ceph/pull/36449) for the draft)
+Noteworthy highlights:
 
-### RADOS
+- Proceeding on establishing the Ceph Dashboard backend as the new official Ceph REST API. See [https://tracker.ceph.com/issues/40907](https://tracker.ceph.com/issues/40907) for more details and ongoing activity. The intention is to deprecate the restful module in Pacific (and remove it post-Pacific).
+- Landing Page improvements (new widgets, improved ordering) have been merged (can we include the screen shot from the PR?): [https://github.com/ceph/ceph/pull/36476](https://github.com/ceph/ceph/pull/36476)
+- Ability to deploy Ceph services via Orchestrator by using ServiceSpec: [https://github.com/ceph/ceph/pull/36119](https://github.com/ceph/ceph/pull/36119)
+- WIP: Assign flags (e.g. “noup”, “nodown”, etc.) to individual OSDs: https://github.com/ceph/ceph/pull/36449
 
-- Ability to cancel on-going scrubs
-- More fine-grained memory tracking in BlueStore
-- Crimson OSD testing in Teuthology
-- Crimson Backfill Code Walkthrough [https://www.youtube.com/watch?v=xZswk3yAF5U&list=PLrBUGiINAakOXlMQbSdZB\_PoLhqpSa3NU&index=4](https://www.youtube.com/watch?v=xZswk3yAF5U&list=PLrBUGiINAakOXlMQbSdZB_PoLhqpSa3NU&index=4)
-- dmClock Code Walkthrough [https://www.youtube.com/watch?v=D27XlS8Z\_sc&feature=youtu.be](https://www.youtube.com/watch?v=D27XlS8Z_sc&feature=youtu.be)
+## Releases                               
 
-* * *
-
-## Releases
-
-- [Mimic is retired](https://ceph.io/releases/mimic-is-retired/)
-
-fd
-
-* * *
-
-## Ceph Planet
-
-- [SUSE Enterprise Storage delivers best CephFS benchmark on Arm](https://ceph.io/planet/suse-enterprise-storage-7-first-public-beta-2/)
+- [v14.2.11 Nautilus released](https://ceph.io/releases/v14-2-11-nautilus-released/)
 
 * * *
 
@@ -61,44 +45,40 @@ fd
 
 #### [**Ceph Tech Talk**](https://www.youtube.com/playlist?list=PLrBUGiINAakM36YJiTT0qYepZTVncFDdc)
 
-- [A Different Scale: running small Ceph clusters in multiple data centers](https://www.youtube.com/watch?v=XS7jpFxUYQ0)
+- [Edge Application: Steaming Multiple Video Sources](https://www.youtube.com/watch?v=Q8bU-m07Czo)
+- [Secure Token Service in the Rados Gateway](https://www.youtube.com/watch?v=Lc32meILfNI)
 
 [**Ceph Code Walkthrough**](https://www.youtube.com/playlist?list=PLrBUGiINAakN87iSX3gXOXSU3EB8Y1JLd)
 
-- [DmClock](https://www.youtube.com/watch?v=D27XlS8Z_sc)
+- [kRBD I/O Flow](https://www.youtube.com/watch?v=XClnvd_BX6I)
 
 #### [**Ceph Crimson/SeaStor OSD Weekly**](https://www.youtube.com/playlist?list=PLrBUGiINAakOXlMQbSdZB_PoLhqpSa3NU)
 
-- [2020-07-01](https://www.youtube.com/watch?v=UI2AuNRJD6A)
-- [2020-07-08](https://www.youtube.com/watch?v=xZswk3yAF5U)
-- [2020-07-15](https://www.youtube.com/watch?v=OZyMWyKaYuk)
-- [2020-07-22](https://www.youtube.com/watch?v=IOPHeqIQIqE)
-- [2020-07-29](https://www.youtube.com/watch?v=nqzillJME4E)
+- [2020-08-05](https://www.youtube.com/watch?v=ttFQ9Fnen5I)
+- [2020-08-12](https://www.youtube.com/watch?v=SGUBV6tD8hM)
+- [2020-08-19](https://www.youtube.com/watch?v=nF83fB6Ivwg)
+- [2020-08-26](https://www.youtube.com/watch?v=igexNYX6V7g)
+- [2020-09-02](https://www.youtube.com/watch?v=Q9ZtcK83Vc8)
 - [Full playlist](https://www.youtube.com/playlist?list=PLrBUGiINAakOXlMQbSdZB_PoLhqpSa3NU)
-
-#### [**Ceph Developers Monthly**](https://www.youtube.com/playlist?list=PLrBUGiINAakNbcSOvOM0IJHqqv5dzusZ6)
-
-- [Ceph Developers Monthly (July 2020)](https://www.youtube.com/watch?v=fHQ4rYsyvhg)
 
 #### [**Ceph DocUBetter**](https://www.youtube.com/playlist?list=PLrBUGiINAakNe0PzkhHnr1c54O7Zh--zy)
 
-- [2020-07-08](https://www.youtube.com/watch?v=-B9E62Tz7wo)
+- [2020-08-12](https://www.youtube.com/watch?v=WxDHdaxNHYw)
 - [Full playlist](https://www.youtube.com/playlist?list=PLrBUGiINAakNe0PzkhHnr1c54O7Zh--zy)
 
 #### [**Ceph Performance Weekly**](https://ceph.com/performance-2/)
 
-- [2020-07-30](https://www.youtube.com/watch?v=htehgoEtMpQ)
+- [2020-08-06](https://www.youtube.com/watch?v=4GONcW3g69Y)
+- [2020-08-13](https://www.youtube.com/watch?v=uvsVMnCXqFI)
+- [2020-08-20](https://www.youtube.com/watch?v=qGtTUvmEVq8)
+- [2020-08-28](https://www.youtube.com/watch?v=rbiDSCFEF3c)
+- [2020-08-31](https://www.youtube.com/watch?v=J48ZrzsZ4Z0)
 - [Full playlist](https://www.youtube.com/playlist?list=PLrBUGiINAakN2qXjxSgfmIwCCLqgiyBqw)
 
 #### [**Ceph Orchestration**](https://www.youtube.com/playlist?list=PLrBUGiINAakMAVH7XC1FyE22rjUB4IWYZ)
 
-- [2020-07-06](https://www.youtube.com/watch?v=pO_tXJAsbKo)
-- [2020-07-13](https://www.youtube.com/watch?v=Itz_KX9Nbh0)
-- [2020-07-20](https://www.youtube.com/watch?v=3LnzPIpYohI)
-- [2020-07-27](https://www.youtube.com/watch?v=0zMFq9t4rBM)
+- [2020-08-03](https://www.youtube.com/watch?v=DuRCXpDg-3Q)
+- [2020-08-10](https://www.youtube.com/watch?v=otJH-AfrquM)
+- [2020-08-17](https://www.youtube.com/watch?v=sYUk2qm-ym8)
+- [2020-08-24](https://www.youtube.com/watch?v=nw-sFKUc4e8)
 - [Full playlist](https://www.youtube.com/playlist?list=PLrBUGiINAakMAVH7XC1FyE22rjUB4IWYZ)
-
-#### [**Ceph Science Working Group**](https://www.youtube.com/playlist?list=PLrBUGiINAakM3d4bw6Rb7EZUcLd98iaWG)
-
-- [2020-07-23](https://www.youtube.com/watch?v=m-ogTC8J7Y4)
-- [Full playlist](https://www.youtube.com/playlist?list=PLrBUGiINAakM3d4bw6Rb7EZUcLd98iaWG)
