@@ -1,10 +1,6 @@
 ---
 title: "Ceph@home: the domestication of a wild cephalopod"
-image: "/assets/bitmaps/alexandre-oliva.png"
-sponsor:
-  name: "Alexandre Oliva"
-  logo: "/assets/favicons/android-chrome-192x192.png"
-  website: "https://ceph.io"
+image: "/assets/bitmaps/photo-alexandre-oliva-ceph-at-home.png"
 tags:
   - information
 ---
