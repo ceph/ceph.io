@@ -1,6 +1,6 @@
 ---
 title: "Ceph done right for OpenStack"
-image: "/assets/bitmaps/illustration-openstack-softiron.jpg"
+image: "/assets/bitmaps/illustration-openstack-softiron.png"
 sponsor:
   name: SoftIron
   logo: "/assets/bitmaps/logo-softiron.png"
