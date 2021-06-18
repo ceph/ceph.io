@@ -27,6 +27,9 @@ module.exports = {
   keep_reading: {
     en: 'Keep reading',
   },
+  loading: {
+    en: 'Loading…',
+  },
   next: {
     en: 'Next',
   },
@@ -85,8 +88,14 @@ module.exports = {
   'blog-post': {
     en: 'Blog',
   },
+  blog_search_failed: {
+    en: 'Sorry, we couldn’t complete your search at this time. Please try again shortly.',
+  },
   blog_search_no_results: {
     en: 'No results for',
+  },
+  blog_search_unavailable: {
+    en: 'Please enable JavaScript to search',
   },
   blog_searched_for: {
     en: 'You searched for',
