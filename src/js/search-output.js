@@ -24,7 +24,13 @@ const SearchOutput = {
         searchInput.value = query;
 
         const [searchIndex, searchOutput] = await Promise.all(
-          searchDataUrls.map(url => fetch(url).then(res => res.json()))
+          searchDataUrls.map(url =>
+            fetch(url, {
+              method: 'GET',
+              credentials: 'include',
+              mode: 'no-cors',
+            }).then(res => res.json())
+          )
         );
         const lunrIndex = lunr.Index.load(searchIndex);
 
