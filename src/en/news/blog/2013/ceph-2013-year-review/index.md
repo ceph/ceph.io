@@ -1,0 +1,41 @@
+---
+title: "Ceph in 2013, a year in review"
+date: "2013-12-31"
+author: "scuttlemonkey"
+---
+
+Wow, what a ride this year has been! Ceph has come a long way, and it doesn’t show any signs of slowing down. As the new year looms I thought it might be good to reflect a bit on 2013 and some of the notable achievements from the Ceph community.
+
+[![](images/new-year-2013-300x187.jpg "new-year-2013")](http://ceph.com/wp-content/uploads/2013/12/new-year-2013.jpg)
+
+I would categorize the accomplishments this year in three main categories: Community, Commercial, and Development. This year saw a great blend of all categories; that includes three major releases, a user committee, passing the $13 million mark in funding, numerous integrations, and tons more. Read on for details!
+
+### Community
+
+Arguably the most notable and important part about Ceph is our amazing community, and they have really stepped it up this year. We have seen contributions grow at a fevered pitch and the infrastructure surrounding them has had to keep pace. Our infrastructure has seen changes like the updated ceph [wiki](http://wiki.ceph.com), our new [metrics dashboard](http://metrics.ceph.com), tons of [documentation](http://ceph.com/docs/master/) work, and the continuing work on [ceph.com](http://ceph.com). All of this infrastructure takes quite a bit of time and effort to keep the lights on, and the community is starting to take a much larger role in ensuring that things continue to run smoothly. If you are interested in volunteering to help, make sure to drop a note to the [community mailing list](mailto:community@ceph.com).
+
+Speaking of the community [mailing list](http://ceph.com/resources/mailing-list-irc/), this year saw the birth of the [Ceph User Committee](http://ceph.com/community/the-ceph-user-committee-is-born/) to help manage the coordination and infrastructure of community-facing activities. This committee will primarily work to spread the word of Ceph through in-person meetings, increased web content, and infrastructure support. Anyone is welcome to join the Ceph User Committee, and people with all skill sets are needed. Whether you’re a developer, designer, organizer, or just interested in having a beer with your fellow Ceph users, there are things you can help with so feel free to drop a note on the list to say hi.
+
+While the community has really started to self organize, there are also a number of gatherings that the core team has spent a lot of effort setting up. Both the [Ceph Day](http://www.inktank.com/CEPHdays/) in-person events and the online [Ceph Developer Summit](https://wiki.ceph.com/Planning/CDS) have been well attended and continue to grow. While the Ceph Days are not new to this year, the program was expanded to start happening on a more regular basis. In the coming year we hope to expand it again into a monthly (or close to it) roadshow. Look for a stop in your neck of the woods! The Ceph Developer Summit, however, was [new this year](http://ceph.com/events/ceph-developer-summit/) with the Dumpling release. The concentrated collaboration sessions to discuss all aspects of upcoming Ceph development have resulted in some amazing contributions from the community.
+
+Another community effort was something that started as Inktank holding [office hours](http://ceph.com/community/ceph-office-hours-announced/) to help new Ceph users with questions. This effort expanded shortly thereafter into the [Geek on Duty](http://ceph.com/community/ceph-community-expands-geek-on-duty/), adding several community volunteers to ensure that anyone can come ask questions about Ceph and know they wont be met with radio silence. Together these community efforts have really helped Ceph grow into a vibrant and exciting project.
+
+### Commercial
+
+While the Open Source community has been amazing, we have also seen a huge uptake in the commercial community. While Inktank has been leading the charge with almost [300% customer growth](http://www.marketwired.com/press-release/inktank-rides-rising-ceph-wave-as-demand-for-software-defined-storage-grows-1865043.htm), steady feature growth and stability in the code, tipping the scales at just over $13 million in funding, and a [commercial offering](http://www.inktank.com/enterprise/), they have definitely not been the only ones working hard building a business around Ceph. There is a wealth of amazing partner, customer, and commercial use springing up. This includes [cloud services](http://www.dreamhost.com/cloud/) from Dreamhost, hardware partner work from folks like [Penguin Computing](http://www.penguincomputing.com/blog/post/why-we-love-ceph), [cloud work](http://www.novell.com/docrep/2012/12/suse_cloud_install_guide.pdf?noredir=true) from SUSE, a couple of [great](http://ltsnews.lehigh.edu/node/25) University [projects](http://www.dellhpcsolutions.com/imagesvr_ce/6233/University%20of%20Alabama%20at%20Birmingham_PUB_10012807_2013.pdf) from Dell, and many others. It is amazing to watch the number of businesses who are adopting, and in turn helping to grow, Ceph.
+
+Another sector that has been helping Ceph to grow is the financial industry. Starting with the [FinTech Innovation Lab](http://www.fintechinnovationlab.com/portfolio-2013.php) in New York City, Inktank was able to put Ceph in front of Banks, Venture Capitalists, and Entrepreneurs heavily involved in the financial industry. The feedback and momentum from that program has really helped Ceph to mature and expand in ways it would have otherwise been very difficult to do.
+
+### Development
+
+Beyond the intangibles of community growth there has also been a huge amount of progress in the code. We have seen very concerted effort integrating Ceph with all manner of other software. Whether it's specific applications like Xen or iSCSI support or larger integration projects like OpenNebula or Ganeti, the number of things utilizing a Ceph backend are growing at an astonishing rate.
+
+In addition to the number of projects that use Ceph, it is also much easier to get Ceph itself. Packaging, orchestration, and deployment have all experienced massive improvements this year. While [Puppet](https://github.com/enovance/puppet-ceph), [Chef](https://github.com/ceph/ceph-cookbooks), [Ansible](https://github.com/alfredodeza/ceph-ansible), [Salt](https://github.com/saltstack/salt-states/tree/master/ceph), and [Juju](http://manage.jujucharms.com/charms/precise/ceph) concoctions have all come a long way, the award for 'most improved' definitely goes to [Ceph-Deploy](https://github.com/ceph/ceph-deploy). No matter what method of deployment you choose, the process of getting a Ceph cluster up and running on your hardware du jour has become much easier, and as a result we have seen rates of adoption growing over time.
+
+The core Ceph project also has experienced quite a bit of growth this year. Sage moved the project to a [three month development cycle](http://ceph.com/community/ceph-settles-in-to-aggressive-release-cadence/) which has proven to be an excellent driving force in project momentum. With this aggressive release cadence the project was able to polish three major releases this year ([Cuttlefish](http://ceph.com/releases/v0-61-cuttlefish-released/), [Dumpling](http://ceph.com/releases/v0-67-dumpling-released/), and [Emperor](http://ceph.com/releases/v0-72-emperor-released/)) and work on [Firefly](https://wiki.ceph.com/Planning/CDS/CDS_Firefly) is already underway for a February release next year!
+
+### Summary
+
+2013 has certainly been an amazing year for the Ceph project, and we can’t wait to see what 2014 will bring! With Firefly arriving in February, movement towards a Ceph Foundation, and expanded community participation efforts, it certainly promises to be exciting. If you would like to join us on the epic journey the community is always happy to welcome new passionate people. Drop a line on the [mailing lists](http://ceph.com/resources/mailing-list-irc/) or reach out to the [user committee](mailto:community@ceph.com) and we’ll be happy to get you started! Happy new year from the Ceph team, see you in 2014!
+
+scuttlemonkey out ![](http://track.hubspot.com/__ptq.gif?a=268973&k=14&bu=http://ceph.com&r=http://ceph.com/community/ceph-in-2013-a-year-in-review/&bvt=rss&p=wordpress)
