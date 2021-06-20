@@ -25,7 +25,7 @@
         - its translationKey matches the current item translationKey
         - its locale matches the code of the language we are looping through #}
         {%- if item.data.translationKey == translationKey and item.data.locale == lang.code -%}
-          <link rel="alternate" hreflang="{{ item.data.locale }}" href="{{ item.url }}" />
+          <link rel="alternate" hreflang="{{ item.data.locale }}" href="{{ item.url }}"/>
         {%- endif -%}
 
       {%- endfor -%}
@@ -36,6 +36,9 @@
     <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 
     {# Preload/dns-prefetch #}
+    {% for link in preload -%}
+      <link rel="preload" href="{{link.href}}" as="{{link.as}}"/>
+    {%- endfor -%}
 
     {# Stylesheet #}
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -58,22 +61,27 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png">
 
     <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#f0424d">
-    
+
     <link rel="manifest" href="/assets/favicons/manifest.json">
+
+    {# Robots #}
+    {% if not build.isProduction %}
+      <meta name="robots" content="noindex, nofollow">
+    {% endif %}
 
     {# Social meta #}
     <meta property="og:locale" content="{{ locale }}">
-    <meta property="og:title" content="{% if title %}{{ title }} - {% endif %}{{ site.title }}" />
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="{% if image %}{{ image }}{% else %}https://via.placeholder.com/640x360{% endif %}" />
+    <meta property="og:title" content="{% if title %}{{ title }} - {% endif %}{{ site.title }}"/>
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="{% if image %}{{ image }}{% else %}https://via.placeholder.com/640x360{% endif %}"/>
     <meta property="og:site_name" content="{{ site.title }}">
 
-    <meta name="twitter:card" content="{% if image %}summary_large_image{% else %}summary{% endif %}" />
-    <meta name="twitter:site" content="{{ site.social.twitter }}" />
-    <meta name="twitter:title" content="{% if title %}{{ title }} - {% endif %}{{ site.title }}" />
-    <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
-    <meta name="twitter:image" content="{% if image %}{{ image }}{% else %}https://via.placeholder.com/640x360{% endif %}" />
+    <meta name="twitter:card" content="{% if image %}summary_large_image{% else %}summary{% endif %}"/>
+    <meta name="twitter:site" content="{{ social.twitter }}"/>
+    <meta name="twitter:title" content="{% if title %}{{ title }} - {% endif %}{{ site.title }}"/>
+    <meta name="twitter:url" content="{{ site.url }}{{ page.url }}"/>
+    <meta name="twitter:image" content="{% if image %}{{ image }}{% else %}https://via.placeholder.com/640x360{% endif %}"/>
 
   </head>
   <body class={{layout}}>

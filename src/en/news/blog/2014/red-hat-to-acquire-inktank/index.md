@@ -1,0 +1,19 @@
+---
+title: "Red Hat to acquire Inktank"
+date: "2014-04-30"
+author: "sage"
+---
+
+Today we are announcing some very big news: Red Hat is acquiring Inktank, the company behind Ceph. We are very excited about what this means for Ceph, the community, the team, our partners, and our customers. Ceph has come a long way in the ten years since the first line of code has been written, particularly over the last two years that Inktank has been focused on its development. The fifty members of the Inktank team, our partners, and the hundreds of other contributors have done amazing work in bringing us to where we are today.
+
+We believe that, as part of Red Hat, the Inktank team will be able to build a better quality Ceph storage platform that will benefit the entire ecosystem. Red Hat brings a broad base of expertise in building and delivering hardened software stacks as well as a wealth of resources that will help Ceph become the transformative and ubiquitous storage platform that we always believed it could be.
+
+For existing Inktank customers, this is going to mean turning a reliable and robust storage system into something that delivers even more value. In particular, joining forces with the Red Hat team will improve our ability to address problems at all layers of the storage stack, including in the kernel. We naturally recognize that many customers and users have built platforms based on other Linux distributions. We will continue to support these installations while we determine how to provide the best customer experience moving forward and how the next iteration of the enterprise Ceph product will be structured. In the meantime, our team remains committed to keeping Ceph an open, multiplatform project that works in any environment where it makes sense, including other Linux distributions and non-Linux operating systems.
+
+Red Hat is one of only a handful of companies that I trust to steward the Ceph project. When we started Inktank two years ago, our goal was to build the business by making Ceph successful as a broad-based, collaborative open source project with a vibrant user, developer, and commercial community. Red Hat shares this vision. They are passionate about open source, and have demonstrated that they are strong and fair stewards with other critical projects (like KVM). Red Hat intends to administer the Ceph trademark in a manner that protects the ecosystem as a whole and creates a level playing field where everyone is held to the same standards of use. Similarly, policies like "upstream first" ensure that bug fixes and improvements that go into Ceph-derived products are always shared with the community to streamline development and benefit all members of the ecosystem.
+
+One important change that will take place involves Inktank’s product strategy, in which some add-on software we have developed is proprietary. In contrast, Red Hat favors a pure open source model. That means that Calamari, the monitoring and diagnostics tool that Inktank has developed as part of the Inktank Ceph Enterprise product, will soon be open sourced.
+
+This is a big step forward for the Ceph community. Very little will change on day one as it will take some time to integrate the Inktank business and for any significant changes to happen with our engineering activities. However, we are very excited about what is coming next for Ceph and are looking forward to this new chapter.
+
+I’d like to thank everyone who has helped Ceph get to where we are today: the amazing research group at UCSC where it began, DreamHost for supporting us for so many years, the incredible Inktank team, and the many contributors and users that have helped shape the system. We continue to believe that robust, scalable, and completely open storage platforms like Ceph will transform a storage industry that is still dominated by proprietary systems. Let’s make it happen!

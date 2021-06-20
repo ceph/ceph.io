@@ -1,6 +1,11 @@
 ---
 layout: navigation
 permalink: '/{{ locale }}/news/blog/search/'
+preload:
+  - href: ../search-index.json
+    as: fetch
+  - href: ../search-output.json
+    as: fetch
 ---
 
 {% set blogPostLocaleTag = locale + '-blog-post' %}
@@ -12,37 +17,46 @@ permalink: '/{{ locale }}/news/blog/search/'
     <h1 class="h1 mb-0">{{ title }}</h1>
     <div class="grid md:grid--cols-2">
       <div>
-      <select class="select w-full" id="filters" onchange="javascript:location.href = this.value;">
-        <option value="">{{ 'filter_by_topic' | i18n }}</option>
-        {% for item in blogPostFilters %}
-          {% set itemSlug = item | slug + '/'%}
-          <option {% if page.url | endsWith(itemSlug) %}selected{% endif %} value="/{{ locale }}/news/blog/category/{{ itemSlug }}">
-            {{ item }}</a>
+        <select class="select w-full" id="filters" onchange="javascript:location.href = this.value;">
+          <option value="">{{ 'filter_by_topic' | i18n }}</option>
+          {% for item in blogPostFilters %}
+            {% set itemSlug = item | slug + '/'%}
+            <option {% if page.url | endsWith(itemSlug) %}selected{% endif %} value="/{{ locale }}/news/blog/category/{{ itemSlug }}">
+              {{ item }}</a>
           </option>
         {% endfor %}
       </select>
-      </div>
-      <form action="/{{ locale }}/news/blog/search/" class="relative" method="get">
-        <input aria-label="Search" class="input w-full" id="search-str" name="q" placeholder="{{ 'search_all_blog_posts' | i18n }}" required type="search" />
-        <button class="input" id="search-reset" type="reset">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <g fill="none" fill-rule="evenodd" stroke="#0a0c38" stroke-linecap="square" stroke-width="2">
-              <path d="M16 8l-8 8M16 16L8 8"/>
-            </g>
-          </svg>
-          <span class="visually-hidden">Reset search</span>
-        </button>
-        <button class="input" id="search-submit" type="submit">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="#0a0c38">
-            <path d="M16.294 14.579h-.903l-.32-.31a7.4 7.4 0 001.795-4.836 7.433 7.433 0 10-7.433 7.433 7.4 7.4 0 004.837-1.796l.309.32v.904L20.296 22 22 20.296l-5.706-5.717zm-6.861 0a5.139 5.139 0 01-5.146-5.146 5.139 5.139 0 015.146-5.146 5.139 5.139 0 015.146 5.146 5.139 5.139 0 01-5.146 5.146z"/>
-          </svg>
-          <span class="visually-hidden">Submit search</span>
-        </button>
-      </form>
     </div>
+    <form action="/{{ locale }}/news/blog/search/" class="relative" method="get">
+      <input aria-label="Search" class="input w-full" id="search-str" name="q" placeholder="{{ 'search_all_blog_posts' | i18n }}" required type="search"/>
+      <button class="input" id="search-reset" type="reset">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <g fill="none" fill-rule="evenodd" stroke="#0a0c38" stroke-linecap="square" stroke-width="2">
+            <path d="M16 8l-8 8M16 16L8 8"/>
+          </g>
+        </svg>
+        <span class="visually-hidden">Reset search</span>
+      </button>
+      <button class="input" id="search-submit" type="submit">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="#0a0c38">
+          <path d="M16.294 14.579h-.903l-.32-.31a7.4 7.4 0 001.795-4.836 7.433 7.433 0 10-7.433 7.433 7.4 7.4 0 004.837-1.796l.309.32v.904L20.296 22 22 20.296l-5.706-5.717zm-6.861 0a5.139 5.139 0 01-5.146-5.146 5.139 5.139 0 015.146-5.146 5.139 5.139 0 015.146 5.146 5.139 5.139 0 01-5.146 5.146z"/>
+        </svg>
+        <span class="visually-hidden">Submit search</span>
+      </button>
+    </form>
   </div>
+</div>
 
-  <div class="min-h-80" id="search-results"></div>
+<div class="min-h-80" id="search-results">
+  <p class="h3 mb-8 xl:mb-10">
+    <span class="hide-no-js">
+      {{ 'loading' | i18n }}
+    </span>
+    <span class="hide-js">
+      {{ 'blog_search_unavailable' | i18n }}
+    </span>
+  </p>
+</div>
 </section>
 
 {{ content | safe }}

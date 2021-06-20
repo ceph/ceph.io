@@ -1,0 +1,47 @@
+---
+title: "Distributed storage and thinking inside the box"
+date: "2013-09-12"
+author: "sage"
+tags: 
+---
+
+I usually try to ignore all of [the silly things that people say on the internet](http://xkcd.com/386/), but every once in a while there is something from a reputable source that is sufficiently misleading that I feel obliged to respond.  [Cloudscaling](http://www.cloudscaling.com/) CEO Randy Bias’s whitepaper [Converged Storage, Wishful Thinking & Reality](http://cloudscaling.com/wp-content/themes/cloudscaling/assets/downloads/cloudscaling_whitepaper_converged_storage.pdf) is an example of the sort of paper that deserves a proper rebuttal, if only because it comes from someone who normally provides keen observations and interesting perspectives.  Jeff Darcy (of [GlusterFS](http://www.gluster.org/)) has already posted [a frank response](http://pl.atyp.us/2013-09-wistful-thinking.html) summarizing his problems with Randy’s reasoning (in his signature style), but there are a few things I’d like to highlight here.
+
+First, before addressing any of the actual arguments, Randy tries to set up some context for his argument by mapping traditional storage use-cases in traditional environments to the cloud.  The mapping makes little sense to me:
+
+[![](images/Screenshot-from-2013-09-11-105152-300x112.png "Screenshot from 2013-09-11 10:51:52")](http://ceph.com/updates/cloud-storage-and-thinking-inside-the-box/attachment/screenshot-from-2013-09-11-105152/)
+
+Randy's "Tiered Storage in the Cloud Era"
+
+The chart equates _performance_ requirements in traditional environments onto _storage APIs_ in the cloud.  **Performance requirements do not dictate APIs**; these are completely orthogonal concepts.  Conventional SAN and NAS products provide block and file APIs that can be crazy fast or dog slow, and distributed cloud solutions (whether they are block, object, or file) have the same range of capabilities depending on what technologies they are built on.  S3 happens to be both low-performance and a weakly-consistent object store, but it is but one implementation that follows a decade of academic research on object storage. The whole point of so-called software defined storage is that you are no longer hostage to the appliance vendors’ choice of what components and software to wrap in their tin: you can build object, file, or block solutions with performance characteristics determined by whatever hardware meets _your_ requirements.
+
+In any case, Randy offers three arguments against distributed storage systems like Ceph, GlusterFS, and [Sheepdog](http://sheepdog.github.io/sheepdog/).  Let’s start with the first two:
+
+- The economics: no single technology (SSD, disk, tape) will span the entire gamut of cost and performance requirements (from tier 1 to tier 3)
+- The storage technologies: sometimes people need SSDs for high IOPS, sometimes they need spinning disks, and sometimes they even (gasp) need tape.  Sometimes you can build hybrid systems.
+
+These statements are obviously true, but it’s not clear what that has to do with distributed storage solutions.  You can buy both proprietary and open systems that use different combinations of SSDs and HDDs.  More importantly, and more directly to Randy’s (presumed) point, **you can build a _single_ Ceph cluster that incorporates all of these technologies** in various combinations to provide different storage pools for different purposes.  This lets you capture the diversity of requirements for performance and for storage APIs in a single cluster, without being confined by the archaic notion that (for example) the use of an “object” API implies low performance or weak consistency.  If an application wants high performance, strongly consistent object storage, create a Ceph pool using SSDs and use librados.  If an application was bulk log storage with low performance, build a Ceph pool with SATA disks and use CephFS or RBD.  Build it with commodity hardware from whatever vendor you happen to like at the time and manage it all in as a single cluster.
+
+The irony here is that the systems that Cloudscaling appears to defend are doing exactly the same thing: modern SANs are also distributed systems with designs based on many of the same principles and algorithms that Ceph and GlusterFS do.  The difference is that they target a limited size to simplify the scaling requirements (usually 10s of nodes at most), are forced to architect around standardized legacy protocols, and are neatly wrapped in tin with a invoice and service contract taped on the front.  This black box approach is what creates the illusion of value in the ‘secret sauce’ that allows appliance vendors to charge what they do for what amounts to commodity components, proprieatary software, and custom nameplates.  It is also, it seems, sufficient to obscure the fact that they exist in the same reality as the systems that Cloudscaling fears will somehow make it harder prevent you from using “the right tool for the job.”  The reality is that **the choice of vendors and technologies that Ceph and others provide gives you _greater_ flexibility** in the storage cloud you build, and you can combine them all into a single cloud to boot.
+
+Finally, the third argument:
+
+- Some background on CAP, and then/therefore: Distributed storage systems solve the scale-out problem, but they don’t solve the failure domain problem. Instead, they make the failure domain much larger
+
+The idea that systems like Ceph and GlusterFS don’t allow you to control the size of failures domains profoundly misunderstands what these (and virtually any other) distributed systems are all about.  Failure and the response to it is, in fact, our primary preoccupation.  In Ceph’s case, for example, our data distribution mechanism (CRUSH) explicitly empowers system designers and administrators to control the size and layout of failure domains and to describe data placement policies in terms of them.  One might choose to replicate across hosts, racks _or_ data centers, depending on network resiliency and/or application requirements.  Similarly, the Ceph monitor daemons provide a central source of consensus using Paxos to effectively arbitrate the kinds of network partitions Randy is worried about without requiring the complexity and overhead of Paxos-like semantics in the data path.
+
+Looking at Cloudscaling’s doomsday failure example:
+
+[![](images/Screenshot-from-2013-09-11-1336211-300x160.png "Screenshot from 2013-09-11 13:36:21")](http://ceph.com/updates/cloud-storage-and-thinking-inside-the-box/attachment/screenshot-from-2013-09-11-133621-2/)
+
+CAP "gotcha"
+
+For starters, few people would build this sort of 2-node or 2-cluster system and call it distributed; the failure and consistency semantics are marginal in this degenerate case (for the same reasons, by the way, that pure 2-way replication with systems like DRDB are so fragile).  However, assuming for a moment that you did want to build the above, a (competent) Ceph administrator would place a single monitor in a third location (perhaps colocated with the VMs utilizing the storage) to provide reliable consensus when the left sub-cluster went offline and maintain both consistency and availability in the above failure scenario.  Behold, a CP system that remains available when (just under) half the overall system is out to lunch.
+
+A more realistic and sensible deployment might decide that an appropriate failure domain is a rack or group of racks (due to shared power circuit or PDU, shared top of rack switches, etc.).  The distributed storage system would replicate across hosts within the rack for a near-line fail-with-the-user storage option (much like the so-called EBS he advocates), replicate across racks for a persist-across-failures storage option (more like Amazon’s S3), or even replicate across data centers and geographies for a persist-across-catastrophies solution.  And it might do this all within the same cluster, with a range of pools providing different performance profiles and APIs based on the application requirements.
+
+Randy is right that there are trade-offs, here, but misses the point that the new crop of distributed storage technologies are there to empower you to make those hard choices.  For some applications, an AP system might be more appropriate (although I argue that it is generally dictated by the application requirements that are _not_ performance-related).  Something like Swift might be an ideal choice for RESTful object storage, for example.  Consumers of block and file APIs generally require strong consistency, but will have a range of availability requirements that dictate how failure domains are defined for their application.  Some users will need storage that survives only disk failures; others will require consistent operation even in the presence of entire data centers going offline.
+
+Like all powerful tools, Ceph and GlusterFS can be misused, and naively throwing a cloud-scale storage solution at any problem can be dangerous.  The great thing about these systems is that you _can_ architect storage solutions that will satisfy all of these use-cases, armed with a basic understanding of your requirements, distributed consensus, and what choosing CP or AP means in that environment.  Sadly, this paper has little insight to provide in that endeavor.
+
+![](http://track.hubspot.com/__ptq.gif?a=268973&k=14&bu=http://ceph.com&r=http://ceph.com/openstack/distributed-storage-and-thinking-inside-the-box/&bvt=rss&p=wordpress)
