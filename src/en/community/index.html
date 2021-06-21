@@ -2,71 +2,30 @@
 title: Community
 layout: hub-community
 order: 4
+overlaySubMenu: true
 ---
 
 {% set eventLocaleTag = locale + '-event' %} {% set eventsFuture = collections[eventLocaleTag] | getItemsInFuture | reverse | getItems(4) %}
 
 <h1 class="h1 visually-hidden">{{ title }}</h1>
 
-<section class="section">
-  <div class="matrix">
-    <ul class="matrix__list">
-      <li class="relative">
-        <div class="absolute aspect-ratio aspect-ratio--cover h-full left-0 tint tint--multiply tint--red-500-4 top-0 w-full">
-          <img alt="" class="absolute h-full left-0 top-0 w-full" loading="lazy" src="/assets/bitmaps/photo-sea-life-01.jpg" />
-        </div>
-        <div class="to-lg:flex-1 lg:h-full p-4 md:p-6 lg:p-8 relative z-1">
-          <h3 class="h2">
-            <a class="matrix__link link-cover" href="/{{ locale }}/news/blog/2020/new-in-octopus-dashboard-enhancements/"
-              >Ceph Day London</a
-            >
-          </h3>
-          <h4 class="color-white h5">October 24, 2019 London</h4>
-          <p class="color-grey-500 mb-0 p">
-            Come find out why the leading enterprises are adopting Ceph, why Ceph is the lowest cost per gig storage solution, and how easy
-            it is to deploy your own Ceph cluster!
-          </p>
-        </div>
-      </li>
-      <li class="bg-navy relative">
-        <div
-          class="to-lg:flex to-lg:flex--col to-lg:flex--justify-between to-lg:flex-1 lg:grid lg:grid--cols-2 lg:h-full p-4 md:p-6 lg:p-8"
-        >
-          <div>
-            <h3 class="h3">
-              <a class="matrix__link link-cover" href="/{{ locale }}/discover/case-studies/ceph-drives-savings-for-bloomberg/"
-                >What’s new in the Octopus release</a
-              >
-            </h3>
-            <p class="color-grey-500 p">
-              Watch the Tech Talk 1 August 2020
-            </p>
-          </div>
-          <div class="aspect-ratio aspect-ratio--16x9 lg:my-auto tint tint--black-2">
-            <img alt="" class="absolute left-0 rounded-2 top-0" loading="lazy" src="/assets/bitmaps/photo-squid-01.jpg" />
-            <img alt="" class="absolute center w-12 z-1" src="/assets/svgs/icon-play-white-red.svg" />
-          </div>
-        </div>
-      </li>
-      <li class="bg-gunmetal p-4 md:p-6 lg:p-8 relative">
-        <h3 class="h3">
-          <a class="matrix__link link-cover" href="/{{ locale }}/community/meetups/">Crimson/Seater OSD community meeting</a>
-        </h3>
-        <p class="color-grey-500 mb-0 p">
-          Weekly discussion on the latest progress of crimson project which aims to build faster OSD.
-        </p>
-      </li>
-    </ul>
+<section class="py-0 section section--full">
+  <div class="py-32 lg:py-56 relative">
+    <div class="absolute aspect-ratio aspect-ratio--cover h-full left-0 tint tint--multiply tint--royal-8 top-0 w-full">
+      <img alt="" class="absolute h-full left-0 top-0 w-full" loading="lazy" src="/assets/bitmaps/photo-jelly-fish-01.jpg" />
+    </div>
+    <div class="wrapper">
+      <div class="color-white max-w-224 mx-auto relative text-center z-1">
+        <h2 class="h1 mb-0">Evolve Ceph with passionate, talented and innovative contributors from around the&nbsp;globe.</h2>
+      </div>
+    </div>
   </div>
-  <div class="pb-0 section">
+  <div class="section wrapper">
     <div class="max-w-192 mx-auto text-center">
-      <p class="standout">
-        Evolve Ceph with passionate, talented and innovative contributors from around the globe. When you become a Ceph contributor, you
-        become part of a wider community, invested in the future of data.
-      </p>
-      <p class="p">
+      <p class="standout">When you become a Ceph contributor, you become part of a wider community, invested in the future of&nbsp;data.</p>
+      <p class="mb-0 p">
         Ceph was made possible by its community, and now it is constantly improved and adapted following its Open Source philosophy. Join us
-        in creating something amazing.
+        in creating something&nbsp;amazing.
       </p>
     </div>
   </div>
@@ -190,9 +149,7 @@ order: 4
       {% if eventsFuture.length > 0 %}
       <ul class="grid md:grid--cols-2 list-none m-0 p-0">
         {% for item in eventsFuture %}
-        <li>
-          {% include "components/event-card.njk" %}
-        </li>
+        <li>{% include "components/event-card.njk" %}</li>
         {% endfor %}
       </ul>
       {% else %}
@@ -227,9 +184,7 @@ order: 4
           {% if item.date | isInFuture %}
           <div class="h6">
             <span>{{ 'coming_soon' | i18n }}:</span>
-            <time datetime="{{ item.date }}">
-              {{ item.date | formatDate(locale) }}
-            </time>
+            <time datetime="{{ item.date }}"> {{ item.date | formatDate(locale) }} </time>
           </div>
           {% endif %} {% if item.presenter %}
           <span class="inline-block p">{{ item.presenter }}</span>

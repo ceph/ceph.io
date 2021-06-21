@@ -2,53 +2,24 @@
 title: News
 layout: hub-news
 order: 5
+overlaySubMenu: true
 ---
 
 {% set articleLocaleTag = locale + '-article' %} {% set articles = collections[articleLocaleTag] | reverse | getItems(4) %}
 
 <h1 class="h1 visually-hidden">{{ title }}</h1>
 
-<section class="section">
-  <div class="matrix">
-    <ul class="matrix__list">
-      <li class="relative">
-        <div class="absolute aspect-ratio aspect-ratio--cover h-full left-0 tint tint--multiply tint--royal-8 top-0 w-full">
-          <img alt="" class="absolute h-full left-0 top-0 w-full" loading="lazy" src="/assets/bitmaps/photo-squid-01.jpg" />
-        </div>
-        <div class="to-lg:flex-1 lg:h-full p-4 md:p-6 lg:p-8 relative z-1">
-          <h3 class="h2">
-            <a class="matrix__link link-cover" href="/{{ locale }}/news/blog/2020/new-in-octopus-dashboard-enhancements/"
-              >New in Octopus: Dashboard Enhancements</a
-            >
-          </h3>
-          <p class="color-grey-500 mb-0 p">Discover the new Dashboard management features in Ceph Octopus.</p>
-        </div>
-      </li>
-      <li class="bg-navy p-4 md:p-6 lg:p-8 relative">
-        <h3 class="h3">
-          <a class="matrix__link link-cover" href="/{{ locale }}/discover/case-studies/ceph-drives-savings-for-bloomberg/"
-            >Ceph drives savings for Bloomberg</a
-          >
-        </h3>
-        <p class="color-grey-500 p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id eleifend sem, nec auctor sapien.</p>
-      </li>
-      <li class="bg-gunmetal p-4 md:p-6 lg:p-8 relative">
-        <h3 class="h3">
-          <a class="matrix__link link-cover" href="/{{ locale }}/community/events/2020/ceph-day-poland/"
-            >Ceph Day Poland 20–24 Nov 2020 Wrocław</a
-          >
-        </h3>
-        <p class="color-grey-500 mb-0 p">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id eleifend sem, nec auctor sapien.
-        </p>
-      </li>
-    </ul>
-  </div>
-  <div class="pb-0 section">
-    <div class="max-w-192 mx-auto text-center">
-      <p class="mb-0 standout">
-        Find out about community events, Ceph technical progress, and industry insights from the Ceph Leadership Team and community.
-      </p>
+<section class="pt-0 section section--full">
+  <div class="py-32 lg:py-56 relative">
+    <div class="absolute aspect-ratio aspect-ratio--cover h-full left-0 tint tint--multiply tint--royal-4 top-0 w-full">
+      <img alt="" class="absolute h-full left-0 top-0 w-full" loading="lazy" src="/assets/bitmaps/photo-jelly-fish-02.jpg" />
+    </div>
+    <div class="wrapper">
+      <div class="color-white max-w-224 mx-auto relative text-center z-1">
+        <h2 class="h1">
+          Find out about community events, Ceph technical progress, and industry insights from the Ceph Leadership Team and&nbsp;community.
+        </h2>
+      </div>
     </div>
   </div>
 </section>

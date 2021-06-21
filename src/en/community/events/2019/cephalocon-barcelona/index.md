@@ -5,7 +5,7 @@ end: 2019-05-20
 location: Barcelona, Spain
 venue: Fira Barcelona Gran Via, Av. Joan Carles I, 64, 08908 L'Hospitalet de Llobregat, Barcelona, Spain
 register: "https://ceph-day-poland-2019.eventbrite.com/"
-image: "/assets/bitmaps/photo-sea-life-02.jpg"
+image: "/assets/bitmaps/photo-jelly-fish-03.jpg"
 links:
   videos: "https://www.youtube.com/playlist?list=PLrBUGiINAakNCnQUosh63LpHbf84vegNu"
   slides: ""
