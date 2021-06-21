@@ -38,9 +38,7 @@ order: 4
                 >What’s new in the Octopus release</a
               >
             </h3>
-            <p class="color-grey-500 p">
-              Watch the Tech Talk 1 August 2020
-            </p>
+            <p class="color-grey-500 p">Watch the Tech Talk 1 August 2020</p>
           </div>
           <div class="aspect-ratio aspect-ratio--16x9 lg:my-auto tint tint--black-2">
             <img alt="" class="absolute left-0 rounded-2 top-0" loading="lazy" src="/assets/bitmaps/photo-squid-01.jpg" />
@@ -52,9 +50,7 @@ order: 4
         <h3 class="h3">
           <a class="matrix__link link-cover" href="/{{ locale }}/community/meetups/">Crimson/Seater OSD community meeting</a>
         </h3>
-        <p class="color-grey-500 mb-0 p">
-          Weekly discussion on the latest progress of crimson project which aims to build faster OSD.
-        </p>
+        <p class="color-grey-500 mb-0 p">Weekly discussion on the latest progress of crimson project which aims to build faster OSD.</p>
       </li>
     </ul>
   </div>
@@ -190,9 +186,7 @@ order: 4
       {% if eventsFuture.length > 0 %}
       <ul class="grid md:grid--cols-2 list-none m-0 p-0">
         {% for item in eventsFuture %}
-        <li>
-          {% include "components/event-card.njk" %}
-        </li>
+        <li>{% include "components/event-card.njk" %}</li>
         {% endfor %}
       </ul>
       {% else %}
@@ -209,7 +203,7 @@ order: 4
       <a class="a" href="/{{ locale }}/community/tech-talks/" class="ml-6">See all tech talks</a>
     </div>
     <ul class="grid md:grid--cols-2 lg:grid--cols-4 list-none m-0 p-0">
-      {% for item in tech_talks | sort(true, false, 'date') | getItems(2) %}
+      {% for item in tech_talks | sort(true, false, 'date') | getItems(4) %}
       <li>
         <div class="relative">
           <div class="aspect-ratio aspect-ratio--16x9 mb-4 overflow-hidden rounded-2 tint tint--black-2">
@@ -217,19 +211,17 @@ order: 4
               alt=""
               class="absolute left-0 top-0"
               loading="lazy"
-              src="{% if item.image %}{{ item.image }}{% else %}/assets/bitmaps/photo-water-02.jpg{% endif %}"
+              src="{% if item.image %}{{ item.image }}{% else %}/assets/bitmaps/photo-texture-0{{ item.date | getSingleDigitFromDate }}.jpg{% endif %}"
             />
             <img alt="" class="absolute center w-12 z-1" src="/assets/svgs/icon-play-white-red.svg" />
           </div>
           <a class="block color-navy link-cover h4 mb-2" href="{{ item.url }}" rel="noreferrer noopener" target="_blank">
-            {{ item.title }}
+            {{ item.title }} hello
           </a>
           {% if item.date | isInFuture %}
           <div class="h6">
             <span>{{ 'coming_soon' | i18n }}:</span>
-            <time datetime="{{ item.date }}">
-              {{ item.date | formatDate(locale) }}
-            </time>
+            <time datetime="{{ item.date }}"> {{ item.date | formatDate(locale) }} </time>
           </div>
           {% endif %} {% if item.presenter %}
           <span class="inline-block p">{{ item.presenter }}</span>

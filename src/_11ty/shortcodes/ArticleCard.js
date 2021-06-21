@@ -8,7 +8,7 @@ module.exports = ({ data = {}, templateContent, url } = {}, { label } = {}) => {
   const { author = '', date, image, title = '', locale = '' } = data;
   const imageSrc = image
     ? image
-    : `/assets/bitmaps/photo-fabric-0${getSingleDigitFromDate(date)}.jpg`;
+    : `/assets/bitmaps/photo-texture-0${getSingleDigitFromDate(date)}.jpg`;
   const captionStrip = cleanCardContent(templateContent);
   const caption = truncate(captionStrip);
 
