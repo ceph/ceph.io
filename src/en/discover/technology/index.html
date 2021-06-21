@@ -11,8 +11,7 @@ overlaySubMenu: true
     <div class="max-w-224 mx-auto py-16 text-center">
       <h2 class="color-white h1">Ceph delivers object, block, and file storage in a single, unified system.</h2>
       <p class="color-white standout">
-        Ceph is highly reliable, easy to manage, and free. Ceph delivers extraordinary scalability: thousands of clients accessing exabytes
-        of data.
+        Ceph is highly reliable, easy to manage, and free. Ceph delivers extraordinary scalability: thousands of clients accessing exabytes of data.
       </p>
     </div>
   </div>
@@ -38,10 +37,13 @@ overlaySubMenu: true
 
 <section class="section">
   <div class="max-w-192 mx-auto text-center">
-    <h2 class="h2">The Ceph Stack -- Architectural Overview</h2>
+    <h2 class="h2">The Ceph stack: architectural overview</h2>
     <a class="block mb-8 lg:mb-12" href="#object"><img alt="" src="/assets/bitmaps/stack.png" /></a>
     <p class="standout">The RADOS-based Ceph Stack</p>
-    <p class="mb-0 p">Whatever delivery framework you require, Ceph can be adapted and applied&nbsp;accordingly.</p>
+    <p class="mb-0 p">Whatever delivery framework you require, Ceph can be adapted and applied accordingly. Ceph provides a flexible, scalable, reliable and intelligently distributed solution for data storage, built on the unifying foundation of RADOS (Reliable Autonomic Distributed Object Store). By manipulating all storage as objects within RADOS, Ceph is able to easily distribute data throughout a cluster, even for block and file storage types.</p>
+	<p class="color-white mb-0 standout">
+        Ceph's core architecture achieves this by layering RGW (RADOS Gateway), RBD (RADOS Block Device) and CephFS (a POSIX-compliant file system) atop RADOS, along with a set of application libraries in the form of LIBRADOS for direct application connectivity. 
+    </p>
   </div>
 </section>
 
@@ -51,8 +53,8 @@ overlaySubMenu: true
     <div>
       <p class="standout">
         The Ceph RGW object storage service provides industry-leading S3 API compatibility with a robust set of security, tiering, and
-        interoperability features. Applications written to use S3 or Swift object storage can take advantage of Ceph's scalability and
-        performance within a single datacenter, or federate multiple Ceph clusters across the globe to create a global storage namespace
+        interoperability features. Applications which use S3 or Swift object storage can take advantage of Ceph's scalability and
+        performance within a single data center, or federate multiple Ceph clusters across the globe to create a global storage namespace
         with an extensive set of replication, migration, and other data services.
       </p>
       <div class="grid sm:grid--cols-3">
@@ -68,37 +70,34 @@ overlaySubMenu: true
           <div class="aspect-ratio aspect-ratio--16x9 mb-4">
             <img alt="" class="absolute left-0 rounded-2 top-0" loading="lazy" src="/assets/bitmaps/photo-coral-02.jpg" />
           </div>
-          <a class="a link-cover" href="/{{ locale }}/discover/technology/">Lorem ipsum dolor set</a>
+          <a class="a link-cover" href="https://docs.ceph.com/en/latest/radosgw/s3/">S3 API documentation</a>
         </div>
         <div class="relative">
           <div class="aspect-ratio aspect-ratio--16x9 mb-4">
             <img alt="" class="absolute left-0 rounded-2 top-0" loading="lazy" src="/assets/bitmaps/photo-coral-03.jpg" />
           </div>
-          <a class="a link-cover" href="/{{ locale }}/discover/technology/">Lorem ipsum dolor set</a>
+          <a class="a link-cover" href="https://docs.ceph.com/en/latest/radosgw/swift/">Swift API documentation</a>
         </div>
       </div>
     </div>
     <div>
-      <h3 class="h3">Lorem ipsum</h3>
+            <h3 class="h3">Rich metadata attributes</h3>
       <p class="p">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis neque id risus facilisis auctor. Maecenas blandit volutpat
-        ultricies. Duis tincidunt massa turpis, in sodales felis efficitur a.
+        Make use of object storage's rich metadata attributes in Ceph for super-efficient unstructured data storage and retrieval:
       </p>
       <ul class="ul">
-        <li>Morbi ultricies nibh vitae orci pharetra tempus.</li>
-        <li>Morbi ultricies nibh vitae orci pharetra tempus.</li>
+        <li>Create large scale data repositories that are easy to search and curate.</li>
+        <li>Use cloud tiering to keep frequently accessed data in your cluster, and shift less frequently used data elsewhere.</li>
       </ul>
-      <a class="a inline-block mb-8 lg:mb-12" href="/{{ locale }}/discover/technology/">Lorem ipsum dolor</a>
-      <h3 class="h3">Lorem ipsum</h3>
+      <h3 class="h3">Transparent cache tiering</h3>
       <p class="p">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis neque id risus facilisis auctor. Maecenas blandit volutpat
-        ultricies. Duis tincidunt massa turpis, in sodales felis efficitur a.
+        Use your ultra-fast solid state drives as your cache tier, and economical hard disk drives as your storage tier, achievable natively in Ceph.
       </p>
       <ul class="ul">
-        <li>Morbi ultricies nibh vitae orci pharetra tempus.</li>
-        <li>Morbi ultricies nibh vitae orci pharetra tempus.</li>
+        <li>Set up a backing storage pool, a cache pool, then set up your failure domains via CRUSH rules.</li>
+        <li>Combine cache tiering with erasure coding for even more economical data storage.</li>
       </ul>
-      <a class="a" href="/{{ locale }}/discover/technology/">Lorem ipsum dolor</a>
+      <a class="a" href="https://docs.ceph.com/en/latest/rados/operations/cache-tiering/">Cache tiering documentation</a>
     </div>
   </div>
 </section>
@@ -110,18 +109,17 @@ overlaySubMenu: true
   <div class="grid lg:grid--cols-2 grid--gap-14 lg:grid--gap-28">
     <div>
       <p class="standout">
-        Ceph RBD (RADOS Block Device) block storage is a technology that stripes virtual disks over objects in the Ceph storage cluster,
+        Ceph RBD (RADOS Block Device) block storage stripes virtual disks over objects within a Ceph storage cluster,
         distributing data and workload across all available devices for extreme scalability and performance. RBD disk images are thinly
         provisioned, support both read-only snapshots and writable clones, and can be asynchronously mirrored to remote Ceph clusters in
-        other data centers for disaster recovery or backup, making Ceph RBD the leading choice for block storage in public/private cloud and
-        virtualization environments.
+        other data centers for disaster recovery or backup, making Ceph RBD the leading choice for block storage in public/private cloud and virtualization environments.
       </p>
       <div class="grid sm:grid--cols-3">
         <div class="relative">
           <div class="aspect-ratio aspect-ratio--16x9 mb-4">
             <img alt="" class="absolute left-0 rounded-2 top-0" loading="lazy" src="/assets/bitmaps/photo-ink-01.jpg" />
           </div>
-          <a class="a link-cover" href="https://docs.ceph.com/en/latest/architecture/#ceph-block-device">Block device summary (short)</a>
+          <a class="a link-cover" href="https://docs.ceph.com/en/latest/architecture/#ceph-block-device"> Block device summary (short)</a>
         </div>
         <div class="relative">
           <div class="aspect-ratio aspect-ratio--16x9 mb-4">
@@ -132,26 +130,24 @@ overlaySubMenu: true
       </div>
     </div>
     <div>
-      <h3 class="h3">Lorem ipsum</h3>
+      <h3 class="h3">Provision a fully integrated block storage infrastructure</h3>
       <p class="p">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis neque id risus facilisis auctor. Maecenas blandit volutpat
-        ultricies. Duis tincidunt massa turpis, in sodales felis efficitur a.
+        Enjoy all the features and benefits of a conventional Storage Area Network using Ceph's iSCSI Gateway, which presents a highly available iSCSI target which exports RBD images as SCSI disks.
       </p>
-      <a class="a inline-block mb-8 lg:mb-12" href="/{{ locale }}/discover/technology/">Lorem ipsum dolor</a>
-      <h3 class="h3">Lorem ipsum</h3>
+	  <a class="a" href="https://docs.ceph.com/en/latest/rbd/iscsi-overview/">iSCSI overview</a>
+      <h3 class="h3">Integrate with Kubernetes</h3>
       <p class="p">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis neque id risus facilisis auctor. Maecenas blandit volutpat
-        ultricies. Duis tincidunt massa turpis, in sodales felis efficitur a.
+        Dynamically provision RBD images to back Kubernetes volumes, mapping the RBD images as block devices. Because Ceph ultimately stores block devices as objects striped across its cluster, you'll get better performance out of them than with a standalone server!
+      </p>
+      <a class="a" href="https://docs.ceph.com/en/latest/rbd/rbd-kubernetes/">Kubernetes and RBD documentation</a>
+	  <h3 class="h3">Create cluster snapshots with RBD</h3>
+      <p class="p">
+        Take a look at the links below for more details on working with snapshots using Ceph RBD.
       </p>
       <ul class="ul">
-        <li>Morbi ultricies nibh vitae orci pharetra tempus.</li>
-        <li>Morbi ultricies nibh vitae orci pharetra tempus.</li>
-        <li>Morbi ultricies nibh vitae orci pharetra tempus.</li>
-        <li>Morbi ultricies nibh vitae orci pharetra tempus.</li>
-        <li>Morbi ultricies nibh vitae orci pharetra tempus.</li>
-        <li>Morbi ultricies nibh vitae orci pharetra tempus.</li>
+	    <li><a class="a" href="https://docs.ceph.com/en/latest/rbd/rbd-snapshot/">Taking snapshots</a></li>
+        <li><a class="a" href="https://docs.ceph.com/en/latest/rbd/rbd-mirroring/">RBD mirroring</a></li>  
       </ul>
-      <a class="a" href="/{{ locale }}/discover/technology/">Lorem ipsum dolor</a>
     </div>
   </div>
 </section>
@@ -172,35 +168,30 @@ overlaySubMenu: true
           <div class="aspect-ratio aspect-ratio--16x9 mb-4">
             <img alt="" class="absolute left-0 rounded-2 top-0" loading="lazy" src="/assets/bitmaps/photo-water-01.jpg" />
           </div>
-          <a class="a link-cover" href="https://docs.ceph.com/en/latest/architecture/#ceph-file-system">Learn more about CephFS</a>
+          <a class="a link-cover" href="https://docs.ceph.com/en/latest/architecture/#ceph-file-system">CephFS summary (short)</a>
         </div>
         <div class="relative">
           <div class="aspect-ratio aspect-ratio--16x9 mb-4">
             <img alt="" class="absolute left-0 rounded-2 top-0" loading="lazy" src="/assets/bitmaps/photo-water-02.jpg" />
           </div>
-          <a class="a link-cover" href="/{{ locale }}/discover/technology/">Lorem ipsum dolor set</a>
+          <a class="a link-cover" href="https://docs.ceph.com/en/latest/cephfs/">CephFS documentation (in depth)</a>
         </div>
       </div>
     </div>
     <div>
-      <h3 class="h3">Lorem ipsum</h3>
+      <h3 class="h3">File storage that scales</h3>
+	    <ul class="ul">
+        <li>File metadata is stored in a separate RADOS pool from file data and served via a resizable cluster of Metadata Servers (MDS), which can scale as needed to support metadata workloads.</li>
+        <li>Because file system clients access RADOS directly for reading and writing file data blocks, workloads can scale linearly with the size of the underlying RADOS object store, avoiding the need for a gateway or broker mediating data I/O for clients.</li>
+      </ul>
+      <h3 class="h3">Export to NFS</h3>
       <p class="p">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis neque id risus facilisis auctor. Maecenas blandit volutpat
-        ultricies. Duis tincidunt massa turpis, in sodales felis efficitur a.
-      </p>
-      <a class="a inline-block mb-8 lg:mb-12" href="/{{ locale }}/discover/technology/">Lorem ipsum dolor</a>
-      <h3 class="h3">Lorem ipsum</h3>
-      <p class="p">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis neque id risus facilisis auctor. Maecenas blandit volutpat
-        ultricies. Duis tincidunt massa turpis, in sodales felis efficitur a.
+        CephFS namespaces can be exported over NFS protocol using the NFS-Ganesha NFS server. It's possible to run multiple NFS with RGW, exporting the same or different resources from the cluster.
       </p>
       <ul class="ul">
-        <li>Morbi ultricies nibh vitae orci pharetra tempus.</li>
-        <li>Morbi ultricies nibh vitae orci pharetra tempus.</li>
-        <li>Morbi ultricies nibh vitae orci pharetra tempus.</li>
-        <li>Morbi ultricies nibh vitae orci pharetra tempus.</li>
+        <li><a class="a" href="https://docs.ceph.com/en/latest/cephfs/nfs/">More on CephFS and NFS.</a></li>
+        <li><a class="a" href="https://docs.ceph.com/en/latest/radosgw/nfs/">NFS and RGW</a></li>
       </ul>
-      <a class="a" href="/{{ locale }}/discover/technology/">Lorem ipsum dolor</a>
     </div>
   </div>
 </section>
@@ -246,21 +237,27 @@ overlaySubMenu: true
     <ul class="grid lg:grid--cols-3 list-none mb-0 p-0">
       <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
         <img class="mb-4 w-12" src="/assets/svgs/icon-benefits-blue-red.svg" alt="" />
-        <h3 class="h3">Technology</h3>
-        <p class="p">Donec dignissim vestibulum lorem, sed pulvinar erat consequat sed. Quisque elementum sem eget magna feugiat mattis.</p>
-        <a class="a link-cover link-cover--shadow" href="/{{ locale }}/discover/technology/">Learn more about the technology behind Ceph</a>
+        <h3 class="h3">Benefits</h3>
+        <p class="p">
+          Ceph can be relied upon for reliable data backups, flexible storage options and rapid scalability. With Ceph, your organization can boost its data-driven decision making, minimize storage costs, and build durable, resilient clusters.
+        </p>
+        <a class="a link-cover link-cover--shadow" href="/{{ locale }}/discover/benefits/">Learn more about the benefits of Ceph</a>
       </li>
       <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
         <img class="mb-4 w-12" src="/assets/svgs/icon-customers-blue-red.svg" alt="" />
         <h3 class="h3">Use cases</h3>
-        <p class="p">Donec dignissim vestibulum lorem, sed pulvinar erat consequat sed. Quisque elementum sem eget magna feugiat mattis.</p>
-        <a class="a link-cover link-cover--shadow" href="/{{ locale }}/discover/use-cases/">See who is using Ceph</a>
+        <p class="p">
+          Businesses, academic institutions, global organizations and more can streamline their data storage, achieve reliability and scale to the exabyte level with Ceph.
+        </p>
+        <a class="a link-cover link-cover--shadow" href="/{{ locale }}/discover/use-cases/">See how Ceph can be used</a>
       </li>
       <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
         <img class="mb-4 w-12" src="/assets/svgs/icon-case-study-blue-red.svg" alt="" />
         <h3 class="h3">Case studies</h3>
-        <p class="p">Donec dignissim vestibulum lorem, sed pulvinar erat consequat sed. Quisque elementum sem eget magna feugiat mattis.</p>
-        <a class="a link-cover link-cover--shadow" href="/{{ locale }}/discover/case-studies/">Case studies of Ceph in action</a>
+        <p class="p">
+          Ceph can run on a vast range of commodity hardware, and can be tailored to provide highly specific, highly efficient unified storage, fine-tuned to your exact needs.
+        </p>
+        <a class="a link-cover link-cover--shadow" href="/{{ locale }}/discover/case-studies/">Examples of Ceph in action</a>
       </li>
     </ul>
   </div>
