@@ -40,6 +40,8 @@ server {
     ';
   }
 
+{% include "redirects.j2" %}
+
   # https://stackoverflow.com/a/43392815/6225562
   error_page 404 @error404;
   location @error404 {
@@ -111,6 +113,8 @@ server {
       ngx.redirect("/en/")
     ';
   }
+
+{% include "redirects.j2" %}
 
   # https://stackoverflow.com/a/43392815/6225562
   error_page 404 @error404;
