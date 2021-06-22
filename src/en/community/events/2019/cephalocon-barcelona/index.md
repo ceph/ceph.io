@@ -14,7 +14,7 @@ sponsors:
     list:
       - name: RedHat
         logo: "/assets/bitmaps/logo-redhat.png"
-        website: "https://redhat.co"
+        website: "https://redhat.com"
       - name: Intel Optane DC
         logo: "/assets/bitmaps/logo-intel-optane.png"
         website: "https://www.intel.com/content/www/us/en/architecture-and-technology/intel-optane-technology.html"
