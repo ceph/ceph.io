@@ -4,6 +4,7 @@
   --grid-gap: var(--size-4);
   display: grid;
   gap: var(--grid-gap);
+  grid-template-columns: minmax(0, 1fr);
 
   @media (--mq-sm) {
     --grid-gap: var(--size-7);
