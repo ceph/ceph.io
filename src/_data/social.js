@@ -1,4 +1,4 @@
 module.exports = {
-  facebook: '@cephstorage',
-  twitter: '@ceph',
+  facebook: 'cephstorage',
+  twitter: 'ceph',
 };
