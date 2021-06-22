@@ -4,8 +4,8 @@ layout: navigation
 
 {% set blogPostLocaleTag = locale + '-blog-post' %}
 {% set blogPostTag = 'blog-post' %}
-{% set blogCategories = tags | removeTags([blogPostLocaleTag, blogPostTag, articleLocaleTag]) %}
 {% set articleLocaleTag = locale + '-article' %}
+{% set blogCategories = tags | removeTags([blogPostLocaleTag, blogPostTag, articleLocaleTag]) %}
 
 <section class="section">
   <div class="grid lg:grid--cols-auto-72">
