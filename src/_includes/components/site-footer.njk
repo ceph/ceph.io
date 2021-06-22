@@ -33,30 +33,36 @@
         {%- endfor %}
       </ul>
       <ul class="site-footer__social">
-        <li>
-          <a class="site-footer__twitter" href="https://twitter.com/ceph?lang=en" rel="noreferrer noopener" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#d3dde7" aria-hidden="true" focusable="false">
-              <path d="M24.857 4.125c-.964.429-1.982.696-3.053.857 1.071-.643 1.928-1.66 2.303-2.893a11.61 11.61 0 01-3.375 1.286 5.34 5.34 0 00-3.857-1.66 5.259 5.259 0 00-5.25 5.25c0 .428.054.803.16 1.178C7.447 7.929 3.536 5.839.912 2.625.482 3.429.214 4.285.214 5.25c0 1.821.911 3.429 2.357 4.393A6.199 6.199 0 01.161 9v.054a5.293 5.293 0 004.232 5.196A5.84 5.84 0 013 14.41c-.321 0-.696-.053-1.018-.106.697 2.089 2.625 3.642 4.929 3.642-1.822 1.393-4.072 2.25-6.536 2.25-.429 0-.857 0-1.232-.053a14.907 14.907 0 008.09 2.357c9.696 0 15-8.036 15-15v-.696a9.62 9.62 0 002.624-2.679z"/>
-            </svg>
-            <span class="visually-hidden">Twitter</span>
-          </a>
-        </li>
-        <li>
-          <a class="site-footer__youtube" href="https://www.youtube.com/channel/UCno-Fry25FJ7B4RycCxOtfw" rel="noreferrer noopener" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#d3dde7" aria-hidden="true" focusable="false">
-              <path id="a" d="M23.75 7.079s-.25-1.65-.95-2.4c-.9-.95-1.95-.95-2.4-1-3.35-.25-8.4-.25-8.4-.25s-5.05 0-8.4.25c-.45.05-1.5.05-2.4 1-.7.75-.95 2.4-.95 2.4S0 9.029 0 10.979v1.8c0 1.95.25 3.9.25 3.9s.25 1.65.95 2.4c.9.95 2.1.95 2.65 1.05 1.9.2 8.15.25 8.15.25s5.05 0 8.4-.25c.45-.05 1.5-.05 2.4-1 .7-.75.95-2.4.95-2.4s.25-1.95.25-3.9v-1.8c0-2-.25-3.95-.25-3.95zm-14.25 7.9v-6.75l6.5 3.4-6.5 3.35z"/>
-            </svg>
-            <span class="visually-hidden">YouTube</span>
-          </a>
-        </li>
-        <li>
-          <a class="site-footer__facebook" href="https://www.facebook.com/cephstorage/" rel="noreferrer noopener" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#d3dde7" aria-hidden="true" focusable="false">
-              <path d="M24 12.072C23.999 5.689 19 .423 12.626.09 6.251-.243.732 4.473.066 10.822-.601 17.17 3.82 22.929 10.125 23.926v-8.385H7.078v-3.469h3.047V9.428c0-3.007 1.792-4.669 4.532-4.669.9.013 1.798.091 2.687.235v2.953H15.83a1.735 1.735 0 00-1.955 1.875v2.25h3.328l-.532 3.469h-2.797v8.385A12 12 0 0024 12.072z"/>
-            </svg>
-            <span class="visually-hidden">Facebook</span>
-          </a>
-        </li>
+        {%- if social.twitter %}
+          <li>
+            <a class="site-footer__twitter" href="https://twitter.com/{{social.twitter}}" rel="noreferrer noopener" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#d3dde7" aria-hidden="true" focusable="false">
+                <path d="M24.857 4.125c-.964.429-1.982.696-3.053.857 1.071-.643 1.928-1.66 2.303-2.893a11.61 11.61 0 01-3.375 1.286 5.34 5.34 0 00-3.857-1.66 5.259 5.259 0 00-5.25 5.25c0 .428.054.803.16 1.178C7.447 7.929 3.536 5.839.912 2.625.482 3.429.214 4.285.214 5.25c0 1.821.911 3.429 2.357 4.393A6.199 6.199 0 01.161 9v.054a5.293 5.293 0 004.232 5.196A5.84 5.84 0 013 14.41c-.321 0-.696-.053-1.018-.106.697 2.089 2.625 3.642 4.929 3.642-1.822 1.393-4.072 2.25-6.536 2.25-.429 0-.857 0-1.232-.053a14.907 14.907 0 008.09 2.357c9.696 0 15-8.036 15-15v-.696a9.62 9.62 0 002.624-2.679z"/>
+              </svg>
+              <span class="visually-hidden">Twitter</span>
+            </a>
+          </li>
+        {%- endif %}
+        {%- if social.youtube %}
+          <li>
+            <a class="site-footer__youtube" href="https://www.youtube.com/channel/{{social.youtube}}" rel="noreferrer noopener" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#d3dde7" aria-hidden="true" focusable="false">
+                <path id="a" d="M23.75 7.079s-.25-1.65-.95-2.4c-.9-.95-1.95-.95-2.4-1-3.35-.25-8.4-.25-8.4-.25s-5.05 0-8.4.25c-.45.05-1.5.05-2.4 1-.7.75-.95 2.4-.95 2.4S0 9.029 0 10.979v1.8c0 1.95.25 3.9.25 3.9s.25 1.65.95 2.4c.9.95 2.1.95 2.65 1.05 1.9.2 8.15.25 8.15.25s5.05 0 8.4-.25c.45-.05 1.5-.05 2.4-1 .7-.75.95-2.4.95-2.4s.25-1.95.25-3.9v-1.8c0-2-.25-3.95-.25-3.95zm-14.25 7.9v-6.75l6.5 3.4-6.5 3.35z"/>
+              </svg>
+              <span class="visually-hidden">YouTube</span>
+            </a>
+          </li>
+        {%- endif %}
+        {%- if social.facebook %}
+          <li>
+            <a class="site-footer__facebook" href="https://www.facebook.com/{{social.facebook}}" rel="noreferrer noopener" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#d3dde7" aria-hidden="true" focusable="false">
+                <path d="M24 12.072C23.999 5.689 19 .423 12.626.09 6.251-.243.732 4.473.066 10.822-.601 17.17 3.82 22.929 10.125 23.926v-8.385H7.078v-3.469h3.047V9.428c0-3.007 1.792-4.669 4.532-4.669.9.013 1.798.091 2.687.235v2.953H15.83a1.735 1.735 0 00-1.955 1.875v2.25h3.328l-.532 3.469h-2.797v8.385A12 12 0 0024 12.072z"/>
+              </svg>
+              <span class="visually-hidden">Facebook</span>
+            </a>
+          </li>
+        {%- endif %}
       </ul>
     </nav>
   </div>
