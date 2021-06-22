@@ -83,6 +83,44 @@
     <meta name="twitter:url" content="{{ site.url }}{{ page.url }}"/>
     <meta name="twitter:image" content="{% if image %}{{ image }}{% else %}https://via.placeholder.com/640x360{% endif %}"/>
 
+    {# Polyfills #}
+    <script>
+      /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
+      !function (e) {
+        var t = function (t, o, n) {
+          "use strict";
+          var r,
+            a = e
+              .document
+              .getElementsByTagName("script")[0],
+            c = e
+              .document
+              .createElement("script");
+          return "boolean" == typeof o && (r = n, n = o, o = r),
+          c.src = t,
+          c.async = !n,
+          a
+            .parentNode
+            .insertBefore(c, a),
+          o && "function" == typeof o && (c.onload = o),
+          c
+        };
+        "undefined" != typeof module
+          ? module.exports = t
+          : e.loadJS = t
+      }(
+        "undefined" != typeof global
+        ? global
+        : this);
+
+      // Polyfill custom properties for <= IE11
+      if (window.MSInputMethodContext && document.documentMode) {
+        loadJS('https://unpkg.com/css-vars-ponyfill@2/dist/css-vars-ponyfill.min.js', function () {
+          cssVars();
+        })
+      }
+    </script>
+
   </head>
   <body class={{layout}}>
     {% include 'components/site-header.njk' %}
