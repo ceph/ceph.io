@@ -18,6 +18,7 @@
   margin: var(--size-6) 0;
   overflow-x: auto;
   padding: var(--size-6);
+  white-space: pre-wrap;
 }
 
 .richtext pre code {
