@@ -81,6 +81,7 @@ module.exports = function (eleventyConfig) {
   // Transforms
 
   // Passthrough copy
+  eleventyConfig.addPassthroughCopy('./src/assets/**/*.json');
 
   // Plugins
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
