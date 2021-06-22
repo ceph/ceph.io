@@ -19,6 +19,7 @@ layout: navigation
       </div>
     </div>
     <aside>
+    {% if sponsor %}
       <hr class="hr lg:hidden my-16">
       <div class="grid md-to-lg:grid--cols-2 to-md:grid--gap-14 lg:grid--gap-0">
         <div>
@@ -46,6 +47,7 @@ layout: navigation
             <span class="text-lower">{{ 'website' | i18n }}</span></a>
         </div>
       </div>
+    {% endif %}
     </aside>
   </div>
 </section>
