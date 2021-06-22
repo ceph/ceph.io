@@ -9,7 +9,7 @@
 {% set blogPostLocaleTag = locale + '-blog-post' %}
 {% set articleLocaleTag = locale + '-article' %}
 {% set blogPostFilters = collections[blogPostLocaleTag] | getCollectionTags([blogPostLocaleTag, articleLocaleTag, 'blog-post']) %}
-{% set blogPosts = pagination.items | reverse %}
+{% set blogPosts = pagination.items %}
 
 <section class="section">
   <div class="grid grid--align-center lg:grid--cols-auto-160 mb-16 xl:mb-24">

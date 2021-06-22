@@ -10,6 +10,7 @@ tags:
 Alexandre is a Free Software user, developer and evangelist, board member of FSF Latin America, maintainer of GNU Linux-libre, co-maintainer of GNU libc, GCC and GNU binutils, toolchain engineer at Red Hat Brasil, computing engineer and master in computer science at University of Campinas.
 
 ## Free software evangelist uses Ceph in the home
+
 I’ve long looked for a distributed and replicated filesystem to store my data. I’ve also been the sysadmin at the university, in the distributed systems lab, and for some time the entire computing institute. In both positions, I took care of backups and worried about the potential for loss of data due to disk failures and of keeping the network going in the presence of hardware failures.
 
 Over time, I’ve grown fond of redundancy in storage (I’ve long used RAID, and I was an early LVM adopter), but I also had multiple hosts on which I wanted to keep data in sync, and do my job (and have others do theirs) even if one or two of the servers happened to be down.
