@@ -35,7 +35,10 @@
     {# Canonical link? #}
     <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 
-    {# Preload/dns-prefetch #}
+    {# Preload/preload #}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     {% for link in preload -%}
       <link rel="preload" href="{{link.href}}" as="{{link.as}}"/>
     {%- endfor -%}
