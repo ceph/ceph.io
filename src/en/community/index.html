@@ -166,7 +166,7 @@ overlaySubMenu: true
       <a class="a" href="/{{ locale }}/community/tech-talks/" class="ml-6">See all tech talks</a>
     </div>
     <ul class="grid md:grid--cols-2 lg:grid--cols-4 list-none m-0 p-0">
-      {% for item in tech_talks | sort(true, false, 'date') | getItems(2) %}
+      {% for item in tech_talks | getItems(4) %}
       <li>
         <div class="relative">
           <div class="aspect-ratio aspect-ratio--16x9 mb-4 overflow-hidden rounded-2 tint tint--black-2">
@@ -174,7 +174,7 @@ overlaySubMenu: true
               alt=""
               class="absolute left-0 top-0"
               loading="lazy"
-              src="{% if item.image %}{{ item.image }}{% else %}/assets/bitmaps/photo-water-02.jpg{% endif %}"
+              src="{% if item.image %}{{ item.image }}{% else %}/assets/bitmaps/photo-texture-0{{ item.date | getSingleDigitFromDate }}.jpg{% endif %}"
             />
             <img alt="" class="absolute center w-12 z-1" src="/assets/svgs/icon-play-white-red.svg" />
           </div>

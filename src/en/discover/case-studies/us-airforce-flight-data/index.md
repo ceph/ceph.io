@@ -14,10 +14,10 @@ tags:
 
 Eglin Air Force Base is a United States Air Force base in western Florida, and is the test and evaluation center for:
 
-- Air Force air-delivered weapons, 
-- navigation and guidance systems, 
-- Command and Control systems, and 
-- Air Force Special Operations Command systems. 
+- Air Force air-delivered weapons,
+- navigation and guidance systems,
+- Command and Control systems, and
+- Air Force Special Operations Command systems.
 
 The Information Technology team at Eglin uses high-performance computing to analyze audio, video, and telemetry data from test
 flights, and needed to consolidate their data on geographically dispersed production and dev-ops pods. With power, space, and
