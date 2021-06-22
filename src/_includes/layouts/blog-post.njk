@@ -4,6 +4,7 @@ layout: navigation
 
 {% set blogPostLocaleTag = locale + '-blog-post' %}
 {% set blogPostTag = 'blog-post' %}
+{% set blogCategories = tags | removeTags([blogPostLocaleTag, blogPostTag, articleLocaleTag]) %}
 {% set articleLocaleTag = locale + '-article' %}
 
 <section class="section">
@@ -36,11 +37,11 @@ layout: navigation
           {% include "components/social-shares.njk" %}
           <hr class="hidden lg:block hr">
         </div>
-        {% if tags | removeTags([blogPostLocaleTag, blogPostTag, articleLocaleTag]) | length > 0 %}
+        {% if blogCategories | length > 0 %}
           <div>
             <h2 id="tags-desc" class="h5">{{ 'read_more_articles_like_this' | i18n }}</h2>
             <ul class="list-none p-0" aria-describedby="tags-desc">
-              {% for item in tags | removeTags([blogPostLocaleTag, blogPostTag, articleLocaleTag]) %}
+              {% for item in blogCategories %}
                 <li {% if loop.revindex0 %}class="mb-3"{% endif %}>
                   <a class="button button--pill" href="/{{ locale }}/news/blog/category/{{ item | slug }}/">{{ item }}</a>
                 </li>
