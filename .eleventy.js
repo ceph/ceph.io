@@ -2,11 +2,11 @@ const fs = require('fs');
 
 // Plugins
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
-const sitemap = require('@quasibit/eleventy-plugin-sitemap');
+const build = require('./src/_data/build');
 const i18n = require('eleventy-plugin-i18n');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
-const build = require('./src/_data/build');
+const sitemap = require('@quasibit/eleventy-plugin-sitemap');
 const translations = require('./src/_data/i18n');
 
 module.exports = function (eleventyConfig) {
@@ -79,6 +79,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode('YouTube', require(`${shortcodesDir}/YouTube.js`));
 
   // Transforms
+  const transformsDir = `./src/_11ty/transforms`;
+  eleventyConfig.addTransform('htmlmin', require(`${transformsDir}/html-minifier.js`));
 
   // Passthrough copy
   eleventyConfig.addPassthroughCopy('./src/assets/**/*.json');

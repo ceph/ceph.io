@@ -51,6 +51,7 @@
     "cross-env": "7.0.2",
     "cssnano": "^4.1.10",
     "eleventy-plugin-i18n": "0.1.0",
+    "html-minifier": "^4.0.0",
     "husky": "^6.0.0",
     "imagemin": "^7.0.1",
     "imagemin-mozjpeg": "^9.0.0",
