@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+  <title>Container</title>
+  <g stroke-linecap="square" stroke-width="2" fill="none" stroke="#0A0C38" stroke-linejoin="miter" stroke-miterlimit="10">
+    <rect x="11" y="11" width="10" height="10" stroke="#EB1414" />
+    <rect x="27" y="11" width="10" height="10" stroke="#0A0C38" />
+    <rect x="11" y="27" width="10" height="10" stroke="#0A0C38" />
+    <rect x="27" y="27" width="10" height="10" stroke="#EB1414" />
+    <rect x="4" y="4" width="40" height="40" />
+  </g>
+</svg>

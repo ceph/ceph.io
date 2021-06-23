@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}" dir="{{ dir }}" class="no-js">
+  <head prefix="og: http://ogp.me/ns">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f1726c">
+
+    <script>
+      (function (d) {
+        d.className = d
+          .className
+          .replace(/\bno-js/, 'js');
+      })(document.documentElement);
+    </script>
+
+    <title>Ceph.io — {{ title }}</title>
+    <meta name="description" content="{{ meta.description }}" />
+
+    {% for lang in locales -%}
+
+      {# loop through all the content of the site #}
+      {% for item in collections.all -%}
+
+        {# for each item in the loop, check if
+        - its translationKey matches the current item translationKey
+        - its locale matches the code of the language we are looping through #}
+        {%- if item.data.translationKey == translationKey and item.data.locale == lang.code -%}
+          <link rel="alternate" hreflang="{{ item.data.locale }}" href="{{ site.url }}{{ item.url }}"/>
+        {%- endif -%}
+
+      {%- endfor -%}
+
+    {%- endfor -%}
+
+    {# Canonical link? #}
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+    {# Preload/preconnect #}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    {% for link in preload -%}
+      <link rel="preload" href="{{link.href}}" as="{{link.as}}"/>
+    {%- endfor -%}
+
+    {# Stylesheet #}
+    <link rel="stylesheet" href="/css/main.css"/>
+
+    {# async Google Fonts #}
+    <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+
+    {# no-JS fallback Google Fonts #}
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+    </noscript>
+
+    {# Favicons #}
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192.png" sizes="192x192">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png">
+
+    <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#f0424d">
+
+    <link rel="manifest" href="/assets/favicons/manifest.json">
+
+    {# Robots #}
+    {% if not build.isProduction %}
+      <meta name="robots" content="noindex, nofollow">
+    {% endif %}
+
+    {# Social meta #}
+    <meta property="og:locale" content="{{ locale }}">
+    <meta property="og:title" content="{% if title %}{{ title }} - {% endif %}{{ site.title }}"/>
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="{% if image %}{{ image }}{% else %}/assets/favicons/logo-meta-share.png{% endif %}"/>
+    <meta property="og:site_name" content="{{ site.title }}">
+
+    <meta name="twitter:card" content="{% if image %}summary_large_image{% else %}summary{% endif %}"/>
+    <meta name="twitter:site" content="@{{ social.twitter }}"/>
+    <meta name="twitter:title" content="{% if title %}{{ title }} - {% endif %}{{ site.title }}"/>
+    <meta name="twitter:url" content="{{ site.url }}{{ page.url }}"/>
+    <meta name="twitter:image" content="{% if image %}{{ image }}{% else %}/assets/favicons/logo-meta-share.png{% endif %}"/>
+
+  </head>
+  <body class={{layout}}>
+    {% include 'components/site-header.njk' %}
+
+    <main id="main">
+      <div class="wrapper">
+        {{ content | safe }}
+      </div>
+    </main>
+
+    {% include 'components/site-footer.njk' %}
+    <script type="module" src="/js/bundle-main.mjs"></script>
+    <script nomodule src="/js/bundle-main.js"></script>
+  </body>
+</html>

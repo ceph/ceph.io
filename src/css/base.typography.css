@@ -1,0 +1,257 @@
+/* ---------- BASE typography ---------- */
+
+@custom-selector :--heading .h1, .h2, .h3, .h4, .h5, .h6;
+@custom-selector :--rt-heading h1, h2, h3, h4, h5, h6;
+@custom-selector :--list .ul, .ol;
+@custom-selector :--rt-list ul, ol;
+
+/* headings */
+:--heading,
+.richtext :--rt-heading {
+  font-weight: var(--font-weight-semibold);
+}
+
+:--heading[id],
+.richtext :--rt-heading[id] {
+  scroll-margin-top: var(--size-scroll-offset);
+}
+
+.h1,
+.richtext h1 {
+  font-size: var(--font-size-4xl);
+  line-height: var(--size-10);
+  margin: 0 0 var(--size-4);
+
+  @media (--mq-lg) {
+    font-size: var(--font-size-6xl);
+    line-height: var(--size-14);
+    margin-bottom: var(--size-6);
+  }
+
+  @media (--mq-xl) {
+    font-size: var(--font-size-8xl);
+    line-height: var(--size-16);
+    margin-bottom: var(--size-8);
+  }
+}
+
+.h2,
+.richtext h2 {
+  font-size: var(--font-size-2xl);
+  line-height: var(--size-8);
+  margin: 0 0 var(--size-4);
+
+  @media (--mq-lg) {
+    font-size: var(--font-size-4xl);
+    line-height: var(--size-10);
+    margin-bottom: var(--size-5);
+  }
+
+  @media (--mq-xl) {
+    font-size: var(--font-size-5xl);
+    line-height: var(--size-11);
+    margin-bottom: var(--size-6);
+  }
+}
+
+.richtext p + h2,
+.richtext ul + h2,
+.richtext ol + h2 {
+  margin-top: var(--size-6);
+
+  @media (--mq-lg) {
+    margin-top: var(--size-8);
+  }
+
+  @media (--mq-xl) {
+    margin-top: var(--size-10);
+  }
+}
+
+.h3,
+.richtext h3 {
+  font-size: var(--font-size-xl);
+  line-height: var(--size-6);
+  margin: 0 0 var(--size-4);
+
+  @media (--mq-xl) {
+    font-size: var(--font-size-2xl);
+    line-height: var(--size-8);
+  }
+}
+
+.h4,
+.richtext h4 {
+  font-size: var(--font-size-lg);
+  line-height: var(--size-5);
+  margin: 0 0 var(--size-4);
+
+  @media (--mq-lg) {
+    font-size: var(--font-size-xl);
+    line-height: var(--size-6);
+  }
+}
+
+.h5,
+.richtext h5 {
+  font-size: var(--font-size-md);
+  line-height: var(--size-5);
+  margin: 0 0 var(--size-4);
+
+  @media (--mq-xl) {
+    font-size: var(--font-size-lg);
+    line-height: var(--size-6);
+  }
+}
+
+.h6,
+.richtext h6 {
+  font-size: var(--font-size-md);
+  line-height: var(--size-5);
+  margin: 0 0 var(--size-4);
+}
+
+.richtext p + h3,
+.richtext ul + h3,
+.richtext ol + h3,
+.richtext p + h4,
+.richtext ul + h4,
+.richtext ol + h4,
+.richtext p + h5,
+.richtext ul + h5,
+.richtext ol + h5,
+.richtext p + h6,
+.richtext ul + h6,
+.richtext ol + h6 {
+  margin-top: var(--size-6);
+}
+
+/* paragraph */
+.p,
+.richtext p {
+  font-size: var(--font-size-md);
+  line-height: var(--size-6);
+  margin: 0 0 var(--size-4);
+}
+
+.richtext p:last-child,
+.richtext li p {
+  margin-bottom: 0;
+}
+
+.p-sm {
+  font-size: var(--font-size-sm);
+  line-height: var(--size-5);
+  margin: 0 0 var(--size-4);
+}
+
+.p-xs {
+  font-size: var(--font-size-xs);
+  line-height: var(--size-4);
+  margin: 0 0 var(--size-4);
+}
+
+/* link */
+.a,
+.richtext a {
+  color: var(--color-red-500);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--size-6);
+  text-decoration: none;
+  transition: color var(--animation-duration) var(--animation-easing);
+}
+
+.a:hover,
+.richtext a:hover {
+  color: var(--color-red-500);
+  text-decoration: underline;
+}
+
+.a:active,
+.richtext a:active {
+  color: var(--color-red-600);
+  text-decoration: underline;
+}
+
+.richtext .link-anchor {
+  display: none;
+  font: inherit;
+  opacity: 0;
+  transition: opacity var(--animation-duration) var(--animation-easing);
+}
+
+.richtext *:hover > .link-anchor,
+.richtext *:focus > .link-anchor {
+  opacity: 1;
+}
+
+.blog-post .richtext .link-anchor {
+  display: inline-block;
+}
+
+/* lists */
+:--list,
+.richtext :--rt-list {
+  font-size: var(--font-size-md);
+  line-height: var(--size-6);
+  margin: 0 0 var(--size-4);
+}
+
+:--list li,
+.richtext :--rt-list li {
+  margin: 0 0 var(--size-1);
+}
+
+:--list li::marker,
+.richtext :--rt-list li::marker {
+  color: var(--color-navy);
+}
+
+.ol li::marker,
+.richtext ol li::marker {
+  font-weight: var(--font-weight-semibold);
+}
+
+:--list li > :--list,
+.richtext :--rt-list li > :--rt-list {
+  margin: var(--size-1) 0 0;
+}
+
+.ol li > .ol,
+.richtext ol li > ol {
+  list-style-type: lower-alpha;
+}
+
+.ol li > .ol li > .ol,
+.richtext ol li > ol li > ol {
+  list-style-type: lower-roman;
+}
+
+/* custom */
+.standout,
+.excerpt {
+  font-size: var(--font-size-lg);
+  line-height: var(--size-6);
+  margin: 0 0 var(--size-6);
+}
+
+.standout {
+  @media (--mq-xl) {
+    font-size: var(--font-size-xl);
+    line-height: var(--size-7);
+  }
+}
+
+.intro-para > p:first-child {
+  font-size: var(--font-size-lg);
+  line-height: var(--size-6);
+}
+
+.intro-para > p:first-child {
+  margin: 0 0 var(--size-6);
+
+  @media (--mq-lg) {
+    margin: 0 0 var(--size-8);
+  }
+}

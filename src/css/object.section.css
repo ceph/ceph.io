@@ -1,0 +1,33 @@
+/* ---------- OBJECT section ---------- */
+
+.section {
+  --section-gutters-y: var(--size-10);
+  padding-bottom: var(--section-gutters-y);
+  padding-top: var(--section-gutters-y);
+
+  @media (--mq-sm) {
+    --section-gutters-y: var(--size-14);
+  }
+
+  @media (--mq-md) {
+    --section-gutters-y: var(--size-16);
+  }
+
+  @media (--mq-lg) {
+    --section-gutters-y: var(--size-20);
+  }
+
+  @media (--mq-xl) {
+    --section-gutters-y: var(--size-32);
+  }
+}
+
+.section--full {
+  left: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  position: relative;
+  right: 50%;
+  width: var(--size-w-screen);
+  z-index: 0;
+}

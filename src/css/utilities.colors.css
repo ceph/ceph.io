@@ -1,0 +1,87 @@
+/* ---------- UTILITIES colors ---------- */
+
+/* negative */
+.bg-black {
+  background-color: var(--color-black);
+}
+
+.bg-white {
+  background-color: var(--color-white);
+}
+
+.border-black {
+  border-color: var(--color-black);
+}
+
+.border-white {
+  border-color: var(--color-white);
+}
+
+.color-black {
+  color: var(--color-black);
+}
+
+.color-white {
+  color: var(--color-white);
+}
+
+/* navy */
+.bg-navy {
+  background-color: var(--color-navy);
+}
+
+.color-navy {
+  color: var(--color-navy);
+}
+
+/* grey */
+.bg-grey-300 {
+  background-color: var(--color-grey-300);
+}
+
+.bg-grey-500 {
+  background-color: var(--color-grey-500);
+}
+
+.border-grey-300 {
+  border-color: var(--color-grey-300);
+}
+
+.border-grey-500 {
+  border-color: var(--color-grey-500);
+}
+
+.color-grey-300 {
+  color: var(--color-grey-300);
+}
+
+.color-grey-500 {
+  color: var(--color-grey-500);
+}
+
+/* gunmetal */
+.bg-gunmetal {
+  background-color: var(--color-gunmetal);
+}
+
+/* red */
+.bg-red-500 {
+  background-color: var(--color-red-500);
+}
+
+.color-red-400 {
+  color: var(--color-red-400);
+}
+
+.color-red-500 {
+  color: var(--color-red-500);
+}
+
+/* royal */
+.bg-royal {
+  background-color: var(--color-royal);
+}
+
+.color-royal {
+  color: var(--color-royal);
+}

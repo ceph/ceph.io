@@ -1,0 +1,57 @@
+/* ---------- STYLES ENTRY POINT ---------- */
+
+/* https://www.npmjs.com/package/postcss-normalize#css-libraries */
+@import "sanitize.css";
+@import "sanitize.css/forms.css";
+@import "sanitize.css/typography.css";
+
+/* core */
+@import "settings.animation.css";
+@import "settings.colors.css";
+@import "settings.media-queries.css";
+@import "settings.sizes.css";
+@import "settings.typography.css";
+
+@import "base.blockquote.css";
+@import "base.codeblock.css";
+@import "base.document.css";
+@import "base.focus.css";
+@import "base.forms.css";
+@import "base.media.css";
+@import "base.table.css";
+@import "base.typography.css";
+
+/* objects */
+@import "object.aspect-ratio.css";
+@import "object.flex.css";
+@import "object.grid.css";
+@import "object.section.css";
+@import "object.wrapper.css";
+
+/* components */
+@import "component.agenda.css";
+@import "component.button.css";
+@import "component.details.css";
+@import "component.hr.css";
+@import "component.link-cover.css";
+@import "component.language-selector.css";
+@import "component.matrix.css";
+@import "component.nav-primary.css";
+@import "component.nav-secondary.css";
+@import "component.pagination.css";
+@import "component.site-footer.css";
+@import "component.site-header.css";
+@import "component.social-shares.css";
+@import "component.sub-menu.css";
+@import "component.tint.css";
+@import "component.tooltip.css";
+
+/* utilities */
+@import "utilities.border.css";
+@import "utilities.colors.css";
+@import "utilities.display.css";
+@import "utilities.layout.css";
+@import "utilities.list.css";
+@import "utilities.size.css";
+@import "utilities.space.css";
+@import "utilities.typography.css";

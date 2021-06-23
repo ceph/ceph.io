@@ -1,0 +1,62 @@
+/* ---------- COMPONENT pagination ---------- */
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pagination__button {
+  padding: var(--size-2);
+}
+
+.pagination__button img {
+  width: var(--size-6);
+}
+
+.pagination__button span {
+  display: none;
+}
+
+.pagination__select {
+  text-transform: lowercase;
+}
+
+@media (--mq-md) {
+  .pagination {
+    justify-content: center;
+    margin-left: calc(-1 * var(--size-7));
+  }
+
+  .pagination > * {
+    margin-left: var(--size-7);
+  }
+
+  .pagination__button {
+    min-width: var(--size-36);
+    padding: var(--size-2) var(--size-4);
+  }
+
+  .pagination__button span {
+    display: inline-block;
+    position: relative;
+    top: var(--size-0_5);
+  }
+
+  .pagination__button--prev {
+    padding-right: var(--size-8);
+  }
+
+  .pagination__button--next {
+    padding-left: var(--size-8);
+  }
+}
+
+@media (--mq-xl) {
+  .pagination {
+    margin-left: calc(-1 * var(--size-14));
+  }
+
+  .pagination > * {
+    margin-left: var(--size-14);
+  }
+}

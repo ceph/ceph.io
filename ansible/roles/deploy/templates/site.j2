@@ -1,0 +1,149 @@
+# This file is managed by https://github.com/ceph/ceph.io.  Do not make changes manually.
+
+## Figure out what language to display the site in
+## I couldn't get the rewrites working but I'd prefer to do it this way so saving for later.
+#map $http_accept_language $lang {
+#    default en;
+#    ~en en;
+#    ~ja jp;
+#}
+
+## Default beta.ceph.io block
+server {
+  listen 80;
+  listen [::]:80;
+  ## TODO: Change to ceph.io or {{ fqdn }} when we switch from beta.ceph.io to ceph.io
+  server_name beta.ceph.io;
+  return 301 https://$host$request_uri;
+}
+
+server {
+  listen 443 ssl;
+  listen [::]:443 ssl;
+  server_name beta.ceph.io;
+
+  root {{ install_dir }}/{{ branch }};
+  index index.html;
+
+  location = / {
+    rewrite_by_lua '
+      for lang in (ngx.var.http_accept_language .. ","):gmatch("([^,]*),") do
+        if string.sub(lang, 0, 2) == "en" then
+          ngx.redirect("/en/")
+        end
+--      https://github.com/ceph/ceph.io/issues/154
+--      if string.sub(lang, 0, 2) == "ja" then
+--        ngx.redirect("/jp/")
+--      end
+      end
+      ngx.redirect("/en/")
+    ';
+  }
+
+{% include "redirects.j2" %}
+
+  # https://stackoverflow.com/a/43392815/6225562
+  error_page 404 @error404;
+  location @error404 {
+#     https://github.com/ceph/ceph.io/issues/154
+#     rewrite ^/(en|jp) /$1/404.html last;
+      rewrite ^ /en/404.html last;
+  }
+
+  ## TODO: Change ceph.io to {{ fqdn }}?
+  ssl_certificate /etc/letsencrypt/live/ceph.io/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/ceph.io/privkey.pem;
+  include /etc/letsencrypt/options-ssl-nginx.conf;
+  ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+  add_header Strict-Transport-Security "max-age=31536000";
+  server_tokens off;
+  add_header X-Frame-Options SAMEORIGIN;
+  add_header X-Content-Type-Options nosniff;
+  add_header X-XSS-Protection "1; mode=block";
+  add_header Content-Security-Policy "{{ content_security_policy }}";
+  proxy_cookie_path / "/; HTTPOnly; Secure";
+
+  # https://github.com/ceph/ceph.io/issues/101
+  include mime.types;
+  types {
+    text/javascript mjs;
+  }
+
+  # https://github.com/ceph/ceph.io/issues/104
+  gzip on;
+  gzip_types application/json text/css text/javascript;
+}
+
+
+## Subdomain *.ceph.io block.  This will serve development branches of github.com/ceph/ceph.io
+## e.g., Joe Dev pushes 'wip-joe' branch.  Jenkins builds a site based on this branch and Joe
+## can see it at wip-joe.ceph.io.
+server {
+  listen 80;
+  listen [::]:80;
+  server_name ~^(?<branch>.+)\.ceph\.io$;
+  return 301 https://$host$request_uri;
+}
+
+server {
+  listen 443 ssl;
+  listen [::]:443 ssl;
+  server_name ~^(?<branch>.+)\.ceph\.io$;
+
+  ## TODO: Make this go to a pretty 404 page instead?
+  # If the dir doesn't exist, go to live site
+  if (!-d {{ install_dir }}/$branch) {
+      set $branch {{ branch }};
+  }
+
+  root {{ install_dir }}/$branch;
+  index index.html;
+
+  location = / {
+    rewrite_by_lua '
+      for lang in (ngx.var.http_accept_language .. ","):gmatch("([^,]*),") do
+        if string.sub(lang, 0, 2) == "en" then
+          ngx.redirect("/en/")
+        end
+--      https://github.com/ceph/ceph.io/issues/154
+--      if string.sub(lang, 0, 2) == "ja" then
+--        ngx.redirect("/jp/")
+--      end
+      end
+      ngx.redirect("/en/")
+    ';
+  }
+
+{% include "redirects.j2" %}
+
+  # https://stackoverflow.com/a/43392815/6225562
+  error_page 404 @error404;
+  location @error404 {
+#     https://github.com/ceph/ceph.io/issues/154
+#     rewrite ^/(en|jp) /$1/404.html last;
+      rewrite ^ /en/404.html last;
+  }
+
+  ## TODO: Change ceph.io to {{ fqdn }}?
+  ssl_certificate /etc/letsencrypt/live/ceph.io/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/ceph.io/privkey.pem;
+  include /etc/letsencrypt/options-ssl-nginx.conf;
+  ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+  add_header Strict-Transport-Security "max-age=31536000";
+  server_tokens off;
+  add_header X-Frame-Options SAMEORIGIN;
+  add_header X-Content-Type-Options nosniff;
+  add_header X-XSS-Protection "1; mode=block";
+  add_header Content-Security-Policy "{{ content_security_policy }}";
+  proxy_cookie_path / "/; HTTPOnly; Secure";
+
+  # https://github.com/ceph/ceph.io/issues/101
+  include mime.types;
+  types {
+    text/javascript mjs;
+  }
+
+  # https://github.com/ceph/ceph.io/issues/104
+  gzip on;
+  gzip_types application/json text/css text/javascript;
+}

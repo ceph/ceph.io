@@ -1,0 +1,228 @@
+/* ---------- OBJECT grid ---------- */
+
+.grid {
+  --grid-gap: var(--size-4);
+  display: grid;
+  gap: var(--grid-gap);
+  grid-template-columns: minmax(0, 1fr);
+
+  @media (--mq-sm) {
+    --grid-gap: var(--size-7);
+  }
+
+  @media (--mq-xl) {
+    --grid-gap: var(--size-14);
+  }
+}
+
+/* grid alignment */
+.grid--align-center {
+  align-items: center;
+}
+
+.grid--align-end {
+  align-items: end;
+}
+
+.grid--justify-end {
+  justify-items: end;
+}
+
+/* gap */
+.grid--gap-0 {
+  --grid-gap: var(--size-0);
+}
+
+.grid--gap-7 {
+  --grid-gap: var(--size-7);
+}
+
+.grid--gap-8 {
+  --grid-gap: var(--size-8);
+}
+
+.grid--gap-14 {
+  --grid-gap: var(--size-14);
+}
+
+/* columns */
+.grid--cols-none {
+  grid-template-columns: var(--size-none);
+}
+
+.grid--cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid--cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid--cols-2-fit {
+  grid-template-columns: fit-content(50%) fit-content(50%);
+}
+
+.grid--cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid--cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid--cols-4-fit {
+  grid-template-columns: fit-content(25%) fit-content(25%) fit-content(25%) fit-content(25%);
+}
+
+.grid--cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid--cols-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.grid--cols-7 {
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.grid--cols-8 {
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+.grid--cols-9 {
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+}
+
+.grid--cols-10 {
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
+.grid--cols-11 {
+  grid-template-columns: repeat(11, minmax(0, 1fr));
+}
+
+.grid--cols-12 {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+/* column alignment */
+.grid__col--align-center {
+  align-self: center;
+}
+
+.grid__col--align-end {
+  align-self: end;
+}
+
+.grid__col--justify-end {
+  justify-self: end;
+}
+
+@media (--mq-sm) {
+  .sm\:grid--cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sm\:grid--cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (--mq-to-md) {
+  .to-md\:grid--gap-14 {
+    --grid-gap: var(--size-14);
+  }
+}
+
+@media (--mq-md) {
+  .md\:grid--cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:grid--cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .md\:grid--cols-56-auto {
+    grid-template-columns: var(--size-56) minmax(0, 1fr);
+  }
+}
+
+@media (--mq-md-to-lg) {
+  .md-to-lg\:grid--gap-7 {
+    --grid-gap: var(--size-7);
+  }
+
+  .md-to-lg\:grid--cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (--mq-to-lg) {
+  .to-lg\:grid--gap-0 {
+    --grid-gap: var(--size-0);
+  }
+}
+
+@media (--mq-lg) {
+  .lg\:grid {
+    --grid-gap: var(--size-7);
+    display: grid;
+    gap: var(--grid-gap);
+
+    @media (--mq-xl) {
+      --grid-gap: var(--size-14);
+    }
+  }
+
+  .lg\:grid--gap-0 {
+    --grid-gap: var(--size-0);
+  }
+
+  .lg\:grid--gap-16 {
+    --grid-gap: var(--size-16);
+  }
+
+  .lg\:grid--gap-28 {
+    --grid-gap: var(--size-28);
+  }
+
+  .lg\:grid--cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lg\:grid--cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:grid--cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .lg\:grid--cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .lg\:grid--cols-72-auto {
+    grid-template-columns: var(--size-72) minmax(0, 1fr);
+  }
+
+  .lg\:grid--cols-auto-72 {
+    grid-template-columns: minmax(0, 1fr) var(--size-72);
+  }
+
+  .lg\:grid--cols-auto-160 {
+    grid-template-columns: minmax(0, 1fr) var(--size-160);
+  }
+}
+
+@media (--mq-xl) {
+  .xl\:grid--gap-20 {
+    --grid-gap: var(--size-20);
+  }
+
+  .xl\:grid--cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

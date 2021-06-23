@@ -1,0 +1,37 @@
+/* ---------- BASE focus ---------- */
+
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+.js-focus-visible .focus-visible {
+  outline: var(--size-0_5) solid var(--color-blue);
+  outline-offset: var(--size-1);
+}
+
+/* should probably consider moving the declarations below to their relevant CSS files */
+.js-focus-visible .button.focus-visible,
+.js-focus-visible .input.focus-visible,
+.js-focus-visible .select.focus-visible,
+.js-focus-visible .link-cover--shadow.focus-visible::before {
+  outline-offset: var(--size-0);
+}
+
+.js-focus-visible .nav-secondary .focus-visible,
+.js-focus-visible .sub-menu .focus-visible,
+.js-focus-visible .matrix .link-cover.focus-visible::before {
+  outline-offset: calc(-1 * var(--size-0_5));
+}
+
+.js-focus-visible .link-cover.focus-visible {
+  outline: none;
+}
+
+.js-focus-visible .link-cover.focus-visible::before {
+  outline: var(--size-0_5) solid var(--color-blue);
+  outline-offset: var(--size-1);
+}
+
+.js-focus-visible .link-anchor.focus-visible {
+  opacity: 1;
+}

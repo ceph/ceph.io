@@ -1,0 +1,27 @@
+/* ---------- BASE codeblock ---------- */
+
+/* code */
+.richtext code {
+  background-color: var(--color-grey-300);
+  border: var(--size-px) solid var(--color-grey-500);
+  border-radius: var(--size-1);
+  font-size: inherit;
+  line-height: inherit;
+  padding: var(--size-0_5);
+}
+
+/* pre */
+.richtext pre {
+  background-color: var(--color-grey-300);
+  font-size: var(--font-size-md);
+  line-height: var(--size-6);
+  margin: var(--size-6) 0;
+  overflow-x: auto;
+  padding: var(--size-6);
+}
+
+.richtext pre code {
+  background: none;
+  border: 0;
+  padding: 0;
+}

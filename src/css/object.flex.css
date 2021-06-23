@@ -1,0 +1,103 @@
+/* ---------- OBJECT flex ---------- */
+
+.flex {
+  display: flex;
+}
+
+.flex--align-center {
+  align-items: center;
+}
+
+.flex--justify-center {
+  justify-content: center;
+}
+
+.flex--justify-end {
+  justify-content: flex-end;
+}
+
+.flex--justify-between {
+  justify-content: space-between;
+}
+
+.flex--gap-4 {
+  --flex-gap: var(--size-4);
+  margin-left: calc(-1 * var(--flex-gap));
+  margin-top: calc(-1 * var(--flex-gap));
+}
+
+.flex--gap-4 > * {
+  margin-left: var(--flex-gap);
+  margin-top: var(--flex-gap);
+}
+
+.flex--gap-6 {
+  --flex-gap: var(--size-6);
+  margin-left: calc(-1 * var(--flex-gap));
+  margin-top: calc(-1 * var(--flex-gap));
+}
+
+.flex--gap-6 > * {
+  margin-left: var(--flex-gap);
+  margin-top: var(--flex-gap);
+}
+
+.flex--gap-8 {
+  --flex-gap: var(--size-8);
+  margin-left: calc(-1 * var(--flex-gap));
+  margin-top: calc(-1 * var(--flex-gap));
+}
+
+.flex--gap-8 > * {
+  margin-left: var(--flex-gap);
+  margin-top: var(--flex-gap);
+}
+
+.flex--wrap {
+  flex-wrap: wrap;
+}
+
+.flex--pipe > * {
+  position: relative;
+}
+
+.flex--pipe > *:not(:last-child)::before {
+  background: var(--color-grey-500);
+  content: "";
+  height: var(--size-full);
+  position: absolute;
+  right: calc(-1 * var(--flex-gap) / 2);
+  top: 0;
+  width: var(--size-px);
+}
+
+@media (--mq-to-lg) {
+  .to-lg\:flex {
+    display: flex;
+  }
+
+  .to-lg\:flex--col {
+    flex-direction: column;
+  }
+
+  .to-lg\:flex--justify-between {
+    justify-content: space-between;
+  }
+
+  .to-lg\:flex-1 {
+    flex: 1 1 0%;
+  }
+}
+
+@media (--mq-lg) {
+  .lg\:flex--gap-6 {
+    --flex-gap: var(--size-6);
+    margin-left: calc(-1 * var(--flex-gap));
+    margin-top: calc(-1 * var(--flex-gap));
+  }
+
+  .lg\:flex--gap-6 > * {
+    margin-left: var(--flex-gap);
+    margin-top: var(--flex-gap);
+  }
+}

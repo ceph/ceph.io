@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+  <title>Facebook</title>
+  <g fill="transparent" fill-rule="evenodd" stroke-width="2">
+    <circle cx="23.925" cy="23.925" r="21.75" stroke="#eb1414" stroke-linecap="square"/>
+    <path fill="#fff" stroke="#0a0c38" stroke-linejoin="round" d="M21.043 36.75V25.7H17.25v-5.1h3.793v-3.562c0-3.88 2.456-5.788 5.917-5.788 1.658 0 3.082.123 3.498.179v4.054l-2.4.001c-1.883 0-2.308.894-2.308 2.207V20.6h5.1l-1.7 5.1h-3.4v11.05h-4.707z"/>
+  </g>
+</svg>

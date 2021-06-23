@@ -1,0 +1,34 @@
+/* ---------- COMPONENT tint ---------- */
+
+.tint {
+  position: relative;
+}
+
+.tint::after {
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.tint--multiply::after {
+  mix-blend-mode: multiply;
+}
+
+.tint--black-2::after {
+  background: hsla(var(--color-black-hsl), 0.2);
+}
+
+.tint--red-500-4::after {
+  background: hsla(var(--color-red-500-hsl), 0.4);
+}
+
+.tint--royal-4::after {
+  background: hsla(var(--color-royal-hsl), 0.4);
+}
+
+.tint--royal-8::after {
+  background: hsla(var(--color-royal-hsl), 0.8);
+}

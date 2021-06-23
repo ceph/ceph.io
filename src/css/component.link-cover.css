@@ -1,0 +1,35 @@
+/* ---------- COMPONENT link cover ---------- */
+
+.link-cover {
+  text-decoration: none;
+  transition: color var(--animation-duration) var(--animation-easing);
+}
+
+.link-cover:hover {
+  color: var(--color-red-500);
+  text-decoration: underline;
+}
+
+.link-cover:active {
+  color: var(--color-red-600);
+  text-decoration: underline;
+}
+
+.link-cover::before {
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.link-cover--shadow:hover::before {
+  box-shadow: var(--shadow-black);
+}
+
+.link-cover--shadow::before {
+  border-radius: var(--size-2); /* not sure about declaring this as it's possible this won't always be used with a rounded utility */
+  transition: box-shadow var(--animation-duration) var(--animation-easing);
+}

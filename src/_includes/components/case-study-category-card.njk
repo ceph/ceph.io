@@ -1,0 +1,11 @@
+{# We will need a way to randomise the image as case study categories don't contain an image. 
+We should only need a selection of 6 assets as we only show 6 case study categories. #}
+
+{# UPDATE - This component may no longer be needed due to the IA update moving case studies under discover #}
+
+<div class="bg-grey-300 border-grey-500 border-px border-solid relative rounded-2">
+  <div class="aspect-ratio aspect-ratio--16x9 aspect-ratio--cover">
+    <img alt="" class="absolute h-full left-0 rounded-t-2 top-0 w-full" loading="lazy" src="/assets/bitmaps/photo-water-02.jpg" />
+  </div>
+  <a class="block color-red-500 h3 link-cover link-cover--shadow mb-0 p-6 text-capitalise" href="/{{ locale }}/discover/case-studies/category/{{ item | slug }}/">{{ item }}</a>
+</div>

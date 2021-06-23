@@ -1,0 +1,43 @@
+/* ---------- BASE media ---------- */
+
+/* image */
+.richtext img {
+  --richtext-img-gutters-y: var(--size-6);
+  display: block;
+  margin: var(--richtext-img-gutters-y) auto;
+
+  @media (--mq-lg) {
+    --richtext-img-gutters-y: var(--size-10);
+  }
+
+  @media (--mq-xl) {
+    --richtext-img-gutters-y: var(--size-14);
+  }
+}
+
+.richtext img:not([height]) {
+  height: auto;
+}
+
+.richtext img:not([width]) {
+  width: auto;
+}
+
+/*
+We've removed this for now as the assumption that all 
+richtext imgs will go full width is a potential can of worms.
+
+It can always be re-instated if we need it.
+*/
+
+/* @media (--mq-to-lg) {
+  .richtext img {
+    left: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    max-width: var(--size-w-screen);
+    position: relative;
+    right: 50%;
+    width: var(--size-w-screen);
+  }
+} */

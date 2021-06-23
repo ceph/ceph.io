@@ -1,0 +1,78 @@
+{% set localeParentKey = '/' + locale + '/' %}
+{% set primaryNav = collections.primary | eleventyNavigation(localeParentKey) %}
+{% set supportNav = collections.support | eleventyNavigation(localeParentKey) %}
+
+<footer class="site-footer">
+  <div class="wrapper">
+    <nav aria-label="site">
+      <ul class="site-footer__site">
+        {%- for item in primaryNav %}
+          <li>
+            <a href="{{ item.url | url }}" {% if item.url == page.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
+            {%- if item.children %}
+              <ul>
+                {%- for item in item.children %}
+                  <li>
+                    <a href="{{ item.url | url }}" {% if page.url | startsWith(item.url) %} aria-current="page"{% endif %}>{{ item.title }}</a>
+                  </li>
+                {%- endfor %}
+              </ul>
+            {%- endif %}
+          </li>
+        {%- endfor %}
+      </ul>
+    </nav>
+    <svg class="site-footer__ceph" xmlns="http://www.w3.org/2000/svg" width="154" height="42" viewBox="0 0 154 42" aria-hidden="true" focusable="false">
+      <g fill="#f0424d">
+        <path d="M35 38c-1.4-.8-2.3-1.7-2.5-2.7s.2-2 1.3-3.3A16.2 16.2 0 0021.6 5.2h-.1A16.2 16.2 0 009.2 32c1.1 1.3 1.5 2.3 1.4 3.2S9.5 37.2 8 38a22.8 22.8 0 01-5.7-7.2A21.3 21.3 0 010 21.4 21.4 21.4 0 0121.5 0h.1A21.4 21.4 0 0143 21.4a21.6 21.6 0 01-.6 4.9 21 21 0 01-1.6 4.5 22.7 22.7 0 01-5.7 7.2"/>
+        <path d="M27.2 42a8 8 0 01-2-2 8.7 8.7 0 01-1.6-5.3 11.8 11.8 0 01.9-4.2 12 12 0 012.3-3.7l.2-.2a10.3 10.3 0 001-1.4 7 7 0 001-2 7.5 7.5 0 00-6.3-9.2 7.3 7.3 0 00-1.1 0h-.1a7.4 7.4 0 00-4 1 7.5 7.5 0 00-2.2 2 7.5 7.5 0 00-1.2 6.2 7.2 7.2 0 00.8 2 9.7 9.7 0 001.1 1.4l.2.3a11.9 11.9 0 012.3 3.6 11.8 11.8 0 011 4.2 8.8 8.8 0 01-1.8 5.4 8 8 0 01-1.9 1.9l-1.2-.4A21.3 21.3 0 0111 40a6 6 0 003.2-5.3 6.4 6.4 0 00-1.7-4.2l-.3-.4-.9-1a12.8 12.8 0 01-.2-15 13 13 0 013.7-3.5 12.8 12.8 0 015-1.8 13.3 13.3 0 011.7-.2h.2a13.4 13.4 0 011.8.2 12.8 12.8 0 014.9 1.8A13 13 0 0132 14a12.7 12.7 0 01-.2 15l-.9 1-.3.4a6.5 6.5 0 00-1.7 4.3 6 6 0 003.1 5.4 21.4 21.4 0 01-3.6 1.5l-1.2.4"/>
+        <path d="M21.5 25.8a4.2 4.2 0 114.2-4.2 4.2 4.2 0 01-4.2 4.2"/>
+      </g>
+      <g fill="#e7e9e8">
+        <path d="M75.6 26.4c0 5.5-.5 7-1.8 8.4-.8.8-2 1.3-4.3 1.3h-8.2c-2.6 0-4.2-.4-5.3-1.5-1.7-1.8-2.2-3.8-2.2-11.8s.5-10 2.2-11.8c1-1 2.7-1.5 5.3-1.5h8c2.5 0 3.6.5 4.4 1.3 1.3 1.3 1.8 3 1.8 8h-5c-.1-3.5-.3-4-.6-4.3s-.6-.5-1.8-.5H62c-1.5 0-2 .1-2.3.5-.5.5-.7 1.5-.7 8.3s.2 7.7.7 8.2c.4.4.8.5 2.3.5h6.2c1.1 0 1.6 0 2-.4s.5-1.4.5-4.7h5M84.3 20.4h12.2c0-4.5-.3-5.5-.8-6-.3-.3-.7-.5-2.3-.5h-6c-1.6 0-2 .2-2.4.6s-.6 1.3-.7 5.9zm0 4c0 5.3.4 6.3.8 6.7s.7.5 2.2.5h7c1 0 1.4-.2 1.7-.5s.4-1 .5-3.3h5c0 4.2-.4 5.6-1.8 7-.8.8-2 1.3-4.3 1.3h-8.7c-2.6 0-4.2-.4-5.3-1.5-1.7-1.7-2.2-3.8-2.2-11.8s.5-10 2.2-11.8c1.1-1 2.7-1.5 5.3-1.5H94c2.6 0 4.3.5 5.3 1.4 1.7 1.8 2.2 3.8 2.2 11.6V24c0 .4-.1.6-.6.6H84.3M121.6 31c-.4.4-1 .6-2.7.6H115a10.1 10.1 0 01-4.8-1.5l-.3-.1V15.5a10.7 10.7 0 015-1.5h4c1.6 0 2.2.2 2.7.6.7.8 1 2.2 1 8.2s-.2 7.4-1 8.1zm-1.5-21.6h-3.6c-2.2 0-3.3.5-6.6 3.3V9.4h-5.2V42h5.2v-9c3.3 2.7 4.4 3.2 6.6 3.2h3.6c2.9 0 4.3-.5 5.5-1.6 1.4-1.5 2-3.5 2-11.8s-.6-10.3-2-11.8c-1.2-1.1-2.6-1.6-5.5-1.6M152.4 11c-1-1-2.3-1.6-4.6-1.6h-4.2c-2.2 0-3.3.5-6.7 3.3V2.5a18.8 18.8 0 00-5-2v35.6h5V15.5l1.1-.5a9.1 9.1 0 014-1h3.4c1.7 0 2.2.2 2.8.7a3.4 3.4 0 01.6 2.6V36h5.2V17c0-3.7-.6-5-1.6-6"/>
+      </g>
+    </svg>
+    <p class="color-white p text-xs">&copy; {{ page.date.getFullYear() }} All rights reserved.</p>
+    <nav aria-label="support">
+      <ul class="site-footer__support">
+        {%- for item in supportNav %}
+          <li>
+            <a href="{{ item.url | url }}" {% if item.url == page.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
+          </li>
+        {%- endfor %}
+      </ul>
+      <ul class="site-footer__social">
+        {%- if social.twitter %}
+          <li>
+            <a class="site-footer__twitter" href="https://twitter.com/{{social.twitter}}" rel="noreferrer noopener" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#d3dde7" aria-hidden="true" focusable="false">
+                <path d="M24.857 4.125c-.964.429-1.982.696-3.053.857 1.071-.643 1.928-1.66 2.303-2.893a11.61 11.61 0 01-3.375 1.286 5.34 5.34 0 00-3.857-1.66 5.259 5.259 0 00-5.25 5.25c0 .428.054.803.16 1.178C7.447 7.929 3.536 5.839.912 2.625.482 3.429.214 4.285.214 5.25c0 1.821.911 3.429 2.357 4.393A6.199 6.199 0 01.161 9v.054a5.293 5.293 0 004.232 5.196A5.84 5.84 0 013 14.41c-.321 0-.696-.053-1.018-.106.697 2.089 2.625 3.642 4.929 3.642-1.822 1.393-4.072 2.25-6.536 2.25-.429 0-.857 0-1.232-.053a14.907 14.907 0 008.09 2.357c9.696 0 15-8.036 15-15v-.696a9.62 9.62 0 002.624-2.679z"/>
+              </svg>
+              <span class="visually-hidden">Twitter</span>
+            </a>
+          </li>
+        {%- endif %}
+        {%- if social.youtube %}
+          <li>
+            <a class="site-footer__youtube" href="https://www.youtube.com/channel/{{social.youtube}}" rel="noreferrer noopener" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#d3dde7" aria-hidden="true" focusable="false">
+                <path id="a" d="M23.75 7.079s-.25-1.65-.95-2.4c-.9-.95-1.95-.95-2.4-1-3.35-.25-8.4-.25-8.4-.25s-5.05 0-8.4.25c-.45.05-1.5.05-2.4 1-.7.75-.95 2.4-.95 2.4S0 9.029 0 10.979v1.8c0 1.95.25 3.9.25 3.9s.25 1.65.95 2.4c.9.95 2.1.95 2.65 1.05 1.9.2 8.15.25 8.15.25s5.05 0 8.4-.25c.45-.05 1.5-.05 2.4-1 .7-.75.95-2.4.95-2.4s.25-1.95.25-3.9v-1.8c0-2-.25-3.95-.25-3.95zm-14.25 7.9v-6.75l6.5 3.4-6.5 3.35z"/>
+              </svg>
+              <span class="visually-hidden">YouTube</span>
+            </a>
+          </li>
+        {%- endif %}
+        {%- if social.facebook %}
+          <li>
+            <a class="site-footer__facebook" href="https://www.facebook.com/{{social.facebook}}" rel="noreferrer noopener" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#d3dde7" aria-hidden="true" focusable="false">
+                <path d="M24 12.072C23.999 5.689 19 .423 12.626.09 6.251-.243.732 4.473.066 10.822-.601 17.17 3.82 22.929 10.125 23.926v-8.385H7.078v-3.469h3.047V9.428c0-3.007 1.792-4.669 4.532-4.669.9.013 1.798.091 2.687.235v2.953H15.83a1.735 1.735 0 00-1.955 1.875v2.25h3.328l-.532 3.469h-2.797v8.385A12 12 0 0024 12.072z"/>
+              </svg>
+              <span class="visually-hidden">Facebook</span>
+            </a>
+          </li>
+        {%- endif %}
+      </ul>
+    </nav>
+  </div>
+</footer>

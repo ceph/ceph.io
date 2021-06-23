@@ -1,0 +1,92 @@
+/* ---------- COMPONENT sub-menu ---------- */
+
+.sub-menu {
+  display: none;
+}
+
+@media (--mq-lg) {
+  .sub-menu {
+    background-attachment: local, local, scroll, scroll;
+    background-color: var(--color-white);
+    background-image: linear-gradient(to right, var(--color-white), var(--color-white)),
+      linear-gradient(to right, var(--color-white), var(--color-white)), linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)),
+      linear-gradient(to left, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+    background-position: left center, right center, left center, right center;
+    background-repeat: no-repeat;
+    background-size: 1em 100%, 1em 100%, 0.5em 100%, 0.5em 100%;
+    box-shadow: var(--shadow-black);
+    display: flex;
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--size-6);
+    list-style: none;
+    margin-top: calc(-1 * var(--size-10));
+    overflow-x: auto;
+    padding: var(--size-0);
+    position: relative;
+  }
+
+  .sub-menu > li {
+    position: relative;
+  }
+
+  .sub-menu > li:nth-last-child(2):first-child,
+  .sub-menu > li:nth-last-child(2):first-child ~ li {
+    flex: 1 0 var(--size-1-2);
+  }
+
+  .sub-menu > li:nth-last-child(3):first-child,
+  .sub-menu > li:nth-last-child(3):first-child ~ li {
+    flex: 1 0 var(--size-1-3);
+  }
+
+  .sub-menu > li:nth-last-child(4):first-child,
+  .sub-menu > li:nth-last-child(4):first-child ~ li {
+    flex: 1 0 var(--size-1-4);
+  }
+
+  .sub-menu > li:nth-last-child(5):first-child,
+  .sub-menu > li:nth-last-child(5):first-child ~ li {
+    flex: 1 0 var(--size-1-5);
+  }
+
+  .sub-menu > li:not(:first-child) {
+    padding-left: var(--size-px);
+  }
+
+  .sub-menu > li:not(:first-child)::before {
+    background: var(--color-grey-500);
+    content: "";
+    height: var(--size-2-3);
+    left: 0;
+    position: absolute;
+    top: var(--size-1-6);
+    width: var(--size-px);
+  }
+
+  .sub-menu a {
+    display: block;
+    color: var(--color-red-500);
+    height: var(--size-full);
+    padding: var(--size-4);
+    text-align: center;
+    text-decoration: none;
+    transition: background-color var(--animation-duration) var(--animation-easing), color var(--animation-duration) var(--animation-easing);
+    white-space: nowrap;
+  }
+
+  .sub-menu a:hover {
+    background: var(--color-grey-300);
+  }
+
+  .sub-menu a:active {
+    background: var(--color-grey-300);
+    color: var(--color-red-600);
+  }
+
+  .sub-menu img {
+    display: block;
+    margin: 0 auto var(--size-4);
+    width: var(--size-12);
+  }
+}

@@ -1,0 +1,86 @@
+---
+layout: navigation
+---
+
+<section class="section">
+  <div class="grid lg:grid--cols-auto-72">
+    <h1 class="h1">{{ title }}</h1>
+  </div>
+
+  <div class="grid lg:grid--cols-auto-72 to-lg:grid--gap-0 lg:grid--gap-16 xl:grid--gap-20">
+    <div>
+      {% if image %}
+        <div class="to-lg:w-full-breakout">
+          <img alt="" class="mb-8 lg:mb-10 xl:mb-12 w-full" loading="lazy" src="{{ image }}" />
+        </div>
+      {% endif %}
+      <div class="intro-para richtext">
+        {{ content | safe }}
+      </div>
+    </div>
+    <aside>
+    {% if sponsor %}
+      <hr class="hr lg:hidden my-16">
+      <div class="grid md-to-lg:grid--cols-2 to-md:grid--gap-14 lg:grid--gap-0">
+        <div>
+          <h2 class="h5">{{ 'about_this_case_study' | i18n }}</h2>
+          <a class="inline-block mb-4" href="{{ sponsor.website }}" rel="noreferrer noopener" target="_blank">
+            <img src="{{ sponsor.logo }}" alt="{{ sponsor.name }}" style="width: 50px;"/>
+          </a>
+          <p class="p">{{ 'this_case_study_is_sponsored_by' | i18n }}
+            {{ sponsor.name }}.</p>
+          <details class="tooltip">
+            <summary class="a tooltip__toggle">{{ 'find_out_more' | i18n }}</summary>
+            <div class="tooltip__content">
+              <p class="mb-0 p">Disclaimer about how sponsored case studies work and who is able to sponsor / publish them. <a class="a" href="/{{ locale }}/foundation/join">Join the Ceph Foundation</a>.</p>
+            </div>
+          </details>
+          <hr class="hidden lg:block hr">
+        </div>
+        <div>
+          <h2 class="h5">{{ 'keep_reading' | i18n }}</h2>
+          <p class="p">{{ 'find_out_more_about_this_case_study_at_the' | i18n }}
+            {{ sponsor.name }}
+            <span class="text-lower">{{ 'website' | i18n }}</span>.</p>
+          <a class="button w-full" href="{{ sponsor.website }}">{{ 'go_to' | i18n }}
+            {{ sponsor.name }}
+            <span class="text-lower">{{ 'website' | i18n }}</span></a>
+        </div>
+      </div>
+    {% endif %}
+    </aside>
+  </div>
+</section>
+
+<section class="bg-grey-300 section section--full">
+  <div class="wrapper">
+    <h2 class="h2 text-center">Discover more</h2>
+
+    <ul class="grid lg:grid--cols-3 list-none my-0 p-0">
+      <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
+        <img class="mb-4 w-12" src="/assets/svgs/icon-case-study-blue-red.svg" alt=""/>
+        <h3 class="h3">Case studies</h3>
+        <p class="p">
+          Browse further examples of how Ceph brings efficient, reliable storage to organizations at any scale, across a broad variety of industries and applications. 
+        </p>
+        <a class="a link-cover link-cover--shadow" href="/{{ locale }}/discover/case-studies/">Case studies of Ceph in action</a>
+      </li>
+      <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
+        <img class="mb-4 w-12" src="/assets/svgs/icon-customers-blue-red.svg" alt=""/>
+        <h3 class="h3">Use cases</h3>
+        <p class="p">
+          Ceph's flexibility is one of its many strengths. It can be adapted to perfectly suit your storage needs, with industry-leading levels of data availability and resilience.
+        </p>
+        <a class="a link-cover link-cover--shadow" href="/{{ locale }}/discover/use-cases/">Explore Ceph's broad use cases</a>
+      </li>
+      <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
+        <img class="mb-4 w-12" src="/assets/svgs/icon-benefits-blue-red.svg" alt=""/>
+        <h3 class="h3">Benefits of Ceph</h3>
+        <p class="p">
+          Efficient, reliable data distribution and freedom from vendor lock-in are just the start of the reasons why more and more organizations are making the switch to Ceph.
+        </p>
+        <a class="a link-cover link-cover--shadow" href="/{{ locale }}/discover/benefits/">Discover the benefits</a>
+      </li>
+    </ul>
+  </div>
+</section>

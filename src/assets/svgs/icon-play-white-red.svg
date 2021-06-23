@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+  <title>Play</title>
+  <g fill="none" fill-rule="evenodd" stroke-linecap="square" stroke-width="2">
+    <circle cx="23.925" cy="23.925" r="21.75" stroke="#EB1414"/>
+    <path stroke="#FFF" d="M17.175 13.425l18 10.5-18 10.5z"/>
+  </g>
+</svg>

@@ -1,0 +1,20 @@
+---
+fqdn: beta.ceph.io
+install_dir: /opt/www
+branch: master
+update_frequency: 5
+## TODO: Add ceph.io (root domain) to this list
+letsencrypt_domains:
+  - "*.ceph.io"
+letsencrypt_email: ceph-infra@redhat.com
+packages:
+  - nginx
+  - nginx-extras
+  - certbot
+  - python3-certbot-nginx
+  - npm
+  - vim
+  - net-tools
+node_version: 14.2.0
+
+content_security_policy: "default-src 'unsafe-inline' 'self' https://fonts.gstatic.com https://www.youtube.com; img-src 'self' https: data:; script-src 'unsafe-inline' 'unsafe-eval' https:; style-src 'unsafe-inline' 'self' https://fonts.googleapis.com;"

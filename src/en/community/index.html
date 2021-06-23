@@ -1,0 +1,197 @@
+---
+title: Community
+layout: hub-community
+order: 4
+overlaySubMenu: true
+---
+
+{% set eventLocaleTag = locale + '-event' %} {% set eventsFuture = collections[eventLocaleTag] | getItemsInFuture | reverse | getItems(4) %}
+
+<h1 class="h1 visually-hidden">{{ title }}</h1>
+
+<section class="py-0 section section--full">
+  <div class="py-32 lg:py-56 relative">
+    <div class="absolute aspect-ratio aspect-ratio--cover h-full left-0 tint tint--multiply tint--royal-8 top-0 w-full">
+      <img alt="" class="absolute h-full left-0 top-0 w-full" loading="lazy" src="/assets/bitmaps/photo-jelly-fish-01.jpg" />
+    </div>
+    <div class="wrapper">
+      <div class="color-white max-w-224 mx-auto relative text-center z-1">
+        <h2 class="h1 mb-0">Evolve Ceph with passionate, talented and innovative contributors from around the&nbsp;globe.</h2>
+      </div>
+    </div>
+  </div>
+  <div class="section wrapper">
+    <div class="max-w-192 mx-auto text-center">
+      <p class="standout">When you become a Ceph contributor, you become part of a wider community, invested in the future of&nbsp;data.</p>
+      <p class="mb-0 p">
+        Ceph was made possible by its community, and now it is constantly improved and adapted following its Open Source philosophy. Join us
+        in creating something&nbsp;amazing.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="bg-grey-300 section section--full">
+  <div class="wrapper">
+    <h2 class="h2 mb-12 lg:mb-16 text-center">Connect with the Ceph community</h2>
+    <ul class="grid lg:grid--cols-3 list-none m-0 p-0">
+      <li class="bg-white border-grey-500 border-px border-solid relative rounded-2">
+        <div class="grid grid--gap-0 md-to-lg:grid--cols-2 overflow-hidden rounded-2">
+          <div class="aspect-ratio aspect-ratio--16x9 aspect-ratio--cover md-to-lg:h-full tint tint--black-2">
+            <img alt="" class="absolute md-to-lg:h-full left-0 top-0" loading="lazy" src="/assets/bitmaps/photo-coral-01.jpg" />
+            <img alt="" class="absolute bottom-0 left-0 m-4 w-12 z-1" src="/assets/svgs/icon-events-white-red.svg" />
+          </div>
+          <div class="p-5">
+            <h3 class="h3">Events</h3>
+            <p class="p">
+              From Ceph Days and conferences, to Cephalocon, Ceph aims to bring the community face-to-face where possible. With engaging
+              content, critical discussions and opportunities to network with other community members, Ceph events combine the best of
+              software with excitement and fun.
+            </p>
+            <a class="a link-cover link-cover--shadow" href="/{{ locale }}/community/events/">Ceph events</a>
+          </div>
+        </div>
+      </li>
+      <li class="bg-white border-grey-500 border-px border-solid relative rounded-2">
+        <div class="grid grid--gap-0 md-to-lg:grid--cols-2 overflow-hidden rounded-2">
+          <div class="aspect-ratio aspect-ratio--16x9 aspect-ratio--cover md-to-lg:h-full tint tint--black-2">
+            <img alt="" class="absolute md-to-lg:h-full left-0 top-0" loading="lazy" src="/assets/bitmaps/photo-coral-02.jpg" />
+            <img alt="" class="absolute bottom-0 left-0 m-4 w-12 z-1" src="/assets/svgs/icon-talks-white-red.svg" />
+          </div>
+          <div class="p-5">
+            <h3 class="h3">Tech talks</h3>
+            <p class="p">
+              Join the experts in Ceph, the community, and partners in Tech talks every month. Experience a technical presentation and find
+              out the latest developments in the Ceph community. You can even get involved in Hackathons!
+            </p>
+            <a class="a link-cover link-cover--shadow" href="/{{ locale }}/community/tech-talks/">Ceph tech talks</a>
+          </div>
+        </div>
+      </li>
+      <li class="bg-white border-grey-500 border-px border-solid relative rounded-2">
+        <div class="grid grid--gap-0 md-to-lg:grid--cols-2 overflow-hidden rounded-2">
+          <div class="aspect-ratio aspect-ratio--16x9 aspect-ratio--cover md-to-lg:h-full tint tint--black-2">
+            <img alt="" class="absolute md-to-lg:h-full left-0 top-0" loading="lazy" src="/assets/bitmaps/photo-coral-03.jpg" />
+            <img alt="" class="absolute bottom-0 left-0 m-4 w-12 z-1" src="/assets/svgs/icon-meetup-white-red.svg" />
+          </div>
+          <div class="p-5">
+            <h3 class="h3">Community events &amp; meetups</h3>
+            <p class="p">
+              Plan your own meetup and unite experts with specialisms and vested interest in Ceph-related technology. Leverage the knowledge
+              and skill of community engineers, developers and architects to explore future possibilities for Ceph.
+            </p>
+            <a class="a link-cover link-cover--shadow" href="/{{ locale }}/community/meetups/">Events</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="bg-grey-300 pt-0 section section--full">
+  <div class="wrapper">
+    <h2 class="h2 mb-12 lg:mb-16 text-center">Get involved</h2>
+    <ul class="grid lg:grid--cols-3 list-none m-0 p-0">
+      <li class="bg-white border-grey-500 border-px border-solid p-5 rounded-2">
+        <p class="p">
+          If you are interested in getting involved with Ceph, there are many options available. Whether you wish to contribute code or
+          simply stay updated with the latest Ceph developments, our global community will gladly welcome you.
+        </p>
+        <a class="a" href="/{{ locale }}/community/team/">Meet the Ceph team</a>
+      </li>
+      <li class="bg-white border-grey-500 border-px border-solid relative rounded-2">
+        <div class="grid grid--gap-0 md-to-lg:grid--cols-2 overflow-hidden rounded-2">
+          <div class="aspect-ratio aspect-ratio--16x9 aspect-ratio--cover md-to-lg:h-full tint tint--black-2">
+            <img alt="" class="absolute md-to-lg:h-full left-0 top-0" loading="lazy" src="/assets/bitmaps/photo-ink-01.jpg" />
+            <img alt="" class="absolute bottom-0 left-0 m-4 w-12 z-1" src="/assets/svgs/icon-events-white-red.svg" />
+          </div>
+          <div class="p-5">
+            <h3 class="h3">Where to find us</h3>
+            <p class="p">
+              Become a part of Ceph’s community through area-specific mailing lists, code contributions, in-person events, monthly talks and
+              more.
+            </p>
+            <a class="a link-cover link-cover--shadow" href="/{{ locale }}/community/connect/">Connect with the community</a>
+          </div>
+        </div>
+      </li>
+      <li class="bg-white border-grey-500 border-px border-solid relative rounded-2">
+        <div class="grid grid--gap-0 md-to-lg:grid--cols-2 overflow-hidden rounded-2">
+          <div class="aspect-ratio aspect-ratio--16x9 aspect-ratio--cover md-to-lg:h-full tint tint--black-2">
+            <img alt="" class="absolute md-to-lg:h-full left-0 top-0" loading="lazy" src="/assets/bitmaps/photo-ink-02.jpg" />
+            <img alt="" class="absolute bottom-0 left-0 m-4 w-12 z-1" src="/assets/svgs/icon-events-white-red.svg" />
+          </div>
+          <div class="p-5">
+            <h3 class="h3">Become a contributor</h3>
+            <p class="p">
+              If you use Ceph, you can provide valuable contributions, including logging issues on our live issue tracker, novel code,
+              content input and software development.
+            </p>
+            <a class="a link-cover link-cover--shadow" href="/{{ locale }}/foundation/join/">How to contribute</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="bg-grey-300 pt-0 section section--full">
+  <div class="wrapper">
+    <div class="mb-12 lg:mb-16 text-center">
+      <h2 class="h2">Upcoming events</h2>
+      <a class="a" href="/{{ locale }}/community/events/" class="ml-6">See all events</a>
+    </div>
+    <p class="max-w-192 mb-12 lg:mb-16 mx-auto standout text-center">
+      Sometimes there is no substitute for discussing technology face-to-face. The Ceph community tries to run and attend a number of events
+      so that users can interact through lectures or just over beer.
+    </p>
+    <div class="mx-auto lg:w-1-2">
+      {% if eventsFuture.length > 0 %}
+      <ul class="grid md:grid--cols-2 list-none m-0 p-0">
+        {% for item in eventsFuture %}
+        <li>{% include "components/event-card.njk" %}</li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <p class="p text-center">There are no upcoming events</p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<section class="bg-grey-300 pt-0 section section--full">
+  <div class="wrapper">
+    <div class="mb-12 lg:mb-16 text-center">
+      <h2 class="h2">Featured tech talks</h2>
+      <a class="a" href="/{{ locale }}/community/tech-talks/" class="ml-6">See all tech talks</a>
+    </div>
+    <ul class="grid md:grid--cols-2 lg:grid--cols-4 list-none m-0 p-0">
+      {% for item in tech_talks | getItems(4) %}
+      <li>
+        <div class="relative">
+          <div class="aspect-ratio aspect-ratio--16x9 mb-4 overflow-hidden rounded-2 tint tint--black-2">
+            <img
+              alt=""
+              class="absolute left-0 top-0"
+              loading="lazy"
+              src="{% if item.image %}{{ item.image }}{% else %}/assets/bitmaps/photo-texture-0{{ item.date | getSingleDigitFromDate }}.jpg{% endif %}"
+            />
+            <img alt="" class="absolute center w-12 z-1" src="/assets/svgs/icon-play-white-red.svg" />
+          </div>
+          <a class="block color-navy link-cover h4 mb-2" href="{{ item.url }}" rel="noreferrer noopener" target="_blank">
+            {{ item.title }}
+          </a>
+          {% if item.date | isInFuture %}
+          <div class="h6">
+            <span>{{ 'coming_soon' | i18n }}:</span>
+            <time datetime="{{ item.date }}"> {{ item.date | formatDate(locale) }} </time>
+          </div>
+          {% endif %} {% if item.presenter %}
+          <span class="inline-block p">{{ item.presenter }}</span>
+          {% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,160 @@
+/* ---------- UTILITIES typography ---------- */
+
+/* ---------- alignment ---------- */
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+/* ---------- casing ---------- */
+.text-capitalise {
+  text-transform: capitalize;
+}
+
+.text-lower {
+  text-transform: lowercase;
+}
+
+.text-upper {
+  text-transform: uppercase;
+}
+
+/* ---------- families ---------- */
+.text-brand {
+  font-family: var(--font-family-brand);
+}
+
+.text-default {
+  font-family: var(--font-family-default);
+}
+
+/* ---------- leading ---------- */
+.text-leading-none {
+  line-height: var(--font-leading-none);
+}
+
+.text-leading-tighter {
+  line-height: var(--font-leading-tighter);
+}
+
+.text-leading-tight {
+  line-height: var(--font-leading-tight);
+}
+
+.text-leading-normal {
+  line-height: var(--font-leading-normal);
+}
+
+/* ---------- sizes ---------- */
+.text-xs {
+  font-size: var(--font-size-xs);
+}
+
+.text-sm {
+  font-size: var(--font-size-sm);
+}
+
+.text-md {
+  font-size: var(--font-size-md);
+}
+
+.text-lg {
+  font-size: var(--font-size-lg);
+}
+
+.text-xl {
+  font-size: var(--font-size-xl);
+}
+
+.text-2xl {
+  font-size: var(--font-size-2xl);
+}
+
+.text-3xl {
+  font-size: var(--font-size-3xl);
+}
+
+.text-4xl {
+  font-size: var(--font-size-4xl);
+}
+
+.text-5xl {
+  font-size: var(--font-size-5xl);
+}
+
+.text-6xl {
+  font-size: var(--font-size-6xl);
+}
+
+.text-7xl {
+  font-size: var(--font-size-7xl);
+}
+
+.text-8xl {
+  font-size: var(--font-size-8xl);
+}
+
+.text-9xl {
+  font-size: var(--font-size-9xl);
+}
+
+.text-10xl {
+  font-size: var(--font-size-10xl);
+}
+
+.text-11xl {
+  font-size: var(--font-size-11xl);
+}
+
+.text-12xl {
+  font-size: var(--font-size-12xl);
+}
+
+.text-13xl {
+  font-size: var(--font-size-13xl);
+}
+
+/* ---------- tracking ---------- */
+.text-tracking-tighter {
+  letter-spacing: var(--font-tracking-tighter);
+}
+
+.text-tracking-tight {
+  letter-spacing: var(--font-tracking-tight);
+}
+
+.text-tracking-normal {
+  letter-spacing: var(--font-tracking-normal);
+}
+
+.text-tracking-wide {
+  letter-spacing: var(--font-tracking-wide);
+}
+
+.text-tracking-wider {
+  letter-spacing: var(--font-tracking-wider);
+}
+
+.text-tracking-widest {
+  letter-spacing: var(--font-tracking-widest);
+}
+
+/* ---------- weights ---------- */
+.text-normal {
+  font-weight: var(--font-weight-normal);
+}
+
+.text-semibold {
+  font-weight: var(--font-weight-semibold);
+}

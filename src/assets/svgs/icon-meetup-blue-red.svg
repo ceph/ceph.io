@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+  <title>Meetup</title>
+  <g fill="none" fill-rule="evenodd" stroke-linecap="square" stroke-width="2">
+    <path stroke="#EB1414" d="M29.303 12.697a7.5 7.5 0 00-10.606 0M34.606 7.394c-5.857-5.858-15.355-5.858-21.213 0"/>
+    <path stroke="#0A0C38" d="M3 12c6.627 0 12 5.373 12 12v1.5l3 6.75-3 1.5V36a4.5 4.5 0 01-4.5 4.5H6V45M45 12c-6.627 0-12 5.373-12 12v1.5l-3 6.75 3 1.5V36a4.5 4.5 0 004.5 4.5H42V45"/>
+    <circle cx="24" cy="18.75" r="1" stroke="#EB1414"/>
+  </g>
+</svg>

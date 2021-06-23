@@ -1,0 +1,110 @@
+---
+title: News
+layout: hub-news
+order: 5
+overlaySubMenu: true
+---
+
+{% set articleLocaleTag = locale + '-article' %} {% set articles = collections[articleLocaleTag] | reverse | getItems(4) %}
+
+<h1 class="h1 visually-hidden">{{ title }}</h1>
+
+<section class="pt-0 section section--full">
+  <div class="py-32 lg:py-56 relative">
+    <div class="absolute aspect-ratio aspect-ratio--cover h-full left-0 tint tint--multiply tint--royal-4 top-0 w-full">
+      <img alt="" class="absolute h-full left-0 top-0 w-full" loading="lazy" src="/assets/bitmaps/photo-jelly-fish-02.jpg" />
+    </div>
+    <div class="wrapper">
+      <div class="color-white max-w-224 mx-auto relative text-center z-1">
+        <h2 class="h1">
+          Find out about community events, Ceph technical progress, and industry insights from the Ceph Leadership Team and&nbsp;community.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pt-0 section">
+  <div class="flex flex--gap-6 flex--align-center flex--justify-between flex--wrap mb-12 lg:mb-16">
+    <h2 class="h2 mb-0">Latest articles</h2>
+    <a class="a" href="/{{ locale }}/news/blog/">View blog</a>
+  </div>
+
+  <ul class="grid md:grid--cols-2 lg:grid--cols-4 list-none p-0">
+    {% for item in articles %} {% set articleTag = item.data.tags | getArticleType | i18n %}
+    <li>{% ArticleCard item, {label: articleTag} %}</li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="pt-0 section">
+  <div class="bg-grey-300 border-grey-500 border-px border-solid p-5 rounded-2">
+    <div class="flex flex--align-center flex--gap-6 flex--justify-between flex--wrap">
+      <div>
+        <h2 class="h3">Subscribe to Ceph Announcements</h2>
+        <p class="p">Click here to subscribe to the ceph-announce mailing list.</p>
+        <a class="a" href="/{{ locale }}/community/connect/">Other ways to stay connected</a>
+      </div>
+      <div>
+        <a class="button" href="https://lists.ceph.io/postorius/lists/ceph-announce.ceph.io/">Subscribe to Ceph Announcements</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-grey-300 section section--full">
+  <div class="wrapper">
+    <h2 class="h2 mb-12 lg:mb-16 text-center">Find out more</h2>
+    <ul class="grid lg:grid--cols-3 list-none m-0 p-0">
+      <li class="bg-white border-grey-500 border-px border-solid relative rounded-2">
+        <div class="grid grid--gap-0 md-to-lg:grid--cols-2 overflow-hidden rounded-2">
+          <div class="aspect-ratio aspect-ratio--16x9 aspect-ratio--cover md-to-lg:h-full tint tint--black-2">
+            <img alt="" class="absolute md-to-lg:h-full left-0 top-0" loading="lazy" src="/assets/bitmaps/photo-coral-02.jpg" />
+            <img alt="" class="absolute bottom-0 left-0 m-4 w-12 z-1" src="/assets/svgs/icon-case-study-white-red.svg" />
+          </div>
+          <div class="p-5">
+            <h3 class="h3">Blog</h3>
+            <p class="p">
+              The Ceph blog is regularly updated with progress, releases and important announcements. Everything the Ceph community needs to
+              know to stay up-to-date can be found here.
+            </p>
+            <a class="a link-cover link-cover--shadow" href="/{{ locale }}/news/blog/">View blog</a>
+          </div>
+        </div>
+      </li>
+      <li class="bg-white border-grey-500 border-px border-solid relative rounded-2">
+        <div class="grid grid--gap-0 md-to-lg:grid--cols-2 overflow-hidden rounded-2">
+          <div class="aspect-ratio aspect-ratio--16x9 aspect-ratio--cover md-to-lg:h-full tint tint--black-2">
+            <img alt="" class="absolute md-to-lg:h-full left-0 top-0" loading="lazy" src="/assets/bitmaps/photo-coral-01.jpg" />
+            <img alt="" class="absolute bottom-0 left-0 m-4 w-12 z-1" src="/assets/svgs/icon-events-white-red.svg" />
+          </div>
+          <div class="p-5">
+            <h3 class="h3">Events</h3>
+            <p class="p">
+              From Ceph Days and conferences, to Cephalocon, Ceph aims to bring the community face-to-face where possible. With engaging
+              content, critical discussions and opportunities to network with other community members, Ceph events combine the best of
+              software with excitement and fun.
+            </p>
+            <a class="a link-cover link-cover--shadow" href="/{{ locale }}/community/events/">Ceph events</a>
+          </div>
+        </div>
+      </li>
+      <li class="bg-white border-grey-500 border-px border-solid relative rounded-2">
+        <div class="grid grid--gap-0 md-to-lg:grid--cols-2 overflow-hidden rounded-2">
+          <div class="aspect-ratio aspect-ratio--16x9 aspect-ratio--cover md-to-lg:h-full tint tint--black-2">
+            <img alt="" class="absolute md-to-lg:h-full left-0 top-0" loading="lazy" src="/assets/bitmaps/photo-ink-01.jpg" />
+            <img alt="" class="absolute bottom-0 left-0 m-4 w-12 z-1" src="/assets/svgs/icon-documentation-white-red.svg" />
+          </div>
+          <div class="p-5">
+            <h3 class="h3">Publications</h3>
+            <p class="p">
+              There are a variety of publications directly related to Ceph, its inception and its development. Find out more about the
+              beginnings of Ceph as a Ph.D thesis, and its evolution as a scalable storage system equipped for future data growth.
+            </p>
+            <a class="a link-cover link-cover--shadow" href="/{{ locale }}/news/publications/">Download publications</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>

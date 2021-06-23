@@ -1,0 +1,22 @@
+/* ---------- UTILITIES border ---------- */
+
+.border-px {
+  border-width: var(--size-px);
+}
+
+.border-solid {
+  border-style: solid;
+}
+
+.rounded-2 {
+  border-radius: var(--size-2);
+}
+
+.rounded-t-2 {
+  border-top-left-radius: var(--size-2);
+  border-top-right-radius: var(--size-2);
+}
+
+.rounded-full {
+  border-radius: 100%;
+}
