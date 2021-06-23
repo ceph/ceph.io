@@ -186,3 +186,7 @@ We call shortcodes by name with the Nunjucks block syntax: `{% YouTube %}`. The 
 _Note:_ Shortcode arguments are type-/space-sensitive, so should should include surrounding `'` quote marks.
 
 We now have a single source of truth for the YouTube embed code making it easy to maintain and easy to reuse with a simple, clean interface.
+
+## :warning: Something wrong with ceph.io website?
+
+Report any website issues you experience by email to **Mike Perez** <miperez@redhat.com>, *Ceph Community Manager*. Please include a brief description of the problem and a link that led to it. 
