@@ -19,6 +19,7 @@ Following the original publication on Ceph, the PhD thesis by Sage Weil, a varie
   - November 2017
 
 * [Learning Ceph](https://www.packtpub.com/virtualization-and-cloud/learning-ceph)
+
   - Anthony D'Atri , Vaibhav Bhembre , Karan Singh
   - Packt Publishing
   - October 2017
@@ -143,4 +144,4 @@ This is a partial selection. A complete list of publications for the project is 
 
 ## New work?
 
-With such academic roots, we are always on the lookout for new research on Ceph or related technology. If you have academic work that you would like to share with the community, please contact us: <ceph-community@ceph.com>
+With such academic roots, we are always on the lookout for new research on Ceph or related technology. If you have academic work that you would like to share with the community, please contact us: <community@ceph.io>
