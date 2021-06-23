@@ -164,9 +164,3 @@
   command: nginx -t
   tags:
     - nginx
-
-- name: Create cronjob to automatically update site
-  cron:
-    name: "Update static site"
-    minute: "*/{{ update_frequency }}"
-    job: "cd {{ install_dir }} && git pull && npm install && npm run build && chown -R jenkins-build:jenkins-build {{ install_dir }}"
