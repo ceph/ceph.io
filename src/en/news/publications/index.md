@@ -18,6 +18,11 @@ Following the original publication on Ceph, the PhD thesis by Sage Weil, a varie
   - Vikhyat Umrao, Michael Hackett, Karan Singh
   - November 2017
 
+* [Learning Ceph](https://www.packtpub.com/virtualization-and-cloud/learning-ceph)
+  - Anthony D'Atri , Vaibhav Bhembre , Karan Singh
+  - Packt Publishing
+  - October 2017
+
 * [Ceph 分布式存储实战](https://www.amazon.cn/Ceph-Ceph/dp/B01N4AER2C/ref=tmm_pap_swatch_0)
   - Ceph China Community
   - December 1, 2016
@@ -25,11 +30,6 @@ Following the original publication on Ceph, the PhD thesis by Sage Weil, a varie
 - [Ceph Cookbook](https://www.packtpub.com/virtualization-and-cloud/ceph-cookbook)
   - Karan Singh
   - February 2016
-
-* [Learning Ceph](https://www.packtpub.com/virtualization-and-cloud/learning-ceph)
-  - Karan Singh
-  - Packt Publishing
-  - January 2015
 
 ---
 
@@ -106,7 +106,7 @@ Following the original publication on Ceph, the PhD thesis by Sage Weil, a varie
   - Proceedings of the 13th International Symposium on Modeling, Analysis, and Simulation of Computer and Telecommunication Systems (MASCOTS ’05)
   - September 2005
 
-- [mpact of Failure on Interconnection Networks in Large Storage Systems](http://www.ssrc.ucsc.edu/Papers/xin-mss05.pdf)
+- [Impact of Failure on Interconnection Networks in Large Storage Systems](http://www.ssrc.ucsc.edu/Papers/xin-mss05.pdf)
   - Qin Xin, Ethan L. Miller, Thomas Schwarz, Darrell D. E. Long
   - Proceedings of the 22nd IEEE / 13th NASA Goddard Conference on Mass Storage Systems and Technologies
   - April 2005

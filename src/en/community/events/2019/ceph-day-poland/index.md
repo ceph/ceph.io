@@ -17,7 +17,7 @@ sponsors:
         website: "https://www.ovh.co.uk/"
       - name: RedHat
         logo: "/assets/bitmaps/logo-redhat.png"
-        website: "https://redhat.co"
+        website: "https://redhat.com"
       - name: SoftIron
         logo: "/assets/bitmaps/logo-softiron.png"
         website: "https://softiron.com"

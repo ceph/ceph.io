@@ -14,7 +14,7 @@ sponsors:
     list:
       - name: RedHat
         logo: "/assets/bitmaps/logo-redhat.png"
-        website: "https://redhat.co"
+        website: "https://redhat.com"
       - name: Intel Optane DC
         logo: "/assets/bitmaps/logo-intel-optane.png"
         website: "https://www.intel.com/content/www/us/en/architecture-and-technology/intel-optane-technology.html"
@@ -47,7 +47,7 @@ sponsors:
     list:
       - name: Ambedded Technology Co. Ltd
         logo: "/assets/bitmaps/logo-ambedded.png"
-        website: "https://www.ambedded.com/"
+        website: "https://www.ambedded.com.tw/"
       - name: Upbound
         logo: "/assets/bitmaps/logo-upbound.png"
         website: "https://upbound.io/"
