@@ -46,7 +46,14 @@
 
     {# Stylesheet #}
     <link rel="stylesheet" href="/css/main.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    {# async Google Fonts #}
+    <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+
+    {# no-JS fallback Google Fonts #}
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+    </noscript>
 
     {# Favicons #}
     <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">
