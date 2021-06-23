@@ -57,10 +57,14 @@ layout: navigation
             <ul class="grid grid--cols-2 grid--gap-7 grid--align-center list-none mb-4 mt-0 p-0 w-3-4">
               {% for item in item.list %}
                 <li>
-                  <a href="{{ item.website }}" target="_blank" rel="noreferrer noopener">
+                  {% if item.website %}
+                    <a href="{{ item.website }}" target="_blank" rel="noreferrer noopener">
+                  {% endif %}
                     <img src="{{ item.logo }}" alt="{{ item.name }}" />
                     <span class="visually-hidden">{{ item.name }}</span>
-                  </a>
+                  {% if item.website %}
+                    </a>
+                  {% endif %}
                 </li>
               {% endfor %}
             </ul>
