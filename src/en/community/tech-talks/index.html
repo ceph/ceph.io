@@ -42,13 +42,9 @@ order: 2
         </li>
       </ul>
       <h2 class="h2">Join the stream</h2>
-      <p class="mb-0 p">
-        Or submit a request to host one of your own by emailing foundation AT ceph DOT io
-      </p>
+      <p class="mb-0 p">Or submit a request to host one of your own by emailing foundation AT ceph DOT io</p>
     </div>
-    <div>
-      {% YouTube 'vQF17UBU4RE', 'Ceph Tech Talk: Karan Singh - Scale Testing Ceph with 10Billion+ Objects 2020-10-01' %}
-    </div>
+    <div>{% YouTube 'vQF17UBU4RE', 'Ceph Tech Talk: Karan Singh - Scale Testing Ceph with 10Billion+ Objects 2020-10-01' %}</div>
   </div>
 </section>
 
@@ -67,10 +63,9 @@ order: 2
             <td>
               {% if item.url %}
               <a class="a" href="{{ item.url }}" target="_blank" rel="noreferrer noopener">{% endif %}{{ item.title }}{% if item.url %}</a
-              >{% endif %} {% if item.presenter %}<span class="inline-block text-lower">{{ 'with' | i18n }} {{ item.presenter }}</span>{%
-              endif %} {% if item.slides %}|
-              <a class="a" href="{{ item.slides }}" target="_blank" rel="noreferrer noopener">{{ 'slides' | i18n }}</a>{% endif %}{% if
-              item.date | isInFuture %}| <strong>{{ 'upcoming' | i18n }}</strong>{% endif %}
+              >{% endif %} {% if item.presenter %}<span class="text-lower">{{ 'with' | i18n }}</span> {{ item.presenter }}{% endif %} {% if
+              item.slides %}| <a class="a" href="{{ item.slides }}" target="_blank" rel="noreferrer noopener">{{ 'slides' | i18n }}</a>{%
+              endif %}{% if item.date | isInFuture %}| <strong>{{ 'upcoming' | i18n }}</strong>{% endif %}
             </td>
           </tr>
           {% endfor %}
