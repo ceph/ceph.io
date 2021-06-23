@@ -3,6 +3,6 @@
   "dir": "ltr",
   "locale": "en",
   "meta": {
-    "description": "Ceph is a unified, distributed storage system designed for excellent performance, reliability and scalability."
+    "description": "Ceph is an open source distributed storage system designed to evolve with data."
   }
 }

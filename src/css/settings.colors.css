@@ -25,7 +25,7 @@
   --color-grey-h: 210;
 
   --color-grey-300-s: 40%;
-  --color-grey-300-l: 94%;
+  --color-grey-300-l: 96%;
   --color-grey-300-hsl: var(--color-grey-h), var(--color-grey-300-s), var(--color-grey-300-l);
   --color-grey-300: hsl(var(--color-grey-300-hsl));
 
@@ -60,7 +60,7 @@
   --color-red-400-hsl: var(--color-red-h), var(--color-red-s), var(--color-red-400-l);
   --color-red-400: hsl(var(--color-red-400-hsl));
 
-  --color-red-500-l: 50%;
+  --color-red-500-l: 47%;
   --color-red-500-hsl: var(--color-red-h), var(--color-red-s), var(--color-red-500-l);
   --color-red-500: hsl(var(--color-red-500-hsl));
 
