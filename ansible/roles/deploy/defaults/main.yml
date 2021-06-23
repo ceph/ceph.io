@@ -1,10 +1,10 @@
 ---
-fqdn: beta.ceph.io
+fqdn: ceph.io
 install_dir: /opt/www
-branch: master
+branch: main
 update_frequency: 5
-## TODO: Add ceph.io (root domain) to this list
 letsencrypt_domains:
+  - ceph.io
   - "*.ceph.io"
 letsencrypt_email: ceph-infra@redhat.com
 packages:

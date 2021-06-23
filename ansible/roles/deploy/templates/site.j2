@@ -8,19 +8,18 @@
 #    ~ja jp;
 #}
 
-## Default beta.ceph.io block
+## Default www.ceph.io (non-wildcard) block
 server {
   listen 80;
   listen [::]:80;
-  ## TODO: Change to ceph.io or {{ fqdn }} when we switch from beta.ceph.io to ceph.io
-  server_name beta.ceph.io;
+  server_name ceph.io www.ceph.io ceph.com www.ceph.com;
   return 301 https://$host$request_uri;
 }
 
 server {
   listen 443 ssl;
   listen [::]:443 ssl;
-  server_name beta.ceph.io;
+  server_name ceph.io www.ceph.io ceph.com www.ceph.com;
 
   root {{ install_dir }}/{{ branch }};
   index index.html;
@@ -50,7 +49,6 @@ server {
       rewrite ^ /en/404.html last;
   }
 
-  ## TODO: Change ceph.io to {{ fqdn }}?
   ssl_certificate /etc/letsencrypt/live/ceph.io/fullchain.pem;
   ssl_certificate_key /etc/letsencrypt/live/ceph.io/privkey.pem;
   include /etc/letsencrypt/options-ssl-nginx.conf;
@@ -124,7 +122,6 @@ server {
       rewrite ^ /en/404.html last;
   }
 
-  ## TODO: Change ceph.io to {{ fqdn }}?
   ssl_certificate /etc/letsencrypt/live/ceph.io/fullchain.pem;
   ssl_certificate_key /etc/letsencrypt/live/ceph.io/privkey.pem;
   include /etc/letsencrypt/options-ssl-nginx.conf;
