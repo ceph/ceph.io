@@ -45,6 +45,7 @@
     dest: "{{ install_dir }}/{{ branch }}.tmp"
     force: yes
     update: yes
+  become_user: jenkins-build
   tags:
     - npm
 
@@ -52,6 +53,7 @@
   command:
     cmd: "git checkout {{ branch }}"
     chdir: "{{ install_dir }}/{{ branch }}.tmp"
+  become_user: jenkins-build
   tags:
     - npm
 
