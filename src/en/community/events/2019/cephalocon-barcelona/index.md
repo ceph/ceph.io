@@ -47,7 +47,6 @@ sponsors:
     list:
       - name: Ambedded Technology Co. Ltd
         logo: "/assets/bitmaps/logo-ambedded.png"
-        website: "https://www.ambedded.com/"
       - name: Upbound
         logo: "/assets/bitmaps/logo-upbound.png"
         website: "https://upbound.io/"
