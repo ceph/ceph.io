@@ -49,8 +49,8 @@ server {
       rewrite ^ /en/404.html last;
   }
 
-  ssl_certificate /etc/letsencrypt/live/ceph.io/fullchain.pem;
-  ssl_certificate_key /etc/letsencrypt/live/ceph.io/privkey.pem;
+  ssl_certificate /etc/letsencrypt/live/ceph.io-0001/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/ceph.io-0001/privkey.pem;
   include /etc/letsencrypt/options-ssl-nginx.conf;
   ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
   add_header Strict-Transport-Security "max-age=31536000";
