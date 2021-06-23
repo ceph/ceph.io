@@ -15,6 +15,7 @@
     </script>
 
     <title>Ceph.io — {{ title }}</title>
+    <meta name="description" content="{{ meta.description }}" />
 
     {% for lang in locales -%}
 
@@ -25,7 +26,7 @@
         - its translationKey matches the current item translationKey
         - its locale matches the code of the language we are looping through #}
         {%- if item.data.translationKey == translationKey and item.data.locale == lang.code -%}
-          <link rel="alternate" hreflang="{{ item.data.locale }}" href="{{ item.url }}"/>
+          <link rel="alternate" hreflang="{{ item.data.locale }}" href="{{ site.url }}{{ item.url }}"/>
         {%- endif -%}
 
       {%- endfor -%}
