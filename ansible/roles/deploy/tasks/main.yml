@@ -71,9 +71,15 @@
   tags:
     - npm
 
+- set_fact:
+    npm_run_build_env: production
+  when: branch == 'main'
+  tags:
+    - npm
+
 - name: Compile site
   command:
-    cmd: npm run build
+    cmd: "npm run build:{{ npm_run_build_env|default('development') }}"
     chdir: "{{ install_dir }}/{{ branch }}.tmp"
   become_user: jenkins-build
   tags:
