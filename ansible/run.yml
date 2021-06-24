@@ -1,5 +1,7 @@
 ---
-- hosts: beta.ceph.io
+- hosts:
+    - ceph.io
+    - www.ceph.io
   roles:
     - deploy
   become: true
