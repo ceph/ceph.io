@@ -446,7 +446,7 @@ You must first upgrade to Nautilus (14.2.z) or Octopus (15.2.z) before upgrading
 
 Sage Weil, Adam C. Emerson, Jason Dillaman, Kefu Chai, Tiago Melo, Yingxin Cheng, Samuel Just, Venky Shankar, Patrick Donnelly, Mahati Chamarthy, Lucian Petrut, Or Ozeri, Yuval Lifshitz, My  
 kola Golub, Ronen Friedman, Daniel Gryniewicz, Yan, Zheng, Courtney Caldwell, Myoungwon Oh, Igor Fedotov, pcuzner, Xiubo Li, Kiefer Chang, Kotresh HR, Jan Fajerski, Greg Farnum, Rishabh Dav  
-e, Volker Theile, Alfonso Martínez, Varsha Rao, Casey Bodley, Adam Kupczyk, Anthony D Atri, Yuan Lu, Milind Changire, Simon Gao, Pritha Srivastava, Abhishek Lekshmanan, Zac Dover, Ramana Ra  
+e, Volker Theile, Alfonso Martínez, Varsha Rao, Casey Bodley, Adam Kupczyk, Anthony D'Atri, Yuan Lu, Milind Changire, Simon Gao, Pritha Srivastava, Abhishek Lekshmanan, Zac Dover, Ramana Ra  
 ja, Michael Fritch, Matt Benjamin, Tatjana Dehler, Stephan Müller, Đặng Minh Dũng, João Eduardo Luís, Shyamsundar R, Marcus Watts, Aashish Sharma, Xiaoyan Li, Abutalib Aghayev, J. Eric Ivan  
 cich, Enno Gotthold, Robert Sander, Lenz Grimmer, Daniel-Pivonka, David Zafman, chunmei-liu, Xuehan Xu, Ishan Rai, Neha Ojha, David Galloway, Nathan Cutler, Adam King, Patrick Seidensal, Deepika Upadhyay,  
 Nizamudeen A, Sridhar Seshasayee, Matthew Oliver, Christopher Odom, Sebastian Krah, Juan Miguel Olmo Martínez, Ernesto Puerta, Brad Hubbard, Prateek Sachan, Kalpesh Pandya, Or Friedmann, Ka  
@@ -458,7 +458,7 @@ Yang, Ulrich Weigand, Andrew Schoen, Alexandre Bruyelles, Avan Thakkar, Willem J
 py, Tyler, Boris Ranto, Chunsong Feng, Amrita, Ponnuvel Palaniyappan, Thomas Bechtold, fabrizio8, Wong Hoi Sing Edison, Vikhyat Umrao, Prashant D, Chencan, Ali Maredia, wangyunqing, mhacket  
 t, Yanhu Cao, jhonxue, Shengming Zhang, cao.leilc, Paul Emmerich, Jean henyxia Wasilewski, Yang Honggang, Kaleb S. Keithley, Jacek Suchenia, ghyer, Seena Fallah, Rachana Patel, Kristoffer G  
 rönlund, JiangYu, wanghongxu, Jianshen Liu, Yaarit Hatuka, Xie Xingguo, Ken Dreyer, Qiaowei Ren, Liu Lan, Michael Wodniok, Aditya Srivastava, Gerald Yang, Cory Snyder, Franck Bui, Duncan Be  
-llamy, Niels de Vos, Jonas Jelten, Hualong Feng, Andreas Unterkircher, Robin H. Johnson, Dimitri Savineau, Shon Paz, Nizamudeen A, Liao Pingfang, ianwatsonrh, Bryan Stillwell, Anthony D Atr  
+llamy, Niels de Vos, Jonas Jelten, Hualong Feng, Andreas Unterkircher, Robin H. Johnson, Dimitri Savineau, Shon Paz, Nizamudeen A, Liao Pingfang, ianwatsonrh, Bryan Stillwell, Anthony D'Atri  
 i, Melissa Li, Zengran Zhang, wanghongxu, hzwuhongsong, Haomai Wang, Dehao Shang, 胡玮文, xuxuehan xuxuehan, Soumya Koduri, Roman Penyaev, Rafał Wądołowski, David Disseldorp, caolei, weixin  
 wei, Oluf Lorenzen, Mauricio Faria de Oliveira, John Wyatt, John Fulton, Jasper Spaans, Jakub Wilk, Ilsoo Byun, Goutham Pacha Ravi, Zeng JH, Yehu, Wido den Hollander, Vladimir Bashkirtsev,  
 Tianshan Qu, Nick Janus, John Law, Neal Gompa, Liu Shi, Snow Si, Kinga Karczewska, Kevin Meijer, yuliyang\_yewu, Vikhyat Umrao, Matthew Vernon, James Page, Gaurav Sitlani, YuanXin, sepia-liu  
