@@ -2,15 +2,13 @@ const site = require('../../_data/site');
 const { defaultLocale } = site;
 
 module.exports = (date, locale = defaultLocale) => {
-  // May need to consider `timezone` option (defaults to UTC)
+  // Dates should be set to UTC to avoid off-by-one issues
+  // Docs: https://www.11ty.dev/docs/dates/#dates-off-by-one-day
+  const dateUTC = new Date(date).toUTCString();
+
   return new Intl.DateTimeFormat(locale, {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
-    // hour: 'numeric',
-    // minute: 'numeric'
-    // hour12: false,
-    // timeZone: 'UTC',
-    // timeZoneName: 'short'
-  }).format(new Date(date));
+  }).format(new Date(dateUTC));
 };
