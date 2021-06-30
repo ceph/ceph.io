@@ -10,5 +10,6 @@ module.exports = (date, locale = defaultLocale) => {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
+    timezone: 'UTC',
   }).format(new Date(dateUTC));
 };
