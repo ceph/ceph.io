@@ -12,5 +12,5 @@ module.exports = (date, locale = defaultLocale) => {
     // hour12: false,
     // timeZone: 'UTC',
     // timeZoneName: 'short'
-  }).format(new Date(date));
+  }).format(new Date(date).toUTCString());
 };
