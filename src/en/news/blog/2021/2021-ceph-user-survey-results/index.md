@@ -10,8 +10,8 @@ The purpose of this survey is to better understand how Ceph technologies have be
 
 You can find both the report and raw data below.
 
-- [2021 Ceph User Survey Results](https://ceph.io/wp-content/uploads/2021/05/Ceph-User-Survey-2021.pdf) 
-- [2021 Ceph User Survey Raw Data](https://ceph.io/wp-content/uploads/2021/05/Ceph-User-Survey-2021-raw-results.csv) 
+- [2021 Ceph User Survey Results](attachments/Ceph-User-Survey-2021.pdf) 
+- [2021 Ceph User Survey Raw Data](attachments/Ceph-User-Survey-2021-raw-results.csv) 
 
 Because this is the third year, we can provide some insight into how usage patterns and priorities of those who have participated in the survey have changed over time. Here are some of the highlights that I and others in the [User Survey Working Group](https://tracker.ceph.com/projects/ceph/wiki/User_Survey_Working_Group) found insightful.
 
@@ -23,7 +23,7 @@ The results reveal that the value of open source and scalability have consistent
 
 ## Top 3 reasons why users choose Ceph
 
-[![](images/image.png)](https://ceph.io/wp-content/uploads/2021/05/image.png)
+![](images/image.png)
 
 # Who uses Ceph?
 
@@ -53,7 +53,7 @@ For the last two years, the survey has included the classic [net promoter score]
 
 After recoding the qualitative answers into categories for quantification (which is more of an art than a science, but it’s useful), the heat map for responses looks like this. 
 
-[![](images/image-1.png)](https://ceph.io/wp-content/uploads/2021/05/image-1.png)
+![](images/image-1.png)
 
 Within the context of this lens, it appears that 'complexity' overwhelmingly drags down user satisfaction, even appearing within the responses of some promoters. Would making Ceph easier to use and understand turn those detractors into promoters? If you were one of those, let us know in the comments! 
 
