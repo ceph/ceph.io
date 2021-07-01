@@ -6,7 +6,8 @@ module.exports = (date, locale = defaultLocale) => {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
+    // Dates should be converted to UTC to avoid off-by-one issues
+    // See docs: https://www.11ty.dev/docs/dates/#dates-off-by-one-day
     timeZone: 'UTC',
   }).format(new Date(new Date(date).toUTCString()));
-  return format;
 };
