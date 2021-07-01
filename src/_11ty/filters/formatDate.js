@@ -2,15 +2,12 @@ const site = require('../../_data/site');
 const { defaultLocale } = site;
 
 module.exports = (date, locale = defaultLocale) => {
-  // May need to consider `timezone` option (defaults to UTC)
-  return new Intl.DateTimeFormat(locale, {
+  const format = new Intl.DateTimeFormat(locale, {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
-    // hour: 'numeric',
-    // minute: 'numeric'
-    // hour12: false,
-    // timeZone: 'UTC',
-    // timeZoneName: 'short'
+    timeZone: 'UTC',
   }).format(new Date(new Date(date).toUTCString()));
+  console.log(date, format);
+  return format;
 };
