@@ -27,7 +27,7 @@ tags:
 
 ```yaml
 title: "Storage or: How I Learned to Stop Worrying and Love Ceph"
-image: "image.jpg"
+image: "images/image.jpg"
 ```
 
 ## Blog post structure
