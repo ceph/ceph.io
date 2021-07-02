@@ -7,7 +7,7 @@ const truncate = require(`${filtersDir}/truncate.js`);
 module.exports = ({ data = {}, templateContent, url } = {}, { label } = {}) => {
   const { author = '', date, image, title = '', locale = '' } = data;
   const imageSrc = image
-    ? image
+    ? `${url}images/${image}`
     : `/assets/bitmaps/photo-texture-0${getSingleDigitFromDate(date)}.jpg`;
   const captionStrip = cleanCardContent(templateContent);
   const caption = truncate(captionStrip);

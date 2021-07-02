@@ -14,7 +14,7 @@ const srcDir = 'src';
 const distDir = 'dist';
 
 (async () => {
-  const files = await imagemin([srcDir + '/**/*.{jpg,png,svg,gif}'], {
+  const files = await imagemin([srcDir + '/**/*.{jpg,jpeg,png,svg,gif}'], {
     plugins: [
       imageminMozjpeg({ quality: 75 }),
       imageminPngquant({

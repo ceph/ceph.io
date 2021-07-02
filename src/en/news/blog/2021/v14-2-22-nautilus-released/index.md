@@ -2,9 +2,10 @@
 title: "v14.2.22 Nautilus released"
 date: "2021-06-30"
 author: "dgalloway"
+image: image.jpeg
 ---
 
-This is the 22nd and likely the last backport release in the Nautilus series.  Ultimately, we recommend all users upgrade to newer Ceph releases.
+This is the 22nd and likely the last backport release in the Nautilus series. Ultimately, we recommend all users upgrade to newer Ceph releases.
 
 ## Notable Changes
 
@@ -36,11 +37,8 @@ This is the 22nd and likely the last backport release in the Nautilus series.  U
   many 'osd.X reported immediately failed by osd.Y' messages, and confuse tools.
 
 - A long-standing bug that prevented 32-bit and 64-bit client/server
-  interoperability under msgr v2 has been fixed.  In particular, mixing armv7l
+  interoperability under msgr v2 has been fixed. In particular, mixing armv7l
   (armhf) and x86_64 or aarch64 servers in the same cluster now works.
-
-  
-  
 
 ## Changelog
 
@@ -184,7 +182,7 @@ This is the 22nd and likely the last backport release in the Nautilus series.  U
 
 - mon/ConfigMap: fix stray option leak ([pr#40299](https://github.com/ceph/ceph/pull/40299), Sage Weil)
 
-- mon/MonClient: reset authenticate_err in _reopen_session() ([pr#41016](https://github.com/ceph/ceph/pull/41016), Ilya Dryomov)
+- mon/MonClient: reset authenticate_err in \_reopen_session() ([pr#41016](https://github.com/ceph/ceph/pull/41016), Ilya Dryomov)
 
 - mon/MonClient: tolerate a rotating key that is slightly out of date ([pr#41448](https://github.com/ceph/ceph/pull/41448), Ilya Dryomov)
 
@@ -204,11 +202,11 @@ This is the 22nd and likely the last backport release in the Nautilus series.  U
 
 - os/FileStore: fix to handle readdir error correctly ([pr#41238](https://github.com/ceph/ceph/pull/41238), Misono Tomohiro)
 
-- os/bluestore/BlueFS: do not _flush_range deleted files ([pr#40752](https://github.com/ceph/ceph/pull/40752), weixinwei)
+- os/bluestore/BlueFS: do not \_flush_range deleted files ([pr#40752](https://github.com/ceph/ceph/pull/40752), weixinwei)
 
 - os/bluestore/BlueFS: use iterator_impl::copy instead of bufferlist::c_str() to avoid bufferlist rebuild ([pr#39883](https://github.com/ceph/ceph/pull/39883), weixinwei)
 
-- os/bluestore: be more verbose in _open_super_meta by default ([pr#41060](https://github.com/ceph/ceph/pull/41060), Igor Fedotov)
+- os/bluestore: be more verbose in \_open_super_meta by default ([pr#41060](https://github.com/ceph/ceph/pull/41060), Igor Fedotov)
 
 - os/bluestore: do not count pinned entries as trimmed ones ([pr#41173](https://github.com/ceph/ceph/pull/41173), Igor Fedotov)
 
@@ -216,7 +214,7 @@ This is the 22nd and likely the last backport release in the Nautilus series.  U
 
 - os/bluestore: introduce multithireading sync for bluestore's repairer ([pr#41749](https://github.com/ceph/ceph/pull/41749), Igor Fedotov)
 
-- os/bluestore: tolerate zero length for allocators' init\_[add/rm]_free() ([pr#41750](https://github.com/ceph/ceph/pull/41750), Igor Fedotov)
+- os/bluestore: tolerate zero length for allocators' init\_[add/rm]\_free() ([pr#41750](https://github.com/ceph/ceph/pull/41750), Igor Fedotov)
 
 - osd/PG.cc: handle removal of pgmeta object ([pr#41682](https://github.com/ceph/ceph/pull/41682), Neha Ojha)
 
