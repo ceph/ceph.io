@@ -1,6 +1,6 @@
 ---
 title: Minnesota Supercomputing Institute achieves efficient research storage
-image: "/assets/bitmaps/photo-coral-08.jpg"
+image: "images/photo-coral.jpg"
 sponsor:
   name: SoftIron
   logo: "/assets/bitmaps/logo-softiron.png"

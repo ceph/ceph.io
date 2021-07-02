@@ -1,6 +1,6 @@
 ---
 title: Sausage Cloud delivers competitive IaaS at the edge
-image: "/assets/bitmaps/photo-coral-07.jpg"
+image: "images/photo-coral.jpg"
 sponsor:
   name: SoftIron
   logo: "/assets/bitmaps/logo-softiron.png"

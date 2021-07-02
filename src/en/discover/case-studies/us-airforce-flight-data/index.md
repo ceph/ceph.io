@@ -1,6 +1,6 @@
 ---
 title: "The United States Air Force chooses Ceph for storing critical flight data"
-image: "/assets/bitmaps/photo-jellyfish-02.jpg"
+image: "images/photo-jellyfish.jpg"
 sponsor:
   name: SoftIron
   logo: "/assets/bitmaps/logo-softiron.png"

@@ -1,6 +1,6 @@
 ---
 title: Virtualizing HPC at University of Kentucky
-image: "/assets/bitmaps/photo-coral-09.jpg"
+image: "images/photo-coral.jpg"
 sponsor:
   name: SoftIron
   logo: "/assets/bitmaps/logo-softiron.png"

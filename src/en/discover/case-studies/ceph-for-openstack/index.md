@@ -1,6 +1,6 @@
 ---
 title: "Ceph done right for OpenStack"
-image: "/assets/bitmaps/illustration-openstack-softiron.png"
+image: "images/illustration-openstack-softiron.png"
 sponsor:
   name: SoftIron
   logo: "/assets/bitmaps/logo-softiron.png"
@@ -10,7 +10,7 @@ tags:
   - technology
 ---
 
-## The rise of OpenStack 
+## The rise of OpenStack
 
 For years, the desire to standardize on an open platform and adopt uniform APIs was the primary driver behind OpenStack’s rise across public and private clouds. Deployments continue to grow rapidly; with more and larger clouds, deep adoption throughout users’ cloud infrastructure and maturing technology as clouds move into production.
 

@@ -1,6 +1,6 @@
 <div class="relative">
   <div class="aspect-ratio aspect-ratio--16x9 aspect-ratio--cover mb-4">
-    <img alt="" class="absolute h-full left-0 rounded-2 top-0 w-full" loading="lazy" src="{% if item.data.image %}{{ item.data.image }}{% else %}/assets/bitmaps/photo-water-02.jpg{% endif %}" />
+    <img alt="" class="absolute h-full left-0 rounded-2 top-0 w-full" loading="lazy" src="{% if item.data.image %}{{ item.url }}{{ item.data.image }}{% else %}/assets/bitmaps/photo-water-02.jpg{% endif %}" />
   </div>
   <a class="a link-cover" href="{{ item.url }}">{{ item.data.title }}</a>
 </div>

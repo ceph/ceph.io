@@ -7,16 +7,15 @@
 ```yaml
 ---
 title: Case study title
-image: "/assets/image.jpg"
+image: "images/image.jpg"
 sponsor:
   name: name
-  logo: "/assets/logo.png"
+  logo: "/assets/bitmaps/logo.png"
   website: "https://www.website.com"
 tags:
   - taxonomy
   - taxonomy
 ---
-
 ```
 
 - `title` (String) — Title text for the case study and used as the `<title>` for the page. Also appears in the case study card found on listing pages.\*
@@ -39,8 +38,18 @@ image: "https://via.placeholder.com/50"
 
 The content of the case studies can be found in the `src/{locale}/discover/case-studies/case-study` directories. Any folder/page created within these directories will generate a web page in the site.
 
+## Case study images
+
+All image assets related a case study need to be co-located with that case study. First you will need to create an `images` folder within the specific case study folder `src/{locale}/discover/case-studies/case-study/images`, you can then place all image assets within this folder.
+
+## Case study logos
+
+Logo assets are stored in a centralized location `src/assets/bitmaps` which helps us maintain a single source of truth for them. They maybe used on multiple pages and it prevents the need to duplicate them for each page. Notice when adding logos to the frontmatter they are root relative `/assets/bitmaps/logo.png`.
+
 ### Folders and file naming
 
-| Input File                                              | Output URL                                 |
-| ------------------------------------------------------- | ------------------------------------------ |
-| /src/{locale}/discover/case-studies/case-study/index.md | /{locale}/discover/case-studies/case-study |
+| Input File                                                      | Output URL                                                  |
+| --------------------------------------------------------------- | ----------------------------------------------------------- |
+| /src/{locale}/discover/case-studies/case-study/index.md         | /{locale}/discover/case-studies/case-study                  |
+| --------------------------------------------------------------- | ----------------------------------------------------------- |
+| /src/{locale}/discover/case-studies/case-study/images/image.jpg | /{locale}/discover/case-studies/case-study/images/image.jpg |
