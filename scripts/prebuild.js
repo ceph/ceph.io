@@ -20,7 +20,7 @@ module.exports = (async () => {
         // Any file types that should be duplicated to language sites.
         // Important to copy .json and .js file types, as these will often
         // contain the 11ty data required to set locales/collections.
-        '**/*.{html,md,njk,json,js,jpg,jpeg,png,svg}',
+        '**/*.{html,md,njk,json,js,jpg,jpeg,png,svg,gif}',
         path.join(process.cwd(), `src/${code}`),
         {
           cwd: path.join(process.cwd(), `src/${defaultLocale}`),

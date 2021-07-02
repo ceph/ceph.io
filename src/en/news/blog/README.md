@@ -9,12 +9,11 @@
 title: Blog post title
 date: yyyy-mm-dd
 author: Blog post author name
-image: "/assets/image.jpg"
+image: "image.jpg"
 tags:
   - taxonomy
   - taxonomy
 ---
-
 ```
 
 - `title` (String) — Title text for the blog post and used as the `<title>` for the page. Also appears in the blog post card found on listing pages.\*
@@ -28,15 +27,21 @@ tags:
 
 ```yaml
 title: "Storage or: How I Learned to Stop Worrying and Love Ceph"
-image: "https://via.placeholder.com/50"
+image: "images/image.jpg"
 ```
 
 ## Blog post structure
 
 The content of the blog posts can be found in the `src/{locale}/news/blog/yyyy/blog-post` directories. Any folder/page created within these directories will generate a web page in the site.
 
+## Blog post images
+
+All image assets related a blog post need to be co-located with that blog post. First you will need to create an `images` folder within the specific blog post folder `src/{locale}/news/blog/yyyy/blog-post/images`, you can then place all image assets within this folder.
+
 ### Folders and file naming
 
-| Input File                                      | Output URL                         |
-| ----------------------------------------------- | ---------------------------------- |
-| /src/{locale}/news/blog/yyyy/blog-post/index.md | /{locale}/news/blog/yyyy/blog-post |
+| Input File                                              | Output URL                                          |
+| ------------------------------------------------------- | --------------------------------------------------- |
+| /src/{locale}/news/blog/yyyy/blog-post/index.md         | /{locale}/news/blog/yyyy/blog-post                  |
+| ------------------------------------------------------- | --------------------------------------------------- |
+| /src/{locale}/news/blog/yyyy/blog-post/images/image.jpg | /{locale}/news/blog/yyyy/blog-post/images/image.jpg |

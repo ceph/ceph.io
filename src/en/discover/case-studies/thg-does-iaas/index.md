@@ -1,6 +1,6 @@
 ---
 title: THG unlocks infinite scalability, resilience and efficiency with Ceph
-image: "/assets/bitmaps/photo-jellyfish-01.jpg"
+image: "images/photo-jellyfish.jpg"
 sponsor:
   name: SoftIron
   logo: "/assets/bitmaps/logo-softiron.png"

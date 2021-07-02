@@ -1,6 +1,6 @@
 ---
 title: "Ceph@home: the domestication of a wild cephalopod"
-image: "/assets/bitmaps/photo-alexandre.png"
+image: "images/photo-alexandre.png"
 tags:
   - information
 ---
