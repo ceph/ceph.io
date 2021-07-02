@@ -2,6 +2,7 @@ const imagemin = require('imagemin');
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const imageminPngquant = require('imagemin-pngquant');
 const imageminSvgo = require('imagemin-svgo');
+const imageminGifsicle = require('imagemin-gifsicle');
 
 const util = require('util');
 const path = require('path');
@@ -13,7 +14,7 @@ const srcDir = 'src';
 const distDir = 'dist';
 
 (async () => {
-  const files = await imagemin([srcDir + '/**/*.{jpg,png,svg}'], {
+  const files = await imagemin([srcDir + '/**/*.{jpg,png,svg,gif}'], {
     plugins: [
       imageminMozjpeg({ quality: 75 }),
       imageminPngquant({
@@ -21,6 +22,10 @@ const distDir = 'dist';
       }),
       imageminSvgo({
         plugins: [{ removeViewBox: false }],
+      }),
+      imageminGifsicle({
+        colors: 96,
+        optimizationLevel: 2,
       }),
     ],
   });
