@@ -20,8 +20,5 @@ module.exports = (date, end, locale = defaultLocale) => {
     // Dates should be converted to UTC to avoid off-by-one issues
     // See docs: https://www.11ty.dev/docs/dates/#dates-off-by-one-day
     timeZone: 'UTC',
-  }).formatRange(
-    new Date(new Date(date).toUTCString()),
-    new Date(new Date(endDate).toUTCString())
-  );
+  }).formatRange(new Date(date), new Date(endDate));
 };
