@@ -2,7 +2,7 @@
 title: "Introducing ceph-users"
 date: "2013-02-08"
 author: "rturk"
-tags: 
+tags:
 ---
 
 ### Hi!
@@ -17,11 +17,11 @@ You may have noticed that things are busier in ceph-devel lately, and the metric
 
 In short, the community has become active enough to need a dedicated venue for user/operator discussion. While ceph-devel is still the right place to discuss the development of Ceph, those who use Ceph have a dedicated list of their own.
 
-Here are all the vitals for our new list, ceph-users. If you are a user of Ceph (or want to help those who are), I encourage you to subscribe! Information for the other lists (ceph-devel and ceph-commit) can always be found at our [List and IRC](http://ceph.com/resources/mailing-list-irc/) page.  
+Here are all the vitals for our new list, ceph-users. If you are a user of Ceph (or want to help those who are), I encourage you to subscribe! Information for the other lists (ceph-devel and ceph-commit) can always be found at our [List and IRC](http://ceph.com/resources/mailing-list-irc/) page.
 
-| List | Address | Resources |  |
-| --- | --- | --- | --- |
-| ceph-users | [ceph-users@ceph.com](mailto:ceph-users@ceph.com) | [listinfo](http://lists.ceph.com/listinfo.cgi/ceph-users-ceph.com/) | [archives](http://lists.ceph.com/pipermail/ceph-users-ceph.com/) | [subscribe](mailto:ceph-users-join@lists.ceph.com) |
+| List       | Address                                         | Resources                                                             |                                                                       |
+| ---------- | ----------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| ceph-users | [ceph-users@ceph.io](mailto:ceph-users@ceph.io) | [listinfo](https://lists.ceph.io/postorius/lists/ceph-users.ceph.io/) | [archives](https://lists.ceph.io/hyperkitty/list/ceph-users@ceph.io/) | [subscribe](https://lists.ceph.io/postorius/lists/ceph-users.ceph.io/) |
 
 ### Ceph-devel has become a busy place
 
