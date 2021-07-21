@@ -6,7 +6,7 @@ author: "TheAnalyst"
 
 We're glad to announce the first release of Nautilus v14.2.0 stable series. There are a lot of changes across components from the previous Ceph release, and we advise everyone to go through the release and upgrade notes carefully.
 
-## [![](images/nautilus.svg_.png)](http://ceph.com/wp-content/uploads/2019/03/nautilus.svg_.png)
+## ![](images/nautilus.svg_.png)
 
 ## Major Changes from Mimic
 

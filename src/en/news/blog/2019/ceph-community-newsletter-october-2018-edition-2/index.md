@@ -14,7 +14,7 @@ On November 12 at Ceph Day Berlin we announced the Ceph Foundation, a new organi
 
 #### Cephalocon Barcelona 2019
 
-[Cephalocon Barcelona 2019](https://ceph.com/cephalocon/barcelona-2019/) aims to bring together more than 800 technologists and adopters from across the globe to showcase Ceph’s history and its future, demonstrate real-world applications, and highlight vendor solutions. Join us in Barcelona, Spain on 19-20 May 2019 for our second international conference event. The CFP is now [open](https://linuxfoundation.smapply.io/prog/cephalocon_2019/) and [sponsorship](https://ceph.com/wp-content/uploads/2018/12/sponsor-Cephalocon19.pdf) opportunities are available!
+[Cephalocon Barcelona 2019](https://ceph.com/cephalocon/barcelona-2019/) aims to bring together more than 800 technologists and adopters from across the globe to showcase Ceph’s history and its future, demonstrate real-world applications, and highlight vendor solutions. Join us in Barcelona, Spain on 19-20 May 2019 for our second international conference event. The CFP is now [open](https://linuxfoundation.smapply.io/prog/cephalocon_2019/) and [sponsorship](attachments/sponsor-Cephalocon19.pdf) opportunities are available!
 
 ### Project updates
 

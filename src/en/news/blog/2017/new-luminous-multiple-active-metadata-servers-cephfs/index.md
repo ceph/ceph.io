@@ -43,7 +43,7 @@ A distinguishing feature of CephFS is its ability to carve up the file system tr
 
 Each subtree is created dynamically based on how hot the metadata is in a given directory tree. Once the subtree is created, its metadata is migrated over to an underloaded MDS. Subsequent client requests to the previously authoritative MDS are forwarded.
 
-[![](images/Subtree-Partitioning.png)](http://ceph.com/wp-content/uploads/2017/09/Subtree-Partitioning.png)
+![](images/Subtree-Partitioning.png)
 
 For those curious, information about the current subtree partitions are available via the admin socket for each MDS:
 
@@ -65,7 +65,7 @@ Each MDS handles the requests on the subtrees it manages. This allows the cluste
 
 For example, in a distributed experiment of multiple concurrent Linux kernel builds (_tar -x_, _make_, and then _rm -rf_) for independent clients, we observed an even division of the workload across multiple metadata servers. The graph below shows the client requests handled by each MDS (16 ranks) during the course of the experiment.
 
-[![](images/16x4096-20000C-MDS-64x2048-Client_stats_mds-throughput.png)](http://ceph.com/wp-content/uploads/2017/09/16x4096-20000C-MDS-64x2048-Client_stats_mds-throughput.png)
+![](images/16x4096-20000C-MDS-64x2048-Client_stats_mds-throughput.png)
 
 This was part of the [recent CephFS testing presented at Vault 2017](https://vault2017.sched.com/event/9WQp/large-scale-stability-and-performance-of-the-ceph-file-system-patrick-donnelly-red-hat).
 

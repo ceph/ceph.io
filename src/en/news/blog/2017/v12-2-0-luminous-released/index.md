@@ -4,7 +4,7 @@ date: "2017-08-29"
 author: "TheAnalyst"
 ---
 
-[![](images/luminous_logo-1.png)](http://ceph.com/wp-content/uploads/2017/08/luminous_logo-1.png)
+![](images/luminous_logo-1.png)
 
 This is the first release of Luminous v12.2.x long term stable release series. There have been major changes since Kraken (v11.2.z) and Jewel (v10.2.z), and the upgrade process is non-trivial. Please read these release notes carefully. The next stable release will be named Mimic.
 

@@ -22,7 +22,7 @@ Starting with Ceph Octopus, deploying new OSDs via cephadm will also be possible
 
 Once a new host or new disk drives have been added to the inventory, you can now extend your existing cluster without having to use the command line interface.
 
-![](https://i1.wp.com/ceph.io/wp-content/uploads/2020/06/image.png?fit=1024%2C507&ssl=1)
+[![](images/image-1024x507.png)](images/image.png)
 
 Ceph Dashboard - Hosts List
 
@@ -30,13 +30,13 @@ The dashboard now has a new hosts page that displays hosts that are known to the
 
 For SMART-enabled devices, you can also obtain the individual health status and SMART data.
 
-![](https://i1.wp.com/ceph.io/wp-content/uploads/2020/06/image-1.png?fit=1024%2C411&ssl=1)
+[![](images/image-1-1024x411.png)](images/image-1.png)
 
 Ceph Dashboard - Host Inventory
 
 The host inventory shows all disks attached to a selected host, as well as their type, size and other details.
 
-![](https://i0.wp.com/ceph.io/wp-content/uploads/2020/06/image-2.png?fit=1024%2C476&ssl=1)
+[![](images/image-2-1024x476.png)](images/image-2.png)
 
 Ceph Dashboard - Daemons Tab on Host Page
 
@@ -44,7 +44,7 @@ The "Deamons" tab on the host page shows all services that have been deployed on
 
 All tables provide custom filters that enable you to further drill down into the data shown.
 
-![](https://i0.wp.com/ceph.io/wp-content/uploads/2020/06/image-3.png?fit=1024%2C415&ssl=1)
+[![](images/image-3-1024x415.png)](images/image-3.png)
 
 Ceph Dashboard - Inventory Page
 
@@ -54,7 +54,7 @@ You can filter this output in various ways, for example by drive type, vendor or
 
 Clicking the "Identify" button will help you finding the selected device in your data center, by making the disk enclosure LED blink for a customizable amount of time. This feature depends on [libstoragemgmt](https://libstorage.github.io/libstoragemgmt-doc/), which is an open source framework that provides a unified interface to perform this task on a wide range of hardware from different vendors.
 
-![](https://i0.wp.com/ceph.io/wp-content/uploads/2020/06/image-4.png?fit=1024%2C372&ssl=1)
+[![](images/image-4-1024x372.png)](images/image-4.png)
 
 Ceph Dashboard - Services Page
 
@@ -64,7 +64,7 @@ The Services page shown here gives you an overview about the various services th
 
 Ceph Dashboard - Create OSDs Dialogue
 
-![](https://i2.wp.com/ceph.io/wp-content/uploads/2020/06/image-6.png?fit=1024%2C620&ssl=1)
+[![](images/image-6-1024x620.png)](images/image-6.png)
 
 Ceph Dashboard - Primary Device Selection Filter
 
@@ -88,7 +88,7 @@ You can now also define [per-pool Quotas](https://docs.ceph.com/docs/octopus/rad
 
 On the Object Gateway Management pages, we now support some new RGW features like [versioned buckets](https://docs.ceph.com/docs/master/radosgw/s3/bucketops/?highlight=versioning#enable-suspend-bucket-versioning), [multi-factor authentication](https://docs.ceph.com/docs/master/radosgw/mfa/#rgw-support-for-multifactor-authentication) and the selection of placement targets when creating buckets.
 
-![](https://i2.wp.com/ceph.io/wp-content/uploads/2020/06/Screenshot-from-2020-06-03-13-04-23.png?fit=1024%2C276&ssl=1)
+![](images/Screenshot-from-2020-06-03-13-04-23.png)
 
 Ceph Dashboard - CephFS Client Eviction
 

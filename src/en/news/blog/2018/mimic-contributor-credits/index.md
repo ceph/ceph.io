@@ -6,7 +6,7 @@ author: "TheAnalyst"
 
 A new version of Ceph has been released, and we've had a steady inflow of new contributors and companies contributing to Ceph.
 
-[![](images/Word-Art.png)](http://ceph.com/wp-content/uploads/2018/06/Word-Art.png)
+![](images/Word-Art.png)
 
 The affiliation of authors to organizations can be updated by submitting a patch to [https://github.com/ceph/ceph/blob/master/.organizationmap](https://github.com/ceph/ceph/blob/master/.organizationmap)
 

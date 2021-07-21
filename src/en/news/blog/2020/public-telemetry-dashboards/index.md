@@ -6,7 +6,7 @@ author: "lmb"
 
 It is our pleasure to announce the immediate availability of [dashboards based on the data reported via Ceph's telemetry feature](https://telemetry-public.ceph.com/).
 
-![](https://i1.wp.com/ceph.io/wp-content/uploads/2020/04/Screenshot_2020-04-28-Telemetry-Grafana.png?fit=1024%2C628&ssl=1)
+![](images/Screenshot_2020-04-28-Telemetry-Grafana.png)
 
 Ceph versions used by clusters, weighted by daemon, over time
 
@@ -18,11 +18,11 @@ The interactive and dynamic version graphs allow to show only major versions or 
 
 Heatmaps allow insight into how the distribution of cluster sizes and OSD count changes over time:
 
-![](https://i0.wp.com/ceph.io/wp-content/uploads/2020/04/Screenshot_2020-04-27-Telemetry-Grafana1.png?fit=1024%2C435&ssl=1)
+![](images/Screenshot_2020-04-27-Telemetry-Grafana1.png)
 
 A whole page is dedicated to show how the quartile distribution of various ratios changes; or in simpler terms, if you have ever wondered what the median OSD (storage device) size in a cluster above 1 PiB is, or whether your cluster capacity would place you into the top 25% of all clusters worldwide, we've got the data for you:
 
-![](https://i2.wp.com/ceph.io/wp-content/uploads/2020/04/Screenshot_2020-04-27-Capacity-Density-Grafana.png?fit=1024%2C324&ssl=1)
+![](images/Screenshot_2020-04-27-Capacity-Density-Grafana.png)
 
 Capacity quartiles over time
 
@@ -34,7 +34,7 @@ To allow for different reporting intervals or transient transmission issues, the
 
 Further, administrators of Ceph clusters can also use the [individual cluster dashboard](https://telemetry-public.ceph.com/d/Vs60mbqZk/x-ray?orgId=1) and review the reports that have been received for a given cluster:
 
-![](https://i0.wp.com/ceph.io/wp-content/uploads/2020/04/Screenshot_2020-04-27-X-ray-Grafana.png?fit=1024%2C778&ssl=1)
+![](images/Screenshot_2020-04-27-X-ray-Grafana.png)
 
 This requires knowing the `report_id` of the cluster, which serves as the cluster's unique cluster id in the telemetry world. This is an unguessable 128bit random identifier that is generated on the local cluster, and can be viewed with `ceph telemetry show | grep report_id`. (You can also reset this identifier if you wish to disassociate a cluster's history.)
 

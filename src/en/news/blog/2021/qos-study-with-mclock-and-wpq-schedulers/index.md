@@ -162,7 +162,7 @@ The above options puts a high limit on the number of concurrent local and remote
 
 Fig 1 shows the average client throughput comparison across the schedulers and their respective configurations.
 
-[![](images/Avg_Client_ThroughputIOPS_NVMe_SSD_WPQ_vs_mClock-6.png)](https://ceph.io/wp-content/uploads/2021/04/Avg_Client_ThroughputIOPS_NVMe_SSD_WPQ_vs_mClock-6.png)
+[![](images/Avg_Client_ThroughputIOPS_NVMe_SSD_WPQ_vs_mClock-6.png)](images/Avg_Client_ThroughputIOPS_NVMe_SSD_WPQ_vs_mClock-6.png)
 
 Fig 1: Average Client Throughput NVMe SSDs
 
@@ -178,7 +178,7 @@ Similar throughput with the _balanced_(11017 IOPS) and _high\_recovery\_ops_ (11
 
 Fig 2 shows the average completion latency (_clat_) along with the average 95th, 99th and 99.5th percentiles across the schedulers and their respective configurations.
 
-[![](images/Avg_Client_Latency_Percentiles_NVMe_SSD_WPQ_vs_mClock.png)](https://ceph.io/wp-content/uploads/2021/04/Avg_Client_Latency_Percentiles_NVMe_SSD_WPQ_vs_mClock.png)
+[![](images/Avg_Client_Latency_Percentiles_NVMe_SSD_WPQ_vs_mClock.png)](images/Avg_Client_Latency_Percentiles_NVMe_SSD_WPQ_vs_mClock.png)
 
 Fig 2: Average Client Latency & Percentiles NVMe SSDs
 
@@ -190,7 +190,7 @@ With mClock enabled and with the default _high\_client\_ops_ profile, the averag
 
 With the other profiles like _balanced_ and _high\_recovery\_ops_, the average client _clat_ latency didn’t change much and stayed between 5.7 - 5.8 msec with variations in the average percentile latency as observed from the chart above.
 
-[![](images/Clat_Latency_Comparison_NVMe_SSD_WPQ_vs_mClock.png)](https://ceph.io/wp-content/uploads/2021/04/Clat_Latency_Comparison_NVMe_SSD_WPQ_vs_mClock.png)
+[![](images/Clat_Latency_Comparison_NVMe_SSD_WPQ_vs_mClock.png)](images/Clat_Latency_Comparison_NVMe_SSD_WPQ_vs_mClock.png)
 
 Fig 3: Clat Latency Comparison NVMe SSD
 
@@ -200,13 +200,13 @@ Perhaps a more interesting chart is the comparison chart shown in Fig 3 that tra
 
 Another important aspect to consider is how the recovery bandwidth and recovery time are affected by mClock profile settings. Fig 4 outlines the recovery rates and times for each mClock profile and how they differ with the WPQ scheduler. The total number of objects to be recovered in all the cases was around 75000 objects as observed in the chart below.
 
-[![](images/Recovery_Rate_Comparison_NVMe_SSD_WPQ_vs_mClock.png)](https://ceph.io/wp-content/uploads/2021/04/Recovery_Rate_Comparison_NVMe_SSD_WPQ_vs_mClock.png)
+[![](images/Recovery_Rate_Comparison_NVMe_SSD_WPQ_vs_mClock.png)](images/Recovery_Rate_Comparison_NVMe_SSD_WPQ_vs_mClock.png)
 
 Fig 4: Recovery Rate Comparison NVMe SSD
 
 Intuitively, the _high\_client\_ops_ should impact recovery operations the most and this is indeed the case as it took an average of 966 secs for the recovery to complete at 80 Objects/sec. The recovery bandwidth as expected was the lowest at an average of ~320 MiB/s.
 
-[![](images/Avg_Obj_Rec_Throughput_NVMe_SSD_WPQ_vs_mClock.png)](https://ceph.io/wp-content/uploads/2021/04/Avg_Obj_Rec_Throughput_NVMe_SSD_WPQ_vs_mClock.png)
+[![](images/Avg_Obj_Rec_Throughput_NVMe_SSD_WPQ_vs_mClock.png)](images/Avg_Obj_Rec_Throughput_NVMe_SSD_WPQ_vs_mClock.png)
 
 Fig 5: Average Recovery Throughput NVMe SSD
 
@@ -222,7 +222,7 @@ The recovery tests were performed on HDDs with bluestore WAL and dB configured o
 
 The average client throughput comparison and latency for WPQ and mClock and its profiles are shown in Fig 6 & 7.
 
-[![](images/Avg_Client_ThroughputIOPS_HDDWALdB_WPQ_vs_mClock.png)](https://ceph.io/wp-content/uploads/2021/04/Avg_Client_ThroughputIOPS_HDDWALdB_WPQ_vs_mClock.png)
+[![](images/Avg_Client_ThroughputIOPS_HDDWALdB_WPQ_vs_mClock.png)](images/Avg_Client_ThroughputIOPS_HDDWALdB_WPQ_vs_mClock.png)
 
 Fig 6: Average Client Throughput HDD(WALdB)
 
@@ -230,7 +230,7 @@ With WPQ(Def), the average client throughput obtained was ~308 IOPS since the th
 
 However for WPQ(BST), due to concurrent recoveries client throughput is affected significantly with 146 IOPS and an average _clat_ latency of 433 msec.
 
-[![](images/Avg_Client_Latency_Percentiles_HDDWALdB_WPQ_vs_mClock.png)](https://ceph.io/wp-content/uploads/2021/04/Avg_Client_Latency_Percentiles_HDDWALdB_WPQ_vs_mClock.png)
+[![](images/Avg_Client_Latency_Percentiles_HDDWALdB_WPQ_vs_mClock.png)](images/Avg_Client_Latency_Percentiles_HDDWALdB_WPQ_vs_mClock.png)
 
 Fig 7: Average Clat Latency & Percentiles HDD(WALdB)
 
@@ -238,7 +238,7 @@ With the _high\_client\_ops_ profile, mClock was able to meet the QoS requiremen
 
 For _balanced_ and _high\_recovery\_ops_ profiles, the average client throughput came down marginally to ~248 IOPS and ~240 IOPS respectively. The average _clat_ latency as expected increased to ~258 msec and ~265 msec respectively.
 
-[![](images/Clat_Latency_Comparison_HDDWALdB_WPQ_vs_mClock.png)](https://ceph.io/wp-content/uploads/2021/04/Clat_Latency_Comparison_HDDWALdB_WPQ_vs_mClock.png)
+[![](images/Clat_Latency_Comparison_HDDWALdB_WPQ_vs_mClock.png)](images/Clat_Latency_Comparison_HDDWALdB_WPQ_vs_mClock.png)
 
 Fig 8: Clat Latency Comparison HDD(WALdB)
 
@@ -248,13 +248,13 @@ The _clat_ latency comparison chart in Fig 8 provides a more comprehensive insig
 
 The charts in Fig 9 & 10 compares the recovery rates and times. The total number of objects to be recovered in all the cases using HDDs with WAL and dB was around 4000 objects as observed in the chart below.
 
-[![](images/Recovery_Rate_Comparison_HDDWALdB_WPQ_vs_mClock.png)](https://ceph.io/wp-content/uploads/2021/04/Recovery_Rate_Comparison_HDDWALdB_WPQ_vs_mClock.png)
+[![](images/Recovery_Rate_Comparison_HDDWALdB_WPQ_vs_mClock.png)](images/Recovery_Rate_Comparison_HDDWALdB_WPQ_vs_mClock.png)
 
 Fig 9: Recovery Rate Comparison HDD(WALdB)
 
 As expected, the _high\_client\_ops_ impacts recovery operations the most as it took an average of ~1409 secs for the recovery to complete at ~3 Objects/sec. The recovery bandwidth as expected was the lowest at ~11 MiB/s.
 
-[![](images/Avg_Obj_Rec_Throughput_HDDWALdB_WPQ_vs_mClock.png)](https://ceph.io/wp-content/uploads/2021/04/Avg_Obj_Rec_Throughput_HDDWALdB_WPQ_vs_mClock.png)
+[![](images/Avg_Obj_Rec_Throughput_HDDWALdB_WPQ_vs_mClock.png)](images/Avg_Obj_Rec_Throughput_HDDWALdB_WPQ_vs_mClock.png)
 
 Fig 10: Average Recovery Throughput HDD(WALdB)
 
@@ -272,15 +272,15 @@ This type of configuration without WAL and dB configured is probably rare but te
 
 The average client throughput, latency and percentiles are compared as before in the set of charts shown below.
 
-[![](images/Avg_Client_ThroughputIOPS_HDDNoWALdB_WPQ_vs_mClock.png)](https://ceph.io/wp-content/uploads/2021/04/Avg_Client_ThroughputIOPS_HDDNoWALdB_WPQ_vs_mClock.png)
+[![](images/Avg_Client_ThroughputIOPS_HDDNoWALdB_WPQ_vs_mClock.png)](images/Avg_Client_ThroughputIOPS_HDDNoWALdB_WPQ_vs_mClock.png)
 
 Fig 11: Average Client Throughput HDD(No WALdB)
 
-[![](images/Avg_Client_Latency_Percentiles_HDDNoWALdB_WPQ_vs_mClock-1024x407.png)](https://ceph.io/wp-content/uploads/2021/04/Avg_Client_Latency_Percentiles_HDDNoWALdB_WPQ_vs_mClock.png)
+[![](images/Avg_Client_Latency_Percentiles_HDDNoWALdB_WPQ_vs_mClock-1024x407.png)](images/Avg_Client_Latency_Percentiles_HDDNoWALdB_WPQ_vs_mClock.png)
 
 Fig 12: Average Client Latency & Percentiles HDD(No WALdB)
 
-[![](images/Clat_Latency_Comparison_HDDNoWALdB_WPQ_vs_mClock-1024x651.png)](https://ceph.io/wp-content/uploads/2021/04/Clat_Latency_Comparison_HDDNoWALdB_WPQ_vs_mClock.png)
+[![](images/Clat_Latency_Comparison_HDDNoWALdB_WPQ_vs_mClock-1024x651.png)](images/Clat_Latency_Comparison_HDDNoWALdB_WPQ_vs_mClock.png)
 
 Fig 13: Clat Latency Comparison HDD(No WALdB)
 
@@ -288,11 +288,11 @@ Fig 13: Clat Latency Comparison HDD(No WALdB)
 
 The recovery rates and times are shown in the charts below.
 
-[![](images/Avg_Obj_Rec_Throughput_HDDNoWALdB_WPQ_vs_mClock.png)](https://ceph.io/wp-content/uploads/2021/04/Avg_Obj_Rec_Throughput_HDDNoWALdB_WPQ_vs_mClock.png)
+[![](images/Avg_Obj_Rec_Throughput_HDDNoWALdB_WPQ_vs_mClock.png)](images/Avg_Obj_Rec_Throughput_HDDNoWALdB_WPQ_vs_mClock.png)
 
 Fig 14: Average Object Recovery Throughput HDD(WALdB)
 
-[![](images/Recovery_Rate_Comparison_HDDNoWALdB_WPQ_vs_mClock-1024x610.png)](https://ceph.io/wp-content/uploads/2021/04/Recovery_Rate_Comparison_HDDNoWALdB_WPQ_vs_mClock.png)
+[![](images/Recovery_Rate_Comparison_HDDNoWALdB_WPQ_vs_mClock-1024x610.png)](images/Recovery_Rate_Comparison_HDDNoWALdB_WPQ_vs_mClock.png)
 
 Fig 15: Recovery Rate Comparison HDD(No WALdB)
 

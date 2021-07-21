@@ -25,7 +25,7 @@ My job was to deploy Ceph using Rook in virtual and physical environments and se
 
 CERN’s cloud-infrastructure is powered by OpenStack, so the virtual environment consisted of OpenStack’s virtual machines while the physical environment consisted of bare metal servers managed by OpenStack Ironic, with each server having 48 disks of 5.5 TB each. My test bed included deploying S3 workloads to gather evaluation metrics such as time to deploy a whole Ceph cluster, time to add a new service (RGW, OSD, MDS) in a cluster, automation of Ceph upgrades and reliability of overall cluster.
 
-[![](images/Selection_040-1024x726.png)](http://ceph.com/wp-content/uploads/2018/10/Selection_040.png)
+[![](images/Selection_040-1024x726.png)](images/Selection_040.png)
 
 Rook did not disappoint me in these evaluation metrics. A newly deployed Ceph cluster was ready to be used in the order of minutes. It takes less than 2 minutes to add a new OSD in a running cluster. Same goes for adding services such as RGW and MDS. Rook is built on top of Kubernetes, so node reliability and improved failure tolerance become first class features. The Orchestrator CLI with Rook backend makes it easy to operate the deployed cluster, especially for those who are already familiar with the Ceph CLI.  However, Ceph upgrades are not automated as yet and there is coupling between Rook and Ceph versions which makes overall deployments less flexible. These features are targeted for the upcoming Rook release v0.9.
 

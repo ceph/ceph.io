@@ -14,7 +14,7 @@ Infact, the Dashboard in Nautilus has gained so many new features that I plan to
 
 Probably the most notable user-visible feature that you will be presented with when logging into Ceph Dashboard is the revamped and enhanced landing page that helps you to obtain a quick overview about your cluster’s health at a glance.
 
-![](https://i2.wp.com/ceph.com/wp-content/uploads/2019/05/ceph-dashboard-landingpage.png?fit=1024%2C576&ssl=1)
+![](images/ceph-dashboard-landingpage.png)
 
 Ceph Dashboard Landing Page
 
@@ -28,7 +28,7 @@ The dashboard in Ceph Mimic added a very simple authentication mechanism, provid
 
 The Dashboard in Nautilus now supports multiple users: each account consists of a username, a password (stored in encrypted form using bcrypt), an optional full name, and an optional email address. User account data is stored in the MON’s configuration database, and is globally shared across all ceph-mgr instances.
 
-![](https://i2.wp.com/ceph.com/wp-content/uploads/2019/05/ceph-dashboard-roles.png?fit=1024%2C565&ssl=1)
+![](images/ceph-dashboard-roles.png)
 
 Ceph Dashboard Roles
 
@@ -50,7 +50,7 @@ The dashboard’s REST API is now capable of logging PUT, POST and DELETE HTTP r
 
 The dashboard’s web interface has been translated into a variety of languages that you can choose from. This hopefully makes it easier for Ceph users in non-English speaking countries to manage and monitor Ceph using a more familiar language. We’re very grateful for the many translations we received from the community via our [public translation platform](https://www.transifex.com/ceph/ceph-dashboard/dashboard/) (kindly provided by [Transifex](https://www.transifex.com/)).
 
-![](https://i2.wp.com/ceph.com/wp-content/uploads/2019/05/Screenshot_2019-04-24-The-ceph-dashboard-translation-project-on-Transifex.png?fit=731%2C1024&ssl=1)
+![](images/Screenshot_2019-04-24-The-ceph-dashboard-translation-project-on-Transifex.png)
 
 Ceph Dashboard Translations on Transifex
 
@@ -60,7 +60,7 @@ If you’re finding inconsistencies, missing translations or want to contribute 
 
 There is an automatically generated [Swagger UI](https://swagger.io/) page for documentation of the REST API endpoints. This makes the REST API self-documenting and makes it possible to quickly test REST API calls via the web browser, if you want to perform any management tasks via a custom script or application.
 
-![](https://i2.wp.com/ceph.com/wp-content/uploads/2019/05/ceph-dashboard-swagger.png?fit=1024%2C576&ssl=1)
+![](images/ceph-dashboard-swagger.png)
 
 Ceph Dashboard Swagger REST API
 

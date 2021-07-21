@@ -22,7 +22,7 @@ Because the dashboard is read-only, if you are running on a local network then y
 
 The front page displays the health of the cluster, this is similar to the \`ceph status\` command in the CLI. The cluster log display is showing log messages in a format that hides debug and audit messages: the command line equivalents have also been updated in Luminous to show the log this way by default.
 
-[![](images/dashboard_frontpage-1024x768.png)](http://ceph.com/wp-content/uploads/2017/09/dashboard_frontpage.png)
+[![](images/dashboard_frontpage-1024x768.png)](images/dashboard_frontpage.png)
 
  
 
@@ -30,17 +30,17 @@ Pages for each subsystem are accessible using the menu on the left (you can expa
 
 The "Cluster" menu section includes a list of servers and a list of OSDs. The server list shows which services are running on which server, and the list of OSDs shows the OSDs by server, with their up/down, in/out status.
 
-[![](images/dashboard_osd_list-1024x825.png)](http://ceph.com/wp-content/uploads/2017/09/dashboard_osd_list.png)
+[![](images/dashboard_osd_list-1024x825.png)](images/dashboard_osd_list.png)
 
 The "Filesystem" section expands to show a list of any CephFS filesystems in the cluster. Clicking on a filesystem will take you to a display of that filesystem's status. A list of clients using the filesystem is also available by clicking "Detail" next to the client count at the top of the filesystem page.
 
-[![](images/dashboard_filesystem-1024x768.png)](http://ceph.com/wp-content/uploads/2017/09/dashboard_filesystem.png)
+[![](images/dashboard_filesystem-1024x768.png)](images/dashboard_filesystem.png)
 
 The manager keeps a short in-memory history of the last few minutes of performance counters. This enables the dashboard to present some simple charts even if no separate time series database has been installed -- for example, the filesystem page shows a short history of MDS operation rate and cache size.
 
 The "Block" section provides information about RBD images, and about the status of any rbd-mirror or iSCSI services that are running.
 
-[![](images/dashboard_rbd-1024x576.png)](http://ceph.com/wp-content/uploads/2017/09/dashboard_rbd.png)
+[![](images/dashboard_rbd-1024x576.png)](images/dashboard_rbd.png)
 
 ### What's next?
 

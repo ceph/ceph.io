@@ -6,7 +6,7 @@ tags:
   - "luminous"
 ---
 
-[![](images/cephluminous.png)](http://ceph.com/wp-content/uploads/2017/09/cephluminous.png)
+![](images/cephluminous.png)
 
 Yet another release of Ceph is out, here is a sorted list of authors and organizations who contributed to v12.2.0, by number of commits or reviews back to v11.2.0. Thanks everyone for contributing, and keep up the good work
 

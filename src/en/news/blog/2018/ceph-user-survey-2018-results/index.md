@@ -4,7 +4,7 @@ date: "2018-07-17"
 author: "lmb"
 ---
 
-To better understand how our current users utilize [Ceph](http://ceph.com/), we conducted a public community survey from May 1st to May 25th 2018. The [Ceph User Survey 2018 Slides](http://ceph.com/wp-content/uploads/2018/07/Ceph-User-Survey-2018-Slides.pdf) contain the graphs from Survey Monkey. We are also making the (only slightly cleaned up) responses available under the [Community Data License Agreement - Sharing, Version 1.0](https://cdla.io/sharing-1-0/) here: [Ceph User Survey 2018 - For Distribution](http://ceph.com/wp-content/uploads/2018/07/Ceph-User-Survey-2018-For-Distribution.ods).
+To better understand how our current users utilize [Ceph](http://ceph.com/), we conducted a public community survey from May 1st to May 25th 2018. The [Ceph User Survey 2018 Slides](attachments/Ceph-User-Survey-2018-Slides.pdf) contain the graphs from Survey Monkey. We are also making the (only slightly cleaned up) responses available under the [Community Data License Agreement - Sharing, Version 1.0](https://cdla.io/sharing-1-0/) here: [Ceph User Survey 2018 - For Distribution](attachments/Ceph-User-Survey-2018-For-Distribution.ods).
 
 Let’s dive in and discuss the results - if you have further comments or questions, please reach out via our [mailing list](http://lists.ceph.com/listinfo.cgi/ceph-users-ceph.com/)!
 

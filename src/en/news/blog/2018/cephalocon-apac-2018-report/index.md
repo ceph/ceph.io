@@ -4,7 +4,7 @@ date: "2018-04-24"
 author: "lvaz"
 ---
 
-[![](images/Cephalocon_00.png)](http://ceph.com/wp-content/uploads/2018/04/Cephalocon_00.png)
+![](images/Cephalocon_00.png)
 
 On March 22-23, 2018 the first Cephalocon in the world was successfully held in Beijing, China. During the two conference days over 1000 people including developers, users, companies, community members and other Ceph enthusiasts attended to the 52 keynotes and talks about Enterprise applications, Development, Operation and Maintenance practices.
 
@@ -18,13 +18,13 @@ Since several contributors from all over the world traveled to China to particip
 
 More than 600 people were present at the Cephalocon opening session to attend to [Sage Weil's keynote speech](https://youtu.be/szE4Hg1eXoA). After thanking the sponsors and the volunteers for their efforts, Sage talked about the success of Ceph over the years and mentioned the current efforts to make Ceph more user robust, scalable and user friendly.
 
-[![](images/Cephalocon_01.png)](http://ceph.com/wp-content/uploads/2018/04/Cephalocon_01.png)
+![](images/Cephalocon_01.png)
 
 Sage opening the Cephalocon APAC 2018
 
-[![](images/Cephalocon_04.png)](http://ceph.com/wp-content/uploads/2018/04/Cephalocon_04.png) Sage and the volunteers
+![](images/Cephalocon_04.png) Sage and the volunteers
 
-[![](images/Cephalocon_03.png)](http://ceph.com/wp-content/uploads/2018/04/Cephalocon_03.png) Cephalocon official picture
+![](images/Cephalocon_03.png) Cephalocon official picture
 
 Next we had keynote sessions presented by [Haomai Wang](https://youtu.be/kf1YVonQMd4) (XSKY), [Kun Zhu](https://youtu.be/Oebm0uWtLC4) (ZTE), [Tushar Gohad](https://youtu.be/hN4lYFHr3rw) (Intel), [Lars Marowsky-Brée](https://youtu.be/o1b-l5BAV3U) (SUSE) and [Jiaju Zhang](https://youtu.be/w-JjLPOUVn0) (Red Hat) which brought several stories and success cases of Ceph and Cloud on Enterprise environments.
 
@@ -36,7 +36,7 @@ The second day was opened with [Dan van der Ster's keynote](https://youtu.be/iPY
 
 During the afternoon we had talks at the four tracks and the highlights were the presentations about the [Ceph Dashboard by Lenz Grimmer](https://youtu.be/z5vu-3FEWVo), [Rook project by Bassam Tabbara](https://youtu.be/UTmUFzDThko), BlueStore by [Li Xioayan](https://youtu.be/jKdNFaZHrf0) and [Junxin Zhang](https://youtu.be/6hKt-WWMjSk) and the academy research papers by [Carlos Maltzahn](https://youtu.be/Xpzh3ab_3nA) and [Noah Watkins](https://youtu.be/uFP-vSE8jXc) from UC Santa Cruz.
 
-[![](images/Cephalocon_05.png)](http://ceph.com/wp-content/uploads/2018/04/Cephalocon_05.png) Group picture with Cephalocon speakers and contributors
+![](images/Cephalocon_05.png) Group picture with Cephalocon speakers and contributors
 
 ### Cephalocon Results
 

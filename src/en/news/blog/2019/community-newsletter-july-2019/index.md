@@ -24,7 +24,7 @@ Today we’re excited to announce our newest associate member of the Foundation,
 
 #### Don't forget your Nautilus release shirt
 
-[![](images/nautilus.svg_-300x160.png)](http://ceph.com/wp-content/uploads/2019/03/nautilus.svg_.png)
+[![](images/nautilus.svg_-300x160.png)](images/nautilus.svg_.png)
 
 March 19 we announced the new release of Ceph Nautilus! Take a look at our [blog post](https://ceph.com/releases/v14-2-0-nautilus-released/) that captures the major features and upgrade notes. [Watch the talk](https://youtu.be/MVJ2eFMBVSI) from Sage Weil, co-creator and project leader, on the state of the cephalopod. We're now pleased to announce the availability of official Ceph Nautilus shirts in the [Ceph store](http://bit.ly/ceph-store)!
 

@@ -36,7 +36,7 @@ In the end, we found there was nothing wrong with XFS; it was simply the wrong t
 
 ### **How does BlueStore work?**
 
-[![](images/filestore-vs-bluestore-2.png)](http://ceph.com/wp-content/uploads/2017/08/filestore-vs-bluestore-2.png)
+![](images/filestore-vs-bluestore-2.png)
 
 BlueStore is a clean implementation of our internal ObjectStore interface from first principles, motivated specifically by the workloads we expect. BlueStore is built on top of a raw underlying block device (or block devices). It embeds the RocksDB key/value database for managing its internal metadata. A small internal adapter component called BlueFS implements a file-system-like interface that provides just enough functionality to allow RocksDB to store its “files” and share the same raw device(s) with BlueStore.
 

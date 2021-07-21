@@ -27,13 +27,13 @@ At this point, we would like to ask you, our community, to help us in ensuring t
 
 If you want to support us, all you need is a free user account on Transifex. You can use your github credentials for logging in. After you've created one, you can [join our translation team](https://www.transifex.com/ceph/ceph-dashboard/dashboard/) by selecting the languages you want to translate.
 
-![](https://i2.wp.com/ceph.io/wp-content/uploads/2020/05/ceph_i18n_blog01.png?fit=1024%2C490&ssl=1)
+![](images/ceph_i18n_blog01-1024x490.png)
 
 Ceph Dashboard Language Dashboard on Transifex
 
 On the Transifex [ceph-dashboard project overview](https://www.transifex.com/ceph/ceph-dashboard/dashboard/) you can see a localization activity stream and all languages we support.
 
-![](https://i1.wp.com/ceph.io/wp-content/uploads/2020/05/ceph_i18n_blog02.png?fit=1024%2C619&ssl=1)
+![](images/ceph_i18n_blog02-1024x619.png)
 
 If you cannot find the language you want to translate in, feel free to request it.
 
@@ -41,12 +41,12 @@ If you cannot find the language you want to translate in, feel free to request i
 
 Once you've selected a language, you have to select a resource. Resources are basically the different Ceph versions (Nautilus, Octopus etc.). The 'Master' resource is the current development version.
 
-![](https://i1.wp.com/ceph.io/wp-content/uploads/2020/05/ceph_i18n_blog03.png?fit=1024%2C546&ssl=1)
+![](images/ceph_i18n_blog03-1024x546.png)
 
 Transifex Resource Selection
 
 Now that you have selected a resource, you can start translating, reviewing and commenting. On the left side of your screen, you can apply filters and select a string you want to change. On the right side, you can add or update the translation, review it or leave a comment.
 
-![](https://i0.wp.com/ceph.io/wp-content/uploads/2020/05/ceph_i18n_blog05.png?fit=1024%2C484&ssl=1)
+![](images/ceph_i18n_blog05-1024x484.png)
 
 We would greatly appreciate your help and if you have any questions, please don't hesitate to get in contanct with us via IRC on #ceph-dashboard on OFTC or the devel@ceph.io mailing list - see [https://ceph.io/irc/](https://ceph.io/irc/) for details on how to join these channels. Thank you!

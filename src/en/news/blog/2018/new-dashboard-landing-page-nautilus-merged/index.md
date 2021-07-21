@@ -12,11 +12,11 @@ The initial implementation has now been merged into the master branch that will 
 
 This is how the landing page looked before, which was basically a direct conversion of the original Ceph Manager Dashboard:
 
-[![Dashboard Landing Page - Before](images/dashboard-landing-page-before-300x168.png)](http://ceph.com/wp-content/uploads/2018/09/dashboard-landing-page-before.png)
+[![Dashboard Landing Page - Before](images/dashboard-landing-page-before-300x168.png)](images/dashboard-landing-page-before.png)
 
 And this is the new one:
 
-[![](images/landing-page-2018-08-17-300x256.png)](http://ceph.com/wp-content/uploads/2018/09/landing-page-2018-08-17.png)
+[![](images/landing-page-2018-08-17-300x256.png)](images/landing-page-2018-08-17.png)
 
 Note that we're not done with this feature yet, this is just the first stage of the implementation. There are a number of [additional enhancements](https://tracker.ceph.com/issues/27050) that will be added in the near future.
 
