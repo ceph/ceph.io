@@ -45,7 +45,7 @@ title: Device Telemetry
       </p>
         <h2 class="h2">Data format</h2>
         <p class="p">
-          The data is split to zipped CSV files, which have 4 columns:
+          The data is split into zipped CSV files, which have 4 columns:
             <ul class="lg:mb-10 xl:mb-12 ul">
               <li><strong>'ts'</strong> - timestamp - timestamp of the health metrics scrape</li>
               <li><strong>'device_uuid'</strong> - text - anonymized unique identifier of the reporting device</li>
@@ -61,15 +61,15 @@ title: Device Telemetry
         <p class="p">
           Please note: the raw data contains reports from devices that could not scrape
           their health metrics due to software issues (e.g. an older smartmontools
-          version that does not support the JSON output option), this is when the
+          version that does not support the JSON output option); this is when the
           ‘invalid’ column is set to ‘true’. This does not reflect any problem with the
-          device’s health, it simply means that the health metrics could not be retrieved
+          device’s health; it simply means that the health metrics could not be retrieved
           due to software issues on that host. We chose to include these invalid
           telemetry reports since they do indicate the device is still active, which can
           contribute to certain model training approaches.
         </p>
         <p class="p">
-          The drive telemetry data does not contain actual drive’s state labels. We do
+          The drive telemetry data does not contain actual drives’ state (i.e., healthy vs failed) labels. We do
           not have a way of comprehensively understand the system operator's decision of
           removing a disk, as we do not have a mechanism for them of communicating with
           us and sharing the reason for the disk removal.
