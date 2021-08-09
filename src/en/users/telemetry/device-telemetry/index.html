@@ -1,0 +1,135 @@
+---
+title: Device Telemetry
+---
+
+<section class="section">
+  <h1 class="h1">{{ title }}</h1>
+  <div class="grid lg:grid--cols-1">
+    <div>
+      <p class="p">
+        Since January 2020 users have been opting-in to phone home anonymized,
+        non-identifying data about their cluster’s deployment and
+        configuration, and the health metrics of their storage drives. The
+        cluster data helps Ceph developers to better understand how Ceph is
+        being used in the wild, identify issues, and prioritize bugs. The drive
+        health metrics data is aimed at building a dynamic, large, diverse,
+        free and open data set to help data scientists create accurate failure
+        prediction models.
+      </p>
+      <p class="p">
+        This page holds the raw device health data for research. This data
+        contains health metrics of various device types, interfaces, vendors,
+        and models, from various deployment types (JBOD, HW RAID, VMs).
+        Statistics on this data are available in <a class="a"
+            href="https://telemetry-public.ceph.com/devices/" target="_blank"
+            rel="noreferrer noopener">public dashboards</a>.
+      </p>
+      <h2 class="h2">Source of data</h2>
+      <p class="p">
+        First introduced in the 2019 Nautilus release, the <a class="a"
+            href="https://docs.ceph.com/en/latest/rados/operations/devices/"
+            target="_blank" rel="noreferrer noopener">devicehealth</a>
+        ceph-mgr module allows for user-friendly drive management,
+        including scraping and exposing device health metrics like SMART
+        and NVMe (where applicable) health metrics. In case the user opts-in to
+        sending anonymized telemetry, the <a class="a"
+            href="https://docs.ceph.com/en/latest/mgr/telemetry/"
+            target="_blank" rel="noreferrer noopener">telemetry</a>
+        module will compile a daily report and phone it home. 
+      </p>
+      <p class="p">
+        The data collected is anonymized on the client side before it is sent
+        to the telemetry server. Ceph does not collect any identifying
+        information, and replaces both host name and drive serial number with
+        random generated UUIDs.
+      </p>
+        <h2 class="h2">Data format</h2>
+        <p class="p">
+          The data is split into zipped CSV files, which have 4 columns:
+            <ul class="lg:mb-10 xl:mb-12 ul">
+              <li><strong>'ts'</strong> - timestamp - timestamp of the health metrics scrape</li>
+              <li><strong>'device_uuid'</strong> - text - anonymized unique identifier of the reporting device</li>
+              <li><strong>‘invalid’</strong> - boolean - denotes if the report contains invalid telemetry</li>
+              <li><strong>‘report’ </strong> - text - JSON blob that holds the output of the device report</li>
+            </ul>
+        </p>
+        <p class="p">
+          Each file contains the data reported during a single month, according to the
+          file’s name (e.g. device_health_metrics_2020-01.zip contains all device health
+          reports of January 2020).
+        </p>
+        <p class="p">
+          Please note: the raw data contains reports from devices that could not scrape
+          their health metrics due to software issues (e.g. an older smartmontools
+          version that does not support the JSON output option); this is when the
+          ‘invalid’ column is set to ‘true’. This does not reflect any problem with the
+          device’s health; it simply means that the health metrics could not be retrieved
+          due to software issues on that host. We chose to include these invalid
+          telemetry reports since they do indicate the device is still active, which can
+          contribute to certain model training approaches.
+        </p>
+        <p class="p">
+          The drive telemetry data does not contain actual drives’ state (i.e., healthy vs failed) labels. We do
+          not have a way of comprehensively understand the system operator's decision of
+          removing a disk, as we do not have a mechanism for them of communicating with
+          us and sharing the reason for the disk removal.
+        </p>
+        <p class="p">
+          It presumably might be assumed that a drive should be labeled as failed when it
+          stops reporting, while its host is still active (i.e. other drives attached to
+          it are still reporting), especially if there is a new drive reporting from the
+          same host. In the future we plan to include the device’s port and controller
+          information, which provides a better understanding of the device’s presence.
+        </p>
+        <h2 class="h2">Data usage</h2>
+        <p class="p">
+          This data is under <a class="a" href="https://cdla.dev/sharing-1-0/"
+              target="_blank" rel="noreferrer noopener">Community Data License
+              Agreement – Sharing – Version 1.0</a>. By using this data you
+          agree to its license.
+        </p>
+        <h2 class="h2">How you can help</h2>
+        <p class="p">
+          Please join us in this effort to improve storage drive reliability,
+          and opt-in to telemetry. You can do this from your Ceph dashboard,
+          or with:
+          <pre><code>ceph telemetry on</code></pre>
+          See more details <a class="a"
+              href="https://docs.ceph.com/en/latest/mgr/telemetry/#enabling-telemetry"
+              target="_blank" rel="noreferrer noopener">here</a>.
+        </p>
+        <h2 class="h2">Contact us</h2>
+        <p class="p">
+          Please share with us how you use this data, any interesting findings, or any questions you may have: 
+          <a class="a" href="mailto:telemetry@ceph.io">telemetry@ceph.io</a>.
+        </p>
+    </div>
+  </div>
+</section>
+
+<h2 class="h2">Download</h2>
+{% for item in device_files | chunkByYear | objectValues | reverse %}
+<section class="bg-grey-300 {% if loop.index0 %}pt-0{% endif %} section section--full">
+  <div class="wrapper">
+    <div class="max-w-256">
+      <h3 class="h3">{{ item.name }}</h3>
+      <table class="table">
+        <tbody>
+          {% for item in item.results %}
+          <tr>
+            <td class="w-36">
+              <time datetime="{{ item.date }}">{{ item.date | formatDate(locale) }}</time>
+            </td>
+            <td>
+              {% if item.url %}
+              <a class="a" href="{{ item.url }}" target="_blank" rel="noreferrer noopener">{% endif %}{{ item.title }}{% if item.url %}</a
+              >{% endif %} {% if item.size %}<span class="text-lower">  |  </span> {{ item.size }}{% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+{% endfor %}
