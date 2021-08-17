@@ -40,12 +40,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <link rel="preconnect" href="https://cdn.matomo.cloud">
+    <link rel="preconnect" href="https://ceph.matomo.cloud">
+
     {% for link in preload -%}
       <link rel="preload" href="{{link.href}}" as="{{link.as}}"/>
     {%- endfor -%}
-
-    <link rel="dns-prefetch" href="https://cdn.matomo.cloud">
-    <link rel="dns-prefetch" href="https://ceph.matomo.cloud">
 
     {# Stylesheet #}
     <link rel="stylesheet" href="/css/main.css"/>
