@@ -20,7 +20,7 @@ Red Hat Ceph Storage(RHCS) is an open source, massively scalable, [software-defi
 
 High performance and latency sensitive workloads often consume storage via the block device interface. Ceph delivers block storage to clients with the help of RBD, a librbd library which is a thin layer that sits on top of rados (Figure-1) taking advantage of all the features rados has to offer. RBD block devices are highly distributed in nature as it stripes a block device image over multiple objects in the Red Hat Ceph Storage cluster, where each object gets mapped to a placement group and distributed, and the placement groups are spread across separate Ceph OSDs throughout the cluster, this greatly enhances the parallelism when accessing data from and RBD volume.
 
-[![Figure 1: RHCS Architecture Components](images/image1-1024x562.png)](http://ceph.com/wp-content/uploads/2019/05/image1.png)
+[![Figure 1: RHCS Architecture Components](images/image1-1024x562.png)](images/image1.png)
 
 Figure 1: RHCS Architecture Components
 
@@ -55,7 +55,7 @@ A new feature of BlueStore is that it enables compression of data at the lowest 
 
 An additional benefit of BlueStore is that it stores data and meta-data in the cluster with checksums for increased integrity. Whenever data is read from persistent storage its checksum is verified
 
-[![Figure 2 : BlueStore vs Filestore comparison](images/image2-1024x309.png)](http://ceph.com/wp-content/uploads/2019/05/image2.png)
+[![Figure 2 : BlueStore vs Filestore comparison](images/image2-1024x309.png)](images/image2.png)
 
 Figure 2 : BlueStore vs Filestore comparison
 
@@ -73,7 +73,7 @@ The test lab consists of 5 x RHCS all-flash (NVMe) servers and 7 x client nodes,
 
 Starting RHCS 3.2 Containerized Storage Daemons (CSD) deployment strategy is supported and the same has been used this benchmarking exercise. Unlike spinning media where one OSD per media device is recommended, each NVMe device used in this testing was configured to be used by two Ceph OSD, to get maximum performance from the NVMe device.
 
-[![Figure 3 : Lab environment topology](images/image4-1024x1024.jpg)](http://ceph.com/wp-content/uploads/2019/05/image4.jpg)
+[![Figure 3 : Lab environment topology](images/image4-1024x1024.jpg)](images/image4.jpg)
 
 Figure 3 : Lab environment topology
 
@@ -86,7 +86,7 @@ The lab environment was deployed with an ACI leaf and spine topology and both th
 
 The network bandwidth from the OSP clients was limited by the Fiber Interconnect uplink, as such we had only had 80gbit/s available, so the maximum throughput from the clients to the ceph clusters was ~10GBytes/s.
 
-[![Figure 4 : Lab environment network topology](images/image5-1024x746.png)](http://ceph.com/wp-content/uploads/2019/05/image5.png)
+[![Figure 4 : Lab environment network topology](images/image5-1024x746.png)](images/image5.png)
 
 Figure 4 : Lab environment network topology
 
@@ -150,7 +150,7 @@ As reflected in graph-1, tuning BlueStore resulted in higher IOPS and lower aver
 
 <table class="wp-block-table"><tbody><tr><td><b>Ceph</b><b> BlueStore Tuned Configuratio</b><b>n</b></td></tr><tr><td><b>Workload</b></td><td><b>IOPS</b></td><td><b>Average Latency</b></td><td><b>Tail Latency</b></td></tr><tr><td><b>Random Read</b></td><td><b>43% Higher</b></td><td><b>30% Lower</b></td><td><b>36% Lower</b></td></tr><tr><td><b>Random Read Write</b></td><td><b>132% Higher</b></td><td><b>73% Lower</b></td><td><b>90% Lower</b></td></tr><tr><td><b>Random Write</b></td><td><b>134% Higher</b></td><td><b>70% Lower</b></td><td><b>91% Lower</b></td></tr></tbody></table>
 
-[![Graph 1 : RHCS 3.2 Default vs. Tuned Configuration](images/image3-1024x556.png)](http://ceph.com/wp-content/uploads/2019/05/image3.png)
+[![Graph 1 : RHCS 3.2 Default vs. Tuned Configuration](images/image3-1024x556.png)](images/image3.png)
 
 Graph 1 : RHCS 3.2 Default vs. Tuned Configuration
 

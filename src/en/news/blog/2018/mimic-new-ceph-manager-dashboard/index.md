@@ -14,7 +14,7 @@ Implemented as a Ceph Manager module, it is a "plug-in" replacement of [the one 
 
 The architecture and functionality of this module is derived from and inspired by openATTIC, merging both functionality from the original dashboard as well as adding new functionality originally developed for the standalone version of openATTIC.
 
-[![Ceph Manager Dashboard screen shot](images/dashboard-healthpage-300x185.png)](http://ceph.com/wp-content/uploads/2018/05/dashboard-healthpage.png)
+[![Ceph Manager Dashboard screen shot](images/dashboard-healthpage-300x185.png)](images/dashboard-healthpage.png)
 
 The WebUI implementation is based on [Angular](https://angular.io/)/[TypeScript](http://www.typescriptlang.org/), the dashboard module’s backend code uses the [CherryPy](https://cherrypy.org/) Python framework and a custom REST API implementation. Take a look at the openATTIC blog for additional background information about the evolution of this project.
 

@@ -16,7 +16,7 @@ SQLite was chosen as a SQL engine for Ceph due to wide recognition as a flexible
 
 For Ceph, this glue library functions by translating reads, writes, and file locks to corresponding operations on a series of objects in Ceph’s RADOS. This mostly involves _striping_ the SQLite database file over a number of objects in Ceph. (This is something we already regularly do in CephFS and RBD.)
 
-[![](images/sqlite-post.png)](https://ceph.io/wp-content/uploads/2021/05/sqlite-post.png)
+[![](images/sqlite-post.png)](images/sqlite-post.png)
 
 # Usage
 

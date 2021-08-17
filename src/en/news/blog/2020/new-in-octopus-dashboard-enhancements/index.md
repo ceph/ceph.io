@@ -14,7 +14,7 @@ Like in previous Ceph releases, the Dashboard developer community has been very 
 
 In this article, I'd like to cover the most noteworthy overall user interface enhancements that hopefully help to make the Dashboard easier to use as well as talk about some new features related to the Dashboard's built-in user management.
 
-![](https://i2.wp.com/ceph.io/wp-content/uploads/2020/05/Ceph-Dashboard-Landing-Page.png?fit=1024%2C468&ssl=1)
+![](images/Ceph-Dashboard-Landing-Page.png)
 
 Ceph Dashboard Landing Page
 
@@ -26,7 +26,7 @@ This landing page was specifically designed to display all of your cluster's key
 
 Many of the landing page's cards allow you to drill down into further information by clicking on blue labels. This will take you to dedicated pages that will show more information.
 
-![](https://i0.wp.com/ceph.io/wp-content/uploads/2020/05/Ceph-Dashboard-Sidebar.png?fit=1024%2C472&ssl=1)
+![](images/Ceph-Dashboard-Sidebar.png)
 
 Ceph Dashboard Navigation and Notification Bar
 

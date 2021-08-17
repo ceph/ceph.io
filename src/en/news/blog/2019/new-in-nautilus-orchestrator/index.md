@@ -16,7 +16,7 @@ When enabled, the Dashboard already makes use of the orchestrator interface for 
 
 From an architectural point of view, the orchestrator interface is the central component in a sandwich between clients like the Dashboard and the command line interface, and orchestrator modules like the Rook mgr module.   For example, if a user calls to command line interface to add a new OSD to the cluster, the orchestrator module will instruct the external orchestrator to call ceph-volume on a given host.  Here is an architectural view of the orchestrator, showing how the different components interact with each other:
 
-[![](images/orchestrator.png)](http://ceph.com/wp-content/uploads/2019/04/orchestrator.png)
+![](images/orchestrator.png)
 
 ## Using the Orchestrator
 

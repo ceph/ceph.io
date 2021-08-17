@@ -8,7 +8,7 @@ author: "thingee"
 
 #### Nautilus stable release is out!
 
-[![](images/nautilus.svg_-300x160.png)](http://ceph.com/wp-content/uploads/2019/03/nautilus.svg_.png)
+[![](images/nautilus.svg_-300x160.png)](images/nautilus.svg_.png)
 
 March 19 we announced the new release of Ceph Nautilus! Take a look at our [blog post](https://ceph.com/releases/v14-2-0-nautilus-released/) that captures the major features and upgrade notes.
 
@@ -138,7 +138,7 @@ Please coordinate your Ceph CFP's with the community on our [CFP coordination pa
 #### April
 
 - [CentOS Dojo:](https://wiki.centos.org/Events/Dojo/ORNL2019) April 16th, 2019 in Oak Ridge National Labs, in Oak Ridge,TN
-- [China Open Source Hackathon](http://ceph.com/wp-content/uploads/2019/03/image.png), April 18-20 in Shenzhen, CN
+- [China Open Source Hackathon](images/image.png), April 18-20 in Shenzhen, CN
 - [Open Infrastructure Los Angeles Meet up](https://www.meetup.com/OpenInfrastructure-LA/events/260117839/?_xtd=gqFyqDMwMzY3MTYyoXCmaXBob25l&from=ref), Rook, April 24 at 6pm in LA, CA
 - [Cloud Native Computing](https://www.meetup.com/San-Diego-Cloud-Native-Computing-Meetup/events/259072266/), Rook, April 25th at 6pm in San Diego, CA
 - [Open Infrastructure](https://www.openstack.org/summit/), April 29 - May 4 Denver, CO

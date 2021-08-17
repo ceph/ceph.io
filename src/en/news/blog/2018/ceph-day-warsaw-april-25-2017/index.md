@@ -20,7 +20,7 @@ Our new and shiny monitoring system is using RADOS protocol to fetch the state o
 
 The core of FakeMon is a Simple Messenger code example that is fed with health calculating code snippets borrowed from ceph-mon. Of course, to introduce the desired conditions, we added additional commands as well. With a short setup, we were able to simulate massive “ghost” cluster degradation, like creating a hard split-brain conditions or massive power loss that would flip out 90% of OSDs.
 
-For more details and examples, I encourage you, our dear reader, to get familiar with our [presentation.](http://ceph.com/wp-content/uploads/2018/07/Ghost_Cluster_and_Throwing_Fireballs.pdf)
+For more details and examples, I encourage you, our dear reader, to get familiar with our [presentation](attachments/Ghost_Cluster_and_Throwing_Fireballs.pdf).
 
 ## **Throwing Fireballs**
 
@@ -44,19 +44,19 @@ And we actually did it!
 
 Using Blender and some Python with (almost) hand-made graphics, we connected 3D objects, their behavior and properties to the actual physical server room in a different country. Each action in our 3D interface generated real reaction that was placed on real hardware with real Ceph cluster and we could observe everything on a HUD display.
 
-[![](images/EMBEDDED_PICTURE_OF_HUD_DISPLAY-1024x576.png)](http://ceph.com/wp-content/uploads/2018/09/EMBEDDED_PICTURE_OF_HUD_DISPLAY.png)
+[![](images/EMBEDDED_PICTURE_OF_HUD_DISPLAY-1024x576.png)](images/EMBEDDED_PICTURE_OF_HUD_DISPLAY.png)
 
 We also spawned various actions, from running rados benchmarks through dropping desired percent of public/cluster network traffic to moving all ceph-osd processes to one logical CPU core.
 
 Current cluster Monitor Log could be seen on one of the walls of our 3D server room. This data was directly fed from Ceph.
 
-[![](images/EMBEDDED_PICTURE_OF_CLUSTER_MONITOR_LOG_WALL-1024x576.png)](http://ceph.com/wp-content/uploads/2018/09/EMBEDDED_PICTURE_OF_CLUSTER_MONITOR_LOG_WALL.png)
+[![](images/EMBEDDED_PICTURE_OF_CLUSTER_MONITOR_LOG_WALL-1024x576.png)](images/EMBEDDED_PICTURE_OF_CLUSTER_MONITOR_LOG_WALL.png)
 
 Another wall was presenting rados benchmark output which was refreshed once per second.
 
-**[![](images/EMBEDDED_PICTURE_OF_RADOS_BENCHMARK_OUTPUT-1024x576.png)](http://ceph.com/wp-content/uploads/2018/09/EMBEDDED_PICTURE_OF_RADOS_BENCHMARK_OUTPUT.png)**
+[![](images/EMBEDDED_PICTURE_OF_RADOS_BENCHMARK_OUTPUT-1024x576.png)](images/EMBEDDED_PICTURE_OF_RADOS_BENCHMARK_OUTPUT.png)
 
-More detailed description you can find in our [presentation](http://ceph.com/wp-content/uploads/2018/07/Ghost_Cluster_and_Throwing_Fireballs.pdf).
+More detailed description you can find in our [presentation](attachments/Ghost_Cluster_and_Throwing_Fireballs.pdf).
 
 ## **Final thoughts and thanks**
 

@@ -6,7 +6,7 @@ author: "TheAnalyst"
 
 This is the first stable release of Mimic, the next long term release series. Please read the upgrade notes from previous releases carefully before upgrading.
 
-[![](images/mimc-1024x329.png)](http://ceph.com/wp-content/uploads/2018/05/mimc.png)
+[![](images/mimc-1024x329.png)](images/mimc.png)
 
 ## Major Changes from Luminous
 
