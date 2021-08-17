@@ -15,7 +15,7 @@
     </script>
 
     <title>Ceph.io — {{ title }}</title>
-    <meta name="description" content="{{ meta.description }}" />
+    <meta name="description" content="{{ meta.description }}"/>
 
     {% for lang in locales -%}
 
@@ -43,6 +43,9 @@
     {% for link in preload -%}
       <link rel="preload" href="{{link.href}}" as="{{link.as}}"/>
     {%- endfor -%}
+
+    <link rel="dns-prefetch" href="https://cdn.matomo.cloud">
+    <link rel="dns-prefetch" href="https://ceph.matomo.cloud">
 
     {# Stylesheet #}
     <link rel="stylesheet" href="/css/main.css"/>
@@ -101,15 +104,25 @@
       _paq.push(["setCookieDomain", "*.ceph.io"]);
       _paq.push(['trackPageView']);
       _paq.push(['enableLinkTracking']);
-      (function() {
-	  var u="https://ceph.matomo.cloud/";
-	  _paq.push(['setTrackerUrl', u+'matomo.php']);
-	  _paq.push(['setSiteId', '1']);
-	  var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-	  g.async=true; g.src='//cdn.matomo.cloud/ceph.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+      (function () {
+        var u = "https://ceph.matomo.cloud/";
+        _paq.push([
+          'setTrackerUrl', u + 'matomo.php'
+        ]);
+        _paq.push(['setSiteId', '1']);
+        var d = document,
+          g = d.createElement('script'),
+          s = d.getElementsByTagName('script')[0];
+        g.async = true;
+        g.src = '//cdn.matomo.cloud/ceph.matomo.cloud/matomo.js';
+        s
+          .parentNode
+          .insertBefore(g, s);
       })();
     </script>
-    <noscript><p><img src="https://ceph.matomo.cloud/matomo.php?idsite=1&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+    <noscript>
+      <p><img src="https://ceph.matomo.cloud/matomo.php?idsite=1&amp;rec=1" style="border:0;" alt=""/></p>
+    </noscript>
     <!-- End Matomo Code -->
 
   </head>
