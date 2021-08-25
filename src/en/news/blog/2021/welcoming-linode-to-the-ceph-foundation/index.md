@@ -1,6 +1,6 @@
 ---
 title: "Welcoming Linode to the Ceph Foundation"
-date: "2021-07-30"
+date: "2021-08-25"
 author: "sage"
 ---
 
