@@ -138,7 +138,7 @@ This is a partial selection. A complete list of publications for the project is 
 
 ### Related research
 
-- [A Distributed Key-Value Store using Ceph](/assests/pdfs/CawthonKeyValueStore.pdf)
+- [A Distributed Key-Value Store using Ceph](/assets/pdfs/CawthonKeyValueStore.pdf)
   - Eleanor Cawthon
   - Summer 2012
 
