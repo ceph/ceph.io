@@ -37,10 +37,10 @@ order: 3
   <a href="http://www.croit.io/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-croit.png" /></a>
   <a href="https://www.easystack.io/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-easystack.png" /></a>
   <a href="http://iss-integration.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-intelligent-systems.png" /></a>
+  <a href="https://www.linode.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-linode.png" /></a>
   <a href="https://www.qct.io/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-qct.png" /></a>
   <a href="http://www.sinorail.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-sinorail.png" /></a>
   <a href="https://vexxhost.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-vexxhost.png" /></a>
-  <a href="https://www.didiglobal.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-xiaoju.png" /></a>
 </div>
 
 ### Associate Members
