@@ -1,6 +1,127 @@
 {
   "tech_talks": [
     {
+      "date": "2021-08-26",
+      "title": "Ceph Tech Talk: Going NATS",
+      "presenter": "Matan Breizman",
+      "url": "https://www.youtube.com/watch?v=F8zKFl60q9g"
+    },
+    {
+      "date": "2021-06-24",
+      "title": "Ceph Month 2021: Evaluating CephFS Performance vs. Cost on High-Density Commodity Disk Servers",
+      "presenter": "Dan van der Ster",
+      "url": "https://www.youtube.com/watch?v=CYbZzlLrzSA"
+    },
+    {
+      "date": "2021-06-24",
+      "title": "Ceph Month 2021: Crimson Update",
+      "presenter": "Samuel Just``",
+      "url": "https://www.youtube.com/watch?v=vzJPOA7aJMk"
+    },
+    {
+      "date": "2021-06-23",
+      "title": "Ceph Month 2021: Cephadm Update",
+      "presenter": "Sebastian Wagner",
+      "url": "https://www.youtube.com/watch?v=JKIWnFAzgpQ"
+    },
+    {
+      "date": "2021-06-23",
+      "title": "Ceph Month 2021: Optimizing Ceph on Arm64",
+      "presenter": "Richael Zhuang",
+      "url": "https://www.youtube.com/watch?v=IzYYOdm2nuE"
+    },
+    {
+      "date": "2021-06-23",
+      "title": "Ceph Month 2021: CephFS update",
+      "presenter": "Patrick Donnelly",
+      "url": "https://www.youtube.com/watch?v=fcL6Tbqlb4s"
+    },
+    {
+      "date": "2021-06-23",
+      "title": "Ceph Month 2021: Improving Cosbench for Ceph Benchmarking",
+      "presenter": "Danny Abukalam",
+      "url": "https://www.youtube.com/watch?v=rAskHyB7ojw"
+    },
+    {
+      "date": "2021-06-22",
+      "title": "Ceph Month 2021: Evaluation of RBD replication options @CERN",
+      "presenter": "Arthur Outhenin-Chalandre",
+      "url": "https://www.youtube.com/watch?v=cJegSAGWnco"
+    },
+    {
+      "date": "2021-06-21",
+      "title": "Ceph Month 2021: Qemu: librbd vs krbd performance",
+      "presenter": "Wout van Heeswijk",
+      "url": "https://www.youtube.com/watch?v=cJegSAGWnco"
+    },
+    {
+      "date": "2021-06-16",
+      "title": "Ceph Month 2021: Project Aquarium - An easy-to-use storage appliance wrapped around Ceph",
+      "presenter": "Joao Eduardo Luis & Alexandra Settle",
+      "url": "https://www.youtube.com/watch?v=C_2wvFDgh9g"
+    },
+    {
+      "date": "2021-06-15",
+      "title": "Ceph Month 2021: From Open Source to Open Ended in Ceph with Lua",
+      "presenter": "Yuval Lifshitz",
+      "url": "https://www.youtube.com/watch?v=anQJugs27hE"
+    },
+
+    {
+      "date": "2021-06-15",
+      "title": "Ceph Month 2021: RBD latency with QD=1 bs=4k",
+      "presenter": "Wido, den Hollander",
+      "url": "https://www.youtube.com/watch?v=S1qIkJEbBFk"
+    },
+    {
+      "date": "2021-06-14",
+      "title": "Ceph Month 2021: Dashboard Update",
+      "presenter": "Ernesto Puerta",
+      "url": "https://www.youtube.com/watch?v=Db8dOL0X8Nk"
+    },
+    {
+      "date": "2021-06-14",
+      "title": "Ceph Month 2021: 5 more ways to break your ceph cluster",
+      "presenter": "Wout van Heeswijk",
+      "url": "https://www.youtube.com/watch?v=UE5vmU7Bt9o"
+    },
+    {
+      "date": "2021-06-11",
+      "title": "Ceph Month 2021: RBD Update",
+      "presenter": "Ilya Dryomov",
+      "url": "https://www.youtube.com/watch?v=qqyaxGwCc7E"
+    },
+    {
+      "date": "2021-06-11",
+      "title": "Ceph Month 2021: Intel QLC SSD: Cost-Effective Ceph Deployments",
+      "presenter": "Anthony D'Atri",
+      "url": "https://www.youtube.com/watch?v=wo5Ts30Gz_o"
+    },
+    {
+      "date": "2021-06-11",
+      "title": "Ceph Month 2021: Performance Optimization for All Flash based on aarch64",
+      "presenter": "Chunsong Feng",
+      "url": "https://www.youtube.com/watch?v=SLOfsUC71J8"
+    },
+    {
+      "date": "2021-06-10",
+      "title": "Ceph Month 2021: The go-ceph get together BoF",
+      "presenter": "John Mulligan",
+      "url": "https://www.youtube.com/watch?v=n-XLWKltoK0"
+    },
+    {
+      "date": "2021-06-10",
+      "title": "Ceph Month 2021: Ceph in Research & Scientific Computing BoF",
+      "presenter": "Kevin Hrpcek",
+      "url": "https://www.youtube.com/watch?v=Eyg9fptik98"
+    },
+    {
+      "date": "2021-06-10",
+      "title": "Ceph Month 2021: RGW Update",
+      "presenter": "Casey Bodley",
+      "url": "https://www.youtube.com/watch?v=KZF00ajxh-Y"
+    },
+    {
       "date": "2021-06-02",
       "title": "Ceph Month 2021: Call for Participation: Ceph Stable Releases Team",
       "presenter": "Loïc Dachary",
