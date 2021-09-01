@@ -12,4 +12,4 @@ The Ceph Foundation welcomes organizations engaged in the work of the Ceph commu
 
 For more information, contact <membership@linuxfoundation.org>.
 
-Alternatively, contribute as a developer or stay up-to-date with our [mailing list]().
+If your organization is ready to join, see our [membership enrollment form](https://enrollment.lfx.linuxfoundation.org/?project=cephfoundation).
