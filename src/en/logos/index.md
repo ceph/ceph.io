@@ -7,7 +7,7 @@ order: 5
 
 # {{ title }}
 
-We recognize that people often want to use logos to call out when they are doing cool stuff with Ceph. In order to make sure you have several decent-res options for your slides, websites, and other sundry we wanted to provide an easy place to get them. If you would like something much bigger, or vector based for better scaling, just drop a line to community@lists.ceph.io.</p>
+We recognize that people often want to use logos to call out when they are doing cool stuff with Ceph. In order to make sure you have several decent-res options for your slides, websites, and other sundry we wanted to provide an easy place to get them. If you would like something much bigger, or vector based for better scaling, just drop a line to community@lists.ceph.io.
 
 We do, however, have just have a few requests if you would like to use the Ceph logo, but we tried to keep it in plain language and relatively simple. Thanks for using Ceph!
 
@@ -27,29 +27,29 @@ We do, however, have just have a few requests if you would like to use the Ceph 
 
 <h2>Release Logos</h2>
 <div class="grid grid--align-center grid--cols-2 md:grid--cols-3 md:w-3-4">
-  <a href="/assets/bitmaps/argonaut.png"><img loading="lazy" src="/assets/bitmaps/argonaut.png" width="300" height="97" /></a>
-  <a href="/assets/bitmaps/bobtail.png"><img loading="lazy" src="/assets/bitmaps/bobtail.png" width="300" height="82" /></a>
-  <a href="/assets/bitmaps/cuttlefish.png"><img loading="lazy" src="/assets/bitmaps/cuttlefish.png" width="300" height="96" /></a>
-  <a href="/assets/bitmaps/dumpling.png"><img loading="lazy" src="/assets/bitmaps/dumpling.png" width="300" height="83" /></a>
-  <a href="/assets/bitmaps/firefly.png"><img loading="lazy" src="/assets/bitmaps/firefly.png" width="300" height="100" /></a>
-  <a href="/assets/bitmaps/giant.png"><img loading="lazy" src="/assets/bitmaps/giant.png" width="300" height="67" /></a>
-  <a href="/assets/bitmaps/hammer.png"><img loading="lazy" src="/assets/bitmaps/hammer.png" width="300" height="96" /></a>
-  <a href="/assets/bitmaps/infernalis.png"><img loading="lazy" src="/assets/bitmaps/infernalis.png" width="300" height="96" /></a>
-  <a href="/assets/bitmaps/jewel.png"><img loading="lazy" src="/assets/bitmaps/jewel.png" width="300" height="96" /></a>
-  <a href="/assets/bitmaps/kraken.png"><img loading="lazy" src="/assets/bitmaps/kraken.png" width="300" height="115" /></a>
-  <a href="/assets/bitmaps/luminous.png"><img loading="lazy" src="/assets/bitmaps/luminous.png" width="300" height="116" /></a>
-  <a href="/assets/bitmaps/mimic.png"><img loading="lazy" src="/assets/bitmaps/mimic.png" width="300" height="97" /></a>
-  <a href="/assets/bitmaps/nautilus.png"><img loading="lazy" src="/assets/bitmaps/nautilus.png" width="300" height="160" /></a>
-  <a href="/assets/bitmaps/octopus.png"><img loading="lazy" src="/assets/bitmaps/octopus.png" width="300" height="300" /></a>
-  <a href="/assets/bitmaps/pacific.png"><img loading="lazy" src="/assets/bitmaps/pacific.png" width="300" height="184" /></a>
+  <a href="/assets/bitmaps/argonaut.png"><img loading="lazy" src="/assets/bitmaps/argonaut.png" /></a>
+  <a href="/assets/bitmaps/bobtail.png"><img loading="lazy" src="/assets/bitmaps/bobtail.png" /></a>
+  <a href="/assets/bitmaps/cuttlefish.png"><img loading="lazy" src="/assets/bitmaps/cuttlefish.png" /></a>
+  <a href="/assets/bitmaps/dumpling.png"><img loading="lazy" src="/assets/bitmaps/dumpling.png" /></a>
+  <a href="/assets/bitmaps/firefly.png"><img loading="lazy" src="/assets/bitmaps/firefly.png" /></a>
+  <a href="/assets/bitmaps/giant.png"><img loading="lazy" src="/assets/bitmaps/giant.png" /></a>
+  <a href="/assets/bitmaps/hammer.png"><img loading="lazy" src="/assets/bitmaps/hammer.png" /></a>
+  <a href="/assets/bitmaps/infernalis.png"><img loading="lazy" src="/assets/bitmaps/infernalis.png" /></a>
+  <a href="/assets/bitmaps/jewel.png"><img loading="lazy" src="/assets/bitmaps/jewel.png" /></a>
+  <a href="/assets/bitmaps/kraken.png"><img loading="lazy" src="/assets/bitmaps/kraken.png" /></a>
+  <a href="/assets/bitmaps/luminous.png"><img loading="lazy" src="/assets/bitmaps/luminous.png" /></a>
+  <a href="/assets/bitmaps/mimic.png"><img loading="lazy" src="/assets/bitmaps/mimic.png" /></a>
+  <a href="/assets/bitmaps/nautilus.png"><img loading="lazy" src="/assets/bitmaps/nautilus.png" /></a>
+  <a href="/assets/bitmaps/octopus.png"><img loading="lazy" src="/assets/bitmaps/octopus.png" /></a>
+  <a href="/assets/bitmaps/pacific.png"><img loading="lazy" src="/assets/bitmaps/pacific.png" /></a>
 </div>
 
 <h2> Project Logos</h2>
 <div class="bg-grey-200 grid grid--align-center grid--cols-2 md:grid--cols-3 md:w-3-4">
-  <a href="/assets/bitmaps/Ceph_Logo_Standard_RGB_Reversed_120411_fa.png"><img loading="lazy" src="/assets/bitmaps/Ceph_Logo_Standard_RGB_Reversed_120411_fa.png" width="300" height="138" /></a>
-  <a href="/assets/bitmaps/Ceph_Logo_Standard_RGB_Black_120411_fa.png"><img loading="lazy" src="/assets/bitmaps/Ceph_Logo_Standard_RGB_Black_120411_fa.png"  width="300" height="138" /></a>
-  <a href="/assets/bitmaps/Ceph_Logo_Standard_RGB_120411_fa.png"><img loading="lazy" src="/assets/bitmaps/Ceph_Logo_Standard_RGB_120411_fa.png"  width="300" height="138" /></a>
-  <a href="/assets/bitmaps/Ceph_Logo_Stacked_aRGB_Black_120411_fa.png"><img loading="lazy" src="/assets/bitmaps/Ceph_Logo_Stacked_aRGB_Black_120411_fa.png" width="241" height="300" /></a>
-  <a href="/assets/bitmaps/Ceph_Logo_Stacked_RGB_120411_fa.png"><img loading="lazy" src="/assets/bitmaps/Ceph_Logo_Stacked_RGB_120411_fa.png" width="241" height="300" /></a>
-  <a href="/assets/bitmaps/Ceph_Logo_Stacked_RGB_Reversed_120411_fa.png"><img loading="lazy" src="/assets/bitmaps/Ceph_Logo_Stacked_RGB_Reversed_120411_fa.png" width="241" height="300" /></a>
+  <a href="/assets/bitmaps/Ceph_Logo_Standard_RGB_Reversed_120411_fa.png"><img loading="lazy" src="/assets/bitmaps/Ceph_Logo_Standard_RGB_Reversed_120411_fa.png" /></a>
+  <a href="/assets/bitmaps/Ceph_Logo_Standard_RGB_Black_120411_fa.png"><img loading="lazy" src="/assets/bitmaps/Ceph_Logo_Standard_RGB_Black_120411_fa.png" /></a>
+  <a href="/assets/bitmaps/Ceph_Logo_Standard_RGB_120411_fa.png"><img loading="lazy" src="/assets/bitmaps/Ceph_Logo_Standard_RGB_120411_fa.png" /></a>
+  <a href="/assets/bitmaps/Ceph_Logo_Stacked_aRGB_Black_120411_fa.png"><img loading="lazy" src="/assets/bitmaps/Ceph_Logo_Stacked_aRGB_Black_120411_fa.png" /></a>
+  <a href="/assets/bitmaps/Ceph_Logo_Stacked_RGB_120411_fa.png"><img loading="lazy" src="/assets/bitmaps/Ceph_Logo_Stacked_RGB_120411_fa.png" /></a>
+  <a href="/assets/bitmaps/Ceph_Logo_Stacked_RGB_Reversed_120411_fa.png"><img loading="lazy" src="/assets/bitmaps/Ceph_Logo_Stacked_RGB_Reversed_120411_fa.png" /></a>
 </div>
