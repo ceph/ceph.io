@@ -12,7 +12,7 @@ tags:
 
 This summer I worked with The Ceph Foundation under [Google Summer Of Code '21](https://summerofcode.withgoogle.com/how-it-works/) (GSoC) programme.
 
-So Google Summer of Code is a global program focused on bringing more student developers into open source software development. Students work with an open source organization on a 10 week programming project during their break from school.
+Google Summer of Code is a global program focused on bringing more student developers into open source software development. Students work with an open source organization on a 10 week programming project during their break from school.
 
 In this blog, I'll share my journey of completing the project "Visual Regression Testing of Ceph Dashboard".
 
@@ -24,14 +24,14 @@ My GSoC experience has been amazing, from the initial days of having zero clue o
 - How to work on problems together.
 - Reviewing other's code.
 - Efficient communication.
-- PR ettiquettes.
+- PR etiquettes.
 - Working in scrum environment.
 
 Also I can't thank my mentors Ernesto Puerta and Alfonso Martinez and the whole Ceph dashboard team enough for their constant support, reviews, feedback and what not. Things I've learnt during my period have not only made me an overall better programmer, but also the real world experience I gained, has been priceless.
 
 ## Project
 
-The project that I worked on was "Visual Regression Testing of Ceph Dashboard", so Visual Regression Testing checks what the user will see after any code changes have been executed by comparing screenshots taken before and after code changes. This project immidiately caught my eye when I first saw it on GSoC's project list, I had never heard of visual testing then and it just seemed like a very interesting idea. I dived deep into the project and it just kept getting better, there were all these amusing topics like pixel by pixel bitmap matching, anti-aliasing, browser offsets, etc. that I never lost interest from. In this blog post, I'll guide you through my project and the challenges I faced in my journey.
+The project that I worked on was "Visual Regression Testing of Ceph Dashboard", so Visual Regression Testing checks what the user will see after any code changes have been executed by comparing screenshots taken before and after code changes. This project immediately caught my eye when I first saw it on GSoC's project list, I had never heard of visual testing then and it just seemed like a very interesting idea. I dived deep into the project and it just kept getting better, there were all these amusing topics like pixel by pixel bitmap matching, anti-aliasing, browser offsets, etc. that I never lost interest from. In this blog post, I'll guide you through my project and the challenges I faced in my journey.
 
 ## Visual Regression Testing
 
@@ -44,7 +44,7 @@ A visual regression test checks what the user will see after any code changes ha
 In ceph dashboard, we already have the whole testing pyramid set-up and running, so the question is why do we need visual testing?
 
 1. Visual bugs are rendering issues. And rendering validation is not what functional testing tools are designed to catch. Functional testing measures functional behavior.
-2. It helps in picking up css bugs, where sometimes user is not able to see critical buttons, or they are in unclickable position.
+2. It helps in picking up css bugs, where sometimes user is not able to see critical buttons, or they are in an unclickable position.
 3. The other very useful feature of this testing was that it helps make informed decisions when having breaking changes, like:
 
 - Undergoing large refactorings.
