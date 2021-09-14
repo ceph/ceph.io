@@ -1,6 +1,6 @@
 ---
 title: "Ceph Pacific:Exploiting Prometheus data from the CLI"
-date: "2021-09-13"
+date: "2021-09-14"
 author: "Paul Cuzner"
 ---
 
@@ -26,7 +26,7 @@ With that said, lets look at what 'cmon' provides;
 
 I could dive into each of these options, but maybe you'd rather watch a video!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/24vulOxXWXY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% YouTube '24vulOxXWXY', 'Monitoring your Ceph cluster from the CLI, with cmon' %}
 
 &nbsp;
 There are couple of benefits to reusing the data that mgr/prometheus provides;
@@ -73,4 +73,4 @@ Either way, once the alias is defined you can run 'cmon' and should be presented
 
 You could even create multiple aliases pointing to different Ceph clusters, and since the optional panels are parameters to cmon, you could tailor the displays to the clusters role...RGW or rbd for example.
 
-If you're a Ceph user, and prefer to use the CLI, maybe a tool like this would be helpful. However, don't expect it to magically appear in the next Ceph release. Remember - at this point, cmon is a proof of concept to gauge community interest. If you think this utility would be a helpful addition to your Ceph 'toolbox', head on over to the projects [repo](ttps://github.com/pcuzner/cmon). You can simply ⭐ the project, or comment/vote in the [discussions](https://github.com/pcuzner/cmon/discussions/12).
+If you're a Ceph user, and prefer to use the CLI, maybe a tool like this would be helpful. However, don't expect it to magically appear in the next Ceph release. Remember - at this point, cmon is a proof of concept to gauge community interest. If you think this utility would be a helpful addition to your Ceph 'toolbox', head on over to the projects [repo](https://github.com/pcuzner/cmon). You can simply ⭐ the project, or comment/vote in the [discussions](https://github.com/pcuzner/cmon/discussions/12).
