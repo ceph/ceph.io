@@ -54,7 +54,7 @@ This is the sixth backport release in the Pacific series. We recommend all users
 
 - ceph-volume: work around phantom atari partitions ([pr#42753](https://github.com/ceph/ceph/pull/42753), Blaine Gardner)
 
-- ceph.spec<!-- breaklink >.in: drop gdbm from build deps ([pr#43000](https://github.com/ceph/ceph/pull/43000), Kefu Chai)
+- ceph.spec<span></span>.in: drop gdbm from build deps ([pr#43000](https://github.com/ceph/ceph/pull/43000), Kefu Chai)
 
 - cephadm: August batch 1 ([pr#42736](https://github.com/ceph/ceph/pull/42736), Sage Weil, Dimitri Savineau, Guillaume Abrioux, Sebastian Wagner, Varsha Rao, Zac Dover, Adam King, Cory Snyder, Michael Fritch, Asbjørn Sannes, "Wang,Fei", Javier Cacheiro, 胡玮文, Daniel Pivonka)
 
@@ -70,7 +70,7 @@ This is the sixth backport release in the Pacific series. We recommend all users
 
 - cls/cmpomap: empty values are 0 in U64 comparisons ([pr#42908](https://github.com/ceph/ceph/pull/42908), Casey Bodley)
 
-- cmake, ceph.spec<!-- breaklink >.in: build with header only fmt on RHEL ([pr#42472](https://github.com/ceph/ceph/pull/42472), Kefu Chai)
+- cmake, ceph.ceph<span></span>.in: build with header only fmt on RHEL ([pr#42472](https://github.com/ceph/ceph/pull/42472), Kefu Chai)
 
 - cmake: build static libs if they are internal ones ([pr#39902](https://github.com/ceph/ceph/pull/39902), Kefu Chai)
 
@@ -114,7 +114,7 @@ This is the sixth backport release in the Pacific series. We recommend all users
 
 - mds: create file system with specific ID ([pr#42900](https://github.com/ceph/ceph/pull/42900), Ramana Raja)
 
-- mds: MDCache<!-- breaklink >.cc:5319 FAILED ceph\_assert(rejoin\_ack\_gather.count(mds->get\_nodeid())) ([pr#42938](https://github.com/ceph/ceph/pull/42938), chencan)
+- mds: MDCache<span></span>.cc:5319 FAILED ceph\_assert(rejoin\_ack\_gather.count(mds->get\_nodeid())) ([pr#42938](https://github.com/ceph/ceph/pull/42938), chencan)
 
 - mds: META\_POP\_READDIR, META\_POP\_FETCH, META\_POP\_STORE, and cache\_hit\_rate are not updated ([pr#42939](https://github.com/ceph/ceph/pull/42939), Yongseok Oh)
 
@@ -336,7 +336,7 @@ This is the sixth backport release in the Pacific series. We recommend all users
 
 - rpm: drop use of $FIRST\_ARG in ceph-immutable-object-cache ([pr#42480](https://github.com/ceph/ceph/pull/42480), Nathan Cutler)
 
-- run-make-check<!-- breaklink >.sh: Increase failure output log size ([pr#42850](https://github.com/ceph/ceph/pull/42850), David Galloway)
+- run-make-check<span></span>.sh: Increase failure output log size ([pr#42850](https://github.com/ceph/ceph/pull/42850), David Galloway)
 
 - SimpleRADOSStriper: use debug\_cephsqlite ([pr#42659](https://github.com/ceph/ceph/pull/42659), Patrick Donnelly)
 
