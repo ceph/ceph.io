@@ -70,7 +70,7 @@ This is the sixth backport release in the Pacific series. We recommend all users
 
 - cls/cmpomap: empty values are 0 in U64 comparisons ([pr#42908](https://github.com/ceph/ceph/pull/42908), Casey Bodley)
 
-- cmake, ceph.ceph<span></span>.in: build with header only fmt on RHEL ([pr#42472](https://github.com/ceph/ceph/pull/42472), Kefu Chai)
+- cmake, ceph.spec<span></span>.in: build with header only fmt on RHEL ([pr#42472](https://github.com/ceph/ceph/pull/42472), Kefu Chai)
 
 - cmake: build static libs if they are internal ones ([pr#39902](https://github.com/ceph/ceph/pull/39902), Kefu Chai)
 
