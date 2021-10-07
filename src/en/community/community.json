@@ -1,6 +1,12 @@
 {
   "tech_talks": [
     {
+      "date": "2021-09-26",
+      "title": "Ceph Tech Talk: Ceph at DigitalOcean",
+      "presenter": "Alex Marangone",
+      "url": "https://www.youtube.com/watch?v=k_bTg72eOhU"
+    },
+    {
       "date": "2021-08-26",
       "title": "Ceph Tech Talk: Going NATS",
       "presenter": "Matan Breizman",
