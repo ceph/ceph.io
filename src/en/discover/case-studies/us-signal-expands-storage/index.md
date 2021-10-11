@@ -17,7 +17,7 @@ Founded in 2001, US Signal is the largest debt-free, privately held, data center
 
 They recently increased their storage capacity by over a petabyte with a no-downtime migration across multiple distributed data center sites in four midwest states, including Illinois, Indiana, Michigan, and Wisconsin.
 
-# Increasing customer demand required capacity to scale-out rapidly
+## Increasing customer demand required capacity to scale-out rapidly
 
 Having already established a Ceph software-defined storage architecture in 2012, the company took the opportunity to re-evaluate its incumbent solution against evolving requirements. These requirements included the need for cluster management across multiple, disconnected sites, the need for seamless integration with services billing, stringent cloud service SLAs, as well as limited resources (including skills, space and power). Because customers were in current operation, zero downtime during the capacity expansion was a critical requirement. SoftIron’s expertise and Ceph-based HyperDrive solution proved to be an ideal fit for the expansion, accomplished with zero downtime.
 
