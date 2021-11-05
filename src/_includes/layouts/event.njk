@@ -43,7 +43,7 @@ layout: navigation
           <a class="a" href="https://www.google.com/maps/search/?api=1&query={{ map | slug }}" rel="noreferrer noopener" target="_blank">View map</a>
           <hr class="hidden lg:block hr">
         </div>
-        {% if end | isInFuture %}
+        {% if end | isInFuture and register %}
           <div>
             <a class="button w-full" href="{{ register }}" rel="noreferrer noopener" target="_blank">Register</a>
             <hr class="hidden lg:block hr">
