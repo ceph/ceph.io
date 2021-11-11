@@ -1,0 +1,46 @@
+{
+  "jobs": [
+    {
+      "company": "Bloomberg",
+      "date": "2021-10-26",
+      "title": "Senior Software Engineer - Storage Engineer",
+      "url": "https://careers.bloomberg.com/job/detail/81144?qe=Senior+Software+Engineer+-+Storage+Engineering"
+    },
+    {
+      "company": "Canonical",
+      "date": "2021-08-30",
+      "title": "Ceph and software-defined storage product manager",
+      "url": "https://canonical.com/careers/3039369/ceph-and-software-defined-storage-product-manager-remote"
+    },
+    {
+      "company": "Canonical",
+      "date": "2021-08-30",
+      "title": "Software Engineer, Ceph & Distributed Storage",
+      "url": "https://canonical.com/careers/1861978/software-engineer-ceph-and-distributed-storage-remote"
+    },
+    {
+      "company": "Canonical",
+      "date": "2021-08-30",
+      "title": "Senior Software Engineer - Linux Engineering",
+      "url": "https://canonical.com/careers/3326693/linux-engineering-open-source-remote"
+    },
+    {
+      "company": "Safespring",
+      "date": "2021-08-30",
+      "title": "Ceph Engineer - Infrastructure Team ",
+      "url": "https://www.safespring.com/career/ceph-engineer/"
+    },
+    {
+      "company": "SUSE",
+      "date": "2021-08-30",
+      "title": "Senior Software Engineer, Software Defined Storage",
+      "url": "https://jobs.suse.com/us/en/job/71001486/Senior-Software-Engineer-Software-Defined-Storage"
+    },
+    {
+      "company": "SUSE",
+      "date": "2021-08-30",
+      "title": "Senior Quality Assurance Engineer, Software Defined Storage",
+      "url": "https://jobs.suse.com/us/en/job/71001487/Senior-Quality-Assurance-Engineer-Software-Defined-Storage"
+    }
+  ]
+}
