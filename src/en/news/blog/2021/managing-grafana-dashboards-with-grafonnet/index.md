@@ -1,6 +1,6 @@
 ---
 title: "Managing Grafana Dashboards with Grafonnet"
-date: "2021-09-17"
+date: "2021-11-11"
 author: "Aashish Sharma"
 image: "images/grafana_panel4.png"
 tags:
