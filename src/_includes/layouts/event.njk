@@ -40,7 +40,9 @@ layout: navigation
             {{ location }}
           </p>
           <p class="p">{{ venue }}</p>
-          <a class="a" href="https://www.google.com/maps/search/?api=1&query={{ map | slug }}" rel="noreferrer noopener" target="_blank">View map</a>
+          {% if location | lower != 'virtual' %}
+            <a class="a" href="https://www.google.com/maps/search/?api=1&query={{ map | slug }}" rel="noreferrer noopener" target="_blank">View map</a>
+          {% endif %}
           <hr class="hidden lg:block hr">
         </div>
         {% if end | isInFuture and register %}
