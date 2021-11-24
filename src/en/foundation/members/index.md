@@ -54,6 +54,7 @@ order: 3
   <a href="https://grnet.gr/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-grnet.png" /></a>
   <a href="http://www.monash.edu/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-monash.png" /></a>
   <a href="http://www.ska.ac.za/about/sarao/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-sarao.png" /></a>
+  <a href="https://openinfra.dev" rel="noreferrer noopener" target="_blank"><img alt="OpenInfra Foundation" loading="lazy" src="/assets/bitmaps/logo-openinfra.png" /></a>
   <a href="https://stfc.ukri.org/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-science-and-technology-council.png" /></a>
   <a href="https://switch.ch/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-switch.png" /></a>
   <a href="http://www.osris.org/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-umich.png" /></a>
