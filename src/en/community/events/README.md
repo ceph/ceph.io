@@ -39,7 +39,7 @@ tags:
 - `title` (String) — Title text for the event and used as the `<title>` for the page. Also appears in the event card found on listing pages.\*
 - `date` (Date) — Start date of the event.
 - `end` (Date) — End date of the event.
-- `location` (String) — Location of the event, city and country. If set to virtual, set the value to virtual.
+- `location` (String) — Location of the event, city and country. If it's a virtual event, set the value to 'virtual'.
 - `venue` (String) — Venue of the event, building name and street.
 - `register` (String) — Website URL to register for the event. This is hidden once the end date of the event has passed.\*
 - `image` (String) — Asset path for the hero image on the event page. Also appears in the event card found on listing pages.
