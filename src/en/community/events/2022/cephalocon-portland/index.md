@@ -18,3 +18,4 @@ Registration will be available soon!
 - **CFP closes**: Friday, December 10th
 
 <a class="button" href="https://linuxfoundation.smapply.io/prog/cephalocon_2022/" rel="noreferrer noopener" target="_blank">CFP is now open!</a>
+<a class="button" href="/assets/pdfs/cephalocon-2022-sponsorship-prospectus.pdf" rel="noreferrer noopener" target="_blank">Sponsor Cephalocon</a>
