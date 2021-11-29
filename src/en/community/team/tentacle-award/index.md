@@ -9,6 +9,15 @@ The team recognizes the outstanding contributions of some former and present mem
 
 <div class="grid grid--align-center grid--cols-2 md:w-3-4">
   <div class="relative text-center">
+    <img alt="Kefu Chai" class="rounded-2 to-md:max-h-56 w-full" loading="lazy" src="/assets/bitmaps/tentacle-award-kefu-chai.jpg" />
+    <p class="p text-semibold">
+      Kefu Chai
+    </p>
+    Crimson / BlueStore
+    2021
+  </div>
+
+  <div class="relative text-center">
     <img alt="Lenz Grimmer" class="rounded-2 to-md:max-h-56 w-full" loading="lazy" src="/assets/bitmaps/tentacle-award-lenz-grimmer.jpg" />
     <p class="p text-semibold">
       Lenz Grimmer
