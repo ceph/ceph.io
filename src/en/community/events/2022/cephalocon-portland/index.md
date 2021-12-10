@@ -4,6 +4,12 @@ end: 2022-04-07
 location: Portland, Oregon + Virtual
 venue: Hyatt Regency 375 NE Holladay St, Portland, OR 97232
 image: "/assets/bitmaps/cephalocon-2022-hero.png"
+sponsors:
+  - label: Platinum sponsors
+    list:
+      - name: SoftIron
+        logo: "/assets/bitmaps/logo-softiron.png"
+        website: "https://softiron.com"
 tags:
   - cephalocon
 ---
@@ -18,4 +24,4 @@ Registration will be available soon!
 - **CFP closes**: Friday, December 19th at 11:59 PST
 
 <a class="button" href="https://linuxfoundation.smapply.io/prog/cephalocon_2022/" rel="noreferrer noopener" target="_blank">CFP is now open!</a>
-<a class="button" href="/assets/pdfs/cephalocon-2022-sponsorship-prospectus.pdf" rel="noreferrer noopener" target="_blank">Sponsor Cephalocon</a>
+<a class="button" href="https://events.linuxfoundation.org/sponsor-ceph22" rel="noreferrer noopener" target="_blank">Sponsor Cephalocon</a>
