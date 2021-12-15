@@ -1,4 +1,5 @@
 ---
+title: Cephalocon 2022
 date: 2022-04-05
 end: 2022-04-07
 location: Portland, Oregon + Virtual
