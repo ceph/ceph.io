@@ -7,7 +7,7 @@ tags:
   - event
 ---
 
-The [CFP for Cephalocon Portland 2022](https://linuxfoundation.smapply.io/prog/cephalocon_2022/) is now open to virtual and in-person attendees and will close on December 10 at 11:59 PDT.
+The [CFP for Cephalocon Portland 2022](https://linuxfoundation.smapply.io/prog/cephalocon_2022/) is now open to virtual and in-person attendees and will close on December 19 at 11:59 PDT.
 
 April 5: Ceph Developer Summit
 
