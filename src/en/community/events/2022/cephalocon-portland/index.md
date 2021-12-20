@@ -21,7 +21,7 @@ Registration will be available soon!
 - **Developer Summit**: April 5th
 - **Cephalocon**: April 6-7th
 - **CFP opens**: Friday, November 5th
-- **CFP closes**: Friday, December 19th at 11:59 PST
+- **CFP closes**: Sunday, December 19th at 11:59 PST
 
 <a class="button" href="https://linuxfoundation.smapply.io/prog/cephalocon_2022/" rel="noreferrer noopener" target="_blank">CFP is now open!</a>
 <a class="button" href="https://events.linuxfoundation.org/sponsor-ceph22" rel="noreferrer noopener" target="_blank">Sponsor Cephalocon</a>
