@@ -1,4 +1,5 @@
 ---
+title: Ceph Meetup
 date: 2021-11-30
 end: 2021-11-30
 location: Virtual
