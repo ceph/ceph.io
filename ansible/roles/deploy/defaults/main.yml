@@ -17,4 +17,4 @@ packages:
   - net-tools
 node_version: 14.2.0
 
-content_security_policy: "default-src 'unsafe-inline' 'self' https://ceph.matomo.cloud https://fonts.gstatic.com https://www.youtube.com; img-src 'self' https: data:; script-src 'unsafe-inline' 'unsafe-eval' https:; style-src 'unsafe-inline' 'self' https://fonts.googleapis.com;"
+content_security_policy: "default-src 'unsafe-inline' 'self' https://ceph.matomo.cloud https://fonts.gstatic.com https://www.youtube.com https://calendar.google.com; img-src 'self' https: data:; script-src 'unsafe-inline' 'unsafe-eval' https:; style-src 'unsafe-inline' 'self' https://fonts.googleapis.com;"
