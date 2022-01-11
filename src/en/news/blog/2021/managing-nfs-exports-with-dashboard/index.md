@@ -1,6 +1,6 @@
 ---
 title: "Managing NFS exports with Dashboard"
-date: "2021-12-16"
+date: "2022-01-11"
 author: "Alfonso Martínez"
 image: "images/ganesha.jpg"
 tags:
