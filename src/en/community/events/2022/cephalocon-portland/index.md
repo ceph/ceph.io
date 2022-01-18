@@ -8,9 +8,13 @@ image: "/assets/bitmaps/cephalocon-2022-hero.png"
 sponsors:
   - label: Platinum sponsors
     list:
+      - name: Intel
+        logo: "/assets/bitmaps/logo-intel.png"
+        website: "https://intel.com"
       - name: SoftIron
         logo: "/assets/bitmaps/logo-softiron.png"
         website: "https://softiron.com"
+
 tags:
   - cephalocon
 ---
@@ -23,5 +27,4 @@ Cephalocon is the premier yearly event that brings together the global community
 - **CFP closes**: Sunday, December 19th at 11:59 PST
 
 <a class="button" href="https://events.linuxfoundation.org/cephalocon/register/" rel="noreferrer noopener" target="_blank">Register</a>
-<a class="button" href="https://linuxfoundation.smapply.io/prog/cephalocon_2022/" rel="noreferrer noopener" target="_blank">CFP is now open!</a>
 <a class="button" href="https://events.linuxfoundation.org/sponsor-ceph22" rel="noreferrer noopener" target="_blank">Sponsor Cephalocon</a>
