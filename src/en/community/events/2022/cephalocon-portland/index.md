@@ -14,6 +14,11 @@ sponsors:
       - name: SoftIron
         logo: "/assets/bitmaps/logo-softiron.png"
         website: "https://softiron.com"
+  - label: Silver sponsors
+    list:
+      - name: Canonical
+        logo: "/assets/bitmaps/logo-ubuntu.png"
+        website: "https://canonical.com"
 
 tags:
   - cephalocon
