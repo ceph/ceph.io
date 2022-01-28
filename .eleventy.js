@@ -84,7 +84,7 @@ module.exports = function (eleventyConfig) {
 
   // Passthrough copy
   eleventyConfig.addPassthroughCopy('./src/assets/**/*.json');
-  eleventyConfig.addPassthroughCopy('./src/**/*.{csv,pdf}');
+  eleventyConfig.addPassthroughCopy('./src/**/*.{csv,pdf,ods}');
 
   // Plugins
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
