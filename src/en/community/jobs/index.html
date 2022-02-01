@@ -1,0 +1,41 @@
+---
+title: Jobs
+order: 7
+---
+
+<section class="section">
+  <h1 class="h1">{{ title }}</h1>
+  <div class="grid lg:grid--cols-2">
+    <div>
+      <p class="p">
+        Are you a contributor to the Ceph project looking for a new opportunity? Take a look at companies searching for your Ceph expertise.
+        If you would like your job posting listed, email <a class="a" href="mailto:foundation@ceph.io">foundation@ceph.io</a> or open a
+        <a class="a" href="https://github.com/ceph/ceph.io/edit/main/src/en/community/jobs/jobs.json">pull request</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="bg-grey-300pt-0 section section--full">
+  <div class="wrapper">
+    <div class="max-w-256">
+      <table class="table">
+        <tbody>
+          {% for item in jobs | getJobs | objectValues %}
+          <tr>
+            <td class="w-36">
+              <time datetime="{{ item.date }}">{{ item.date | formatDate(locale) }}</time>
+            </td>
+            <td>{{ item.company }}</td>
+            <td>
+              {% if item.url %}
+              <a class="a" href="{{ item.url }}" target="_blank" rel="noreferrer noopener">{% endif %}{{ item.title }}{% if item.url %}</a
+              >{% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

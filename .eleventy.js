@@ -36,6 +36,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('getItemsByLocale', require(`${filtersDir}/getItemsByLocale.js`));
   eleventyConfig.addFilter('getItemsInFuture', require(`${filtersDir}/getItemsInFuture.js`));
   eleventyConfig.addFilter('getItemsInPast', require(`${filtersDir}/getItemsInPast.js`));
+  eleventyConfig.addFilter('getJobs', require(`${filtersDir}/getJobs.js`));
   eleventyConfig.addFilter('getSingleDigitFromDate', require(`${filtersDir}/getSingleDigitFromDate.js`));
   eleventyConfig.addFilter('isInFuture', require(`${filtersDir}/isInFuture.js`));
   eleventyConfig.addFilter('objectValues', require(`${filtersDir}/objectValues.js`));
