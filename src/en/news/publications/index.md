@@ -1,7 +1,7 @@
 ---
 layout: content-simple
 title: Publications
-order: 4
+order: 2
 ---
 
 # {{ title }}
