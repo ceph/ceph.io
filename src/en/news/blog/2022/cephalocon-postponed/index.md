@@ -2,7 +2,6 @@
 title: Cephalocon 2022 Postponed
 date: 2022-02-07
 author: Mike Perez (thingee)
-image: "./images/cephalocon-2022-hero.png"
 tags:
   - event
 ---
