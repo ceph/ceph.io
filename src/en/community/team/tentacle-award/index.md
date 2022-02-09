@@ -8,6 +8,16 @@ title: Tentacle Award
 The team recognizes the outstanding contributions of some former and present members of the Ceph Community with the Tentacle Award.
 
 <div class="grid grid--align-center grid--cols-2 md:w-3-4">
+
+  <div class="relative text-center">
+    <img alt="Patrick Donnelly" class="rounded-2 to-md:max-h-56 w-full" loading="lazy" src="/assets/bitmaps/tentacle-award-patrick-donnelly.jpg" />
+    <p class="p text-semibold">
+      Patrick Donnelly
+    </p>
+    CephFS
+    2021
+  </div>
+
   <div class="relative text-center">
     <img alt="Kefu Chai" class="rounded-2 to-md:max-h-56 w-full" loading="lazy" src="/assets/bitmaps/tentacle-award-kefu-chai.jpg" />
     <p class="p text-semibold">
