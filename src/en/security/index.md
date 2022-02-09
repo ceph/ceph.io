@@ -13,4 +13,4 @@ The Ceph project takes security very seriously, and we want to make sure that an
 
 Please report any suspected security vulnerability to our closed security list: <security@ceph.io>.
 
-More information and preview CVEs can be found in <a href="https://docs.ceph.com/en/latest/security/">Ceph’s Documentation</a>.
+More information and previous CVEs can be found in <a href="https://docs.ceph.com/en/latest/security/">Ceph’s Documentation</a>.
