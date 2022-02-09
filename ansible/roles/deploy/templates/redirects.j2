@@ -150,6 +150,8 @@
       try_files _ @blogtree;
   }
 
+  # The first block with the trailing slash will return the index page.
+  # The second block without the trailing slash will return images.
   location @blogtree {
       try_files /en/news/blog/2008/$1/
                 /en/news/blog/2009/$1/
@@ -164,5 +166,20 @@
                 /en/news/blog/2018/$1/
                 /en/news/blog/2019/$1/
                 /en/news/blog/2020/$1/
-                /en/news/blog/2021/$1/;
+                /en/news/blog/2021/$1/
+
+                /en/news/blog/2008/$1
+                /en/news/blog/2009/$1
+                /en/news/blog/2010/$1
+                /en/news/blog/2011/$1
+                /en/news/blog/2012/$1
+                /en/news/blog/2013/$1
+                /en/news/blog/2014/$1
+                /en/news/blog/2015/$1
+                /en/news/blog/2016/$1
+                /en/news/blog/2017/$1
+                /en/news/blog/2018/$1
+                /en/news/blog/2019/$1
+                /en/news/blog/2020/$1
+                /en/news/blog/2021/$1;
   }
