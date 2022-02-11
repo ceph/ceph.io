@@ -21,7 +21,7 @@ The [User Survey working group](https://tracker.ceph.com/projects/ceph/wiki/User
 
 The team recognizes the outstanding contributions of some former and present members of the Ceph Community with the Tentacle Award.
 
-### Kefu Chai for Crimson / Bluestore contributions
+### Kefu Chai for serving as Crimson / Bluestore Lead
 
 ![Kefu Chai with the Tentacle Award](images/tentacle-award-kefu-chai.jpg)
 
