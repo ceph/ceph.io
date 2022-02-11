@@ -11,7 +11,7 @@ tags:
 
 We can’t wait to gather the Ceph community again in person, and we’re sure you feel the same way. We had hoped to do this April 5-7, but unfortunately, given the current COVID-19 pandemic wave, we feel that this may not be the right time to gather in person.
 
-We want to ensure a safe experience onsite for participants, and make sure as many people that want to join us feel safe in doing so. Thus, we’ve made the difficult decision to postpone Cephalocon 2022 until later this year. We are reviewing date options with the venue and our partners, and will share the new event dates shortly. In the meantime, we are excited to announce the schedule is live!
+We want to ensure a safe experience onsite for participants, and make sure as many people that want to join us feel safe in doing so. Thus, we’ve made the difficult decision to postpone Cephalocon 2022 until later this year. We are reviewing date options with the venue and our partners, and will share the new event dates shortly. In the meantime, we are excited to announce the [schedule is live](https://ceph2022.sched.com/).
 
 ## Ceph 2022 User Survey Now Available
 
@@ -21,7 +21,7 @@ The [User Survey working group](https://tracker.ceph.com/projects/ceph/wiki/User
 
 The team recognizes the outstanding contributions of some former and present members of the Ceph Community with the Tentacle Award.
 
-### Kefu Chai for serving as Crimson / Bluestore Lead
+### Kefu Chai for serving as Crimson Lead
 
 ![Kefu Chai with the Tentacle Award](images/tentacle-award-kefu-chai.jpg)
 
