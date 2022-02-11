@@ -1,6 +1,12 @@
 {
   "jobs": [
     {
+      "company": "Scaleway",
+      "date": "2022-02-11",
+      "title": "Freelance Golang backend developer with good experience of CEPH",
+      "url": "https://scaleway-25152556.hubspotpagebuilder.eu/freelance-golang-ceph"
+    },
+    {
       "company": "Bloomberg",
       "date": "2021-10-26",
       "title": "Senior Software Engineer - Storage Engineer",
