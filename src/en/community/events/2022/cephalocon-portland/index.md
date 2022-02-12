@@ -11,6 +11,9 @@ sponsors:
       - name: Intel
         logo: "/assets/bitmaps/logo-intel.png"
         website: "https://intel.com"
+      - name: Red Hat
+        logo: "/assets/bitmaps/logo-redhat.png"
+        website: "https://redhat.com"
       - name: SoftIron
         logo: "/assets/bitmaps/logo-softiron.png"
         website: "https://softiron.com"
