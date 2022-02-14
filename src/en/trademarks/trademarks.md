@@ -27,7 +27,7 @@ Red Hat allows the Ceph Marks only to be used as set forth in this Policy and fo
 
 When you use any of the Ceph Marks, you must always follow the Rules for Proper Usage in this Policy. In addition, Red Hat may provide you with written requirements on the size, typeface, colors, and other graphic characteristics of the Ceph Marks. You must implement and ensure your compliance with these requirements before using the Ceph Marks. If these requirements change, including any changes to this Policy, you must implement those changes within a commercially reasonable timeframe.
 
-Questions about usage, and requests for clarification or permission, may be submitted to <tmlicense@redhat.com>.
+Questions about usage, and requests for clarification or permission, may be submitted to <trademarks@redhat.com>.
 
 ## TRADEMARK BASICS
 
