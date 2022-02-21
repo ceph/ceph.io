@@ -164,3 +164,45 @@ This project aims to provide users with a rich and interactive visualization of 
 - Understand how data flows from core Ceph to the Dashboard UI layer
 - Identify the key data sources for depicting the status of a Ceph cluster
 - Search Open Source charting and data visualization tools
+
+<hr class="hr">
+
+## Improving Dashboard Accessibility for Blind and Visually-Impaired Ceph Users
+
+**Mentor name:** Laura Flores, Ernesto Puerta
+
+**Mentor email:** lflores@redhat.com, epuertat@redhat.com
+
+**Project Type:** 175 hour project
+
+**Skills needed:** HTML, JavaScript / TypeScript
+
+**Difficulty:** beginner
+
+**Subcomponent of Ceph**: Dashboard
+
+**Description of project:**
+
+The goal of this project is to improve Dashboard accessibility for blind and visually-impaired
+users. While it's likely that the Dashboard already meets some accessibility guidelines, we
+currently ignore its compliance to Web Content Accessibility Guidelines (WCAG) 2.1 standard levels
+(levels A, AA, and AAA). The steps to achieve at least an A level of conformance would involve using
+a mix of web accessibility guidelines and software (listed in the Tracker) to evaluate the Dashboard's
+level of accessibility and improve it as needed.
+Reference: https://tracker.ceph.com/issues/43264
+
+**Standup/weekly call mentee could attend?:** Dashboard, Core
+
+**Steps to evaluate an applicant for the project:**
+
+- Launch a containerized Ceph cluster (e.g.: rhcs-dashboard/ceph-dev)
+- Access the Ceph Dashboard
+- Run the Ceph Dashboard webpage through a web accessibility tool listed in the Tracker above and
+  identify some areas that need improvement
+
+**What the first 2 weeks of work would look like during the internship:**
+
+- Deploy a containerized Ceph cluster
+- Get familar with the Ceph-Dashboard development environment and system architecture
+- Get familiar with web accessibility guidelines and tools
+- Begin to identify areas of the code that do not meet level A accessibility guidelines
