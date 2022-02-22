@@ -1,6 +1,36 @@
 {
   "jobs": [
     {
+      "company": "croit",
+      "date": "2022-02-22",
+      "title": "Senior C++ Ceph Developer m/f/d",
+      "url": "https://www.croit.io/career/ceph-developer"
+    },
+    {
+      "company": "clyso",
+      "date": "2022-02-22",
+      "title": "Linux Open Source Developer (m/f/d) – Cloud Infrastructure",
+      "url": "https://www.clyso.com/en/linux-open-source-developer/"
+    },
+    {
+      "company": "Bloomberg",
+      "date": "2022-02-22",
+      "title": "Senior Software Engineer - Storage Engineering",
+      "url": "https://careers.bloomberg.com/job/detail/81144?qe=Senior+Software+Engineer+-+Storage+Engineering"
+    },
+    {
+      "company": "SoftIron",
+      "date": "2022-02-22",
+      "title": "Software Engineer, C++/Boost and Software Defined Storage",
+      "url": "https://jobs.suse.com/us/en/job/71002781/Software-Engineer-Software-Defined-Storage"
+    },
+    {
+      "company": "SUSE",
+      "date": "2022-02-22",
+      "title": "Software Engineer - Software Defined Storage",
+      "url": "https://jobs.suse.com/us/en/job/71002781/Software-Engineer-Software-Defined-Storage"
+    },
+    {
       "company": "Scaleway",
       "date": "2022-02-11",
       "title": "Freelance Golang backend developer with Ceph experience",
@@ -35,18 +65,6 @@
       "date": "2021-08-30",
       "title": "Ceph Engineer - Infrastructure Team ",
       "url": "https://www.safespring.com/career/ceph-engineer/"
-    },
-    {
-      "company": "SUSE",
-      "date": "2021-08-30",
-      "title": "Senior Software Engineer, Software Defined Storage",
-      "url": "https://jobs.suse.com/us/en/job/71001486/Senior-Software-Engineer-Software-Defined-Storage"
-    },
-    {
-      "company": "SUSE",
-      "date": "2021-08-30",
-      "title": "Senior Quality Assurance Engineer, Software Defined Storage",
-      "url": "https://jobs.suse.com/us/en/job/71001487/Senior-Quality-Assurance-Engineer-Software-Defined-Storage"
     }
   ]
 }
