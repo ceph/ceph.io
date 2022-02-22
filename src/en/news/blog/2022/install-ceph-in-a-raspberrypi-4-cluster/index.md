@@ -3,6 +3,11 @@ title: Install Ceph in a Raspberry Pi 4 Cluster
 date: 2022-02-16
 image: images/raspberrypi-cluster.jpg
 author: Mike Perez (thingee)
+tags:
+  - arm
+  - cephadm
+  - dashboard
+  - tutorial
 ---
 
 [Cephadm](https://docs.ceph.com/en/pacific/cephadm/) was introduced in the Octopus release to deploy and manage the full lifecycle of a Ceph cluster.
@@ -33,7 +38,7 @@ For this tutorial, we will:
 
 I'll be using the [Fedora server ARM image](https://arm.fedoraproject.org/), and as I write this, it contains the latest [Pacific release](https://ceph.io/en/news/blog/2021/v16-2-0-pacific-released/)!
 
-To make this setup easier, I used the arm-image-installer, which will inject an SSH key as it's writing the image to the SD card.
+To make this setup easier, I used the [arm-image-installer](https://fedoraproject.org/wiki/Architectures/ARM/Installation#Arm_Image_Installer), which will inject an SSH key as it's writing the image to the SD card.
 
 ```
 $ dnf install arm-image-installer
@@ -69,7 +74,9 @@ On each host, we will:
 ```
 $ dnf update
 
-$ hostnamectl set-hostname host1
+$ hostnamectl set-hostname <hostname>
+
+$ echo '<host-ip> <hostname>' >> /etc/hosts
 ```
 
 Install Cephadm on whichever PI you pick to be the manager.
