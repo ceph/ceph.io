@@ -128,9 +128,9 @@ Enhance our Lua binding in the RGW to expose the content of an object when doing
 
 ## Visualizing a Ceph Cluster
 
-**Mentor name:** Ernesto Puerta
+**Mentor name:** Ernesto Puerta, Nizamudeen A
 
-**Mentor email:** epuertat@redhat.com
+**Mentor email:** epuertat@redhat.com, nia@redhat.com
 
 **Project type:** 350 hour project
 
