@@ -1,6 +1,6 @@
 ---
 title: Install Ceph in a Raspberry Pi 4 Cluster
-date: 2022-02-16
+date: 2022-02-24
 image: images/raspberrypi-cluster.jpg
 author: Mike Perez (thingee)
 tags:
