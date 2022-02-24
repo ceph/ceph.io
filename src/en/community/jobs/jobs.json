@@ -1,6 +1,42 @@
 {
   "jobs": [
     {
+      "company": "SoftIron",
+      "date": "2022-02-24",
+      "title": "Systems Engineer (Singapore)",
+      "url": "https://softiron.bamboohr.com/jobs/view.php?id=59&source=aWQ9MTU%3D"
+    },
+    {
+      "company": "SoftIron",
+      "date": "2022-02-24",
+      "title": "Software Engineer, SONiC and Software Defined Networking",
+      "url": "https://softiron.bamboohr.com/jobs/view.php?id=68&source=aWQ9MTU%3D"
+    },
+    {
+      "company": "SoftIron",
+      "date": "2022-02-24",
+      "title": "Software Engineer, C++/Boost and Software Defined Storage",
+      "url": "https://softiron.bamboohr.com/jobs/view.php?id=69&source=aWQ9MTU%3D"
+    },
+    {
+      "company": "SoftIron",
+      "date": "2022-02-24",
+      "title": "Solutions Architect (Germany - Remote)",
+      "url": "https://softiron.bamboohr.com/jobs/view.php?id=70&source=aWQ9MTU%3D"
+    },
+    {
+      "company": "SoftIron",
+      "date": "2022-02-24",
+      "title": "Senior Software Engineer",
+      "url": "https://softiron.bamboohr.com/jobs/view.php?id=76&source=aWQ9MTU%3D"
+    },
+    {
+      "company": "SoftIron",
+      "date": "2022-02-24",
+      "title": "Senior SMB Protocol Engineer",
+      "url": "https://softiron.bamboohr.com/jobs/view.php?id=75&source=aWQ9MTU%3D"
+    },
+    {
       "company": "croit",
       "date": "2022-02-22",
       "title": "Senior C++ Ceph Developer m/f/d",
