@@ -2,6 +2,9 @@
 <html lang="{{ locale }}" dir="{{ dir }}" class="no-js">
   <head prefix="og: http://ogp.me/ns">
     <meta charset="UTF-8">
+    {# In cases where nosuchbranch.ceph.io is loaded, the relative paths like /css/main.css don't load
+    -  so we need to provide the full path of https://ceph.io/css/main.css #}
+    {% if 'Not found' in title %}<base href="https://ceph.io">{% endif %}
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f1726c">
