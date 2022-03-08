@@ -10,6 +10,24 @@ The team recognizes the outstanding contributions of some former and present mem
 <div class="grid grid--align-center grid--cols-2 md:w-3-4">
 
   <div class="relative text-center">
+    <img alt="Sage Weil" class="rounded-2 to-md:max-h-56 w-full" loading="lazy" src="/assets/bitmaps/tentacle-award-sage-weil.jpg" />
+    <p class="p text-semibold">
+      Sage Weil
+    </p>
+    Founder / Architect
+    2022
+  </div>
+
+  <div class="relative text-center">
+    <img alt="Sebastian Wagner" class="rounded-2 to-md:max-h-56 w-full" loading="lazy" src="/assets/bitmaps/tentacle-award-sebastian-wagner.jpg" />
+    <p class="p text-semibold">
+      Sebastian Wagner
+    </p>
+    Ceph Orchestrator
+    2022
+  </div>
+
+  <div class="relative text-center">
     <img alt="Patrick Donnelly" class="rounded-2 to-md:max-h-56 w-full" loading="lazy" src="/assets/bitmaps/tentacle-award-patrick-donnelly.jpg" />
     <p class="p text-semibold">
       Patrick Donnelly
