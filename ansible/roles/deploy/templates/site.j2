@@ -88,10 +88,10 @@ server {
   listen [::]:443 ssl;
   server_name ~^(?<branch>.+)\.ceph\.io$;
 
-  ## TODO: Make this go to a pretty 404 page instead?
-  # If the dir doesn't exist, go to live site
+  # If the dir/branch doesn't exist, service {{ branch }}'s 404 page
   if (!-d {{ install_dir }}/$branch) {
       set $branch {{ branch }};
+      return 404;
   }
 
   root {{ install_dir }}/$branch;
