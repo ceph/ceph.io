@@ -30,7 +30,7 @@ See the list of projects we have available for GSoC contributors!
 **Subcomponent of Ceph:** RGW
 
 **Description of project:**
-[Ceph's S3 tests](github.com/ceph/s3-tests/) tests Ceph's object interface (RGW) compliance of the [S3 Protocol](https://aws.amazon.com/s3/).
+[Ceph's S3 tests](https://github.com/ceph/s3-tests/) tests Ceph's object interface (RGW) compliance of the [S3 Protocol](https://aws.amazon.com/s3/).
 The S3-tests are based off of a deprecated python testing framework called Nose.
 The purpose of this project is to port the existing tests to the [pytest framework](https://docs.pytest.org/en/7.0.x/).
 New tests may be written if they identify gaps in the S3 API and what the test suite is testing.
