@@ -1,5 +1,5 @@
 ---
-title: "Wellcome Sanger Institute securely shares genomic data with Ceph"
+title: "Genomic data sharing enabled by Ceph"
 image: "images/illustration-wellcome-ubuntu.jpg"
 sponsor:
   name: Ubuntu
@@ -10,7 +10,7 @@ tags:
   - technology
 ---
 
-## title
+## Workflow simplification
 
 For a long time the sharing of multi-TB genomic research data sets with other institutions involved time consuming cataloguing and logistical complexities of shipping physical disks.
 
