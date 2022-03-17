@@ -123,12 +123,6 @@ And last, the "test" (single node) object store:
 kubectl apply -f https://raw.githubusercontent.com/rook/rook/release-1.8/deploy/examples/object-test.yaml
 ```
 
-It is probably a good idea to install the Ceph toolbox pod. We would use it later to get the user's credentials so we can upload an object to the bucket (but it is useful for many other things).
-
-```bash
-kubectl apply -f https://raw.githubusercontent.com/rook/rook/release-1.8/deploy/examples/toolbox.yaml
-```
-
 ## Really Easy as a YAML
 
 Lets setup **everything** from YAMLs:
@@ -141,7 +135,7 @@ Create the Ceph Source CR and service (that would be used as the endpoint for th
 kubectl apply -f https://raw.githubusercontent.com/knative-sandbox/eventing-ceph/release-1.2/samples/ceph-source.yaml
 ```
 
-```
+```bash
 cat << EOF | kubectl apply -f -
 apiVersion: v1
 kind: Service
@@ -254,13 +248,11 @@ export AWS_URL=$(minikube service --url rook-ceph-rgw-my-store-external -n rook-
 
 ### User Credentials
 
-We need to get the user credentials in order to upload files to Ceph.
-So, we would need to know the user name, from the Object Bucket CR, and use it with the toolbox to fetch the credentials into environment variables used by the aws CLI tool:
+We get the user credentials and put them into into environment variables used by the aws CLI tool:
 
 ```bash
-export USER=$(kubectl get objectbucket obc-default-ceph-notification-bucket -o jsonpath='{.spec.additionalState.cephUser}')
-export AWS_ACCESS_KEY_ID=$(kubectl -n rook-ceph exec -it deploy/rook-ceph-tools -- radosgw-admin user info --uid  $USER | jq -r '.keys[0].access_key')
-export AWS_SECRET_ACCESS_KEY=$(kubectl -n rook-ceph exec -it deploy/rook-ceph-tools -- radosgw-admin user info --uid  $USER | jq -r '.keys[0].secret_key')
+export AWS_ACCESS_KEY_ID=$(kubectl -n default get secret ceph-notification-bucket -o jsonpath='{.data.AWS_ACCESS_KEY_ID}' | base64 --decode)
+export AWS_SECRET_ACCESS_KEY=$(kubectl -n default get secret ceph-notification-bucket -o jsonpath='{.data.AWS_SECRET_ACCESS_KEY}' | base64 --decode)
 ```
 
 And then fetch the generated bucket name:
@@ -273,14 +265,14 @@ export BUCKET_NAME=$(kubectl get objectbucketclaim ceph-notification-bucket -o j
 
 Last, we can create a file, and upload it to Ceph.
 
-```
+```bash
 echo "hello world" > hello.txt
 aws --endpoint-url "$AWS_URL" s3 cp hello.txt s3://"$BUCKET_NAME"
 ```
 
 We should now see these events in the "event-display" pod log:
 
-```
+```bash
 kubectl logs -l serving.knative.dev/service=event-display -c display-container --tail=100
 ```
 
@@ -290,20 +282,26 @@ At this point, the "event-display" pod should be created and exists as long as n
 
 To debug the Ceph Source use:
 
-```
+```bash
 kubectl logs -l eventing.knative.dev/sourceName=my-ceph-source --tail 100
 ```
 
 The RGW with:
 
-```
+```bash
 kubectl logs -l app=rook-ceph-rgw -n rook-ceph --tail 100
 ```
 
 And the Rook operator with:
 
-```
+```bash
 kubectl logs -l app=rook-ceph-operator -n rook-ceph --tail 100
+```
+
+The Ceph toolbox pod may also be useful for debugging, as it holds the `radosgw-admin` and other tools:
+
+```bash
+kubectl apply -f https://raw.githubusercontent.com/rook/rook/release-1.8/deploy/examples/toolbox.yaml
 ```
 
 ## What's Next?
