@@ -15,6 +15,37 @@ See the list of projects we have available for GSoC contributors!
 
 <hr class="hr">
 
+## 	Making Teuthology a Better Detective
+
+**Mentor name(s):** Aishwarya Mathuria, Zack Cerza, Kamoltat Sirivadhna
+
+**Mentor email(s):** amathuri@redhat.com, zcerza@redhat.com, ksirivad@redhat.com
+
+**Project type:** 175 hour project
+
+**Difficulty:** intermediate
+
+**Skills needed:** Python, Linux as a development environment.
+
+**Subcomponent of Ceph:** Teuthology
+
+**Description of project:**
+[Teuthology](https://github.com/ceph/teuthology/tree/master/docs), an automation test framework for Ceph, currently lacks the ability to detect and report certain unit-test failures
+such as [gtest](https://github.com/google/googletest) and [nose](https://nose.readthedocs.io/en/latest/). We want to improve teuthology's ability to recognize these failures and report them accurately so that it cuts down the time developers spent on
+traversing through teuthology's logs, looking for the root cause of the failure.
+Current work in progress of the project [here](https://github.com/ceph/teuthology/pull/1681).
+
+**Standup/weekly call mentee could attend?**: Teuthology meeting
+
+**Steps to evaluate an applicant for the project:**
+
+- Succesfully installed and ran teuthology locally using the [docker-compose script](https://github.com/ceph/teuthology/tree/master/docs/docker-compose).
+- Write basic unit-test case using pytest in teuthology.
+- Is familiar with how gtest and nose output errors.
+
+
+<hr class="hr">
+
 ## S3-Tests Port to Pytest
 
 **Mentor name:** Ali Maredia
