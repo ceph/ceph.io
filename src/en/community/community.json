@@ -1,6 +1,12 @@
 {
   "tech_talks": [
     {
+      "date": "2022-03-24",
+      "title": "Ceph Tech Talk: How Teuthology Works",
+      "presenter": "Kamoltat (Junior) Sirivadhna",
+      "url": ""
+    },
+    {
       "date": "2021-09-26",
       "title": "Ceph Tech Talk: Ceph at DigitalOcean",
       "presenter": "Alex Marangone",
