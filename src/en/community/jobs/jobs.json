@@ -1,6 +1,18 @@
 {
   "jobs": [
     {
+      "company": "Canonical",
+      "date": "2022-03-18",
+      "title": "Software Engineer, Ceph & Distributed Storage",
+      "url": "https://canonical.com/careers/1861978/software-engineer-ceph-and-distributed-storage-remote"
+    },
+    {
+      "company": "Canonical",
+      "date": "2022-03-18",
+      "title": "Senior Software Engineer - Linux Engineering",
+      "url": "https://canonical.com/careers/3326693/linux-engineering-open-source-remote"
+    },
+    {
       "company": "NVIDIA",
       "date": "2022-03-10",
       "title": "Software Engineer, Software-Defined Storage Cloud Infrastructure (US/CAN/UK/EU)",
@@ -89,24 +101,6 @@
       "date": "2021-10-26",
       "title": "Senior Software Engineer - Storage Engineer",
       "url": "https://careers.bloomberg.com/job/detail/81144?qe=Senior+Software+Engineer+-+Storage+Engineering"
-    },
-    {
-      "company": "Canonical",
-      "date": "2021-08-30",
-      "title": "Ceph and software-defined storage product manager",
-      "url": "https://canonical.com/careers/3039369/ceph-and-software-defined-storage-product-manager-remote"
-    },
-    {
-      "company": "Canonical",
-      "date": "2021-08-30",
-      "title": "Software Engineer, Ceph & Distributed Storage",
-      "url": "https://canonical.com/careers/1861978/software-engineer-ceph-and-distributed-storage-remote"
-    },
-    {
-      "company": "Canonical",
-      "date": "2021-08-30",
-      "title": "Senior Software Engineer - Linux Engineering",
-      "url": "https://canonical.com/careers/3326693/linux-engineering-open-source-remote"
     },
     {
       "company": "Safespring",
