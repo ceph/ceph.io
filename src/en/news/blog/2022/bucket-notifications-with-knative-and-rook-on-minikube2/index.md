@@ -9,14 +9,14 @@ author: "ylifshit"
 [Last time](https://ceph.io/en/news/blog/2021/bucket-notifications-with-knative-and-rook-on-minikube/) we saw how to use bucket notification together with Knative on minikube.
 Most of the process was "easy as a YAML" - most, but not all...
 
-In order to setup the bucket notifications part of the solution some manual steps were neeeded.
-However, as proimised, a set of [new CRs](https://rook.io/docs/rook/v1.8/ceph-object-bucket-notifications.html) has come to our rescue in Rook1.8!
+To set up the bucket notifications part of the solution, some manual steps were needed.
+However, as promised, a set of [new CRs](https://rook.io/docs/rook/v1.8/ceph-object-bucket-notifications.html) has come to our rescue in Rook1.8!
 
 Now the entire process could be done using YAMLs only.
 
 ## The "Moving Parts"
 
-We are going to use the same infrastructure bits as in the previous post (with some improvments): minikube, Knative and Rook
+We are going to use the same infrastructure bits as in the previous post (with some improvements): minikube, Knative, and Rook
 
 ### minikube
 
@@ -26,11 +26,14 @@ When using minikube 1.25 there is no need to manually attach the extra disk need
 minikube start --driver=kvm2 --cpus=8 --extra-disks=1
 ```
 
-> note that Knative requires k8s v1.21, so, if an older version is used, you should add `--kubernetes-version=v1.21.0` to the above command
+> notes:
+>
+> - More details on Rook with minikube are [here](https://rook.github.io/docs/rook/v1.8/development-environment.html#minikube)
+> - Knative requires k8s v1.21, so, if an older version is used, you should add `--kubernetes-version=v1.21.0` to the above command
 
 ### Knative
 
-Lets use the latest-and-greatest Knative 1.2 operator to install the eventing and serving parts, as described [here](https://knative.dev/docs/install/operator/knative-with-operators/):
+Let's use the latest-and-greatest Knative 1.2 operator to install the eventing and serving parts, as described [here](https://knative.dev/docs/install/operator/knative-with-operators/):
 
 Install the Knative operator:
 
@@ -157,12 +160,12 @@ The receiver (sink) for the event would be a generic event display pod:
 kubectl apply -f https://raw.githubusercontent.com/knative-sandbox/eventing-ceph/release-1.2/samples/event-display.yaml
 ```
 
-Note that the "event-display" pod would start, but terminate once it sees that it has no events to handle.
+Note that the "event-display" pod would start but terminate with no events to handle.
 
 ### Object bucket Claim (OBC) in Rook
 
-Based on [OBC configuration doc](https://rook.io/docs/rook/v1.8/ceph-object-bucket-claim.html) and the [notification configuration doc](https://rook.io/docs/rook/v1.8/ceph-object-bucket-notifications.html).
-Lets create a storage class, and a bucket preconfigured with a notification:
+Based on the [OBC configuration doc](https://rook.io/docs/rook/v1.8/ceph-object-bucket-claim.html) and the [notification configuration doc](https://rook.io/docs/rook/v1.8/ceph-object-bucket-notifications.html).
+Let's create a storage class, and a bucket preconfigured with a notification:
 
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/rook/rook/release-1.8/deploy/examples/storageclass-bucket-delete.yaml
@@ -210,7 +213,7 @@ EOF
 
 ### External Access
 
-By default, Rook exposes the Object Store as a service accessible to other pods in the cluster, but we want to acess it from an [aws CLI client](https://docs.aws.amazon.com/cli/index.html) on the node.
+By default, Rook exposes the Object Store as a service accessible to other pods in the cluster, but we want to access it from an [aws CLI client](https://docs.aws.amazon.com/cli/index.html) on the node.
 For that we would add a new `NodePort` service and attach it to the Object Store:
 
 ```bash
@@ -240,7 +243,7 @@ EOF
 ```
 
 Well, the truth is that we don't want to access it from the node (the minikube VM), we want to access it from the machine hosting that VM.
-Minikube will help us here, and give us the actual host name we should use:
+Minikube will help us here, and give us the actual hostname we should use:
 
 ```bash
 export AWS_URL=$(minikube service --url rook-ceph-rgw-my-store-external -n rook-ceph)
@@ -248,7 +251,7 @@ export AWS_URL=$(minikube service --url rook-ceph-rgw-my-store-external -n rook-
 
 ### User Credentials
 
-We get the user credentials and put them into into environment variables used by the aws CLI tool:
+We get the user credentials and put them into environment variables used by the aws CLI tool:
 
 ```bash
 export AWS_ACCESS_KEY_ID=$(kubectl -n default get secret ceph-notification-bucket -o jsonpath='{.data.AWS_ACCESS_KEY_ID}' | base64 --decode)
@@ -306,7 +309,7 @@ kubectl apply -f https://raw.githubusercontent.com/rook/rook/release-1.8/deploy/
 
 ## What's Next?
 
-Looks like we are done? Well, not really.
+It looks like we are done? Well, not really.
 
 There are several alternatives to the technologies that we selected above that are worth exploring. So, stay tuned!
 
@@ -314,17 +317,17 @@ There are several alternatives to the technologies that we selected above that a
 
 [microshift](https://github.com/redhat-et/microshift) is a small footprint alternative to minikube (based on Openshift).
 Note that microshift runs directly on the host, and an extra **physical** disk is needed (e.g. attach a USB drive).
-Also note that since micorshift is based on Openshift and not vanilla k8s, there are some different steps in installaing the other components.
+Also note that since microshift is based on Openshift and not vanilla k8s, there are some different steps in installing the other components.
 
 ### CRC
 
-[CodeReadty Containers](https://github.com/code-ready/crc) is another, VM based, small footprint, Openshift.
+[CodeReady Containers](https://github.com/code-ready/crc) is another, VM based, small footprint, Openshift.
 
-### Cloudevents Endpoint
+### CloudEvents Endpoint
 
-In the next Rook version there will be a popssibility to send notifications as Cloudevents directly to the Knative channel, without the "Ceph Sourcee" adapter
+In the next Rook version, there will be a possibility to send notifications as CloudEvents directly to the Knative channel, without the "Ceph Source" adapter
 
 ### KEDA
 
-[KEDA](https://keda.sh/) Is another serverless framework . It lightweight (batteries not included), and well suited for edge deploymnets.
+[KEDA](https://keda.sh/) Is another serverless framework. It is lightweight (batteries not included), and well suited for edge deployments.
 KEDA has "scalers" that poll an external queueing system and spawn the serverless functions to pull the events.
