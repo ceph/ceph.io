@@ -1,6 +1,12 @@
 {
   "jobs": [
     {
+      "company": "GoDaddy",
+      "date": "2022-03-23",
+      "title": "Ceph Engineer - Global Storage Engineering Team",
+      "url": "https://careers.godaddy.com/job/united-kingdom/ceph-engineer/7795/25788976256"
+    },
+    {
       "company": "Canonical",
       "date": "2022-03-18",
       "title": "Software Engineer, Ceph & Distributed Storage",
