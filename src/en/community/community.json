@@ -2,9 +2,9 @@
   "tech_talks": [
     {
       "date": "2022-03-24",
-      "title": "Ceph Tech Talk: How Teuthology Works",
+      "title": "Ceph Tech Talk: Running Teuthology Locally",
       "presenter": "Kamoltat (Junior) Sirivadhna",
-      "url": ""
+      "url": "https://www.youtube.com/watch?v=wZHcg0oVzhY"
     },
     {
       "date": "2021-09-26",
