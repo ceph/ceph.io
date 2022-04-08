@@ -1,6 +1,18 @@
 {
   "jobs": [
     {
+      "company": "Hitachi Vantara",
+      "date": "2022-04-08",
+      "title": "Senior Software Engineer - Ceph",
+      "url": "https://www.hitachivantara.com/en-us/company/careers/job-details.html#jobid=5920086002"
+    },
+    {
+      "company": "Hitachi Vantara",
+      "date": "2022-04-08",
+      "title": "Senior System Engineer - Ceph",
+      "url": "https://www.hitachivantara.com/en-us/company/careers/job-details.html#jobid=5915838002"
+    },
+    {
       "company": "GoDaddy",
       "date": "2022-03-23",
       "title": "Ceph Engineer - Global Storage Engineering Team",
@@ -113,6 +125,6 @@
       "date": "2021-08-30",
       "title": "Ceph Engineer - Infrastructure Team ",
       "url": "https://www.safespring.com/career/ceph-engineer/"
-    }
+    }    
   ]
 }
