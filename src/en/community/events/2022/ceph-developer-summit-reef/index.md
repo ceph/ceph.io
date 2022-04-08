@@ -1,9 +1,9 @@
 ---
 title: Ceph Developer Summit - Reef
 date: 2022-04-12
-end: 2022-04-16
+end: 2022-04-22
 location: Virtual Event
-image: /assets/bitmaps/photo-coral-04.jpg
+image: /assets/bitmaps/cds-reef-banner.png
 tags:
   - developer-summit
 ---
