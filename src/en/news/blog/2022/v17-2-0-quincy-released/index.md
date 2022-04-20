@@ -160,85 +160,85 @@ Note that canceling the upgrade simply stops the process; there is no ability to
 
 1. Set the `noout` flag for the duration of the upgrade. (Optional, but recommended.)
 
-        ceph osd set noout
+       ceph osd set noout
 
 2. Upgrade monitors by installing the new packages and restarting the monitor daemons. For example, on each monitor host,
 
-        systemctl restart ceph-mon.target
+       systemctl restart ceph-mon.target
 
     Once all monitors are up, verify that the monitor upgrade is complete by looking for the `quincy` string in the mon map. The command
 
-        ceph mon dump | grep min_mon_release
+       ceph mon dump | grep min_mon_release
 
     should report:
 
-        min_mon_release 17 (quincy)
+       min_mon_release 17 (quincy)
 
     If it doesn't, that implies that one or more monitors hasn't been upgraded and restarted and/or the quorum does not include all monitors.
 
 3. Upgrade `ceph-mgr` daemons by installing the new packages and restarting all manager daemons. For example, on each manager host,
 
-        systemctl restart ceph-mgr.target
+       systemctl restart ceph-mgr.target
 
     Verify the `ceph-mgr` daemons are running by checking `ceph -s`:
 
-        ceph -s
+       ceph -s
 
-        ...
-          services:
-           mon: 3 daemons, quorum foo,bar,baz
-           mgr: foo(active), standbys: bar, baz
-        ...
+       ...
+         services:
+          mon: 3 daemons, quorum foo,bar,baz
+          mgr: foo(active), standbys: bar, baz
+       ...
 
 4. Upgrade all OSDs by installing the new packages and restarting the ceph-osd daemons on all OSD hosts
 
-        systemctl restart ceph-osd.target
+       systemctl restart ceph-osd.target
 
 5. Upgrade all CephFS MDS daemons. For each CephFS file system,
 
     1. Disable standby_replay:
 
-            ceph fs set <fs_name> allow_standby_replay false
+           ceph fs set <fs_name> allow_standby_replay false
 
     2. Reduce the number of ranks to 1. (Make note of the original number of MDS daemons first if you plan to restore it later.)
 
-            ceph status # ceph fs set <fs_name> max_mds 1
+           ceph status # ceph fs set <fs_name> max_mds 1
 
     3. Wait for the cluster to deactivate any non-zero ranks by periodically checking the status
 
-            ceph status
+           ceph status
 
     4. Take all standby MDS daemons offline on the appropriate hosts with
    
-            systemctl stop ceph-mds@<daemon_name>
+           systemctl stop ceph-mds@<daemon_name>
    
     5. Confirm that only one MDS is online and is rank 0 for your FS
    
-            ceph status
+           ceph status
    
     6. Upgrade the last remaining MDS daemon by installing the new packages and restarting the daemon
    
-            systemctl restart ceph-mds.target
+           systemctl restart ceph-mds.target
    
     7. Restart all standby MDS daemons that were taken offline
    
-            systemctl start ceph-mds.target
+           systemctl start ceph-mds.target
    
     8. Restore the original value of `max_mds` for the volume
    
-            ceph fs set <fs_name> max_mds <original_max_mds>
+           ceph fs set <fs_name> max_mds <original_max_mds>
 
 6. Upgrade all radosgw daemons by upgrading packages and restarting daemons on all hosts
 
-            systemctl restart ceph-radosgw.target
+       systemctl restart ceph-radosgw.target
 
 7. Complete the upgrade by disallowing pre-Quincy OSDs and enabling all new Quincy-only functionality
 
-            ceph osd require-osd-release quincy
+       ceph osd require-osd-release quincy
 
 8. If you set `noout` at the beginning, be sure to clear it with
 
-            ceph osd unset noout
+       ceph osd unset noout
 
 9. Consider transitioning your cluster to use the cephadm deployment and orchestration framework to simplify cluster management and future upgrades. For more information on converting an existing cluster to cephadm, see https://docs.ceph.com/en/quincy/cephadm/adoption/.
 
@@ -246,25 +246,25 @@ Note that canceling the upgrade simply stops the process; there is no ability to
 
 1. Verify the cluster is healthy with `ceph health`. If your cluster is running Filestore, a deprecation warning is expected. This warning can be temporarily muted using the following command
 
-        ceph health mute OSD_FILESTORE
+       ceph health mute OSD_FILESTORE
 
 2. If you are upgrading from Mimic, or did not already do so when you upgraded to Nautilus, we recommend you enable the new [v2 network protocol \<msgr2\>](https://docs.ceph.com/en/quincy/rados/configuration/msgr2/), issue the following command
 
-        ceph mon enable-msgr2
+       ceph mon enable-msgr2
 
     This will instruct all monitors that bind to the old default port 6789 for the legacy v1 protocol to also bind to the new 3300 v2 protocol port. To see if all monitors have been updated,
 
-        ceph mon dump
+       ceph mon dump
 
     and verify that each monitor has both a `v2:` and `v1:` address listed.
 
 3. Consider enabling the [telemetry module](https://docs.ceph.com/en/quincy/mgr/telemetry/) to send anonymized usage statistics and crash information to the Ceph upstream developers. To see what would be reported (without actually sending any information to anyone),
 
-        ceph telemetry preview-all
+       ceph telemetry preview-all
 
     If you are comfortable with the data that is reported, you can opt-in to automatically report the high-level cluster metadata with
 
-        ceph telemetry on
+       ceph telemetry on
 
     The public dashboard that aggregates Ceph telemetry can be found at https://telemetry-public.ceph.com/.
 
