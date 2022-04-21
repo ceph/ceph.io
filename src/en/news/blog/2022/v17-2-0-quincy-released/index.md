@@ -4,11 +4,18 @@ date: "2022-04-19"
 author: "dgalloway"
 ---
 
-Quincy is the 17th stable release of Ceph.  It is named after Squidward Quincy Tentacles from *Spongebob Squarepants*.
+Quincy is the 17th stable release of Ceph. It is named after Squidward Quincy Tentacles from _Spongebob Squarepants_.
 
 This is the first stable release of Ceph Quincy.
 
-## Major Changes from Pacific
+Contents:
+
+- [Major Changes from Pacific](#changes)
+- [Upgrading from Octopus or Pacific](#upgrade)
+- [Upgrading from pre-Octopus releases (like Nautilus)](#upgrade-from-older-release)
+- [Thank You to Our Contributors](#contributors)
+
+## <a id="changes"></a>Major Changes from Pacific
 
 ### General
 
@@ -57,8 +64,9 @@ This is the first stable release of Ceph Quincy.
 - New "Message of the Day": cluster admins can publish a custom message in a banner.
 
 - Cephadm integration improvements:
+
   - Host management: maintenance, specs and labelling,
-  -  Service management: edit and display logs,
+  - Service management: edit and display logs,
   - Daemon management (start, stop, restart, reload),
   - New services supported: ingress (HAProxy) and SNMP-gateway.
 
@@ -73,17 +81,17 @@ This is the first stable release of Ceph Quincy.
 
 - OSD: Ceph now uses `mclock_scheduler` for BlueStore OSDs as its default `osd_op_queue` to provide QoS. The 'mclock_scheduler' is not supported for Filestore OSDs. Therefore, the default 'osd_op_queue' is set to `wpq` for Filestore OSDs and is enforced even if the user attempts to change it. For more details on configuring mclock see,
 
-    https://docs.ceph.com/en/quincy/rados/configuration/mclock-config-ref/
+  https://docs.ceph.com/en/quincy/rados/configuration/mclock-config-ref/
 
-    An outstanding issue exists during runtime where the mclock config options related to reservation, weight and limit cannot be modified after switching to the `custom` mclock profile using the `ceph config set ...` command. This is tracked by https://tracker.ceph.com/issues/55153. Until the issue is fixed, users are advised to avoid using the 'custom' profile or use the workaround mentioned in the tracker.
+  An outstanding issue exists during runtime where the mclock config options related to reservation, weight and limit cannot be modified after switching to the `custom` mclock profile using the `ceph config set ...` command. This is tracked by https://tracker.ceph.com/issues/55153. Until the issue is fixed, users are advised to avoid using the 'custom' profile or use the workaround mentioned in the tracker.
 
 - MGR: The pg_autoscaler can now be turned `on` and `off` globally with the `noautoscale` flag. By default, it is set to `on`, but this flag can come in handy to prevent rebalancing triggered by autoscaling during cluster upgrade and maintenance. Pools can now be created with the `--bulk` flag, which allows the autoscaler to allocate more PGs to such pools. This can be useful to get better out of the box performance for data-heavy pools.
 
-    For more details about autoscaling, see: https://docs.ceph.com/en/quincy/rados/operations/placement-groups/
+  For more details about autoscaling, see: https://docs.ceph.com/en/quincy/rados/operations/placement-groups/
 
 - OSD: Support for on-wire compression for osd-osd communication, `off` by default.
 
-    For more details about compression modes, see: https://docs.ceph.com/en/quincy/rados/configuration/msgr2/#compression-modes
+  For more details about compression modes, see: https://docs.ceph.com/en/quincy/rados/configuration/msgr2/#compression-modes
 
 - OSD: Concise reporting of slow operations in the cluster log. The old and more verbose logging behavior can be regained by setting `osd_aggregated_slow_ops_logging` to false.
 
@@ -111,7 +119,7 @@ This is the first stable release of Ceph Quincy.
 
 - It is possible to specify ssl options and ciphers for beast frontend now. The default ssl options setting is "no_sslv2:no_sslv3:no_tlsv1:no_tlsv1_1". If you want to return to the old behavior, add 'ssl_options=' (empty) to the `rgw frontends` configuration.
 
-- The behavior for Multipart Upload was modified so that only CompleteMultipartUpload notification is sent at the end of the multipart upload. The POST notification at the beginning of the upload and the PUT notifications that were sent on each part are no longer sent. 
+- The behavior for Multipart Upload was modified so that only CompleteMultipartUpload notification is sent at the end of the multipart upload. The POST notification at the beginning of the upload and the PUT notifications that were sent on each part are no longer sent.
 
 ### CephFS distributed file system
 
@@ -123,7 +131,7 @@ This is the first stable release of Ceph Quincy.
 
 - CephFS: Failure to replay the journal by a standby-replay daemon now causes the rank to be marked "damaged".
 
-## Upgrading from Octopus or Pacific
+## <a id="upgrade"></a>Upgrading from Octopus or Pacific
 
 Quincy does not support LevelDB. Please migrate your OSDs and monitors to RocksDB before upgrading to Quincy.
 
@@ -152,7 +160,7 @@ or canceled with
 
     ceph orch upgrade stop
 
-Note that canceling the upgrade simply stops the process; there is no ability to downgrade back to Octopus or Pacific. 
+Note that canceling the upgrade simply stops the process; there is no ability to downgrade back to Octopus or Pacific.
 
 ### Upgrading non-cephadm clusters
 
@@ -160,85 +168,85 @@ Note that canceling the upgrade simply stops the process; there is no ability to
 
 1. Set the `noout` flag for the duration of the upgrade. (Optional, but recommended.)
 
-       ceph osd set noout
+   ceph osd set noout
 
 2. Upgrade monitors by installing the new packages and restarting the monitor daemons. For example, on each monitor host,
 
-       systemctl restart ceph-mon.target
+   systemctl restart ceph-mon.target
 
-    Once all monitors are up, verify that the monitor upgrade is complete by looking for the `quincy` string in the mon map. The command
+   Once all monitors are up, verify that the monitor upgrade is complete by looking for the `quincy` string in the mon map. The command
 
-       ceph mon dump | grep min_mon_release
+   ceph mon dump | grep min_mon_release
 
-    should report:
+   should report:
 
-       min_mon_release 17 (quincy)
+   min_mon_release 17 (quincy)
 
-    If it doesn't, that implies that one or more monitors hasn't been upgraded and restarted and/or the quorum does not include all monitors.
+   If it doesn't, that implies that one or more monitors hasn't been upgraded and restarted and/or the quorum does not include all monitors.
 
 3. Upgrade `ceph-mgr` daemons by installing the new packages and restarting all manager daemons. For example, on each manager host,
 
-       systemctl restart ceph-mgr.target
+   systemctl restart ceph-mgr.target
 
-    Verify the `ceph-mgr` daemons are running by checking `ceph -s`:
+   Verify the `ceph-mgr` daemons are running by checking `ceph -s`:
 
-       ceph -s
+   ceph -s
 
-       ...
-         services:
-          mon: 3 daemons, quorum foo,bar,baz
-          mgr: foo(active), standbys: bar, baz
-       ...
+   ...
+   services:
+   mon: 3 daemons, quorum foo,bar,baz
+   mgr: foo(active), standbys: bar, baz
+   ...
 
 4. Upgrade all OSDs by installing the new packages and restarting the ceph-osd daemons on all OSD hosts
 
-       systemctl restart ceph-osd.target
+   systemctl restart ceph-osd.target
 
 5. Upgrade all CephFS MDS daemons. For each CephFS file system,
 
-    1. Disable standby_replay:
+   1. Disable standby_replay:
 
-           ceph fs set <fs_name> allow_standby_replay false
+      ceph fs set <fs_name> allow_standby_replay false
 
-    2. Reduce the number of ranks to 1. (Make note of the original number of MDS daemons first if you plan to restore it later.)
+   2. Reduce the number of ranks to 1. (Make note of the original number of MDS daemons first if you plan to restore it later.)
 
-           ceph status # ceph fs set <fs_name> max_mds 1
+      ceph status # ceph fs set <fs_name> max_mds 1
 
-    3. Wait for the cluster to deactivate any non-zero ranks by periodically checking the status
+   3. Wait for the cluster to deactivate any non-zero ranks by periodically checking the status
 
-           ceph status
+      ceph status
 
-    4. Take all standby MDS daemons offline on the appropriate hosts with
-   
-           systemctl stop ceph-mds@<daemon_name>
-   
-    5. Confirm that only one MDS is online and is rank 0 for your FS
-   
-           ceph status
-   
-    6. Upgrade the last remaining MDS daemon by installing the new packages and restarting the daemon
-   
-           systemctl restart ceph-mds.target
-   
-    7. Restart all standby MDS daemons that were taken offline
-   
-           systemctl start ceph-mds.target
-   
-    8. Restore the original value of `max_mds` for the volume
-   
-           ceph fs set <fs_name> max_mds <original_max_mds>
+   4. Take all standby MDS daemons offline on the appropriate hosts with
+
+      systemctl stop ceph-mds@<daemon_name>
+
+   5. Confirm that only one MDS is online and is rank 0 for your FS
+
+      ceph status
+
+   6. Upgrade the last remaining MDS daemon by installing the new packages and restarting the daemon
+
+      systemctl restart ceph-mds.target
+
+   7. Restart all standby MDS daemons that were taken offline
+
+      systemctl start ceph-mds.target
+
+   8. Restore the original value of `max_mds` for the volume
+
+      ceph fs set <fs_name> max_mds <original_max_mds>
 
 6. Upgrade all radosgw daemons by upgrading packages and restarting daemons on all hosts
 
-       systemctl restart ceph-radosgw.target
+   systemctl restart ceph-radosgw.target
 
 7. Complete the upgrade by disallowing pre-Quincy OSDs and enabling all new Quincy-only functionality
 
-       ceph osd require-osd-release quincy
+   ceph osd require-osd-release quincy
 
 8. If you set `noout` at the beginning, be sure to clear it with
 
-       ceph osd unset noout
+   ceph osd unset noout
 
 9. Consider transitioning your cluster to use the cephadm deployment and orchestration framework to simplify cluster management and future upgrades. For more information on converting an existing cluster to cephadm, see https://docs.ceph.com/en/quincy/cephadm/adoption/.
 
@@ -246,28 +254,380 @@ Note that canceling the upgrade simply stops the process; there is no ability to
 
 1. Verify the cluster is healthy with `ceph health`. If your cluster is running Filestore, a deprecation warning is expected. This warning can be temporarily muted using the following command
 
-       ceph health mute OSD_FILESTORE
+   ceph health mute OSD_FILESTORE
 
 2. If you are upgrading from Mimic, or did not already do so when you upgraded to Nautilus, we recommend you enable the new [v2 network protocol \<msgr2\>](https://docs.ceph.com/en/quincy/rados/configuration/msgr2/), issue the following command
 
-       ceph mon enable-msgr2
+   ceph mon enable-msgr2
 
-    This will instruct all monitors that bind to the old default port 6789 for the legacy v1 protocol to also bind to the new 3300 v2 protocol port. To see if all monitors have been updated,
+   This will instruct all monitors that bind to the old default port 6789 for the legacy v1 protocol to also bind to the new 3300 v2 protocol port. To see if all monitors have been updated,
 
-       ceph mon dump
+   ceph mon dump
 
-    and verify that each monitor has both a `v2:` and `v1:` address listed.
+   and verify that each monitor has both a `v2:` and `v1:` address listed.
 
 3. Consider enabling the [telemetry module](https://docs.ceph.com/en/quincy/mgr/telemetry/) to send anonymized usage statistics and crash information to the Ceph upstream developers. To see what would be reported (without actually sending any information to anyone),
 
-       ceph telemetry preview-all
+   ceph telemetry preview-all
 
-    If you are comfortable with the data that is reported, you can opt-in to automatically report the high-level cluster metadata with
+   If you are comfortable with the data that is reported, you can opt-in to automatically report the high-level cluster metadata with
 
-       ceph telemetry on
+   ceph telemetry on
 
-    The public dashboard that aggregates Ceph telemetry can be found at https://telemetry-public.ceph.com/.
+   The public dashboard that aggregates Ceph telemetry can be found at https://telemetry-public.ceph.com/.
 
-## Upgrading from pre-Octopus releases (like Nautilus)
+## <a id="upgrade-from-older-release"></a>Upgrading from pre-Octopus releases (like Nautilus)
 
-You **must** first upgrade to Octopus (15.2.z) or Pacific (16.2.z) before upgrading to Quincy.
+You **must** first upgrade to [Octopus (15.2.z)](https://ceph.io/en/news/blog/2020/v15-2-0-octopus-released/) or [Pacific (16.2.z)](https://ceph.io/en/news/blog/2021/v16-2-0-pacific-released/) before upgrading to Quincy.
+
+## <a id="contributors"></a>Thank You to Our Contributors
+
+The Quincy release would not be possible without the contributions of the
+community:
+
+Kefu Chai &squf;
+Sage Weil &squf;
+Sebastian Wagner &squf;
+Yingxin Cheng &squf;
+Samuel Just &squf;
+Radoslaw Zarzynski &squf;
+Patrick Donnelly &squf;
+Ilya Dryomov &squf;
+Michael Fritch &squf;
+Xiubo Li &squf;
+Casey Bodley &squf;
+Myoungwon Oh &squf;
+Adam King &squf;
+Zac Dover &squf;
+Venky Shankar &squf;
+Xuehan Xu &squf;
+Laura Flores &squf;
+Adam Kupczyk &squf;
+Varsha Rao &squf;
+Paul Cuzner &squf;
+Ronen Friedman &squf;
+Joseph Sawaya &squf;
+Igor Fedotov &squf;
+Nizamudeen A &squf;
+Neha Ojha &squf;
+Yehuda Sadeh &squf;
+Adam C. Emerson &squf;
+Daniel Gryniewicz &squf;
+Deepika Upadhyay &squf;
+Sridhar Seshasayee &squf;
+Guillaume Abrioux &squf;
+Rishabh Dave &squf;
+J. Eric Ivancich &squf;
+Soumya Koduri &squf;
+Alfonso Martínez &squf;
+Pere Diaz Bou &squf;
+Jason Dillaman &squf;
+Lucian Petrut &squf;
+Amnon Hanuhov &squf;
+chunmei-liu &squf;
+Greg Farnum &squf;
+Mykola Golub &squf;
+Josh Durgin &squf;
+Daniel Pivonka &squf;
+Marcus Watts &squf;
+Kotresh HR &squf;
+Yuval Lifshitz &squf;
+Matt Benjamin &squf;
+Ken Iizawa &squf;
+Ernesto Puerta &squf;
+Aashish Sharma &squf;
+Or Ozeri &squf;
+Pritha Srivastava &squf;
+Jeff Layton &squf;
+Igor Fedotov &squf;
+Yin Congmin &squf;
+Dimitri Savineau &squf;
+Avan Thakkar &squf;
+Yuri Weinstein &squf;
+Yaarit Hatuka &squf;
+Kamoltat &squf;
+David Galloway &squf;
+Abutalib Aghayev &squf;
+Patrick Seidensal &squf;
+Arthur Outhenin-Chalandre &squf;
+Willem Jan Withagen &squf;
+Kalpesh Pandya &squf;
+Avan Thakkar &squf;
+Nathan Cutler &squf;
+胡玮文 &squf;
+Jos Collin &squf;
+Melissa &squf;
+Ma Jianpeng &squf;
+Brad Hubbard &squf;
+Juan Miguel Olmo Martínez &squf;
+Dan van der Ster &squf;
+wangyunqing &squf;
+Prasanna Kumar Kalever &squf;
+Chunsong Feng &squf;
+Mark Kogan &squf;
+Sébastien Han &squf;
+Ken Dreyer &squf;
+John Mulligan &squf;
+Jinyong Ha &squf;
+galsalomon66 &squf;
+Anthony D'Atri &squf;
+Ramana Raja &squf;
+Navin Barnwal &squf;
+Huber-ming &squf;
+Gabriel BenHanokh &squf;
+Omri Zeneva &squf;
+Melissa Li &squf;
+haoyixing &squf;
+Cory Snyder &squf;
+Yongseok Oh &squf;
+Prashant D &squf;
+Matan Breizman &squf;
+Dan Mick &squf;
+Benoît Knecht &squf;
+Sunny Kumar &squf;
+Milind Changire &squf;
+Melissa Li &squf;
+Jonas Pfefferle &squf;
+jianglong01 &squf;
+Feng Hualong &squf;
+Duncan Bellamy &squf;
+cao.leilc &squf;
+Aishwarya Mathuria &squf;
+Aaryan Porwal &squf;
+Yan, Zheng &squf;
+Xiaoyan Li &squf;
+wangyingbin &squf;
+Volker Theile &squf;
+Satoru Takeuchi &squf;
+Jiffin Tony Thottan &squf;
+Boris Ranto &squf;
+yuliyang_yewu &squf;
+XueYu Bai &squf;
+Mykola Golub &squf;
+Michael Wodniok &squf;
+Mark Nelson &squf;
+Jonas Jelten &squf;
+Etienne Menguy &squf;
+dependabot[bot] &squf;
+David Zafman &squf;
+Christopher Hoffman &squf;
+Ali Maredia &squf;
+YuanXin &squf;
+Waad AlKhoury &squf;
+Nikhilkumar Shelke &squf;
+Miaomiao Liu &squf;
+Luo Runbing &squf;
+Jan Fajerski &squf;
+Igor Fedotov &squf;
+gal salomon &squf;
+Aran85 &squf;
+zhipeng li &squf;
+Yuxiang Zhu &squf;
+yuval Lifshitz &squf;
+Yanhu Cao &squf;
+wangxinyu &squf;
+Tom Schoonjans &squf;
+Tatjana Dehler &squf;
+Simon Gao &squf;
+Sarthak0702 &squf;
+Sandro Bonazzola &squf;
+Paul Reece &squf;
+Or Friedmann &squf;
+Misono Tomohiro &squf;
+Misono Tomohiro &squf;
+Matan Breizman &squf;
+Mahati Chamarthy &squf;
+Kyle &squf;
+Kalpesh &squf;
+João Eduardo Luís &squf;
+jhonxue &squf;
+Javier Cacheiro &squf;
+Hardik Vyas &squf;
+Deepika &squf;
+Danny Abukalam &squf;
+Dai Zhi Wei &squf;
+Curt Bruns &squf;
+Clément Péron &squf;
+Chunmei Liu &squf;
+Andrew Schoen &squf;
+Amnon Hanuhov &squf;
+靳登科 &squf;
+Zulai Wang &squf;
+Yaakov Selkowitz &squf;
+Xinyu Huang &squf;
+weixinwei &squf;
+wanwencong &squf;
+wangzhong &squf;
+wangfei &squf;
+Waad Alkhoury &squf;
+Tongliang Deng &squf;
+Tim Serong &squf;
+Tao Dong Dong &squf;
+Sven Anderson &squf;
+Rafał Wądołowski &squf;
+Rachana Patel &squf;
+Paul Reece &squf;
+mengxiangrui &squf;
+Maya Gilad &squf;
+Mauricio Faria de Oliveira &squf;
+Manasvi Goyal &squf;
+luo rixin &squf;
+locallocal &squf;
+Liu Shi &squf;
+Kyr Shatskyy &squf;
+krunerge &squf;
+Kevin Zhao &squf;
+Kaleb S. Keithley &squf;
+Jianwei Zhang &squf;
+Jenkins &squf;
+Jeegn Chen &squf;
+Jan Fajerski &squf;
+Huang Jun &squf;
+Hualong Feng &squf;
+Gokcen Iskender &squf;
+Gerald Yang &squf;
+Eunice Lee &squf;
+Dimitri Papadopoulos &squf;
+dengchl01 &squf;
+Daniel-Pivonka &squf;
+cypherean &squf;
+Blaine Gardner &squf;
+Alex Wang &squf;
+Zulai Wang &squf;
+Zhi Zhang &squf;
+ZhenLiu94 &squf;
+Zhao Cuicui &squf;
+zhangmengqian_yw &squf;
+Zack Cerza &squf;
+Yunfei Guan &squf;
+yuliyang &squf;
+yaohui.zhou &squf;
+Yao guotao &squf;
+yanqiang-ux &squf;
+Yang Honggang &squf;
+wzbxqt &squf;
+Wong Hoi Sing Edison &squf;
+Will Smith &squf;
+weixinwei &squf;
+WeiGuo Ren &squf;
+wangyingbin &squf;
+wangtengfei &squf;
+Wang ShuaiChao &squf;
+wangbo-yw &squf;
+Vladimir Bashkirtsev &squf;
+VasishtaShastry &squf;
+Ushitora Anqou &squf;
+usageek1266 &squf;
+Thomas Lamprecht &squf;
+tancz1 &squf;
+Taha Jahangir &squf;
+Sven Wegener &squf;
+sunilkumarn417 &squf;
+Stephan Müller &squf;
+Stanislav Datskevych &squf;
+Srishti Guleria &squf;
+songtongshuai_yewu &squf;
+singuliere &squf;
+Sidharth Anupkrishnan &squf;
+Sheng Mao &squf;
+Sharuzzaman Ahmat Raslan &squf;
+Seongyeop Jeong &squf;
+Seena Fallah &squf;
+Sebastian Schmid &squf;
+Scott Shambarger &squf;
+Sandy Kaur &squf;
+Ruben Kerkhof &squf;
+Roland Sommer &squf;
+Rok Jaklič &squf;
+Roaa Sakr &squf;
+Rishabh Chawla &squf;
+Rahul Dev Parashar &squf;
+Rahul Dev Parashar &squf;
+Rachanaben Patel &squf;
+Pulkit Mittal &squf;
+Ponnuvel Palaniyappan &squf;
+Piotr Kubaj &squf;
+Pere Diaz Bou &squf;
+Peng Zhang &squf;
+Oleander Reis &squf;
+Niklas Hambüchen &squf;
+Ngwa Sedrick Meh &squf;
+Mumuni Mohammed &squf;
+Mitsumasa KONDO &squf;
+Mingxin Liu &squf;
+Mike Perez &squf;
+Mike Perez &squf;
+Michał Nasiadka &squf;
+mflehmig &squf;
+Matthew Vernon &squf;
+Matthew Cengia &squf;
+mark15213 &squf;
+Mara Sophie Grosch &squf;
+ManasviGoyal &squf;
+Malcolm Holmes &squf;
+Madhu Rajanna &squf;
+Lukas Stockner &squf;
+Ludwig Nussel &squf;
+Lorenz Bausch &squf;
+Loic Dachary &squf;
+Liyan Wang &squf;
+Liu Yang &squf;
+Liu Lan &squf;
+Lee Yarwood &squf;
+Kyle &squf;
+krafZLorG &squf;
+Kefu Chai &squf;
+karmab &squf;
+Kai Kang &squf;
+jshen28 &squf;
+Josh Salomon &squf;
+Josh &squf;
+Jonas Zeiger &squf;
+John Fulton &squf;
+John Bent &squf;
+Jinyong Ha &squf;
+Jingya Su &squf;
+jiawd &squf;
+jerryluo &squf;
+Jan "Yenya" Kasprzak &squf;
+Jan Horáček &squf;
+James Mcclune &squf;
+Injae Kang &squf;
+Ilsoo Byun &squf;
+hoamer &squf;
+Hargun Kaur &squf;
+haoyixing &squf;
+Grzegorz Wieczorek &squf;
+Girjesh Rajoria &squf;
+Gaurav Sitlani &squf;
+Francesco Pantano &squf;
+Foad Lind &squf;
+FengJiankui &squf;
+Felix Hüttner &squf;
+Erqi Chen &squf;
+Elena Chernikova &squf;
+Dmitriy Rabotyagov &squf;
+dheart &squf;
+Dennis Körner &squf;
+dengchl01 &squf;
+David Caro &squf;
+David Caro &squf;
+crossbears &squf;
+Chen Fan &squf;
+chenerqi &squf;
+chencan &squf;
+Burt Holzman &squf;
+Brian_P &squf;
+Bobby Alex Philip &squf;
+Aswin Toni &squf;
+Asbjørn Sannes &squf;
+Arunagirinadan Sudharshan &squf;
+Arjun Sharma &squf;
+Anuradha Kulkarni &squf;
+AndrewSharapov &squf;
+Anamika &squf;
+Almen Ng &squf;
+Alin Gabriel Serdean &squf;
+Alex Wu &squf;
+Akanksha Chaudhari &squf;
+Abutalib Aghayev &squf;
