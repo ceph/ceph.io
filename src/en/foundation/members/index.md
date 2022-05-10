@@ -22,7 +22,6 @@ order: 3
   <a href="https://softiron.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-softiron.png" /></a>
   <a href="http://www.suse.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-suse.png" /></a>
   <a href="https://www.wdc.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-western-digital.png" /></a>
-  <a href="https://www.xsky.com/en/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-xsky.png" /></a>
   <a href="https://www.zte.com.cn/global/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-zte.png" /></a>
 </div>
 
