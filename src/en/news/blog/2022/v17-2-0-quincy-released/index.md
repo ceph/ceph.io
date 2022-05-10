@@ -429,7 +429,7 @@ wangxinyu &squf;
 Tom Schoonjans &squf;
 Tatjana Dehler &squf;
 Simon Gao &squf;
-Sarthak0702 &squf;
+Sarthak Gupta &squf;
 Sandro Bonazzola &squf;
 Paul Reece &squf;
 Or Friedmann &squf;
