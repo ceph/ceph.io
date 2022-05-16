@@ -1,6 +1,12 @@
 {
   "jobs": [
     {
+      "company": "Koor Technologies, Inc.",
+      "date": "2022-05-10",
+      "title": "Cloud Storage Engineer",
+      "url": "https://koor.tech/jobs/?gh_jid=4507660004"
+    },
+    {
       "company": "Hitachi Vantara",
       "date": "2022-04-08",
       "title": "Senior Software Engineer - Ceph",
