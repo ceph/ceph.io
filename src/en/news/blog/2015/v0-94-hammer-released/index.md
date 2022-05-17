@@ -2,6 +2,9 @@
 title: "v0.94 Hammer released"
 date: "2015-04-07"
 author: "sage"
+tags:
+  - "release"
+  - "hammer"
 ---
 
 This major release is expected to form the basis of the next long-term stable series. It is intended to supersede v0.80.x Firefly.

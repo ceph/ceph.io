@@ -2,6 +2,8 @@
 title: "v0.82 released"
 date: "2014-06-27"
 author: "sage"
+tags:
+  - "release"
 ---
 
 This is the second post-firefly development release. It includes a range of bug fixes and some usability improvements. There are some MDS debugging and diagnostic tools, an improved ‘ceph df’, and some OSD backend refactoring and cleanup.

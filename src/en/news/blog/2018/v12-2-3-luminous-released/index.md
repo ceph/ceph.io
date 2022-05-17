@@ -2,6 +2,9 @@
 title: "v12.2.3 Luminous released"
 date: "2018-02-21"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "luminous"
 ---
 
 This is the third bugfix release of Luminous v12.2.x long term stable release series. It contains a range of bug fixes and a few features across Bluestore, CephFS, RBD & RGW. We recommend all the users of 12.2.x series update.

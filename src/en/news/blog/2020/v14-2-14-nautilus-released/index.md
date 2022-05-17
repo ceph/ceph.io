@@ -2,6 +2,9 @@
 title: "v14.2.14 Nautilus released"
 date: "2020-11-19"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "nautilus"
 ---
 
 This is the 14th backport release in the Nautilus series. This releases fixes a security flaw affecting Messenger V2 for Octopus & Nautilus, among other fixes across components. We recommend users to update to this release.

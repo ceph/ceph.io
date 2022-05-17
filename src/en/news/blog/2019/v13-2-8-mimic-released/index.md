@@ -2,6 +2,9 @@
 title: "v13.2.8 Mimic released"
 date: "2019-12-13"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "mimic"
 ---
 
 This is the eighth release in the Ceph Mimic stable release series. Its sole purpose is to fix a regression that found its way into the previous release.

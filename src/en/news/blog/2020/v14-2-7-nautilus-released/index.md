@@ -2,6 +2,9 @@
 title: "v14.2.7 nautilus released"
 date: "2020-02-03"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "nautilus"
 ---
 
 This is the seventh update to the Ceph Nautilus release series. This is a hotfix release primarily fixing a couple of security issues. We recommend that all users upgrade to this release.

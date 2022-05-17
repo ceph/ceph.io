@@ -2,6 +2,9 @@
 title: "v14.2.22 Nautilus released"
 date: "2021-06-30"
 author: "dgalloway"
+tags:
+  - "release"
+  - "nautilus"
 ---
 
 This is the 22nd and likely the last backport release in the Nautilus series. Ultimately, we recommend all users upgrade to newer Ceph releases.

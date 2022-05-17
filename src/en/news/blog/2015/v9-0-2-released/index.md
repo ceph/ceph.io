@@ -2,6 +2,9 @@
 title: "v9.0.2 released"
 date: "2015-07-16"
 author: "sage"
+tags:
+  - "release"
+  - "infernalis"
 ---
 
 This development release features more of the OSD work queue unification, randomized osd scrub times, a huge pile of librbd fixes, more MDS repair and snapshot fixes, and a significant amount of work on the tests and build infrastructure.

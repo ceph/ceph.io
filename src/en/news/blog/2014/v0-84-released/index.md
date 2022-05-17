@@ -2,6 +2,8 @@
 title: "v0.84 released"
 date: "2014-08-18"
 author: "sage"
+tags:
+  - "release"
 ---
 
 The next Ceph development release is here! This release contains several meaty items, including some MDS improvements for journaling, the ability to remove the CephFS file system (and name it), several mon cleanups with tiered pools, several OSD performance branches, a new “read forward” RADOS caching mode, a prototype Kinetic OSD backend, and various radosgw improvements (especially with the new standalone civetweb frontend). And there are a zillion OSD bug fixes. Things are looking pretty good for the Giant release that is coming up in the next month.

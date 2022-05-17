@@ -3,6 +3,7 @@ title: "v0.65 released"
 date: "2013-06-25"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 Our next development release v0.65 is out, with a few big changes.  First and foremost, this release includes a complete revamp of the architecture for the command line interface in order to lay the groundwork for our ongoing REST management API work.  The ‘ceph’ command line tool is now a thin python wrapper around librados.  Note that this set of changes includes several small incompatible changes in the interface that tools or scripts utilizing the CLI should be aware of; these are detailed in [the complete release notes](http://ceph.com/docs/master/release-notes/#v0-65).

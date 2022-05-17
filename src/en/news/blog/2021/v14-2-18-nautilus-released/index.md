@@ -2,6 +2,9 @@
 title: "v14.2.18 Nautilus released"
 date: "2021-03-15"
 author: "dgalloway"
+tags:
+  - "release"
+  - "nautilus"
 ---
 
 This is the 18th backport release in the Nautilus series. It fixes a regression introduced in 14.2.17 in which the manager module tries to use a couple python modules that do not exist in some environments. We recommend users to update to this release

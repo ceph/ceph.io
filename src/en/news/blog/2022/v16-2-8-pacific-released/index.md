@@ -2,6 +2,9 @@
 title: "v16.2.8 Pacific released"
 date: "2022-05-16"
 author: "dgalloway"
+tags:
+  - "release"
+  - "pacific"
 ---
 
 This is the eighth backport release in the Pacific series. We recommend all users update to this release.

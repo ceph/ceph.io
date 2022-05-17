@@ -2,6 +2,9 @@
 title: "v0.94.5 Hammer released"
 date: "2015-11-06"
 author: "sage"
+tags:
+  - "release"
+  - "hammer"
 ---
 
 This Hammer point release fixes a critical regression in librbd that can cause Qemu/KVM to crash when caching is enabled on images that have been cloned.

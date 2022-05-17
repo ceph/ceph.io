@@ -3,6 +3,8 @@ title: "v0.48 “argonaut” released"
 date: "2012-07-03"
 author: "sage"
 tags: 
+  - "release"
+  - "argonaut"
 ---
 
 ![](images/argonaut-600.gif "argonaut")

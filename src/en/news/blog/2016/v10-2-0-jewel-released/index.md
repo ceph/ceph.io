@@ -2,6 +2,9 @@
 title: "v10.2.0 Jewel released"
 date: "2016-04-21"
 author: "sage"
+tags:
+  - "release"
+  - "jewel"
 ---
 
 This major release of Ceph will be the foundation for the next long-term stable release. There have been many major changes since the Infernalis (9.2.x) and Hammer (0.94.x) releases, and the upgrade process is non-trivial. Please read these release notes carefully.

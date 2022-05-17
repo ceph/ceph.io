@@ -2,6 +2,9 @@
 title: "v16.2.2 Pacific released"
 date: "2021-05-05"
 author: "dgalloway"
+tags:
+  - "release"
+  - "pacific"
 ---
 
 This is the second backport release in the Pacific stable series. We recommend all Pacific users upgrade.

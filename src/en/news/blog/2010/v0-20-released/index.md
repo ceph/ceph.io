@@ -3,6 +3,7 @@ title: "v0.20 released"
 date: "2010-04-30"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 After a long few weeks of debugging, we’re releasing v0.20.  The goal here is to get something out prior to the v2.6.34 kernel release (which includes the Ceph client) with most of the pending improvements.  Changes since v0.19 include:

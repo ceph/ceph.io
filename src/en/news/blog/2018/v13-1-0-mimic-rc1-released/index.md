@@ -2,6 +2,9 @@
 title: "v13.1.0 Mimic RC1 released"
 date: "2018-05-11"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "mimic"
 ---
 
 This is the first release candidate for mimic, the next long term release. While this is not the final production release yet, consider testing this on your testing and non production clusters for a preview of upcoming features and importantly report any bugs in the tracker.

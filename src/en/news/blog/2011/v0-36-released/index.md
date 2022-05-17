@@ -3,6 +3,7 @@ title: "v0.36 released"
 date: "2011-10-01"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 It’s been three weeks and v0.36 is ready.  The most visible change this time around is that the daemons and tools have been renamed.  Everything that used to start with ‘**c’** now starts with ‘**ceph-’**, and **libceph** is now **libcephfs**.  Nothing earth shattering, but we’re trying to clean these things up where we can and deal with the pain sooner rather than later.  (If you have any naming or tool usage pet peeves, let us know.)

@@ -3,6 +3,7 @@ title: "v0.28.1 released"
 date: "2011-05-24"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 I tagged and uploaded v0.28 a week ago but forgot to blog and email about it. That may be just as well, as there were a number of issues that got fixed last week. I’ll separate out the main items.

@@ -3,6 +3,7 @@ title: "v0.29 released"
 date: "2011-06-08"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 Ceph v0.29 is ready.  Notable changes since v0.28.2 include

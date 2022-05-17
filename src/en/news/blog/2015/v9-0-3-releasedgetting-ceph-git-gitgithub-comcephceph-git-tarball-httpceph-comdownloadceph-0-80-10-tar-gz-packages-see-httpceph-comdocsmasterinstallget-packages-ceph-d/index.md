@@ -2,6 +2,9 @@
 title: "v9.0.3 released"
 date: "2015-08-24"
 author: "sage"
+tags:
+  - "release"
+  - "infernalis"
 ---
 
 This is the second to last batch of development work for the Infernalis cycle. The most intrusive change is an internal (non user-visible) change to the OSD’s ObjectStore interface. Many fixes and improvements elsewhere across RGW, RBD, and another big pile of CephFS scrub/repair improvements.

@@ -2,6 +2,9 @@
 title: "v0.80.8 Firefly released"
 date: "2015-01-14"
 author: "sage"
+tags:
+  - "release"
+  - "firefly"
 ---
 
 This is a long-awaited bugfix release for firefly. It several imporant (but relatively rare) OSD peering fixes, performance issues when snapshots are trimmed, several RGW fixes, a paxos corner case fix, and some packaging updates.

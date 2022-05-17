@@ -3,6 +3,7 @@ title: "v0.34 released"
 date: "2011-08-27"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 Another 2 weeks, another release. Notable changes in v0.34:

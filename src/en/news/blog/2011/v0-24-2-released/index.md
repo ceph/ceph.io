@@ -3,6 +3,7 @@ title: "v0.24.2 released"
 date: "2011-01-25"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 This is a bugfix release.  Changes since v0.24.1 include:

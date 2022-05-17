@@ -2,6 +2,9 @@
 title: "v12.1.4 Luminous (RC) released"
 date: "2017-08-15"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "luminous"
 ---
 
 This is the fifth release candidate for Luminous, the next long term stable release, we've had to do this release as there was a bug in the previous RC, 12.1.3 which affected upgrades.

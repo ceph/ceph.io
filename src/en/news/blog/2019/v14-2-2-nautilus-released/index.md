@@ -4,6 +4,7 @@ date: "2019-07-22"
 author: "ncutler"
 tags: 
   - "release"
+  - "nautilus"
 ---
 
 This is the second bug fix release of Ceph Nautilus release series. We recommend all Nautilus users upgrade to this release. For upgrading from older releases of ceph, general guidelines for upgrade to nautilus must be followed [Upgrading from Mimic or Luminous](#nautilus-old-upgrade).

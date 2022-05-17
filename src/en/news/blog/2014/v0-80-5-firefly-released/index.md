@@ -2,6 +2,9 @@
 title: "v0.80.5 Firefly released"
 date: "2014-07-29"
 author: "sage"
+tags:
+  - "release"
+  - "firefly"
 ---
 
 This release fixes a few important bugs in the radosgw and fixes several packaging and environment issues, including OSD log rotation, systemd environments, and daemon restarts on upgrade.

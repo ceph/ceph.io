@@ -2,6 +2,9 @@
 title: "v0.67.8 Dumpling released"
 date: "2014-05-01"
 author: "sage"
+tags:
+  - "release"
+  - "dumpling"
 ---
 
 This Dumpling point release fixes several non-critical issues since v0.67.7. The most notable bug fixes are an auth fix in librbd (observed as an occasional crash from KVM), an improvement in the network failure detection with the monitor, and several hard to hit OSD crashes or hangs.

@@ -2,6 +2,9 @@
 title: "v11.1.0 kraken released"
 date: "2016-12-13"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "kraken"
 ---
 
 This is a release candidate for Kraken, the next stable release series.

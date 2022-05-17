@@ -2,6 +2,9 @@
 title: "v11.2.1 Kraken released"
 date: "2017-08-10"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "kraken"
 ---
 
 This is the first bugfix release for Kraken, and probably the last release of the Kraken series (Kraken will be declared “End Of Life” (EOL) when Luminous is declared stable). It contains a large number of bugfixes across all Ceph components.

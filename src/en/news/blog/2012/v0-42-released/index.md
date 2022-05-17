@@ -3,6 +3,7 @@ title: "v0.42 released"
 date: "2012-02-20"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 v0.42 is ready!  This has mostly been a stabilization release, with a few critical bugs fixed.  There is also an across-the-board change in data structure encoding that is **not backwards-compatible**, but is designed to allow future changes to be (both forwards- and backwards-).

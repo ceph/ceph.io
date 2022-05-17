@@ -3,6 +3,8 @@ title: "v0.56.4 released"
 date: "2013-03-25"
 author: "sage"
 tags: 
+  - "release"
+  - "bobtail"
 ---
 
 There have been several important fixes that we’ve backported to bobtail that users are hitting in the wild.  Most notably, there was a problem with pool names with – and \_ that OpenStack users were hitting, and memory usage by ceph-osd and other daemons due to the trimming of in-memory logs.  This and more is fixed in v0.56.4.  We recommend that all bobtail users upgrade.

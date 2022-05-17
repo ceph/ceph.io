@@ -2,6 +2,9 @@
 title: "13.2.4 Mimic released"
 date: "2019-01-07"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "mimic"
 ---
 
 This is the fourth bugfix release of the Mimic v13.2.x long term stable release series. This release includes two security fixes atop of v13.2.3. We recommend that all mimic users upgrade. If you've already upgraded to v13.2.3, the same restrictions from v13.2.2 to v13.2.3 apply here as well.

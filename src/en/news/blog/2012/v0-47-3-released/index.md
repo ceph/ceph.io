@@ -3,6 +3,7 @@ title: "v0.47.3 released"
 date: "2012-06-21"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 This is a bugfix release with one major fix and a few small ones:

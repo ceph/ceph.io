@@ -3,6 +3,7 @@ title: "v0.27 released"
 date: "2011-04-24"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 v0.27 is done!  This mostly bugfixes, cleanups, and incremental

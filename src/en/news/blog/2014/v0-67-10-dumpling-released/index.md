@@ -2,6 +2,9 @@
 title: "v0.67.10 Dumpling released"
 date: "2014-08-12"
 author: "sage"
+tags:
+  - "release"
+  - "dumpling"
 ---
 
 This stable update release for Dumpling includes primarily fixes for RGW, including several issues with bucket listings and a potential data corruption problem when multiple multi-part uploads race. There is also some throttling capability added in the OSD for scrub that can mitigate the performance impact on production clusters.

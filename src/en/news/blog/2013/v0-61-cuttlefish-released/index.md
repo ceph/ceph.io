@@ -3,6 +3,8 @@ title: "v0.61 “Cuttlefish” released"
 date: "2013-05-07"
 author: "sage"
 tags: 
+  - "release"
+  - "cuttlefish"
 ---
 
 Spring has arrived (at least for some of us), and a new stable release of Ceph is ready.  Thank you to everyone who has contributed to this release!

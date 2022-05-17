@@ -2,6 +2,9 @@
 title: "v14.2.16 Nautilus released"
 date: "2020-12-17"
 author: "dgalloway"
+tags:
+  - "release"
+  - "nautilus"
 ---
 
 This is the 16th backport release in the Nautilus series. This release fixes a security flaw in CephFS. We recommend users to update to this release

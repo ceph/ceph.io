@@ -2,6 +2,9 @@
 title: "v0.93 Hammer release candidate released"
 date: "2015-02-27"
 author: "sage"
+tags:
+  - "release"
+  - "hammer"
 ---
 
 This is the first release candidate for Hammer, and includes all of the features that will be present in the final release. We welcome and encourage any and all testing in non-production clusters to identify any problems with functionality, stability, or performance before the final Hammer release.

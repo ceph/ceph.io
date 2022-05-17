@@ -3,6 +3,7 @@ title: "v0.47.2 released"
 date: "2012-05-23"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 This point release fixes a librbd bug and a small items:

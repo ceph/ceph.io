@@ -2,6 +2,9 @@
 title: "v12.2.13 Luminous released"
 date: "2020-02-03"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "luminous"
 ---
 
 This is the 13th bug fix release of the Luminous v12.2.x long term stable release series. We recommend that all users upgrade to this release.

@@ -2,6 +2,9 @@
 title: "v14.2.0 Nautilus released"
 date: "2019-03-19"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "nautilus"
 ---
 
 We're glad to announce the first release of Nautilus v14.2.0 stable series. There are a lot of changes across components from the previous Ceph release, and we advise everyone to go through the release and upgrade notes carefully.

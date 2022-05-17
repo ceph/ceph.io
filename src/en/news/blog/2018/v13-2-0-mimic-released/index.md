@@ -2,6 +2,9 @@
 title: "v13.2.0 Mimic released"
 date: "2018-06-01"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "mimic"
 ---
 
 This is the first stable release of Mimic, the next long term release series. Please read the upgrade notes from previous releases carefully before upgrading.

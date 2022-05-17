@@ -2,6 +2,8 @@
 title: "v0.90 released"
 date: "2014-12-19"
 author: "sage"
+tags:
+  - "release"
 ---
 
 This is the last development release before Christmas. There are some API cleanups for librados and librbd, and lots of bug fixes across the board for the OSD, MDS, RGW, and CRUSH. The OSD also gets support for discard (potentially helpful on SSDs, although it is off by default), and there are several improvements to ceph-disk.

@@ -3,6 +3,7 @@ title: "v0.41 released"
 date: "2012-01-28"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 v0.41 is ready!  There are a few key things in this release:

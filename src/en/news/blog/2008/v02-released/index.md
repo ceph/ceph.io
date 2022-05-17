@@ -3,6 +3,7 @@ title: "v0.2 Released"
 date: "2008-05-07"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 The kernel client is holding up well under the latest round of testing, so I’ve cut a v0.2 release and am sending an announcement to LKML and linux-fsdevel. Notable in this release:

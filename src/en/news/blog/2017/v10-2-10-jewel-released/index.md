@@ -2,6 +2,9 @@
 title: "v10.2.10 Jewel released"
 date: "2017-10-06"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "jewel"
 ---
 
 This point release brings a number of important bugfixes in all major components of Ceph, we recommend all Jewel 10.2.x users to upgrade.

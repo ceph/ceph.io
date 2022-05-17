@@ -2,6 +2,8 @@
 title: "v0.88 released"
 date: "2014-11-12"
 author: "sage"
+tags:
+  - "release"
 ---
 
 This is the first development release after Giant. The two main features merged this round are the new AsyncMessenger (an alternative implementation of the network layer) from Haomai Wang at UnitedStack, and support for POSIX file locks in ceph-fuse and libcephfs from Yan, Zheng. There is also a big pile of smaller items that re merged while we were stabilizing Giant, including a range of smaller performance and bug fixes and some new tracepoints for LTTNG.

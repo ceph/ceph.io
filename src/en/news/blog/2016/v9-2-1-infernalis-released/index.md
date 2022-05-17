@@ -2,6 +2,9 @@
 title: "v9.2.1 Infernalis released"
 date: "2016-02-26"
 author: "sage"
+tags:
+  - "release"
+  - "infernalis"
 ---
 
 This Infernalis point release fixes several packagins and init script issues, enables the librbd objectmap feature by default, a few librbd bugs, and a range of miscellaneous bug fixes across the system.

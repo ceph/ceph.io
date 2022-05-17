@@ -3,6 +3,7 @@ title: "v0.24 released"
 date: "2010-12-21"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 We’ve released v0.24, just in time for the holidays!  Big changes this time around include:

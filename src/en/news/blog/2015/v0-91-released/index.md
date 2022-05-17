@@ -2,6 +2,8 @@
 title: "v0.91 released"
 date: "2015-01-14"
 author: "sage"
+tags:
+  - "release"
 ---
 
 We are quickly approaching the Hammer feature freeze but have a few more dev releases to go before we get there. The headline items are subtree-based quota support in CephFS (ceph-fuse/libcephfs client support only for now), a rewrite of the watch/notify librados API used by RBD and RGW, OSDMap checksums to ensure that maps are always consistent inside the cluster, new API calls in librados and librbd for IO hinting modeled after posix\_fadvise, and improved storage of per-PG state.

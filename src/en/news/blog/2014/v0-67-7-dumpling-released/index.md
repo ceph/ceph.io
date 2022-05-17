@@ -2,6 +2,9 @@
 title: "v0.67.7 Dumpling released"
 date: "2014-02-20"
 author: "sage"
+tags:
+  - "release"
+  - "dumpling"
 ---
 
 This Dumpling point release fixes a few critical issues in v0.67.6.

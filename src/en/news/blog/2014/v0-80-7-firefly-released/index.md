@@ -2,6 +2,9 @@
 title: "v0.80.7 Firefly released"
 date: "2014-10-16"
 author: "sage"
+tags:
+  - "release"
+  - "firefly"
 ---
 
 This release fixes a few critical issues with v0.80.6, particularly with clusters running mixed versions.

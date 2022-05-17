@@ -2,6 +2,9 @@
 title: "v0.94.6 Hammer released"
 date: "2016-02-23"
 author: "sage"
+tags:
+  - "release"
+  - "hammer"
 ---
 
 This Hammer point release fixes a range of bugs, most notably a fix for unbounded growth of the monitor’s leveldb store, and a workaround in the OSD to keep most xattrs small enough to be stored inline in XFS inodes.

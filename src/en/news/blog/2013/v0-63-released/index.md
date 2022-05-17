@@ -3,6 +3,7 @@ title: "v0.63 released"
 date: "2013-05-29"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 Another sprint, and v0.63 is here.  This release features librbd improvements, mon fixes, osd robustness, and packaging fixes.

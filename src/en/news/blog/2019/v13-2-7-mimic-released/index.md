@@ -2,6 +2,9 @@
 title: "v13.2.7 mimic released"
 date: "2019-11-25"
 author: "dgalloway"
+tags:
+  - "release"
+  - "mimic"
 ---
 
 This is the seventh bugfix release of the Mimic v13.2.x long term stable release series. We recommend all Mimic users upgrade.

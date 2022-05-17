@@ -3,6 +3,8 @@ title: "v0.61.2 released"
 date: "2013-05-14"
 author: "sage"
 tags: 
+  - "release"
+  - "cuttlefish"
 ---
 
 This release has only two changes: it disables a debug log by default that consumes disk space on the monitor, and fixes a bug with upgrading bobtail monitor stores with duplicated GV values. We urge all v0.61.1 users to upgrade to avoid filling the monitor data disks.

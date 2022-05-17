@@ -2,6 +2,9 @@
 title: "v14.2.11 Nautilus released"
 date: "2020-08-11"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "nautilus"
 ---
 
 This is the eleventh release in the Nautilus series. This release brings a number of bugfixes across all major components of Ceph. We recommend that all Nautilus users upgrade to this release.

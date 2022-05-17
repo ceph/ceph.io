@@ -2,6 +2,9 @@
 title: "Ceph v12.0.2 Luminous (dev) released"
 date: "2017-04-24"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "luminous"
 ---
 
 This is the third development checkpoint release of Luminous, the next long term stable release.

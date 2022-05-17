@@ -2,6 +2,9 @@
 title: "v14.2.9 Nautilus released"
 date: "2020-04-14"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "nautilus"
 ---
 
 This is the ninth bugfix release of Nautilus. This release fixes a couple of security issues in RGW & Messenger V2. We recommend all users to upgrade to this release

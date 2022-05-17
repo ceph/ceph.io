@@ -2,6 +2,9 @@
 title: "v0.80 Firefly released"
 date: "2014-05-07"
 author: "sage"
+tags:
+  - "release"
+  - "firefly"
 ---
 
 We did it!  Firefly is built and pushed out to the ceph.com repositories.

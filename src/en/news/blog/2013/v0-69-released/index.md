@@ -3,6 +3,7 @@ title: "v0.69 released"
 date: "2013-09-18"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 Our v0.69 development release of Ceph is ready!  The most notable user-facing new feature is probably improved support for CORS in the radosgw.  There has also been a lot of new work going into the tree behind the scenes on the OSD that is laying the groundwork for tiering and cache pools.  As part of this, some of the librados API semantics have been tightened up.

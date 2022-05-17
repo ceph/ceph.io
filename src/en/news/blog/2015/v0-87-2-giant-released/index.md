@@ -2,6 +2,9 @@
 title: "v0.87.2 Giant released"
 date: "2015-04-27"
 author: "sage"
+tags:
+  - "release"
+  - "giant"
 ---
 
 This is the second (and possibly final) point release for Giant.

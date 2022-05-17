@@ -3,6 +3,7 @@ title: "v0.68 released"
 date: "2013-09-04"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 Our first development release after Dumpling has arrived!  It includes a lot of small cleanups and documentation improvements, as well as the first blueprint from the Emperor CDS to land (support for ZFS).  There are also new sample implementations for RADOS classes (cls\_hello) and a sample librados application (hello\_world) to help developers and users get started.

@@ -3,6 +3,7 @@ title: "v0.59 released"
 date: "2013-03-21"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 Another sprint and another release! This one is delayed a day or two due to power issues in our data center. The most exciting bit here is a big refactor in the monitor that has finally landed (thanks go to Joao Luis), but there is lots of other good stuff to go around:

@@ -2,6 +2,9 @@
 title: "v13.2.6 Mimic released"
 date: "2019-06-04"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "mimic"
 ---
 
 This is the sixth bugfix release of the Mimic v13.2.x long term stable release series. We recommend all Mimic users upgrade.

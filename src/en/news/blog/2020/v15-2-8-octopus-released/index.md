@@ -2,6 +2,9 @@
 title: "v15.2.8 Octopus released"
 date: "2020-12-17"
 author: "dgalloway"
+tags:
+  - "release"
+  - "octopus"
 ---
 
 This is the 8th backport release in the Octopus series. This release fixes a security flaw in CephFS and includes a number of bug fixes. We recommend users to update to this release.

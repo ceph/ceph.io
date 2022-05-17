@@ -2,6 +2,9 @@
 title: "v0.94.4 Hammer released"
 date: "2015-10-19"
 author: "sage"
+tags:
+  - "release"
+  - "hammer"
 ---
 
 This Hammer point fixes several important bugs in Hammer, as well as fixing interoperability issues that are required before an upgrade to Infernalis. That is, all users of earlier version of Hammer or any version of Firefly will first need to upgrade to hammer v0.94.4 or later before upgrading to Infernalis (or future releases).

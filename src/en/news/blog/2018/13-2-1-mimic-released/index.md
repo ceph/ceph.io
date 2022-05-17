@@ -2,6 +2,9 @@
 title: "13.2.1 Mimic released"
 date: "2018-07-27"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "mimic"
 ---
 
 This is the first bugfix release of the Mimic v13.2.x long term stable release series. This release contains many fixes across all components of Ceph, including a few security fixes. We recommend that all users upgrade.

@@ -2,6 +2,9 @@
 title: "v14.2.5 Nautilus released"
 date: "2019-12-09"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "nautilus"
 ---
 
 This is the fifth release of the Ceph Nautilus release series. Among the many notable changes, this release fixes a critical BlueStore bug that was introduced in 14.2.3. All Nautilus users are advised to upgrade to this release.

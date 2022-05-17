@@ -3,6 +3,8 @@ title: "v0.67.4 Dumpling released"
 date: "2013-10-04"
 author: "sage"
 tags: 
+  - "release"
+  - "dumpling"
 ---
 
 This point release fixes an important performance issue with radosgw, keystone authentication token caching, and CORS. All users (especially those of rgw) are encouraged to upgrade.

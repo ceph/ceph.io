@@ -3,6 +3,7 @@ title: "v0.25 released"
 date: "2011-03-06"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 We’ve just tagged the v0.25 release.  Most of the work here is in the OSD

@@ -2,6 +2,9 @@
 title: "v10.0.4 released"
 date: "2016-03-08"
 author: "sage"
+tags:
+  - "release"
+  - "jewel"
 ---
 
 This is the fourth and last development release before Jewel. The next release will be a release candidate with the final set of features. Big items include RGW static website support, librbd journal framework, fixed mon sync of config-key data, C++11 updates, and bluestore/kstore.

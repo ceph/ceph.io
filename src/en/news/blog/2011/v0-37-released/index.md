@@ -3,6 +3,7 @@ title: "v0.37 released"
 date: "2011-10-18"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 v0.37 is ready.  Notable changes this time around:

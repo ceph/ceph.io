@@ -2,6 +2,9 @@
 title: "v16.2.6 Pacific released"
 date: "2021-09-16"
 author: "dgalloway"
+tags:
+  - "release"
+  - "pacific"
 ---
 
 This is the sixth backport release in the Pacific series. We recommend all users update to this release.

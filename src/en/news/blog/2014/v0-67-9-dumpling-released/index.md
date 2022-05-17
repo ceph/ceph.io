@@ -2,6 +2,9 @@
 title: "v0.67.9 Dumpling released"
 date: "2014-05-21"
 author: "sage"
+tags:
+  - "release"
+  - "dumpling"
 ---
 
 This Dumpling point release fixes several minor bugs. The most prevalent in the field is one that occasionally prevents OSDs from starting on recently created clusters.

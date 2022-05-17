@@ -2,6 +2,9 @@
 title: "v13.2.9 Mimic released"
 date: "2020-04-16"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "mimic"
 ---
 
 This is the ninth and very likely the last stable release in the Ceph Mimic stable release series. This release fixes bugs across all components and also contains a RGW security fix. We recommend all mimic users to upgrade to this version.

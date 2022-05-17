@@ -2,6 +2,9 @@
 title: "v15.2.16 Octopus released"
 date: "2022-03-01"
 author: "akraitma"
+tags:
+  - "release"
+  - "octopus"
 ---
 
 This is the 16th backport release in the Octopus series. We recommend all

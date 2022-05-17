@@ -3,6 +3,8 @@ title: "v0.61.5 Cuttlefish update released"
 date: "2013-07-18"
 author: "sage"
 tags: 
+  - "release"
+  - "cuttlefish"
 ---
 
 We’ve prepared another update for the Cuttlefish v0.61.x series. This release primarily contains monitor stability improvements, although there are also some important fixes for ceph-osd for large clusters and a few important CephFS fixes. We recommend that all v0.61.x users upgrade.

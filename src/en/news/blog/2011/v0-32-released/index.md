@@ -3,6 +3,7 @@ title: "v0.32 released"
 date: "2011-08-01"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 We’ve released v0.32. Notable in this release:

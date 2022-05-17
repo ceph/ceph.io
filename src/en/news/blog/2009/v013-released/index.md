@@ -3,6 +3,7 @@ title: "v0.13 released"
 date: "2009-08-24"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 We’ve made a v0.13 release.  This mostly fixes bugs with v0.12 that have come up over the past couple weeks:

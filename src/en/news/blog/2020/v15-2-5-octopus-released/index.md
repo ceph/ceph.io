@@ -2,6 +2,9 @@
 title: "v15.2.5 Octopus released"
 date: "2020-09-16"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "octopus"
 ---
 
 This is the fifth release of the Ceph Octopus stable release series. This release brings a range of fixes across all components. We recommend that all Octopus users upgrade to this release.
