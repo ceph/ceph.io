@@ -2,6 +2,9 @@
 title: "v0.94.8 Hammer released"
 date: "2016-08-26"
 author: "sage"
+tags:
+  - "release"
+  - "hammer"
 ---
 
 This Hammer point release fixes several bugs.

@@ -3,6 +3,7 @@ title: "v0.10 released"
 date: "2009-07-16"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 We’ve released v0.10.  The big items this time around:

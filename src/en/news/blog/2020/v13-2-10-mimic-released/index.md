@@ -2,6 +2,9 @@
 title: "v13.2.10 Mimic released"
 date: "2020-04-23"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "mimic"
 ---
 
 This is the tenth bugfix release of Ceph Mimic, this release fixes a RGW CVE affecting mimic, and we recommend that all mimic users upgrade.

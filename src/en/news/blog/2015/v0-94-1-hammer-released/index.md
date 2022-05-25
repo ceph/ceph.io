@@ -2,6 +2,9 @@
 title: "v0.94.1 Hammer released"
 date: "2015-04-13"
 author: "sage"
+tags:
+  - "release"
+  - "hammer"
 ---
 
 This bug fix release fixes a few critical issues with CRUSH. The most important addresses a bug in feature bit enforcement that may prevent pre-hammer clients from communicating with the cluster during an upgrade. This only manifests in some cases (for example, when the ‘rack’ type is in use in the CRUSH map, and possibly other cases), but for safety we strongly recommend that all users use 0.94.1 instead of 0.94 when upgrading.

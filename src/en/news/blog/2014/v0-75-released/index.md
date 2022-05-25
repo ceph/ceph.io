@@ -2,6 +2,8 @@
 title: "v0.75 released"
 date: "2014-01-15"
 author: "sage"
+tags:
+  - "release"
 ---
 
 This is a big release, with lots of infrastructure going in for firefly. The big items include a prototype standalone frontend for radosgw (which does not require apache or fastcgi), tracking for read activity on the osds (to inform tiering decisions), preliminary cache pool support (no snapshots yet), and lots of bug fixes and other work across the tree to get ready for the next batch of erasure coding patches.

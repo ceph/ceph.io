@@ -2,6 +2,9 @@
 title: "v10.2.7 Jewel Released"
 date: "2017-04-11"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "jewel"
 ---
 
 This point release fixes several important bugs in RBD mirroring, librbd & RGW.

@@ -2,6 +2,9 @@
 title: "v16.2.0 Pacific released"
 date: "2021-04-01"
 author: "dgalloway"
+tags:
+  - "release"
+  - "pacific"
 ---
 
 We're glad to announce the first release of the [Pacific v16.2.0 stable series](https://ceph.io/get/). There have been a lot of changes across components from the previous Ceph releases, and we advise everyone to go through the [release and upgrade notes](https://docs.ceph.com/en/latest/releases/pacific/) carefully.

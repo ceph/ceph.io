@@ -3,6 +3,7 @@ title: "Released v0.45"
 date: "2012-04-11"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 v0.45 is ready!  Notable changes include:

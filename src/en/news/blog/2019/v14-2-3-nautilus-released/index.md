@@ -2,6 +2,9 @@
 title: "v14.2.3 Nautilus released"
 date: "2019-09-04"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "nautilus"
 ---
 
 This is the third bug fix release of Ceph Nautilus release series. We recommend all Nautilus users upgrade to this release. This release fixes a security issue.  For upgrading from older releases of ceph, general guidelines for upgrade to nautilus must be followed

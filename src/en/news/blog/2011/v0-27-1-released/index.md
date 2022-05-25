@@ -3,6 +3,7 @@ title: "v0.27.1 released"
 date: "2011-05-05"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 We’ve released v0.27.1. This includes a few bugfixes for v0.27, including

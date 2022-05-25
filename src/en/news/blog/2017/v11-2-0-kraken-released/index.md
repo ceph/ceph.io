@@ -2,6 +2,9 @@
 title: "We've released the kraken!"
 date: "2017-01-20"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "kraken"
 ---
 
 ![](images/kraken.jpg)

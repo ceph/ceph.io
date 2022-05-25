@@ -2,6 +2,9 @@
 title: "v0.80.11 Firefly released"
 date: "2015-11-19"
 author: "sage"
+tags:
+  - "release"
+  - "firefly"
 ---
 
 This is a bugfix release for Firefly.  As the Firefly 0.80.x series is nearing its planned end of life in January 2016 it may also be the last.

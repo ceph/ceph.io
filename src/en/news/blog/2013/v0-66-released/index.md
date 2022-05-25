@@ -3,6 +3,7 @@ title: "v0.66 released"
 date: "2013-07-09"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 Our last development release before dumpling is here! The main improvements here are with monitor performance and OSD pg log rewrites to speed up peeering.

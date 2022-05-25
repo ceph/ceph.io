@@ -2,6 +2,9 @@
 title: "v10.2.8 Jewel released"
 date: "2017-07-14"
 author: "ncutler"
+tags:
+  - "release"
+  - "jewel"
 ---
 
 This point release brought a number of important bugfixes in all major components of Ceph. However, it also introduced a regression that could cause MDS damage, and a new release, v10.2.9, was published to address this. Therefore, Jewel users should _not_ upgrade to this version - instead, we recommend upgrading directly to v10.2.9.

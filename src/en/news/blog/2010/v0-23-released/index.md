@@ -3,6 +3,7 @@ title: "v0.23 released"
 date: "2010-11-12"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 Another month, and v0.23 is out.  The main milestone here is that clustered MDS is pretty stable.  Stable enough that, if you’re interested and willing, we’d like you to try it and let us know what problems you have.  Notably, clustered recovery is _not_ yet well tested (that’s v0.24), so don’t do this unless you’re feeling adventurous.  Directory fragmentation (splitting and merging) is also working, although still off by default.  If you’d like to try that too, add ‘mds bal frag = true’ to your \[mds\] section.

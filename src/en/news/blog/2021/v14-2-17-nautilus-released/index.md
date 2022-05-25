@@ -2,6 +2,9 @@
 title: "v14.2.17 Nautilus released"
 date: "2021-03-11"
 author: "dgalloway"
+tags:
+  - "release"
+  - "nautilus"
 ---
 
 This is the 17th backport release in the Nautilus series. We recommend users to update to this release

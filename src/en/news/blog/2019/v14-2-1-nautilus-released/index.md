@@ -2,6 +2,9 @@
 title: "v14.2.1 Nautilus released"
 date: "2019-04-29"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "nautilus"
 ---
 
 This is the first bug fix release of Ceph Nautilus release series. We recommend all nautilus users upgrade to this release. For upgrading from older releases of ceph, general guidelines for upgrade to nautilus must be followed [Upgrading from Mimic or Luminous](http://docs.ceph.com/master/releases/nautilus/#nautilus-old-upgrade).

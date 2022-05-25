@@ -2,6 +2,9 @@
 title: "v0.94.7 Hammer released"
 date: "2016-05-13"
 author: "sage"
+tags:
+  - "release"
+  - "hammer"
 ---
 
 This Hammer point release fixes several minor bugs. It also includes a backport of an improved ‘ceph osd reweight-by-utilization’ command for handling OSDs with higher-than-average utilizations.

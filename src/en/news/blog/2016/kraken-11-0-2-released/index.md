@@ -2,6 +2,9 @@
 title: "Kraken 11.0.2 released"
 date: "2016-10-18"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "kraken"
 ---
 
 This development checkpoint release includes a lot of changes and improvements to Kraken. This is the first release introducing ceph-mgr, a new daemon which provides additional monitoring & interfaces to external monitoring/management systems. There are also many improvements to bluestore, RGW introduces sync modules, copy part for multipart uploads and metadata search via elastic search as a tech preview. We've had to skip releasing 11.0.1 due to an issue with git tags and package versions as we were transitioning away from autotools to cmake and the new build system in place.

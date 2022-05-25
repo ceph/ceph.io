@@ -2,6 +2,9 @@
 title: "v15.2.11 Octopus released"
 date: "2021-04-19"
 author: "dgalloway"
+tags:
+  - "release"
+  - "octopus"
 ---
 
 This is the 11th bugfix release in the Octopus stable series. It addresses a security vulnerability in the Ceph authentication framework.  

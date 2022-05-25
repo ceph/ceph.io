@@ -2,6 +2,9 @@
 title: "v16.2.1 Pacific released"
 date: "2021-04-19"
 author: "dgalloway"
+tags:
+  - "release"
+  - "pacific"
 ---
 
 This is the first bugfix release in the Pacific stable series. It addresses a security vulnerability in the Ceph authentication framework.  

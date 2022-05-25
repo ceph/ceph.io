@@ -3,6 +3,8 @@ title: "v0.56 released"
 date: "2013-01-01"
 author: "sage"
 tags: 
+  - "release"
+  - "bobtail"
 ---
 
 We’re bringing in the new year with a new release, v0.56, which will form the basis of the next stable series “bobtail.”  There is little in the way of new functionality since v0.55, as we’ve been focusing primarily on stability, performance, and upgradability from the previous argonaut stable series (v0.48.x).  If you are a current argonaut user, you can either upgrade now, or watch the [Inktank blog](http://www.inktank.com/news-events/blog/) for the bobtail announcement after some additional testing has been completed.  If you are a v0.55 or v0.55.1 user, we recommend upgrading now.

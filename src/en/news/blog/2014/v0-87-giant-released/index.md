@@ -2,6 +2,9 @@
 title: "v0.87 Giant released"
 date: "2014-10-29"
 author: "sage"
+tags:
+  - "release"
+  - "giant"
 ---
 
 This release will form the basis for the stable release Giant, v0.87.x. Highlights for Giant include:

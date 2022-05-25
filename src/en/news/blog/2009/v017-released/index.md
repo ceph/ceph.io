@@ -3,6 +3,7 @@ title: "v0.17 released"
 date: "2009-10-19"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 We’ve released v0.17.  This is mainly bug fixes and some monitor improvements.  Changes since v0.16 include:

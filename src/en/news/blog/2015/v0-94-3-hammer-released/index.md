@@ -2,6 +2,9 @@
 title: "v0.94.3 Hammer released"
 date: "2015-08-27"
 author: "sage"
+tags:
+  - "release"
+  - "hammer"
 ---
 
 This Hammer point release fixes a critical (though rare) data corruption bug that could be triggered when logs are rotated via SIGHUP. It also fixes a range of other important bugs in the OSD, monitor, RGW, RBD, and CephFS.

@@ -2,6 +2,9 @@
 title: "v9.1.0 Infernalis release candidate released"
 date: "2015-10-13"
 author: "sage"
+tags:
+  - "release"
+  - "infernalis"
 ---
 
 This is the first Infernalis release candidate. There have been some major changes since Hammer, and the upgrade process is non-trivial. Please read carefully.

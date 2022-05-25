@@ -2,6 +2,9 @@
 title: "v12.2.4 Luminous Released"
 date: "2018-02-28"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "luminous"
 ---
 
 This is the fourth bugfix release of Luminous v12.2.x long term stable release series. This was primarily intended to fix a few build, ceph-volume/ceph-disk and RGW issues. We recommend all the users of 12.2.x series to update.

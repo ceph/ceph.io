@@ -2,6 +2,9 @@
 title: "v16.2.4 Pacific released"
 date: "2021-05-14"
 author: "dgalloway"
+tags:
+  - "release"
+  - "pacific"
 ---
 
 This is a hotfix release addressing a number of security issues and regressions. We recommend all users update to this release.

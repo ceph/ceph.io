@@ -2,6 +2,9 @@
 title: "12.2.7 Luminous released"
 date: "2018-07-17"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "luminous"
 ---
 
 This is the seventh bugfix release of Luminous v12.2.x long term stable release series. This release contains several fixes for regressions in the v12.2.6 and v12.2.5 releases. We recommend that all users upgrade to v12.2.7.

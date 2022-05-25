@@ -2,6 +2,9 @@
 title: "Ceph v12.0.3 Luminous (dev) released"
 date: "2017-05-17"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "luminous"
 ---
 
 This is the fourth development checkpoint release of Luminous, the next long term stable release. This release introduces several improvements in bluestore, monitor, rbd & rgw.

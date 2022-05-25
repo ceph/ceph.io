@@ -2,6 +2,9 @@
 title: "v14.2.15 Nautilus released"
 date: "2020-11-24"
 author: "dgalloway"
+tags:
+  - "release"
+  - "nautilus"
 ---
 
 This is the 15th backport release in the Nautilus series. This release fixes a ceph-volume regression introduced in v14.2.13 and includes few other fixes. We recommend users to update to this release.

@@ -2,6 +2,9 @@
 title: "v14.2.20 Nautilus released"
 date: "2021-04-19"
 author: "dgalloway"
+tags:
+  - "release"
+  - "nautilus"
 ---
 
 This is the 20th bugfix release in the Nautilus stable series. It addresses a security vulnerability in the Ceph authentication framework.  

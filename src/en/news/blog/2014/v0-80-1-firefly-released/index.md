@@ -2,6 +2,9 @@
 title: "v0.80.1 Firefly released"
 date: "2014-05-12"
 author: "sage"
+tags:
+  - "release"
+  - "firefly"
 ---
 
 This first Firefly point release fixes a few bugs, the most visible being a problem that prevents scrub from completing in some cases.

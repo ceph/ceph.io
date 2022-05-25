@@ -3,6 +3,7 @@ title: "v0.40 released"
 date: "2012-01-14"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 It’s been several weeks, but v0.40 is ready.  This has mostly been a stabilization release, so there isn’t too much new here.  Some notable additions include:

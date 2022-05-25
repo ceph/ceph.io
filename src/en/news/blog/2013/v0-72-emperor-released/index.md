@@ -3,6 +3,8 @@ title: "v0.72 Emperor Released"
 date: "2013-11-09"
 author: "sage"
 tags: 
+  - "release"
+  - "emperor"
 ---
 
 This is the fifth major release of Ceph, the fourth since adopting a 3-month development cycle. This release brings several new features, including multi-datacenter replication for the radosgw, improved usability, and lands a lot of incremental performance and internal refactoring work to support upcoming features in Firefly.

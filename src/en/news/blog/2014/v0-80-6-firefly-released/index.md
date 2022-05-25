@@ -2,6 +2,9 @@
 title: "v0.80.6 Firefly released"
 date: "2014-10-02"
 author: "sage"
+tags:
+  - "release"
+  - "firefly"
 ---
 
 This is a major bugfix release for firefly, fixing a range of issues in the OSD and monitor, particularly with cache tiering. There are also important fixes in librados, with the watch/notify mechanism used by librbd, and in radosgw.

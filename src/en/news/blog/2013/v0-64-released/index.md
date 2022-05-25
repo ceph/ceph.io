@@ -3,6 +3,7 @@ title: "v0.64 released"
 date: "2013-06-12"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 A new development release of Ceph is out. Notable changes include:

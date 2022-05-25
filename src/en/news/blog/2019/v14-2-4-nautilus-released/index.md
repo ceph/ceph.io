@@ -2,6 +2,9 @@
 title: "v14.2.4 nautilus released"
 date: "2019-09-17"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "nautilus"
 ---
 
 This is the fourth release in the Ceph Nautilus stable release series. Its sole purpose is to fix a regression that found its way into the previous release.

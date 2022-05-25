@@ -3,6 +3,7 @@ title: "v0.43 released"
 date: "2012-03-02"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 V0.43 is ready, and includes:

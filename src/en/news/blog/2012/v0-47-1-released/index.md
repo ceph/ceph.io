@@ -3,6 +3,7 @@ title: "v0.47.1 released"
 date: "2012-05-22"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 There was a problem with v0.47 that prevented new OSDs from detecting xattr support properly.  We’ve released v0.47.1 to resolve this issue.  If you’ve installed v0.47, and plan to create new OSDs, you should upgrade.

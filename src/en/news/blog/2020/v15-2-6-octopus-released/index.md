@@ -2,6 +2,9 @@
 title: "v15.2.6 Octopus released"
 date: "2020-11-19"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "octopus"
 ---
 
 This is the 6th backport release in the Octopus series. This releases fixes a  

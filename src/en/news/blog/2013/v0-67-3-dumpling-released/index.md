@@ -3,6 +3,8 @@ title: "v0.67.3 Dumpling released"
 date: "2013-09-10"
 author: "sage"
 tags: 
+  - "release"
+  - "dumpling"
 ---
 
 This point release fixes a few important performance regressions with the OSD (both with CPU and disk utilization), as well as several other important but less common problems. We recommend that all production users upgrade.

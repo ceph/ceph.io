@@ -2,6 +2,9 @@
 title: "v12.2.11 Luminous released"
 date: "2019-01-31"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "luminous"
 ---
 
 This is the eleventh bug fix release of the Luminous v12.2.x long term stable release series. We recommend that all users upgrade to this release. Please note the following precautions while upgrading.

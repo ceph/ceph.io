@@ -3,6 +3,7 @@ title: "v0.73 released"
 date: "2013-12-12"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 This release, the first development release after emperor, includes many bug fixes and a few additional pieces of functionality. The first batch of larger changes will be landing in the next version, v0.74.

@@ -2,6 +2,8 @@
 title: "v0.77 released"
 date: "2014-02-20"
 author: "sage"
+tags:
+  - "release"
 ---
 
 This is the final development release before the Firefly feature freeze. The main items in this release include some additional refactoring work in the OSD IO path (include some locking improvements), per-user quotas for the radosgw, a switch to civetweb from mongoose for the prototype radosgw standalone mode, and a prototype leveldb-based backend for the OSD. The C librados API also got support for atomic write operations (read side transactions will appear in v0.78).

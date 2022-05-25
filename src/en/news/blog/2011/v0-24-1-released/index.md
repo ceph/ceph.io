@@ -3,6 +3,7 @@ title: "v0.24.1 released"
 date: "2011-01-10"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 v0.24.1 has been released, with a number of bug fixes from v0.24.  These include:

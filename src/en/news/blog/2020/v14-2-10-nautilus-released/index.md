@@ -2,6 +2,9 @@
 title: "v14.2.10 Nautilus released"
 date: "2020-06-26"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "nautilus"
 ---
 
 This is the tenth release in the Nautilus series. In addition to fixing a security-related bug in RGW, this release brings a number of bugfixes across all major components of Ceph. We recommend that all Nautilus users upgrade to this release.

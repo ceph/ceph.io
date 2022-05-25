@@ -2,6 +2,9 @@
 title: "v15.2.4 Octopus released"
 date: "2020-06-30"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "octopus"
 ---
 
 This is the fourth release of the Ceph Octopus stable release series. In addition to a security fix in RGW, this release brings a range of fixes across all components. We recommend that all Octopus users upgrade to this release.

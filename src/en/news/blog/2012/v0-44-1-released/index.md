@@ -3,6 +3,7 @@ title: "v0.44.1 released"
 date: "2012-03-28"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 This point release has a few important fixes:

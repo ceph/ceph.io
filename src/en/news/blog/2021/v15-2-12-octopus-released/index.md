@@ -2,6 +2,9 @@
 title: "v15.2.12 Octopus released"
 date: "2021-05-14"
 author: "dgalloway"
+tags:
+  - "release"
+  - "octopus"
 ---
 
 This is a hotfix release addressing a number of security issues and regressions. We recommend all users update to this release.

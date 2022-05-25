@@ -2,6 +2,8 @@
 title: "v0.83 released"
 date: "2014-07-30"
 author: "sage"
+tags:
+  - "release"
 ---
 
 Another Ceph development release! This has been a longer cycle, so there has been quite a bit of bug fixing and stabilization in this round. There is also a bunch of packaging fixes for RPM distros (RHEL/CentOS, Fedora, and SUSE) and for systemd. We’ve also added a new librados-striper library from Sebastien Ponce that provides a generic striping API for applications to code to.

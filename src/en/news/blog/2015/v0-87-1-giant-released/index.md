@@ -2,6 +2,9 @@
 title: "v0.87.1 Giant released"
 date: "2015-02-26"
 author: "sage"
+tags:
+  - "release"
+  - "giant"
 ---
 
 This is the first (and possibly final) point release for Giant. Our focus on stability fixes will be directed towards Hammer and Firefly.

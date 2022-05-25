@@ -2,6 +2,9 @@
 title: "v12.2.0 Luminous Released"
 date: "2017-08-29"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "luminous"
 ---
 
 ![](images/luminous_logo-1.png)

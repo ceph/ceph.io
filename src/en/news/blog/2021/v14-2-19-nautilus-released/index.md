@@ -2,6 +2,9 @@
 title: "v14.2.19 Nautilus released"
 date: "2021-03-30"
 author: "dgalloway"
+tags:
+  - "release"
+  - "nautilus"
 ---
 
 This is the 19th update to the Ceph Nautilus release series. This is a hotfix release to prevent daemons from binding to loopback network interfaces. All nautilus users are advised to upgrade to this release.

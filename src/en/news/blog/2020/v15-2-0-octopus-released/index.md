@@ -2,6 +2,9 @@
 title: "v15.2.0 Octopus released"
 date: "2020-03-23"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "octopus"
 ---
 
 This is the first stable release of Ceph Octopus.

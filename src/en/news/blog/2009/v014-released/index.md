@@ -3,6 +3,7 @@ title: "v0.14 released"
 date: "2009-09-08"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 We”ve released v0.14.  Changes since v0.13 include:

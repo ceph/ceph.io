@@ -2,6 +2,9 @@
 title: "v9.0.0 released"
 date: "2015-05-05"
 author: "sage"
+tags:
+  - "release"
+  - "infernalis"
 ---
 
 This is the first development release for the Infernalis cycle, and the first Ceph release to sport a version number from the new numbering scheme. The “9” indicates this is the 9th release cycle–I (for Infernalis) is the 9th letter. The first “0” indicates this is a development release (“1” will mean release candidate and “2” will mean stable release), and the final “0” indicates this is the first such development release.

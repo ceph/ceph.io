@@ -2,6 +2,9 @@
 title: "v10.2.1 Jewel released"
 date: "2016-05-16"
 author: "sage"
+tags:
+  - "release"
+  - "jewel"
 ---
 
 This is the first bugfix release for Jewel. It contains several annoying packaging and init system fixes and a range of important bugfixes across RBD, RGW, and CephFS.

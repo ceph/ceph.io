@@ -2,6 +2,9 @@
 title: "v10.0.3 released"
 date: "2016-02-10"
 author: "sage"
+tags:
+  - "release"
+  - "jewel"
 ---
 
 This is the fourth development release for Jewel. Several big pieces have been added this release, including BlueStore (a new backend for OSD to replace FileStore), many ceph-disk fixes, a new CRUSH tunable that improves mapping stability, a new librados object enumeration API, and a whole slew of OSD and RADOS optimizations.

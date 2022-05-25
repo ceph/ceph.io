@@ -2,6 +2,9 @@
 title: "v14.2.21 Nautilus released"
 date: "2021-05-14"
 author: "dgalloway"
+tags:
+  - "release"
+  - "nautilus"
 ---
 
 This is a hotfix release addressing a number of security issues and regressions. We recommend all users update to this release.

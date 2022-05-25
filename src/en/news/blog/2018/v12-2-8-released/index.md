@@ -2,6 +2,9 @@
 title: "v12.2.8 released"
 date: "2018-09-04"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "luminous"
 ---
 
 We're glad to announce the next point release in the Luminous v12.2.X stable release series. This release contains a range of bugfixes and stability improvements across all the components of ceph. We thank everyone for contributing towards this release.

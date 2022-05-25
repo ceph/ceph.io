@@ -2,6 +2,9 @@
 title: "v0.80.9 Firefly released"
 date: "2015-03-10"
 author: "sage"
+tags:
+  - "release"
+  - "firefly"
 ---
 
 This is a bugfix release for firefly. It fixes a performance regression in librbd, an important CRUSH misbehavior (see below), and several RGW bugs. We have also backported support for flock/fcntl locks to ceph-fuse and libcephfs.

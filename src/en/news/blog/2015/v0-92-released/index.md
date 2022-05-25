@@ -2,6 +2,8 @@
 title: "v0.92 released"
 date: "2015-02-03"
 author: "sage"
+tags:
+  - "release"
 ---
 
 This is the second-to-last chunk of new stuff before Hammer. Big items include additional checksums on OSD objects, proxied reads in the cache tier, image locking in RBD, optimized OSD Transaction and replication messages, and a big pile of RGW and MDS bug fixes.

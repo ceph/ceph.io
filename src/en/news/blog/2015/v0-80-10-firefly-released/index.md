@@ -2,6 +2,9 @@
 title: "v0.80.10 Firefly released"
 date: "2015-07-21"
 author: "sage"
+tags:
+  - "release"
+  - "firefly"
 ---
 
 This is a bugfix release for Firefly.

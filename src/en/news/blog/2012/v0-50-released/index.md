@@ -3,6 +3,7 @@ title: "v0.50 released"
 date: "2012-08-13"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 The next development release v0.50 is ready, and includes:

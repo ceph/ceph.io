@@ -2,6 +2,9 @@
 title: "v12.0.1 Luminous (dev) released"
 date: "2017-03-29"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "luminous"
 ---
 
 This is the second development checkpoint release of Luminous, the next long term stable release.

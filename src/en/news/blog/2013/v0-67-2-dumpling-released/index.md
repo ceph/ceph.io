@@ -3,6 +3,8 @@ title: "v0.67.2 Dumpling released"
 date: "2013-08-23"
 author: "sage"
 tags: 
+  - "release"
+  - "dumpling"
 ---
 
 This is an imporant point release for Dumpling. Most notably, it fixes a problem when upgrading directly from v0.56.x Bobtail to v0.67.x Dumpling (without stopping at v0.61.x Cuttlefish along the way). It also fixes a problem with the CLI parsing of the CEPH\_ARGS environment variable (which causes problems with older releases of OpenStack), high CPU utilization by the ceph-osd daemons, and cleans up the radosgw shutdown sequence.

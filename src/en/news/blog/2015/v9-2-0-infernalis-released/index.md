@@ -2,6 +2,9 @@
 title: "v9.2.0 Infernalis released"
 date: "2015-11-06"
 author: "sage"
+tags:
+  - "release"
+  - "infernalis"
 ---
 
 ![Infernalis](images/infernalis-460x148.png)This major release will be the foundation for the next stable series. There have been some major changes since v0.94.x Hammer, and the upgrade process is non-trivial. Please read these release notes carefully.

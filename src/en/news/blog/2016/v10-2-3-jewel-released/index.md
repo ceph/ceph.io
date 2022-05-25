@@ -2,6 +2,9 @@
 title: "v10.2.3 Jewel Released"
 date: "2016-09-28"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "jewel"
 ---
 
 This point release fixes several important bugs in RBD mirroring, RGW multi-site, CephFS, and RADOS.

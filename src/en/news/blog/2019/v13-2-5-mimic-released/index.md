@@ -2,6 +2,9 @@
 title: "v13.2.5 Mimic released"
 date: "2019-03-13"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "mimic"
 ---
 
 This is the fifth bugfix release of the Mimic v13.2.x long term stable release series. We recommend all Mimic users upgrade.

@@ -2,6 +2,9 @@
 title: "v14.2.12 Nautilus Released"
 date: "2020-10-20"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "nautilus"
 ---
 
 This is the 12th backport release in the Nautilus series. This release brings a number of bugfixes across all major components of Ceph. We recommend that all Nautilus users upgrade to this release.

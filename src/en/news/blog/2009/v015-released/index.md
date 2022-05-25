@@ -3,6 +3,7 @@ title: "v0.15 released"
 date: "2009-09-22"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 We’ve released v0.15.  This is mostly cleanups for the kernel client and some work on the monitor interface.  Changes since v0.14 include:

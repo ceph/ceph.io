@@ -2,6 +2,9 @@
 title: "v0.94.10 Hammer released"
 date: "2017-02-22"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "hammer"
 ---
 
 This Hammer point release fixes several bugs and adds two new features.

@@ -2,6 +2,8 @@
 title: "v0.85 released"
 date: "2014-09-08"
 author: "sage"
+tags:
+  - "release"
 ---
 
 This is the second-to-last development release before Giant that contains new functionality. The big items to land during this cycle are the messenger refactoring from Matt Benjmain that lays some groundwork for RDMA support, a performance improvement series from SanDisk that improves performance on SSDs, lots of improvements to our new standalone civetweb-based RGW frontend, and a new ‘osd blocked-by’ mon command that allows admins to easily identify which OSDs are blocking peering progress. The other big change is that the OSDs and Monitors now distinguish between “misplaced” and “degraded” objects: the latter means there are fewer copies than we’d like, while the former simply means the are not stored in the locations where we want them to be.

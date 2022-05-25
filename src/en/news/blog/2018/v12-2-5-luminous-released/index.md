@@ -2,6 +2,9 @@
 title: "v12.2.5 Luminous released"
 date: "2018-04-24"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "luminous"
 ---
 
 This is the fifth bugfix release of Luminous v12.2.x long term stable release series. This release contains a range of bug fixes across all compoenents of Ceph. We recommend all the users of 12.2.x series to update.

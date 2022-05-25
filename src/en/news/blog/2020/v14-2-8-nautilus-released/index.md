@@ -2,6 +2,9 @@
 title: "v14.2.8 Nautilus released"
 date: "2020-03-03"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "nautilus"
 ---
 
 This is the eighth update to the Ceph Nautilus release series. This release fixes issues across a range of subsystems. We recommend that all users upgrade to this release.

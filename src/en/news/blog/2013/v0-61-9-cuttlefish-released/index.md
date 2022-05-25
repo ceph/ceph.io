@@ -3,6 +3,8 @@ title: "v0.61.9 Cuttlefish released"
 date: "2013-10-17"
 author: "sage"
 tags: 
+  - "release"
+  - "cuttlefish"
 ---
 
 This point release resolves several low to medium-impact bugs across the code base, and fixes a performance problem (CPU utilization) with radosgw. We recommend that all production cuttlefish users upgrade.

@@ -2,6 +2,8 @@
 title: "v0.78 released"
 date: "2014-03-22"
 author: "sage"
+tags:
+  - "release"
 ---
 
 This development release includes two key features: erasure coding and cache tiering. A huge amount of code was merged for this release and several additional weeks were spent stabilizing the code base, and it is now in a state where it is ready to be tested by a broader user base.

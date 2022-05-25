@@ -2,6 +2,9 @@
 title: "v0.94.2 Hammer released"
 date: "2015-06-11"
 author: "sage"
+tags:
+  - "release"
+  - "hammer"
 ---
 
 This Hammer point release fixes a few critical bugs in RGW that can prevent objects starting with underscore from behaving properly and that prevent garbage collection of deleted objects when using the Civetweb standalone mode.

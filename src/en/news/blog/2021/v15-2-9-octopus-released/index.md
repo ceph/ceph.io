@@ -2,6 +2,9 @@
 title: "v15.2.9 Octopus released"
 date: "2021-02-24"
 author: "dgalloway"
+tags:
+  - "release"
+  - "octopus"
 ---
 
 This is the 9th backport release in the Octopus series. We recommend users to update to this release.

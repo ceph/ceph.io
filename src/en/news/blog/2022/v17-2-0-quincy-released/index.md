@@ -2,6 +2,9 @@
 title: "v17.2.0 Quincy released"
 date: "2022-04-19"
 author: "dgalloway"
+tags:
+  - "release"
+  - "quincy"
 ---
 
 Quincy is the 17th stable release of Ceph. It is named after Squidward Quincy Tentacles from _Spongebob Squarepants_.

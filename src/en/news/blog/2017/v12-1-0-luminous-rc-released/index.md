@@ -2,6 +2,9 @@
 title: "v12.1.0 Luminous RC released"
 date: "2017-06-23"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "luminous"
 ---
 
 This is the first release candidate for Luminous, the next long term stable release.

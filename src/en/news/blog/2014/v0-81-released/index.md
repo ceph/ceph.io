@@ -2,6 +2,8 @@
 title: "v0.81 released"
 date: "2014-06-03"
 author: "sage"
+tags:
+  - "release"
 ---
 
 This is the first development release since Firefly. It includes a lot of work that we delayed merging while stabilizing things. Lots of new functionality, as well as several fixes that are baking a bit before getting backported.

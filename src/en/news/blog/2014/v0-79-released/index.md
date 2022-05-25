@@ -2,6 +2,8 @@
 title: "v0.79 released"
 date: "2014-04-07"
 author: "sage"
+tags:
+  - "release"
 ---
 
 This release is intended to serve as a release candidate for firefly, which will hopefully be v0.80. No changes are being made to the code base at this point except those that fix bugs. Please test this release if you intend to make use of the new erasure-coded pools or cache tiers in firefly.

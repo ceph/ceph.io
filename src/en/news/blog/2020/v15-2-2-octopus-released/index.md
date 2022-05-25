@@ -2,6 +2,9 @@
 title: "v15.2.2 Octopus released"
 date: "2020-05-18"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "octopus"
 ---
 
 This is the second bugfix release of Ceph Octopus stable release series, we recommend that all Octopus users upgrade. This release has a range of fixes across all components and a security fix.

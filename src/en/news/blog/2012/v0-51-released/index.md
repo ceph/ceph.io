@@ -3,6 +3,7 @@ title: "v0.51 released"
 date: "2012-08-26"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 The latest development release v0.51 is ready.  Notable changes include:

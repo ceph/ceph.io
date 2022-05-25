@@ -3,6 +3,7 @@ title: "v0.21.2 released"
 date: "2010-08-28"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 This is a second bugfix release for the v0.21 series.  Changes include:

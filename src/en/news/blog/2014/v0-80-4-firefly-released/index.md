@@ -2,6 +2,9 @@
 title: "v0.80.4 Firefly released"
 date: "2014-07-15"
 author: "sage"
+tags:
+  - "release"
+  - "firefly"
 ---
 
 This Firefly point release fixes an potential data corruption problem when ceph-osd daemons run on top of XFS and service Firefly librbd clients. A recently added allocation hint that RBD utilizes triggers an XFS bug on some kernels (Linux 3.2, and likely others) that leads to data corruption and deep-scrub errors (and inconsistent PGs). This release avoids the situation by disabling the allocation hint until we can validate which kernels are affected and/or are known to be safe to use the hint on.

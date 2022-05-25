@@ -2,6 +2,9 @@
 title: "v0.67.11 Dumpling released"
 date: "2014-09-25"
 author: "sage"
+tags:
+  - "release"
+  - "dumpling"
 ---
 
 This stable update for Dumpling fixes several important bugs that affect a small set of users.

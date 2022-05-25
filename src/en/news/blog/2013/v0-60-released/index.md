@@ -3,6 +3,7 @@ title: "v0.60 released"
 date: "2013-04-02"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 Another sprint and another release! This is the last development release  

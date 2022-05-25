@@ -3,6 +3,8 @@ title: "v0.56.7 Bobtail released"
 date: "2013-08-28"
 author: "sage"
 tags: 
+  - "release"
+  - "bobtail"
 ---
 
 We have another bugfix update for bobtail. Most of these fixes have been sitting in the bobtail branch (and were run by various users) for some time now. The newest patches fix a problem with multi-delete on rgw. We recommend that production bobtail clusters upgrade, especially if they are using the radosgw.

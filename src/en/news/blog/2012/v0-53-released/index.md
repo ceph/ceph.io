@@ -3,6 +3,7 @@ title: "v0.53 released"
 date: "2012-10-16"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 Another development release of Ceph is ready, v0.53.  We are getting pretty close to what will be frozen for the next stable release (bobtail), so if you would like a preview, give this one a go.  Notable changes include:

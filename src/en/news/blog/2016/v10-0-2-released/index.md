@@ -2,6 +2,9 @@
 title: "v10.0.2 released"
 date: "2016-01-14"
 author: "sage"
+tags:
+  - "release"
+  - "jewel"
 ---
 
 This development release includes a raft of changes and improvements for Jewel. Key additions include CephFS scrub/repair improvements, an AIX and Solaris port of librados, many librbd journaling additions and fixes, extended per-pool options, and NBD driver for RBD (rbd-nbd) that allows librbd to present a kernel-level block device on Linux, multitenancy support for RGW, RGW bucket lifecycle support, RGW support for Swift static large objects (SLO), and RGW support for Swift bulk delete.

@@ -2,6 +2,9 @@
 title: "v10.2.11 Jewel released"
 date: "2018-07-11"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "jewel"
 ---
 
 This point releases brings a number of important bugfixes and has a few important security fixes. This is expected to be the last Jewel release. We recommend all Jewel 10.2.x users to upgrade.

@@ -3,6 +3,7 @@ title: "v0.28.2 released"
 date: "2011-05-29"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 We’ve tagged v0.28.2, which includes several bugs fixed over the past week.  These include:

@@ -2,6 +2,9 @@
 title: "v0.80.3 Firefly released"
 date: "2014-07-11"
 author: "sage"
+tags:
+  - "release"
+  - "firefly"
 ---
 
 ## V0.80.3 FIREFLY

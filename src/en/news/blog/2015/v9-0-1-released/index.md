@@ -2,6 +2,9 @@
 title: "v9.0.1 released"
 date: "2015-06-11"
 author: "sage"
+tags:
+  - "release"
+  - "infernalis"
 ---
 
 This development release is delayed a bit due to tooling changes in the build environment. As a result the next one (v9.0.2) will have a bit more work than is usual.

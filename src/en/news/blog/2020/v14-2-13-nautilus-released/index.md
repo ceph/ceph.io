@@ -2,6 +2,9 @@
 title: "v14.2.13 Nautilus released"
 date: "2020-11-02"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "nautilus"
 ---
 
 This is the 13th backport release in the Nautilus series. This release fixes a regression introduced in v14.2.12, and a few ceph-volume & RGW fixes. We recommend users to update to this release.

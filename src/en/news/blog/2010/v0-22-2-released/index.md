@@ -3,6 +3,7 @@ title: "v0.22.2 released"
 date: "2010-10-30"
 author: "sage"
 tags: 
+  - "release"
 ---
 
 v0.22.2 is out with a few minor bug fixes:

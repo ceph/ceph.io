@@ -2,6 +2,9 @@
 title: "v10.2.9 Jewel released"
 date: "2017-07-14"
 author: "ncutler"
+tags:
+  - "release"
+  - "jewel"
 ---
 
 This point release fixes a regression introduced in v10.2.8.

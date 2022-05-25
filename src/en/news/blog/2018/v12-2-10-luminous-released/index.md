@@ -2,6 +2,9 @@
 title: "v12.2.10 Luminous released"
 date: "2018-11-27"
 author: "TheAnalyst"
+tags:
+  - "release"
+  - "luminous"
 ---
 
 This is the tenth bug fix release of the Luminous v12.2.x long term stable release series. The previous release, v12.2.9, introduced the PG hard-limit patches which were found to cause an issue in certain upgrade scenarios, and this release was expedited to revert those patches. If you already successfully upgraded to v12.2.9, you should **not** upgrade to v12.2.10, but rather **wait** for a release in which [http://tracker.ceph.com/issues/36686](http://tracker.ceph.com/issues/36686) is addressed. All other users are encouraged to upgrade to this release.

@@ -2,6 +2,9 @@
 title: "v10.0.0 released"
 date: "2015-11-23"
 author: "sage"
+tags:
+  - "release"
+  - "jewel"
 ---
 
 This is the first development release for the Jewel cycle.  We are off to a good start, with lots of performance improvements flowing into the tree.  We are targeting sometime in Q1 2016 for the final Jewel.
