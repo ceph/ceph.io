@@ -17,6 +17,11 @@ sponsors:
       - name: SoftIron
         logo: "/assets/bitmaps/logo-softiron.png"
         website: "https://softiron.com"
+  - label: Gold sponsors
+    list:
+      - name: Bloomberg
+        logo: "/assets/bitmaps/logo-bloomberg-engineering.png"
+        website: "https://bloomberg.com"
   - label: Silver sponsors
     list:
       - name: Canonical
@@ -34,4 +39,3 @@ tags:
 
 <a class="button" href="https://ceph2022.sched.com/" rel="noreferrer noopener" target="_blank">Schedule</a>
 <a class="button" href="https://events.linuxfoundation.org/cephalocon/register/" rel="noreferrer noopener" target="_blank">Register</a>
-<a class="button" href="https://events.linuxfoundation.org/sponsor-ceph22" rel="noreferrer noopener" target="_blank">Sponsor Cephalocon</a>
