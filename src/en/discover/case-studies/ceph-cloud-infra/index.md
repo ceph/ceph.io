@@ -8,6 +8,7 @@ sponsor:
 tags:
   - information
   - technology
+  - openstack
 ---
 
 ## Robust infrastructure
