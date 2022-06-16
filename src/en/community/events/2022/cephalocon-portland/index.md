@@ -2,7 +2,7 @@
 title: Cephalocon 2022
 date: 2022-07-11
 end: 2022-07-13
-location: Portland, Oregon + Virtual
+Location: Portland, Oregon + Virtual
 venue: Hyatt Regency 375 NE Holladay St, Portland, OR 97232
 image: "/assets/bitmaps/cephalocon-2022-hero.png"
 sponsors:
@@ -27,11 +27,12 @@ tags:
   - cephalocon
 ---
 
-- **Developer Summit**: July 11th
-- **Cephalocon**: July 12-13th
-- **CFP opens**: Friday, November 5th
-- **CFP closes**: Sunday, December 19th at 11:59 PST
+We sincerely regret to inform you that we have decided to postpone Cephalocon
+2022 once again. We had hoped to hold the event, but many factors related to
+the ongoing COVID-19 pandemic have had an unfortunate and major impact on our
+efforts. Most notably, in recent weeks we have had numerous member companies
+and a large portion of our community notify us they are still unable to travel.
 
-<a class="button" href="https://ceph2022.sched.com/" rel="noreferrer noopener" target="_blank">Schedule</a>
+Once the new plan is confirmed, we will be back in touch.
+
 <a class="button" href="https://events.linuxfoundation.org/cephalocon/register/" rel="noreferrer noopener" target="_blank">Register</a>
-<a class="button" href="https://events.linuxfoundation.org/sponsor-ceph22" rel="noreferrer noopener" target="_blank">Sponsor Cephalocon</a>
