@@ -34,5 +34,3 @@ efforts. Most notably, in recent weeks we have had numerous member companies
 and a large portion of our community notify us they are still unable to travel.
 
 Once the new plan is confirmed, we will be back in touch.
-
-<a class="button" href="https://events.linuxfoundation.org/cephalocon/register/" rel="noreferrer noopener" target="_blank">Register</a>
