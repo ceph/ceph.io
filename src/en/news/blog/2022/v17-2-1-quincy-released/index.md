@@ -7,7 +7,7 @@ tags:
   - "quincy"
 ---
 
-This is the first backport release in the Pacific series. We recommend all users update to this release.
+This is the first bugfix release in the Quincy series. We recommend all users update to this release.
 
 ## Notable Changes
 
