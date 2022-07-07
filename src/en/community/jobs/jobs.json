@@ -1,6 +1,12 @@
 {
   "jobs": [
     {
+      "company": "GoDaddy",
+      "date": "2022-07-06",
+      "title": "Storage Site Reliability Engineer - Ceph - Worldwide - Remote",
+      "url": "https://careers.godaddy.com/job/united-states/storage-engineer-united-states-remote/7795/25788976256"
+    },
+    {
       "company": "Koor Technologies, Inc.",
       "date": "2022-05-10",
       "title": "Cloud Storage Engineer",
@@ -17,12 +23,6 @@
       "date": "2022-04-08",
       "title": "Senior System Engineer - Ceph",
       "url": "https://www.hitachivantara.com/en-us/company/careers/job-details.html#jobid=5915838002"
-    },
-    {
-      "company": "GoDaddy",
-      "date": "2022-03-23",
-      "title": "Ceph Engineer - Global Storage Engineering Team",
-      "url": "https://careers.godaddy.com/job/united-kingdom/ceph-engineer/7795/25788976256"
     },
     {
       "company": "Canonical",
