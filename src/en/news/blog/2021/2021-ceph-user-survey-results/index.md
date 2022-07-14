@@ -2,6 +2,8 @@
 title: "2021 Ceph User Survey Results"
 date: "2021-05-13"
 author: "craig"
+tags:
+  - user-survey
 ---
 
 For the third year, we surveyed the population of Ceph users and published that data for the benefit of all interested. Thank you to the 245 respondents who shared your usage, information, and opinions this year. 
