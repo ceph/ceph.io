@@ -29,7 +29,7 @@ This is a hotfix release addressing two security flaws. We recommend all users u
   provided native CephFS access to their users.
 
 - A regression made it possible to dereference a null pointer for
-  for s3website requests that don't refer to a bucket resulting in an RGW
+  s3website requests that don't refer to a bucket resulting in an RGW
   segfault.
 
 ## Changelog
