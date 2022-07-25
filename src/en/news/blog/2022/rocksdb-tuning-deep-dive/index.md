@@ -1,6 +1,6 @@
 ---
 title: Ceph RocksDB Tuning Deep-Dive
-date: 2022-07-14
+date: 2022-07-25
 image: images/octopus.jpg
 author: Mark Nelson (nhm)
 tags:
