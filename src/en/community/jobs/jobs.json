@@ -1,6 +1,12 @@
 {
   "jobs": [
     {
+      "company": "Canonical",
+      "date": "2022-07-26",
+      "title": "Engineering Manager, Ceph & Distributed Storage",
+      "url": "https://canonical.com/careers/4175808/engineering-manager-ceph-and-distributed-storage-remote"
+    },
+    {
       "company": "GoDaddy",
       "date": "2022-07-06",
       "title": "Storage Site Reliability Engineer - Ceph - Worldwide - Remote",
