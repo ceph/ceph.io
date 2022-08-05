@@ -1,6 +1,12 @@
 {
   "device_files": [
     {
+      "date": "2022-07-31",
+      "title": "device_health_metrics_2022-07.zip",
+      "size": "4.50 GB",
+      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2022-07.zip"
+    },
+    {
       "date": "2022-06-30",
       "title": "device_health_metrics_2022-06.zip",
       "size": "4.35 GB",
