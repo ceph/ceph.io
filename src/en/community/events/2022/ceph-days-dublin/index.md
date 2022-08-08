@@ -6,6 +6,12 @@ location: Dublin, Ireland
 venue: WeWork Office Space Charlemont Exchange
 register: "https://www.eventbrite.com/e/ceph-days-dublin-2022-tickets-388837191507"
 image: "/assets/bitmaps/ceph-days.png"
+sponsors:
+  - label: Platinum
+    list:
+      - name: Red Hat
+        logo: "/assets/bitmaps/logo-redhat.png"
+        website: "https://redhat.com"
 tags:
   - ceph days
 ---
@@ -16,7 +22,7 @@ Come find out why leading enterprises are adopting Ceph, why Ceph is the lowest 
 
 ### Event description
 
-A full-day event dedicated to sharing Ceph’s transformative power and fostering the vibrant Ceph community, Ceph Day Dublin is hosted by WeWork, the Ceph community, and our friends.
+A full-day event dedicated to sharing Ceph’s transformative power and fostering the vibrant Ceph community.
 
 The expert Ceph team, Ceph’s customers and partners, and the Ceph community join forces to discuss things like the status of the Ceph project, recent Ceph project improvements and roadmap, and Ceph community news. The day ends with a networking reception, to foster more Ceph learning.
 
