@@ -26,15 +26,13 @@ A full-day event dedicated to sharing Ceph’s transformative power and fosterin
 
 The expert Ceph team, Ceph’s customers and partners, and the Ceph community join forces to discuss things like the status of the Ceph project, recent Ceph project improvements and roadmap, and Ceph community news. The day ends with a networking reception, to foster more Ceph learning.
 
-**[Seats are limited! Register here!](https://www.eventbrite.com/e/ceph-days-dublin-2022-tickets-388837191507)**
-
-## CFP is now open!
-
-**[Submit your proposal here!](https://survey.zohopublic.com/zs/xpD7fN)**
-
 ## Important Dates:
 
 - CFP Opens: 2022-07-21
 - CFP Closes: 2022-08-17
 - Schedule Announcement: 2022-08-22
 - Event Date: 2022-09-13
+
+<a class="button" href="https://survey.zohopublic.com/zs/xpD7fN" rel="noreferrer noopener" target="_blank">Submit your proposal</a>
+<a class="button" href="https://www.eventbrite.com/e/ceph-days-dublin-2022-tickets-388837191507" rel="noreferrer noopener" target="_blank">Register</a>
+<a class="button" href="https://ceph.io/assets/pdfs/ceph-days-dublin-sponsor-prospectus.pdf" rel="noreferrer noopener" target="_blank">Sponsor Ceph Days Dublin</a>
