@@ -1,6 +1,12 @@
 {
   "tech_talks": [
     {
+      "date": "2022-08-25",
+      "title": "Making Teuthology a Better Detective",
+      "presenter": "Vallari Agrawal",
+      "url": ""
+    },
+    {
       "date": "2022-05-05",
       "title": "Ceph Tech Talk: Telemetry Dashboards",
       "presenter": "Yaarit Hatuka",
