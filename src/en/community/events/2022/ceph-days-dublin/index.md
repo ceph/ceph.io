@@ -162,9 +162,19 @@ We built a distributed software-defined Quality of Service product that is runni
   <tr>
    <td>3:25 PM
    </td>
-   <td>TBD
+   <td><p class="semibold">Ceph Crash Telemetry - Observability in Action</p>
+   <p class="p">To increase product observability and robustness, Ceph’s telemetry module allows users to automatically report anonymized crash dumps. Ceph’s telemetry backend runs tools that detect similarities among these reported crash events, then feed them to Ceph’s bug tracking system. In this session we will explore Ceph crash telemetry end-to-end, and how it helps the developer community to detect emerging and frequent issues encountered by production systems in the wild. We will share our insights so far, and learn how users benefit from this module, and how they can contribute.
    </td>
+   <td>
+   Yaarit Hatuka
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+   <td>TBD
    <td>
    </td>
   </tr>
+
 </table>
