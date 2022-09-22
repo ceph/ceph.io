@@ -171,9 +171,13 @@ We built a distributed software-defined Quality of Service product that is runni
   </tr>
   <tr>
    <td>
+   3:55 PM
    </td>
-   <td>TBD
+   <td>Let's go from YAML files to Ceph Cluster in Kubernetes with this intro talk about Rook.
+Rook is an open source cloud-native storage operator for Kubernetes, providing the platform, framework, and support for Ceph to natively integrate with Kubernetes. The recent features in the v1.10 release will be covered to further illustrate how Rook continues to be enhanced for production environments.
+The Rook project will be introduced to attendees of all levels and experiences.
    <td>
+   Alexander Trost
    </td>
   </tr>
 
