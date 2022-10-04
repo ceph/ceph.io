@@ -1,10 +1,17 @@
 {
   "tech_talks": [
     {
+      "date": "2022-10-06",
+      "title": "Distributed Tracing with RGW and OSD",
+      "presenter": "Omri Zeneva",
+      "url": ""
+    },
+
+    {
       "date": "2022-08-25",
       "title": "Making Teuthology a Better Detective",
       "presenter": "Vallari Agrawal",
-      "url": ""
+      "url": "https://www.youtube.com/watch?v=hPt0WbYtDxA"
     },
     {
       "date": "2022-05-05",
