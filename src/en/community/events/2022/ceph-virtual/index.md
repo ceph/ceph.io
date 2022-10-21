@@ -152,7 +152,7 @@ Ceph has been a promising solution for the 5G storage requirements and the edge 
   </tr>
 </table>
 
-## Crimson/Bluestore/SeaStore 11/08
+## Crimson/Bluestore/SeaStore 11/09
 
 <table>
   <tr>
