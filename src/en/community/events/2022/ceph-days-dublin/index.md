@@ -33,10 +33,6 @@ The expert Ceph team, Ceph’s customers and partners, and the Ceph community jo
 - Schedule Announcement: 2022-08-22
 - Event Date: 2022-09-13
 
-<a class="button" href="https://www.eventbrite.com/e/ceph-days-dublin-2022-tickets-388837191507" rel="noreferrer noopener" target="_blank">Register</a>
-<a class="button" href="https://ceph.io/assets/pdfs/ceph-days-dublin-sponsor-prospectus.pdf" rel="noreferrer noopener" target="_blank">Sponsor Ceph Days Dublin</a>
-
-
 ## Agenda
 
 <table style="width:100%">
