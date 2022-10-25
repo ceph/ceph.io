@@ -289,7 +289,7 @@ Cybozu has been running and testing their Rook/Ceph clusters for two years. Duri
 <p>
 There is a growing desire within scientific and research communities to start using object stores to store and process their data in high performance (HPC) clusters. However, object stores are not necessarily designed for performance and are better suited for long term storage. Therefore, users often use a High-Performance File system when processing data. However, network filesystems have issues where one user could potentially thrash the network and affect the performance of everyone else's data processing jobs in the cluster. This talk presents a solution to this problem DisTRaC - (Dis)tributed (T)raisent (Ra)m (C)eph. DisTRaC offers a solution to this problem by providing a method for users to deploy Ceph onto their HPC clusters using RAM. Their intermediate data processing can now be done in RAM, taking the pressure off the networked filesystem by using the node interconnect to transfer data. In addition, all the data is localized, creating a hyper-converged HPC cluster for the duration of the job. DisTRaC reduces the I/O overhead of the networked filesystem and offers a potential data processing performance increase.
    </td>
-   <td>Satoru Takeuchi
+   <td>Gabryel Mason-Williams
    </td>
   </tr>
 <tr>
