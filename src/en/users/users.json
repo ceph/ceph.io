@@ -1,196 +1,202 @@
 {
   "device_files": [
     {
+      "date": "2022-09-30",
+      "title": "device_health_metrics_2022-09.zip",
+      "size": "5.53 GB",
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2022-09.zip"
+    },
+    {
       "date": "2022-08-31",
       "title": "device_health_metrics_2022-08.zip",
       "size": "4.60 GB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2022-08.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2022-08.zip"
     },
     {
       "date": "2022-07-31",
       "title": "device_health_metrics_2022-07.zip",
       "size": "4.50 GB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2022-07.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2022-07.zip"
     },
     {
       "date": "2022-06-30",
       "title": "device_health_metrics_2022-06.zip",
       "size": "4.35 GB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2022-06.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2022-06.zip"
     },
     {
       "date": "2022-05-31",
       "title": "device_health_metrics_2022-05.zip",
       "size": "3.80 GB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2022-05.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2022-05.zip"
     },
     {
       "date": "2022-04-30",
       "title": "device_health_metrics_2022-04.zip",
       "size": "3.29 GB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2022-04.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2022-04.zip"
     },
     {
       "date": "2022-03-31",
       "title": "device_health_metrics_2022-03.zip",
       "size": "3.44 GB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2022-03.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2022-03.zip"
     },
     {
       "date": "2022-02-28",
       "title": "device_health_metrics_2022-02.zip",
       "size": "3.56 GB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2022-02.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2022-02.zip"
     },
     {
       "date": "2022-01-31",
       "title": "device_health_metrics_2022-01.zip",
       "size": "3.22 GB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2022-01.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2022-01.zip"
     },
     {
       "date": "2021-12-31",
       "title": "device_health_metrics_2021-12.zip",
       "size": "3.15 GB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2021-12.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2021-12.zip"
     },
     {
       "date": "2021-11-30",
       "title": "device_health_metrics_2021-11.zip",
       "size": "2.29 GB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2021-11.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2021-11.zip"
     },
     {
       "date": "2021-10-31",
       "title": "device_health_metrics_2021-10.zip",
       "size": "2.09 GB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2021-10.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2021-10.zip"
     },
     {
       "date": "2021-09-30",
       "title": "device_health_metrics_2021-09.zip",
       "size": "2.11 GB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2021-09.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2021-09.zip"
     },
     {
       "date": "2021-08-31",
       "title": "device_health_metrics_2021-08.zip",
       "size": "2.41 GB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2021-08.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2021-08.zip"
     },
     {
       "date": "2021-07-31",
       "title": "device_health_metrics_2021-07.zip",
       "size": "1.75 GB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2021-07.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2021-07.zip"
     },
     {
       "date": "2021-06-30",
       "title": "device_health_metrics_2021-06.zip",
       "size": "1.07 GB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2021-06.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2021-06.zip"
     },
     {
       "date": "2021-05-31",
       "title": "device_health_metrics_2021-05.zip",
       "size": "957.15 MB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2021-05.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2021-05.zip"
     },
     {
       "date": "2021-04-30",
       "title": "device_health_metrics_2021-04.zip",
       "size": "662.50 MB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2021-04.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2021-04.zip"
     },
     {
       "date": "2021-03-31",
       "title": "device_health_metrics_2021-03.zip",
       "size": "504.91 MB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2021-03.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2021-03.zip"
     },
     {
       "date": "2021-02-28",
       "title": "device_health_metrics_2021-02.zip",
       "size": "342.07 MB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2021-02.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2021-02.zip"
     },
     {
       "date": "2021-01-31",
       "title": "device_health_metrics_2021-01.zip",
       "size": "302.73 MB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2021-01.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2021-01.zip"
     },
     {
       "date": "2020-12-31",
       "title": "device_health_metrics_2020-12.zip",
       "size": "244.05 MB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2020-12.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2020-12.zip"
     },
     {
       "date": "2020-11-30",
       "title": "device_health_metrics_2020-11.zip",
       "size": "97.38 MB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2020-11.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2020-11.zip"
     },
     {
       "date": "2020-10-31",
       "title": "device_health_metrics_2020-10.zip",
       "size": "79.06 MB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2020-10.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2020-10.zip"
     },
     {
       "date": "2020-09-30",
       "title": "device_health_metrics_2020-09.zip",
       "size": "58.31 MB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2020-09.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2020-09.zip"
     },
     {
       "date": "2020-08-31",
       "title": "device_health_metrics_2020-08.zip",
       "size": "52.05 MB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2020-08.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2020-08.zip"
     },
     {
       "date": "2020-07-31",
       "title": "device_health_metrics_2020-07.zip",
       "size": "34.87 MB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2020-07.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2020-07.zip"
     },
     {
       "date": "2020-06-30",
       "title": "device_health_metrics_2020-06.zip",
       "size": "25.64 MB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2020-06.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2020-06.zip"
     },
     {
       "date": "2020-05-31",
       "title": "device_health_metrics_2020-05.zip",
       "size": "16.52 MB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2020-05.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2020-05.zip"
     },
     {
       "date": "2020-04-30",
       "title": "device_health_metrics_2020-04.zip",
       "size": "13.25 MB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2020-04.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2020-04.zip"
     },
     {
       "date": "2020-03-31",
       "title": "device_health_metrics_2020-03.zip",
       "size": "8.84 MB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2020-03.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2020-03.zip"
     },
     {
       "date": "2020-02-29",
       "title": "device_health_metrics_2020-02.zip",
       "size": "7.61 MB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2020-02.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2020-02.zip"
     },
     {
       "date": "2020-01-31",
       "title": "device_health_metrics_2020-01.zip",
       "size": "385.63 KB",
-      "url": "https://kzn-swift.massopen.cloud/swift/v1/devicehealth/device_health_metrics_2020-01.zip"
+      "url": "https://stack.nerc.mghpcc.org:13808/swift/v1/AUTH_b1cd8ed7d4014cca989aac13cfdc0872/devicehealth/device_health_metrics_2020-01.zip"
     }
   ]
 }
