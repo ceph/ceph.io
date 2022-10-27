@@ -1,6 +1,6 @@
 ---
 title: Ceph Virtual 2022
-date: 2022-11-04
+date: 2022-11-03
 end: 2022-11-16
 location: Virtual
 tags:
@@ -9,7 +9,7 @@ tags:
 
 ## Bringing Ceph Virtual!
 
-Ceph Virtual 2022 is a collection of live presentations from November 4-16.
+Ceph Virtual 2022 is a collection of live presentations from November 3-16.
 Join the community for discussions around our great line-up of talks!
 
 No registration is required. The meeting link will be provided on this event
