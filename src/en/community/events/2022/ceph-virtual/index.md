@@ -19,6 +19,9 @@ Announcement list</a> or follow Ceph on <a
 href="https://twitter.com/ceph">Twitter</a> to get notified before we start
 each day.
 
+<strong><a href="https://bluejeans.com/908675367">Click to join us
+live!</a></strong>
+
 ### Schedule
 
 ## Introduction 11/03
@@ -50,6 +53,17 @@ each day.
    <td>Mike Perez
    </td>
   </tr>
+<tr>
+   <td>14:50
+   </td>
+   <td><strong>Ceph Crash Telemetry - Observability in Action </strong>
+<p>
+To increase product observability and robustness, Ceph’s telemetry module allows users to automatically report anonymized crash dumps. Ceph’s telemetry backend runs tools that detect similarities among these reported crash events, then feed them to Ceph’s bug tracking system. In this session we will explore Ceph crash telemetry end-to-end, and how it helps the developer community to detect emerging and frequent issues encountered by production systems in the wild. We will share our insights so far, and learn how users benefit from this module, and how they can contribute.
+   </td>
+   <td>Yaarit Hatuka
+   </td>
+  </tr>
+
 </table>
 
 ## Users 11/04
