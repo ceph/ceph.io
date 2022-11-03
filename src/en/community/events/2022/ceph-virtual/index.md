@@ -19,6 +19,9 @@ Announcement list</a> or follow Ceph on <a
 href="https://twitter.com/ceph">Twitter</a> to get notified before we start
 each day.
 
+<strong><a href="https://bluejeans.com/908675367">Click to join us
+live!</a></strong>
+
 ### Schedule
 
 ## Introduction 11/03
