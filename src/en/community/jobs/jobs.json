@@ -1,6 +1,12 @@
 {
   "jobs": [
     {
+      "company": "Akamai",
+      "date": "2022-10-26",
+      "title": "Senior Site Reliability Engineer - Storage - Remote",
+      "url": "https://akamaicareers.inflightcloud.com/jobdetails/aka_ext/029323?section=aka_ext&job=029323"
+    },
+    {
       "company": "Canonical",
       "date": "2022-07-26",
       "title": "Engineering Manager, Ceph & Distributed Storage",
