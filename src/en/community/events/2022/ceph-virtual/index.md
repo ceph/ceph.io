@@ -197,7 +197,7 @@ SeaStore is the new ObjectStore designed to complement Crimson OSD to support ne
    </td>
   </tr>
   <tr>
-   <td>15:10
+   <td>23:30
    </td>
    <td><strong>Accelerating PMEM Device operations in bluestore with hardware based memory offloading technique</strong>
    <p>
