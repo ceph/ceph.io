@@ -275,11 +275,21 @@ Cybozu has been running and testing their Rook/Ceph clusters for two years. Duri
   <tr>
    <td>14:35
    </td>
-   <td><strong>DATA SECURITY AND STORAGE HARDENING IN ROOK AND CEPH</strong>
+   <td><strong>Data Security and Storage Hardening In Rook and Ceph</strong>
+<p>
+We explore the security model exposed by Rook with Ceph, the leading software-defined storage platform of the Open Source world. Digging increasingly deeper in the stack, we examine hardening options for Ceph storage appropriate for a variety of threat profiles.   Options include defining a threat model, limiting the blast radius of an attack by implementing separate security zones, the use of encryption at rest and in-flight and FIPS 140-2 validated ciphers, hardened builds and default configuration, as well as user access controls and key management. Data retention and secure deletion are also addressed. The very process of containerization creates additional security benefits with lightweight separation of domains.  Rook makes the process of applying hardening options easier, as this becomes a matter of simply modifying a .yaml file with the appropriate security context upon creation, making it a snap to apply the standard hardening options of Ceph to a container-based storage system.
+   </td>
+   <td>Federico Lucifredi
+  </td>
+  </tr>
+  <tr>
+   <td>15:05
+   </td>
+   <td><strong>Troubleshooting and Debugging in the rook-ceph cluster</strong>
 <p>
 1. The NIC SR-IOV is used. Each OSD uses an exclusive VF NIC. 2. The DPDK interrupt mode is added. 3. The single-CPU core and multiple NIC queues are implemented to improve performance. 4. The admin socket command is added to obtain the NIC status, collect statistics, and locate faults. 5. Adjust the CEPH throttling parameters, TCP, and DPDK packet sending and receiving buffer sizes to prevent packet loss and retransmission. 6. The Crimson message component uses the Seastar DPDK.
    </td>
-   <td>Federico Lucifredi
+   <td>Deepika Upadhyay, Gaurav Sitlani, Subham K Rai
    </td>
   </tr>
 </table>
