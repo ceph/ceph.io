@@ -116,7 +116,8 @@ CERN uses Ceph for block, object, and filesystem storage. The main use cases are
 
 ### One distinction to make about Ceph, as revealed by some users, is that it has both *public* and *private* use cases.
 
-- Konstantin Shalygin, a Ceph expert, uses Ceph for public and private clouds.
+- Konstantin Shalygin, a Ceph Engineer from Selectel, reports that his company uses Ceph to provide Cloud Server & Cloud Storage services.
+  These services are both available to the public and used privately within the company.
 - Foysal Kayum uses RBD pools for serving a public cloud service.
 - An anonymous Ceph user wrote that they use Ceph to support private and hybrid cloud infrastructure testing.
 - An anonymous participant, who described themself as a "large Ceph user + small Ceph developer", wrote that they use Ceph as a public cloud with RBD- and RGW-based products.
