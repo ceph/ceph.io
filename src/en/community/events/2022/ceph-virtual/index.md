@@ -282,16 +282,6 @@ We explore the security model exposed by Rook with Ceph, the leading software-de
    <td>Federico Lucifredi
   </td>
   </tr>
-  <tr>
-   <td>15:05
-   </td>
-   <td><strong>Troubleshooting and Debugging in the rook-ceph cluster</strong>
-<p>
-1. The NIC SR-IOV is used. Each OSD uses an exclusive VF NIC. 2. The DPDK interrupt mode is added. 3. The single-CPU core and multiple NIC queues are implemented to improve performance. 4. The admin socket command is added to obtain the NIC status, collect statistics, and locate faults. 5. Adjust the CEPH throttling parameters, TCP, and DPDK packet sending and receiving buffer sizes to prevent packet loss and retransmission. 6. The Crimson message component uses the Seastar DPDK.
-   </td>
-   <td>Deepika Upadhyay, Gaurav Sitlani, Subham K Rai
-   </td>
-  </tr>
 </table>
 
 ## Performance 11/14
