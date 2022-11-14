@@ -349,4 +349,18 @@ For applications in Kubernetes, CSI provides a way to consume file/block storage
    <td>Jiffin Tony Thottan
    </td>
   </tr>
+ <tr>
+   <td>14:40
+   </td>
+   <td><strong>Troubleshooting and Debugging in the rook-ceph cluster</strong>
+<p>
+This session shares an overview of troubleshooting a rook-ceph cluster, discussing some troubleshooting scenarios. This is followed by an introduction and an overview of kubectl-rook-ceph krew plugin, and how it makes managing containers easier from a troubleshooting perspective.
+We’ll also discuss future issues we’re planning to solve with it here, followed by a short future roadmap of the rook project.
+Later, we look forward to discussing and gathering feedback from the users about common and challenging problems they face while troubleshooting the clusters.
+   </td>
+   <td>Deepika Upadhyay</td>
+   <td>Gaurav Sitlani</td>
+   <td>Subham K Rai</td>
+   </td>
+  </tr>
 </table>
