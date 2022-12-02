@@ -1,6 +1,6 @@
 ---
 title: "Centralized Logging on Ceph Dashboard"
-date: "2022-11-23"
+date: "2022-12-22"
 author: "Nizamudeen A"
 image: "images/banner.jpg"
 tags:
