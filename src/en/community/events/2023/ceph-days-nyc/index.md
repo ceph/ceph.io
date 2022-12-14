@@ -25,6 +25,13 @@ A full-day event dedicated to sharing Ceph’s transformative power and fosterin
 
 The expert Ceph team, Ceph’s customers and partners, and the Ceph community join forces to discuss things like the status of the Ceph project, recent Ceph project improvements and roadmap, and Ceph community news. The day ends with a networking reception, to foster more Ceph learning.
 
+Registration will be available this week Join the Ceph announcement list, or follow Ceph on social media for updates:
+
+- [Ceph Announcement list](https://lists.ceph.io/postorius/lists/ceph-announce.ceph.io/)
+- [Twitter](https://twitter.com/ceph)
+- [LinkedIn](https://www.linkedin.com/company/ceph/)
+- [FaceBook](https://www.facebook.com/cephstorage/)
+
 <a class="button" href="https://survey.zohopublic.com/zs/r0D7ew">Submit CFP</a>
 
 ## Important Dates:
