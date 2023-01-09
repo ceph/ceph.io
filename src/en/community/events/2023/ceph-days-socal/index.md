@@ -1,7 +1,7 @@
 ---
 title: Ceph Days Southern California
-date: 2023-03-07
-end: 2023-03-07
+date: 2023-03-09
+end: 2023-03-09
 location: 300 E Green St Pasadena, CA 91101
 venue: Co-located with SCALE, Pasadena Convention Center
 image: "/assets/bitmaps/ceph-days.png"
