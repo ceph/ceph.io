@@ -4,24 +4,52 @@ date: "2018-06-14"
 author: "sage"
 ---
 
-One of the key new features in Ceph Mimic is the ability to manage the cluster configuration--what traditionally resides in ceph.conf--in a central fashion.  Starting in Mimic, we also store configuration information in the monitors internal database, and seamlessly manage the distribution of that config info to all daemons and clients in the system.
+One of the key new features in Ceph Mimic is the ability to manage the cluster
+configuration--which traditionally resides in ceph.conf--centrally.  Starting
+in Mimic, cluster configuration is stored not only in ceph.conf, but also in
+the monitors' internal databases. This makes it possible to manage and
+distribute that configuration information to all daemons and clients in the
+system.
 
-Historically, operators wanting to make a configuration change would need to edit the ceph.conf files manually, distribute them to the right nodes, and ensure that the right daemons have been restarted.  Most large-scale users relied on external tools like ansible, puppet, or salt to do this, but the solution always varied, and there was always a disconnect between what the config management service thought the configuration should be and what configuration the running daemon is using (has its local ceph.conf updated?  has the daemon been restarted?  has the operator injected a configuration change via the command line?).
+Historically, operators who wanted to make a change to the configuration would
+have had to edit the ceph.conf files manually, distribute them to the right
+nodes, and ensure that the right daemons had been restarted. Most large-scale
+users relied on external tools like Ansible, Puppet, or Salt to do this, but
+the solution always varied, and there was always a disconnect between what the
+config management service thought the configuration should be and what
+configuration the running daemon is using (has its local ceph.conf updated? 
+has the daemon been restarted?  has the operator injected a configuration
+change via the command line?).
 
-This new feature is designed to bridge this gap, providing a robust view into what the configuration should be (and whether the running configuration matches), and avoid the need for external tools to manage ceph.conf configuration files.  Most importantly, it provides a simplified configuration experience out of the box.
+This new feature, this central configuration, is designed to bridge this gap.
+It provides a robust view into what the configuration should be (and whether the
+running configuration matches), and obviates the need for external tools to manage
+ceph.conf configuration files.  Most importantly, it provides a simplified
+configuration experience out of the box.
 
-Note that the new capability is designed to interoperate with the traditional way of managing configurations via ceph.conf, so somebody upgrading to mimic doesn't have to make any changes at all if they don't want to.  However, we expect that the advantages of migrating to the new mode of operation will pay off.
+Note that the new capability is designed to interoperate with the traditional
+way of managing configurations via ceph.conf, so anyone upgrading to Mimic need
+not make any changes at all if that is their preference. However, we expect
+that the advantages of the new mode of operation will make migration to it
+attractive if not irresistible.
 
 ## The basics
 
-The monitors jointly manage a configuration database.  The database has the same semantic structure as a ceph.conf file:
+The monitors jointly manage a configuration database.  The database has the
+same semantic structure as a ceph.conf file:
 
 - There are option names (e.g., _osd scrub load threshold_) and values.
-- A setting can be associated with a "global" group, and type group that applies to all entities of a given type (e.g., "osd" or "mds"), or a specific daemon (e.g., "osd.123").
+- A setting can be associated with a "global" group, and type group that
+  applies to all entities of a given type (e.g., "osd" or "mds"), or a specific
+  daemon (e.g., "osd.123").
 
-The _ceph config dump_ command will output the equivalent of the cluster-wide ceph.conf in table format.
+The _ceph config dump_ command outputs the equivalent of the cluster-wide
+ceph.conf in table format.
 
-When a daemon or client starts up, it will look for a ceph.conf file like it always does.  In most cases a small ceph.conf is still necessary in order to identify who the monitors are.  For example, a typical minimal ceph.conf file might be:
+When a daemon or client starts up, it looks for a ceph.conf file as it always
+has done. In most cases, a small ceph.conf is still necessary in order to
+identify who the monitors are. For example, a typical minimal ceph.conf file
+might be:
 
 > mon host = mon-a.foo.com, mon-b.foo.com, mon-c.foo.com
 
@@ -29,9 +57,14 @@ or better yet
 
 > mon host = ceph-mons.foo.com
 
-where _ceph-mons_ is a DNS entry with multiple A records, one for each monitor.  This allows the number and identities of monitors to change over time without modifying any configuration files at all. More importantly, the configuration file on each is usually static over the lifetime of the cluster, simplifying deployment and management.
+where _ceph-mons_ is a DNS entry with multiple A records (one for each
+monitor). This allows the number and identities of monitors to change over time
+without requiring the modification of any configuration files. More
+importantly, the configuration file on each is usually static over the lifetime
+of the cluster, which simplifies deployment and management.
 
-You can put any other settings you like in ceph.conf as well.  The overall priority order that Ceph uses to set options is:
+You can put any other settings you like in ceph.conf as well.  The overall
+priority order that Ceph uses to set options is:
 
 1. Compiled-in default values
 2. Cluster configuration database (the new thing!)
@@ -69,7 +102,7 @@ A good place to start is simply dumping the cluster configuration:
 >   mon       advanced mon\_allow\_pool\_delete          true                                                            
 > ...
 
-We can set an option like so:
+We can set an option in the following way:
 
 > $ ceph config set osd debug\_ms 1
 > $ ceph config dump
@@ -82,9 +115,16 @@ We can set an option like so:
 >   osd       advanced debug\_ms                       1
 > ...
 
-Note that this is all that is necessary to make the change: any daemons or clients in the system that this option applies to will be notified of the configuration change immediately. No restarting of daemons, no use of the awkward _ceph tell ... injectargs ..._ command, or anything else.
+Note that this and nothing more is all that is necessary to make the change:
+any daemons or clients in the system to which this option applies will be
+notified of the configuration change immediately. There is no need to restart
+any daemons, and no use of the awkward _ceph tell ... injectargs ..._ command. 
 
-In the above dump output, the MASK field is a secondary restriction on which daemons or clients the option applies to, and can match either a CRUSH location (e.g., "rack:foo") or an OSD class (e.g., "ssd" vs "hdd"). For example, we could set a higher debug level that only applies to OSDs that are backed by SSDs (and reported by the _ceph osd crush tree_ command):
+In the above dump output, the MASK field is a secondary restriction on which
+daemons or clients the option applies to, and can match either a CRUSH location
+(for example, "rack:foo") or an OSD class (for example, "ssd" vs "hdd"). For
+example, we could set a higher debug level that applies only to OSDs that are
+backed by SSDs (and that are reported by the _ceph osd crush tree_ command):
 
 > $ ceph config set osd/class:ssd debug\_ms 2
 > $ ceph config dump
@@ -94,7 +134,8 @@ In the above dump output, the MASK field is a secondary restriction on which dae
 >   osd  class:ssd advanced debug\_ms  2
 > ...
 
-Instead of dumping the entire config database you can also inspect the config for a individual daemon in the system. For example,
+Instead of dumping the entire config database, you can inspect the config for a
+individual daemon in the system. For example:
 
 > $ ceph config set osd.0 debug\_osd 10
 > $ ceph config get osd.0
@@ -104,7 +145,9 @@ Instead of dumping the entire config database you can also inspect the config fo
 > global           advanced mon\_pg\_warn\_min\_per\_osd   3              
 > ...
 
-This output tells you which options and values apply the daemon, as well as where the option is coming from (is it set globally, for this daemon specifically, etc.).
+This output tells you which options and values apply the daemon, as well as
+where the option is coming from (is it set globally, is it set for this daemon
+specifically, etc.).
 
 Naturally, a config entry can also be cleared:
 
