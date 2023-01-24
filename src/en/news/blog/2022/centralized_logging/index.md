@@ -112,6 +112,6 @@ This feature is available in the latest quincy (v17.2.z) releases.
 
 To learn more about centralized logging, view the [cephadm documentation](https://docs.ceph.com/en/quincy/cephadm/services/monitoring/#cephadm-monitoring-centralized-logs).
 
-Check the dashboard documentation to see more about the [configuration](https://docs.ceph.com/en/quincy/mgr/dashboard/#enable-centralized-logging-in-dashboard)](https://docs.ceph.com/en/quincy/mgr/dashboard/#enable-centralized-logging-in-dashboard).
+Check the dashboard documentation to see more about the [configuration](https://docs.ceph.com/en/quincy/mgr/dashboard/#enable-centralized-logging-in-dashboard).
 
 If you have any questions, reach out to us at ceph-users@ceph.io or on IRC at #ceph-dashboard OFTC channel.
