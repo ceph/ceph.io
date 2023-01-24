@@ -160,7 +160,12 @@ Naturally, a config entry can also be cleared:
 
 ## Enforced configuration schema
 
-One of the new advantages of the new approach is that configuration values are validated and checked at the time they are set. The configuration schema (what options exist and what values are legal) are compiled into the system and globally known. So, if you try to set something that doesn't make sense, you'll get an informative error message without affecting the existing configuration. For example,
+One of the advantages of the new approach is that configuration values are
+validated and checked when they are set. The configuration schema (which
+options exist and which values are legal) is compiled into the system and
+is globally known. If you try to set something that doesn't make sense, you'll
+get an informative error message and you will not affect the existing configuration.
+For example:
 
 > $ ceph config set osd.10 debug\_osd very\_high
 > Error EINVAL: error parsing value: value must take the form N or N/M, where N and M are integers
@@ -181,9 +186,16 @@ The schema for a particular option can be queried with a help command:
 > compressible.  This option is used when the per-pool property for the compression mode is not
 > present.
 
-One thing you'll notice is that _advanced_ on the second line. All options are divided into three categories: basic, advanced, and dev. The dev options are meant for development, testing, or are generally not intended to ever be modified by a user. The advanced options are, unsurprising, only meant for advanced users. There are relatively few basic options because, well, in general we aim not to require much in the way of configuration in order to make Ceph work.
+You'll notice that that _advanced_ is on the second line. All options are
+divided into three categories: basic, advanced, and dev. The dev options are
+meant for development and testing, and are generally not intended ever to be
+modified by a user. The advanced options are unsurprisingly meant only for
+advanced users. There are relatively few basic options because... well, in
+general, we aim not to require much in the way of configuration in order to make
+Ceph work.
 
-Some numeric options include a minimum and maximum value, and will accept suffixes like K or M for large values:
+Some numeric options include a minimum and maximum value, and will accept
+suffixes like K (kilo) or M (mega) for large values:
 
 > $ ceph config set mon mon\_data\_size\_warn 100G
 > $ ceph config get mon.a
@@ -191,11 +203,16 @@ Some numeric options include a minimum and maximum value, and will accept suffix
 > mon         advanced mon\_data\_size\_warn             107374182400    
 > ...
 
-Note that whether 'K' means 1000 or 1024 depends on the configuration option in question: some are based on SI units (base-10) and some on IEC units (base-2, like KiB and GiB).
+Note that whether 'K' means 1000 or 1024 depends on the configuration option in
+question: some are based on SI units (base-10) and some on IEC units (base-2,
+like KiB and GiB).
 
 ## Running configuration
 
-Because configuration can come from many places (defaults, cluster config, local ceph.conf, operator override) there is a _show_ command that returns the active configuration options as reported by any daemon in the system. For example,
+Because configuration can come from many places (defaults, cluster config,
+local ceph.conf, operator override) there is a _show_ command that returns the
+active configuration options as reported by any daemon in the system. For
+example:
 
 > $ ceph daemon mgr.x config set debug\_mgr 10  # manual override of config option
 > $ ceph config set mgr.x ms\_type simple       # set an option normally
@@ -207,16 +224,27 @@ Because configuration can come from many places (defaults, cluster config, local
 > ms\_type    async+posix default             mon     
 > ...
 
-The NAME and VALUE columns tell you which options and values are currently in effect. SOURCE tells you where the value came from: "override" from our _ceph daemon_ command above, "mon" from the cluster configuration database, and "file" from a local ceph.conf file. In the case of an override source, the OVERRIDES column tells you what the value would have been (and from where); in this case _debug\_mgr_ would have been set to 20/20 by the mon if we hadn't issued that _ceph daemon ..._ command.
+The NAME and VALUE columns tell you which options and values are currently in
+effect. SOURCE tells you where the value came from: "override" came from our
+_ceph daemon_ command above, "mon" came from the cluster configuration
+database, and "file" came from a local ceph.conf file. In the case of an
+override source, the OVERRIDES column tells you what the value would have been
+(and from where it would have been drawn); in this case _debug\_mgr_ would have
+been set to 20/20 by the mon if we hadn't issued that _ceph daemon ..._
+command.
 
-The IGNORES column indicates where there is an option that has been set to a new value but the daemon is still using an old value. This is true for lots of options that can only take effect when the daemon is restarted, such as _ms\_type_ (which controls which message passing implementation to use). You can also see that this is a read-only value from the RO column in _config get_ command results:
+The IGNORES column indicates where an option has been set to a new value while 
+the daemon is still using an old value. This is true for many options that
+can take effect only when the daemon is restarted, such as _ms\_type_ (which
+controls which message passing implementation is used). You can also see that
+this is a read-only value from the RO column in _config get_ command results:
 
 > $ ceph config get mgr.x
 > WHO    MASK LEVEL     OPTION     VALUE   RO 
 > mgr         advanced  debug\_mgr  20/20   \*  
 > mgr         advanced  ms\_type    simple  \*  
 
-You'll also note that the help result for _ms\_type_ tells us the same thing:
+You'll also notice that the help result for _ms\_type_ tells us the same thing:
 
 > $ ceph config help ms\_type
 > ...
@@ -225,9 +253,14 @@ You'll also note that the help result for _ms\_type_ tells us the same thing:
 
 ## Configuration change history
 
-One of the key advantages of using an external configuration management framework is that those tools usually store the declarative system configuration in a source control tool like Git. This provides a history of changes to the system so that if something goes wrong changes can be undone.
+One of the key advantages of using an external configuration management
+framework is that those tools usually store the declarative system
+configuration in a source control tool like Git. This provides a history of
+changes to the system so that if something goes wrong changes can be undone.
 
-Ceph's new configuration management provides a simple version of that capability. Every configuration change in the system is recorded and easily viewable:
+Ceph's new configuration management provides a simple version of that
+capability. Every configuration change in the system is recorded and easily
+viewable:
 
 > $ ceph config log
 > --- 15 --- 2018-06-13 15:02:46.176060 ---
@@ -239,9 +272,13 @@ Ceph's new configuration management provides a simple version of that capability
 > + mon/mon\_data\_size\_warn = 107374182400
 > ...
 
-The output is meant to be somewhat familiar to anyone familiar with _diff_ output, where "+" lines indicate a new configuration entry and "-" lines indicate a removed or replaced entry (and its prior value).
+The output is meant to be familiar to anyone familiar with _diff_ output, where
+"+" lines indicate a new configuration entry and "-" lines indicate a removed
+or replaced entry (and its prior value).
 
-The configuration of the system can be reverted to a previous state based on the numeric identifier preceding each change record. For example, to undo our changes to _ms\_type_,
+The configuration of the system can be reverted to a previous state by using
+the numeric identifier preceding each change record. For example, to undo our
+changes to _ms\_type_,
 
 > $ ceph config reset 13
 > $ ceph config log
@@ -256,13 +293,24 @@ The configuration of the system can be reverted to a previous state based on the
 > + mon/mon\_data\_size\_warn = 107374182400
 > ...
 
-(The net effect of resetting to 13 is that the ms\_type entry is removed, even though it had two intermediate values since then.) Since the _reset_ command is a configuration change like any other you can also undo it with another reset command.
+(The net effect of resetting to 13 is that the ms\_type entry is removed, even
+though it had two intermediate values since then.) Because the _reset_ command
+is a configuration change like any other, it can be undone with another reset
+command.
 
 ## Migrating from old configuration files
 
-Any existing cluster is likely to have various settings in the ceph.conf files stored on each node of the system. We also provide a command to easily import these files into the configuration database.
+Any existing cluster is likely to have various settings in the ceph.conf files
+stored on each node of the system. We also provide a command that makes it easy
+to import these files into the configuration database.
 
-One challenge is that not all options are suitable to be stored in the central config database. The _mon\_host_ option is a good example: it's used to bootstrap a connection to the cluster before fetching any additional configuration options. For this reason, the import command takes both the existing config file as input and generates a (hopefully shorter) config file for output that contains any options that could not be assimilated. For example,
+One challenge is that not all options are suitable to be stored in the central
+config database. The _mon\_host_ option is a good example: it's used to
+bootstrap a connection to the cluster before any additional configuration
+options are fetched. For this reason, the import command takes both the
+existing config file as input and generates a (hopefully shorter) config file
+for output that contains any options that could not be assimilated. For
+example:
 
 > $ cat ceph.conf
 > \[global\]
@@ -284,17 +332,28 @@ One challenge is that not all options are suitable to be stored in the central c
 > osd.1       advanced debug\_osd                      0/0            
 > ...
 
-In this simple example, only the _debug\_osd_ option for osd.1 was imported; _mon\_host_ was left behind (it's needed for bootstrapping) and _mds\_invalid\_option_ was left behind (it was not a recognized option).
+In this simple example, only the _debug\_osd_ option for osd.1 was imported.
+_mon\_host_ was left behind (it's needed for bootstrapping) and
+_mds\_invalid\_option_ was left behind (it was not a recognized option).
 
-For a cluster making a transition to a cluster-managed config, the basic process would be to run an assimilate command like the above on each host to incorporate settings into the cluster's configuration database, leaving behind only the bootstrap-related options on each host. For example,
+For a cluster that's making a transition to a cluster-managed config, the basic
+process is to run an assimilate command (like the one above) on each host,
+which will  incorporate settings into the cluster's configuration database and
+leave behind only the bootstrap-related options on each host. For example:
 
 > $ cd /etc/ceph
 > $ ceph config assimilate-conf -i ceph.conf -o ceph.conf.new
 > $ cat ceph.conf.new   # make sure it looks okay!
 > $ mv ceph.conf.new ceph.conf
 
-This will work in the majority of cases. However, be warned that if assimilating a configuration file will change any settings mentioned in the input, which means that if two hosts have config files setting the same option to different values, the end result will depend on the order in which the files are assimilated.
+This will work in the majority of cases. But if you're assimilating a
+configuration file that changes any settings mentioned in the input (which
+means that two distinct hosts exist and that each has config files that set the
+same option to different values), the end result will depend on the order in
+which the files are assimilated.
 
 ## Next steps
 
-Looking forward, the key next step is to surface all of these configuration options into the new management dashboard. There is a in-flight pull request that adds this functionality now that will provide this for the upcoming Nautilus release.
+Looking forward, the next step is to surface all of these configuration options
+into the new management dashboard. There is a in-flight pull request that adds
+this functionality that will provide this for the upcoming Nautilus release.
