@@ -70,7 +70,8 @@ Join the Ceph announcement list, or follow Ceph on social media for updates:
 <p>
 In this talk, we'll provide an update on the state of the Ceph upstream project, recent development efforts, current priorities, and community initiatives. We will share details of features released across components in the latest Ceph release, Quincy and explain how this release is different from previous Ceph releases. The talk will also provide a sneak peek into features being planned for the next Ceph release, Reef.
    </td>
-   <td>Neha Ojha & Josh Durgin
+   <td>Neha Ojha & Josh Durgin<br />
+   IBM
    </td>
   </tr>
   <tr>
@@ -80,7 +81,8 @@ In this talk, we'll provide an update on the state of the Ceph upstream project,
 <p>
 NVMe-over-Fabrics (NVMeoF) is a widely adopted, defacto standard in remote block storage access. Ceph clients use the RADOS protocol to access RBD images but there are good reasons to enable access via NVMeoF: to allow existing NVMeoF storage users to easily migrate to Ceph and to enable the use of NVMeoF offloading hardware. This talk presents our effort to provide native NVMeoF support for Ceph. We discuss some of the challenges including multi-pathing for fault tolerance and performance.
    </td>
-   <td>Jonas Pfefferle
+   <td>Jonas Pfefferle<br />
+   IBM Research
    </td>
   </tr>
   <tr>
@@ -90,7 +92,8 @@ NVMe-over-Fabrics (NVMeoF) is a widely adopted, defacto standard in remote block
 <p>
 The new generation of hybrid cloud provides a common platform across all your cloud, on-premises, and edge environments. That means you can skill once, build once and manage from a single pane of glass. That also implies platform needs to support diverse workloads and different level of maturity in management skills. In this presentation, we will cover the open source projects and proposals to enhance Ceph's consumability and manageability to enable Ceph in more environments.
    </td>
-   <td>Vincent Hsu
+   <td>Vincent Hsu<br />
+   IBM
    </td>
   </tr>
   <tr>
@@ -104,11 +107,8 @@ The new generation of hybrid cloud provides a common platform across all your cl
   <tr>
    <td>11:00 AM
    </td>
-   <td><strong>100 Years of Major League Baseball on Ceph</strong>
-<p>
-Working together Major League Baseball and Platina have built a multi-site 40 PB active archive housing over 100 years of Major League Baseball video and audio assets by using Ceph as the foundational storage technology. Along the way we have learned many lessons about architecting, deploying, and operationalizing Ceph from the vantage point of a large, modern and rapidly growing media company. We would like to share our experience and learnings to help others traveling a similar road.
-   </td>
-   <td>Frank Yang & Adam Japhet
+   <td><strong>TBD</strong>
+   <td>
    </td>
   </tr>
   <tr>
@@ -118,7 +118,8 @@ Working together Major League Baseball and Platina have built a multi-site 40 PB
 <p>
 To increase product observability and robustness, Ceph’s telemetry module allows users to automatically report anonymized data about their clusters. Ceph’s telemetry backend runs tools that analyze this data to help developers understand how Ceph is used and what problems users may be experiencing. In this session we will overview the various aspects of Ceph’s upstream telemetry and its benefits for users, and explore how telemetry can be deployed independently as a tool for fleet observability.
    </td>
-   <td>Yaarit Hatuka
+   <td>Yaarit Hatuka<br />
+   IBM
    </td>
   </tr>
   <tr>
@@ -136,7 +137,8 @@ To increase product observability and robustness, Ceph’s telemetry module allo
 <p>
 Ceph’s Prometheus module provides performance counter metrics via the ceph-mgr component. While this works well for smaller installations, it can be problematic to put metric workloads into ceph-mgr at scale. Ceph is just one component of our internal S3 product. We also need to gather telemetry data about space, objects per bucket, buckets per tenancy, etc., as well as telemetry from a software-defined distributed quality of service (QoS) system which is not natively supported by Ceph.
    </td>
-   <td>Nathan Hoad
+   <td>Nathan Hoad<br />
+   Bloomberg
    </td>
   </tr>
   <tr>
@@ -146,7 +148,8 @@ Ceph’s Prometheus module provides performance counter metrics via the ceph-mgr
 <p>
 Benchmarking Ceph has always been a complex task - there are lots of tools but many have drawbacks and are written for more general-purpose use. For Ceph we need to benchmark Librados, RBD, CephFS, and RGW and each of these protocols has unique challenges and typical deployment scenarios. Not only that, Ceph works better at scale and so we need to ensure that we can build a benchmarking system that will also scale and be able to generate an adequate load at large scale.
    </td>
-   <td>Danny Abukalam
+   <td>Danny Abukalam<br />
+   SoftIron
    </td>
   </tr>
   <tr>
@@ -156,7 +159,8 @@ Benchmarking Ceph has always been a complex task - there are lots of tools but m
 <p>
 We present a new encryption capability in librbd that was initially introduced in the Ceph Pacific release. This feature allows users to secure their RBD images by setting per-image passphrases, which will be used to unlock a new data-at-rest encryption layer. Greater flexibility, ease-of-use, new functionality and minimal performance overhead are the main advantages of this feature over alternatives of using external encryption components, such as dm-crypt and qemu LUKS.
    </td>
-   <td>Danny Harnik
+   <td>Danny Harnik<br />
+   IBM Research
    </td>
   </tr>
   <tr>
@@ -180,7 +184,7 @@ In 2013, the data storage team at CERN began investigating Ceph to solve an emer
   <tr>
    <td>3:15 PM
    </td>
-   <td><strong>Lighting Talks</strong>
+   <td><strong>Lightning Talks</strong>
    </td>
    <td>
    </td>
@@ -192,7 +196,8 @@ In 2013, the data storage team at CERN began investigating Ceph to solve an emer
 <p>
 Ceph was originally designed to fill a need for a distributed file system within scientific computing environments but has since grown to become a dominant **unified** software-defined distribute storage system. This talk will cover the new development of an SQLite Virtual File System (VFS) on top of Ceph's distributed object store (RADOS). I will show how SQL can now be run on Ceph for both its internal use and for new application storage requirements.
    </td>
-   <td>Patrick Donnelly
+   <td>Patrick Donnelly<br />
+   IBM
    </td>
   </tr>
   <tr>
@@ -202,7 +207,8 @@ Ceph was originally designed to fill a need for a distributed file system within
 <p>
 We explore the security model exposed by Rook with Ceph, the leading software-defined storage platform of the Open Source world. Digging increasingly deeper in the stack, we examine hardening options for Ceph storage appropriate for a variety of threat profiles.
    </td>
-   <td>Federico Lucifredi & Ana McTaggart
+   <td>Federico Lucifredi & Ana McTaggart<br />
+   IBM
    </td>
   </tr>
   <tr>
@@ -212,7 +218,8 @@ We explore the security model exposed by Rook with Ceph, the leading software-de
 <p>
 Over the last few years, we have been gaining experience with Rook in production. One of our challenges was to implement dynamic resource management between 50+ Ceph clusters. Kubernetes events dynamically and fully automatically distribute loads and capacity between Ceph clusters. This is done by removing single or multiple Ceph nodes from Ceph clusters while ensuring data integrity at all times. In the next step, the released Ceph nodes are integrated into other Ceph clusters as needed.
    </td>
-   <td>Joachim Kraftmayer
+   <td>Joachim Kraftmayer<br />
+   Clyso
    </td>
   </tr>
 </table>
