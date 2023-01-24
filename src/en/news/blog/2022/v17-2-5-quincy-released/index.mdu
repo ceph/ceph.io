@@ -1,0 +1,45 @@
+---
+title: "v17.2.5 Quincy released"
+date: "2022-10-17"
+author: "yuriw"
+tags:
+  - "release"
+  - "quincy"
+---
+
+This is a hotfix release that addresses missing commits from 17.2.4 release
+
+## Notable Changes
+
+- Treating daemons as `<daemon_type>.x` caused a crash 
+  in the Telemetry module since the current method does not cover a case
+  where a daemon id is more complex, i.e. `<daemon_type>.x.y`.
+  When we parse the daemon type and daemon id, we should
+  split it into a maximum of two pieces rather than splitting
+  it by every `.` character. Specifying `1` in the Python
+  .split() function will limit the split to a maximum of two items.
+  
+  Fixes: https://tracker.ceph.com/issues/57700
+  
+  Signed-off-by: Laura Flores <lflores@redhat.com>
+
+- bea9f4b introduced a regression that makes the activate process
+  take a very long time to complete.
+  `_get_bluestore_info()` which calls `ceph-bluestore-tool` binary via
+  subprocess is called in an exponential way while this is not needed.
+
+  Fixes: https://tracker.ceph.com/issues/57627
+
+  Signed-off-by: Guillaume Abrioux <gabrioux@redhat.com>
+
+- Resolves: https://tracker.ceph.com/issues/55605
+
+  Signed-off-by: Juan Miguel Olmo Martínez <jolmomar@redhat.com>
+
+## Changelog
+
+- quincy: mgr/telemetry: handle daemons with complex ids ([pr#48283](https://github.com/ceph/ceph/pull/48283), Laura Flores )
+
+- quincy: ceph-volume: fix regression in activate ([pr#48201](https://github.com/ceph/ceph/pull/48201), Guillaume Abrioux )
+
+- quincy: mgr/rook: fix error when trying to get the list of nfs services ([pr#48199](https://github.com/ceph/ceph/pull/48199), Adam King)
