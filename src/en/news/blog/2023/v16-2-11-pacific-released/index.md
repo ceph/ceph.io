@@ -24,8 +24,8 @@ This is the eighth backport release in the Pacific series. We recommend all user
   will be visible.
   Relevant tracker: https://tracker.ceph.com/issues/53729
 
-- RBD: `rbd device unmap` command gained `--namespace` option.  Support for
-  namespaces was added to RBD in Nautilus 14.2.0 and it has been possible to
+- RBD: The `rbd device unmap` command gained the `--namespace` option.  Support for
+  namespaces was added to RBD in Nautilus 14.2.0; and while it has been possible to
   map and unmap images in namespaces using the `image-spec` syntax since then
   but the corresponding option available in most other commands was missing.
 
@@ -37,9 +37,9 @@ This is the eighth backport release in the Pacific series. We recommend all user
 
 - <span></span>.readthedocs<span></span>.yml: Always build latest doc/releases pages ([pr#47443](https://github.com/ceph/ceph/pull/47443), David Galloway)
 
-- [bluestore] Improve deferred write decision ([pr#49170](https://github.com/ceph/ceph/pull/49170), Adam Kupczyk, Igor Fedotov)
+- bluestore: Improve deferred write decision ([pr#49170](https://github.com/ceph/ceph/pull/49170), Adam Kupczyk, Igor Fedotov)
 
-- [pacific] mgr/alerts: Add Message-Id and Date header to sent emails ([pr#46312](https://github.com/ceph/ceph/pull/46312), Lorenz Bausch)
+- mgr/alerts: Add Message-Id and Date header to sent emails ([pr#46312](https://github.com/ceph/ceph/pull/46312), Lorenz Bausch)
 
 - Add mapping for ernno:13 and adding path in error msg in opendir()/cephfs<span></span>.pyx ([pr#46646](https://github.com/ceph/ceph/pull/46646), Sarthak0702)
 
