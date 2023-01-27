@@ -155,12 +155,12 @@ Benchmarking Ceph has always been a complex task - there are lots of tools but m
   <tr>
    <td>2:00 PM
    </td>
-   <td><strong>Introducing the new RBD image encryption feature</strong>
+   <td><strong>Optimizing RGW Object Storage Mixed Media through Storage Classes and Lua Scripting</strong>
 <p>
-We present a new encryption capability in librbd that was initially introduced in the Ceph Pacific release. This feature allows users to secure their RBD images by setting per-image passphrases, which will be used to unlock a new data-at-rest encryption layer. Greater flexibility, ease-of-use, new functionality and minimal performance overhead are the main advantages of this feature over alternatives of using external encryption components, such as dm-crypt and qemu LUKS.
+Ceph enables flexible and scalable object storage of unstructured data for a wide variety of workloads. RGW (RADOS GateWay) deployments experience a wide variety of object sizes and must balance workload, cost, and performance requirements. S3 storage classes are an established way to steer data onto underlying media that meet specific resilience, cost, and performance requirements. One might for example define RGW back end storage classes for SSD or HDD media, non-redundant vs replicated vs erasure coding pools, etc. Diversion of individual objects or entire buckets into a non-default storage class usually requires specific client action. Compliance however can be awkward to request and impossible to enforce, especially in multi-tenant deployments that may include paying customers as well as internal users. This work enables the RGW back end to enforce storage class on uploaded objects based on specific criteria without requiring client actions. For example one might define a default storage class on performance TLC or Optane media for resource-intensive small S3 objects while assigning larger objects to and cost-effective QLC SSD media.
    </td>
-   <td><center><img src="/assets/bitmaps/events/2023/ceph-days-nyc/danny-harnik.jpg"><strong>Danny Harnik</strong><br />
-   IBM Research</center>
+   <td><center><img src="/assets/bitmaps/events/2023/ceph-days-nyc/anthony-datri.jpg"><br /><strong>Anthony D'Atri</strong><br />
+   Intel</center>
    </td>
   </tr>
   <tr>
@@ -170,7 +170,7 @@ We present a new encryption capability in librbd that was initially introduced i
 <p>
 In 2013, the data storage team at CERN began investigating Ceph to solve an emerging problem: how to provide reliable, flexible, future-proof storage for our growing on-premises OpenStack cloud. Beginning with a humble 3PB cluster, the infrastructure has grown to support the entire lab, with 50PB of storage across multiple data centres used across a variety of use-cases ranging from basic IT apps, databases, HPC, cloud storage, and others.
    </td>
-   <td><center><strong>Dan van der Ster</strong><br />
+   <td><center><img src="/assets/bitmaps/events/2023/ceph-days-nyc/dan-van-der-stern.jpg"><br /><strong>Dan van der Ster</strong><br />
    CERN</center>
    </td>
   </tr>
@@ -185,9 +185,13 @@ In 2013, the data storage team at CERN began investigating Ceph to solve an emer
   <tr>
    <td>3:15 PM
    </td>
-   <td><strong>Lightning Talks</strong>
+   <td><strong>An Introduction to MicroCeph</strong>
+   </td>
+   Building up a Ceph cluster can be a bit tricky and time consuming, especially if it’s just for testing or a small home lab. To make this much easier, we’ve started working on microceph.  It's a snap package that uses a small management daemon that allows for very easy clustering of multiple systems which, combined with an easy bootstrap process, allows for setting up a Ceph cluster in just a few minutes!
    </td>
    <td>
+   <center><strong>Chris MacNaughton</strong><br />
+   Canonical</center>
    </td>
   </tr>
   <tr>
@@ -219,7 +223,7 @@ We explore the security model exposed by Rook with Ceph, the leading software-de
 <p>
 Over the last few years, we have been gaining experience with Rook in production. One of our challenges was to implement dynamic resource management between 50+ Ceph clusters. Kubernetes events dynamically and fully automatically distribute loads and capacity between Ceph clusters. This is done by removing single or multiple Ceph nodes from Ceph clusters while ensuring data integrity at all times. In the next step, the released Ceph nodes are integrated into other Ceph clusters as needed.
    </td>
-   <td><center><img src="/assets/bitmaps/events/2023/ceph-days-nyc/joachim-kraftmayer.jpg"><br /><strong>Joachim KraftmayerM</strong><br />
+   <td><center><img src="/assets/bitmaps/events/2023/ceph-days-nyc/joachim-kraftmayer.jpg"><br /><strong>Joachim Kraftmayer</strong><br />
    Clyso</center>
    </td>
   </tr>
