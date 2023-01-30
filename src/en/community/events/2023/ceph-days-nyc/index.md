@@ -107,12 +107,23 @@ The new generation of hybrid cloud provides a common platform across all your cl
   <tr>
    <td>11:00 AM
    </td>
-   <td><strong>TBD</strong>
    <td>
+<strong>100 Years of Sports on Ceph</strong>
+<p>
+Working together with a major American sports league we built a multi-site 40
+PB active archive housing over 100 years of game video and audio assets by
+using Ceph as the foundational storage technology. Along the way learned many
+lessons about architecting, deploying, and operationalizing Ceph from the
+vantage point of a large, modern and rapidly growing media company. We would
+like to share our experience and learnings with the community to help others
+traveling a similar road.
+   </td>
+   <td>
+<center><strong>Frank Yang<br />Platina<br />& Adam Japhet</strong></center>
    </td>
   </tr>
   <tr>
-   <td>11:00 AM
+   <td>11:30 AM
    </td>
    <td><strong>Ceph Telemetry - Observability in Action</strong>
 <p>
@@ -212,7 +223,7 @@ Ceph was originally designed to fill a need for a distributed file system within
 <p>
 We explore the security model exposed by Rook with Ceph, the leading software-defined storage platform of the Open Source world. Digging increasingly deeper in the stack, we examine hardening options for Ceph storage appropriate for a variety of threat profiles.
    </td>
-   <td><center><img src="/assets/bitmaps/events/2023/ceph-days-nyc/federico-lucifredi.jpg"><img src="/assets/bitmaps/events/2023/ceph-days-nyc/ana-mctaggart.png"><br /><strong>Federico Lucifredi & Ana McTaggart</strong><br />
+   <td><center><img src="/assets/bitmaps/events/2023/ceph-days-nyc/federico-lucifredi.jpg"><img src="/assets/bitmaps/events/2023/ceph-days-nyc/sage-mctaggart.png"><br /><strong>Federico Lucifredi & Sage McTaggart</strong><br />
    IBM</center>
    </td>
   </tr>
