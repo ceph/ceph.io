@@ -4,7 +4,7 @@ date: 2023-02-21
 end: 2023-02-21
 location: 120 Park Ave, New York, NY 10165
 venue: Bloomberg
-image: "/assets/bitmaps/ceph-days.png"
+image: "/assets/bitmaps/events/2023/ceph-days-nyc/banner.png"
 sponsors:
   - label: Platinum
     list:
@@ -119,7 +119,7 @@ like to share our experience and learnings with the community to help others
 traveling a similar road.
    </td>
    <td>
-<center><strong>Frank Yang<br />Platina<br />& Adam Japhet</strong></center>
+<center><strong>Frank Yang<br /><br />& Adam Waters</strong><br />Platina</center>
    </td>
   </tr>
   <tr>
