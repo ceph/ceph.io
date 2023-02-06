@@ -1,18 +1,6 @@
 {
   "jobs": [
     {
-      "company": "Akamai",
-      "date": "2022-10-26",
-      "title": "Senior Site Reliability Engineer - Storage - Remote",
-      "url": "https://akamaicareers.inflightcloud.com/jobdetails/aka_ext/029323?section=aka_ext&job=029323"
-    },
-    {
-      "company": "SUSE",
-      "date": "2022-10-21",
-      "title": "Quality Assurance Engineer, Software Defined Storage",
-      "url": "https://suse.wd3.myworkdayjobs.com/Jobsatsuse/job/India/Quality-Assurance-Engineer--Software-Defined-Storage_71003679-1"
-    },
-    {
       "company": "SUSE",
       "date": "2022-10-20",
       "title": "Senior Software Engineer, Software Defined Storage",
@@ -25,52 +13,16 @@
       "url": "https://canonical.com/careers/4175808/engineering-manager-ceph-and-distributed-storage-remote"
     },
     {
-      "company": "GoDaddy",
-      "date": "2022-07-06",
-      "title": "Storage Site Reliability Engineer - Ceph - Worldwide - Remote",
-      "url": "https://careers.godaddy.com/job/united-states/storage-engineer-united-states-remote/7795/25788976256"
-    },
-    {
       "company": "Koor Technologies, Inc.",
       "date": "2022-05-10",
       "title": "Cloud Storage Engineer",
-      "url": "https://koor.tech/jobs/?gh_jid=4507660004"
-    },
-    {
-      "company": "Hitachi Vantara",
-      "date": "2022-04-08",
-      "title": "Senior Software Engineer - Ceph",
-      "url": "https://www.hitachivantara.com/en-us/company/careers/job-details.html#jobid=5920086002"
-    },
-    {
-      "company": "Hitachi Vantara",
-      "date": "2022-04-08",
-      "title": "Senior System Engineer - Ceph",
-      "url": "https://www.hitachivantara.com/en-us/company/careers/job-details.html#jobid=5915838002"
-    },
-    {
-      "company": "Canonical",
-      "date": "2022-03-18",
-      "title": "Software Engineer, Ceph & Distributed Storage",
-      "url": "https://canonical.com/careers/1861978/software-engineer-ceph-and-distributed-storage-remote"
+      "url": "https://koor.tech/career/?gh_jid=4778393004"
     },
     {
       "company": "Canonical",
       "date": "2022-03-18",
       "title": "Senior Software Engineer - Linux Engineering",
       "url": "https://canonical.com/careers/3326693/linux-engineering-open-source-remote"
-    },
-    {
-      "company": "NVIDIA",
-      "date": "2022-03-10",
-      "title": "Software Engineer, Software-Defined Storage Cloud Infrastructure (US/CAN/UK/EU)",
-      "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-NC-Remote/Software-Engineer--Software-Defined-Storage-Cloud-Infrastructure_JR1954616"
-    },
-    {
-      "company": "NVIDIA",
-      "date": "2022-03-10",
-      "title": "Software Engineer, Software-Defined Storage Cloud Infrastructure (PL/HU/CZ)",
-      "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/Poland-Remote/Software-Engineer--Storage-Cloud-Infrastructure_JR1954623"
     },
     {
       "company": "SoftIron",
@@ -119,30 +71,6 @@
       "date": "2022-02-22",
       "title": "Linux Open Source Developer (m/f/d) – Cloud Infrastructure",
       "url": "https://www.clyso.com/en/linux-open-source-developer/"
-    },
-    {
-      "company": "Bloomberg",
-      "date": "2022-02-22",
-      "title": "Senior Software Engineer - Storage Engineering",
-      "url": "https://careers.bloomberg.com/job/detail/81144?qe=Senior+Software+Engineer+-+Storage+Engineering"
-    },
-    {
-      "company": "Scaleway",
-      "date": "2022-02-11",
-      "title": "Freelance Golang backend developer with Ceph experience",
-      "url": "https://scaleway-25152556.hubspotpagebuilder.eu/freelance-golang-ceph"
-    },
-    {
-      "company": "Bloomberg",
-      "date": "2021-10-26",
-      "title": "Senior Software Engineer - Storage Engineer",
-      "url": "https://careers.bloomberg.com/job/detail/81144?qe=Senior+Software+Engineer+-+Storage+Engineering"
-    },
-    {
-      "company": "Safespring",
-      "date": "2021-08-30",
-      "title": "Ceph Engineer - Infrastructure Team ",
-      "url": "https://www.safespring.com/career/ceph-engineer/"
-    }    
+    }
   ]
 }
