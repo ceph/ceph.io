@@ -170,8 +170,7 @@ Benchmarking Ceph has always been a complex task - there are lots of tools but m
 <p>
 Ceph enables flexible and scalable object storage of unstructured data for a wide variety of workloads. RGW (RADOS GateWay) deployments experience a wide variety of object sizes and must balance workload, cost, and performance requirements. S3 storage classes are an established way to steer data onto underlying media that meet specific resilience, cost, and performance requirements. One might for example define RGW back end storage classes for SSD or HDD media, non-redundant vs replicated vs erasure coding pools, etc. Diversion of individual objects or entire buckets into a non-default storage class usually requires specific client action. Compliance however can be awkward to request and impossible to enforce, especially in multi-tenant deployments that may include paying customers as well as internal users. This work enables the RGW back end to enforce storage class on uploaded objects based on specific criteria without requiring client actions. For example one might define a default storage class on performance TLC or Optane media for resource-intensive small S3 objects while assigning larger objects to and cost-effective QLC SSD media.
    </td>
-   <td><center><img src="/assets/bitmaps/events/2023/ceph-days-nyc/anthony-datri.jpg"><br /><strong>Anthony D'Atri</strong><br />
-   Intel</center>
+   <td><center><img src="/assets/bitmaps/events/2023/ceph-days-nyc/anthony-datri.jpg"><br /><strong>Anthony D'Atri</strong></center>
    </td>
   </tr>
   <tr>
