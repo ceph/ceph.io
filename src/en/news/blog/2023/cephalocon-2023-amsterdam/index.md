@@ -1,13 +1,12 @@
 ---
-
 title: Cephalocon 2023 Is Coming to Amsterdam!
 date: 2023-02-01
 author: Mike Perez
 image: "assets/cephalocon-banner.png"
 tags:
-
 - events
 - cephalocon
+---
 
 We're excited to announce that [Cephalocon
 2023](https://events.linuxfoundation.org/cephalocon) will be coming to
