@@ -9,6 +9,13 @@ tags:
   - cephalocon
 ---
 
+Cephalocon is the premier yearly event that brings together the global
+community of operators, developers, and researchers for Ceph, the open source
+distributed storage system designed to provide excellent performance,
+reliability, and scalability. Join new and existing community members from
+around the world to learn more about Ceph and the future of the project from
+the developers writing the code and the operators deploying it at scale.
+
 <a class="button"
 href="https://events.linuxfoundation.org/cephalocon/program/cfp/">Call For
 Proposals</a>
@@ -16,13 +23,6 @@ Proposals</a>
 href="https://events.linuxfoundation.org/cephalocon/register/">Register</a>
 <a class="button"
 href="https://events.linuxfoundation.org/cephalocon/sponsor/">Sponsor</a>
-
-Cephalocon is the premier yearly event that brings together the global
-community of operators, developers, and researchers for Ceph, the open source
-distributed storage system designed to provide excellent performance,
-reliability, and scalability. Join new and existing community members from
-around the world to learn more about Ceph and the future of the project from
-the developers writing the code and the operators deploying it at scale.
 
 **Important Dates**
 
