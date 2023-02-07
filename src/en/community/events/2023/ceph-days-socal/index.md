@@ -11,6 +11,9 @@ tags:
 
 ### Bringing Ceph to SCALE
 
+<a class="button" href="https://survey.zohopublic.com/zs/3UBUpC">Submit your proposal</a>
+<a class="button" href="https://register.socallinuxexpo.org/reg6/">Register</a>
+
 A full-day event dedicated to sharing Ceph’s transformative power and fostering
 the vibrant Ceph community co-located at <a
 href="https://www.socallinuxexpo.org/scale/20x">SCALE</a> - The Southern
@@ -23,13 +26,10 @@ a networking reception, to foster more Ceph learning.
 
 The CFP is now open. Space is limited, so register soon.
 
-<a class="button" href="https://survey.zohopublic.com/zs/3UBUpC">Submit your proposal</a>
-<a class="button" href="https://register.socallinuxexpo.org/reg6/">Register</a>
-
 ## Important Dates
 
-- CFP Opens: 2022-01-09
-- CFP Closes: 2023-02-02
+- CFP Opens: 2023-01-09
+- CFP Closes: 2023-02-09
 - Speakers receive confirmation of acceptance: 2023-02-08
 - Schedule Announcement: 2023-02-10
 - Event Date: 2023-03-09
