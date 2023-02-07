@@ -155,7 +155,7 @@ Ceph’s Prometheus module provides performance counter metrics via the ceph-mgr
   <tr>
    <td>1:30 PM
    </td>
-   <td><strong>Introducing Sibench: A New Open Source Benchmarking Optimized for Ceph</strong>
+   <td><strong>Introducing Sibench: A New Open Source Benchmarking Tool Optimized for Ceph</strong>
 <p>
 Benchmarking Ceph has always been a complex task - there are lots of tools but many have drawbacks and are written for more general-purpose use. For Ceph we need to benchmark Librados, RBD, CephFS, and RGW and each of these protocols has unique challenges and typical deployment scenarios. Not only that, Ceph works better at scale and so we need to ensure that we can build a benchmarking system that will also scale and be able to generate an adequate load at large scale.
    </td>
