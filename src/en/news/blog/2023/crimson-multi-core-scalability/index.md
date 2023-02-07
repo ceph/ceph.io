@@ -1,6 +1,6 @@
 ---
 title: "Crimson: Next-generation Ceph OSD for Multi-core Scalability"
-date: 2023-01-29
+date: 2023-02-07
 image: "images/title.png"
 author: Cheng, Yingxin; Feng, Tian; Gohad, Tushar; Just, Samuel; Li, Jianxin; Mao, Honghua;
 tags:
