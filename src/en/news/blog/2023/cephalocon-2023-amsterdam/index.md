@@ -27,7 +27,7 @@ available!
 **Important Dates**
 
 - **CFP Closes:** ~~Sunday, February 12~~ Extended to **Sunday, February 19** at 11:59 pm PST
-- **CFP Notifications:** Wednesday, February 24
+- **CFP Notifications:** Friday, February 24
 - **Schedule Announcement:** Monday, February 27
 - **Presentation Slide Due Date:** Wednesday, April 12
 - **Event Dates:** Monday, April 17 – Tuesday, April 18 (Developer Summit Sunday, April 16)
