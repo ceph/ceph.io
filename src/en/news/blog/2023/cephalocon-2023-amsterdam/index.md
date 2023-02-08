@@ -4,8 +4,8 @@ date: 2023-02-01
 author: Mike Perez
 image: "assets/cephalocon-banner.png"
 tags:
-- events
-- cephalocon
+  - events
+  - cephalocon
 ---
 
 We're excited to announce that [Cephalocon
@@ -28,7 +28,7 @@ available!
 
 - **CFP Closes:** ~~Sunday, February 12~~ Extended to **Sunday, February 19** at 11:59 pm PST
 - **CFP Notifications:** Friday, February 24
-- **Schedule Announcement:** Monday, February 27
+- **Schedule Announcement:** ~~Monday, February 27~~ Wednesday, March 1
 - **Presentation Slide Due Date:** Wednesday, April 12
 - **Event Dates:** Monday, April 17 – Tuesday, April 18 (Developer Summit Sunday, April 16)
 
