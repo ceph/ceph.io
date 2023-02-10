@@ -180,7 +180,7 @@ Ceph enables flexible and scalable object storage of unstructured data for a wid
 <p>
 In 2013, the data storage team at CERN began investigating Ceph to solve an emerging problem: how to provide reliable, flexible, future-proof storage for our growing on-premises OpenStack cloud. Beginning with a humble 3PB cluster, the infrastructure has grown to support the entire lab, with 50PB of storage across multiple data centres used across a variety of use-cases ranging from basic IT apps, databases, HPC, cloud storage, and others.
    </td>
-   <td><center><img src="/assets/bitmaps/events/2023/ceph-days-nyc/dan-van-der-stern.jpg"><br /><strong>Dan van der Ster</strong><br />
+   <td><center><img src="/assets/bitmaps/events/2023/ceph-days-nyc/dan-van-der-ster.jpg"><br /><strong>Dan van der Ster</strong><br />
    CERN</center>
    </td>
   </tr>
