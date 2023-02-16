@@ -7,6 +7,12 @@ venue: Pakhuis de Zwijger
 image: "/assets/bitmaps/events/2023/cephalocon/banner.png"
 tags:
   - cephalocon
+sponsors:
+  - label: Startup sponsors
+    list:
+      - name: Koor
+        logo: "/assets/bitmaps/logo-koor.png"
+        website: "https://koor.tech/"
 ---
 
 Cephalocon is the premier yearly event that brings together the global
