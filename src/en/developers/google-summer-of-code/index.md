@@ -35,7 +35,7 @@ get started with contributions](https://ceph.io/en/developers/contribute/).
 
 **Mentor email(s):** amathuri@redhat.com, zcerza@redhat.com, ksirivad@redhat.com
 
-**Difficulty:** intermediate
+**Difficulty:** Intermediate
 
 **Skills needed:** Python, Docker, FastAPI.
 
@@ -62,7 +62,7 @@ Applicant should comfortable with creating simple API end-points and writting un
 
 **Mentor email(s):** ylifshit@ibm.com
 
-**Difficulty:** Intermidiate
+**Difficulty:** Intermediate
 
 **Skills needed:** C++
 
@@ -77,6 +77,39 @@ Use the Coverity static snalysis tool to cleanup issues from the RGW code
 **Steps to evaluate an applicant for the project:**
 
 Build ceph, analyse and fix simple coverity issue
+
+<hr class="hr">
+
+## Disk Fragmentation Simulator
+
+**Mentor name(s):** Adam Kupczyk
+
+**Mentor email(s):** akupczyk@ibm.com
+
+**Difficulty:** Intermediate
+
+**Skills needed:** C++, Random Distributions, Data Presentation
+
+**Subcomponent of Ceph:** BlueStore
+
+**Description of project:**
+Create a platform to evaluate defragmentation algorithms.
+We intend to augment BlueStore with fragmentation control / combat features.
+We understand that implementing algorithm is costly and we want to evaluate
+quality of certain concepts before we start implementation.
+We need a platform that can simulate OSD behaviour with regard to RBD objects.
+Artificial workloads of changing characteristics will be applied to simulator.
+Random events (PG-add, PG-removal) should also be thrown-in from time to time.
+Platform should expose C++ interface toward "defragmentation algorithm".
+
+**Standup/weekly call mentee could attend?:** Core standup & Bluestore Upkeep & Evolution
+
+**Steps to evaluate an applicant for the project:**
+
+Applicant should feel comfortable creating easily verifiable code.
+Operate effectively on large collections of data. Create non-trivial data-trashing algorithms.
+Understand how RBD images are maintained and how random writes mutate objects.
+Familiarize with existing Allocator interface, concept of collection(PG).
 
 <hr class="hr">
 
