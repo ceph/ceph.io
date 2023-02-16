@@ -92,7 +92,7 @@ IBM</center>
   <tr>
    <td>10:05
    </td>
-   <td><strong>How Ceph has been utilized at PlayStation</strong>
+   <td><strong>How Ceph has been utilized at Sony Interactive</strong>
 <p>
 Covering our history with Ceph for the past several years. What we have learned from the experience and what to expect when creating a new platform.
    </td>
