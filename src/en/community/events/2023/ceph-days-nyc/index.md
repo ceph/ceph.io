@@ -92,7 +92,7 @@ NVMe-over-Fabrics (NVMeoF) is a widely adopted, defacto standard in remote block
 <p>
 The new generation of hybrid cloud provides a common platform across all your cloud, on-premises, and edge environments. That means you can skill once, build once and manage from a single pane of glass. That also implies platform needs to support diverse workloads and different level of maturity in management skills. In this presentation, we will cover the open source projects and proposals to enhance Ceph's consumability and manageability to enable Ceph in more environments.
    </td>
-   <td><center><strong>Vincent Hsu</strong>
+   <td><center><img src="/assets/bitmaps/events/2023/ceph-days-nyc/vincent-hsu.jpg"><br /><strong>Vincent Hsu</strong><br />
    IBM</center>
    </td>
   </tr>
