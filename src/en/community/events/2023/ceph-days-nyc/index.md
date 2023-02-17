@@ -36,13 +36,23 @@ Join the Ceph announcement list, or follow Ceph on social media for updates:
 - [LinkedIn](https://www.linkedin.com/company/ceph/)
 - [FaceBook](https://www.facebook.com/cephstorage/)
 
-## Important Dates:
+## Important Dates
 
 - CFP Opens: 2022-12-01
 - CFP Closes: 2023-01-01
 - Speakers receive confirmation of acceptance: 2023-01-16
 - Schedule Announcement: 2023-01-23
 - Event Date: 2023-02-21
+
+## Hotel Recommendations
+
+| Name                                  | Location                           | Website                                                                                                                    |
+| ------------------------------------- | ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| **Andaz 5th Avenue**                  | two blocks from the office         | [Andaz 5th Avenue Website](https://www.hyatt.com/en-US/hotel/new-york/andaz-5th-avenue/nycam)                              |
+| **Hyatt Grand Central**               | around the corner from the office  | [Hyatt Grand Central Website](https://www.hyatt.com/en-US/hotel/new-york/hyatt-grand-central-new-york/nycgh)               |
+| **Library Hotel**                     | one block from the office          | [Library Hotel Website](https://libraryhotel.com/)                                                                         |
+| **The Westin New York Grand Central** | a couple of blocks from the office | [The Westin New York Grand Central Website](https://www.marriott.com/en-us/hotels/nyczw-the-westin-new-york-grand-central) |
+| **The Kitano Hotel New York**         | Park Avenue and 38th Street        | [The Kitano Hotel New York Website](https://www.kitano.com/)                                                               |
 
 ## Schedule
 
@@ -196,9 +206,8 @@ In 2013, the data storage team at CERN began investigating Ceph to solve an emer
    <td>3:15 PM
    </td>
    <td><strong>An Introduction to MicroCeph</strong>
-   </td>
-   Building up a Ceph cluster can be a bit tricky and time consuming, especially if it’s just for testing or a small home lab. To make this much easier, we’ve started working on microceph.  It's a snap package that uses a small management daemon that allows for very easy clustering of multiple systems which, combined with an easy bootstrap process, allows for setting up a Ceph cluster in just a few minutes!
-   </td>
+   <p>Building up a Ceph cluster can be a bit tricky and time consuming, especially if it’s just for testing or a small home lab. To make this much easier, we’ve started working on microceph.  It's a snap package that uses a small management daemon that allows for very easy clustering of multiple systems which, combined with an easy bootstrap process, allows for setting up a Ceph cluster in just a few minutes!
+   </p>
    <td>
    <center><strong>Chris MacNaughton</strong><br />
    Canonical</center>
