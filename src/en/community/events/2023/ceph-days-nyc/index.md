@@ -78,7 +78,7 @@ Join the Ceph announcement list, or follow Ceph on social media for updates:
    </td>
    <td><strong>State of the Cephalopod</strong>
 <p>
-In this talk, we'll provide an update on the state of the Ceph upstream project, recent development efforts, current priorities, and community initiatives. We will share details of features released across components in the latest Ceph release, Quincy and explain how this release is different from previous Ceph releases. The talk will also provide a sneak peek into features being planned for the next Ceph release, Reef.
+In this talk, we'll provide an update on the state of the Ceph upstream project, recent development efforts, current priorities, and community initiatives. We will share details of features released across components in the latest Ceph release, Quincy, and explain how this release is different from previous Ceph releases. The talk will also provide a sneak peek into features being planned for the next Ceph release, Reef.
    </td>
    <td><center><strong>Neha Ojha & Josh Durgin</strong><br />
    IBM</center>
@@ -89,7 +89,7 @@ In this talk, we'll provide an update on the state of the Ceph upstream project,
    </td>
    <td><strong>NVMe-over-Fabrics support for Ceph</strong>
 <p>
-NVMe-over-Fabrics (NVMeoF) is a widely adopted, defacto standard in remote block storage access. Ceph clients use the RADOS protocol to access RBD images but there are good reasons to enable access via NVMeoF: to allow existing NVMeoF storage users to easily migrate to Ceph and to enable the use of NVMeoF offloading hardware. This talk presents our effort to provide native NVMeoF support for Ceph. We discuss some of the challenges including multi-pathing for fault tolerance and performance.
+NVMe-over-Fabrics (NVMeoF) is a widely adopted, de facto standard in remote block storage access. Ceph clients use the RADOS protocol to access RBD images, but there are good reasons to enable access via NVMeoF: to allow existing NVMeoF storage users to easily migrate to Ceph and to enable the use of NVMeoF offloading hardware. This talk presents our effort to provide native NVMeoF support for Ceph. We discuss some of the challenges, including multi-pathing for fault tolerance and performance.
    </td>
    <td><center><img src="/assets/bitmaps/events/2023/ceph-days-nyc/jonas-pfefferle.jpg"><br /><strong>Jonas Pfefferle</strong><br />
    IBM Research</center>
@@ -100,7 +100,7 @@ NVMe-over-Fabrics (NVMeoF) is a widely adopted, defacto standard in remote block
    </td>
    <td><strong>Ceph crossing the chasm</strong>
 <p>
-The new generation of hybrid cloud provides a common platform across all your cloud, on-premises, and edge environments. That means you can skill once, build once and manage from a single pane of glass. That also implies platform needs to support diverse workloads and different level of maturity in management skills. In this presentation, we will cover the open source projects and proposals to enhance Ceph's consumability and manageability to enable Ceph in more environments.
+The new generation of hybrid cloud provides a common platform across all your cloud, on-premises, and edge environments. That means you can skill once, build once, and manage from a single pane of glass. That also implies platform needs to support diverse workloads and different level of maturity in management skills. In this presentation, we will cover the open source projects and proposals to enhance Ceph's consumability and manageability to enable Ceph in more environments.
    </td>
    <td><center><img src="/assets/bitmaps/events/2023/ceph-days-nyc/vincent-hsu.jpg"><br /><strong>Vincent Hsu</strong><br />
    IBM</center>
@@ -120,11 +120,11 @@ The new generation of hybrid cloud provides a common platform across all your cl
    <td>
 <strong>100 Years of Sports on Ceph</strong>
 <p>
-Working together with a major American sports league we built a multi-site 40
+Working together with a major American sports league, we built a multi-site 40
 PB active archive housing over 100 years of game video and audio assets by
-using Ceph as the foundational storage technology. Along the way learned many
+using Ceph as the foundational storage technology. Along the way, we learned many
 lessons about architecting, deploying, and operationalizing Ceph from the
-vantage point of a large, modern and rapidly growing media company. We would
+vantage point of a large, modern, and rapidly growing media company. We would
 like to share our experience and learnings with the community to help others
 traveling a similar road.
    </td>
@@ -178,7 +178,7 @@ Benchmarking Ceph has always been a complex task - there are lots of tools but m
    </td>
    <td><strong>Optimizing RGW Object Storage Mixed Media through Storage Classes and Lua Scripting</strong>
 <p>
-Ceph enables flexible and scalable object storage of unstructured data for a wide variety of workloads. RGW (RADOS GateWay) deployments experience a wide variety of object sizes and must balance workload, cost, and performance requirements. S3 storage classes are an established way to steer data onto underlying media that meet specific resilience, cost, and performance requirements. One might for example define RGW back end storage classes for SSD or HDD media, non-redundant vs replicated vs erasure coding pools, etc. Diversion of individual objects or entire buckets into a non-default storage class usually requires specific client action. Compliance however can be awkward to request and impossible to enforce, especially in multi-tenant deployments that may include paying customers as well as internal users. This work enables the RGW back end to enforce storage class on uploaded objects based on specific criteria without requiring client actions. For example one might define a default storage class on performance TLC or Optane media for resource-intensive small S3 objects while assigning larger objects to and cost-effective QLC SSD media.
+Ceph enables flexible and scalable object storage of unstructured data for a wide variety of workloads. RGW (RADOS GateWay) deployments experience a wide variety of object sizes and must balance workload, cost, and performance requirements. S3 storage classes are an established way to steer data onto underlying media that meet specific resilience, cost, and performance requirements. One might for example define RGW back end storage classes for SSD or HDD media, non-redundant vs replicated vs erasure coding pools, etc. Diversion of individual objects or entire buckets into a non-default storage class usually requires specific client action. Compliance however can be awkward to request and impossible to enforce, especially in multi-tenant deployments that may include paying customers as well as internal users. This work enables the RGW back end to enforce storage class on uploaded objects based on specific criteria without requiring client actions. For example, one might define a default storage class on performance TLC or Optane media for resource-intensive small S3 objects while assigning larger objects to cost-effective QLC SSD media.
    </td>
    <td><center><img src="/assets/bitmaps/events/2023/ceph-days-nyc/anthony-datri.jpg"><br /><strong>Anthony D'Atri</strong></center>
    </td>
@@ -229,7 +229,7 @@ Ceph was originally designed to fill a need for a distributed file system within
    </td>
    <td><strong>Data Security and Storage Hardening in Rook and Ceph</strong>
 <p>
-We explore the security model exposed by Rook with Ceph, the leading software-defined storage platform of the Open Source world. Digging increasingly deeper in the stack, we examine hardening options for Ceph storage appropriate for a variety of threat profiles.
+We explore the security model exposed by Rook with Ceph, the leading software-defined storage platform of the Open Source world. Digging increasingly deeper in the stack, we examine options for hardening Ceph storage that are appropriate for a variety of threat profiles.
    </td>
    <td><center><img src="/assets/bitmaps/events/2023/ceph-days-nyc/federico-lucifredi.jpg"><img src="/assets/bitmaps/events/2023/ceph-days-nyc/sage-mctaggart.png"><br /><strong>Federico Lucifredi & Sage McTaggart</strong><br />
    IBM</center>
