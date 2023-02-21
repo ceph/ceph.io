@@ -74,6 +74,15 @@ Join the Ceph announcement list, or follow Ceph on social media for updates:
    </td>
   </tr>
   <tr>
+   <td>9:10 AM
+   </td>
+   <td><strong>Community Update</strong>
+   </td>
+   <td><center><strong>Mike Perez</strong><br />
+    Ceph Foundation / IBM</center>
+   </td>
+  </tr>
+  <tr>
    <td>9:15 AM
    </td>
    <td><strong>State of the Cephalopod</strong>
