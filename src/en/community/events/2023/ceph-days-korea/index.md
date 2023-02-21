@@ -12,7 +12,7 @@ tags:
 ### Save the Date - Ceph is coming to Korea!
 
 A full-day event dedicated to sharing Ceph’s transformative power and fostering
-the vibrant Ceph community in South Korea
+the vibrant Ceph community in South Korea.
 
 **Registration coming soon!**
 
