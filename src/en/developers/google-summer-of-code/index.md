@@ -69,14 +69,17 @@ Applicant should comfortable with creating simple API end-points and writting un
 **Subcomponent of Ceph:** RGW
 
 **Description of project:** 
-Use the Coverity static snalysis tool to cleanup issues from the RGW code
+Use the Coverity static snalysis tool to cleanup issues from the RGW code.
 
+Applicants can get a more detailed overview of the project [here](https://gist.github.com/yuvalif/71a5c827a16269554c1a7f8f15234f09)
 
 **Standup/weekly call mentee could attend?:** RGW standup
 
 **Steps to evaluate an applicant for the project:**
 
-Build ceph, analyse and fix simple coverity issue
+Applicants should build ceph, analyze and fix a simple coverity issue. 
+
+To learn how to get started visit this [link](https://gist.github.com/yuvalif/71a5c827a16269554c1a7f8f15234f09)
 
 <hr class="hr">
 
