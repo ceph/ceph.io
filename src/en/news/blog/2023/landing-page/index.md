@@ -1,6 +1,6 @@
 ---
 title: Introducing the new Dashboard Landing Page
-date: 2023-02-14
+date: 2023-02-23
 author: Pedro Gonzalez Gomez
 image: "assets/thumbnail.png"
 tags:
