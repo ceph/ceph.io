@@ -11,6 +11,9 @@ tags:
 
 ### Save the Date - Ceph is coming to Korea!
 
+<a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLScJqfS1zIq5K1wTrIsut9dyzDrY951YfE_BdxMGOsK6z4NHyw/viewform">Submit Your Proposal</a>
+<a class="button" href="#">Registeration Coming Soon</a>
+
 A full-day event dedicated to sharing Ceph’s transformative power and fostering
 the vibrant Ceph community in South Korea.
 
@@ -21,12 +24,9 @@ join forces to discuss things like the status of the Ceph project, recent Ceph
 project improvements and roadmap, and Ceph community news. The day ends with
 a networking reception, to foster more Ceph learning.
 
-<a class="button" href="#">CFP Coming Soon</a>
-<a class="button" href="#">Registeration Coming Soon</a>
-
 ## Important Dates
 
-- CFP Opens: Coming Soon!
+- CFP Opens: 2023-02-24
 - CFP Closes: 2023-04-28
 - Speakers receive confirmation of acceptance: 2023-05-12
 - Schedule Announcement: 2023-05-16
