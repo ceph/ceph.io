@@ -12,6 +12,8 @@ tags:
 ### Save the Date - Ceph is coming to Korea!
 
 <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLScJqfS1zIq5K1wTrIsut9dyzDrY951YfE_BdxMGOsK6z4NHyw/viewform">Submit Your Proposal</a>
+<a class="button"
+href="/assets/bitmaps/events/2023/ceph-days-korea/sponsorship-prospectus.pdf">Sponorship Prospectus</a>
 <a class="button" href="#">Registeration Coming Soon</a>
 
 A full-day event dedicated to sharing Ceph’s transformative power and fostering
