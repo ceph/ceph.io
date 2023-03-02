@@ -1,6 +1,12 @@
 {
   "jobs": [
     {
+      "company": "Arm",
+      "date": "2023-03-01",
+      "title": "Staff Software Engineer - Storage",
+      "url": "https://careers.arm.com/job/cambridge/staff-software-engineer-storage/33099/44433033744"
+    },
+    {
       "company": "SUSE",
       "date": "2022-10-20",
       "title": "Senior Software Engineer, Software Defined Storage",
