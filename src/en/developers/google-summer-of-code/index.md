@@ -37,6 +37,8 @@ get started with contributions](https://ceph.io/en/developers/contribute/).
 
 **Difficulty:** Intermediate
 
+**Project Hours:** 350
+
 **Skills needed:** Python, Docker, FastAPI.
 
 **Subcomponent of Ceph:** Teuthology
@@ -64,6 +66,8 @@ Applicant should comfortable with creating simple API end-points and writting un
 
 **Difficulty:** Intermediate
 
+**Project Hours:** 175
+
 **Skills needed:** C++
 
 **Subcomponent of Ceph:** RGW
@@ -90,6 +94,8 @@ To learn how to get started visit this [link](https://gist.github.com/yuvalif/71
 **Mentor email(s):** akupczyk@ibm.com
 
 **Difficulty:** Intermediate
+
+**Project Hours:** 350
 
 **Skills needed:** C++, Random Distributions, Data Presentation
 
