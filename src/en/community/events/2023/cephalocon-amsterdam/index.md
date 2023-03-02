@@ -8,6 +8,11 @@ image: "/assets/bitmaps/events/2023/cephalocon/banner.png"
 tags:
   - cephalocon
 sponsors:
+  - label: Silver
+    list:
+      - name: Canonical
+        logo: "/assets/bitmaps/logo-ubuntu.png"
+        website: "https://ubuntu.com"
   - label: Startup sponsors
     list:
       - name: Koor

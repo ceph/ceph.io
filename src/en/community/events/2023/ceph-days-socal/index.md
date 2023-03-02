@@ -75,18 +75,9 @@ Ceph Foundation / IBM</center>
   <tr>
    <td>9:35
    </td>
-   <td><strong>Introduction to CephFS</strong>
-<p>
-Ceph supports object, block and file interfaces scalably. This talk presents the overall design of CephFS, as well as recent feature developments the team has put together.
+   <td><strong>TBD</strong>
    </td>
    <td>
-<center>
-<img src="/assets/bitmaps/events/2023/ceph-days-socal/gregory-farnum.jpg" width="" alt="Gregory Farnum">
-
-<p>
-<strong>Gregory Farnum</strong>
-<p>
-IBM</center>
    </td>
   </tr>
   <tr>
@@ -122,7 +113,7 @@ On a long enough timeline, every system will eventually go down. This then creat
 <img src="/assets/bitmaps/events/2023/ceph-days-socal/eugene-wu.jpg" width="" alt="Eugene Wu">
 
 <p>
-<strong>Eugene Wu</strong>
+<strong>Eugene Wu & John Otto</strong>
 <p>
 Neuralink</center>
    </td>
@@ -156,20 +147,24 @@ IBM</center>
   <tr>
    <td>1:00 PM
    </td>
-   <td><strong>Integrating third party software in Ceph Testing</strong>
-<p>
-In this talk we discuss how third party software modules are integrated with ceph components. The main aim to do this is to test every component as a group. This helps us find problems when different software modules interact with each other. We’d discuss how this testing is done in Ceph using its test automation framework (i.e) Teuthology. This includes how a task is written in order to get it tested in the environment.
-   </td>
    <td>
-
-<img src="/assets/bitmaps/events/2023/ceph-days-socal/kalpesh-pandya.jpg" width="" alt="Kalpesh Pandya">
-
+<strong>Cultural Challenges for OpenSource in LATAM</strong>
 <p>
-<center><strong>Kalpesh Pandya</strong>
-<p>
-IBM</center>
+‘Ceph’, and basically any OpenSource product, is still a “maybe or nah” in
+LATAM. It’s easier to pay millions for commercial products, where the vendor
+takes full responsibility from the delivery to the support. It’s also easier to
+blame the success or failure on the vendor and the quality of the product.
+LATAM still has a cultural gap regarding OpenSource. A lack of ownership,
+taking the risk of developing and retaining the required talent in-house to
+make things work. A challenge that can be tackled with a more specific business
+analysis of companies in LATAM, including an organizational cultural
+transition, to demonstrate the benefits of Opensource in the mid-term, putting
+them more in control and accelerating their digital transformation.
    </td>
-  </tr>
+   <td><center><strong>Alvaro Soto</strong>
+<p>
+Red Hat</center>
+   </td> 
   <tr>
    <td>1:30
    </td>
