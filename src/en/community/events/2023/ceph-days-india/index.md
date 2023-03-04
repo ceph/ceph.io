@@ -12,7 +12,7 @@ tags:
 ### Bringing Ceph to India
 
 <a class="button" href="https://survey.zohopublic.com/zs/5KBU94">Submit Your CFP</a>
-<a class="button" href="#">Registration coming soon!</a>
+<a class="button" href="https://ceph-days-india-2023.eventbrite.com">Register</a>
 
 A full-day event dedicated to sharing Ceph’s transformative power and fostering
 the vibrant Ceph community with the community in India!

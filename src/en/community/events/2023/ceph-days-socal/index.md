@@ -75,9 +75,9 @@ Ceph Foundation / IBM</center>
   <tr>
    <td>9:35
    </td>
-   <td><strong>TBD</strong>
+   <td><strong>Introduction to Ceph</strong>
    </td>
-   <td>
+   <td><center><strong>Federico Lucifredi</strong><br />IBM</center>
    </td>
   </tr>
   <tr>
@@ -182,9 +182,18 @@ Sony Interactive Entertainment</center>
   <tr>
    <td>2:00
    </td>
-   <td>TBA
-   </td>
    <td>
+<strong>100 Years of Sports on Ceph</strong>
+<p>
+Working together with a major American sports league, we built a multi-site 40
+PB active archive housing over 100 years of game video and audio assets by
+using Ceph as the foundational storage technology. Along the way, we learned many
+lessons about architecting, deploying, and operationalizing Ceph from the
+vantage point of a large, modern, and rapidly growing media company. We would
+like to share our experience and learnings with the community to help others
+traveling a similar road.
+   </td>
+   <td><center><strong>Adam Waters</strong><br />Platina</center>
    </td>
   </tr>
   <tr>
