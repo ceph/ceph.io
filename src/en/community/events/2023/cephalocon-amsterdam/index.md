@@ -13,6 +13,9 @@ sponsors:
       - name: Canonical
         logo: "/assets/bitmaps/logo-ubuntu.png"
         website: "https://ubuntu.com"
+      - name: Clyso
+        logo: "/assets/bitmaps/logo-clyso.png"
+        website: "https://clyso.com"
   - label: Startup sponsors
     list:
       - name: Koor
