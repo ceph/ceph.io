@@ -5,6 +5,12 @@ end: 2023-03-09
 location: 300 E Green St Pasadena, CA 91101
 venue: Co-located with SCALE, Pasadena Convention Center
 image: "/assets/bitmaps/ceph-days.png"
+sponsors:
+  - label: Platinum
+    list:
+      - name: Sony
+        logo: "/assets/bitmaps/logo-sony.png"
+        website: "https://sony.com"
 tags:
   - ceph days
 ---
