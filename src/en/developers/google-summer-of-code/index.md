@@ -96,35 +96,6 @@ In a process of assessing applicant, one will:
 
 <hr class="hr">
 
-## Making Teuthology Friendly
-
-**Mentor name(s):** Aishwarya Mathuria, Zack Cerza, Kamoltat Sirivadhna
-
-**Mentor email(s):** amathuri@redhat.com, zcerza@redhat.com, ksirivad@redhat.com
-
-**Difficulty:** Intermediate
-
-**Project Hours:** 350
-
-**Skills needed:** Python, Docker, FastAPI.
-
-**Subcomponent of Ceph:** Teuthology
-
-**Description of project:**
-[Teuthology](https://github.com/ceph/teuthology/tree/master/docs) is Ceph's upstream integration test framework written in Python. It currently relies
-heavily on users sshing into a teuthology server and execute commands to schedule, kill and update jobs.
-This workflow requires a learning curve in memorizing and understanding all sorts of variables that makes up
-a teuthology command. We are positive that we can improve this by creating API endpoints along with user-friendly UIs on Pulpito (Teuthology Frontend)
-such that users can easily schedule and kill jobs through Pulpito.
-
-**Standup/weekly call mentee could attend?:** Teuthology meeting
-
-**Steps to evaluate an applicant for the project:**
-
-Applicant should comfortable with creating simple API end-points and writting unit-tests.
-
-<hr class="hr">
-
 ## Gotta Catch 'Em All
 
 **Mentor name(s):** Yuval Lifshitz
