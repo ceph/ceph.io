@@ -8,8 +8,16 @@ image: "/assets/bitmaps/events/2023/cephalocon/banner.png"
 tags:
   - cephalocon
 sponsors:
+  - label: Platinum
+    list:
+      - name: IBM
+        logo: "/assets/bitmaps/logo-ibm.png"
+        website: "https://ibm.com"
   - label: Silver
     list:
+      - name: 42on
+        logo: "/assets/bitmaps/logo-42on.png"
+        website: "https://42on.com"
       - name: Canonical
         logo: "/assets/bitmaps/logo-ubuntu.png"
         website: "https://ubuntu.com"
@@ -30,9 +38,6 @@ reliability, and scalability. Join new and existing community members from
 around the world to learn more about Ceph and the future of the project from
 the developers writing the code and the operators deploying it at scale.
 
-<a class="button"
-href="https://events.linuxfoundation.org/cephalocon/program/cfp/">Call For
-Proposals</a>
 <a class="button"
 href="https://events.linuxfoundation.org/cephalocon/register/">Register</a>
 <a class="button"
