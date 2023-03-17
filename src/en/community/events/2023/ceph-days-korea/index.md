@@ -5,6 +5,12 @@ end: 2023-06-14
 location: Seoul, South Korea Room Sae-gae-ro, AT Center, 27, Gangnam-daero, Seocho-gu
 venue: AT 센터
 image: "/assets/bitmaps/ceph-days.png"
+sponsors:
+   - label: Platinum
+     list:
+       - name: Samsung Electronics
+         logo: "/assets/bitmaps/logo-samsung.png"
+         website: "https://semiconductor.samsung.com/"
 tags:
   - ceph days
 ---
@@ -14,7 +20,7 @@ tags:
 <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLScJqfS1zIq5K1wTrIsut9dyzDrY951YfE_BdxMGOsK6z4NHyw/viewform">Submit Your Proposal</a>
 <a class="button"
 href="/assets/bitmaps/events/2023/ceph-days-korea/sponsorship-prospectus.pdf">Sponorship Prospectus</a>
-<a class="button" href="#">Registeration Coming Soon</a>
+<a class="button" href="https://festa.io/events/3215">Register</a>
 
 A full-day event dedicated to sharing Ceph’s transformative power and fostering
 the vibrant Ceph community in South Korea.
