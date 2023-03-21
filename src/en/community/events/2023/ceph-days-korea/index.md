@@ -2,15 +2,27 @@
 title: Ceph Days Korea
 date: 2023-06-14
 end: 2023-06-14
-location: Seoul, South Korea Room Sae-gae-ro, AT Center, 27, Gangnam-daero, Seocho-gu
-venue: AT 센터
+location: aT Center, 27 Gangnam-daero, Seocho-gu, Seoul, South Korea
+venue: aT 센터
 image: "/assets/bitmaps/ceph-days.png"
 sponsors:
-   - label: Platinum
-     list:
-       - name: Samsung Electronics
-         logo: "/assets/bitmaps/logo-samsung.png"
-         website: "https://semiconductor.samsung.com/"
+  - label: Platinum
+    list:
+      - name: Samsung Electronics
+        logo: "/assets/bitmaps/logo-samsung.png"
+        website: "https://semiconductor.samsung.com/"
+      - name: Seagate
+        logo: "/assets/bitmaps/logo-seagate.png"
+        website: "https://seagate.com/kr/ko/"
+      - name: IBM
+        logo: "/assets/bitmaps/logo-ibm.png"
+        website: "https://ibm.com/kr-ko/"
+  - label: Gold
+    list:
+      - name: OpenInfra Community Korea
+        logo: "/assets/bitmaps/logo-openinfra-community-korea.png"
+        website: https://facebook.com/openinfrakorea"
+
 tags:
   - ceph days
 ---
