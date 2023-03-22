@@ -28,7 +28,7 @@ It should be noted that pushing down operations close to data is not an easy “
 It makes it difficult to execute single-query on top of many random pieces. Moreover, the type of these objects could be binary, in some cases.
 
 ## What is s3select capable of?
-Ceph S3 select is an SQL-like engine. its properties can be reviewed [here](https://docs.ceph.com/en/latest/radosgw/s3select/#).
+Ceph S3 select is an SQL-like engine. Its properties can be reviewed [here](https://docs.ceph.com/en/latest/radosgw/s3select/#).
 
 S3select does not turn S3 storage into a database, but it greatly improves the efficiency of SQL processing.
 
@@ -41,47 +41,59 @@ Since S3select is embedded into the S3 system, there are no redundant copies of 
 
 Moreover, the s3select system is capable of processing CSV, JSON, and Parquet format objects.
 
-The same engine is processing these different object types.
+The different data-source readers are decouple from the SQL engine, thus, the same SQL engine is processing these different object types.
+It also enables faster introduction of other readers (ORC for one example).
 
 ## Why use SQL?
 the question to ask is,    __what is needed for machine learning?__
 
-SQL is needed for machine learning since in practice this is the language for querying data. 
-
+SQL serves as the querying language for machine learning since it is the standard language for accessing and manipulating data. 
 It should be noted that SQL is a domain-specific language (more than 40 years!) and was designed initially for manipulating data.
+In a machine learning workflow, data is the primary source and its accuracy and relevance are critical for successful modeling and pattern detection. 
+Thus, it is essential to ensure that data is properly formatted for use by machine learning algorithms. 
 
-In a machine learning workflow, the data is the main thing; it is the source.
+Further more, in a subsequent paragraph, there is a discussion of an analytical tool called Trino that can perform pushdown operations on SQL statements, enabling them to be executed as S3-select requests. 
+This minimizes significantly network consumption and enhances overall performance.
 
-The more relevant and accurate the data you have, the better your modeling and pattern detection will be.
-
-You should keep in mind that the data must be formatted so that it can be used by machine learning algorithms for improved pattern detection.
-
-All of this makes the SQL the starting point for machine learning.
-
-Adding the capability to read and process different and common data sources such as CSV,JSON and Parquet, 
-makes the s3select a powerful tool for machine learning.
+Given its ability to read and process common data sources such as CSV, JSON, and Parquet, S3Select is a valuable tool for machine learning purposes.
 
 ## Why s3 storage? 
-S3-storage is reliable, efficient, cheap, and already contains [trillions of objects](https://www.zdnet.com/article/aws-s3-storage-now-holds-over-100-trillion-objects/). It contains many CSV, JSON, and Parquet objects, and these objects contain a huge amount of data to analyze.
+S3-storage is reliable, efficient, cheap, scaleable, and already contains [trillions of objects](https://www.zdnet.com/article/aws-s3-storage-now-holds-over-100-trillion-objects/). It contains many CSV, JSON, and Parquet objects, and these objects contain a huge amount of data to analyze.
 
-An ETL may convert these objects into an efficient format such as Parquet and later run queries on these converted objects.
+A typical Ceph user may accumulate a significant number of objects over time. 
+These objects contain vast amounts of both structured and unstructured data that are stored in a "cold" state. 
+Despite the potential value of this data, extracting it from storage can be costly in terms of both network and CPU resources.
 
-But it comes with an expensive price, getting all of these objects.
-
-S3select engine that resides on s3-storage can do these jobs for many use cases, saving time and resources.
-
-These semi-structured data reside on S3 storage as “cold” data and as mentioned in huge numbers, with S3select, this “locked” data can be accessed efficiently. 
+Using s3select may reduce that cost dramatically.
 
 ## Parquet vs CSV and JSON
-Upon processing CSV or JSON objects, the whole object must be scanned. There is no way to fetch only the relevant columns and rows.
+![parquet illustration](images/parquet_structure.png)
 
-With the Parquet object, it's different. The engine analyzes the query, and fetches only the relevant columns, using the s3-range-request and the apache-parquet-reader.
+Apache Parquet is a columnar storage file format designed for efficient data storage and processing in big data environments.
+Parquet stores data in columns rather than rows. 
+This means that data of the same data type is stored together, making it easier to compress and query the data. 
+Each column is divided into row groups, which are further divided into pages. 
+The pages are compressed using a compression algorithm to save storage space.
 
-In that way, it reduces the IOPS on the server side.
+Upon processing CSV or JSON objects, the whole object must be scanned. 
+There is no way to fetch only the relevant columns and rows.
 
-And finally … 
+With the Parquet object, it's different. 
+The engine analyzes the query, and fetches only the relevant columns, using the s3-range-request and the apache-parquet-reader.
 
-S3select Repo is growing, and we keep adding new features, and planning new ones.
+In that way, it reduces the amount of read-operations on the server side.
 
-We will be happy to hear your comments and ideas.
+## Integrating Trino with Ceph s3select
+
+Recently we exploring the Trino application and the advantages of integrating it with Ceph/s3select.
+
+The advantages of Trino are quite obvious. 
+
+It's a full SQL engine.
+Its engine is able to push down s3select requests, this point is worth further explanation, upon issuing an SQL statement, the Trino engine identified parts of the statement that will be cost-effective to run on the server side.in short, the Trino uses the Ceph/s3select for its optimization rules.
+
+Trino is able to split the original Object into several equal parts, run s3select requests per each part, and merge the results of each request. 
+This boosts query performance significantly.
+
+Recent publications of AWS/Trino suggest that running queries using Trino with Amazon S3 Select on Amazon EMR, increases performance up to 9x.
 
