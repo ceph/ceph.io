@@ -8,6 +8,9 @@ image: "/assets/bitmaps/ceph-days.png"
 sponsors:
   - label: Platinum
     list:
+      - name: IBM
+        logo: "/assets/bitmaps/logo-ibm.png"
+        website: "https://ibm.com"
       - name: Samsung Electronics
         logo: "/assets/bitmaps/logo-samsung.png"
         website: "https://semiconductor.samsung.com/"
@@ -36,8 +39,6 @@ href="/assets/bitmaps/events/2023/ceph-days-korea/sponsorship-prospectus.pdf">Sp
 
 A full-day event dedicated to sharing Ceph’s transformative power and fostering
 the vibrant Ceph community in South Korea.
-
-**Registration coming soon!**
 
 The expert Ceph team, Ceph’s customers and partners, and the Ceph community
 join forces to discuss things like the status of the Ceph project, recent Ceph
