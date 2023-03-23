@@ -15,6 +15,45 @@ tags:
   - ceph days
 ---
 
+## Bloomberg: Fostering a vibrant Ceph community at Ceph Days NYC
+
+On Tuesday, February 21, 2023, Bloomberg hosted Ceph Days NYC. This day-long
+event was held at the Bloomberg Park Avenue office in New York City, and was
+dedicated to sharing knowledge about Ceph. Roughly fifty members of the open
+source Ceph community came together for a dozen presentations related to Ceph’s
+roadmap, tools, and use cases.
+
+Speakers included operators, developers, and researchers from Canonical,
+SoftIron, Bloomberg, IBM, Clyso, and Platina.
+
+Frank Yang of Platina shared the lessons that he learned when he worked in
+partnership with a major American sports league, using Ceph to archive a large
+and irreplaceable cache of videotaped live event data that had been compiled
+over decades.
+
+Federico Lucifredi and Sage Mctaggart of the Ceph Storage team at IBM discussed
+and explained various methods of hardening Ceph storage.
+
+Bloomberg was especially pleased to host Dan van der Ster, who is CERN’s Data
+and Architecture lead and a member of the team that won the Nobel Prize for
+discovering the Higgs boson. During his talk, van der Ster reviewed the past
+decade of his team’s use of Ceph at CERN. He provided a wide-ranging account of
+the challenges of integrating Ceph into research lab hardware and working
+through bugs in CERN’s compression library, and he recounted the story of one
+particularly harrowing eight-hour day when he learned the importance of
+spreading data across multiple Ceph clusters.
+
+Finally, event attendees joined a networking reception dedicated to fostering
+the Ceph community.
+
+“Running stuff at scale is a complex task,” van der Ster said at the conclusion
+of his talk, “and it’s important to collaborate with other organizations and
+individuals who have experience.” We couldn’t agree more.
+
+We look forward to upcoming opportunities to bring together this varied and
+dedicated group of Ceph users to learn from each other and to discuss and shape
+the future of this open source project.
+
 ## Bringing Ceph to NYC!
 
 Come find out why leading enterprises are adopting Ceph, why Ceph is the lowest cost per gig storage solution, and how easy it is to deploy your own Ceph cluster!
