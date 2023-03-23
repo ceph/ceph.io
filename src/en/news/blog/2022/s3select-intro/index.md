@@ -34,15 +34,13 @@ S3select does not turn S3 storage into a database, but it greatly improves the e
 
 S3select property is embedded into the GetObject module, which makes it highly efficient for the push-down operation.
 
-Upon an SQL query being push-down, the object is fetched (the same as with the GetObject request), and each fragment of the object is processed by the s3select module.
+Upon an SQL query being pushed-down, the object is fetched (the same as with the GetObject request), and each fragment of the object is processed by the s3select module.
 (in the case of Parquet, the object is not fetched. It will be explained later).
 
-Since S3select is embedded into the S3 system, there are no redundant copies of bytes, the object is processed immediately, and the results send back to the client.
+Since S3select is embedded into the S3 system, there are no redundant copies of bytes, the object is processed immediately, and the results are sent back to the client.
 
-Moreover, the s3select system is capable of processing CSV, JSON, and Parquet format objects.
-
-The different data-source readers are decouple from the SQL engine, thus, the same SQL engine is processing these different object types.
-It also enables faster introduction of other readers (ORC for one example).
+The different data-source readers for CSV, JSON, and Parquet are decouple from the SQL engine, thus, the same SQL engine is processing these different object types.
+It enables faster introduction of other readers (ORC for one example).
 
 ## Why use SQL?
 the question to ask is,    __what is needed for machine learning?__
@@ -67,6 +65,8 @@ These objects contain vast amounts of both structured and unstructured data that
 Despite the potential value of this data, extracting it from storage can be costly in terms of both network and CPU resources.
 
 Using s3select may reduce that cost dramatically.
+
+Our goal is to turn CEPH object storage more attractive for analytical operations, Not just for storing data.
 
 ## Parquet vs CSV and JSON
 ![parquet illustration](images/parquet_structure.png)
