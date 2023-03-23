@@ -47,8 +47,10 @@ It also enables faster introduction of other readers (ORC for one example).
 ## Why use SQL?
 the question to ask is,    __what is needed for machine learning?__
 
-SQL serves as the querying language for machine learning since it is the standard language for accessing and manipulating data. 
+SQL serves as the querying language for machine learning since it is the standard language for accessing and manipulating data.
+
 It should be noted that SQL is a domain-specific language (more than 40 years!) and was designed initially for manipulating data.
+
 In a machine learning workflow, data is the primary source and its accuracy and relevance are critical for successful modeling and pattern detection. 
 Thus, it is essential to ensure that data is properly formatted for use by machine learning algorithms. 
 
@@ -71,7 +73,9 @@ Using s3select may reduce that cost dramatically.
 
 Apache Parquet is a columnar storage file format designed for efficient data storage and processing in big data environments.
 Parquet stores data in columns rather than rows. 
+
 This means that data of the same data type is stored together, making it easier to compress and query the data. 
+
 Each column is divided into row groups, which are further divided into pages. 
 The pages are compressed using a compression algorithm to save storage space.
 
@@ -85,15 +89,17 @@ In that way, it reduces the amount of read-operations on the server side.
 
 ## Integrating Trino with Ceph s3select
 
-Recently we exploring the Trino application and the advantages of integrating it with Ceph/s3select.
+Recently we have been exploring the Trino application and the advantages of integrating it with Ceph/s3select.
 
 The advantages of Trino are quite obvious. 
 
-It's a full SQL engine.
-Its engine is able to push down s3select requests, this point is worth further explanation, upon issuing an SQL statement, the Trino engine identified parts of the statement that will be cost-effective to run on the server side.in short, the Trino uses the Ceph/s3select for its optimization rules.
+It's a complete SQL engine.
 
-Trino is able to split the original Object into several equal parts, run s3select requests per each part, and merge the results of each request. 
-This boosts query performance significantly.
+Its engine is able to push down s3select requests; this point is worth further explanation, upon issuing an SQL statement, the Trino engine identified parts of the SQL statement that will be cost-effective to run on the server side.
 
-Recent publications of AWS/Trino suggest that running queries using Trino with Amazon S3 Select on Amazon EMR, increases performance up to 9x.
+In essence, Trino utilizes the optimization rules of Ceph/s3select to enhance its performance. 
+
+By leveraging Ceph's scalability, Trino has the ability to divide the original object into multiple equal parts, execute s3select requests for each part, and merge the results. This approach can significantly enhance query performance.
+
+Recent [publications](https://aws.amazon.com/blogs/storage/run-queries-up-to-9x-faster-using-trino-with-amazon-s3-select-on-amazon-emr/) of AWS/Trino suggest that running queries using Trino with Amazon S3 Select on Amazon EMR, increases performance up to 9x.
 
