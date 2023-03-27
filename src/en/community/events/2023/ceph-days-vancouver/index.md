@@ -5,6 +5,11 @@ end: 2023-06-14
 location: Vancouver Convention Centre
 venue: 1055 Canada Pl, Vancouver, BC V6C 0C3, Canada
 image: "/assets/bitmaps/ceph-days.png"
+sponsors:
+  - label: Platinum
+    list:
+      - name: OSNEXUS
+        logo: /assests/bitmaps/logo-osneuxus.png
 tags:
   - ceph days
 ---
