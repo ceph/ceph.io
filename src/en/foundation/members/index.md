@@ -20,7 +20,6 @@ order: 3
   <a href="http://www.intel.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-intel.png" /></a>
   <a href="https://www.ovh.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-ovh.png" /></a>
   <a href="https://samsung.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-samsung.png" /></a>
-  <a href="https://softiron.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-softiron.png" /></a>
   <a href="https://www.wdc.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-western-digital.png" /></a>
   <a href="https://www.zte.com.cn/global/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-zte.png" /></a>
 </div>
