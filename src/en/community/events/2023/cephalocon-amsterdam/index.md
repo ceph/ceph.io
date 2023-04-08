@@ -10,9 +10,13 @@ tags:
 sponsors:
   - label: Platinum
     list:
+      - name: Bloomberg
+        logo: "/assets/bitmaps/logo-bloomberg.png"
+        website: "https://bloomberg.com"
       - name: IBM
         logo: "/assets/bitmaps/logo-ibm.png"
         website: "https://ibm.com"
+
   - label: Silver
     list:
       - name: 42on
