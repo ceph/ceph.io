@@ -909,6 +909,8 @@ This is the sixth backport release in the Quincy series. We recommend all users 
 
 - osd: shut down the MgrClient before osd\_fast\_shutdown ([pr#49881](https://github.com/ceph/ceph/pull/49881), Laura Flores, Brad Hubbard)
 
+- osd/scrub: use the actual active set when requesting replicas… ([pr#48543](https://github.com/ceph/ceph/pull/48543), Ronen Friedman)
+
 - PendingReleaseNotes: document online and offline trimming of PG Log's… ([pr#48019](https://github.com/ceph/ceph/pull/48019), Radoslaw Zarzynski)
 
 - pybind/mgr/autoscaler: Donot show NEW PG\_NUM value if autoscaler is not on ([pr#47925](https://github.com/ceph/ceph/pull/47925), Prashant D)
@@ -962,8 +964,6 @@ This is the sixth backport release in the Quincy series. We recommend all users 
 - qa: switch to https protocol for repos' server ([pr#49471](https://github.com/ceph/ceph/pull/49471), Xiubo Li)
 
 - qa: wait for scrub to finish ([pr#49459](https://github.com/ceph/ceph/pull/49459), Milind Changire)
-
-- Quincy: osd/scrub: use the actual active set when requesting replicas… ([pr#48543](https://github.com/ceph/ceph/pull/48543), Ronen Friedman)
 
 - rbd-mirror: add information about the last snapshot sync to image status ([pr#50266](https://github.com/ceph/ceph/pull/50266), Divyansh Kamboj)
 
