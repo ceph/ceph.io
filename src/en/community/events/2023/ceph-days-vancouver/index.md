@@ -9,7 +9,7 @@ sponsors:
   - label: Platinum
     list:
       - name: OSNEXUS
-        logo: /assests/bitmaps/logo-osneuxus.png
+        logo: /assets/bitmaps/logo-osneuxus.png
 tags:
   - ceph days
 ---
