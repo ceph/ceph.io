@@ -70,9 +70,7 @@ IBM India Pvt. Ltd.
 <p>
 DPU will start running CEPH client, Crush and librbd libraries to virtualize the rbd, and present the rbd to host as a PCIe connected NVMe disk like NVMeOF. All the read and write requests to the cluster are converted from pcie to rados requests. A special daemon runs on the cores and becomes a client to the ceph cluster. It can fetch the cluster maps, runs crush. It can understand the failures and redirects the TCP connections to new OSDs to fetch data and load balances the traffic well.
    </td>
-   <td><strong>Varada Raja &</strong>
-<p>
-<strong>Kumar Kari</strong>
+   <td><strong>Varada Raja Kumar Kari</strong>
 <p>
 AMD India Pvt Ltd
    </td>
@@ -178,7 +176,13 @@ Koor Technologies Inc.
   <tr>
    <td>2:15
    </td>
-   <td><strong>Lightning talk</strong>
+   <td><strong>IBM Ceph and Storage Insights integration strategy and plan</strong>
+   <p>
+   Storage Insights integration will help multi-cluster monitoring for multiple Ceph clusters. This will provide a single tool for monitoring high level cluster metrics like cluster health, fullness and other identified metrics with no drill down and click through. Most Ceph customer have more than one cluster deployed and multi-cluster monitoring has been a gap for a long time in Ceph management tooling. So SI integration will help to fill that gap. Storage Insights will be integrated into the call-home workflow of IBM Ceph. IBM Ceph also will be integrated into the alerting workflow of Storage Insights. This near real-time alerting capability in SI will be a significant value add to Ceph.
+   </td>
+   <td><strong>Vijay Patidar</strong>
+   <p>
+   IBM
    </td>
    <td>
    </td>
@@ -186,11 +190,11 @@ Koor Technologies Inc.
   <tr>
    <td>2:35
    </td>
-   <td><strong>Monitoring and Centralized </strong>Logging in Ceph
+   <td><strong>Monitoring and Centralized Logging in Ceph</strong>
 <p>
 The objective of the talk is to highlight the various aspects and importance of two of the pillars of Observability: Metrics & Logs in Ceph Storage cluster. We will talk about the current architecture of metrics collection and logging, technology stack used and how you can easily deploy them in Ceph. This talk will also highlight the various aspects and importance of Centralized Logging, which can be very useful to view and manage the logs in a Dashboard view. Including a short demo at end.
    </td>
-   <td><strong>Avan Thakkar</strong>
+   <td><strong>Avan Thakkar & Aashish Sharma</strong>
 <p>
 IBM
    </td>
@@ -250,7 +254,7 @@ IBM
 <p>
 Teuthology is a test framework for Ceph which is used to run vast majority of Ceph tests. In the presentation we will talk about it's infrastructure, installation and how to get started with it.
    </td>
-   <td><strong>Subhashree Mishra</strong>
+   <td><strong>Subhashree Mishra & Yash Ajgaonkar</strong>
 <p>
 Red Hat
    </td>
