@@ -1,6 +1,6 @@
 ---
-title: "v16.2.11 Pacific released"
-date: "2023-01-25"
+title: "v16.2.12 Pacific released"
+date: "2023-04-14"
 author: "yuriw"
 tags:
   - "release"
