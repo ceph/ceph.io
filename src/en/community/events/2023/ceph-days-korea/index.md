@@ -8,9 +8,6 @@ image: "/assets/bitmaps/ceph-days.png"
 sponsors:
   - label: Platinum
     list:
-      - name: IBM
-        logo: "/assets/bitmaps/logo-ibm.png"
-        website: "https://ibm.com"
       - name: Samsung Electronics
         logo: "/assets/bitmaps/logo-samsung.png"
         website: "https://semiconductor.samsung.com/"
@@ -20,11 +17,6 @@ sponsors:
       - name: IBM
         logo: "/assets/bitmaps/logo-ibm.png"
         website: "https://ibm.com/kr-ko/"
-  - label: Gold
-    list:
-      - name: OpenInfra Community Korea
-        logo: "/assets/bitmaps/logo-openinfra-community-korea.png"
-        website: https://facebook.com/openinfrakorea"
 
 tags:
   - ceph days
