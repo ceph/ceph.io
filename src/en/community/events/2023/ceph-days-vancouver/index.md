@@ -1,7 +1,7 @@
 ---
 title: Ceph Days Vancouver
-date: 2023-06-14
-end: 2023-06-14
+date: 2023-06-15
+end: 2023-06-15
 location: Vancouver Convention Centre
 venue: 1055 Canada Pl, Vancouver, BC V6C 0C3, Canada
 image: "/assets/bitmaps/ceph-days.png"
@@ -17,7 +17,7 @@ tags:
 ### Bringing Ceph to Vancouver
 
 <a class="button" href="https://survey.zohopublic.com/zs/TVCCCQ">Submit Your CFP</a>
-<a class="button" href="https://ceph-days-vancouver-2023.eventbrite.com">Register</a>
+<a class="button" href="https://openinfrafoundation.formstack.com/forms/ceph_day_at_openinfra_summit_vancouver">Register</a>
 
 A full-day event dedicated to sharing Ceph’s transformative power and fostering
 the vibrant Ceph community with the community in Vancouver, co-located with the
@@ -36,7 +36,7 @@ The CFP is now open and registration is limited!
 - **CFP Closes:** 2023-05-03
 - **Speakers receive confirmation of acceptance:** 2023-05-05
 - **Schedule Announcement:** 2023-05-09
-- **Event Date:** 2023-06-14
+- **Event Date:** 2023-06-15
 
 Join the Ceph announcement list, or follow Ceph on social media for Ceph event
 updates:
