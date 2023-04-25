@@ -17,7 +17,7 @@ tags:
 ### Bringing Ceph to Vancouver
 
 <a class="button" href="https://survey.zohopublic.com/zs/TVCCCQ">Submit Your CFP</a>
-<a class="button" href="https://ceph-days-vancouver-2023.eventbrite.com">Register</a>
+<a class="button" href="https://openinfrafoundation.formstack.com/forms/ceph_day_at_openinfra_summit_vancouver">Register</a>
 
 A full-day event dedicated to sharing Ceph’s transformative power and fostering
 the vibrant Ceph community with the community in Vancouver, co-located with the
