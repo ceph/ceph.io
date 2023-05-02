@@ -33,9 +33,9 @@ The CFP is now open and registration is limited!
 ## Important Dates
 
 - **CFP Opens:** 2023-03-27
-- **CFP Closes:** 2023-05-03
-- **Speakers receive confirmation of acceptance:** 2023-05-05
-- **Schedule Announcement:** 2023-05-09
+- **CFP Closes:** 2023-05-17
+- **Speakers receive confirmation of acceptance:** 2023-05-19
+- **Schedule Announcement:** 2023-05-22
 - **Event Date:** 2023-06-15
 
 Join the Ceph announcement list, or follow Ceph on social media for Ceph event
