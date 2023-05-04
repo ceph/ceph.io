@@ -11,8 +11,7 @@ tags:
 
 ### Bringing Ceph to India
 
-<a class="button" href="https://survey.zohopublic.com/zs/5KBU94">Submit Your CFP</a>
-<a class="button" href="https://ceph-days-india-2023.eventbrite.com">Register</a>
+<a class="button" href="#">Registration SOLD OUT</a>
 
 A full-day event dedicated to sharing Ceph’s transformative power and fostering
 the vibrant Ceph community with the community in India!
@@ -49,6 +48,8 @@ The CFP is now open and registration is limited!
    <td><strong>Keynote: Kickoff with Community updates</strong>
    </td>
    <td>
+<center><img src="/assets/bitmaps/events/2023/ceph-days-india/gaurav-sitlani.jpg"><br /><strong>Gaurav Sitlani</strong><br />
+   IBM</center>
    </td>
   </tr>
   <tr>
@@ -58,9 +59,9 @@ The CFP is now open and registration is limited!
 <p>
 This talk would go into detail on how Ceph File System works under the hood. We start by explaining about CephFS, how it has an edge over other distributed file systems. We move on to uncover the on-disk format explaining in detail about how and where (all) CephFS stores its metadata and user data. Further, we introduce the concept of snapshots. The on-disk format is essential to understanding this. Lastly, we lightly touch upon the concept of "caps" (capabilities).
    </td>
-   <td><strong>Venky Shankar</strong>
+   <td><center><img src="/assets/bitmaps/events/2023/ceph-days-india/venky-shankar.jpg"><strong>Venky Shankar</strong>
 <p>
-IBM India Pvt. Ltd.
+IBM India Pvt. Ltd.</center>
    </td>
   </tr>
   <tr>
@@ -84,9 +85,9 @@ AMD India Pvt Ltd
 <p>
 Therefore, to automate and manage simple tasks across multiple clusters or multiple on a single cluster, we can use Ansible to perform these tasks at scale by using cephadm-ansible instead of cephadm."
    </td>
-   <td><strong>Kritik Sachdeva</strong>
+   <td><center><img src="/assets/bitmaps/events/2023/ceph-days-india/kritik-sachdeva.jpg"><strong>Kritik Sachdeva</strong>
 <p>
-IBM
+IBM</center>
    </td>
   </tr>
   <tr>
@@ -152,9 +153,9 @@ is being debugged, “making Ceph more transparent” in identifying abnormaliti
 <p>
 and troubleshooting performance issues.
    </td>
-   <td><strong>Deepika Upadhyay</strong>
+   <td><center><img src="/assets/bitmaps/events/2023/ceph-days-india/deepika-upadhyay.jpg"><strong>Deepika Upadhyay</strong>
 <p>
-Koor Technologies Inc.
+Koor Technologies Inc.</center>
    </td>
   </tr>
   <tr>
@@ -194,7 +195,7 @@ Koor Technologies Inc.
 <p>
 The objective of the talk is to highlight the various aspects and importance of two of the pillars of Observability: Metrics & Logs in Ceph Storage cluster. We will talk about the current architecture of metrics collection and logging, technology stack used and how you can easily deploy them in Ceph. This talk will also highlight the various aspects and importance of Centralized Logging, which can be very useful to view and manage the logs in a Dashboard view. Including a short demo at end.
    </td>
-   <td><strong>Avan Thakkar & Aashish Sharma</strong>
+   <td><center><img src="/assets/bitmaps/events/2023/ceph-days-india/avan-thakkar.jpg"><strong>Avan Thakkar & Aashish Sharma</strong>
 <p>
 IBM
    </td>
@@ -222,9 +223,9 @@ An external cluster is a Ceph configuration that is managed outside of the local
 <p>
 This lightning talk will give a quick overview of the Rook external cluster, which includes its deployment, demo, and how the latest ceph features can be used with this.
    </td>
-   <td><strong>Parth Arora</strong>
+   <td><center><img src="/assets/bitmaps/events/2023/ceph-days-india/parth-arora.jpg"><strong>Parth Arora</strong>
 <p>
-IBM
+IBM</center>
    </td>
   </tr>
   <tr>
