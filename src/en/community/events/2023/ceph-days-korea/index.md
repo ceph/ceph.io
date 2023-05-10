@@ -24,9 +24,6 @@ tags:
 
 ### Save the Date - Ceph is coming to Korea!
 
-<a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLScJqfS1zIq5K1wTrIsut9dyzDrY951YfE_BdxMGOsK6z4NHyw/viewform">Submit Your Proposal</a>
-<a class="button"
-href="/assets/bitmaps/events/2023/ceph-days-korea/sponsorship-prospectus.pdf">Sponorship Prospectus</a>
 <a class="button" href="https://festa.io/events/3215">Register</a>
 
 A full-day event dedicated to sharing Ceph’s transformative power and fostering
@@ -45,6 +42,131 @@ a networking reception, to foster more Ceph learning.
 - Schedule Announcement: 2023-05-16
 - Sponsorship Deadline: 2023-04-28
 - Event Date: 2023-06-14
+
+## Schedule
+
+<table>
+  <tr>
+   <td width="10%"><strong>Time</strong>
+   </td>
+   <td width="50%"><strong>Abstract</strong>
+   </td>
+   <td width="40%"><strong>Speaker</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>9:00
+   </td>
+   <td><strong>Opening</strong>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>9:10
+   </td>
+   <td><strong>Keynote: TBD</strong>
+   </td>
+   <td><center>Samsung Electronics</center>
+   </td>
+  </tr>
+  <tr>
+   <td>9:45
+   </td>
+   <td><strong>Keynote: TBD</strong>
+   </td>
+   <td><center>Seagate</center>
+   </td>
+  </tr>
+  <tr>
+   <td>10:20
+   </td>
+   <td><strong>Keynote: TBD</strong>
+   </td>
+   <td><center>IBM</center>
+   </td>
+  </tr>
+  <tr>
+   <td>10:45
+   </td>
+   <td><strong>Break</strong>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>11:00
+   </td>
+   <td><strong>Distributed storage system architecture and Ceph’s strength</strong>
+   </td>
+   <td><center><img src="/assets/bitmaps/events/2023/ceph-days-korea/myoungwon-oh.jpg"><br /><strong>Myoungwon Oh</strong><br />Samsung</center>
+   </td>
+  </tr>
+  <tr>
+   <td>11:40
+   </td>
+   <td><strong>Role of RocksDB in Ceph</strong>
+   </td>
+   <td><center><img src="/assets/bitmaps/events/2023/ceph-days-korea/ilsoo-byun.jpg"><br /><strong>Ilsoo Byun</strong><br />LINE</center>
+   </td>
+  </tr>
+  <tr>
+   <td>12:10
+   </td>
+   <td><strong>Lunch</strong>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>13:40
+   </td>
+   <td><strong>Things to consider when building a Ceph cluster</strong>
+   </td>
+   <td><center><img src="/assets/bitmaps/events/2023/ceph-days-korea/jangseon-ryu.jpg"><br /><strong>Jangseon Ryu</strong><br />NAVER</center>
+   </td>
+  </tr>
+  <tr>
+   <td>14:20
+   </td>
+   <td><strong>Optimizing CephFS with Combining MDS QoS Scheduling and Statistic-Dynamic subtree Partitioning</strong>
+   </td>
+   <td><center><strong>Yongseok Oh</strong><br />LINE</center>
+   </td>
+  </tr>
+  <tr>
+   <td>14:50
+   </td>
+   <td><strong>Break</strong>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>15:10
+   </td>
+   <td><strong>Revisiting S3 features on Ceph Rados</strong>
+   </td>
+   <td><center><strong>Kyujin Cho</strong><br />SNU</center>
+   </td>
+  </tr>
+  <tr>
+   <td>15:50
+   </td>
+   <td><strong>Technical discussion</strong>
+   </td>
+   <td><center><strong>All attendees</strong></center>
+   </td>
+  </tr>
+  <tr>
+   <td>16:30
+   </td>
+   <td><strong>Closing</strong>
+   </td>
+   <td>
+   </td>
+  </tr>
+</table>
 
 Join the Ceph announcement list, or follow Ceph on social media for Ceph event
 updates:
