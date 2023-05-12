@@ -1,6 +1,18 @@
 {
   "jobs": [
     {
+      "company": "42on",
+      "date": "2023-05-12",
+      "title": "Ceph Engineer",
+      "url": "https://www.42on.com/jobs/ceph-engineer/"
+    },
+    {
+      "company": "42on",
+      "date": "2023-05-12",
+      "title": "Ceph Expert",
+      "url": "https://www.42on.com/jobs/ceph-expert/"
+    },
+    {
       "company": "Arm",
       "date": "2023-03-01",
       "title": "Staff Software Engineer - Storage",
@@ -13,40 +25,10 @@
       "url": "https://canonical.com/careers/4175808/engineering-manager-ceph-and-distributed-storage-remote"
     },
     {
-      "company": "Koor Technologies, Inc.",
-      "date": "2022-05-10",
-      "title": "Cloud Storage Engineer",
-      "url": "https://koor.tech/career/?gh_jid=4778393004"
-    },
-    {
       "company": "Mastercard",
       "date": "2023-03-16",
       "title": "Senior Systems Platform Engineer",
       "url": "https://mastercard.wd1.myworkdayjobs.com/CorporateCareers/job/OFallon-Missouri/Senior-Systems-Platform-Engineer--Ceph-Storage-_R-191226"
-    },
-    {
-      "company": "SoftIron",
-      "date": "2022-02-24",
-      "title": "Systems Engineer (Singapore)",
-      "url": "https://softiron.bamboohr.com/jobs/view.php?id=59&source=aWQ9MTU%3D"
-    },
-    {
-      "company": "SoftIron",
-      "date": "2022-02-24",
-      "title": "Software Engineer, SONiC and Software Defined Networking",
-      "url": "https://softiron.bamboohr.com/jobs/view.php?id=68&source=aWQ9MTU%3D"
-    },
-    {
-      "company": "SoftIron",
-      "date": "2022-02-24",
-      "title": "Software Engineer, C++/Boost and Software Defined Storage",
-      "url": "https://softiron.bamboohr.com/jobs/view.php?id=69&source=aWQ9MTU%3D"
-    },
-    {
-      "company": "SoftIron",
-      "date": "2022-02-24",
-      "title": "Solutions Architect (Germany - Remote)",
-      "url": "https://softiron.bamboohr.com/jobs/view.php?id=70&source=aWQ9MTU%3D"
     },
     {
       "company": "SoftIron",
