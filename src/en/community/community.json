@@ -1,12 +1,11 @@
 {
   "tech_talks": [
     {
-      "date": "2022-10-06",
-      "title": "Distributed Tracing with RGW and OSD",
-      "presenter": "Omri Zeneva",
+      "date": "2023-05-24",
+      "title": "RGW Lua Scripting Code Walkthrough",
+      "presenter": "Yuval Lifshitz",
       "url": ""
     },
-
     {
       "date": "2022-08-25",
       "title": "Making Teuthology a Better Detective",
