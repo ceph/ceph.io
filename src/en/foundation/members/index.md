@@ -15,7 +15,6 @@ order: 3
 <div class="grid grid--align-center grid--cols-2 md:grid--cols-3 md:w-3-4">
   <a href="https://bloomberg.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-bloomberg.png" /></a>
   <a href="https://www.clyso.com/en/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-clyso.png" /></a>
-  <a href="https://www.digitalocean.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-digital-ocean.png" /></a>
   <a href="http://www.ibm.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-ibm.png" /></a>
   <a href="http://www.intel.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-intel.png" /></a>
   <a href="https://www.ovh.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-ovh.png" /></a>
@@ -36,7 +35,6 @@ order: 3
   <a href="http://www.koor.tech/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-koor.png" /></a>
   <a href="https://www.linode.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-linode.png" /></a>
   <a href="https://www.osnexus.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-osnexus.png" /></a>
-  <a href="http://www.seagate.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-seagate.png" /></a>
   <a href="http://www.sinorail.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-sinorail.png" /></a>
 </div>
 
