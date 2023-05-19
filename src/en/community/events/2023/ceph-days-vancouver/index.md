@@ -16,7 +16,6 @@ tags:
 
 ### Bringing Ceph to Vancouver
 
-<a class="button" href="https://survey.zohopublic.com/zs/TVCCCQ">Submit Your CFP</a>
 <a class="button" href="https://openinfrafoundation.formstack.com/forms/ceph_day_at_openinfra_summit_vancouver">Register</a>
 
 A full-day event dedicated to sharing Ceph’s transformative power and fostering
