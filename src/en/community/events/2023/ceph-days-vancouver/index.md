@@ -49,7 +49,7 @@ The CFP is now open and registration is limited!
    </td>
   </tr>
   <tr>
-   <td>10:00
+   <td>10:20
    </td>
    <td><strong>State of the Cephalopod</strong>
    </td>
@@ -59,7 +59,17 @@ IBM</center>
    </td>
   </tr>
   <tr>
-   <td>10:30
+   <td>10:50
+   </td>
+   <td><strong>Ceph Solution Design Tool</strong>
+<p>
+In this talk, see a live demo of the scale-out solution design tool used to build Ceph clusters from OSNexus Founder & CEO Steve Umbehocker.
+   </td>
+   <td><center><img src="/assets/bitmaps/events/2023/ceph-days-vancouver/steven-umbehocker.jpg"><br /><strong>Steven Umbehocker</strong>
+<p>
+OSNEXUS</center>
+  <tr>
+   <td>11:00
    </td>
    <td><strong>A Beginner's Guide to Ceph</strong>
 <p>
@@ -71,7 +81,7 @@ IBM
    </td>
   </tr>
   <tr>
-   <td>11:00
+   <td>11:40
    </td>
    <td><strong>Storage in Containers - Introduction to Rook</strong>
 <p>
@@ -83,19 +93,19 @@ Koor</center>
    </td>
   </tr>
   <tr>
-   <td>11:30
+   <td>12:20
    </td>
-   <td><strong>Multisite Stability at Scale: ~500M object per bucket.</strong>
+   <td><strong>	Improving Business Continuity for an Existing Large Scale Ceph Infrastructure</strong>
 <p>
-This talk demonstrates replicating ~500M objects for an rgw bucket. It would share the tested configuration of hardware and software to achieve this feat. It gives insight into the tools used for generating the workloads, the performance of ingest pre and post resharding of the bucket index, and the comparison between the rate of ingest to replication.
+The IT Department at CERN operates a large-scale computing and storage infrastructure for scientific data processing and service provisioning to its user community. Ceph is a critical part of this picture. We have recently evaluated different Ceph features to offer solutions for High(er) Availability for Business Continuity and Disaster Recovery. Here we report on plans for RBD backups, object storage multisite replication, and CephFS backups to S3 (and tape) via a restic-based orchestrator.
    </td>
-   <td><center><img src="/assets/bitmaps/events/2023/ceph-days-vancouver/vidushi-mishra.png"><br /><strong>Vidushi Mishra</strong>
+   <td><center><img src="/assets/bitmaps/events/2023/ceph-days-vancouver/enrico-bocchi.jpg"><br /><strong>Enrico Bocchi</strong>
 <p>
-IBM</center>
+CERN</center>
    </td>
   </tr>
   <tr>
-   <td>12:00
+   <td>12:50
    </td>
    <td><strong>Lunch</strong>
    </td>
@@ -103,7 +113,7 @@ IBM</center>
    </td>
   </tr>
   <tr>
-   <td>13:00
+   <td>14:00
    </td>
    <td><strong>Ceph Integration in Red Hat OpenStack Platform: ceph-ansible to cephadm and Nautilus to Quincy</strong>
 <p>
@@ -123,7 +133,7 @@ Red Hat</center>
    </td>
   </tr>
   <tr>
-   <td>13:10
+   <td>14:20
    </td>
    <td><strong>Lessons Learned in Ceph Operations for Science</strong>
 <p>
@@ -135,27 +145,7 @@ Clyso</center>
    </td>
   </tr>
   <tr>
-   <td>13:40
-   </td>
-   <td><strong>Improving Business Continuity for an Existing Large Scale Ceph Infrastructure</strong>
-<p>
-The IT Department at CERN operates a large-scale computing and storage infrastructure for scientific data processing and service provisioning to its user community. Ceph is a critical part of this picture. We have recently evaluated different Ceph features to offer solutions for High(er) Availability for Business Continuity and Disaster Recovery. Here we report on plans for RBD backups, object storage multisite replication, and CephFS backups to S3 (and tape) via a restic-based orchestrator.
-   </td>
-   <td><center><img src="/assets/bitmaps/events/2023/ceph-days-vancouver/enrico-bocchi.jpg"><br /><strong>Enrico Bocchi</strong>
-<p>
-CERN</center>
-   </td>
-  </tr>
-  <tr>
-   <td>14:10
-   </td>
-   <td><strong>Break</strong>
-   </td>
-   <td>
-   </td>
-  </tr>
-  <tr>
-   <td>14:25
+   <td>15:00
    </td>
    <td><strong>Ceph troubleshooting in a containerized environment</strong>
 <p>
@@ -179,7 +169,7 @@ IBM</center>
    </td>
   </tr>
   <tr>
-   <td>14:55
+   <td>15:40
    </td>
    <td><strong>Data Security and Storage Hardening in Rook and Ceph</strong>
 <p>
@@ -191,7 +181,7 @@ IBM</center>
    </td>
   </tr>
   <tr>
-   <td>15:25
+   <td>16:20
    </td>
    <td><strong>Testing S3 implementations: RGW & Beyond, client & server perspectives</strong>
 <p>
@@ -213,15 +203,7 @@ This talk builds on recent RGW testing work:
    </td>
   </tr>
   <tr>
-   <td>15:55
-   </td>
-   <td><strong>Break</strong>
-   </td>
-   <td>
-   </td>
-  </tr>
-  <tr>
-   <td>16:25
+   <td>16:50
    </td>
    <td><strong>Natively scaleable CephFS NFS Gateways with OpenStack Manila</strong>
 <p>
@@ -233,7 +215,7 @@ Red Hat</center>
    </td>
   </tr>
   <tr>
-   <td>16:45-17:25
+   <td>17:30
    </td>
    <td><strong>Ceph Operations BoF</strong>
    </td>
