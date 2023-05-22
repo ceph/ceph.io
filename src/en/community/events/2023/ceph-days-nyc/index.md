@@ -66,7 +66,7 @@ The expert Ceph team, Ceph’s customers and partners, and the Ceph community jo
 
 Space is limited, so register soon.
 
-<a class="button" href="https://go.bloomberg.com/attend/invite/ceph-days-nyc">Register</a>
+<a class="button" href="https://www.youtube.com/playlist?list=PLrBUGiINAakNlN2myemQaO5nSxKfbNFos">Videos</a>
 
 Join the Ceph announcement list, or follow Ceph on social media for updates:
 
