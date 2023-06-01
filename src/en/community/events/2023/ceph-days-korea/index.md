@@ -24,8 +24,6 @@ tags:
 
 ### Save the Date - Ceph is coming to Korea!
 
-<a class="button" href="https://festa.io/events/3215">Register</a>
-
 A full-day event dedicated to sharing Ceph’s transformative power and fostering
 the vibrant Ceph community in South Korea.
 
@@ -63,19 +61,19 @@ a networking reception, to foster more Ceph learning.
    </td>
   </tr>
   <tr>
-   <td>9:10
+   <td>9:15
    </td>
-   <td><strong>Keynote: TBD</strong>
+   <td><strong>Keynote: The journey of memory innovation with Ceph</strong>
    </td>
-   <td><center>Samsung Electronics</center>
+   <td><center><img src="/assets/bitmaps/events/2023/ceph-days-korea/duckho-bae.png" height="150"><strong>Duckho Bae</strong><br />Samsung Electronics</center>
    </td>
   </tr>
   <tr>
-   <td>9:45
+   <td>9:50
    </td>
-   <td><strong>Keynote: TBD</strong>
+   <td><strong>Keynote: The present and future of hard drives, and storage</strong>
    </td>
-   <td><center>Seagate</center>
+   <td><center><img src="/assets/bitmaps/events/2023/ceph-days-korea/jk-kim.jpg" height="150"><strong>JK Kim</strong><br />Seagate</center>
    </td>
   </tr>
   <tr>
@@ -84,11 +82,11 @@ a networking reception, to foster more Ceph learning.
    <td><strong>Keynote: IBM and IBM Storage Ceph's Future</strong>
      <p>Congratulations on becoming a member of a family in the open source community, and I would like to talk about Ceph's plan through synergy with IBM.</p>
    </td>
-   <td><center><strong>Jin su Kim</strong><br />IBM Korea</center>
+   <td><center><img src="/assets/bitmaps/events/2023/ceph-days-korea/jinsu-kim.png" height="150"><strong>Jin su Kim</strong><br />IBM Korea</center>
    </td>
   </tr>
   <tr>
-   <td>10:45
+   <td>10:50
    </td>
    <td><strong>Break</strong>
    </td>
@@ -96,7 +94,7 @@ a networking reception, to foster more Ceph learning.
    </td>
   </tr>
   <tr>
-   <td>11:00
+   <td>11:10
    </td>
    <td><strong>Distributed storage system architecture and Ceph’s strength</strong>
      <p>From local storage systems to regular NAS, explore the reliability structurally and discuss considerations from a distributed system perspective. Finally, talk about the advantages and disadvantages of Ceph and what workloads are useful.</p>
@@ -105,7 +103,7 @@ a networking reception, to foster more Ceph learning.
    </td>
   </tr>
   <tr>
-   <td>11:40
+   <td>11:50
    </td>
    <td><strong>Role of RocksDB in Ceph</strong>
      <p>In Ceph, RocksDB is used by default as a Metadata store for stored objects. However, this is not limited to providing critical features for top-tier applications such as RadosGW and MDS, and has a critical impact on performance. Surprisingly, however, many people tend to think of RocksDB as a black box and not pay attention to it. While looking at the internal logic of Ceph and RocksDB, I would like to look at the impact of RocksDB and introduce some points to note.</p>
@@ -114,7 +112,7 @@ a networking reception, to foster more Ceph learning.
    </td>
   </tr>
   <tr>
-   <td>12:10
+   <td>12:20
    </td>
    <td><strong>Lunch</strong>
    </td>
@@ -122,7 +120,7 @@ a networking reception, to foster more Ceph learning.
    </td>
   </tr>
   <tr>
-   <td>13:40
+   <td>13:50
    </td>
    <td><strong>Ceph case study and large-scale cluster operation plan in NAVER</strong>
      <p>In this pressentation, we will look at NAVER's case study of Ceph and how to operate storage. We would like to explain the problems and solutions that we struggled with when introducing Ceph and provide useful information for companies that want to adopt Ceph.</p>
@@ -131,7 +129,7 @@ a networking reception, to foster more Ceph learning.
    </td>
   </tr>
   <tr>
-   <td>14:20
+   <td>14:30
    </td>
    <td><strong>A New MDS Partitioning for CephFS</strong>
      <p>This talk will present a new MDS partitioning strategy for CephFS that combines static pinning and dynamic partitioning with the bal_rank_mask option based on user metadata workload analysis. We will also share our experiences with the implementation of these optimizations in our production service and the results of our experiments. Finally, we will discuss how we can contribute our work to the Ceph community.</p>
@@ -140,7 +138,7 @@ a networking reception, to foster more Ceph learning.
    </td>
   </tr>
   <tr>
-   <td>14:50
+   <td>15:00
    </td>
    <td><strong>Break</strong>
    </td>
@@ -148,7 +146,7 @@ a networking reception, to foster more Ceph learning.
    </td>
   </tr>
   <tr>
-   <td>15:10
+   <td>15:20
    </td>
    <td><strong>Revisiting S3 features on Ceph Rados</strong>
      <p>In this presentation, we will first explore the S3 API execution path from a client to the Ceph Object Storage Daemon (OSD). It will cover how RGW translates S3 requests into internal Rados requests and how OSD stores S3 objects and metadata in the case of Bluestore. Second, we will analyze S3 performance with and without versioning-related features on three different S3-compatible storage platforms: Ceph, MinIO, and OpenStack Swift with Swift3. We conducted a synthetic benchmark to measure S3 performance, especially ListObject performance, while considering versioning-related features.</p>
@@ -157,7 +155,7 @@ a networking reception, to foster more Ceph learning.
    </td>
   </tr>
   <tr>
-   <td>15:50
+   <td>16:00
    </td>
    <td><strong>Technical discussion</strong>
    </td>
@@ -165,7 +163,7 @@ a networking reception, to foster more Ceph learning.
    </td>
   </tr>
   <tr>
-   <td>16:40
+   <td>16:50
    </td>
    <td><strong>Networking session</strong>
    </td>
@@ -173,7 +171,7 @@ a networking reception, to foster more Ceph learning.
    </td>
   </tr>
   <tr>
-   <td>17:10
+   <td>17:20
    </td>
    <td><strong>Closing</strong>
    </td>
