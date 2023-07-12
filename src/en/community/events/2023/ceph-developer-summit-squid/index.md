@@ -1,14 +1,15 @@
 ---
 title: Ceph Developer Summit - Squid
 date: 2023-07-17
-end: 2023-07-21
+end: 2023-07-24
 tags:
   - ceph developer summit
 ---
 
-
-
 <strong>All listed sessions are in Pacific time</strong>
+
+<strong><a href="https://pad.ceph.com/p/cds-squid">Etherpad for
+discussions</a></strong>
 
 ## July 17
 
@@ -129,7 +130,7 @@ tags:
    </td>
    <td>Docs
    </td>
-   <td>Join session
+   <td><a href="https://meet.google.com/kxq-zywr-mjg?hs=224">Join session</a>
    </td>
   </tr>
 </table>
@@ -151,6 +152,27 @@ tags:
    <td>RBD
    </td>
    <td><a href="https://meet.google.com/usj-qgxq-jjp?hs=224">Join session</a>
+   </td>
+  </tr>
+</table>
+
+## July 24
+
+<table>
+  <tr>
+   <td width="20%"><strong>Time</strong>
+   </td>
+   <td width="50%"><strong>Session</strong>
+   </td>
+   <td width="30%"><strong>Meeting Link</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>7:30 AM
+   </td>
+   <td>CephFS
+   </td>
+   <td><a href="https://meet.google.com/xkq-rwkv-iyx?hs=224">Join session</a>
    </td>
   </tr>
 </table>
