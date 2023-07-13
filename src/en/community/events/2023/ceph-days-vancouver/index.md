@@ -16,7 +16,7 @@ tags:
 
 ### Bringing Ceph to Vancouver
 
-<a class="button" href="https://openinfrafoundation.formstack.com/forms/ceph_day_at_openinfra_summit_vancouver">Register</a>
+<a class="button" href="https://www.youtube.com/playlist?list=PLrBUGiINAakNwy8_mYxNjhqF8FOmZCvt7">Videos</a>
 
 A full-day event dedicated to sharing Ceph’s transformative power and fostering
 the vibrant Ceph community with the community in Vancouver, co-located with the
