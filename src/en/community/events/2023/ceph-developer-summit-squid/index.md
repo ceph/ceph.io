@@ -11,6 +11,9 @@ tags:
 <strong><a href="https://pad.ceph.com/p/cds-squid">Etherpad for
 discussions</a></strong>
 
+
+<a class="button" href="https://www.youtube.com/playlist?list=PLrBUGiINAakO4pEqO5GUCQvbkTHcKshT8">Videos</a>
+
 ## July 17
 
 <table>
