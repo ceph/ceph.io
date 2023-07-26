@@ -38,9 +38,15 @@ Following the original publication on Ceph, the PhD thesis by Sage Weil, a varie
 
 **The following publications are directly related to the current design of Ceph.**
 
+- [TiDedup: A New Distributed Deduplication Architecture for Ceph](https://www.usenix.org/system/files/atc23-oh.pdf)
+  - Myoungwon Oh, Sungmin Lee, Samuel Just, Young Jin Yu, Duck-Ho Bae, Sage Weil, Sangyeun Cho, Heon Y. Yeom
+  - Samsung Electronics Co., IBM, Ceph Foundation, Seoul National University 
+  - Proceedings of the 2023 USENIX Annual Technical Conference (ATC '23)
+  - 2023
+
 - [Design of Global Data Deduplication for A Scale-out Distributed Storage System](/assets/pdfs/ICDCS_2018_mwoh.pdf)
   - Myoungwon Oh, Sejin Park, Jungyeon Yoon, Sangjae Kim, Kang-won Lee, Sage Weil, Heon Y. Yeom, Myoungsoo Jung
-  - SK Telecom, Keimyoung University, Red Hat, Seoul National University, Yonsei University
+  - SK Telecom, Keimyoung University, Red Hat, Seoul National University, Yonsei University
   - Proceedings of the 2018 IEEE International Conference on Distributed Computing Systems
   - 2018
 
