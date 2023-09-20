@@ -128,9 +128,9 @@ We saw previously that at a given CPU thread count, the 1 and 2 OSD per NVMe con
 
 # 4KB Random Memory Usage
 
-![](images/Ceph_Reef_-_FIO_4KB_Random_Read_CPU_Threads_Used.svg)
-![](images/Ceph_Reef_-_FIO_4KB_Random_Write_CPU_Threads_Used.svg)
-![](images/Ceph_Reef_-_FIO_4KB_2_OSD_NVMe_CPU_Usage_Increase.svg)
+![](images/Ceph_Reef_-_FIO_4KB_Random_Read_RSS_Memory_Used.svg)
+![](images/Ceph_Reef_-_FIO_4KB_Random_Write_RSS_Memory_Used.svg)
+![](images/Ceph_Reef_-_FIO_4MB_2_OSD_NVMe_RSS_Memory_Usage_Increase.svg)
 
 While CPU usage in the 2 NVMe per OSD case increased significantly, the memory usage increase is comparatively small.  Typically there is about a 3-6% penalty in the 2 OSD per NVMe configuration.  Neither configuration used the full amount of memory made available to the OSDs for this dataset size.
 <br>
