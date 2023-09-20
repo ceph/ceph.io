@@ -25,7 +25,7 @@ As expected, Octopus and Pacific are significantly faster than Nautilus, but als
 
 # Acknowledgements
 
-First, thank you to [Clyso](https://www.clyso.com) for funding this work to benefit the Ceph community.  Thank you as well to [IBM](https://ibm.com)/[Red Hat](https://redhat.com), [Intel](https://intel.com) and [Samsung](https://samsung.com) for providing the upstream Ceph community with the hardware used for this testing.  Thank you as well to all of the Ceph developers that have worked tirelessly to make Ceph great!
+First, thank you to [Clyso](https://www.clyso.com) for funding this work to benefit the Ceph community.  Thank you as well to [IBM](https://ibm.com)/[Red Hat](https://redhat.com), [Intel](https://intel.com) and [Samsung](https://samsung.com) for providing the upstream Ceph community with the hardware used for this testing.  Thank you as well to all of the Ceph developers that have worked tirelessly to make Ceph great!  Finally, a special thank you to Anthony D'Atri for acting as editor for this document and approving fixes within minutes.  Thank you for your help Anthony and for all of the work you do on the Ceph Docs!
 <br>
 
 # Cluster Setup 
