@@ -123,7 +123,7 @@ Despite restricting OSDs to only using a certain number of CPU threads via numac
 ![](images/Ceph_Reef_-_FIO_4KB_Random_Write_IOPS_CPU_Thread_Used.svg)
 ![](images/Ceph_Reef_-_FIO_4KB_2_OSD_NVMe_IOPS_CPU_Advantage.svg)
 
-We saw previously that at a given CPU thread count, the 1 and 2 OSD per NVMe configurations performed similarly up to around 16 CPU Threads.  After that, the 2 NVMe per OSD configuration continued to scale while the single OSD configuration topped out.  We also saw that 2 OSD per NVMe configurations had significantly lower tail latency.  Here we are seeing that while that to acheive those advantages, each CPU thread is working harder in the 2 NVMe per OSD configuration to achieve the same IOPS.  That potentially could lead to higher power consumption and greater heat.  One note: The random write results reported here are being reported with replication factored in to match the results we published last fall for Pacific [here](https://ceph.io/en/news/blog/2022/ceph-osd-cpu-scaling/).  While the test configuration is not exactly the same as it was last fall, it appears we are acheiving a moderate efficiency improvement in these Reef tests.
+We saw previously that both OSD configurations performed similarly up to around 16 CPU Threads.  After that, the 2 OSDs per NVMe configuration continued to scale while the single OSD configuration topped out.  We also saw that 2 OSD per NVMe configurations had significantly lower tail latency.  Here we are seeing that each CPU thread is working harder in the 2 OSDs per NVMe configuration to achieve the same IOPS despite those other advantages.  That potentially could lead to higher power consumption and greater heat generation.  One note: The random write results reported here factor replication in to match the results we published last fall for Pacific [here](https://ceph.io/en/news/blog/2022/ceph-osd-cpu-scaling/).  While the test configuration is not exactly the same as it was last fall, it appears we are acheiving a moderate efficiency improvement in these Reef tests.
 <br>
 
 # 4KB Random Memory Usage
@@ -132,14 +132,14 @@ We saw previously that at a given CPU thread count, the 1 and 2 OSD per NVMe con
 ![](images/Ceph_Reef_-_FIO_4KB_Random_Write_RSS_Memory_Used.svg)
 ![](images/Ceph_Reef_-_FIO_4MB_2_OSD_NVMe_RSS_Memory_Usage_Increase.svg)
 
-While CPU usage in the 2 NVMe per OSD case increased significantly, the memory usage increase is comparatively small.  Typically there is about a 3-6% penalty in the 2 OSD per NVMe configuration.  Neither configuration used the full amount of memory made available to the OSDs for this dataset size.
+While CPU usage in the 2 OSDs per NVMe case increased significantly, the memory usage increase is comparatively small.  Typically there is about a 3-6% penalty versus using 1 OSD per NVMe.  Neither configuration used the full amount of memory made available to the OSDs for this dataset size.
 <br>
 
 # Conclusion
 
 Previously we saw that the performance advantage of using multiple OSDs per NVMe changed significantly between the Nautilus and Pacific verisons of Ceph.  Now that Reef has been released we've performed a more extensive analysis and noticed several nuanced advantages and disadvantages on our test systems:
 
-1 OSD per NVMe Pros | 2 OSDs per NVMe PRos
+1 OSD per NVMe Pros | 2 OSDs per NVMe Pros
 -- | --
 \+ Simpler Configuration | \+ Slightly Better Large Read Throughput
 \+ Better Large Write Throughput | \+ Better IOPS when Very CPU Dense
@@ -148,4 +148,4 @@ Previously we saw that the performance advantage of using multiple OSDs per NVMe
 \+ Slightly Better Memory Usage |
 <br>
 
-Other hardware configurations may show different scaling behavior based on the CPU, flash, or other performance characteristics.  I believe these results should however provide a general picture of what the potential advantages and disaadvantages of running multiple OSD per NVMe configurations are in a modern Ceph release.  As always, the best way to know is to test yourself and see if your findings match what we saw here.  Thank you for reading, and if you have any questions or would like to talk more about Ceph performance, please feel to [reach out](mailto:mark.nelson@clyso.com).
+Other hardware configurations may show different scaling behavior based on the CPU, flash, or other performance characteristics.  I believe these results should however provide a general picture of what the potential advantages and disaadvantages of running a 2 OSD per NVMe configuration in modern Ceph releases.  As always, the best way to know is to test yourself and see if your findings match what we saw here.  Thank you for reading, and if you have any questions or would like to talk more about Ceph performance, please feel to [reach out](mailto:mark.nelson@clyso.com).
