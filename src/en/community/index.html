@@ -162,6 +162,29 @@ overlaySubMenu: true
 <section class="bg-grey-300 pt-0 section section--full">
   <div class="wrapper">
     <div class="mb-12 lg:mb-16 text-center">
+      <h2 class="h2">Ceph Quarterly</h2>
+      <a class="a" href="/{{ locale }}/community/cq/" class="ml-6">See all issues</a>
+    </div>
+    <p class="max-w-192 mb-12 lg:mb-16 mx-auto standout text-center">
+      Ceph Quarterly is a newsletter published every three months that summarizes the development of Ceph.
+    </p>
+    <div class="mx-auto lg:w-1-2">
+      {% if eventsFuture.length > 0 %}
+      <ul class="grid md:grid--cols-2 list-none m-0 p-0">
+        {% for item in eventsFuture %}
+        <li>{% include "components/event-card.njk" %}</li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <p class="p text-center">There are no upcoming events</p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<section class="bg-grey-300 pt-0 section section--full">
+  <div class="wrapper">
+    <div class="mb-12 lg:mb-16 text-center">
       <h2 class="h2">Featured tech talks</h2>
       <a class="a" href="/{{ locale }}/community/tech-talks/" class="ml-6">See all tech talks</a>
     </div>
