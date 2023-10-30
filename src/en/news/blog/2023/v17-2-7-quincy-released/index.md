@@ -57,6 +57,10 @@ This is the seventh backport release in the Quincy series. We recommend all user
 - CEPHFS: After recovering a Ceph File System post following the disaster recovery
   procedure, the recovered files under `lost+found` directory can now be deleted.
 
+- Dashboard: There is a new Dashboard page with improved layout. Active alerts
+  and some important charts are now displayed inside cards. This can be disabled and
+  older dashboard can be bought back by setting ``ceph dashboard feature disable dashboard``.
+
 ## Changelog
 
 
