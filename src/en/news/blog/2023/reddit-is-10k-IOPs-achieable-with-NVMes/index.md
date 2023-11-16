@@ -1,5 +1,5 @@
 ---
-title: "Reddit Challenge Accepted - Is 10k IOPs achievable with NVMes?"
+title: "Reddit Challenge Accepted - Is 10k IOPS achievable with NVMes?"
 date: 2023-07-21
 image: images/banner.png
 author: Mark Nelson (nhm)
@@ -14,7 +14,7 @@ tags:
   - nvme
 ---
 
-Hello Ceph community!  It's that time again for another blog post!  Recently, a user on the ceph subreddit [asked](https://www.reddit.com/r/ceph/comments/14ztb22/is_10k_iops_achievable_with_nvmes/) whether Ceph could deliver 10K IOPs in a combined random read/write FIO workload from one client.  The setup consists of 6 nodes with 2 4GB FireCuda NVMe drives each.  They wanted to know if anyone would mind benchmarking a similar setup and report the results.  Here at [Clyso](https://clyso.com) we are actively working on improving the Ceph code to achieve higher performance.  We have our own tests and configurations for evaluating our changes to the code, but it just so happens that one of the places we do our work (the upstream ceph community performance lab!) appears to be a good match for testing this user's request.  We decided to sit down for a couple of hours and give it a try.  [u/DividedbyPi](https://www.reddit.com/user/DividedbyPi/), one of our friends over at [45drives.com](https://www.45drives.com/), wrote that they are also going to give it a shot and report the results on their youtube channel in the coming weeks.  We figure this could be a fun way to get results from multiple vendors.  Let's see what happens! 
+Hello Ceph community!  It's that time again for another blog post!  Recently, a user on the ceph subreddit [asked](https://www.reddit.com/r/ceph/comments/14ztb22/is_10k_iops_achievable_with_nvmes/) whether Ceph could deliver 10K IOPS in a combined random read/write FIO workload from one client.  The setup consists of 6 nodes with 2 4TB FireCuda NVMe drives each.  They wanted to know if anyone would mind benchmarking a similar setup and report the results.  Here at [Clyso](https://clyso.com) we are actively working on improving the Ceph code to achieve higher performance.  We have our own tests and configurations for evaluating our changes to the code, but it just so happens that one of the places we do our work (the upstream ceph community performance lab!) appears to be a good match for testing this user's request.  We decided to sit down for a couple of hours and give it a try.  [u/DividedbyPi](https://www.reddit.com/user/DividedbyPi/), one of our friends over at [45drives.com](https://www.45drives.com/), wrote that they are also going to give it a shot and report the results on their youtube channel in the coming weeks.  We figure this could be a fun way to get results from multiple vendors.  Let's see what happens! 
 
 # Acknowledgements
 
@@ -69,7 +69,7 @@ benchmarks:
     cmd_path: '/usr/local/bin/fio'
 ```
 
-This resulted in an FIO line that was similar to the user's but with a couple of differences mostly related to recording iops/latency data over the course of the test:
+This resulted in an FIO line that was similar to the user's but with a couple of differences mostly related to recording IOPS/latency data over the course of the test:
 
 ```
 fio --ioengine=libaio --direct=1 --bs=4096 --iodepth=64 --rw=randrw --rwmixread=75 --rwmixwrite=25 --size=153600M --numjobs=1 --name=/tmp/cbt/mnt/cbt-rbd-kernel/0/`hostname -f`-0-0 --write_iops_log=/tmp/cbt/00000000/Fio/output.0 --write_bw_log=/tmp/cbt/00000000/Fio/output.0 --write_lat_log=/tmp/cbt/00000000/Fio/output.0 --log_avg_msec=100 --output-format=json,normal > /tmp/cbt/00000000/Fio/output.0
@@ -80,7 +80,7 @@ fio --ioengine=libaio --direct=1 --bs=4096 --iodepth=64 --rw=randrw --rwmixread=
 ![](images/FIO_4KB_75_Mixed_RandRW_IOPS_Single_Client.svg) 
 ![](images/FIO_4KB_75_Mixed_RandRW_IOPS_16_Client.svg)    
 
-Not only was Ceph able to achieve 10K IOPS in this mixed workload, it was an order of magnitude faster in the single client test.  We achieved roughly 92K random read and 31K random write IOPs from a single client against this small 12 OSD cluster.  The reason we wanted to run multi-client tests as well however, was to showcase just how much headroom this little cluster has when serving additional clients.  With the same mixed workload and 16 clients, we achieved over 500K random read and around 170K random write IOPs with just 12 NVMe backed OSDs.  In the mutli-client tests, Qunicy and Reef showed roughly a 6% and 9% performance advantage over Pacific respectively.  Enabling ```gtod_reduce``` improves performance by another 3-4%.
+Not only was Ceph able to achieve 10K IOPS in this mixed workload, it was an order of magnitude faster in the single client test.  We achieved roughly 92K random read and 31K random write IOPS from a single client against this small 12 OSD cluster.  The reason we wanted to run multi-client tests as well however, was to showcase just how much headroom this little cluster has when serving additional clients.  With the same mixed workload and 16 clients, we achieved over 500K random read and around 170K random write IOPS with just 12 NVMe backed OSDs.  In the mutli-client tests, Qunicy and Reef showed roughly a 6% and 9% performance advantage over Pacific respectively.  Enabling ```gtod_reduce``` improves performance by another 3-4%.
 
 # Single and Multi Client CPU Usage
 
@@ -126,7 +126,7 @@ Ceph was able to maintain sub-millisecond average latency for both reads and wri
 
 # Conclusion
 
-So how did we do in the end?  The goal was to reach 10K IOPS in this mixed read/write FIO workload with 75% reads and 25% writes.  I'll assume that means that the goal was 7500 read IOPs and 2500 write IOPS.  Let's compare how we did:
+So how did we do in the end?  The goal was to reach 10K IOPS in this mixed read/write FIO workload with 75% reads and 25% writes.  I'll assume that means that the goal was 7500 read IOPS and 2500 write IOPS.  Let's compare how we did:
 
 Single-Client IOPS:
 
