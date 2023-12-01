@@ -26,20 +26,20 @@ Team](https://docs.ceph.com/en/latest/governance/#ceph-leadership-team)
 
 ### Ceph Foundation Membership
 
-Membership to the Ceph Foundation is tiered: Premier Membership,
-General Membership, and Associate Membership. There are many benefits
-to belonging to The Ceph Foundation, shared across all tiers.
+Membership in the Ceph Foundation is tiered: Silver, Gold, Platinum, Diamond,
+and Associate.  There are many benefits to belonging to The Ceph Foundation,
+detailed here:
 
 [See the benefits](../member-benefits/)
 
-Premier and General Member organizations contribute a yearly fee,
-whereas Associate Members are educational institutions, government, or
-non-profit organizations invited to join at no cost.
+Silver to Diamond Member organizations contribute a yearly fee, whereas
+Associate Members are educational institutions, government, or non-profit
+organizations invited to join at no cost.
 
-Premier Members are guaranteed a seat on the Governing Board. One
-General Member is chosen to represent all General Members, and
-similarly one Associate Member is chosen to represent all Associate
-Members on the board.
+Diamond and Platinum Members are guaranteed a seat on the Governing Board. Two
+Gold Members are chosen to represent all Gold Members, one Silver Member is
+chosen to represent the Silver Members, and similarly one Associate Member is
+chosen to represent all Associate Members on the board.
 
 ### The Ceph Foundation Board
 
@@ -133,16 +133,9 @@ documentation.
 </details>
 
 <details>
-  <summary>Q: What is the difference between Premier, General, and Associate members?</summary>
+  <summary>Q: What is the difference between Membership tiers?</summary>
 
-Premier members pay more and are guaranteed a seat on the Governing
-Board. General members pay less, and one General member is chosen to
-represent all General members on the board. Associate members are
-educational or government institutions that are engaged with the Ceph
-community that are invited to participate in the Ceph Foundation at no
-cost. One Associate member is chosen to represent all Associate
-members on the board.
-
+The Membership benefits are detailed [here](../member-benefits/).
 </details>
 
 <details>
