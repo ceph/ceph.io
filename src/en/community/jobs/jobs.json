@@ -1,6 +1,12 @@
 {
   "jobs": [
     {
+      "company": "OpenNebula Systems",
+      "date": "2023-12-14",
+      "title": "Storage Engineer - Ceph and Distributed Storage",
+      "url": "https://careers.opennebula.io/jobs/3440540-storage-engineer-ceph-and-distributed-storage"
+    },
+    {
       "company": "Cloudflare",
       "date": "2023-09-14",
       "title": "Senior Systems Reliability Engineer, Storage",
