@@ -1,5 +1,5 @@
 ---
-layout: content-support
+layout: content-simple
 title: Contribute Content
 order: 3
 ---
