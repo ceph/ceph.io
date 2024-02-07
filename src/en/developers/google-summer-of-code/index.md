@@ -109,3 +109,58 @@ Applicants should be able to write a python program that tests a local RGW's adm
 Refactor a subset of the admin API code
 
 <hr class="hr">
+
+## Lunar Time
+
+**Mentor name(s):** Yuval Lifshitz
+
+**Mentor email(s):** ylifshit@ibm.com
+
+**Difficulty:** Hard
+
+**Project Hours:** 350
+
+**Skills needed:** C++
+
+**Subcomponent of Ceph:** RGW
+
+**Description of project:**
+
+Lua scripts on the RADOS Gateway are powerful, so, in the meantime we only allow admins to add them to the RADOS Gatewway. Before we open this possibility to users, we want to add several protection layers to prevent from careless users to take down the system. One of these measures, will be to limit the execution time of each script, so it does not hog the system, go into infinite loops etc.
+
+**Standup/weekly call mentee could attend?:** RGW standup
+
+**Steps to evaluate an applicant for the project:**
+
+TBD, A link with more detailed instructions will be provided
+
+<hr class="hr">
+
+## The Coverup
+
+**Mentor name(s):** Yuval Lifshitz
+
+**Mentor email(s):** ylifshit@ibm.com
+
+**Difficulty:** Intermediate
+
+**Project Hours:** 175
+
+**Skills needed:** C++
+
+**Subcomponent of Ceph:** Core
+
+**Description of project:**
+
+Code coverage tools are useful in measuring the effectiveness of our unit tests, and in guiding us on where to write for new tests and find potential bugs.
+In this project we would like to add the toolset that would allow effective code coverage reporting based on the ceph unit tests.
+[old blog pt. 1](https://blog.dachary.org/2013/01/08/ceph-code-coverage-part-12/)
+[old blog pt. 2](https://blog.dachary.org/2013/01/16/ceph-code-coverage-part-22/)
+
+**Standup/weekly call mentee could attend?:** RGW standup, Core standup
+
+**Steps to evaluate an applicant for the project:**
+
+TBD, A link with more detailed instructions will be provided
+
+<hr class="hr">
