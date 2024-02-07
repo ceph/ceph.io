@@ -26,6 +26,33 @@ get started with contributions](https://ceph.io/en/developers/contribute/).
 
 <hr class="hr">
 
+## Improving Shaman the Builder
+
+**Mentor name(s):** Zack Cerza, Kamoltat (Junior) Sirivadhna
+Aishwarya Mathuria
+
+**Mentor email(s):** ksirivad@ibm.com
+
+**Difficulty:** Medium
+
+**Project Hours:** 350
+
+**Skills needed:** Shell, Python
+**Subcomponent of Ceph:** [Build System](https://github.com/ceph/ceph-build)
+
+**Description of project:**
+Ceph's build system is far from perfect and have encoutered several
+problems in the past. Your job is to work with Ceph's
+Infrastructure + Teuthology Team to improve the current build system. 
+
+**Standup/weekly call mentee could attend?:** teuthology weekly meeting
+
+**Steps to evaluate an applicant for the project:**
+
+TBD
+
+<hr class="hr">
+
 ## From RADOS to REDIS 
 
 **Mentor name(s):** Yuval Lifshitz
