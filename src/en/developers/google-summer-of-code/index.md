@@ -29,9 +29,10 @@ get started with contributions](https://ceph.io/en/developers/contribute/).
 ## Improving Shaman the Builder
 
 **Mentor name(s):** Zack Cerza, Kamoltat (Junior) Sirivadhna
-Aishwarya Mathuria
+Aishwarya Mathuria, Vallari Agrawal
 
-**Mentor email(s):** ksirivad@ibm.com
+**Mentor email(s):** zcerza@ibm.com, ksirivad@ibm.com, amathuri@ibm.com,
+vallariag@ibm.com
 
 **Difficulty:** Medium
 
