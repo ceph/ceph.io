@@ -46,11 +46,9 @@ Ceph's build system is far from perfect and have encoutered several
 problems in the past. Your job is to work with Ceph's
 Infrastructure + Teuthology Team to improve the current build system. 
 
-**Standup/weekly call mentee could attend?:** teuthology weekly meeting
+**Expected Outcome(s):**
 
-**Steps to evaluate an applicant for the project:**
-
-TBD
+A reduction in build times from Ceph developers pushing to the ceph-ci repo to rpms, debs, and containers bieng created
 
 <hr class="hr">
 
@@ -70,13 +68,11 @@ TBD
 
 **Description of project:** 
 
-Bucket notifications are important building block for many use cases. And persistent bucket notifications in particular, as they let the system overcome broker outages. However, since the persistent notifications are backed with a RADOS queue, they have a cost. Both in the extra load on the RADOS cluster, and with the inability to operate in environemnts where there is no RADOS backend. In this project, we would like to implement persistent bucket notifications in the RADOS Gateway using a Redis Queue. Combined with the "zipper" project we would be able to enjoy bucket notifications with backends like posix, dbstore, daos etc.
+Bucket notifications are important building block for many use cases. And persistent bucket notifications in particular, as they let the system overcome broker outages. However, since the persistent notifications are backed with a RADOS queue, they have a cost. Both in the extra load on the RADOS cluster, and with the inability to operate in environments where there is no RADOS backend. In this project, we would like to implement persistent bucket notifications in the RADOS Gateway using a Redis Queue. Combined with the "zipper" project we would be able to enjoy bucket notifications with backends like posix, dbstore, daos etc.
 
-**Standup/weekly call mentee could attend?:** RGW standup
+**Expected Outcome(s):**
 
-**Steps to evaluate an applicant for the project:**
-
-TBD, A link with more detailed instructions will be provided
+Persistent bucket notifications being stored in a Redis cluster that is being read and written to by the RADOS Gateway with non RADOS backends like posix store
 
 <hr class="hr">
 
@@ -101,12 +97,9 @@ The Rados Gateway (RGW) has a REST API that can do admin operations called the [
 This project have two phases. The first phase would include enhancing the intergration testing coverage of the admin API, and auditing the documentation to make sure it is up to date.
 The second phase would entail refactoring the admin API code to ensure it can work with different backends such as posix, dbstore, rados, etc.
 
-**Standup/weekly call mentee could attend?:** RGW standup
+**Expected Outcome(s):**
 
-**Steps to evaluate an applicant for the project:**
-
-Applicants should be able to write a python program that tests a local RGW's admin API
-Refactor a subset of the admin API code
+For the first phase, improvements to the test suite that tests the RGW admin API. In the second phase would be a working admin API with a non-RADOS backend like posix store
 
 <hr class="hr">
 
@@ -128,11 +121,9 @@ Refactor a subset of the admin API code
 
 Lua scripts on the RADOS Gateway are powerful, so, in the meantime we only allow admins to add them to the RADOS Gatewway. Before we open this possibility to users, we want to add several protection layers to prevent from careless users to take down the system. One of these measures, will be to limit the execution time of each script, so it does not hog the system, go into infinite loops etc.
 
-**Standup/weekly call mentee could attend?:** RGW standup
+**Expected Outcome(s):**
 
-**Steps to evaluate an applicant for the project:**
-
-TBD, A link with more detailed instructions will be provided
+Prevention of lua scripts in the RADOS Gateway from hogging system resources.
 
 <hr class="hr">
 
@@ -157,10 +148,8 @@ In this project we would like to add the toolset that would allow effective code
 [old blog pt. 1](https://blog.dachary.org/2013/01/08/ceph-code-coverage-part-12/)
 [old blog pt. 2](https://blog.dachary.org/2013/01/16/ceph-code-coverage-part-22/)
 
-**Standup/weekly call mentee could attend?:** RGW standup, Core standup
+**Expected Outcome(s):**
 
-**Steps to evaluate an applicant for the project:**
-
-TBD, A link with more detailed instructions will be provided
+Code coverage of ceph unit tests
 
 <hr class="hr">
