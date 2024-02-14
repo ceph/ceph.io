@@ -14,15 +14,15 @@ tags:
 ~~There is no~~ silver bullet regarding RocksDB performance. Now that I got your attention: you might be "lucky" when you are using upstream Ceph Ubuntu packages.
 
 ### TL;DR
-Mark Nelson [found out](https://ceph.io/en/news/blog/2024/ceph-a-journey-to-1tibps/#fix-three) that [before](https://github.com/ceph/ceph/pull/54918) Pull request (PR) was merged, the build process did not properly propagate the `CMAKE_BUILD_TYPE` options to external projects built by Ceph - in this case, RocksDB. [Before](https://github.com/ceph/ceph/pull/24133), packages were built with the `RelWithDebInfo` to build a "performance" release package. While it has not been verified, it is possible that upstream Ceph Ubuntu packages have suffered from this since some version of Luminous.
+Mark Nelson [found out](https://ceph.io/en/news/blog/2024/ceph-a-journey-to-1tibps/#fix-three) that [before](https://github.com/ceph/ceph/pull/54918) Pull request (PR) was merged, the build process did not properly propagate the `CMAKE_BUILD_TYPE` options to external projects built by Ceph - in this case, RocksDB. [Before](https://github.com/ceph/ceph/pull/24133), packages were built with the `RelWithDebInfo` to build a "performance" release package. While it has not been verified, it is possible that upstream Ceph Ubuntu packages have suffered from this since Luminous.
 
 # Acknowledgments
 
-Thanks to Mark Nelson for finding and fixing this issue. Thanks to Kefu Chai for providing a fix for the build system. Thanks to Casey Bodley for taking care of creating the backport trackers. Thanks to my employer [BIT](https://www.bit.nl) for having me work on Ceph, and Els de Jong for editing.
+Thanks to Mark Nelson for finding and fixing this issue. Thanks to Kefu Chai for providing a fix for the build system. Thanks to Casey Bodley for taking care of creating the backport trackers. Thanks to my employer [BIT](https://www.bit.nl) for having me work on Ceph, and to Els de Jong and Anthony D'Atri for editing.
 
 ### So what does this mean?
 
-RocksDB performance is sub-optimal when build without `RelWithDebInfo`. This can be improved by running peformance packages. The actual performance increase depends on the cluster, but the RocksDB compaction is reduced by a factor of three. In some cases random 4K write performance is doubled. See these links [1](https://bugs.gentoo.org/733316) and [2](https://ceph.io/en/news/blog/2024/ceph-a-journey-to-1tibps/).
+RocksDB performance is sub-optimal when built without `RelWithDebInfo`. This can be mitigated by installing "peformance" package builds. The actual performance increase depends on the cluster, but the RocksDB compaction is reduced by a factor of three. In some cases random 4K write performance is doubled. See these links [1](https://bugs.gentoo.org/733316) and [2](https://ceph.io/en/news/blog/2024/ceph-a-journey-to-1tibps/).
 
 ### How can I resolve this performance issue? 
 
@@ -39,7 +39,7 @@ add "extraopts += -DCMAKE_BUILD_TYPE=RelWithDebInfo" to debian/rules file
 dpkg-buildpackage -us -uc -j$DOUBLE_NUMBER_OF_CORES_BUILD_HOST 2>&1 | tee ../dpkg-buildpackage.log
 ```
 
-Note: add "-b" option to `dpkg-buildpackage` if you only want binary packages and no source packages. Make sure you have enough file space available, and enough memory, especially when building with a lot of threads. I used a VM with 256 GB of RAM, 64 cores and 300 GB of space and that took around [around? of exact 1 uur en 7 minuten?] 1 hour and 7 minutes (a full build including source packages).
+Note: add the "-b" option to `dpkg-buildpackage` if you only want binary packages and no source packages. Make sure you have enough file space available, and enough memory, especially when building with a lot of threads. I used a VM with 256 GB of RAM, 64 cores and 300 GB of space and that took around 1 hour and 7 minutes (a full build including source packages).
 
 Make sure you check the dpkg-buildpackage.log and check for `DCMAKE_BUILD_TYPE=RelWithDebInfo` like below
 
@@ -83,13 +83,13 @@ Performance package disk IOPS (after)
 
 ![](images/storage23_OSD_compact_after_perf_package_IOPS.png)
 
-Please note the increasing difference in OSD compaction time between SATA SSDs and DVMe drives. Previously, this gap was not as big due to the performance issues with RocksDB. However, with the introduction of faster and lower-latency disks, this difference has become more pronounced. THis suggests that the most significant perfornance improvements can be seen in clusters equipped with faster disks. 
+Please note the increasing difference in OSD compaction time between SATA SSDs and NVMe drives. Previously, this gap was not as big due to the performance issues with RocksDB. However, with the introduction of faster and lower-latency disks, this difference has become more pronounced. THis suggests that the most significant perfornance improvements can be seen in clusters equipped with faster disks. 
 
 In this specific cluster, the performance packages have reduced the time needed to compact all OSDs by approximately one-third. Previously taking nine and a half hours, the process now completes in six hours.
 
 ### Real world performance gains
 
-While we hoped to see the performance double this was not the case. However we still saw some significant improvements in performance. To detect [gray failure](https://www.microsoft.com/en-us/research/wp-content/uploads/2017/06/paper-1.pdf) We have virtual machines running on our cloud to continously (at 5 minute intervals) monitor performance as perceived from within the virtual machine. One of these tests is a [fio](https://github.com/axboe/fio) 4K random write test (single threaded, queue depth of 1).
+While we hoped to see the performance double this was not the case. However we still saw some significant improvements in performance. To detect [gray failure](https://www.microsoft.com/en-us/research/wp-content/uploads/2017/06/paper-1.pdf) We have virtual machines running on our cloud to continously (at 5 minute intervals) monitor performance as experienced from within the virtual machine. One of these tests is a [FIO](https://github.com/axboe/fio) 4K random write test (single threaded, queue depth of 1).
 
 4K random write on CephFS (before)
 
@@ -104,8 +104,8 @@ We have also performed other fio benchmarks and the main benefits are that stand
 
 ### Conclusions
 
-- It pays off to conduct performance verification against a "known good" cluster, as Mark Nelson did. This helps identify performance issues early, before running production workloads. 
-- Clusters equipped with faster disks are more likely to see significant performance improvements compared to those with lower-performance drives like SSDs or rotational media.
+- It pays to conduct performance verification against a "known good" cluster, as Mark Nelson did. This helps identify performance issues early, before running production workloads. 
+- Clusters equipped with faster disks are more likely to see significant performance improvements compared to those with lower-performance drives like SAS/SATA SSDs or HDDs.
 
 ### Recommendations / considerations
 
