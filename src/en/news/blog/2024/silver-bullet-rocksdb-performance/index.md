@@ -50,17 +50,58 @@ cd /home/stefan/ceph/obj-x86_64-linux-gnu/src/rocksdb && /usr/bin/cmake -DCMAKE_
 
 ### Actual performance improvements as seen on one of our clusters
 
+We installed the rebuilt packages on our storage nodes and the results are striking
+
 ![](images/RocksDB_commit_latency_all_osds.png)
 
 And to zoom in on one specific OSD
 
 ![](images/RocksDB_commit_latency_osd.228_osds.png)
 
-Some more graphs here
+If you find yourself compacting your OSDs once in a while you will be positively surprised. The gains are threefold when compacting OSDs:
 
-some text about reduction in rocksdb compaction backed with graphs
+1) Better performance of RocksDB itself
+2) Better write performance of OSDs, so faster recovery
+3) Because of shorter downtime the amount that has te be recovered is less
+
+Some graphs from server metrics to show this. Our procedure for OSD compacting is a staggered shutdown of OSDs, and after all OSDs are shutdown a compaction is performed in parallel (`df|grep "/var/lib/ceph/osd" |awk '{print $6}' |cut -d '-' -f 2|sort -n|xargs -n 1 -P 10 -I OSD ceph-kvstore-tool bluestore-kv /var/lib/ceph/osd/ceph-OSD compact`).
+
+Debug package disk IOPS (before)
+
+![](images/storage1_OSD_compact_before_perf_package_IOPS.png)
+
+Performance package disk IOPS (after)
+
+![](images/storage1_OSD_compact_after_perf_package_IOPS.png)
+
+This is a node with SATA SSDs. A node with NVMe disks is even faster.
+
+Debug package disk IOPS (before)
+
+![](images/storage23_OSD_compact_before_perf_package_IOPS.png)
+
+Performance package disk IOPS (after)
+
+![](images/storage23_OSD_compact_after_perf_package_IOPS.png)
+
+Note that OSD compaction time difference between SATA SSDs and NVMes has increased. Before the difference was not that big (because of the RocksDB performance issue), but after the effect of faster (lower latency) disks is more pronounced. So this seems to indicate that the biggest performance gains are to be expected on clusters with faster disks.
+
+The performance packages for this particular cluster shaved ~ 1/3 off of the time to compact all OSDs (six instead of nine and a half hours). 
 
 ### Conclusions
 
+- It pays off to verify performance against a "known good" cluster like Mark Nelson did to spot performance issues early on before running production workloads.
+- Clusters that make use of faster disks are more likely to gain increased performance than clusters with lower performance (SSDs, rotational media).
 
+### Recommendations / considerations
 
+- When performance testing, test different deployment strategies.
+i.e. bare metal with different OSes, containerized with upstream containers, basically all deployments that are supported by the Ceph project.
+
+Okay, that might be *way* too much in practice, but to catch issues like this it's good to have a couple of different tests performed.
+
+Over time these tests might lead to more standarisation and a "IO/Watt" "throughput/Watt" ratio that can be more easily compared across different tests.
+Maybe we should write Ceph specific tests for use with [Phoronix test-suite](https://www.phoronix-test-suite.com/)?
+
+While not an issue in this particular case, but there might be performance regressions related to CPU specific architectures that might be spotted this way.
+I.e. having an ARM64 performance cluster next to X86-64 could bring to light a performance discrepency related to specific build options.
