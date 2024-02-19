@@ -44,7 +44,7 @@ vallariag@ibm.com
 **Description of project:**
 Ceph's build system is far from perfect and have encoutered several
 problems in the past. Your job is to work with Ceph's
-Infrastructure + Teuthology Team to improve the current build system. 
+Infrastructure + Teuthology Team to improve the current build system.
 
 **Expected Outcome(s):**
 
@@ -52,7 +52,7 @@ A reduction in build times from Ceph developers pushing to the ceph-ci repo to r
 
 <hr class="hr">
 
-## From RADOS to REDIS 
+## From RADOS to REDIS
 
 **Mentor name(s):** Yuval Lifshitz
 
@@ -66,7 +66,7 @@ A reduction in build times from Ceph developers pushing to the ceph-ci repo to r
 
 **Subcomponent of Ceph:** RGW
 
-**Description of project:** 
+**Description of project:**
 
 Bucket notifications are important building block for many use cases. And persistent bucket notifications in particular, as they let the system overcome broker outages. However, since the persistent notifications are backed with a RADOS queue, they have a cost. Both in the extra load on the RADOS cluster, and with the inability to operate in environments where there is no RADOS backend. In this project, we would like to implement persistent bucket notifications in the RADOS Gateway using a Redis Queue. Combined with the "zipper" project we would be able to enjoy bucket notifications with backends like posix, dbstore, daos etc.
 
@@ -90,9 +90,9 @@ Persistent bucket notifications being stored in a Redis cluster that is being re
 
 **Subcomponent of Ceph:** RGW
 
-**Description of project:** 
+**Description of project:**
 
-The Rados Gateway (RGW) has a REST API that can do admin operations called the [admin ops api](https://docs.ceph.com/en/latest/radosgw/adminops/). 
+The Rados Gateway (RGW) has a REST API that can do admin operations called the [admin ops api](https://docs.ceph.com/en/latest/radosgw/adminops/).
 
 This project have two phases. The first phase would include enhancing the intergration testing coverage of the admin API, and auditing the documentation to make sure it is up to date.
 The second phase would entail refactoring the admin API code to ensure it can work with different backends such as posix, dbstore, rados, etc.
@@ -127,29 +127,29 @@ Prevention of lua scripts in the RADOS Gateway from hogging system resources.
 
 <hr class="hr">
 
-## The Coverup
+## Tidy Up Song
 
-**Mentor name(s):** Yuval Lifshitz
+**Mentor name(s):** Ronen Friedman, Yuval Lifshitz
 
-**Mentor email(s):** ylifshit@ibm.com
+**Mentor email(s):** rfriedma@ibm.com, ylifshit@ibm.com
 
 **Difficulty:** Intermediate
 
-**Project Hours:** 175
+**Project Hours:** 350
 
 **Skills needed:** C++
 
-**Subcomponent of Ceph:** Core
+**Subcomponent of Ceph:** RGW, Core
 
 **Description of project:**
+Use [clang-tidy](https://clang.llvm.org/extra/clang-tidy/) for static analysis in the Ceph project:
 
-Code coverage tools are useful in measuring the effectiveness of our unit tests, and in guiding us on where to write for new tests and find potential bugs.
-In this project we would like to add the toolset that would allow effective code coverage reporting based on the ceph unit tests.
-[old blog pt. 1](https://blog.dachary.org/2013/01/08/ceph-code-coverage-part-12/)
-[old blog pt. 2](https://blog.dachary.org/2013/01/16/ceph-code-coverage-part-22/)
+1. make sure that ceph compiles under clang
+2. tune up clang-tidy to find important issues that are common to Ceph (looking for a relatively _small_ subset of _critical_ issues)
+3. cleanup issues found in (2). don't have to cleanup all of them...
+4. add to jenkins/github actions (non blocking)
 
 **Expected Outcome(s):**
-
-Code coverage of ceph unit tests
+Have clang-tidy run against Ceph PRs, and show errors only if introduced in the PR.
 
 <hr class="hr">
