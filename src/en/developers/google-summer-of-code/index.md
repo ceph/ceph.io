@@ -78,9 +78,9 @@ Persistent bucket notifications being stored in a Redis cluster that is being re
 
 ## RGW AdminAPI Audit & Refactoring
 
-**Mentor name(s):** Ali Maredia, Samarah Uriarte, Josh Durgin
+**Mentor name(s):** Ali Maredia, Samarah Uriarte
 
-**Mentor email(s):** amaredia@redhat.com, samarah.uriarte@ibm.com, jdurgin@redhat.com
+**Mentor email(s):** amaredia@redhat.com, samarah.uriarte@ibm.com
 
 **Difficulty:** Intermediate
 
