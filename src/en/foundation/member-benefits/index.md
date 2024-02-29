@@ -109,7 +109,7 @@ order: 4
 <td style="text-align:center">✓</td>
 </tr>
 <tr>
-<td>Complimentary passes for Cephalocon and Ceph Days</td>
+<td>Complimentary passes for Cephalocon</td>
 <td style="text-align:center"></td>
 <td style="text-align:center">✓ (1)</td>
 <td style="text-align:center">✓ (2)</td>
