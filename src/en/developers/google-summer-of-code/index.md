@@ -68,7 +68,7 @@ A reduction in build times from Ceph developers pushing to the ceph-ci repo to r
 
 **Description of project:**
 
-Bucket notifications are important building block for many use cases. And persistent bucket notifications in particular, as they let the system overcome broker outages. However, since the persistent notifications are backed with a RADOS queue, they have a cost. Both in the extra load on the RADOS cluster, and with the inability to operate in environments where there is no RADOS backend. In this project, we would like to implement persistent bucket notifications in the RADOS Gateway using a Redis Queue. Combined with the "zipper" project we would be able to enjoy bucket notifications with backends like posix, dbstore, daos etc.
+Detailed description of the project, as well as the steps expected to ba taken by candidates in the evaluation stage could be found [here](https://gist.github.com/yuvalif/26ff6c115a8386d1d47f2ed4e38cfd39)
 
 **Expected Outcome(s):**
 
