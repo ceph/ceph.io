@@ -26,29 +26,40 @@ get started with contributions](https://ceph.io/en/developers/contribute/).
 
 <hr class="hr">
 
-## Improving Shaman the Builder
+## Shaman Scheduling for Success
 
 **Mentor name(s):** Zack Cerza, Kamoltat (Junior) Sirivadhna
 Aishwarya Mathuria, Vallari Agrawal
 
-**Mentor email(s):** zcerza@ibm.com, ksirivad@ibm.com, amathuri@ibm.com,
-vallariag@ibm.com
+**Mentor email(s):** zack1@ibm.com, ksirivad@ibm.com, aishwarya.mathuria@ibm.com, vallari.agrawal@ibm.com
 
 **Difficulty:** Medium
 
 **Project Hours:** 350
 
-**Skills needed:** Shell, Python
-**Subcomponent of Ceph:** [Build System](https://github.com/ceph/ceph-build)
+**Skills needed:** Shell, Python, FastAPI
+
+**Subcomponent of Ceph:** [Ceph Build System](https://github.com/ceph/ceph-build), [Ceph Integration Test Framework](https://github.com/ceph/teuthology)
 
 **Description of project:**
-Ceph's build system is far from perfect and have encoutered several
-problems in the past. Your job is to work with Ceph's
-Infrastructure + Teuthology Team to improve the current build system.
+We can make the process of scheduling Ceph integration tests upstream more efficient by allowing users to auto-schedule teuthology-suite commands
+when pushing their feature-branch to ceph-ci.
+
+Your mission is to build the auto-schedule feature based off a pre-existing work:
+
+[teuthology-api pull request](https://github.com/ceph/teuthology-api/pull/24)
+
+[ceph-build pull request](https://github.com/VallariAg/ceph-build/commit/217f080a45c00a07829be9c0ce51057f23b27ddc)
+
+**Standup/weekly call mentee could attend?:** teuthology weekly meeting
+
+**Steps to evaluate an applicant for the project:**
+
+TBD
 
 **Expected Outcome(s):**
 
-A reduction in build times from Ceph developers pushing to the ceph-ci repo to rpms, debs, and containers bieng created
+A working auto-schedule feature for at least one suite.
 
 <hr class="hr">
 
