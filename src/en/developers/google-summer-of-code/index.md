@@ -114,30 +114,6 @@ For the first phase, improvements to the test suite that tests the RGW admin API
 
 <hr class="hr">
 
-## Lunar Time
-
-**Mentor name(s):** Yuval Lifshitz
-
-**Mentor email(s):** ylifshit@ibm.com
-
-**Difficulty:** Hard
-
-**Project Hours:** 350
-
-**Skills needed:** C++
-
-**Subcomponent of Ceph:** RGW
-
-**Description of project:**
-
-Lua scripts on the RADOS Gateway are powerful, so, in the meantime we only allow admins to add them to the RADOS Gatewway. Before we open this possibility to users, we want to add several protection layers to prevent from careless users to take down the system. One of these measures, will be to limit the execution time of each script, so it does not hog the system, go into infinite loops etc.
-
-**Expected Outcome(s):**
-
-Prevention of lua scripts in the RADOS Gateway from hogging system resources.
-
-<hr class="hr">
-
 ## Tidy Up Song
 
 **Mentor name(s):** Ronen Friedman, Yuval Lifshitz
@@ -146,21 +122,18 @@ Prevention of lua scripts in the RADOS Gateway from hogging system resources.
 
 **Difficulty:** Intermediate
 
-**Project Hours:** 350
+**Project Hours:** 175
 
 **Skills needed:** C++
 
 **Subcomponent of Ceph:** RGW, Core
 
 **Description of project:**
-Use [clang-tidy](https://clang.llvm.org/extra/clang-tidy/) for static analysis in the Ceph project:
 
-1. make sure that ceph compiles under clang
-2. tune up clang-tidy to find important issues that are common to Ceph (looking for a relatively _small_ subset of _critical_ issues)
-3. cleanup issues found in (2). don't have to cleanup all of them...
-4. add to jenkins/github actions (non blocking)
+Detailed description of the project, as well as the steps expected to ba taken by candidates in the evaluation stage could be found [here](https://gist.github.com/yuvalif/b29efb8ff2c68831eaf70870c6398869)
 
 **Expected Outcome(s):**
+
 Have clang-tidy run against Ceph PRs, and show errors only if introduced in the PR.
 
 <hr class="hr">
