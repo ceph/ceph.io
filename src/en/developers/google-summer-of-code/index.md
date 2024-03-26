@@ -55,7 +55,10 @@ Your mission is to build the auto-schedule feature based off a pre-existing work
 
 **Steps to evaluate an applicant for the project:**
 
-TBD
+1. Setup teuthology-api and share screenshot that you're able to schedule runs from teuthology-api  (i.e. share screenshot of success response of /suite endpoint)
+2. Open a PR for adding a new endpoint to teuthology-api for suite command defaults: https://github.com/ceph/pulpito-ng/issues/41
+3. [optional] Add unit tests for the new endpoint added above
+4. Include understanding of current build-and-schedule workflow and new auto-schedule workflow in proposal
 
 **Expected Outcome(s):**
 
