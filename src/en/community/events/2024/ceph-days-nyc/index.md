@@ -33,10 +33,12 @@ Space is limited, so register soon!
 
 ## Important Dates
 
+Based on popular demand, we've extended the CFP deadline by one week.  Get your proposals in folks!
+
 - **CFP Opens:** 2024-03-07
-- **CFP Closes:** 2024-03-26
-- **CFP Acceptance Notifications:** 2024-03-29
-- **Schedule Announcement:** 2024-04-03
+- **CFP Closes:** 2024-04-02
+- **CFP Acceptance Notifications:** 2024-04-05
+- **Schedule Announcement:** 2024-04-10
 - **Event Date:** 2024-04-26
 
 <br />
