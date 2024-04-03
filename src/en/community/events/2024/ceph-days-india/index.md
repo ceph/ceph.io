@@ -36,6 +36,11 @@ The CFP is now open and registration is limited!
 - **Schedule Announcement:** 2024-05-03
 - **Event Date:** 2024-05-31
 
+<br />
+
+<a class="button" href="https://forms.gle/kiUM6jJY9kwpF5QCA">Submit a presentation now!</a>
+<br />
+
 Join the Ceph announcement list, or follow Ceph on social media for Ceph event
 updates:
 
