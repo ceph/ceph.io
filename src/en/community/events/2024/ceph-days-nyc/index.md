@@ -43,7 +43,4 @@ Based on popular demand, we've extended the CFP deadline by one week.  Get your 
 
 <br />
 
-<a class="button" href="https://forms.gle/QojjACzGz1d4H2R49">Submit a presentation now!</a>
-<br />
-<br />
 <a class="button" href="https://www.eventbrite.com/e/ceph-day-new-york-tickets-848746643057">Register to attend!</a>
