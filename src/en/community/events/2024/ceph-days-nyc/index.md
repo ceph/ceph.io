@@ -128,7 +128,7 @@ To overcome these hurdles, the 45Drives team employed RADOS Namespaces & Cephx K
 An unexpected requirement for network micro-segmentation to meet the client's security standards introduced additional complexity towards the project's completion. Nevertheless, the project succeeded in delivering scalable performance results. Future directions include efforts to automate the scaling of Multi Daemon Servers (MDS) and the transition from Virtual Machines on Proxmox to Containers on Kubernetes, aiming to enhance efficiency and flexibility in cloud infrastructure deployments.
 This presentation will share insights from the experience of navigating the complexities of developing a multitenant filesystem for the Media & Entertainment industry, reflecting on both the achieved outcomes and prospective future improvements in cloud infrastructure.
 </td>
-   <td><center><strong>Mitch Hall & Brett Kelly (45 Drives)</strong></center>
+   <td><center><strong><img src="/assets/bitmaps/events/2024/ceph-days-nyc/mitchell-hall.jpg">Mitch Hall (45 Drives)<img src="/assets/bitmaps/events/2024/ceph-days-nyc/brett-kelly.jpg">Brett Kelly (45 Drives)</strong></center>
    </td>
   </tr>
   <tr>
@@ -252,7 +252,7 @@ While digging into RBD performance issues, it was observed that some fragmented 
 <p>
 In this talk, we will discuss MicroCeph and explore the various use cases for providing quick and simple Ceph storage - from the developer workstation, to CI systems, to edge computing and the data center.
    </td>
-   <td><center><strong>Billy Olsen (Canonical)</strong>
+   <td><center><img src="/assets/bitmaps/events/2024/ceph-days-nyc/billy-olsen.png"><strong>Billy Olsen (Canonical)</strong>
    </center>
    </td>
   </tr>
