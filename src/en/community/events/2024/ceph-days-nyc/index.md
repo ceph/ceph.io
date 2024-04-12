@@ -174,7 +174,7 @@ ISS has run Ceph operations in business settings for 10 years with great success
 <p>
 With the introduction of NVMe drives, data center and cloud workloads alike have benefitted from their increase performance, durability and parallelism. Combine these qualities with the scale and agility of Ceph block storage, leveraging existing networks as transport, and you've got a recipe for cost-effective success at scale, with a high level of reliability and redundancy. Come explore what NVMe over Fabrics and specifically NVMe over TCP looks like, and how it can optimize not only your storage, but your budget as well!
 </td>
-   <td><center><strong>Mike Burkhart (IBM)</strong>
+   <td><center><img src="/assets/bitmaps/events/2024/ceph-days-nyc/mike-burkhart.jpg"><strong>Mike Burkhart (IBM)</strong>
    </center>
    </td>
   </tr>
