@@ -65,6 +65,14 @@ Based on popular demand, we've extended the CFP deadline by one week.  Get your 
    </td>
   </tr>
   <tr>
+   <td>8:00 AM
+   </td>
+   <td><strong>Breakfast</strong>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
    <td>9:00 AM
    </td>
    <td><strong>Welcome</strong>
