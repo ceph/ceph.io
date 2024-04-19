@@ -24,4 +24,8 @@ its publication date.
 
 [CQ3 - Letter](./Ceph_Quarterly_003_Letter.pdf)
 
+[CQ4 - A4](./Ceph_Quarterly_004_A4.pdf)
+
+[CQ4 - Letter](./Ceph_Quarterly_004_Letter.pdf)
+
 For more information, contact <zac.dover@proton.me>
