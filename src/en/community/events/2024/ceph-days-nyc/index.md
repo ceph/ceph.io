@@ -82,6 +82,8 @@ Based on popular demand, we've extended the CFP deadline by one week.  Get your 
    <td><strong>Diving Deep with Squid</strong>
 <p>
 A look at the newest Ceph release, current development priorities, and the latest activity in the Ceph community.
+
+<a href="/assets/pdfs/events/2024/ceph-days-nyc/Diving Deep with Squid.pdf">slides</a>
    </td>
    <td><center><strong><img src="/assets/bitmaps/events/2024/ceph-days-nyc/josh-durgin.png">Josh Durgin (IBM)<img src="/assets/bitmaps/events/2024/ceph-days-nyc/neha-ojha.jpg">Neha Ojha (IBM)</strong></center>
    </td>
@@ -135,6 +137,8 @@ To overcome these hurdles, the 45Drives team employed RADOS Namespaces & Cephx K
 
 An unexpected requirement for network micro-segmentation to meet the client's security standards introduced additional complexity towards the project's completion. Nevertheless, the project succeeded in delivering scalable performance results. Future directions include efforts to automate the scaling of Multi Daemon Servers (MDS) and the transition from Virtual Machines on Proxmox to Containers on Kubernetes, aiming to enhance efficiency and flexibility in cloud infrastructure deployments.
 This presentation will share insights from the experience of navigating the complexities of developing a multitenant filesystem for the Media & Entertainment industry, reflecting on both the achieved outcomes and prospective future improvements in cloud infrastructure.
+
+<a href="/assets/pdfs/events/2024/ceph-days-nyc/45Drives -Ceph Days 2024 - FINAL.pdf">slides</a>
 </td>
    <td><center><strong><img src="/assets/bitmaps/events/2024/ceph-days-nyc/mitchell-hall.jpg">Mitch Hall (45 Drives)<img src="/assets/bitmaps/events/2024/ceph-days-nyc/brett-kelly.jpg">Brett Kelly (45 Drives)</strong></center>
    </td>
@@ -213,6 +217,8 @@ One more thing... Dan will conclude with an introduction of Chorus, a Swiss-Army
    <td><strong>Making RBD snapshot based mirroring robust for disaster recovery scenarios</strong>
 <p>
 The feature to mirror RADOS block device (RBD) images across clusters by asynchronous replication of RBD snapshots was introduced a few years ago. It's been recently integrated into the disaster recovery (DR) solution for container workloads backed by RBD in OpenShift kubernetes environment. The integration and testing of the DR solution uncovered bugs and helped identify missing pieces in snapshot based mirroring. Bug fixes and enhancements have been made to librbd and kernel RBD clients, and in the ceph-mgr service that schedules mirror snapshots. There is still a lot of scope for improvement here. This talk will give an overview of the current state of RBD snapshot based mirroring, its usage in Openshift's Ceph storage disaster recovery solution, and the planned improvements for the feature. Folks interested in using RBD mirroring for their disaster recovery solutions will find this talk especially useful.
+
+<a href="/assets/pdfs/events/2024/ceph-days-nyc/Making RBD snapshot based mirroring robust for disaster recovery.pdf">slides</a>
    </td>
    <td><center><img src="/assets/bitmaps/events/2024/ceph-days-nyc/ramana-raja.jpg"><strong>Ramana Raja (IBM)</strong>
    </center>
@@ -271,6 +277,8 @@ While digging into RBD performance issues, it was observed that some fragmented 
    <td><strong>MicroCeph from Development to Solutions</strong>
 <p>
 In this talk, we will discuss MicroCeph and explore the various use cases for providing quick and simple Ceph storage - from the developer workstation, to CI systems, to edge computing and the data center.
+
+<a href="/assets/pdfs/events/2024/ceph-days-nyc/MicroCeph_ From Development to Solutions.pdf">slides</a>
    </td>
    <td><center><img src="/assets/bitmaps/events/2024/ceph-days-nyc/billy-olsen.png"><strong>Billy Olsen (Canonical)</strong>
    </center>
