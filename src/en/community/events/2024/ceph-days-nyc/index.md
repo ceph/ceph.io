@@ -41,10 +41,6 @@ Based on popular demand, we've extended the CFP deadline by one week.  Get your 
 - **Schedule Announcement:** 2024-04-10
 - **Event Date:** 2024-04-26
 
-<br />
-
-<a class="button" href="https://www.eventbrite.com/e/ceph-day-new-york-tickets-848746643057">Register to attend!</a>
-
 ## Hotel Recommendations
 
 - [Andaz 5th Avenue](https://www.hyatt.com/en-US/hotel/new-york/andaz-5th-avenue/nycam)
@@ -100,6 +96,8 @@ OpenStack cloud providers and operators. Ceph RBD integrates well with Cinder se
 A cursory online search might suggest that one use specific RocksDB settings, place multiple OSDs on each NVMe, or even set some unusual sysctls. However, when tested, we found that most of these suggestions found online are either ineffective, actually degrade performance, or are no longer applicable to recent versions of Ceph. On the other hand, much of the tuning we have found to be effective was only discovered by the community at large more recently, or has yet to be fully realized.
 
 In this talk, we will go over some tips and tricks that have worked well for us in designing and configuring performant RBD clusters using modern versions of Ceph, as well as future possible code changes we believe will extract even more performance out of flash-backed OSDs.
+
+<a href="/assets/pdfs/events/2024/ceph-days-nyc/Ceph Days NYC 2024 - Designing and Tuning for All-Flash Ceph RBD Storage.pptx">slides</a>
    </td>
    <td><center><img src="/assets/bitmaps/events/2024/ceph-days-nyc/tyler-stachecki.jpg"><strong>Tyler Stachecki (Bloomberg)</strong>
    </center>
@@ -111,6 +109,8 @@ In this talk, we will go over some tips and tricks that have worked well for us 
    <td><strong>Ceph: A Journey to 1 TiB/s</strong>
 <p>
 This talk will cover the trials and joys of transforming an HDD based Ceph cluster to a high performance NVMe deployment and the level of performance we were able to achieve during testing.  We'll cover hardware choices we made, how we ran tests, and how we tackled bottlenecks and bugs.
+
+<a href="/assets/pdfs/events/2024/ceph-days-nyc/Ceph Days - A Journey to 1 TiB_s.pdf">slides</a>
    </td>
    <td><center><img src="/assets/bitmaps/events/2024/ceph-days-nyc/mark-nelson.jpg"><strong>Mark Nelson (CLYSO)</strong>
    </center>
@@ -151,6 +151,8 @@ Additionally, the Ceph Foundation Board would like to capture feedback from the 
 The overarching goal of these meetings is to elicit feedback from the users, companies, and organizations who use Ceph in their production environments. This feedback will be collected and combined to form broad themes of pain points, issues, missing features etc.
 
 While we expect most of the feedback to be constructive, sharing what you like about the project, what strengths you see, and what things you wish the project to continue to do are also valuable. This feedback will be anonymized, organized, and shared with the Ceph Leadership Team (CLT) with the goal of providing feedback to the developer community to incorporate invaluable insight from real Ceph users on how the project is used in the wild.
+
+<a href="/assets/pdfs/events/2024/ceph-days-nyc/Launch of Ceph User Council.pdf">slides</a>
    </td>
    <td><center><strong><img src="/assets/bitmaps/events/2024/ceph-days-nyc/laura-flores.jpg">Laura Flores (IBM)<img src="/assets/bitmaps/events/2024/ceph-days-nyc/vincent-hsu.jpg">Vincent Hsu (IBM)<img src="/assets/bitmaps/events/2024/ceph-days-nyc/neha-ojha.jpg">Neha Ojha (IBM)</strong>
    </center>
@@ -162,6 +164,8 @@ While we expect most of the feedback to be constructive, sharing what you like a
    <td><strong>Practical Business Ceph Examples</strong>
 <p>
 ISS has run Ceph operations in business settings for 10 years with great success.  Alex will present several use cases for midrange datacenter use: Proxmox VMs, SAN replacement, Backup, Kubernetes CSI, S3, RHEL/Pacemaker, NFS.
+
+<a href="/assets/pdfs/events/2024/ceph-days-nyc/Business Uses of Ceph.pdf">slides</a>
    </td>
    <td><center><img src="/assets/bitmaps/events/2024/ceph-days-nyc/alex-gorbachev.jpg"><strong>Alex Gorbachev (ISS)</strong>
    </center>
@@ -196,6 +200,8 @@ Ceph data placement is a simple yet nuanced subject. Using it's secret sauce "CR
 In this talk, Dan will describe "how it works" internally, and present practical easy to use tools to make the lives of Ceph operators better.
 
 One more thing... Dan will conclude with an introduction of Chorus, a Swiss-Army Knife frontend for S3.
+
+<a href="/assets/pdfs/events/2024/ceph-days-nyc/Mastering Ceph Operations with Upmap.pdf">slides</a>
    </td>
    <td><center><img src="/assets/bitmaps/events/2024/ceph-days-nyc/dan-van-der-ster.jpg"><strong>Dan van der Ster (CLYSO)</strong>
    </center>
@@ -218,6 +224,8 @@ The feature to mirror RADOS block device (RBD) images across clusters by asynchr
    <td><strong>Data Security and Storage Hardening in Rook and Ceph</strong>
 <p>
 We explore the security model exposed by Rook with Ceph, the leading software-defined storage platform of the Open Source world. Digging increasingly deeper in the stack, we examine options for hardening Ceph storage that are appropriate for a variety of threat profiles.
+
+<a href="/assets/pdfs/events/2024/ceph-days-nyc/DATA SECURITY AND STORAGE HARDENING IN ROOK AND CEPH (CEPH DAYS NYC 2024).pdf">slides</a>
    </td>
    <td><center><strong><img src="/assets/bitmaps/events/2024/ceph-days-nyc/federico-lucifredi.jpg">Federico Lucifredi (IBM)<img src="/assets/bitmaps/events/2024/ceph-days-nyc/sage-mctaggart.png">Sage McTaggart (IBM)</strong>
    </center>
@@ -237,6 +245,8 @@ We explore the security model exposed by Rook with Ceph, the leading software-de
    <td><strong>How we Operate Ceph at Scale</strong>
 <p>
 As clusters grow in both size and quantity, operator effort should not grow at the same pace. In this talk, Matt Vandermeulen will discuss strategies and challenges for operating clusters of varying sizes in a rapidly growing environment for both RBD and object storage workloads based on DigitalOcean's experiences.
+
+<a href="/assets/pdfs/events/2024/ceph-days-nyc/2024 Ceph Day NYC How we Operate Ceph at Scale.pdf">slides</a>
    <td>
    <center><img src="/assets/bitmaps/events/2024/ceph-days-nyc/matt-vandermeulen.jpg"><strong>Matt Vandermeulen (Digital Ocean)</strong>
    </center>
@@ -248,6 +258,8 @@ As clusters grow in both size and quantity, operator effort should not grow at t
    <td><strong>Attempting to Improve Discard Performance</strong>
 <p>
 While digging into RBD performance issues, it was observed that some fragmented OSDs were struggling to keep up with their normal performance, and they were struggling with their internal discard mechanism. Enabling discards in Ceph helped, but it still falls behind, as discards were single threaded. In this lightning talk, we'll discuss what DigitalOcean observed, and how we approached solutions by making discards multi-threaded, as well as limitations of certain nameless drives.
+
+<a href="/assets/pdfs/events/2024/ceph-days-nyc/2024 Ceph Day NYC Discards Lightning Talk.pdf">slides</a>
    </td>
    <td><center><img src="/assets/bitmaps/events/2024/ceph-days-nyc/matt-vandermeulen.jpg"><strong>Matt Vandermeulen (Digital Ocean)</strong>
    </center>
@@ -261,17 +273,6 @@ While digging into RBD performance issues, it was observed that some fragmented 
 In this talk, we will discuss MicroCeph and explore the various use cases for providing quick and simple Ceph storage - from the developer workstation, to CI systems, to edge computing and the data center.
    </td>
    <td><center><img src="/assets/bitmaps/events/2024/ceph-days-nyc/billy-olsen.png"><strong>Billy Olsen (Canonical)</strong>
-   </center>
-   </td>
-  </tr>
-  <tr>
-   <td>4:05 PM
-   </td>
-   <td><strong>Chill out - Apache Iceberg and Ceph</strong>
-<p>
-Ceph object storage is a popular substrate for data lakes due to its scalability, rich S3 dialect, and ability to run on industry standard hardware. The first generation of organizations using Ceph based data lakes primarily leveraged Hive tables. Working with practitioners we saw the Hadoop S3A filesystem grow to maturity. Modern data lake and lakehouse architectures have been trending towards open table formats like Apache Iceberg. In this session we will dig into the design goals of Iceberg tables, the influence of object storage, and cover best practices for using Iceberg tables with Ceph based data lakes.
-   </td>
-   <td><center><strong>Kyle Bader (IBM)</strong>
    </center>
    </td>
   </tr>
