@@ -99,7 +99,7 @@ A cursory online search might suggest that one use specific RocksDB settings, pl
 
 In this talk, we will go over some tips and tricks that have worked well for us in designing and configuring performant RBD clusters using modern versions of Ceph, as well as future possible code changes we believe will extract even more performance out of flash-backed OSDs.
 
-<a href="/assets/pdfs/events/2024/ceph-days-nyc/Ceph Days NYC 2024 - Designing and Tuning for All-Flash Ceph RBD Storage.pptx">slides</a>
+<a href="/assets/pdfs/events/2024/ceph-days-nyc/Ceph Days NYC 2024 - Designing and Tuning for All-Flash Ceph RBD Storage.pdf">slides</a>
    </td>
    <td><center><img src="/assets/bitmaps/events/2024/ceph-days-nyc/tyler-stachecki.jpg"><strong>Tyler Stachecki (Bloomberg)</strong>
    </center>
