@@ -10,6 +10,9 @@ sponsors:
     list:
       - name: Clyso
         logo: /assets/bitmaps/logo-clyso.png
+  - label:
+    list:
+      - name: IBM
 tags:
   - ceph days
 ---
@@ -66,31 +69,15 @@ The CFP is closed and registration is limited!
   <tr>
    <td>10:25
    </td>
-   <td><strong>D4N in RGW</strong>
-<p>
-D4N is an intelligent caching framework within Ceph RGW. This project is a collaboration between MOC team at Boston University and Ceph RGW team. The ongoing effort to upstream D4N into Ceph is mainly going to target accelerating analytics workload.
+   <td><strong>Introduction to NVMeOF in Ceph</strong>
    </td>
-   <td><strong>Pritha Srivastava</strong>
+   <td><strong>Manohar M</strong>
 <p>
 IBM
    </td>
   </tr>  
   <tr>
-   <td>10:35
-   </td>
-   <td><strong>Highly available Ceph Cluster Using Haproxy.</strong>
-<p>
-"The aim of this talk is to give real experience while I recently used the technology to build highly available ceph cluster, specially when it comes to use dashboard , block or object from anywhere. 
-
-Using ceph-ansible and haproxy with some automation build to prepare and to give real exposure to deployed this in any industry."
-   </td>
-   <td><strong>Nilesh Chandekar</strong>
-<p>
-Clear-Trail
-   </td>
-  </tr>  
-  <tr>
-   <td>11:00
+   <td>10:50
    </td>
    <td><strong>Exploring Ceph RGW scalability: Synchronizing a billion objects across a multisite.</strong>
 <p>
@@ -104,6 +91,18 @@ IBM
    </td>
   </tr>  
   <tr>
+   <td>11:15
+   </td>
+   <td><strong>RGW and S3-Select: Use case for CEPH QE logs</strong>
+<p>
+We want to present on how we use ceph s3-select to query on the log data generated for every build of every release
+   </td>
+   <td><strong>Hemanth Sai Maheswarla & Madhavi Kasturi</strong>
+<p>
+IBM
+   </td>
+  </tr>  
+  <tr>
    <td>11:25
    </td>
    <td><strong>Tea/Coffee Break</strong>
@@ -112,11 +111,11 @@ IBM
   <tr>
    <td>11:40
    </td>
-   <td><strong>Configure vhost style for RGW in Kubernetes Appilcations</strong>
+   <td><strong>D4N in RGW</strong>
 <p>
-This presentation outlines the configuration of a virtual hosting style for Ceph Rados Gateway (RGW) using Ingress and  Rook for AL/ML applications like Milvus. The s3 buckets can be accessed either path based or host style. Path is deprecated by S3 protocol and lot of application defaults with vhost style. Ingress provides the wildcard support for endpoint and Rook can deploy RGW with vhost style access.
+D4N is an intelligent caching framework within Ceph RGW. This project is a collaboration between MOC team at Boston University and Ceph RGW team. The ongoing effort to upstream D4N into Ceph is mainly going to target accelerating analytics workload.
    </td>
-   <td><strong>Jiffin Tony Thottan</strong>
+   <td><strong>Pritha Srivastava</strong>
 <p>
 IBM
    </td>
@@ -124,17 +123,28 @@ IBM
   <tr>
    <td>11:50
    </td>
-   <td><strong>Chorus</strong>
+   <td><strong>Exploring NFS-Ganesha's Integration with Ceph</strong>
 <p>
-Efficiently migrating petabytes of object storage data between two production Ceph clusters posed a significant challenge with live data being written to both clusters, necessitating a seamless process to minimize disruptions. The migration strategy involved extracting user accounts, including access and secret keys, from the old cluster and seamlessly transferring them to the new one. The synchronization of buckets and live data has been improved by extending and enhancing powerful tools such as rclone, executed in parallel. This migration endeavor not only resulted in the successful transfer of vast amounts of data but also paved the way for the creation of a robust tool named Chorus. Chorus, specifically designed for synchronizing S3 data, emerged as a versatile solution capable of harmonizing data seamlessly across multiple cloud storage backends. This innovative tool is helpful in effective bridging of data between Ceph clusters, demonstrating the adaptability and scalability required for modern data management challenges. Key highlights of Chorus include persistence of migration, execution of migration on multiple machines, rate limiting RAM/network usage during migration.
+NFS-Ganesha operates as a user-space NFS server and provides support for CephFS FSAL via libcephfs. This presentation suggests a comprehensive examination of the integration between NFS Ganesha and Ceph, a distributed storage system acclaimed for its scalability and reliability. We will commence by delving into the foundational architectures of NFS Ganesha and Ceph, elucidating how they synergize to furnish a resilient storage solution. Subsequently, we will delve into the technical nuances of merging NFS-Ganesha with CephFS, encompassing aspects such as setup, deployment, and operational considerations
    </td>
-   <td><strong>Deepika Upadhyay</strong>
+   <td><strong>Manisha Saini</strong>
 <p>
-Clyso GmBH
+IBM
+   </td>
+  </tr>
+<tr>
+   <td>12:00
+   </td>
+   <td><strong>Highly avaialble Ceph Cluster Using Haproxy.</strong>
+   </td>
+   <td><strong> &emsp; Nilesh Chandekar</strong>
+   <p>
+   Clear-Trail
    </td>
   </tr> 
+  </tr>  
   <tr>
-   <td>12:00
+   <td>12:25
    </td>
    <td><strong>Panel Discussion - Object Storage: Large Scale AL/ML Workload handling challenges  </strong>
    </td>
@@ -143,29 +153,39 @@ Clyso GmBH
   </tr> 
   </tr> 
   <tr>
-   <td>12:45
+   <td>13:00
    </td>
    <td><strong>Lunch</strong>
    </td>
   </tr>
-  <tr>
-   <td>13:45
+   <tr>
+   <td>14:00
    </td>
-   <td><strong>Interactive Quiz</strong>
+   <td><strong>Panel Discussion</strong>
+<p>
+Panel discussion lead by our Experts around - <br />
+* Getting users feedback about Ceph <br />
+* Sharing about Ceph User Council Iinitiative <br />
+* Improvements going in Community Ceph releases <br />
+* Ceph release updates <br />
+   </td>
+   <td><strong>Ceph Leaders & Experts</strong>
+   </td>
+  </tr>
+   <tr>
+   <td>15:00
+   </td>
+   <td><strong>Chorus</strong>
+<p>
+Efficiently migrating petabytes of object storage data between two production Ceph clusters posed a significant challenge with live data being written to both clusters, necessitating a seamless process to minimize disruptions. The migration strategy involved extracting user accounts, including access and secret keys, from the old cluster and seamlessly transferring them to the new one. The synchronization of buckets and live data has been improved by extending and enhancing powerful tools such as rclone, executed in parallel. This migration endeavor not only resulted in the successful transfer of vast amounts of data but also paved the way for the creation of a robust tool named Chorus. Chorus, specifically designed for synchronizing S3 data, emerged as a versatile solution capable of harmonizing data seamlessly across multiple cloud storage backends. This innovative tool is helpful in effective bridging of data between Ceph clusters, demonstrating the adaptability and scalability required for modern data management challenges. Key highlights of Chorus include persistence of migration, execution of migration on multiple machines, rate limiting RAM/network usage during migration. <br />
+   </td>
+   <td><strong> &emsp; Deepika Upadhyay</strong>
+   <p>
+   Clyso GmBH
    </td>
   </tr>
   <tr>
-   <td>14:00
-   </td>
-   <td><strong>Rook Community Updates & Lightning talks</strong>
-   </td>
-   <td><strong>Subham Kumar Rai, Parth Arora, Rakshith R & Deepika Upadhyay</strong>
-<p>
-Rook.io
-   </td>
-  </tr> 
-  <tr>
-   <td>14:30
+   <td>15:15
    </td>
    <td><strong>Evaluating Ceph bluestore RocksDB compression using Warp</strong>
 <p>
@@ -179,7 +199,35 @@ IBM
    </td>
   </tr> 
   <tr>
-   <td>14:55
+   <td>15:40
+   </td>
+   <td><strong>Tea/Coffee Break</strong>
+   </td>
+  </tr> 
+<tr>
+   <td>16:00
+   </td>
+   <td><strong>Rook Community Updates & Lightning talks</strong>
+   </td>
+   <td><strong>Subham Kumar Rai, Parth Arora, Rakshith R & Deepika Upadhyay</strong>
+<p>
+Rook.io
+   </td>
+  </tr> 
+  <tr>
+   <td>16:30
+   </td>
+   <td><strong>Configure vhost style for RGW in Kubernetes Appilcations</strong>
+<p>
+This presentation outlines the configuration of a virtual hosting style for Ceph Rados Gateway (RGW) using Ingress and  Rook for AL/ML applications like Milvus. The s3 buckets can be accessed either path based or host style. Path is deprecated by S3 protocol and lot of application defaults with vhost style. Ingress provides the wildcard support for endpoint and Rook can deploy RGW with vhost style access.
+   </td>
+   <td><strong>Jiffin Tony Thottan</strong>
+<p>
+IBM
+   </td>
+  </tr>
+  <tr>
+   <td>16:40
    </td>
    <td><strong>Deep-dive into Cephadm internals & troubleshooting common issues</strong>
 <p>
@@ -193,45 +241,7 @@ IBM
    </td>
   </tr>
   <tr>
-   <td>15:20
-   </td>
-   <td><strong>RGW and S3-Select: Use case for CEPH QE logs</strong>
-<p>
-We want to present on how we use ceph s3-select to query on the log data generated for every build of every release
-   </td>
-   <td><strong>Hemanth Sai Maheswarla & Madhavi Kasturi</strong>
-<p>
-IBM
-   </td>
-  </tr>
-  <tr>
-   <td>15:30
-   </td>
-   <td><strong>Optimizing Ceph RGW: Tuning Strategies for Enhanced Performance</strong>
-<p>
-In the dynamic world of storage optimization, fine-tuning Ceph RGW (RADOS Gateway) configurations can significantly impact performance and efficiency. However, navigating the multitude of tuning options can be daunting. This lightning talk delves into various RGW tuning strategies, offering insights into both the benefits and potential pitfalls. From adjusting thread pools to optimizing objector and frontend parameters, we explore practical use cases, scenarios, and considerations for standalone and multisite clusters. Drawing from real-world experiences and community insights, we highlight the importance of testing, caution against over-tuning, and emphasize the need for informed decision-making. Attendees will gain actionable insights into RGW tuning, enabling them to optimize their Ceph deployments effectively.
-   </td>
-   <td><strong>Shreyansh Sancheti</strong>
-<p>
-IBM
-   </td>
-  </tr>
-  <tr>
-   <td>15:45
-   </td>
-   <td><strong>Panel Discussion</strong>
-<p>
-Panel discussion lead by our Experts around - <br />
-* Getting users feedback about Ceph <br />
-* Sharing about Ceph User Council Iinitiative <br />
-* Improvements going in Community Ceph releases <br />
-* Ceph release updates <br />
-   </td>
-   <td><strong>Ceph Leaders & Experts</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>16:45
+   <td>17:10
    </td>
    <td><strong>Closing Remarks</strong>
   </tr>
