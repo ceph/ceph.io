@@ -3,11 +3,6 @@ title: Ceph User + Dev Meetup
 date: 2024-05-23
 end: 2024-05-23
 location: https://meet.jit.si/ceph-user-dev-monthly
-image: "images/user_+_dev_image.png"
-tags:
-  - community
-  - event
-  - events
 ---
 
 Join us for the Ceph User + Developer Monthly Meeting – a virtual platform that has long been in our community for encouraging
