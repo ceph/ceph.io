@@ -2,9 +2,9 @@
 title: Cephalocon 2024
 date: 2024-12-04
 end: 2024-12-05
-location: Geneva, Switzerland
-venue: CERN
-image: "/assets/bitmaps/cephalocon_hero_2024.png"
+location: CERN | Geneva, Switzerland
+venue:
+image: "/assets/bitmaps/cephalocon-2024-header-1200x500.png"
 sponsors:
   - label:
     list:
@@ -24,6 +24,7 @@ distributed storage system.
 
 - **CFP Closes:** 2024-08-11
 - **Speakers receive confirmation of acceptance:** 2024-09-09
+- **Schedule Announcement:** 2024-09-12
 - **Slides Due Date:** 2024-12-02
 - **Event Dates:** 2024-12-04 and 2024-12-05
 
