@@ -3,7 +3,7 @@ title: Ceph Days India 2024
 date: 2024-05-31
 end: 2024-05-31
 location: Bengaluru, Karnataka
-venue: Near Manyata Tech Park, Outer Ring Road
+venue: Hilton Bengaluru Embassy Manyata Business Park, Block A, Hotel Building, 1, Outer Ring Rd, MS Ramaiah North City, Nagavara
 image: "/assets/bitmaps/ceph-days.png"
 sponsors:
   - label:
