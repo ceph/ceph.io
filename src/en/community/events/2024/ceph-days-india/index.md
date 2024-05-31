@@ -60,10 +60,24 @@ The CFP is closed and registration is limited!
    <td><strong>Registration</strong>
    </td>
   </tr>
+   <tr>
+   <td>10:00
+   </td>
+   <td><strong>Welcome to Ceph Days India</strong>
+   </td>
+   <td><strong>&emsp; Veera Reddy</strong>
+<p>
+&emsp; IBM Ceph
+   </td>
+  </tr>
     <tr>
    <td>10:00
    </td>
-   <td><strong>Welcome & Keynote</strong>
+   <td><strong>Keynote</strong>
+   </td>
+   <td><strong>&emsp; Sandeep Patil</strong>
+<p>
+&emsp; IBM - ISL CTO
    </td>
   </tr>
   <tr>
@@ -93,7 +107,7 @@ IBM
   <tr>
    <td>11:15
    </td>
-   <td><strong>RGW and S3-Select: Use case for CEPH QE logs</strong>
+   <td><strong>RGW and S3-Select: Use cases</strong>
 <p>
 We want to present on how we use ceph s3-select to query on the log data generated for every build of every release
    </td>
@@ -135,18 +149,25 @@ IBM
 <tr>
    <td>12:00
    </td>
-   <td><strong>Highly avaialble Ceph Cluster Using Haproxy.</strong>
+   <td><strong>~~Highly avaialble Ceph Cluster Using Haproxy.~~ TALK CANCELLED</strong>
    </td>
-   <td><strong> &emsp; Nilesh Chandekar</strong>
+
+  </tr>
+<tr>
+   <td>12:10
+   </td>
+   <td><strong>Ceph Foundation - Community Updates</strong>
+   </td>
+   <td><strong> &emsp; Gaurav Sitlani </strong>
    <p>
-   Clear-Trail
+   &emsp; IBM
    </td>
   </tr> 
   </tr>  
   <tr>
    <td>12:25
    </td>
-   <td><strong>Panel Discussion - Object Storage: Large Scale AL/ML Workload handling challenges  </strong>
+   <td><strong>Panel Discussion - Object Storage: Large Scale AI/ML Workload handling challenges  </strong>
    </td>
    <td><strong> &emsp; K Gopal Krishna, Madhavi Kasturi, Jiffin Tony Thottan</strong>
    </td>
