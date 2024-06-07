@@ -15,7 +15,7 @@ tags:
 
 ### Bringing Ceph to London
 
-<a class="button" href="#">Registration Coming Soon</a>
+<a class="button" href="https://ti.to/open-source-events/ceph-days-london-2024">Register Now!</a>
 <a class="button" href="#">CFP Opens Soon</a>
 
 A full-day event dedicated to sharing Ceph’s transformative power and fostering
