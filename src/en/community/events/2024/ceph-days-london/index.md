@@ -9,6 +9,7 @@ sponsors:
   - label:
     list:
       - name: IBM
+        logo: /assets/bitmaps/logo-ibm.png
 tags:
   - ceph days
 ---
@@ -16,7 +17,7 @@ tags:
 ### Bringing Ceph to London
 
 <a class="button" href="https://ti.to/open-source-events/ceph-days-london-2024">Register Now!</a>
-<a class="button" href="#">CFP Opens Soon</a>
+<a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSeCWMptX-MKyj2uc4gco5sIewICymKFY1EuSddzaXmiX28m0w/viewform?usp=sf_link">Submit a Talk!</a>
 
 A full-day event dedicated to sharing Ceph’s transformative power and fostering
 the vibrant Ceph community with the community in London!
@@ -30,10 +31,10 @@ The registration will be limited!
 
 ## Important Dates
 
-- **CFP Opens:** TBD
-- **CFP Closes:** TBD
-- **Speakers receive confirmation of acceptance:** TBD
-- **Schedule Announcement:** TBD
+- **CFP Opens:** 2024-06-10
+- **CFP Closes:** 2024-06-30
+- **Speakers receive confirmation of acceptance:** 2024-07-03
+- **Schedule Announcement:** 2024-07-08
 - **Event Date:** 2024-07-17
 
 <br />
