@@ -3,7 +3,7 @@ title: Ceph Days London 2024
 date: 2024-07-17
 end: 2024-07-17
 location: London
-venue: TBD
+venue: Canonical London, 3 More London Pl, London SE1 2RE
 image: "/assets/bitmaps/ceph-days.png"
 sponsors:
   - label:
