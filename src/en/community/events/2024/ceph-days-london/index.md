@@ -8,6 +8,10 @@ image: "/assets/bitmaps/ceph-days.png"
 sponsors:
   - label:
     list:
+      - name: Canonical
+        logo: /assets/bitmaps/logo-canonical.png
+  - label:
+    list:
       - name: IBM
         logo: /assets/bitmaps/logo-ibm.png
 tags:
