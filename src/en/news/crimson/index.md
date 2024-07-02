@@ -38,13 +38,14 @@ Crimson OSD currently supports:
 - RBD workloads on Replicated pools
 - Bluestore, Seastore and cyanstore (memory-based) object store backends
 - Deployment via Cephadm
+- Initial Scrub
+- Multi-shard messenger/OSD/objectstores
 
 Work in progeress:
 
-- Initial Scrub
 - EC pools
 - RGW
-- Multi-shard messenger/OSD/objectstores
+- PG Scaling - Splits/Merges
 
 ## Test Coverage
 
@@ -62,8 +63,6 @@ whenever it’s necessary. Also we need to
 - Review the performance to see if there is any regression not caught by the CI
   tests.
 - Compare the performance of classic OSD and crimson-osd on monthly basis.
-
-* ### PG Scaling - Splits/Merges
 
 * ### Seastore
 
@@ -109,7 +108,6 @@ it was ready for production in late 2017. There will be three phases:
 - [Tracker](tracker.ceph.com/projects/crimson/issues)
 - [Docs](docs.ceph.com/en/latest/dev/crimson)
 - [Slack](ceph-storage.slack.com) - #crimson
-- [Trello](https://trello.com/b/lbHkWKxh/crimson)
 
 ## Blog Posts:
 
