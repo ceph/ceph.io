@@ -140,7 +140,7 @@ We built a distributed QoS system to limit both request and data-transfer rate o
    </td>
   </tr>
   <tr>
-   <td>11:30 AM
+   <td>11:50 AM
    </td>
    <td><strong>Unlocking Ceph's Potential with NVMe-oF Integration</strong>
 <p>
@@ -149,8 +149,16 @@ Discover how NVMe-oF integrates with Ceph to enhance data storage efficiency. We
    <td><center><strong><img src="/assets/bitmaps/events/2024/ceph-days-london/CDL_OW_IBM.jpg" width="400" height="400" />Orit Wasserman, IBM</strong></center>
    </td>
   </tr>
-    <tr>
-   <td>12:00 PM
+   <tr>
+   <td>12:20 PM
+   </td>
+   <td><strong>Lunch</strong>
+   </td>
+   <td>
+   </td>
+  </tr>
+   <tr>
+   <td>1:30 PM
    </td>
    <td><strong>Integrating NVMe-oF with Ceph and Juju</strong>
 <p>
@@ -159,16 +167,8 @@ This talk describes the development and usage of a Juju charm meant to allow use
    <td><center><strong><img src="/assets/bitmaps/events/2024/ceph-days-london/CDL_LLG_Canonical.jpeg" width="400" height="400" />Luciano Lo Giudice, Canonical</strong></center>
    </td>
   </tr>
-    <tr>
-   <td>12:30 PM
-   </td>
-   <td><strong>Lunch</strong>
-   </td>
-   <td>
-   </td>
-  </tr>
-  <tr>
-   <td>1:30 PM
+   <tr>
+   <td>2:00 PM
    </td>
    <td><strong>Making the right hardware choices</strong>
 <p>
@@ -178,7 +178,7 @@ With the increasing diversity and ever changing hardware options that are availa
    </td>
   </tr>
   <tr>
-   <td>2:00 PM
+   <td>2:30 PM
    </td>
    <td><strong>DisTRaC: Transient Ceph On RAM</strong>
 <p>
@@ -188,7 +188,7 @@ DisTRaC is a fast and scalable open-source deployment tool for creating quick an
    </td>
   </tr>
   <tr>
-   <td>2:10 PM
+   <td>2:40 PM
    </td>
    <td><strong>Ceph Performance Benchmarking and CBT (Ceph Benchmark Tool) Improvement plans</strong>
 <p>
@@ -198,7 +198,7 @@ CBT (Ceph Benchmarking Tool) is a utility that benchmarks clusters to highlight 
    </td>
   </tr>
   <tr>
-   <td>2:20 PM
+   <td>2:50 PM
    </td>
    <td><strong>NVMeoF and VMware Integrations for Ceph</strong>
 <p>
@@ -206,17 +206,6 @@ Ceph NVMe over TCP unleashes the power of high performing NVMe drives with the s
    </td>
    <td><center><strong><img src="/assets/bitmaps/events/2024/ceph-days-london/CDL_MB_IBM.jpeg" width="400" height="400" />Mike Bukhart, IBM</strong></center>
    </td>
-  </tr>
-  <tr>
-   <td>2:30 PM
-   </td>
-   <td><strong>The art of redundancy across failure domains</strong>
-<p>
-Proper cluster design is an art, especially with complex failure domains. This talk strives some aspects of role instance distribution, best practices for redundant instances placement and minimizing cluster footprint with room for future growth.
-   </td>
-   <td><center><strong><img src="/assets/bitmaps/events/2024/ceph-days-london/CDL_MM_RH.jpeg" width="400" height="400" />Matthias Muench, Red Hat</strong></center>
-   </td>
-  </tr>
   </tr>
   <tr>
    <td>3:00 PM
@@ -229,26 +218,21 @@ Proper cluster design is an art, especially with complex failure domains. This t
   <tr>
    <td>3:30 PM
    </td>
-   <td><strong>Next Generation Erasure Coding</strong>
+   <td><strong>The art of redundancy across failure domains</strong>
 <p>
-Erasure coding has lower storage overheads than replicated pools, but does not perform as well for short random I/O. This talk looks at a variety of techniques that we are planning on implementing to improve erasure coding performance.
+Proper cluster design is an art, especially with complex failure domains. This talk strives some aspects of role instance distribution, best practices for redundant instances placement and minimizing cluster footprint with room for future growth.
    </td>
-   <td><center><strong><img src="/assets/bitmaps/events/2024/ceph-days-london/CDL_BS_IBM.jpeg" width="400" height="400" />Bill Scales, IBM</strong></center>
+   <td><center><strong><img src="/assets/bitmaps/events/2024/ceph-days-london/CDL_MM_RH.jpeg" width="400" height="400" />Matthias Muench, Red Hat</strong></center>
    </td>
   </tr>
   <tr>
    <td>4:00 PM
    </td>
-   <td><strong>[TBC] Tuning and Optimizing your Rook Ceph Clusters for Production</strong>
+   <td><strong>Next Generation Erasure Coding</strong>
 <p>
-Rook offers immense potential, but unlocking peak performance requires precision. This talk covers:
-* Workload Understanding
-* Optimal Topology Design
-* Benchmarking & Fine-Tuning
-* Best Practices & Day-2 Ops
-* Future Improvements
+Erasure coding has lower storage overheads than replicated pools, but does not perform as well for short random I/O. This talk looks at a variety of techniques that we are planning on implementing to improve erasure coding performance.
    </td>
-   <td><center><strong>Joachim Kraftmayer, Clyso</strong></center>
+   <td><center><strong><img src="/assets/bitmaps/events/2024/ceph-days-london/CDL_BS_IBM.jpeg" width="400" height="400" />Bill Scales, IBM</strong></center>
    </td>
   </tr>
   <tr>
