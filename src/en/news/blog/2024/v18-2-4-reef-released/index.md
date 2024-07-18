@@ -1,6 +1,6 @@
 ---
 title: "v18.2.4 Reef released"
-date: "2024-07-17"
+date: "2024-07-24"
 author: "Yuri Weinstein"
 tags:
   - "release"
@@ -13,6 +13,11 @@ An early build of this release was accidentally exposed and packaged as 18.2.3 b
 That 18.2.3 release should not be used.
 The official release was re-tagged as v18.2.4 to avoidfurther confusion.
 
+v18.2.4 container images, now based on CentOS 9, may be incompatible on older kernels (e.g., Ubuntu 18.04) due
+to differences in thread creation methods. Users upgrading to v18.2.4 container images on older OS versions
+may encounter crashes during pthread_create. For workarounds, refer to the related tracker. However, we recommend
+upgrading your OS to avoid this unsupported combination.
+Related tracker: https://tracker.ceph.com/issues/66989
 
 ## Notable Changes
 
@@ -683,6 +688,8 @@ The official release was re-tagged as v18.2.4 to avoidfurther confusion.
 
 - qa/cephfs: improvements for name generators in test\_volumes<span></span>.py ([pr#54729](https://github.com/ceph/ceph/pull/54729), Rishabh Dave)
 
+- qa/distros: remove centos 8 from supported distros ([pr#57932](https://github.com/ceph/ceph/pull/57932), Guillaume Abrioux, Casey Bodley, Adam King, Laura Flores)
+
 - qa/suites/fs/nfs: use standard health ignorelist ([pr#56392](https://github.com/ceph/ceph/pull/56392), Patrick Donnelly)
 
 - qa/suites/fs/workload: enable snap\_schedule early ([pr#56424](https://github.com/ceph/ceph/pull/56424), Patrick Donnelly)
@@ -718,6 +725,8 @@ The official release was re-tagged as v18.2.4 to avoidfurther confusion.
 - qa: fix incorrectly using the wait\_for\_health() helper ([issue#57985](http://tracker.ceph.com/issues/57985), [pr#54237](https://github.com/ceph/ceph/pull/54237), Venky Shankar)
 
 - qa: fix rank\_asok() to handle errors from asok commands ([pr#55302](https://github.com/ceph/ceph/pull/55302), Neeraj Pratap Singh)
+
+- qa: ignore container checkpoint/restore related selinux denials for centos9 ([issue#64616](http://tracker.ceph.com/issues/64616), [pr#56019](https://github.com/ceph/ceph/pull/56019), Venky Shankar)
 
 - qa: remove error string checks and check w/ return value ([pr#55943](https://github.com/ceph/ceph/pull/55943), Venky Shankar)
 
