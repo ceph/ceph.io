@@ -230,3 +230,5 @@ Ceph Foundation organizations provide valuable training and professional service
 ### Decision Making Ability
 
 Ceph Foundation members will get the chance to be on the Governing Board, especially Premier Members who are guaranteed a seat. Your organization can have a say in the future of Ceph and be involved in making impactful decisions with voting privileges.
+
+Test test
