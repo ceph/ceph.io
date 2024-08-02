@@ -2,7 +2,7 @@
 title: "Cephalocon 2024 Shirt Design Competition"
 date: 2024-08-01
 author: Anthony Lewitt
-image: "src/assets/bitmaps/cephalocon-2024-header-1200x500.png"
+image: "images/cephalocon-2024-header-1200x500.png"
 tags:
   - ceph
   - cephalocon
