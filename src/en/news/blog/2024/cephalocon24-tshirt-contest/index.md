@@ -2,7 +2,7 @@
 title: "Cephalocon 2024 Shirt Design Competition"
 date: 2024-08-01
 author: Anthony Lewitt
-image: "src/assets/bitmaps/cephalocon-2024-header-1200x500.png"
+image: "images/cephalocon-2024-header-1200x500.png"
 tags:
   - ceph
   - cephalocon
@@ -20,4 +20,4 @@ The Conference planning team will review and announce the winner when the Confer
 
 _2023’s Image for reference, in case you need inspiration_
 
-![](./images/Ceph-23-TShirt-FNL-Isolated-Back.png)
+<img align="left" width="300" height="300" src="images/Ceph-23-TShirt-FNL-Isolated-Back.png">
