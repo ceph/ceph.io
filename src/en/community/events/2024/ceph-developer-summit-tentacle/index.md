@@ -14,7 +14,7 @@ of this summit.
 </strong></p>
 
 <p><strong>
-Whether you are a develoer, user, or otherwise, you are more than welcome to join the event!
+Whether you are a developer, user, or otherwise, you are more than welcome to join the event!
 </strong></p>
 
 <p><i>All listed sessions are in Pacific time.</p></i>
@@ -45,7 +45,7 @@ discussions</a></strong>
   <tr>
    <td>8:00 - 9:00 AM
    </td>
-   <td>Crimson
+   <td>Crimson / SeaStore
    </td>
    <td><a href="https://meet.google.com/utm-yqto-hoc?hs=224">Join session</a>
    </td>
