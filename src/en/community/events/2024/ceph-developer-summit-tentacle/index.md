@@ -45,7 +45,7 @@ discussions</a></strong>
   <tr>
    <td>8:00 - 9:00 AM
    </td>
-   <td>Crimson
+   <td>Crimson / SeaStore
    </td>
    <td><a href="https://meet.google.com/utm-yqto-hoc?hs=224">Join session</a>
    </td>
