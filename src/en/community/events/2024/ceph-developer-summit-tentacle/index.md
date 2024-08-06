@@ -14,7 +14,7 @@ of this summit.
 </strong></p>
 
 <p><strong>
-Whether you are a develoer, user, or otherwise, you are more than welcome to join the event!
+Whether you are a developer, user, or otherwise, you are more than welcome to join the event!
 </strong></p>
 
 <p><i>All listed sessions are in Pacific time.</p></i>
