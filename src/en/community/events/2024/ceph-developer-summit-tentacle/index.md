@@ -109,14 +109,6 @@ discussions</a></strong>
    </td>
   </tr>
   <tr>
-   <td>5:30 - 6:30 AM
-   </td>
-   <td>RBD
-   </td>
-   <td><a href="https://meet.google.com/pdk-icyt-kwb?hs=224">Join session</a>
-   </td>
-  </tr>
-  <tr>
    <td>7:00 - 8:00 AM
    </td>
    <td>Dashboard
@@ -151,6 +143,14 @@ None
    <td width="50%"><strong>Session</strong>
    </td>
    <td width="30%"><strong>Meeting Link</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>5:30 - 6:30 AM
+   </td>
+   <td>RBD
+   </td>
+   <td><a href="https://meet.google.com/pdk-icyt-kwb?hs=224">Join session</a>
    </td>
   </tr>
   <tr>
