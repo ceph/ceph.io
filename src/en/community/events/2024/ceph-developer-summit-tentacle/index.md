@@ -1,14 +1,14 @@
 ---
 title: Ceph Developer Summit - Tentacle
 date: 2024-08-12
-end: 2024-08-19
+end: 2024-08-20
 image: "/assets/bitmaps/octopus.png"
 tags:
   - ceph developer summit
 ---
 
 <p><strong>
-Join us for the Ceph Developer Summit happening virtually from August 12 – 19, 2024.
+Join us for the Ceph Developer Summit happening virtually from August 12 – 20, 2024.
 We'll be discussing features planned for our next release, Tentacle, across the course
 of this summit.
 </strong></p>
@@ -146,14 +146,6 @@ None
    </td>
   </tr>
   <tr>
-   <td>5:30 - 6:30 AM
-   </td>
-   <td>RBD
-   </td>
-   <td><a href="https://meet.google.com/pdk-icyt-kwb?hs=224">Join session</a>
-   </td>
-  </tr>
-  <tr>
    <td>6:30 - 7:00 AM
    </td>
    <td>Docs
@@ -167,6 +159,27 @@ None
    <td>Telemetry
    </td>
    <td><a href="https://meet.google.com/nbv-pxaz-fzt?hs=224">Join session</a>
+   </td>
+  </tr>
+</table>
+
+## August 20 (Tuesday)
+
+<table>
+  <tr>
+   <td width="20%"><strong>Time</strong>
+   </td>
+   <td width="50%"><strong>Session</strong>
+   </td>
+   <td width="30%"><strong>Meeting Link</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>5:30 - 6:30 AM
+   </td>
+   <td>RBD
+   </td>
+   <td><a href="https://meet.google.com/pdk-icyt-kwb?hs=224">Join session</a>
    </td>
   </tr>
 </table>
