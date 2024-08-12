@@ -22,7 +22,7 @@ distributed storage system.
 
 ## Important Dates
 
-- **CFP Closes:** 2024-08-11
+- **CFP Closes:** 2024-08-18
 - **Speakers receive confirmation of acceptance:** 2024-09-09
 - **Schedule Announcement:** 2024-09-12
 - **Slides Due Date:** 2024-12-02
