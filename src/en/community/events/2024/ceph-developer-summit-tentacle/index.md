@@ -124,6 +124,14 @@ discussions</a></strong>
    <td><a href="https://meet.google.com/xng-mtre-iym?hs=224">Join session</a>
    </td>
   </tr>
+  <tr>
+   <td>9:30 - 10:30 AM
+   </td>
+   <td>Teuthology
+   </td>
+   <td><a href="https://meet.google.com/xcu-etpj-cqi">Join session</a>
+   </td>
+  </tr>
 </table>
 
 ## August 15 (Thursday)
