@@ -1,6 +1,12 @@
 {
   "jobs": [
     {
+      "company": "IONOS Cloud",
+      "date": "2024-08-12",
+      "title": "Ceph Storage System Engineer",
+      "url": "https://jobs.ionos.de/career/all-jobs/detailed-view/212-ceph-storage-system-engineer-fmd"
+    },
+    {
       "company": "Tucows",
       "date": "2024-07-22",
       "title": "Senior Cloud Systems Engineer",
