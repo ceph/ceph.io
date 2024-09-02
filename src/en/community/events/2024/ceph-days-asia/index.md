@@ -3,7 +3,7 @@ title: Ceph Days Asia 2024
 date: 2024-09-03
 end: 2024-09-04
 location: 140 Gwanggyojungang-ro, Yeongtong-gu, Suwon-si, Gyeonggi-do, Republic of Korea
-venue: Suwon Convention Center
+venue: Room 202, Suwon Convention Center
 image: "/assets/bitmaps/ceph-days.png"
 sponsors:
   - label: Hosted by
@@ -63,7 +63,7 @@ An update from the leaders of the Ceph project about recent developments, curren
    </td>
   </tr>
   <tr>
-   <td>2:40 PM
+   <td>2:45 PM
    </td>
    <td><strong>Is Rook Ceph good for Large Scale S3 storage?</strong>
 <p>
@@ -83,26 +83,13 @@ This session offers a concise overview of our journey from zero to a fully opera
    </td>
    <td><strong>NVMe-oF recovery: Robust Ceph design through disaggregating domains</strong>
 <p>
-Rook operator와 CRUSH 이론을 이용하여 NVMe-oF 활용 사례 소개
+In this talk, we will explore NVMe-oF Recovery, which enables fast recovery through NVMe-oF-based storage disaggregation. In large-scale distributed storage systems, compute node failures are common. These failures may trigger unexpected I/Os to restore system availability. NVMe-oF offers an opportunity to disaggregate compute and storage resources, reducing the impact of such failures. However, Ceph's Converged Architecture tightly couples compute and storage resources, so a compute failure brings storage down as well. This forces the storage to undergo recovery, even if it's still usable. To overcome this, we will introduce NVMe-oF Recovery, a solution that ensures fast recovery by separating compute and storage failure domains within the CRUSH Map, while maintaining the reliability and scalability of traditional systems.
    </td>
    <td><center><strong>Cheolho Kang, Myoungwon Oh (Samsung Electronics)</strong></center>
    </td>
   </tr>
   <tr>
-   <td>4:10 PM
-   </td>
-   <td><strong>Enhanced Monitoring & Centralized Logging in Ceph</strong>
-<p>
-The objective of this talk is to explore the importance of Metrics and Logs in the Ceph Storage cluster. We will discuss the current architecture for metrics collection and logging, the technology stack used, and how to easily deploy them in Ceph. Additionally, we will highlight the benefits of Centralized Logging for viewing and managing logs through a Dashboard.
-
-We will also cover enhanced monitoring support for NFS and RGW, including multisite configurations, ensuring efficient and comprehensive observability across different setups.
-
-   </td>
-   <td><center><strong>Avan Thakkar, Aashish Sharma (IBM)</strong></center>
-   </td>
-	</tr>
-  <tr>
-   <td>5:00 PM
+   <td>4:15 PM
    </td>
    <td><strong>Ceph with Arrow: How object gateway can accelerate querying data</strong>
 <p>
@@ -112,7 +99,7 @@ Data processing large amount of data on traditional storage comsumes large amoun
    </td>
 	</tr>
   <tr>
-   <td>5:40 PM
+   <td>5:00 PM
    </td>
    <td><strong>Data Security and Storage Hardening in Rook and Ceph</strong>
 <p>
@@ -136,6 +123,16 @@ Sage is a security analyst at Red Hat, focusing on storage security, both for co
    </td>
   </tr>
   <tr>
+   <td>11:40 AM<br/>(@Convention Hall)
+   </td>
+   <td><strong>Ceph at 20 Years! Still the Best Choice for Modern Data Storage</strong>
+<p>
+This talk will explore why Ceph is the best software-defined storage solution available. By examining its technical evolution from 2004 until now, we will highlight the key points that demonstrate its leadership over today's alternatives.
+   </td>
+   <td><center><strong>Dan van der Ster (CLYSO)</strong></center>
+   </td>
+  </tr>
+  <tr>
    <td>2:00 PM
    </td>
    <td><strong>MicroCeph: Flexible Ceph Orchestration</strong>
@@ -146,7 +143,7 @@ Deploying and operating a Ceph cluster is complex because Ceph is designed to be
    </td>
   </tr>
   <tr>
-   <td>2:40 PM
+   <td>2:45 PM
    </td>
    <td><strong>On Deploying Ceph Clusters</strong>
 <p>
@@ -163,7 +160,7 @@ In this talk, we will present how to deploy a new version of a Ceph cluster in f
    </td>
   </tr>
   <tr>
-   <td>3:30 PM
+   <td>3:40 PM
    </td>
    <td><strong>Performance experiments and usage tips about RGW object listing</strong>
 <p>
@@ -173,20 +170,7 @@ The object store provided by RGW has a weakness in that the object listing time 
    </td>
   </tr>
   <tr>
-   <td>4:10 PM
-   </td>
-   <td><strong>NFS Management in Ceph</strong>
-<p>
-The objective of the talk is to highlight the seamless integration of NFS Ganesha to enable efficient data export from Ceph through NFS. It'll illuminate the user-friendly configuration steps and benefits of this integration, enhancing accessibility and usability.
-Delving deeper, we will explore the comprehensive deployment aspects, covering the NFS service setup, Monitoring, NFS cluster, and Export management. We will also address High Availability (HA) and Load Balancing support, emphasizing the importance of collecting logs for effective crash analysis and issue resolution with Ganesha.
- Furthermore, we'll also give insights on what happens under the hood when you create NFS cluster or NFS export. We will also have a demo at the end where we'll show deployment of NFS service, management of exports through the Ceph Dashboard and seamless mounting of a CephFS export to a client address.
-   </td>
-   <td><center><strong>Avan Thakkar (IBM)</strong></center>
-   </td>
-	</tr>
-  <tr>
-   <td>5:00 PM
-   </td>
+   <td>4:25 PM
    <td><strong>Scrub / Deep-scrub analysis</strong>
 <p>
 - Ceph의 데이터 정합성을 체크하기 위한 scrub, deep-scrub 집중적으로 분석<br />
@@ -201,7 +185,7 @@ Delving deeper, we will explore the comprehensive deployment aspects, covering t
 You can find the schedule for OpenInfra Summit Asia, including Ceph Days Asia, at the following page.
 <a href="https://2024.openinfraasia.org/a/schedule">OpenInfra Summit Asia Schedule</a>
 
-<br /> <br />
+<br />
 
 Join the Ceph announcement list, or follow Ceph on social media for Ceph event
 updates:
