@@ -1,6 +1,12 @@
 {
   "jobs": [
     {
+      "company": "Bloomberg L.P.",
+      "date": "2024-09-10",
+      "title": "Senior Software Engineer",
+      "url": "https://bloomberg.avature.net/careers/JobDetail/Senior-Software-Engineer-Storage-Distributed-Downstream/7295"
+    },
+    {
       "company": "IONOS Cloud",
       "date": "2024-08-12",
       "title": "Ceph Storage System Engineer",
