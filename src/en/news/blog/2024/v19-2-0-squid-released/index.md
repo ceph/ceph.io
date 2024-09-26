@@ -27,6 +27,42 @@ Contents:
 
 ## <a id="changes"></a>Major Changes from Reef
 
+### Highlights
+
+#### RGW
+
+  * Fixed a regression in bucket ownership for Keystone users and implicit tenants.
+  * The User Accounts feature unlocks several new AWS-compatible IAM APIs for the self-service management of users, keys, groups, roles, policy and more.
+
+#### RADOS
+
+  * BlueStore has been optimized for better performance in snapshot-intensive workloads.
+  * BlueStore RocksDB LZ4 compression is now enabled by default to improve average performance and "fast device" space usage.
+  * Other improvements include more flexible EC configurations, an OpTracker to help debug mgr module issues, and better scrub scheduling.
+
+#### Dashboard
+
+  * Rearranged Navigation Layout: The navigation layout has been reorganized for improved usability and easier access to key features.
+
+#### CephFS
+
+  * Support for managing CephFS snapshots and clones, as well as snapshot schedule management
+  * Manage authorization capabilities for CephFS resources
+  * Helpers on mounting a CephFS volume
+
+#### RGW
+
+  * Support for managing bucket policies
+  * Add/Remove bucket tags
+  * ACL Management
+  * Several UI/UX Improvements to the bucket form
+  * Monitoring: Grafana dashboards are now loaded into the container at runtime rather than building a grafana image with the grafana dashboards. Official Ceph grafana images can be found in quay.io/ceph/grafana.
+  * Monitoring: RGW S3 Analytics: A new Grafana dashboard is now available, enabling you to visualize per bucket and user analytics data, including total GETs PUTs, Deletes, Copies, and list metrics.
+
+#### Crimson/Seastore
+
+  * Crimson's first tech preview release! Supporting RBD workloads on Replicated pools. For more information please visit: https://ceph.io/en/news/crimson
+
 ### Ceph
 
 * ceph: a new `--daemon-output-file` switch is available for `ceph tell`
