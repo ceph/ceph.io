@@ -950,7 +950,7 @@ Yaarit Hatuka &squf;
 Yantao xue &squf;
 Yehuda Sadeh &squf;
 Yingxin Cheng &squf;
-yite.gu &squf;
+yite gu &squf;
 Yonatan Zaken &squf;
 Yongseok Oh &squf;
 Yuri Weinstein &squf;
