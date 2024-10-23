@@ -32,4 +32,8 @@ its publication date.
 
 [CQ5 - Letter](./Ceph_Quarterly_005_Letter.pdf)
 
+[CQ6 - A4](./Ceph_Quarterly_006_A4.pdf)
+
+[CQ6 - Letter](./Ceph_Quarterly_006_Letter.pdf)
+
 For more information, contact <zac.dover@proton.me>
