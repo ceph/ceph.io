@@ -1,4 +1,4 @@
-<p align="center"><img src="https://i2.wp.com/ceph.io/wp-content/uploads/2016/07/Ceph_Logo_Standard_RGB_120411_fa.png?resize=322%2C148&ssl=1" alt="Ceph" /></p>
+<p align="center"><img src="https://ceph.io/assets/bitmaps/Ceph_Logo_Standard_RGB_120411_fa.png" alt="Ceph" /></p>
 
 # ceph.io
 
