@@ -31,7 +31,6 @@ order: 3
   <a href="https://www.ovh.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-ovh.png" /></a>
 </div>
 
-
 ### Gold Members
 
 <div class="grid grid--align-center grid--cols-2 md:grid--cols-3 md:w-3-4">
@@ -43,6 +42,7 @@ order: 3
 
 <div class="grid grid--align-center grid--cols-2 md:grid--cols-3 md:w-3-4">
   <a href="http://www.croit.io/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-croit.png" /></a>
+  <a href="https://www.digitalocean.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-digitalocean.png" /></a>
   <a href="http://www.intel.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-intel.png" /></a>
   <a href="http://iss-integration.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-intelligent-systems.png" /></a>
   <a href="https://www.osnexus.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-osnexus.png" /></a>
