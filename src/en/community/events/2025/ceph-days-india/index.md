@@ -22,10 +22,12 @@ a networking reception, to foster more Ceph learning.
 
 ## Important Dates
 
-- **CFP Opens:** 2024-12-01
-- **CFP Closes:** 2025-01-01
-- **Speakers receive confirmation of acceptance:** TBD
-- **Schedule Announcement:** TBD
+- **CFP Opens:** 2024-12-10
+- **CFP Closes:** 2025-01-07
+- **Speakers receive confirmation of acceptance:** 2025-01-08
+- **Schedule Announcement:** 2025-01-09
 - **Event Date:** 2025-01-23
+
+<a class="button" href="https://forms.gle/dN6JLPFbfC873oNFA">CFP Open!</a>
 
 <br />
