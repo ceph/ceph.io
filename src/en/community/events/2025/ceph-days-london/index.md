@@ -20,6 +20,7 @@ join forces to discuss things like the status of the Ceph project, recent Ceph
 project improvements and roadmap, and Ceph community news. The day ends with
 a networking reception, to foster more Ceph learning.
 
+
 ## Important Dates
 
 - **CFP Opens:** 2025-03-17
@@ -27,3 +28,4 @@ a networking reception, to foster more Ceph learning.
 - **Speakers receive confirmation of acceptance:** 2025-05-02
 - **Schedule Announcement:** 2025-05-12
 - **Event Date:** 2025-06-04
+
