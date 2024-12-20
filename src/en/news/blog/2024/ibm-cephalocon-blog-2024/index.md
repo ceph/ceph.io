@@ -2,7 +2,7 @@
 title: IBM Cephalocon Blog 2024
 date: 2024-11-23
 author: IBM
-image: "images/ibm_logo.png"
+image: "images/ibm-logo.svg"
 tags:
   - ibm
   - cephalocon
