@@ -6,6 +6,18 @@ location: Bengaluru, Karnataka
 venue: TBD
 image: "/assets/bitmaps/ceph-days.png"
 sponsors:
+  - label:
+    list:
+      - name: Clyso
+        logo: /assets/bitmaps/logo-clyso.png
+  - label:
+    list:
+      - name: Canonical
+        logo: /assets/bitmaps/logo-canonical.png
+  - label:
+    list:
+      - name: IBM
+        logo: /assets/bitmaps/logo-ibm.png
 tags:
   - ceph days
 ---
@@ -29,5 +41,6 @@ a networking reception, to foster more Ceph learning.
 - **Event Date:** 2025-01-23
 
 <a class="button" href="https://forms.gle/dN6JLPFbfC873oNFA">CFP Open!</a>
+<a class="button" href="https://konfhub.com/ceph-days-india-2025">Registration Open!</a>
 
 <br />
