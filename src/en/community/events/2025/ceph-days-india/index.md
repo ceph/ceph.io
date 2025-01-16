@@ -3,7 +3,7 @@ title: Ceph Days India 2025
 date: 2025-01-23
 end: 2025-01-23
 location: Bengaluru, Karnataka
-venue: TBD
+venue: Hotel Royal Orchid - No 1, Golf Avenue, adjoining KGA Golf Course, HAL Old Airport Rd, Domlur, Bengaluru, Karnataka 560008
 image: "/assets/bitmaps/ceph-days.png"
 sponsors:
   - label:
