@@ -36,7 +36,7 @@
   "homepage": "https://github.com/ceph/ceph.io#readme",
   "license": "CC-BY-SA-3.0",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.2",
+    "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-navigation": "0.1.6",
     "@babel/core": "^7.13.8",
     "@babel/preset-env": "^7.26.0",
@@ -73,7 +73,8 @@
     "rollup-plugin-terser": "^7.0.2"
   },
   "dependencies": {
-    "@11ty/eleventy-upgrade-help": "^1.0.1",
+    "@11ty/eleventy-server-browsersync": "^1.0.2",
+    "@11ty/eleventy-upgrade-help": "^2.0.5",
     "details-polyfill": "^1.1.0",
     "focus-visible": "^5.2.0",
     "lunr": "^2.3.9"
