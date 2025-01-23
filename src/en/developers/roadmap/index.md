@@ -22,3 +22,12 @@ development.  Check it out here:
 
 [Ceph Issue Tracker](https://tracker.ceph.com/)
 
+### Github Projects
+
+The Ceph upstream community uses Github Projects to help keep track of component status.
+Check them out here:
+
+- [Ceph Dashboard](https://github.com/orgs/ceph/projects/2)
+- [NVMe-oF](https://github.com/orgs/ceph/projects/1/views/1)
+- [Pulpito/Teuthology Testing](https://github.com/orgs/ceph/projects/3)
+- [Crimson](https://github.com/orgs/ceph/projects/8)
