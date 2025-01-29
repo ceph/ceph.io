@@ -1,5 +1,5 @@
 ---
-title: " Ceph Object Storage Tiering Enhancements. Part One"
+title: "Ceph Object Storage Tiering Enhancements. Part One"
 
 date: 2024-12-27
 author: Daniel Parkes, Anthony D'Atri (IBM)
