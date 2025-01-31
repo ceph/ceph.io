@@ -28,4 +28,5 @@ a networking reception, to foster more Ceph learning.
 - **Schedule Announcement:** 2025-03-07
 - **Event Date:** 2025-03-25
 
+<a class="button" href="https://linuxfoundation.regfox.com/ceph-days-sv-2025">Registration Open!</a>
 <a class="button" href="https://forms.gle/mUPxtmuRK5jJEo8y8">CFP Open!</a>
