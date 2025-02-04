@@ -48,7 +48,7 @@ Ceph clusters. Let’s take a brief look at them:
 
 ### Cephadm Introduction
 
-Unlike its predecessors, `ephadm` deploys all Ceph daemons as containers using
+Unlike its predecessors, `cephadm` deploys all Ceph daemons as containers using
 Docker or Podman. This containerized approach ensures consistency across
 different environments and simplifies the management of dependencies,
 making deploying, upgrading, and scaling Ceph clusters easier.
