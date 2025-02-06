@@ -1,4 +1,4 @@
-<p align="center"><img src="https://i2.wp.com/ceph.io/wp-content/uploads/2016/07/Ceph_Logo_Standard_RGB_120411_fa.png?resize=322%2C148&ssl=1" alt="Ceph" /></p>
+<p align="center"><img src="https://ceph.io/assets/bitmaps/Ceph_Logo_Standard_RGB_120411_fa.png" alt="Ceph" /></p>
 
 # ceph.io
 
@@ -187,6 +187,14 @@ _Note:_ Shortcode arguments are type-/space-sensitive, so should should include 
 
 We now have a single source of truth for the YouTube embed code making it easy to maintain and easy to reuse with a simple, clean interface.
 
+## Proposing a Change
+
+Anyone may raise a pull request to suggest a change. However, only those belonging to the [GitHub Ceph organization](https://github.com/ceph)
+can trigger the "Compiling Site" check, which is required for the pull request to merge. Those who do not belong to the GitHub Ceph
+organization will not be able to trigger the "Compiling Site" check and will be blocked from merging any changes. To get their change looked at,
+they should contact the designated Ceph Website reviewers at [ceph-website@ceph.io](https://lists.ceph.io/postorius/lists/ceph-website.ceph.io/).
+
 ## :warning: Something wrong with ceph.io website?
 
-Report any website issues you experience by email to **Mike Perez** <miperez@redhat.com>, *Ceph Community Manager*. Please include a brief description of the problem and a link that led to it. 
+Report any website issues you experience by email to [ceph-website@ceph.io](https://lists.ceph.io/postorius/lists/ceph-website.ceph.io/). Please include
+a brief description of the problem and a link that led to it. 

@@ -39,7 +39,7 @@
     "@11ty/eleventy": "0.11.1",
     "@11ty/eleventy-navigation": "0.1.6",
     "@babel/core": "^7.13.8",
-    "@babel/preset-env": "^7.13.9",
+    "@babel/preset-env": "^7.26.0",
     "@fullhuman/postcss-purgecss": "^3.0.0",
     "@quasibit/eleventy-plugin-sitemap": "^2.1.4",
     "@rollup/plugin-babel": "^5.3.0",
@@ -60,7 +60,7 @@
     "imagemin-svgo": "^8.0.0",
     "lint-staged": "^11.0.0",
     "lodash.chunk": "^4.2.0",
-    "markdown-it": "^12.0.6",
+    "markdown-it": "^12.3.2",
     "markdown-it-anchor": "^7.1.0",
     "npm-run-all": "^4.1.5",
     "postcss-cli": "^7.1.1",
@@ -69,7 +69,7 @@
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.3.1",
     "rimraf": "3.0.2",
-    "rollup": "^2.40.0",
+    "rollup": "^2.79.2",
     "rollup-plugin-terser": "^7.0.2"
   },
   "dependencies": {
