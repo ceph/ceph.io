@@ -26,6 +26,43 @@ get started with contributions](https://ceph.io/en/developers/contribute/).
 
 For any questions, contact Vallari Agrawal (vallari.agrawal@ibm.com).
 
+
+<hr class="hr">
+
+## Teuthology on Podman
+
+**Mentor name(s):** Zack Cerza, Kamoltat (Junior) Sirivadhna
+Aishwarya Mathuria, Vallari Agrawal
+
+**Mentor email(s):** zack1@ibm.com, ksirivad@ibm.com, aishwarya.mathuria@ibm.com, vallari.agrawal@ibm.com
+
+**Difficulty:** Hard
+
+**Project Hours:** 175
+
+**Skills needed:** python, containerisation, linux 
+
+**Subcomponent of Ceph:** [Ceph Integration Test Framework](https://github.com/ceph/teuthology)
+
+**Description of project:**
+
+[ceph-devstack](https://github.com/zmc/ceph-devstack) is an in-development tool that uses rootless podman containers to deploy a scaled-down teuthology lab. It has proven useful for testing changes to teuthology and its related services, allowing us to more easily and flexibly make changes to components without worrying about causing outages.
+
+It has some basic ability to run Ceph tests, but could benefit significantly from more investment in that area.
+
+Improve and extend ceph-devstack's ability to perform teuthology tests against Ceph builds. This project will involve writing Python code and tests to orchestrate podman containers, and working with security systems like SELinux, CGroups, and Linux capabilities.
+
+
+**Standup/weekly call mentee could attend?:** Teuthology weekly meeting
+
+**Steps to evaluate an applicant for the project:** TBD
+
+**1-2 short pararaphs about what first 2 weeks of work would look like during the internship:** TBD
+
+**Expected Outcome:**  
+
+Extend ceph-devstack's ability to perform teuthology tests
+
 <hr class="hr">
 
 ## smartmontools drivedb.h postprocessor
@@ -55,14 +92,14 @@ One task would be to add an interpretation primitive to the c++ code so that a d
 can specify that the result should be subtracted from 100.  
 The larger task would be to write a postprocessor for drivedb.h that more or less is a sequence
 of regex invocations that converges the existing freeform attribute label names into a
-normalized, defined set.  Many tools just pass through the text labels, do doing meaningful
+normalized, defined set.  Many tools just pass through the text labels, so doing meaningful
 analysis or queries is difficult; often only a fraction of the data is actually captured as a result.
 The output also includes numeric attribute IDs, which are less varied, but relying on them instead of
 the text labels is fraught because these numeric IDs are not strictly standardized either.  I have
 seen drives that report a metric on a different numeric ID than most others, and/or that report
 a different metric on a specific numeric than most others report on that ID.
 
-For extra credit, interface with the central telemetry DB as described below from 2024.
+For extra credit, interface with the central telemetry DB as described in project "Public telemetry slice/dice of SMART data".
 
 **Standup/weekly call mentee could attend?:** TBD 
 
@@ -90,20 +127,30 @@ Ability to leverage code libraries and write the glue code.
 **Description of project:**
 
 Persistent bucket notifications are a very useful and powerful feature 
+
 tech talk: https://www.youtube.com/watch?v=57Ejl6R-L20
+
 usecase example: https://www.youtube.com/watch?v=57Ejl6R-L20
 
-However, they can pose a performence issue, since the notifications regarding a pecific bucket
+However, they can pose a performance issue, since the notifications regarding a pecific bucket
 are written to a single RADOS queue (unlike the writes to the bucket which are distributed across multiple
 bucket shards. So, in case that small objects are written to the bucket, the overhead of the notifications is considerable.
-In this project, our goal would be to create a sharded bucket notifications queue, to allow for better performence of sending 
+In this project, our goal would be to create a sharded bucket notifications queue, to allow for better performance of sending 
 persistent bucket notifications.
 
 **Standup/weekly call mentee could attend?:** RGW daily Standup, RGW weekly refactoring meeting
 
-**Steps to evaluate an applicant for the project:** TBD
+**Steps to evaluate an applicant for the project:** 
+
+* build ceph from source and run basic bucket notification tests
+* fix low-hanging-fruit issues in bucket notifications
 
 **1-2 short pararaphs about what first 2 weeks of work would look like during the internship:** TBD
+
+**Expected outcome:** 
+
+* sharded implementation of persistent topic queue
+* stretch goal: perf test proving performance improvement
 
 <hr class="hr">
 
@@ -115,9 +162,9 @@ persistent bucket notifications.
 
 **Difficulty:** Intermediate
 
-**Project Hours:** TBD
+**Project Hours:** 175
 
-**Skills needed:** Some coding language, Python or Go, jq or JSON parsing or other text munching library.
+**Skills needed:** Some coding language, Python or Go, jq or JSON parsing or other text library.
 
 **Subcomponent of Ceph:** telemetry
 
@@ -129,20 +176,25 @@ one or more formats that facilitate analysis:
 * CSV file containing atributes for only the latest report found for a given device
 * The number of data points might be too high, but possibly a Grafana dashboard or even spreadsheet with template variables for 
   manufacturer/model, interface type, etc. with various panes:
-      * Histograms of power_on hours, normalized endurance used or remaining, etc
-      * histogram or table of endurance remaining vs power on hours or TBW, i.e. allowing one
+    * Histograms of power_on hours, normalized endurance used or remaining, etc
+    * histogram or table of endurance remaining vs power on hours or TBW, i.e. allowing one
         to predict drive lifetime and inform purchase decisions, vs. assuming that SSDs especially QLC lack endurance
         or that high-endurance SKUs are required.
-      * reallocated sectors over time, etc.
+    * reallocated sectors over time, etc.
 
 **Standup/weekly call mentee could attend?:** TBD
 
 **Steps to evaluate an applicant for the project:** Coding experience beyond Karel 
 
 **1-2 short pararaphs about what first 2 weeks of work would look like during the internship:**
+
 Gain familiarity with the data format, including JSON.  Discuss input filtering: skip over invalid entries,
 handle submissions from older smartmontools, uniqify, learn about SMART -- and how dumb it is, the need for nomalization
 of counters. 
+
+**Expected outcome**:
+
+Described above under Description. More specifically, deriving the rate of wear over time for each specific SSD for which we have more than say a month of data:  capture the delta between earliest and latest wear levels reported for each given serial number, and the time delta between those samples.  Divide the wear delta by the time delta for rate of wear over time.
 
 <hr class="hr">
 
@@ -169,8 +221,18 @@ Fixing issues the fuzzer finds would nice, but the real strech goal would be to 
 
 **Standup/weekly call mentee could attend:** RGW daily Standup, RGW weekly refactoring meeting
 
-**Steps to evaluate an applicant for the project:** TBD
+**Steps to evaluate an applicant for the project:** 
+
+* build ceph from source and run basic s3 tests
+* run sts tests against RGW
+* run the REST fuzzing tool
 
 **1-2 short pararaphs about what first 2 weeks of work would look like during the internship:** TBD
 
+**Expected outcome:**
+
+* find and fix security issues in the RGW found by the fuzzing tool
+* stretch goal: integrate tool into automated teuthology runs
+
 <hr class="hr">
+
