@@ -18,55 +18,99 @@ to work on their small, (~90 hour), medium (~175 hour) or large (~350 hour) proj
 
 GSoC is a highly competitive program, so don't wait to the last minute to
 prepare! GSoC Contributors should reach out to the mentors of projects that interest
-them once orgs are announced on February 21, 2024. Potential GSoC Contributors can
-apply for Ceph's projects at g.co/gsoc from March 18th - April 2, 2024.
+them once orgs are announced on February 27, 2025. Potential GSoC Contributors can
+apply for Ceph's projects at g.co/gsoc from March 24th - April 8, 2025.
 
 See the list of projects we have available for GSoC contributors and [learn how
 get started with contributions](https://ceph.io/en/developers/contribute/).
 
+For any questions, contact Vallari Agrawal (vallari.agrawal@ibm.com).
+
+
 <hr class="hr">
 
-## Shaman Scheduling for Success
+## Teuthology on Podman
 
 **Mentor name(s):** Zack Cerza, Kamoltat (Junior) Sirivadhna
 Aishwarya Mathuria, Vallari Agrawal
 
 **Mentor email(s):** zack1@ibm.com, ksirivad@ibm.com, aishwarya.mathuria@ibm.com, vallari.agrawal@ibm.com
 
-**Difficulty:** Medium
+**Difficulty:** Hard
 
-**Project Hours:** 350
+**Project Hours:** 175
 
-**Skills needed:** Shell, Python, FastAPI
+**Skills needed:** python, containerisation, linux 
 
-**Subcomponent of Ceph:** [Ceph Build System](https://github.com/ceph/ceph-build), [Ceph Integration Test Framework](https://github.com/ceph/teuthology)
+**Subcomponent of Ceph:** [Ceph Integration Test Framework](https://github.com/ceph/teuthology)
 
 **Description of project:**
-We can make the process of scheduling Ceph integration tests upstream more efficient by allowing users to auto-schedule teuthology-suite commands
-when pushing their feature-branch to ceph-ci.
 
-Your mission is to build the auto-schedule feature based off a pre-existing work:
+[ceph-devstack](https://github.com/zmc/ceph-devstack) is an in-development tool that uses rootless podman containers to deploy a scaled-down teuthology lab. It has proven useful for testing changes to teuthology and its related services, allowing us to more easily and flexibly make changes to components without worrying about causing outages.
 
-[teuthology-api pull request](https://github.com/ceph/teuthology-api/pull/24)
+It has some basic ability to run Ceph tests, but could benefit significantly from more investment in that area.
 
-[ceph-build pull request](https://github.com/VallariAg/ceph-build/commit/217f080a45c00a07829be9c0ce51057f23b27ddc)
+Improve and extend ceph-devstack's ability to perform teuthology tests against Ceph builds. This project will involve writing Python code and tests to orchestrate podman containers, and working with security systems like SELinux, CGroups, and Linux capabilities.
 
-**Standup/weekly call mentee could attend?:** teuthology weekly meeting
 
-**Steps to evaluate an applicant for the project:**
+**Standup/weekly call mentee could attend?:** Teuthology weekly meeting
 
-1. Setup teuthology-api and share screenshot that you're able to schedule runs from teuthology-api  (i.e. share screenshot of success response of /suite endpoint)
-2. Open a PR for adding a new endpoint to teuthology-api for suite command defaults: https://github.com/ceph/pulpito-ng/issues/41
-3. [optional] Add unit tests for the new endpoint added above
-4. Include understanding of current build-and-schedule workflow and new auto-schedule workflow in proposal
+**Steps to evaluate an applicant for the project:** TBD
 
-**Expected Outcome(s):**
+**1-2 short pararaphs about what first 2 weeks of work would look like during the internship:** TBD
 
-A working auto-schedule feature for at least one suite.
+**Expected Outcome:**  
+
+Extend ceph-devstack's ability to perform teuthology tests
 
 <hr class="hr">
 
-## From RADOS to REDIS
+## smartmontools drivedb.h postprocessor
+
+**Mentor name(s):** Anthony D'Atri
+
+**Mentor email(s):** anthony.datri@ibm.com
+
+**Difficulty:** Intermediate
+
+**Project Hours:** 90
+
+**Skills needed:** c++, maybe python or golang 
+
+**Subcomponent of Ceph:** Observability 
+
+**Description of project:**
+
+smartmontools (smartctl) is pretty much the only game in town for harvesting metrics and counters from
+storage devices:  SMART for SATA, a few things for SAS, and passthrough to nvme-cli for NVMe.
+It leverages a runtime file named drivedb.h that directs what attributes are to be found with what
+numeric IDs, and how to interpret them.  drivedb.h is a mess, and upstream smartmontools would likely
+resist wholesale refactoring.  For example, SSD wear might be labeled as "lifetime remaining" or
+"wear level" or multiple other strings.  Some devices also report wear used, others wear remaining.
+
+One task would be to add an interpretation primitive to the c++ code so that a drivedb.h entry 
+can specify that the result should be subtracted from 100.  
+The larger task would be to write a postprocessor for drivedb.h that more or less is a sequence
+of regex invocations that converges the existing freeform attribute label names into a
+normalized, defined set.  Many tools just pass through the text labels, so doing meaningful
+analysis or queries is difficult; often only a fraction of the data is actually captured as a result.
+The output also includes numeric attribute IDs, which are less varied, but relying on them instead of
+the text labels is fraught because these numeric IDs are not strictly standardized either.  I have
+seen drives that report a metric on a different numeric ID than most others, and/or that report
+a different metric on a specific numeric than most others report on that ID.
+
+For extra credit, interface with the central telemetry DB as described in project "Public telemetry slice/dice of SMART data".
+
+**Standup/weekly call mentee could attend?:** TBD 
+
+**Steps to evaluate an applicant for the project:** 
+Ability to leverage code libraries and write the glue code.
+
+**1-2 short pararaphs about what first 2 weeks of work would look like during the internship:** TBD
+
+<hr class="hr">
+
+## The More The Merrier
 
 **Mentor name(s):** Yuval Lifshitz
 
@@ -76,67 +120,119 @@ A working auto-schedule feature for at least one suite.
 
 **Project Hours:** 350
 
-**Skills needed:** C++
+**Skills needed:** C++, Python
 
 **Subcomponent of Ceph:** RGW
 
 **Description of project:**
 
-Detailed description of the project, as well as the steps expected to ba taken by candidates in the evaluation stage could be found [here](https://gist.github.com/yuvalif/26ff6c115a8386d1d47f2ed4e38cfd39)
+Persistent bucket notifications are a very useful and powerful feature 
 
-**Expected Outcome(s):**
+tech talk: https://www.youtube.com/watch?v=57Ejl6R-L20
 
-Persistent bucket notifications being stored in a Redis cluster that is being read and written to by the RADOS Gateway with non RADOS backends like posix store
+usecase example: https://www.youtube.com/watch?v=57Ejl6R-L20
 
-<hr class="hr">
+However, they can pose a performance issue, since the notifications regarding a pecific bucket
+are written to a single RADOS queue (unlike the writes to the bucket which are distributed across multiple
+bucket shards. So, in case that small objects are written to the bucket, the overhead of the notifications is considerable.
+In this project, our goal would be to create a sharded bucket notifications queue, to allow for better performance of sending 
+persistent bucket notifications.
 
-## RGW AdminAPI Audit & Refactoring
+**Standup/weekly call mentee could attend?:** RGW daily Standup, RGW weekly refactoring meeting
 
-**Mentor name(s):** Ali Maredia, Samarah Uriarte
+**Steps to evaluate an applicant for the project:** 
 
-**Mentor email(s):** amaredia@redhat.com, samarah.uriarte@ibm.com
+* build ceph from source and run basic bucket notification tests
+* fix low-hanging-fruit issues in bucket notifications
 
-**Difficulty:** Intermediate
+**1-2 short pararaphs about what first 2 weeks of work would look like during the internship:** TBD
 
-**Project Hours:** 350
+**Expected outcome:** 
 
-**Skills needed:** Linux, Python, C++
-
-**Subcomponent of Ceph:** RGW
-
-**Description of project:**
-
-The Rados Gateway (RGW) has a REST API that can do admin operations called the [admin ops api](https://docs.ceph.com/en/latest/radosgw/adminops/).
-
-This project have two phases. The first phase would include enhancing the intergration testing coverage of the admin API, and auditing the documentation to make sure it is up to date.
-The second phase would entail refactoring the admin API code to ensure it can work with different backends such as posix, dbstore, rados, etc.
-
-**Expected Outcome(s):**
-
-For the first phase, improvements to the test suite that tests the RGW admin API. In the second phase would be a working admin API with a non-RADOS backend like posix store
+* sharded implementation of persistent topic queue
+* stretch goal: perf test proving performance improvement
 
 <hr class="hr">
 
-## Tidy Up Song
+## Public telemetry slice/dice of SMART data 
 
-**Mentor name(s):** Ronen Friedman, Yuval Lifshitz
+**Mentor name(s):** Anthony D'Atri
 
-**Mentor email(s):** rfriedma@ibm.com, ylifshit@ibm.com
+**Mentor email(s):** anthony.datri@ibm.com
 
 **Difficulty:** Intermediate
 
 **Project Hours:** 175
 
-**Skills needed:** C++
+**Skills needed:** Some coding language, Python or Go, jq or JSON parsing or other text library.
 
-**Subcomponent of Ceph:** RGW, Core
+**Subcomponent of Ceph:** telemetry
 
 **Description of project:**
 
-Detailed description of the project, as well as the steps expected to ba taken by candidates in the evaluation stage could be found [here](https://gist.github.com/yuvalif/b29efb8ff2c68831eaf70870c6398869)
+Public telemetry today offers a few Grafana panels and downloadable archives of anonymized data.  One field
+is a JSON blob of smartctl output.  Parse this, apply a normalization layer, deduplicate, and present in
+one or more formats that facilitate analysis:
+* CSV file containing atributes for only the latest report found for a given device
+* The number of data points might be too high, but possibly a Grafana dashboard or even spreadsheet with template variables for 
+  manufacturer/model, interface type, etc. with various panes:
+    * Histograms of power_on hours, normalized endurance used or remaining, etc
+    * histogram or table of endurance remaining vs power on hours or TBW, i.e. allowing one
+        to predict drive lifetime and inform purchase decisions, vs. assuming that SSDs especially QLC lack endurance
+        or that high-endurance SKUs are required.
+    * reallocated sectors over time, etc.
 
-**Expected Outcome(s):**
+**Standup/weekly call mentee could attend?:** TBD
 
-Have clang-tidy run against Ceph PRs, and show errors only if introduced in the PR.
+**Steps to evaluate an applicant for the project:** Coding experience beyond Karel 
+
+**1-2 short pararaphs about what first 2 weeks of work would look like during the internship:**
+
+Gain familiarity with the data format, including JSON.  Discuss input filtering: skip over invalid entries,
+handle submissions from older smartmontools, uniqify, learn about SMART -- and how dumb it is, the need for nomalization
+of counters. 
+
+**Expected outcome**:
+
+Described above under Description. More specifically, deriving the rate of wear over time for each specific SSD for which we have more than say a month of data:  capture the delta between earliest and latest wear levels reported for each given serial number, and the time delta between those samples.  Divide the wear delta by the time delta for rate of wear over time.
 
 <hr class="hr">
+
+## Warm and Fuzzy
+
+**Mentor name(s):** Yuval Lifshitz
+
+**Mentor email(s):** ylifshit@ibm.com
+
+**Difficulty:** Intermediate
+
+**Project Hours:** 175
+
+**Skills needed:** C++, Python and also depending with the tool
+
+**Subcomponent of Ceph:** RGW
+
+**Description of project:**
+
+The RGW's frotend is an S3 REST API server, and in this project we would like to use a REST API fuzzer to test the RGW for secuirty issues (and other bugs).
+First step of the project would be to select the righ tool (e.g. https://github.com/microsoft/restler-fuzzer),
+feed it with the AWS S3 OpenAPI spec, and see what happesn when we let it connect to the RGW.
+Fixing issues the fuzzer finds would nice, but the real strech goal would be to integrate these tests into teuthology.
+
+**Standup/weekly call mentee could attend:** RGW daily Standup, RGW weekly refactoring meeting
+
+**Steps to evaluate an applicant for the project:** 
+
+* build ceph from source and run basic s3 tests
+* run sts tests against RGW
+* run the REST fuzzing tool
+
+**1-2 short pararaphs about what first 2 weeks of work would look like during the internship:** TBD
+
+**Expected outcome:**
+
+* find and fix security issues in the RGW found by the fuzzing tool
+* stretch goal: integrate tool into automated teuthology runs
+
+<hr class="hr">
+
