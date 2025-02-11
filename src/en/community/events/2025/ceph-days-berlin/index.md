@@ -14,13 +14,13 @@ tags:
   - ceph days
 ---
 
-### Bringing Ceph to Berling
+### Bringing Ceph to Berlin
 
 A two-day event to share the transformative power of Ceph and the
 share the vibrant Ceph community with the community in Berlin!
 
-The first day offers interested parties, newcomers and non-technical people the opportunity to get to know the USPs of Ceph and the Ceph Ecosystem.
-The second day will focus on discussion and exchange between the Ceph expert team, Ceph customers and partners and the Ceph community
+The first day offers interested parties, newcomers and non-technical people the opportunity to get to know about Ceph and the Ceph Ecosystem.
+The second day will focus on discussion and exchange between the Ceph expert team, Ceph users and partners and the Ceph community
 about the status of the Ceph project, the latest Ceph
 project enhancements and roadmap as well as news from the Ceph community.
 Both days will end with a
