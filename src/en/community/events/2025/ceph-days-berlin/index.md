@@ -28,8 +28,8 @@ a networking reception to further promote Ceph learning.
 
 ## Important Dates
 
-- **CFP Opens:** 2025-07-10
-- **CFP Closes:** 2025-09-07
-- **Speakers receive confirmation of acceptance:** 2025-09-08
-- **Schedule Announcement:** 2025-09-14
+- **CFP Opens:** to be announced in the future
+- **CFP Closes:** to be announced in the future
+- **Speakers receive confirmation of acceptance:** to be announced in the future
+- **Schedule Announcement:** to be announced in the future
 - **Event Date:** 2025-11-11 to 2025-11-13
