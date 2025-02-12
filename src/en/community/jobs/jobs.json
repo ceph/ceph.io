@@ -1,6 +1,12 @@
 {
   "jobs": [
     {
+      "company": "Hetzner Cloud",
+      "date": "2025-02-12",
+      "title": "Senior Software Engineer, Ceph Object Storage",
+      "url": "https://hetzner-cloud.de/en/jobs/1945594"
+    },
+    {
       "company": "Bloomberg L.P.",
       "date": "2024-09-10",
       "title": "Senior Software Engineer",
