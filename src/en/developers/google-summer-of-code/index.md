@@ -57,7 +57,7 @@ Improve and extend ceph-devstack's ability to perform teuthology tests against C
 
 **Steps to evaluate an applicant for the project:** TBD
 
-**1-2 short pararaphs about what first 2 weeks of work would look like during the internship:** TBD
+**1-2 short paragraphs about what first 2 weeks of work would look like during the internship:** TBD
 
 **Expected Outcome:**  
 
@@ -106,7 +106,7 @@ For extra credit, interface with the central telemetry DB as described in projec
 **Steps to evaluate an applicant for the project:** 
 Ability to leverage code libraries and write the glue code.
 
-**1-2 short pararaphs about what first 2 weeks of work would look like during the internship:** TBD
+**1-2 short paragraphs about what first 2 weeks of work would look like during the internship:** TBD
 
 <hr class="hr">
 
@@ -145,7 +145,7 @@ persistent bucket notifications.
 * build ceph from source and run basic bucket notification tests
 * fix low-hanging-fruit issues in bucket notifications
 
-**1-2 short pararaphs about what first 2 weeks of work would look like during the internship:** TBD
+**1-2 short paragraphs about what first 2 weeks of work would look like during the internship:** TBD
 
 **Expected outcome:** 
 
@@ -160,7 +160,7 @@ persistent bucket notifications.
 
 **Mentor email(s):** anthony.datri@ibm.com
 
-**Difficulty:** Intermediate
+**Difficulty:** Medium
 
 **Project Hours:** 175
 
@@ -186,7 +186,7 @@ one or more formats that facilitate analysis:
 
 **Steps to evaluate an applicant for the project:** Coding experience beyond Karel 
 
-**1-2 short pararaphs about what first 2 weeks of work would look like during the internship:**
+**1-2 short paragraphs about what first 2 weeks of work would look like during the internship:**
 
 Gain familiarity with the data format, including JSON.  Discuss input filtering: skip over invalid entries,
 handle submissions from older smartmontools, uniqify, learn about SMART -- and how dumb it is, the need for nomalization
@@ -204,7 +204,7 @@ Described above under Description. More specifically, deriving the rate of wear 
 
 **Mentor email(s):** ylifshit@ibm.com
 
-**Difficulty:** Intermediate
+**Difficulty:** Medium 
 
 **Project Hours:** 175
 
@@ -227,12 +227,55 @@ Fixing issues the fuzzer finds would nice, but the real strech goal would be to 
 * run sts tests against RGW
 * run the REST fuzzing tool
 
-**1-2 short pararaphs about what first 2 weeks of work would look like during the internship:** TBD
+**1-2 short paragraphs about what first 2 weeks of work would look like during the internship:** TBD
 
 **Expected outcome:**
 
 * find and fix security issues in the RGW found by the fuzzing tool
 * stretch goal: integrate tool into automated teuthology runs
+
+
+<hr class="hr">
+
+
+## Ceph Dashboard Usability Improvements
+
+**Mentor name(s):** Afreen Misbah
+
+**Mentor email(s):** afreen@ibm.com
+
+**Difficulty:** Easy
+
+**Project Hours:** 175
+
+**Skills needed:** Typescript, Angular, and basic understanding of HTML & CSS.
+
+**Subcomponent of Ceph:** Dashboard
+
+**Description of project:**
+
+Ceph Dashboard is Ceph's management and monitoring tool. It's a web application tool with Angular/Typescript on frontend side and Python as backend. 
+
+We are in an effort to provide more usability workflows and solve UX issues to make management and monitoring easy for Ceph users. 
+
+The task includes improving the notification system and creating a workflow for managing NVMe-oF devices from dashboard.
+
+**Standup/weekly call mentee could attend?:** Dashboard daily sync
+
+**Steps to evaluate an applicant for the project:** 
+
+* Build ceph dashboard locally via docker-compose and kcli both
+* Able to understand issues and ask useful questions
+* Eagerness to learn and contribute
+
+**1-2 short paragraphs about what first 2 weeks of work would look like during the internship:** 
+
+Learning about ceph and storage and gradually contributing to the dashboard.
+
+**Expected Outcome:**  
+
+Improve dashboard usability.
+
 
 <hr class="hr">
 
