@@ -19,9 +19,7 @@ tags:
 A two-day event to share the transformative community and power of Ceph in Berlin
 
 The first day offers interested parties, newcomers and non-technical people the opportunity to get to know about Ceph and the Ceph ecosystem.
-The second day will focus on discussion among Ceph experts, partners, and the Ceph community about the status of the Ceph project, the latest Ceph
-project enhancements and roadmap as well as news from the Ceph community.
-Both days will end with networking reception to further promote Ceph learning.
+The second day will focus on further promote Ceph learning.
 
 ## Important Dates
 
