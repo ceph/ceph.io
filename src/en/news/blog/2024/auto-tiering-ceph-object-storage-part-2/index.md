@@ -1,7 +1,8 @@
 ﻿---
 title: "Auto-tiering Ceph Object Storage - PART 2"
 date: 2024-03-08
-author: Steven Umbehocker
+author: Steven Umbehocker (OSNexus)
+image: "images/image5.png"
 ---
 
 **Auto-tiering Ceph Object Storage - PART 2**

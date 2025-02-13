@@ -2,6 +2,7 @@
 title: "Enhanced Visibility into Ceph Object Multisite Replication with the New HTTP Sync Status Headers"
 date: 2025-02-07
 author: Daniel Parkes, Anthony D'Atri (IBM)
+image: "images/sync2.png"
 tags:
   - ceph
   - rgw
