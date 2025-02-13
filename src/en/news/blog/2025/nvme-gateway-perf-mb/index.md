@@ -1,6 +1,6 @@
 ---
 title: "Performance at Scale with NVMe over TCP"
-
+image: "images/nvme3.png"
 date: 2025-02-03
 author: Mike Burkhart, Anthony D'Atri (IBM)
 tags:
