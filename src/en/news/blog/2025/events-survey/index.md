@@ -1,6 +1,6 @@
 ---
 title: "Ceph Events Survey"
-date: "2025-02-12"
+date: "2025-02-13"
 author: "Dan van der Ster"
 image: "images/theglobe2025.jpg"
 tags:
@@ -9,9 +9,9 @@ tags:
   - "survey"
 ---
 
-The Ceph Foundation and Ambassadors is busy building a full calendar of Ceph events for 2025!
+The Ceph Foundation and Ambassadors are busy building a full calendar of Ceph events for 2025!
 
-As many of you know, Ceph has always thrived on its amazing community. Our events like Ceph Days and Cephalocon are key opportunities where we all can learn, connect, and share experience.
+As many of you know, Ceph has always thrived on its amazing community. Events like Ceph Days and Cephalocon are key opportunities where we all can learn, connect, and share experience.
 
 Following the success of Cephalocon at CERN and Ceph Days in India, we’ve announced Ceph Days London & Silicon Valley -- check out https://ceph.io/en/community/events/ to get involved.
 And watch that space -- Ceph Days in Seattle, New York, and Berlin will be announced soon!
