@@ -19,18 +19,6 @@
       "url": "https://bloomberg.avature.net/careers/JobDetail/Senior-Software-Engineer-Storage-Distributed-Downstream/8371"
     },
     {
-      "company": "IONOS Cloud",
-      "date": "2024-08-12",
-      "title": "Ceph Storage System Engineer",
-      "url": "https://jobs.ionos.de/career/all-jobs/detailed-view/212-ceph-storage-system-engineer-fmd"
-    },
-    {
-      "company": "Cloudflare",
-      "date": "2023-09-14",
-      "title": "Senior Systems Reliability Engineer, Storage",
-      "url": "https://boards.greenhouse.io/cloudflare/jobs/5331049?gh_jid=5331049"
-    },
-    {
       "company": "42on",
       "date": "2023-05-12",
       "title": "Ceph Engineer",
@@ -43,46 +31,10 @@
       "url": "https://www.42on.com/jobs/ceph-expert/"
     },
     {
-      "company": "Arm",
-      "date": "2023-03-01",
-      "title": "Staff Software Engineer - Storage",
-      "url": "https://careers.arm.com/job/cambridge/staff-software-engineer-storage/33099/44433033744"
-    },
-    {
       "company": "Canonical",
       "date": "2022-07-26",
       "title": "Engineering Manager, Ceph & Distributed Storage",
       "url": "https://canonical.com/careers/4175808/engineering-manager-ceph-and-distributed-storage-remote"
-    },
-    {
-      "company": "Mastercard",
-      "date": "2023-03-16",
-      "title": "Senior Systems Platform Engineer",
-      "url": "https://mastercard.wd1.myworkdayjobs.com/CorporateCareers/job/OFallon-Missouri/Senior-Systems-Platform-Engineer--Ceph-Storage-_R-191226"
-    },
-    {
-      "company": "SoftIron",
-      "date": "2022-02-24",
-      "title": "Senior Software Engineer",
-      "url": "https://softiron.bamboohr.com/jobs/view.php?id=76&source=aWQ9MTU%3D"
-    },
-    {
-      "company": "croit",
-      "date": "2022-02-22",
-      "title": "Senior C++ Ceph Developer m/f/d",
-      "url": "https://www.croit.io/career/ceph-developer"
-    },
-    {
-      "company": "clyso",
-      "date": "2023-10-13",
-      "title": "Ceph - SDS Storage Engineer",
-      "url": "https://clyso.com/en/about-clyso/career"
-    },
-    {
-      "company": "G-Core Labs",
-      "date": "2023-11-24",
-      "title": "Storage Engineer (SDS)",
-      "url": "https://gcorelabs.hire.trakstar.com/jobs/fk0xekd/"
     }
   ]
 }
