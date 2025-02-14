@@ -2,6 +2,7 @@
 title: "SMB Meets Squid: Introducing the New Ceph SMB Manager Module for SMB Service Management in Ceph"
 
 date: 2025-01-28
+image: "images/smb1.png"
 author: Mohit Bisht, Anthony D'Atri (IBM)
 tags:
   - ceph

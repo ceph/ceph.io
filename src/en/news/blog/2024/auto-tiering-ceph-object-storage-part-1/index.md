@@ -1,7 +1,8 @@
 ﻿---
 title: "Auto-tiering Ceph Object Storage - PART 1"
 date: 2024-03-08
-author: Steven Umbehocker
+author: Steven Umbehocker (OSNexus)
+image: "images/image1.png"
 ---
 
 S3-compatible object storage systems generally have the ability to store

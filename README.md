@@ -6,7 +6,7 @@ Static website for [ceph.io](https://ceph.io). Built with [Eleventy](https://www
 
 ## Requirements
 
-- [**Node.js**](https://nodejs.org/en/) v14.2.0 (includes **npm** v6.14.4)
+- [**Node.js**](https://nodejs.org/en/) >18.x (includes **npm** v10.x)
 
 Earlier versions of Node and npm will also work, but we recommend using these versions for consistency between builds and environments.
 
@@ -197,4 +197,4 @@ they should contact the designated Ceph Website reviewers at [ceph-website@ceph.
 ## :warning: Something wrong with ceph.io website?
 
 Report any website issues you experience by email to [ceph-website@ceph.io](https://lists.ceph.io/postorius/lists/ceph-website.ceph.io/). Please include
-a brief description of the problem and a link that led to it. 
+a brief description of the problem and a link that led to it.

@@ -2,6 +2,7 @@
 title: "Performance investigation on the Ceph Crimson OSD CPU core allocation. Part One"
 date: 2025-02-03
 author: Jose Juan Palacios Perez (IBM)
+image: "images/fio-workflow.png"
 tags:
   - ceph
   - crimson

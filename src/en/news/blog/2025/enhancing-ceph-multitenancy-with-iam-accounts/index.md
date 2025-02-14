@@ -2,6 +2,7 @@
 title: "Enhancing Ceph Multitenancy with IAM Accounts"
 date: 2024-12-27
 author: Daniel Parkes, Anthony D'Atri (IBM)
+image: "images/iam1.png"
 tags:
   - ceph
   - rgw
