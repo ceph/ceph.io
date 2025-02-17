@@ -126,17 +126,21 @@ Ability to leverage code libraries and write the glue code.
 
 **Description of project:**
 
+
+Detailed description of the project and evalution steps can be found [here](https://gist.github.com/yuvalif/9c5a1ed326ca14cf4851d7a0b8ba0db8).
+
 Persistent bucket notifications are a very useful and powerful feature 
 
 tech talk: https://www.youtube.com/watch?v=57Ejl6R-L20
 
 usecase example: https://www.youtube.com/watch?v=57Ejl6R-L20
 
-However, they can pose a performance issue, since the notifications regarding a pecific bucket
+However, they can pose a performance issue, since the notifications regarding a specific bucket
 are written to a single RADOS queue (unlike the writes to the bucket which are distributed across multiple
 bucket shards. So, in case that small objects are written to the bucket, the overhead of the notifications is considerable.
 In this project, our goal would be to create a sharded bucket notifications queue, to allow for better performance of sending 
 persistent bucket notifications.
+
 
 **Standup/weekly call mentee could attend?:** RGW daily Standup, RGW weekly refactoring meeting
 
@@ -173,7 +177,7 @@ persistent bucket notifications.
 Public telemetry today offers a few Grafana panels and downloadable archives of anonymized data.  One field
 is a JSON blob of smartctl output.  Parse this, apply a normalization layer, deduplicate, and present in
 one or more formats that facilitate analysis:
-* CSV file containing atributes for only the latest report found for a given device
+* CSV file containing attributes for only the latest report found for a given device
 * The number of data points might be too high, but possibly a Grafana dashboard or even spreadsheet with template variables for 
   manufacturer/model, interface type, etc. with various panes:
     * Histograms of power_on hours, normalized endurance used or remaining, etc
@@ -214,10 +218,10 @@ Described above under Description. More specifically, deriving the rate of wear 
 
 **Description of project:**
 
-The RGW's frotend is an S3 REST API server, and in this project we would like to use a REST API fuzzer to test the RGW for secuirty issues (and other bugs).
-First step of the project would be to select the righ tool (e.g. https://github.com/microsoft/restler-fuzzer),
-feed it with the AWS S3 OpenAPI spec, and see what happesn when we let it connect to the RGW.
-Fixing issues the fuzzer finds would nice, but the real strech goal would be to integrate these tests into teuthology.
+The RGW's frontend is an S3 REST API server, and in this project we would like to use a REST API fuzzer to test the RGW for security issues (and other bugs).
+First step of the project would be to select the right tool (e.g. https://github.com/microsoft/restler-fuzzer),
+feed it with the AWS S3 OpenAPI spec, and see what happens when we let it connect to the RGW.
+Fixing issues the fuzzer finds would nice, but the real stretch goal would be to integrate these tests into teuthology.
 
 **Standup/weekly call mentee could attend:** RGW daily Standup, RGW weekly refactoring meeting
 
