@@ -1,6 +1,12 @@
 {
   "jobs": [
     {
+      "company": "GoDaddy",
+      "date": "2025-02-20",
+      "title": "Senior Ceph Engineer",
+      "url": "https://careers.godaddy/jobs/senior-ceph-engineer-united-states?gh_jid=6352759003"
+    },
+    {
       "company": "Hetzner Cloud",
       "date": "2025-02-13",
       "title": "Senior Software Engineer (m/f/x) - Ceph Object Storage",
