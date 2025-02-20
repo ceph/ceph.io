@@ -67,9 +67,9 @@ Extend ceph-devstack's ability to perform teuthology tests
 
 ## smartmontools drivedb.h postprocessor
 
-**Mentor name(s):** Anthony D'Atri
+**Mentor name(s):** Anthony D'Atri, Sunil Angadi
 
-**Mentor email(s):** anthony.datri@ibm.com
+**Mentor email(s):** anthony.datri@ibm.com, sunil.angadi@ibm.com
 
 **Difficulty:** Intermediate
 
