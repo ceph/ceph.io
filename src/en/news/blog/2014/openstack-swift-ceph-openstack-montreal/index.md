@@ -2,13 +2,13 @@
 title: "Openstack, Swift & Ceph @ Openstack Montreal"
 date: "2014-03-16"
 author: "dmsimard"
-tags: 
+tags:
   - "ceph"
 ---
 
 The second meetup of [Openstack Montreal](http://montrealopenstack.org/), in collaboration with [iWeb](http://blog.iweb.com/en/2014/03/register-openstack-montreal-2014/13258.html), [Enovance](https://www.enovance.com/) and [Savoir-faire Linux](https://www.savoirfairelinux.com/), will happen at the [Université du Québec à Montréal](http://www.uqam.ca/) (UQAM) monday march 17th.
 
-It’s with great pleasure that I accepted an invitation from my colleague Rafael Rosa ([@rafaelrosafu](https://twitter.com/rafaelrosafu)) to talk about Ceph in the context of Openstack.
+It’s with great pleasure that I accepted an invitation from my colleague Rafael Rosa ([@rafaelrosafu](https://x.com/rafaelrosafu)) to talk about Ceph in the context of Openstack.
 
 Our friends at Enovance will be talking about Swift, the object storage project in Openstack.
 

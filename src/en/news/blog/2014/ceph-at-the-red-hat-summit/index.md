@@ -2,7 +2,7 @@
 title: "Ceph at the Red Hat Summit"
 date: "2014-04-22"
 author: "syndicated"
-tags: 
+tags:
 ---
 
 Last week in San Francisco, we attended the [2014 Red Hat Summit](http://www.redhat.com/summit/). This event, in its tenth year, is a gathering of Red Hat customers and partners looking for information and best practices that help them build better infrastructure.
@@ -17,7 +17,7 @@ We were pleased to find out that Red Hat Summit attendees are fans of Ceph! Half
 
 Another Inktank partner, Dell, also reported substantial Ceph interest in the financial industry. Sam Greenblatt, VP Architecture and Technology CTO, mentioned during his talk that [10 of 12 top Wall Street banks are asking to run Ceph](https://twitter.com/cote/status/456478984545390592).
 
-[![tweet](images/tweet.png)](https://twitter.com/cote/status/456478984545390592)
+[![tweet](images/tweet.png)](https://x.com/cote/status/456478984545390592)
 
 All in all, this Red Hat Summit was a great event! We had a chance to talk with a lot of long-time users, as well as meet some new ones, and we were able to validate what we already suspected: many Red Hat users already love Ceph!
 

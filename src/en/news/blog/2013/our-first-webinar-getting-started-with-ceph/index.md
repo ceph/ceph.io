@@ -2,13 +2,13 @@
 title: "Our First Webinar – Getting Started With Ceph"
 date: "2013-01-18"
 author: "syndicated"
-tags: 
+tags:
   - "ceph"
 ---
 
 [![](images/Workplace-Violence-Webinar-e1358536924128.png "Workplace-Violence-Webinar")](http://www.inktank.com/wp-content/uploads/2013/01/Workplace-Violence-Webinar-e1358536924128.png "Workplace-Violence-Webinar")
 
-Yesterday was another milestone for our Inktank scrapbook. We hosted our first webinar titled “Getting Started with [Ceph](http://ceph.com/ceph-storage/)”. Our technical marketing engineer/overall nice guy [@klivansky](https://twitter.com/klivansky) presented the webinar, which lasted one hour and covered the basics of getting setup with Ceph.
+Yesterday was another milestone for our Inktank scrapbook. We hosted our first webinar titled “Getting Started with [Ceph](http://ceph.com/ceph-storage/)”. Our technical marketing engineer/overall nice guy [@klivansky](https://x.com/klivansky) presented the webinar, which lasted one hour and covered the basics of getting setup with Ceph.
 
 He covered…
 
@@ -26,16 +26,16 @@ He covered…
 
 Missed the webinar? No problem, we have you covered with a [replay](https://www.brighttalk.com/webcast/8847/63173). Hint! The attachment tab in the replay will allow you to download just the slides.
 
-Calling all [OpenStack](http://www.openstack.org/) junkies! Our next webinar is on “[Ceph With OpenStack](https://www.brighttalk.com/webcast/8847/63177)”. Co-hosting this webinar is [Kamesh Pemmaraju](https://twitter.com/kpemmaraju) of [Dell’s OpenStack-Powered Cloud Solution group](http://content.dell.com/us/en/enterprise/by-need-it-productivity-data-center-change-response-openstack-cloud), our latest partner. [Register today!](https://www.brighttalk.com/webcast/8847/63177)
+Calling all [OpenStack](http://www.openstack.org/) junkies! Our next webinar is on “[Ceph With OpenStack](https://www.brighttalk.com/webcast/8847/63177)”. Co-hosting this webinar is [Kamesh Pemmaraju](https://x.com/kpemmaraju) of [Dell’s OpenStack-Powered Cloud Solution group](http://content.dell.com/us/en/enterprise/by-need-it-productivity-data-center-change-response-openstack-cloud), our latest partner. [Register today!](https://www.brighttalk.com/webcast/8847/63177)
 
 For a full list of Ceph webinars in the series – [click here](http://www.inktank.com/news-events/webinars/)
 
 If you think of a Ceph webinar you would like to see, shoot us an email at [marketing@inktank.com](mailto:marketing@inktank.com).
 
 Happy Friday!  
-[@JudeFitzz](https://twitter.com/JudeFitzz)
+[@JudeFitzz](https://x.com/JudeFitzz)
 
-[Follow](https://twitter.com/inktank) Inktank on Twitter  
+[Follow](https://x.com/inktank) Inktank on X  
 [Like](https://www.facebook.com/inktank) Inktank on Facebook
 
 [Subscribe](http://www.inktank.com/newsletter-signup/) to “The InkWell” – Our quarterly newsletter.
