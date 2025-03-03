@@ -204,9 +204,9 @@ Described above under Description. More specifically, deriving the rate of wear 
 
 ## Warm and Fuzzy
 
-**Mentor name(s):** Yuval Lifshitz
+**Mentor name(s):** Yuval Lifshitz, Pritha Srivastava
 
-**Mentor email(s):** ylifshit@ibm.com
+**Mentor email(s):** ylifshit@ibm.com, Pritha.Srivastava@ibm.com
 
 **Difficulty:** Medium 
 
@@ -227,9 +227,7 @@ Fixing issues the fuzzer finds would nice, but the real stretch goal would be to
 
 **Steps to evaluate an applicant for the project:** 
 
-* build ceph from source and run basic s3 tests
-* run sts tests against RGW
-* run the REST fuzzing tool
+Detailed description of the project and evalution steps can be found [here](https://gist.github.com/yuvalif/4c922fd9f5e472a342e8b585be1f23ef). 
 
 **1-2 short paragraphs about what first 2 weeks of work would look like during the internship:** TBD
 
