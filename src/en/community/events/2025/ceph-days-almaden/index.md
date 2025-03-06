@@ -104,7 +104,7 @@ There are use cases where one might, for example, want to spread an 8+6 erasure 
 <p>
 This talk covers the humble beginnings of Ceph at Walmart aimed to provide reliable, flexible, future-proof storage for our on-premises cloud, and how it has evolved in supporting Walmart's triplet cloud model, challenges that were uncovered operating Ceph at large scale supporting variety of use-cases ranging from latency sensitive databases, eCommerce applications, backups and others.
    </td>
-   <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-silicon-valley/Pavan Rallabhandi.jpg" width="400" />Pavan Rallabhandi, Anton Thaker (Walmart) - </strong></center>
+   <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-silicon-valley/Pavan Rallabhandi.jpg" width="400" />Pavan Rallabhandi, Anton Thaker (Walmart) </strong></center>
    </td>
   </tr>
   <tr>
