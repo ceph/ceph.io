@@ -162,7 +162,7 @@ Intro, what’s coming, and cephadm at scale.
 <p>
 We start with a light introduction on the CephFS architecture and modern components, with a focus on newer components such as the ceph-mgr’s role in working with a CephFS filesystem. Then we move on to new features: the mgr/volume has grown to a complete solution for scalably handling internal and public cloud filesystems, and has grown new capabilities such as server-side quiescing that enables multi-client, multi-volume consistent snapshots. Filesystem protocol integration with samba and NFS-Ganesha has dramatically improved. Hear about these and other new features! With any leftover time, we will preview the development roadmap for where we hope to take CephFS in the future.
    </td>
-   <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-silicon-valley/GFarnum.jpg" width="400" />Greg Farnum (IBM)</strong></center>
+   <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-silicon-valley/GFarnum.jpeg" width="400" />Greg Farnum (IBM)</strong></center>
    </td>
   </tr>
   <tr>
