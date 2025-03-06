@@ -186,7 +186,7 @@ Whether you are a Ceph user or a developer, you have probably wondered at some p
   <tr>
    <td>4:00 PM
    </td>
-   <td><strong>Optimizing Ceph for Scale: Lessons from Large-Scale Operations and Performance Tuningg</strong>
+   <td><strong>Optimizing Ceph for Scale: Lessons from Large-Scale Operations and Performance Tuning</strong>
 <p>
 Ceph is a powerful, scalable storage solution, but operating it effectively at scale presents unique challenges. In this talk, I’ll share insights from years of experience managing and supporting some of the largest Ceph deployments. We’ll explore best practices for maintaining stability, ensuring high availability, and optimizing performance for demanding workloads. Key topics will include tuning Ceph for large-scale customers, troubleshooting common performance bottlenecks, and strategies for extracting the best possible performance from Ceph. Whether you’re running a growing cluster or supporting mission-critical workloads, these practical lessons will help you get the most out of your Ceph deployment.
    </td>
