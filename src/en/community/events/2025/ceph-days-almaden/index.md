@@ -104,7 +104,7 @@ There are use cases where one might, for example, want to spread an 8+6 erasure 
 <p>
 This talk covers the humble beginnings of Ceph at Walmart aimed to provide reliable, flexible, future-proof storage for our on-premises cloud, and how it has evolved in supporting Walmart's triplet cloud model, challenges that were uncovered operating Ceph at large scale supporting variety of use-cases ranging from latency sensitive databases, eCommerce applications, backups and others.
    </td>
-   <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-silicon-valley/Pavan Rallabhandi.jpg" width="400" />Pavan Rallabhandi, Anton Thaker (Walmart) </strong></center>
+   <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-silicon-valley/Pavan Rallabhandi.jpg" width="400" />Pavan Rallabhandi (Walmart)</strong></center>
    </td>
   </tr>
   <tr>
@@ -148,9 +148,9 @@ How to prepare for the future by embracing NVMe and when to leave spinning disks
    <tr>
    <td>2:00 PM
    </td>
-   <td><strong>CephADM</strong>
+   <td><strong>Cephadm: Latest Usability and Scalability improvements</strong>
 <p>
-Intro, what’s coming, and cephadm at scale. 
+This talk will dive into the evolution of cephadm and describe all the usability and scalability improvements that have been made to make it more robust
    </td>
    <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-silicon-valley/Ernesto.jpg" width="400" />Ernesto Puerta (IBM)</strong></center>
    </td>
