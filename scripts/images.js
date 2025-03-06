@@ -1,5 +1,4 @@
 const imagemin = require('imagemin');
-const imageminMozjpeg = require('imagemin-mozjpeg');
 const imageminPngquant = require('imagemin-pngquant');
 const imageminSvgo = require('imagemin-svgo');
 const imageminGifsicle = require('imagemin-gifsicle');
@@ -14,6 +13,7 @@ const srcDir = 'src';
 const distDir = 'dist';
 
 (async () => {
+  const imageminMozjpeg = (await import('imagemin-mozjpeg')).default;
   const files = await imagemin([srcDir + '/**/*.{jpg,jpeg,png,svg,gif}'], {
     plugins: [
       imageminMozjpeg({ quality: 75 }),

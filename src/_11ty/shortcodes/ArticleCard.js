@@ -1,15 +1,17 @@
 const filtersDir = `../filters`;
 const formatDate = require(`${filtersDir}/formatDate.js`);
-const getSingleDigitFromDate = require(`${filtersDir}/getSingleDigitFromDate.js`);
+const getSingleDigitFromDate = require(
+  `${filtersDir}/getSingleDigitFromDate.js`,
+);
 const cleanCardContent = require(`${filtersDir}/cleanCardContent.js`);
 const truncate = require(`${filtersDir}/truncate.js`);
 
-module.exports = ({ data = {}, templateContent, url } = {}, { label } = {}) => {
+module.exports = ({ data = {}, articles, url } = {}, { label } = {}) => {
   const { author = '', date, image, title = '', locale = '' } = data;
   const imageSrc = image
     ? `${url}${image}`
     : `/assets/bitmaps/photo-texture-0${getSingleDigitFromDate(date)}.jpg`;
-  const captionStrip = cleanCardContent(templateContent);
+  const captionStrip = cleanCardContent(articles);
   const caption = truncate(captionStrip);
 
   return `
