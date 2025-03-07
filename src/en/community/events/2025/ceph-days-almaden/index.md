@@ -148,9 +148,13 @@ How to prepare for the future by embracing NVMe and when to leave spinning disks
    <tr>
    <td>2:00 PM
    </td>
-   <td><strong>Cephadm: Latest Usability and Scalability improvements</strong>
+   <td><strong>Cephadm at Scale for Detractors: Why it's time to reconsider containerized Ceph deployments</strong>
 <p>
-This talk will dive into the evolution of cephadm and describe all the usability and scalability improvements that have been made to make it more robust
+Let's face it: Cephadm hasn't won over everyone. Many longtime Ceph users still prefer package-based deployments with custom automation, arguing that containers add unnecessary complexity and reduce control.</p>
+
+<p>In this talk, we'll take a cold, hard look at Cephadm: why it exists, what problems it solves (and creates), and how it compares to previous deployment tools like Ceph-deploy, Ceph-Ansible, DeepSea, and Rook. We'll look at the main concerns of Cephadm's detractors, from container overhead to troubleshooting, and discuss whether those concerns are still valid today.</p>
+
+<p>Most importantly, we'll look at real-world results, starting with the Pawsey 100-node, 4000-OSD scale test, which proved that Cephadm is not just for toy clusters. We'll also cover the latest usability improvements and what's next for Cephadm.</p>
    </td>
    <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-silicon-valley/Ernesto.jpg" width="400" />Ernesto Puerta (IBM)</strong></center>
    </td>
