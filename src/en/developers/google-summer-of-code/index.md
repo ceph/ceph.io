@@ -52,6 +52,7 @@ It has some basic ability to run Ceph tests, but could benefit significantly fro
 
 Improve and extend ceph-devstack's ability to perform teuthology tests against Ceph builds. This project will involve writing Python code and tests to orchestrate podman containers, and working with security systems like SELinux, CGroups, and Linux capabilities.
 
+For more details about the evaluation tasks, see [here](https://github.com/zmc/ceph-devstack?tab=readme-ov-file#for-gsoc-2025-applicants).
 
 **Standup/weekly call mentee could attend?:** Teuthology weekly meeting
 
