@@ -158,50 +158,6 @@ persistent bucket notifications.
 
 <hr class="hr">
 
-## Public telemetry slice/dice of SMART data 
-
-**Mentor name(s):** Anthony D'Atri
-
-**Mentor email(s):** anthony.datri@ibm.com
-
-**Difficulty:** Medium
-
-**Project Hours:** 175
-
-**Skills needed:** Some coding language, Python or Go, jq or JSON parsing or other text library.
-
-**Subcomponent of Ceph:** telemetry
-
-**Description of project:**
-
-Public telemetry today offers a few Grafana panels and downloadable archives of anonymized data.  One field
-is a JSON blob of smartctl output.  Parse this, apply a normalization layer, deduplicate, and present in
-one or more formats that facilitate analysis:
-* CSV file containing attributes for only the latest report found for a given device
-* The number of data points might be too high, but possibly a Grafana dashboard or even spreadsheet with template variables for 
-  manufacturer/model, interface type, etc. with various panes:
-    * Histograms of power_on hours, normalized endurance used or remaining, etc
-    * histogram or table of endurance remaining vs power on hours or TBW, i.e. allowing one
-        to predict drive lifetime and inform purchase decisions, vs. assuming that SSDs especially QLC lack endurance
-        or that high-endurance SKUs are required.
-    * reallocated sectors over time, etc.
-
-**Standup/weekly call mentee could attend?:** TBD
-
-**Steps to evaluate an applicant for the project:** Coding experience beyond Karel 
-
-**1-2 short paragraphs about what first 2 weeks of work would look like during the internship:**
-
-Gain familiarity with the data format, including JSON.  Discuss input filtering: skip over invalid entries,
-handle submissions from older smartmontools, uniqify, learn about SMART -- and how dumb it is, the need for nomalization
-of counters. 
-
-**Expected outcome**:
-
-Described above under Description. More specifically, deriving the rate of wear over time for each specific SSD for which we have more than say a month of data:  capture the delta between earliest and latest wear levels reported for each given serial number, and the time delta between those samples.  Divide the wear delta by the time delta for rate of wear over time.
-
-<hr class="hr">
-
 ## Warm and Fuzzy
 
 **Mentor name(s):** Yuval Lifshitz, Pritha Srivastava
