@@ -1,6 +1,6 @@
 ---
 title: "Ceph Object Storage Multisite Replication Series. Part One"
-
+image: "images/image1.png"
 date: 2024-12-27
 author: Daniel Parkes, Anthony D'Atri (IBM)
 tags:

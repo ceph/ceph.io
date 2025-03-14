@@ -2,6 +2,7 @@
 title: "Silver bullet for RocksDB performance"
 date: 2024-02-13
 author: Stefan Kooman (hydro-b)
+image: "images/storage1_OSD_compact_after_perf_package_IOPS.png"
 tags:
   - ceph
   - osd

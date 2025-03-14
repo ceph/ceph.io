@@ -100,7 +100,6 @@ module.exports = function (eleventyConfig) {
       hostname: build.isProduction ? 'https://ceph.io' : 'https://develop.ceph.io',
     },
   });
-
   // Markdown overrides
   let markdownLibrary = markdownIt({
     html: true,
@@ -119,8 +118,10 @@ module.exports = function (eleventyConfig) {
     require('./scripts/search-index.js');
   });
 
-  // Browsersync
-  eleventyConfig.setBrowserSyncConfig({
+  eleventyConfig.setServerOptions({
+    // Swapping back to Browsersync
+    // See https://www.11ty.dev/docs/dev-server/#swap-back-to-browsersync
+    module: '@11ty/eleventy-server-browsersync',
     callbacks: {
       ready: function (err, bs) {
         bs.addMiddleware('*', (req, res) => {
