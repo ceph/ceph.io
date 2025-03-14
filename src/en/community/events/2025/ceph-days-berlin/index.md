@@ -1,6 +1,6 @@
 ---
 title: Ceph Days Berlin 2025
-date: 2025-11-11
+date: 2025-11-12
 end: 2025-11-13
 location: Berlin, Germany
 venue: DESY, Platanenallee 6, 15738 Zeuthen
