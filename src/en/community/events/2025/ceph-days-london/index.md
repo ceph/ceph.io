@@ -27,3 +27,5 @@ a networking reception, to foster more Ceph learning.
 - **Speakers receive confirmation of acceptance:** 2025-05-02
 - **Schedule Announcement:** 2025-05-12
 - **Event Date:** 2025-06-04
+
+<a class="button" href="https://forms.gle/dhLiUjqST4Hgqj638">CFP Open!</a>
