@@ -30,6 +30,6 @@ updates:
 
 - [Ceph User list](https://lists.ceph.io/postorius/lists/ceph-users.ceph.io/)
 - [Ceph Dev list](https://lists.ceph.io/postorius/lists/dev.ceph.io/)
-- [X/Twitter](https://twitter.com/ceph)
+- [X/Twitter](https://x.com/ceph)
 - [LinkedIn](https://www.linkedin.com/company/ceph/)
 - [FaceBook](https://www.facebook.com/cephstorage/)

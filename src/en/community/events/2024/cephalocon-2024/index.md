@@ -81,6 +81,6 @@ Join the Ceph announcement list, or follow Ceph on social media for Ceph event
 updates:
 
 - [Ceph Announcement list](https://lists.ceph.io/postorius/lists/ceph-announce.ceph.io/)
-- [Twitter](https://twitter.com/ceph)
+- [Twitter](https://x.com/ceph)
 - [LinkedIn](https://www.linkedin.com/company/ceph/)
 - [FaceBook](https://www.facebook.com/cephstorage/)
