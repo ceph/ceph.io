@@ -40,8 +40,6 @@ a networking reception, to foster more Ceph learning.
 - **Schedule Announcement:** 2025-01-09
 - **Event Date:** 2025-01-23
 
-<a class="button" href="https://konfhub.com/ceph-days-india-2025">Registration Open!</a>
-
 <br />
 
 ## Schedule
