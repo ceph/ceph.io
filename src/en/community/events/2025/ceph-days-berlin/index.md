@@ -23,8 +23,8 @@ The second day will focus on further promote Ceph learning.
 
 ## Important Dates
 
-- **CFP Opens:** to be announced in the future
-- **CFP Closes:** to be announced in the future
-- **Speakers receive confirmation of acceptance:** to be announced in the future
-- **Schedule Announcement:** to be announced in the future
+- **CFP Opens:** 2025-08-12
+- **CFP Closes:** 2025-09-28
+- **Speakers receive confirmation of acceptance:** 2025-10-03
+- **Schedule Announcement:** 2025-10-17
 - **Event Date:** 2025-11-12 to 2025-11-13
