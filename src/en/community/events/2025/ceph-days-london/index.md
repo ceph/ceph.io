@@ -23,7 +23,12 @@ a networking reception, to foster more Ceph learning.
 ## Important Dates
 
 - **CFP Opens:** 2025-03-17
-- **CFP Closes:** 2025-04-27
-- **Speakers receive confirmation of acceptance:** 2025-05-02
-- **Schedule Announcement:** 2025-05-12
+- **CFP Closes:** 2025-04-20
+- **Speakers receive confirmation of acceptance:** 2025-04-25
+- **Schedule Announcement:** 2025-05-05
 - **Event Date:** 2025-06-04
+
+Registration opens: 2025-05-01
+
+<a class="button" href="https://forms.gle/dhLiUjqST4Hgqj638">CFP Open!</a>
+<a class="button" href="https://ti.to/open-source-events/ceph-days-london-2025">Registration</a>

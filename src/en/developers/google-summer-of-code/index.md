@@ -100,7 +100,7 @@ the text labels is fraught because these numeric IDs are not strictly standardiz
 seen drives that report a metric on a different numeric ID than most others, and/or that report
 a different metric on a specific numeric than most others report on that ID.
 
-For extra credit, interface with the central telemetry DB as described in project "Public telemetry slice/dice of SMART data".
+For more details about the project and evaluation steps, see [here](https://gist.github.com/sunilangadi2/729ae4855ab0997b27108e6c6e60781c).
 
 **Standup/weekly call mentee could attend?:** TBD 
 
