@@ -16,7 +16,7 @@ No registration is required. The meeting link will be provided on this event
 page on November 4th. Sign up for the <a
 href="https://lists.ceph.io/postorius/lists/ceph-announce.ceph.io/">Ceph
 Announcement list</a> or follow Ceph on <a
-href="https://twitter.com/ceph">Twitter</a> to get notified before we start
+href="https://x.com/ceph">X</a> to get notified before we start
 each day.
 
 <strong><a href="https://bluejeans.com/908675367">Click to join us
