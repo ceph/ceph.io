@@ -22,7 +22,6 @@ order: 3
 
 <div class="grid grid--align-center grid--cols-2 md:grid--cols-3 md:w-3-4">
   <a href="https://www.clyso.com/en/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-clyso.png" /></a>
-  <a href="https://samsung.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-samsung.png" /></a>
 </div>
 
 ### Premier Members
@@ -36,6 +35,7 @@ order: 3
 <div class="grid grid--align-center grid--cols-2 md:grid--cols-3 md:w-3-4">
   <a href="http://www.42on.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-42on.png" /></a>
   <a href="https://www.canonical.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-ubuntu.png" /></a>
+  <a href="https://samsung.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-samsung.png" /></a>
 </div>
 
 ### Silver Members
