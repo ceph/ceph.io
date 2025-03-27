@@ -24,6 +24,6 @@ Editing a single line of the "image" in the cluster's custom resource definition
 
 The audience seemed to have more developers than operators from my small sampling of discussions. This distinction is essential at beginning conversations around Rook as developers ideally will never know about Rook if their objectives are only to consume storage for their application.
 
-We had some very excited users of Rook and Ceph come up to the booth to express their experiences and ideas to support certain use cases. Watch the Ceph [twitter](https://twitter.com/ceph) and blog for some new stories of users using Rook and Ceph together in production! You can also read Rubab Syed's [evaluation of Rook and Ceph](https://ceph.com/community/evaluating-ceph-deployments-with-rook/) during her work at CERN labs.
+We had some very excited users of Rook and Ceph come up to the booth to express their experiences and ideas to support certain use cases. Watch the Ceph [X](https://x.com/ceph) and blog for some new stories of users using Rook and Ceph together in production! You can also read Rubab Syed's [evaluation of Rook and Ceph](https://ceph.com/community/evaluating-ceph-deployments-with-rook/) during her work at CERN labs.
 
 Ceph will have presence at future KubeCon's such as [Barcelona 2019](https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2019/), in which the Ceph Foundation plans to have a collocated [Cephalocon](https://ceph.com/cephalocon/barcelona-2019/) with more than 800 passionate engineers.

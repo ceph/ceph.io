@@ -1,8 +1,9 @@
 const fs = require('fs');
+const path = require('path');
 
 // Plugins
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
-const build = require('./src/_data/build');
+const build = require('./src/_data/build') || {};
 const i18n = require('eleventy-plugin-i18n');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
@@ -10,78 +11,102 @@ const sitemap = require('@quasibit/eleventy-plugin-sitemap');
 const translations = require('./src/_data/i18n');
 
 module.exports = function (eleventyConfig) {
-  console.log(process.env.NODE_ENV);
+  console.log(`Running in environment: ${process.env.NODE_ENV || 'development'}`);
 
   // Hot-reload site on CSS changes
   eleventyConfig.addWatchTarget('src/css');
   eleventyConfig.addWatchTarget('src/_11ty');
 
+  // Helper function to check if a file exists before requiring it
+  const requireIfExists = filePath => {
+    if (!fs.existsSync(filePath)) {
+      console.warn(`Missing file: ${filePath}`);
+    }
+    return fs.existsSync(filePath) ? require(filePath) : () => {};
+  };
+
   // Collections
-  const collectionsDir = `./src/_11ty/collections`;
-  eleventyConfig.addCollection('primary', require(`${collectionsDir}/primary.js`));
-  eleventyConfig.addCollection('sitemap', require(`${collectionsDir}/sitemap.js`));
+  const collectionsDir = './src/_11ty/collections';
+  eleventyConfig.addCollection('primary', requireIfExists(`${collectionsDir}/primary.js`));
+  eleventyConfig.addCollection('sitemap', requireIfExists(`${collectionsDir}/sitemap.js`));
 
   // Filters
-  const filtersDir = `./src/_11ty/filters`;
-  eleventyConfig.addFilter('chunkByYear', require(`${filtersDir}/chunkByYear.js`));
-  eleventyConfig.addFilter('cleanCardContent', require(`${filtersDir}/cleanCardContent.js`));
-  eleventyConfig.addFilter('cleanSearchRaw', require(`${filtersDir}/cleanSearchRaw.js`));
-  eleventyConfig.addFilter('endsWith', require(`${filtersDir}/endsWith.js`));
-  eleventyConfig.addFilter('formatDate', require(`${filtersDir}/formatDate.js`));
-  eleventyConfig.addFilter('formatDateRange', require(`${filtersDir}/formatDateRange.js`));
-  eleventyConfig.addFilter('getArticleType', require(`${filtersDir}/getArticleType.js`));
-  eleventyConfig.addFilter('getCollectionByTag', require(`${filtersDir}/getCollectionByTag.js`));
-  eleventyConfig.addFilter('getCollectionTags', require(`${filtersDir}/getCollectionTags.js`));
-  eleventyConfig.addFilter('getItems', require(`${filtersDir}/getItems.js`));
-  eleventyConfig.addFilter('getItemsByLocale', require(`${filtersDir}/getItemsByLocale.js`));
-  eleventyConfig.addFilter('getItemsInFuture', require(`${filtersDir}/getItemsInFuture.js`));
-  eleventyConfig.addFilter('getItemsInPast', require(`${filtersDir}/getItemsInPast.js`));
-  eleventyConfig.addFilter('getJobs', require(`${filtersDir}/getJobs.js`));
-  eleventyConfig.addFilter('getSingleDigitFromDate', require(`${filtersDir}/getSingleDigitFromDate.js`));
-  eleventyConfig.addFilter('isInFuture', require(`${filtersDir}/isInFuture.js`));
-  eleventyConfig.addFilter('objectValues', require(`${filtersDir}/objectValues.js`));
-  eleventyConfig.addFilter('randomize', require(`${filtersDir}/randomize.js`));
-  eleventyConfig.addFilter('removeHtml', require(`${filtersDir}/removeHtml.js`));
-  eleventyConfig.addFilter('removeTags', require(`${filtersDir}/removeTags.js`));
-  eleventyConfig.addFilter('startsWith', require(`${filtersDir}/startsWith.js`));
-  eleventyConfig.addFilter('truncate', require(`${filtersDir}/truncate.js`));
+  const filtersDir = './src/_11ty/filters';
+  const filterFiles = [
+    'chunkByYear',
+    'cleanCardContent',
+    'cleanSearchRaw',
+    'endsWith',
+    'formatDate',
+    'formatDateRange',
+    'getArticleType',
+    'getCollectionByTag',
+    'getCollectionTags',
+    'getItems',
+    'getItemsByLocale',
+    'getItemsInFuture',
+    'getItemsInPast',
+    'getJobs',
+    'getSingleDigitFromDate',
+    'isInFuture',
+    'objectValues',
+    'randomize',
+    'removeHtml',
+    'removeTags',
+    'startsWith',
+    'truncate',
+  ];
 
-  // Layout aliases — TBC if this is bringing enough benefit
-  eleventyConfig.addLayoutAlias('base', 'layouts/_base.njk');
-  eleventyConfig.addLayoutAlias('blog-post', 'layouts/blog-post.njk');
-  eleventyConfig.addLayoutAlias('case-study', 'layouts/case-study.njk');
-  eleventyConfig.addLayoutAlias('content', 'layouts/content.njk');
-  eleventyConfig.addLayoutAlias('content-simple', 'layouts/content-simple.njk');
-  eleventyConfig.addLayoutAlias('content-support', 'layouts/content-support.njk');
-  eleventyConfig.addLayoutAlias('event', 'layouts/event.njk');
-  eleventyConfig.addLayoutAlias('home', 'layouts/home.njk');
-  eleventyConfig.addLayoutAlias('press-release', 'layouts/press-release.njk');
-  eleventyConfig.addLayoutAlias('hub-community', 'layouts/hub-community.njk');
-  eleventyConfig.addLayoutAlias('hub-developers', 'layouts/hub-developers.njk');
-  eleventyConfig.addLayoutAlias('hub-discover', 'layouts/hub-discover.njk');
-  eleventyConfig.addLayoutAlias('hub-foundation', 'layouts/hub-foundation.njk');
-  eleventyConfig.addLayoutAlias('hub-news', 'layouts/hub-news.njk');
-  eleventyConfig.addLayoutAlias('hub-users', 'layouts/hub-users.njk');
-  eleventyConfig.addLayoutAlias('listing-blog-posts', 'layouts/listing-blog-posts.njk');
-  eleventyConfig.addLayoutAlias('listing-blog-post-categories', 'layouts/listing-blog-post-categories.njk');
-  eleventyConfig.addLayoutAlias('listing-blog-search', 'layouts/listing-blog-search.njk');
-  eleventyConfig.addLayoutAlias('listing-case-studies', 'layouts/listing-case-studies.njk');
-  eleventyConfig.addLayoutAlias('listing-case-study-categories', 'layouts/listing-case-study-categories.njk');
-  eleventyConfig.addLayoutAlias('listing-events', 'layouts/listing-events.njk');
-  eleventyConfig.addLayoutAlias('listing-event-categories', 'layouts/listing-event-categories.njk');
-  eleventyConfig.addLayoutAlias('listing-planet-ceph-articles', 'layouts/listing-planet-ceph-articles.njk');
-  eleventyConfig.addLayoutAlias('listing-press-releases', 'layouts/listing-press-releases.njk');
-  eleventyConfig.addLayoutAlias('listing-press-release-categories', 'layouts/listing-press-release-categories.njk');
-  eleventyConfig.addLayoutAlias('navigation', 'layouts/navigation.njk');
+  filterFiles.forEach(filter => {
+    eleventyConfig.addFilter(filter, requireIfExists(`${filtersDir}/${filter}.js`));
+  });
+
+  // Layout aliases
+  const layoutAliases = {
+    base: 'layouts/_base.njk',
+    'blog-post': 'layouts/blog-post.njk',
+    'case-study': 'layouts/case-study.njk',
+    content: 'layouts/content.njk',
+    'content-simple': 'layouts/content-simple.njk',
+    'content-support': 'layouts/content-support.njk',
+    event: 'layouts/event.njk',
+    home: 'layouts/home.njk',
+    'press-release': 'layouts/press-release.njk',
+    'hub-community': 'layouts/hub-community.njk',
+    'hub-developers': 'layouts/hub-developers.njk',
+    'hub-discover': 'layouts/hub-discover.njk',
+    'hub-foundation': 'layouts/hub-foundation.njk',
+    'hub-news': 'layouts/hub-news.njk',
+    'hub-users': 'layouts/hub-users.njk',
+    'listing-blog-posts': 'layouts/listing-blog-posts.njk',
+    'listing-blog-post-categories': 'layouts/listing-blog-post-categories.njk',
+    'listing-blog-search': 'layouts/listing-blog-search.njk',
+    'listing-case-studies': 'layouts/listing-case-studies.njk',
+    'listing-case-study-categories': 'layouts/listing-case-study-categories.njk',
+    'listing-events': 'layouts/listing-events.njk',
+    'listing-event-categories': 'layouts/listing-event-categories.njk',
+    'listing-planet-ceph-articles': 'layouts/listing-planet-ceph-articles.njk',
+    'listing-press-releases': 'layouts/listing-press-releases.njk',
+    'listing-press-release-categories': 'layouts/listing-press-release-categories.njk',
+    navigation: 'layouts/navigation.njk',
+  };
+
+  Object.entries(layoutAliases).forEach(([alias, layoutPath]) => {
+    const fullPath = path.join(__dirname, 'src/_includes', layoutPath);
+    if (!fs.existsSync(fullPath)) {
+      console.error(`Missing layout: ${layoutPath}`);
+    }
+    eleventyConfig.addLayoutAlias(alias, layoutPath);
+  });
 
   // Shortcodes
-  const shortcodesDir = `./src/_11ty/shortcodes`;
-  eleventyConfig.addShortcode('ArticleCard', require(`${shortcodesDir}/ArticleCard.js`));
-  eleventyConfig.addShortcode('YouTube', require(`${shortcodesDir}/YouTube.js`));
+  const shortcodesDir = './src/_11ty/shortcodes';
+  eleventyConfig.addShortcode('ArticleCard', requireIfExists(`${shortcodesDir}/ArticleCard.js`));
+  eleventyConfig.addShortcode('YouTube', requireIfExists(`${shortcodesDir}/YouTube.js`));
 
   // Transforms
-  const transformsDir = `./src/_11ty/transforms`;
-  eleventyConfig.addTransform('htmlmin', require(`${transformsDir}/html-minifier.js`));
+  const transformsDir = './src/_11ty/transforms';
+  eleventyConfig.addTransform('htmlmin', requireIfExists(`${transformsDir}/html-minifier.js`));
 
   // Passthrough copy
   eleventyConfig.addPassthroughCopy('./src/assets/**/*.json');
@@ -97,9 +122,10 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.addPlugin(sitemap, {
     sitemap: {
-      hostname: build.isProduction ? 'https://ceph.io' : 'https://develop.ceph.io',
+      hostname: build && build.isProduction ? 'https://ceph.io' : 'https://develop.ceph.io',
     },
   });
+
   // Markdown overrides
   let markdownLibrary = markdownIt({
     html: true,
@@ -107,38 +133,42 @@ module.exports = function (eleventyConfig) {
   }).use(markdownItAnchor, {
     level: [2, 3, 4, 5, 6],
     permalink: true,
-    permalinkClass: 'link-anchor',
-    permalinkSymbol: '¶',
+    permalinkClass: 'direct-link',
+    permalinkSymbol: '🔗',
+    space: true,
   });
 
   eleventyConfig.setLibrary('md', markdownLibrary);
 
   // Run after the build ends
   eleventyConfig.on('afterBuild', () => {
-    require('./scripts/search-index.js');
+    const searchIndexPath = './scripts/search-index.js';
+    if (fs.existsSync(searchIndexPath)) {
+      require(searchIndexPath);
+    } else {
+      console.warn('Warning: search-index.js not found, skipping post-build task.');
+    }
   });
 
   eleventyConfig.setServerOptions({
-    // Swapping back to Browsersync
-    // See https://www.11ty.dev/docs/dev-server/#swap-back-to-browsersync
     module: '@11ty/eleventy-server-browsersync',
     callbacks: {
       ready: function (err, bs) {
         bs.addMiddleware('*', (req, res) => {
-          // Dev mode redirect for root path to default language
           if (req.url === '/') {
-            res.writeHead(302, {
-              location: '/en/',
-            });
+            res.writeHead(302, { location: '/en/' });
             res.end();
+          } else {
+            const errorPagePath = path.join(__dirname, 'src/en/404.html');
+            if (fs.existsSync(errorPagePath)) {
+              const content_404 = fs.readFileSync(errorPagePath);
+              res.writeHead(404);
+              res.end(content_404);
+            } else {
+              res.writeHead(404, { 'Content-Type': 'text/plain' });
+              res.end('404 Not Found');
+            }
           }
-
-          // 404 on --serve
-          // https://www.11ty.dev/docs/quicktips/not-found/#with-serve
-          const content_404 = fs.readFileSync('dist/en/404.html');
-          res.write(content_404);
-          res.writeHead(404);
-          res.end();
         });
       },
     },
@@ -146,8 +176,6 @@ module.exports = function (eleventyConfig) {
 
   // Configuration
   eleventyConfig.setDataDeepMerge(true);
-  // TBC if this is a bit heavy-handed
-  // See https://www.11ty.dev/docs/data-deep-merge/
 
   return {
     htmlTemplateEngine: 'njk',

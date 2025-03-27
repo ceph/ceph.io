@@ -32,7 +32,7 @@ The [Ceph Community Ambassador team](ceph.io/en/community/ambassadors/) comprise
 
 The first meeting took place on October 18 at 6:00 UTC, in which the group has plans to see which Ceph meetups in their regions are still active and need assistance.
 
-Chris Ballnath is planning a Ceph meetup at either end of November or early December in Munich. Look for promotions of the event [@Ceph](https://twitter.com/ceph) twitter and the [Ceph users mailing list](https://lists.ceph.io/postorius/lists/ceph-users.ceph.io/).
+Chris Ballnath is planning a Ceph meetup at either end of November or early December in Munich. Look for promotions of the event [@Ceph](https://x.com/ceph) twitter and the [Ceph users mailing list](https://lists.ceph.io/postorius/lists/ceph-users.ceph.io/).
 
 We're still looking for more people who can join the team to support more regions. Meetings will be announced on the Ceph mailing list and are open to everyone.
 
