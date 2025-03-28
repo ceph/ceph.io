@@ -219,6 +219,8 @@ We are in an effort to provide more usability workflows and solve UX issues to m
 
 The task includes improving the notification system and creating a workflow for managing NVMe-oF devices from dashboard.
 
+Detailed description can be found [here](https://gist.github.com/afreen23/d8c2383a4239e8d6af989e05ecaec045)
+
 **Standup/weekly call mentee could attend?:** Dashboard daily sync
 
 **Steps to evaluate an applicant for the project:** 
@@ -233,7 +235,7 @@ Learning about ceph and storage and gradually contributing to the dashboard.
 
 **Expected Outcome:**  
 
-Improve dashboard usability.
+Improved dashboard usability.
 
 
 <hr class="hr">
