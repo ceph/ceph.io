@@ -12,13 +12,13 @@ tags:
 
 ### Bringing Ceph to Seattle 
 
-A full-day event dedicated to sharing Ceph’s transformative power and fostering
+A full-day event dedicated to sharing Ceph's transformative power and fostering
 the vibrant Ceph community with the community in Seattle!
 
-The expert Ceph team, Ceph’s customers and partners, and the Ceph community
+The expert Ceph team, Ceph's customers and partners, and the Ceph community
 join forces to discuss things like the status of the Ceph project, recent Ceph
 project improvements and roadmap, and Ceph community news. The day ends with
-a networking reception, to foster more Ceph learning.
+a networking reception.
 
 ## Important Dates
 
