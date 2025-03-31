@@ -1,7 +1,7 @@
 const imagemin = require('imagemin');
 const imageminMozjpeg = require('imagemin-mozjpeg');
-const imageminPngquant = require('imagemin-pngquant').default;
-const imageminSvgo = require('imagemin-svgo').default;
+const imageminPngquant = require('imagemin-pngquant');
+const imageminSvgo = require('imagemin-svgo');
 const imageminGifsicle = require('imagemin-gifsicle');
 
 const util = require('util');
@@ -21,7 +21,7 @@ const distDir = 'dist';
         quality: [0.6, 0.8],
       }),
       imageminSvgo({
-        plugins: [{ name: 'removeViewBox', active: false }],
+        plugins: [{ removeViewBox: false }],
       }),
       imageminGifsicle({
         colors: 96,
