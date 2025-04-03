@@ -7,12 +7,14 @@ tags:
   - "nautilus"
 ---
 
-This is the eighth update to the Ceph Nautilus release series. This release fixes issues across a range of subsystems. We recommend that all users upgrade to this release.
+This is the eighth update to the Ceph Nautilus release series. This
+release fixes issues across multiple subsystems. We recommend that
+all users upgrade to this release.
 
 ## Notable Changes
 
-- The default value of `bluestore_min_alloc_size_ssd` has been changed to 4K to improve performance across all workloads.
-- The following OSD memory config options related to bluestore cache autotuning can now be configured during runtime:
+- The default value of `bluestore_min_alloc_size_ssd` has been changed to 4KiB to improve performance across all workloads.
+- The following OSD memory config options related to BlueStore cache autotuning can now be configured during runtime:
     
     > - osd\_memory\_base (default: 768 MB)
     > - osd\_memory\_cache\_min (default: 128 MB)
@@ -23,12 +25,29 @@ This is the eighth update to the Ceph Nautilus release series. This release fixe
     
     ceph config set osd <option\> <value\>
     
-- The MGR now accepts `profile rbd` and `profile rbd-read-only` user caps. These caps can be used to provide users access to MGR-based RBD functionality such as `rbd perf image iostat` an `rbd perf image iotop`.
-- The configuration value `osd_calc_pg_upmaps_max_stddev` used for upmap balancing has been removed. Instead use the mgr balancer config `upmap_max_deviation` which now is an integer number of PGs of deviation from the target PGs per OSD. This can be set with a command like `ceph config set mgr mgr/balancer/upmap_max_deviation 2`. The default `upmap_max_deviation` is 5. There are situations where crush rules would not allow a pool to ever have completely balanced PGs. For example, if crush requires 1 replica on each of 3 racks, but there are fewer OSDs in 1 of the racks. In those cases, the configuration value can be increased.
-- RGW: a mismatch between the bucket notification documentation and the actual message format was fixed. This means that any endpoints receiving bucket notification, will now receive the same notifications inside a JSON array named ‘Records’. Note that this does not affect pulling bucket notification from a subscription in a ‘pubsub’ zone, as these are already wrapped inside that array.
-- CephFS: multiple active MDS forward scrub is now rejected. Scrub currently only is permitted on a file system with a single rank. Reduce the ranks to one via `ceph fs set <fs_name> max_mds 1`.
-- Ceph now refuses to create a file system with a default EC data pool. For further explanation, see: [https://docs.ceph.com/docs/nautilus/cephfs/createfs/#creating-pools](https://docs.ceph.com/docs/nautilus/cephfs/createfs/#creating-pools)
-- Ceph will now issue a health warning if a RADOS pool has a `pg_num` value that is not a power of two. This can be fixed by adjusting the pool to a nearby power of two:
+- The Manager now accepts `profile rbd` and `profile rbd-read-only` user caps. These caps can be used to provide users access to Manager-based RBD functionality such as `rbd perf image iostat` an `rbd perf image iotop`.
+- The configuration value `osd_calc_pg_upmaps_max_stddev` used for upmap balancing
+  has been removed. Instead use the mgr balancer config `upmap_max_deviation` which
+  now is an integer number of PGs of deviation from the target PGs per OSD. This
+  can be set with a command of the form `ceph config set mgr mgr/balancer/upmap_max_deviation 2`.
+  The default `upmap_max_deviation` is 5. There are situations where CRUSH rules
+  will not allow a pool to ever have perfect balanced PGs. For example, if CRUSH
+  requires one replica in each of three racks, but there are fewer OSDs in one
+  of the racks. In such cases, the configuration value can be increased.
+- RGW: a mismatch between the bucket notification documentation and the
+  actual message format was fixed. This means that any endpoints receiving
+  bucket notifications will now receive the same notifications inside a
+  JSON array named `Records`. Note that this does not affect pulling
+  bucket notification from a subscription in a `pubsub` zone, as these
+  are already wrapped inside that array.
+- CephFS: multiple active MDS forward scrub is now rejected. Scrub
+  currently only is permitted on a file system with a single rank.
+  Reduce the ranks to one via `ceph fs set <fs_name> max_mds 1`.
+- Ceph now refuses to create a file system with a default EC data pool. For
+  further explanation, see: [https://docs.ceph.com/docs/nautilus/cephfs/createfs/#creating-pools](https://docs.ceph.com/docs/nautilus/cephfs/createfs/#creating-pools)
+- Ceph will now issue a health warning if a RADOS pool has a `pg_num` value
+  that is not a power of two. This can be resolved by adjusting the pool to
+  a nearby power of two:
     
     ceph osd pool set <pool\-name\> pg\_num <new\-pg\-num\>
     
