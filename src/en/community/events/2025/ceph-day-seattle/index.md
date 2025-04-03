@@ -6,6 +6,14 @@ location: Seattle, United States
 venue: TBD
 image: "/assets/bitmaps/ceph-days.png"
 sponsors:
+  - label:
+    list:
+      - name: OSNEXUS
+        logo: /assets/bitmaps/logo-osnexus.png
+  - label:
+    list:
+      - name: CLYSO
+        logo: /assets/bitmaps/logo-clyso.png
 tags:
   - ceph days
 ---
