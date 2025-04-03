@@ -3,7 +3,7 @@ title: Ceph Days Seattle 2025
 date: 2025-05-15
 end: 2025-05-15
 location: Seattle, United States
-venue: TBD
+venue: SURF Incubator Event Space, 999 3rd Ave, Suite 700, Seattle, WA 98104
 image: "/assets/bitmaps/ceph-days.png"
 sponsors:
   - label:
@@ -36,4 +36,6 @@ a networking reception.
 - **Schedule Announcement:** 2025-05-05
 - **Event Date:** 2025-05-15
 
-<a class="button" href="https://forms.gle/qQdBPe6qsuU2TSq67">CFP Open!</a>
+<a class="button" href="https://forms.gle/qQdBPe6qsuU2TSq67">Apply to be a Presenter!</a>
+
+<a class="button" href="https://osnexus.regfox.com/ceph-days-seattle-2025">Register to Attend!</a>
