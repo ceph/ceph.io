@@ -5,11 +5,7 @@ author: Daniel Parkes, Anthony D'Atri (IBM)
 image: "images/tb1.png"
 tags:
   - ceph
-  - rgw
   - stretch
-  - s3
-  - object
-  - rbd
   - rados
 ---
 
