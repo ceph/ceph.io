@@ -5,11 +5,7 @@ author: Daniel Parkes, Anthony D'Atri (IBM)
 image: "images/tb2.png"
 tags:
   - ceph
-  - rgw
   - stretch
-  - s3
-  - object
-  - rbd
   - rados
 ---
 ## Ceph Stretch Clusters Part 2: Two Sites Plus Tiebreaker
@@ -471,7 +467,7 @@ site and a second is affected when we have an asymmetrical network error. This
 can result in an unresolvable Monitor election storm, where no Monitor can be
 selected as the leader.
 
-![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXfGC8mSuYiy4AKHgl-E0okTA4GTTfIgoKTBMvA2RV006pjw_wxLASICdlBOos_KmDg9G2AtDbKiXIrs2Ri8S8T4y9l_JJyNhwJW4Vr5ehBT550rXrrtJTb2LkzacL5MjlFDyJ-BJg?key=aFXwkqVuBSRFE_rpHYj1etMk align="left")
+![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXfGC8mSuYiy4AKHgl-E0okTA4GTTfIgoKTBMvA2RV006pjw_wxLASICdlBOos_KmDg9G2AtDbKiXIrs2Ri8S8T4y9l_JJyNhwJW4Vr5ehBT550rXrrtJTb2LkzacL5MjlFDyJ-BJg?key=aFXwkqVuBSRFE_rpHYj1etMk)
 
 To avoid this problem, we will change our election strategy from the classic
 approach to a connectivity-based one. The connectivity mode assesses the
