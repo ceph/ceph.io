@@ -11,6 +11,10 @@ tags:
 
 ## Introducing Policy-Based Data Retrieval for Ceph
 
+Note that as of the time of writing, this functionality may not yet
+be in a Ceph Squid release, but will appear in Tentacle and possibly
+a future Squid release.
+
 ## Introduction and Feature Overview
 
 In the first part of this series, we explored the fundamentals of Ceph Object
