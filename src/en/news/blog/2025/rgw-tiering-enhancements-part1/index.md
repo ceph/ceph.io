@@ -11,9 +11,9 @@ tags:
 
 ##  IBM Storage Ceph Object Storage Tiering Enhancements. Part One
 
-Note that as of the time of writing, this functionality may not yet
-be in a Ceph Squid release, but will appear in Tentacle and possibly
-a future Squid release.
+Note that as of the time of writing (mid-April 2025), this functionality may
+not yet be in a Ceph Squid release, but will appear in Tentacle and possibly a
+future Squid release.
 
 ### Introduction
 
