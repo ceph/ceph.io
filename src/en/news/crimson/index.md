@@ -34,77 +34,56 @@ As Crimson is in under active development not all not featurewise on par with it
 Crimson OSD currently supports:
 
 - Librados operations including snap support
-- Log based recovery and Backfill
+- Log Based recovery and Backfill
 - RBD workloads on Replicated pools
 - Bluestore, Seastore and cyanstore (memory-based) object store backends
 - Deployment via Cephadm
-- Initial Scrub
-- Multi-shard messenger/OSD/objectstores
+- Initial Scrub Support
+- Multi-Core Messenger OSD Objectstore architecture support.
 
 Work in progeress:
 
 - EC pools
-- RGW
-- PG Scaling - Splits/Merges
+- Auto-Scaling Placement Groups - Splits/Merges
+- Object gateway (RGW)
+- MClock OSD scheduler
+- Background Scrub Scheduling
+- Replace the defualt object store to SeaStore
 
-## Test Coverage
+## Seastore
 
-The `crimson-rados` suite is rather minimal. However, it has been stablized and is used
-to gate PRs merges and prevent regressions. The suite also includes performance tests which are driven by CBT.
+SeaStore is the second half of the Crimson project. While the first part focuses on implementing a modern OSD,
+SeaStore is the native ObjectStore solution for Crimson OSD, which is developed with the Seastar framework and adopts the same design principles.
+Although challenging, there are multiple reasons why Crimson must build a new local storage engine. Storage backend is the major CPU resource consumer,
+and the Crimson OSD cannot truly scale with cores if its storage backend cannot.
 
-## Future Work
-
-- ### Performance Review and CI integration
-
-Currently we have a preliminary CI support for checking of the significant
-regressions, but we need to update the test harness and test cases
-whenever it’s necessary. Also we need to
-
-- Review the performance to see if there is any regression not caught by the CI
-  tests.
-- Compare the performance of classic OSD and crimson-osd on monthly basis.
-
-* ### Seastore
-
-The next generation objectstore optimized for modern devices. And it would take
-a long time before its GA. As a reference, bluestore started in early 2015, and
-it was ready for production in late 2017. There will be three phases:
-
-- Prototyping/Design:
-
-  - Prototyping
-
-    - define typical use cases, the constraints and assumptions.
-    - evaluate different options and understand the tradeoffs, probably do some
-      experiments, before solidifying on a specific design
-
-  - Design:
-
-    - in-memory/on-disk data structures
-    - A sequence diagram to illustrate how to coordinate the foreground IOPS and
-      background maintenance task.
-    - define its interfaces talking to the other part of OSD
-
-- Implementation:
-
-  - Integrate the object store with crimson-osd. If seastore cannot support HDD
-    well, it should be able to coexist with bluestore.
-  - Stabilize the disk layout
-  - Dynamic disk sharding. The current sharded seastore only shards the disk space
-    statically upon mkfs (Sufficient for performance evaluation and optimization).
-  - Improve the efficiency from write-amplification and computational perspective.
-    Mostly under 4K random read and write scenarios that are CPU and I/O intensive,
-    so that switching from classic + bluestore to crimson + alienstore and later
-    on to crimson + seastore would become attractive.
-    This might be an important metric that the solution is leaving the prototyping phase.
+The latest status of SeaStore is:
+- TODO
 
 * ### Seastar+SPDK evaluation/integration
 
 - To evaluate different approaches of kernel-bypassing techniques.
 - To integrate SPDK into Seastar
 
+## Test Coverage
+
+The `crimson-rados` suite keeps growing, stablized and is used
+to gate PRs merges and prevent regressions. The suite also includes performance tests which are driven by CBT.
+Beside PR gating, the suite is set to run twice a week.
+For recent runs, see: https://pulpito.ceph.com/?suite=crimson-rados
+
+## Future Work
+
+- ### Performance Review and CI integration
+
+- Update the test harness and test cases
+- Review the performance to see if there is any regression not caught by the CI
+  tests.
+- Compare the performance of classic OSD and crimson-osd on monthly basis.
+
 ## Useful Project Links:
 
+- [Github's Projects](https://github.com/orgs/ceph/projects/8)
 - [Tracker](tracker.ceph.com/projects/crimson/issues)
 - [Docs](docs.ceph.com/en/latest/dev/crimson)
 - [Slack](ceph-storage.slack.com) - #crimson
@@ -115,7 +94,9 @@ it was ready for production in late 2017. There will be three phases:
 
 ## Talks:
 
-- [Cephalocon 2023 - Crimson Project Update](https://www.youtube.com/watch?v=LaP4YX1lQ3I)
+- [A Crimson colored Tentacle](https://ceph.io/en/news/blog/2025/crimson-T-release/)
+- [Cephalocon 2024 - Crimson Squid Project Update](https://www.youtube.com/watch?v=IsV3WWN-YeE)
+- [Cephalocon 2023 - Crimson Reef Project Update](https://www.youtube.com/watch?v=LaP4YX1lQ3I)
 - [From Classical to the Future](https://www.youtube.com/watch?v=8N_1WAEPw0o)
 - [Understanding SeaStore through profiling](https://www.youtube.com/watch?v=SUJjZ9bjXJc)
 - [Ceph Virtual 2022 - What's new with Crimson and Seastore?](https://www.youtube.com/watch?v=vc5w2mn93cY)
