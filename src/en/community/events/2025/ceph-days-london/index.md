@@ -128,7 +128,7 @@ As our largest cluster 'Echo' approaches it's 9th year of storing scientific dat
 <p>
 The vision for CBT is a universal easy to use tool for the Ceph community to benchmark their clusters in a single click way with the goal of crowdsourcing performance data within the community. This lightning talk is sharing on the progress we have made and what is next for CBT.
    </td>
-   <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/Lee Snaders.jpg" width="400" />Lee Sanders (IBM)</strong></center>
+   <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/Lee Sanders.jpg" width="400" />Lee Sanders (IBM)</strong></center>
    </td>
   </tr>
   <tr>
@@ -154,7 +154,7 @@ Join us for a review of what has been done so far, what remains to be achieved f
    </td>
    <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/Federico Mugshot.jpg" width="400" />Federico Lucifredi (IBM)
    <br>
-   <img src="/assets/bitmaps/events/2025/ceph-days-london/Peter Pouliot.jpg" width="400" />Peter Pouliot (Ampere)</strong></center>
+   <img src="/assets/bitmaps/events/2025/ceph-days-london/Peter Pouliot.jpeg" width="400" />Peter Pouliot (Ampere)</strong></center>
    </td>
   </tr>
    <tr>
