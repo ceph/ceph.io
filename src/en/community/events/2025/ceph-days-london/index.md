@@ -88,9 +88,9 @@ Introducing a novel approach addressing one of Ceph's RGW limitations: no suppor
 <p>
 A preview of the new erasure coding features in the upcoming Tentacle release, covering what the benefits are for block, file and object workloads and best practice advice.
    </td>
-   <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/Bill Scales.jpg" width="400" />Bill Scales (IBM)</strong></center>
-   </td>
-      <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/Alex Ainscow.jpg" width="400" />Alex Ainscow (IBM)</strong></center>
+   <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/Bill Scales.jpg" width="400" />Bill Scales (IBM)
+   <br>
+    <img src="/assets/bitmaps/events/2025/ceph-days-london/Alex Ainscow.jpg" width="400" />Alex Ainscow (IBM)</strong></center>
    </td>
   </tr>
     <tr>
@@ -152,9 +152,9 @@ Ceph support for the ARM architecture has been fragmentary, with limited investm
 <p>
 Join us for a review of what has been done so far, what remains to be achieved for parity with x86, and an open discussion of the state of the art and the challenges that remain ahead. We bring interesting announcements, and we are interested in feedback — what would you use Ceph on ARM for?
    </td>
-   <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/Federico Mugshot.jpg" width="400" />Federico Lucifredi (IBM)</strong></center>
-   </td>
-   <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/Peter Pouliot.jpg" width="400" />Peter Pouliot (Ampere)</strong></center>
+   <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/Federico Mugshot.jpg" width="400" />Federico Lucifredi (IBM)
+   <br>
+   <img src="/assets/bitmaps/events/2025/ceph-days-london/Peter Pouliot.jpg" width="400" />Peter Pouliot (Ampere)</strong></center>
    </td>
   </tr>
    <tr>
