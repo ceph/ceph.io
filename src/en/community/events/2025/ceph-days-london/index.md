@@ -172,7 +172,7 @@ Join us for a review of what has been done so far, what remains to be achieved f
 <p>
 For this Ceph day in London, I would like to present a talk discussing a major CephFS outage we experienced for our backup system and the disaster recovery steps we took in order to recover the filesystem and return the cluster to service. After being in service for a year, we suffered a catastrophic failure of the filesystem that resulted in the filesystem being offline and the MDSes being unable to leave replay and enter the active state. My talk would comprise of how the outage presented itself, how we investigated the error, the tools we used to investigate and ultimately resolve the issue, and the subsequent preventative measures we’ve taken where hopefully this talk will encourage further discussion amongst the attendees to share their own disaster recovery experiences.
    </td>
-   <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/Clayson_ivan.jpg" width="400" />Ivan Clayson (MRC Laboratory of Molecular Biology)</strong></center>
+   <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/clayson_ivan.jpg" width="400" />Ivan Clayson (MRC Laboratory of Molecular Biology)</strong></center>
    </td>
   </tr>
    <tr>
