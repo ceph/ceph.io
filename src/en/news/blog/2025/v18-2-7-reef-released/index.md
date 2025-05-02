@@ -12,9 +12,12 @@ This is the seventh backport (hotfix) release in the Reef series. We recommend t
 ## Notable Changes
 
 This release also includes several other important BlueStore fixes:
-https://github.com/ceph/ceph/pull/62840
-https://github.com/ceph/ceph/pull/62054
-https://github.com/ceph/ceph/pull/62152
+
+- https://github.com/ceph/ceph/pull/62840
+
+- https://github.com/ceph/ceph/pull/62054
+
+- https://github.com/ceph/ceph/pull/62152
 
 ## Changelog
 
