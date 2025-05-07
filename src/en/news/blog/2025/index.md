@@ -59,7 +59,7 @@ lsblk | grep nbd
 
 # If you are unable to see the nbd device, load the NBD (Network Block Device) kernel module
 
-modprobe nbd max_part=8
+sudo modprobe nbd max_part=8
 
 # To bind nbd device to the file 
 # Note: Please check there is no necessary data in /dev/nbdx, otherwise please take backup.
