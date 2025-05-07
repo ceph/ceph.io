@@ -149,6 +149,7 @@ bash-5.1$ ceph -s
 If the cluster is not healthy, please refer to the [Ceph common issues](https://rook.io/docs/rook/latest/Troubleshooting/ceph-common-issues/) for potential solutions.
 
 Footnote:
+
 Thanks Yuval Lifshitz for providing all the support and guidance to write this article.
 
 References:
