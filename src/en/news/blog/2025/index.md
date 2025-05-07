@@ -1,8 +1,8 @@
 ---
 title: Rook Ceph Installation on Minikube for Mac M1 with Docker Driver
 date: 2024-05-07
-author: 
-image: "image.jpg"
+author: Anushruti Sharma
+image: ""
 tags:
   - ceph
   - rook
@@ -147,6 +147,9 @@ bash-5.1$ ceph -s
     pgs:     1 active+clean
 ```     
 If the cluster is not healthy, please refer to the [Ceph common issues](https://rook.io/docs/rook/latest/Troubleshooting/ceph-common-issues/) for potential solutions.
+
+Footnote:
+Thanks Yuval Lifshitz for providing all the support and guidance to write this article.
 
 References:
 
