@@ -11,10 +11,11 @@ tags:
 ---
 ### Introduction
 
-This article will help you to set up a test ceph cluster running on single node minikube cluster. We have used docker as driver to create the minikube cluster.
+This article will help you to set up a test ceph cluster running on single node minikube cluster. We chose Docker as the driver to create the Minikube cluster on Mac M1 because it is simpler and more reliable, avoiding the complexities of virtualization, firewall issues (bootpd), and x86 emulation. Docker runs ARM-native containers directly, enhancing performance and compatibility, which is crucial for resource-intensive systems like Rook/Ceph. 
 
-#### System Requirements
+#### Prerequisite 
 
+- MAC M1 with macOS Sonoma 14
 - 2 CPUs or more
 - 2GB of free memory
 - 20GB of free disk space
