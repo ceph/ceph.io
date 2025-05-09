@@ -91,11 +91,11 @@
     <meta property="og:image" content="{% if image %}https://ceph.io{{ image }}{% else %}https://ceph.io/assets/favicons/logo-meta-share.png{% endif %}"/>
     <meta property="og:site_name" content="{{ site.title }}">
 
-    <meta name="twitter:card" content="{% if image %}summary_large_image{% else %}summary{% endif %}"/>
-    <meta name="twitter:site" content="@{{ social.twitter }}"/>
-    <meta name="twitter:title" content="{% if title %}{{ title }} - {% endif %}{{ site.title }}"/>
-    <meta name="twitter:url" content="{{ site.url }}{{ page.url }}"/>
-    <meta name="twitter:image" content="{% if image %}https://ceph.io{{ image }}{% else %}https://ceph.io/assets/favicons/logo-meta-share.png{% endif %}"/>
+    <meta name="X:card" content="{% if image %}summary_large_image{% else %}summary{% endif %}"/>
+    <meta name="X:site" content="@{{ social.X }}"/>
+    <meta name="X:title" content="{% if title %}{{ title }} - {% endif %}{{ site.title }}"/>
+    <meta name="X:url" content="{{ site.url }}{{ page.url }}"/>
+    <meta name="X:image" content="{% if image %}https://ceph.io{{ image }}{% else %}https://ceph.io/assets/favicons/logo-meta-share.png{% endif %}"/>
 
     <!-- Matomo -->
     <script>
