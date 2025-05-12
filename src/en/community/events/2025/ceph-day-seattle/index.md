@@ -83,19 +83,25 @@ a networking reception.
     <td>15:00 - 15:30</td>
   </tr>
   <tr>
+    <td>NVMe over TCP and Block Performance<br>A seasoned IT professional with over 20 years of leadership experience<br>in technology solutions and consulting, Mike specializes in data center<br>modernization, cloud architectures, and disaster recovery strategies.<br>Currently serving as a Technical Product Manager for IBM Storage<br>Ceph, he focuses on NVMe over TCP and VMware vSphere integration<br>for block storage. His expertise spans decades of IT Consulting, public<br>peaking, customer education, strategic planning and high-value solutions<br>architecture.<br></td>
+    <td>Mike Burkhart</td>
+    <td>15:30 - 16:00</td>
+  </tr>
+  <tr>
+    <td>Ceph Object Storage - Keycloak ID Broker With Azure<br>This live demonstration explores the integration of Azure<br> Active Directory (AzureAD) with Keycloak using the Identity<br> Brokering and User Federation features. Keycloak, an open-source<br>identity and access management solution, supports seamless<br>authentication through external identity providers. In this<br>session, we will walk through the end-to-end process of<br>configuring AzureAD as an OIDC (OpenID Connect) identity<br> provider within Keycloak, enabling users to authenticate using<br>their existing Microsoft credentials. We will cover key<br>aspects such as registering an application in AzureAD,<br>configuring redirect URIs, exchanging metadata, and establishing<br>trust within Keycloak. The demonstration will also highlight<br>user federation settings, automatic user account linking,<br>and group/role mappings to synchronize identity attributes<br>between AzureAD and Keycloak.<br>
+In addition, we will demonstrate how Ceph’s Object Gateway (RGW)<br>leverages Keycloak as an OIDC provider to support Security<br>Token Service (STS) operations, enabling fine-grained, federated<br>access control for object storage workloads in cloud-native<br>environments.<br></td>
+    <td>Seth Cagampang</td>
+    <td>16:00 - 16:30</td>
+  </tr>
+  <tr>
     <td>Ceph Durability: How Safe Is My Data?<br>How many nines does your cluster really have? Whether you’re running<br>a small 50-disk setup or a hyperscale 5000 OSD deployment,<br>understanding Ceph’s actual data durability is key to making the right<br>design choices. Replication vs. erasure coding, failure domains,<br>recovery speeds: these all impact real-world reliability. In this talk, we<br>introduce a new Ceph durability calculator based on Monte Carlo<br>simulations to give updated, practical insights into how safe your<br>data really is with Ceph. Bring your cluster size and<br>settings — and walk away with numbers.<br></td>
     <td>Dan van der Ster (CLYSO)</td>
-    <td>15:30 - 16:00</td>
+    <td>16:30 - 17:00</td>
   </tr>
   <tr>
     <td>Optimizing Ceph RGW for Specific Workloads Including AI<br>One of the big barriers to getting great performance and scalability in<br>object storage configurations has to do with data placement.<br>Inefficiently writing small objects to EC storage can kill performance<br>and cause unintentional wasted space due to padding. We'll talk<br>about Ceph's RGW's support for embedded Lua and how we've<br>used that in QuantaStor to solve these issues.  We'll then dive<br>into&nbsp;&nbsp;Lua examples you can customize to optimize your object<br>storage workloads.<br></td>
     <td>Steven Umbehocker (OSNEXUS)</td>
-    <td>16:00 - 16:30</td>
-  </tr>
-  <tr>
-    <td>NVMe over TCP and Block Performance<br>A seasoned IT professional with over 20 years of leadership experience<br>in technology solutions and consulting, Mike specializes in data center<br>modernization, cloud architectures, and disaster recovery strategies.<br>Currently serving as a Technical Product Manager for IBM Storage<br>Ceph, he focuses on NVMe over TCP and VMware vSphere integration<br>for block storage. His expertise spans decades of IT Consulting, public<br>peaking, customer education, strategic planning and high-value solutions<br>architecture.<br></td>
-    <td>Mike Burkhart</td>
-    <td>16:30 - 17:00</td>
+    <td>17:00 - 17:30</td>
   </tr>
   <tr>
     <td>Dinner &amp; Drinks &amp; Networking oh my!</td>
