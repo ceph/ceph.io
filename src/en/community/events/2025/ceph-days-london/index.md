@@ -108,7 +108,7 @@ A preview of the new erasure coding features in the upcoming Tentacle release, c
 <p>
 The work to improve erasure coding has produced two new tools for checking consistency in erasure code pools for Ceph. One useful progression for these tools is to improve them to identify which shard on which OSD has caused the consistency check to fail. This talk will show some off a proof of concept for this tool, some of the techniques used to identify where the failure was identified, and information about how this tool can be used on real Ceph clusters when it's ready.
    </td>
-   <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/Jamie Pryde.jpeg" width="400" />Jamie Pryde (IBM)</strong></center>
+   <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/Jamie Pryde.jpg" width="400" />Jamie Pryde (IBM)</strong></center>
    </td>
   </tr>
   <tr>
