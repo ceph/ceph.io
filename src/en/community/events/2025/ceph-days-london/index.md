@@ -114,9 +114,9 @@ The work to improve erasure coding has produced two new tools for checking consi
   <tr>
    <td>11:10 AM
    </td>
-   <td><strong>Lightning Talk (LT): Learning opportunities from an 100PB, 8 year old Ceph clusterr</strong>
+   <td><strong>Lightning Talk (LT): Learning opportunities from a 100PB, 8 year old Ceph cluster</strong>
 <p>
-As our largest cluster 'Echo' approaches it's 9th year of storing scientific data for the LHC experiments, we reflect on the ups, downs, and interesting technical details of keeping a larger-than-normal Ceph cluster running for nearly a decade.
+As our largest cluster 'Echo' approaches its 9th year of storing scientific data for the LHC experiments, we reflect on the ups, downs, and interesting technical details of keeping a larger-than-normal Ceph cluster running for nearly a decade.
    </td>
    <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/Tom Byrne.png" width="400" />Tom Byrne (UKRI)</strong></center>
    </td>
