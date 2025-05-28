@@ -30,7 +30,7 @@ still reference an older version.
 Notable Changes
 ---------------
 
-This release fixes a critical BlueStore regression in versions 17.2.8 (#63122). Users running this releas are recommended to upgrade at the earliest convenience.
+This release fixes a critical BlueStore regression in versions 17.2.8 (#63122). Users running this release are recommended to upgrade at the earliest convenience.
 
 Changelog
 ---------
