@@ -1,12 +1,6 @@
 {
   "jobs": [
     {
-      "company": "Walmart",
-      "date": "2025-04-09",
-      "title": "Staff Software Engineer",
-      "url": "https://walmart.wd5.myworkdayjobs.com/WalmartExternal/job/Sunnyvale-CA/Staff--Software-Engineer_R-2143742-1"
-    },
-    {
       "company": "Boson AI",
       "date": "2025-03-21",
       "title": "Senior Software Engineer - Ceph",
@@ -29,12 +23,6 @@
       "date": "2025-02-12",
       "title": "Community Manager",
       "url": "https://jobs.smartrecruiters.com/LinuxFoundation/744000040847755-community-manager-ceph-foundation-contractor"
-    },
-    {
-      "company": "Bloomberg L.P.",
-      "date": "2024-09-10",
-      "title": "Senior Software Engineer",
-      "url": "https://bloomberg.avature.net/careers/JobDetail/Senior-Software-Engineer-Storage-Distributed-Downstream/8371"
     },
     {
       "company": "42on",
