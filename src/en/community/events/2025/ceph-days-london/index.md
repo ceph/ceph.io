@@ -119,7 +119,7 @@ The work to improve erasure coding has produced two new tools for checking consi
    <td><strong>Lightning Talk (LT): Learning opportunities from a 100PB, 8 year old Ceph cluster</strong>
 <p>
 As our largest cluster 'Echo' approaches its 9th year of storing scientific data for the LHC experiments, we reflect on the ups, downs, and interesting technical details of keeping a larger-than-normal Ceph cluster running for nearly a decade.
-<a href="/assets/pdfs/events/2025/ceph-day-london/07 LT Learning_opportunities_from_a_100PB_Ceph_cluster.pptx.pdf">slides</a>
+<a href="/assets/pdfs/events/2025/ceph-day-london/07 LT Learning opportunities from a 100PB Ceph.pdf">slides</a>
    </td>
    <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/Tom Byrne.png" width="400" />Tom Byrne (UKRI)</strong></center>
    </td>
@@ -188,7 +188,7 @@ For this Ceph day in London, I would like to present a talk discussing a major C
    <td><strong>NVMeoF in Ceph - What's New and What's Next</strong>
 <p>
 Ceph's NVMe over Fabrics (NVMeoF) support, introduced in the Tentacle release, marks a significant step forward in the project's scalability and performance. This session will explore the key features supported in the Tentacle release, including enhancements for NVMeoF, and provide an overview of the ongoing development of new features. Topics will include the upcoming Stretch cluster support, Virtual Volumes (vVols), reservations, the cancel command, and more. Join us for an in-depth discussion of Ceph’s NVMeoF future and how it is evolving to meet the growing demands of modern storage environments.</p>
-<a href="/assets/pdfs/events/2025/ceph-day-london/13.1 NVMeoF in Ceph - Whats New and Whats Next.pdf">slides</a>
+<a href="/assets/pdfs/events/2025/ceph-day-london/13.1 NVMeoF in Ceph.pdf">slides</a>
    </td>
    <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/Aviv Caro.jpg" width="400" />Aviv Caro (IBM)</strong></center>
    </td>
@@ -223,7 +223,7 @@ Opensource and Ceph in particular have provided me with an invaluable empirical 
 MicroCeph is the quickest and easiest way to deploy a Ceph cluster. Its an opinionated solution to provide single commands for deployment and management of a Ceph cluster.
 <p>
 This LT will give an update on the new funtionaility added to MicroCeph in the last year, API driven RBD-Mirror support, support for QAT, and more.  It will also discuss where people are using it and whats coming next for MicroCeph.
-<a href="/assets/pdfs/events/2025/ceph-day-london/16 LT What’s new in MicroCeph_- Ceph Day London.pdf">slides</a>
+<a href="/assets/pdfs/events/2025/ceph-day-london/16 LT What is new in MicroCeph.pdf">slides</a>
    </td>
    <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/Phil Williams.jpg" width="400" />Phil Williams (Canonical)</strong></center>
    </td>
