@@ -28,9 +28,7 @@ a networking reception, to foster more Ceph learning.
 - **Schedule Announcement:** 2025-05-05
 - **Event Date:** 2025-06-04
 
-Registration is Open! (Closing on 2025-06-02)
-
-<a class="button" href="https://ti.to/open-source-events/ceph-days-london-2025">Registration</a>
+Registration is Closed
 
 <br />
 
@@ -67,6 +65,7 @@ Registration is Open! (Closing on 2025-06-02)
    <td><strong>Keynote - State of Ceph</strong>
 <p>
 A look at the Ceph roadmap, current development priorities, and the latest activity in the Ceph community.
+<a href="/assets/pdfs/events/2025/ceph-day-london/02 Ceph Day London Keynote - State of Ceph.pdf">slides</a>
    </td>
    <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/neha-ojha.jpg" width="400" />Neha Ojha (IBM)</strong></center>
    </td>
@@ -77,6 +76,7 @@ A look at the Ceph roadmap, current development priorities, and the latest activ
    <td><strong>The Circular Migration Trick: Repurposing Ceph's Cloud-S3 Module for Internal Bucket Transfers</strong>
 <p>
 Introducing a novel approach addressing one of Ceph's RGW limitations: no support for direct data movement between buckets within the same cluster. By creatively repurposing the cloud-s3 module - originally designed for external cloud migrations - we create a self-syncing system that enables bucket-to-bucket transfers via lifecycle processing. This technique effectively creates a circular migration path within a single cluster while providing flexible storage class capabilities to reduce space consumption. All without requiring modifications to Ceph's core functionality or any third party tools.
+<a href="/assets/pdfs/events/2025/ceph-day-london/03 Circular Migration Trick - Repurposing cloud-s3 module.pdf">slides</a>
    </td>
    <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/LaimisJuzeliunas.jpg" width="400" />Laimis Juzeliūnas (Oxylabs)</strong></center>
    </td>
@@ -87,6 +87,7 @@ Introducing a novel approach addressing one of Ceph's RGW limitations: no suppor
    <td><strong>Erasure Coding Enhancements for Tentacle</strong>
 <p>
 A preview of the new erasure coding features in the upcoming Tentacle release, covering what the benefits are for block, file and object workloads and best practice advice.
+<a href="/assets/pdfs/events/2025/ceph-day-london/04 Erasure Coding Enhancements for Tentacle.pdf">slides</a>
    </td>
    <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/Bill Scales.jpg" width="400" />Bill Scales (IBM)
    <br>
@@ -107,6 +108,7 @@ A preview of the new erasure coding features in the upcoming Tentacle release, c
    <td><strong>Lightning Talk (LT): Cephalautopsy - When Erasure Coding Goes Wrong</strong>
 <p>
 The work to improve erasure coding has produced two new tools for checking consistency in erasure code pools for Ceph. One useful progression for these tools is to improve them to identify which shard on which OSD has caused the consistency check to fail. This talk will show some off a proof of concept for this tool, some of the techniques used to identify where the failure was identified, and information about how this tool can be used on real Ceph clusters when it's ready.
+<a href="/assets/pdfs/events/2025/ceph-day-london/06 LT ceph_days_london_2025_jamie_pryde.pdf">slides</a>
    </td>
    <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/Jamie Pryde.jpg" width="400" />Jamie Pryde (IBM)</strong></center>
    </td>
@@ -117,6 +119,7 @@ The work to improve erasure coding has produced two new tools for checking consi
    <td><strong>Lightning Talk (LT): Learning opportunities from a 100PB, 8 year old Ceph cluster</strong>
 <p>
 As our largest cluster 'Echo' approaches its 9th year of storing scientific data for the LHC experiments, we reflect on the ups, downs, and interesting technical details of keeping a larger-than-normal Ceph cluster running for nearly a decade.
+<a href="/assets/pdfs/events/2025/ceph-day-london/07 LT Learning_opportunities_from_a_100PB_Ceph_cluster.pdf">slides</a>
    </td>
    <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/Tom Byrne.png" width="400" />Tom Byrne (UKRI)</strong></center>
    </td>
@@ -127,6 +130,7 @@ As our largest cluster 'Echo' approaches its 9th year of storing scientific data
    <td><strong>Lightning Talk (LT): Ceph Benchmarking - an update on CBT's vision</strong>
 <p>
 The vision for CBT is a universal easy to use tool for the Ceph community to benchmark their clusters in a single click way with the goal of crowdsourcing performance data within the community. This lightning talk is sharing on the progress we have made and what is next for CBT.
+<a href="/assets/pdfs/events/2025/ceph-day-london/08 LT Ceph Day London 25 - CBT -Lee Sanders.pdf">slides</a>
    </td>
    <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/Lee Sanders.jpg" width="400" />Lee Sanders (IBM)</strong></center>
    </td>
@@ -139,6 +143,7 @@ The vision for CBT is a universal easy to use tool for the Ceph community to ben
 As Ceph deployments scale across data centers, clouds, and protocols, the need for a powerful, unified dashboard becomes critical. In this talk, we’ll introduce the Tentacle release of the Ceph Dashboard—a major leap in usability, observability, and control.
 <p>
 We’ll walk through new features including multi-cluster support, RGW tiering and rate limiting, multi-site automation, and protocol dashboards for SMB, NFS, and CephFS. With a fresh Carbon-based UI and advanced monitoring for NVMe, CephFS and SMB, the new dashboard brings everything together lots of new operations.
+<a href="/assets/pdfs/events/2025/ceph-day-london/09 Multi Cluster and Protocol visibility with new Ceph Dashboard.pdf">slides</a>
    </td>
    <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/Ankush Behl.jpg" width="400" />Ankush Behl (IBM)</strong></center>
    </td>
@@ -151,6 +156,7 @@ We’ll walk through new features including multi-cluster support, RGW tiering a
 Ceph support for the ARM architecture has been fragmentary, with limited investment both upstream and downstream. IBM and Ampere are changing this, with the results of years of effort starting to bear fruit this year. 
 <p>
 Join us for a review of what has been done so far, what remains to be achieved for parity with x86, and an open discussion of the state of the art and the challenges that remain ahead. We bring interesting announcements, and we are interested in feedback — what would you use Ceph on ARM for?
+<a href="/assets/pdfs/events/2025/ceph-day-london/10 The Next Tentacle.pdf">slides</a>
    </td>
    <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/Federico Mugshot.jpg" width="400" />Federico Lucifredi (IBM)
    <br>
@@ -171,6 +177,7 @@ Join us for a review of what has been done so far, what remains to be achieved f
    <td><strong>Disaster Recovery User Story</strong>
 <p>
 For this Ceph day in London, I would like to present a talk discussing a major CephFS outage we experienced for our backup system and the disaster recovery steps we took in order to recover the filesystem and return the cluster to service. After being in service for a year, we suffered a catastrophic failure of the filesystem that resulted in the filesystem being offline and the MDSes being unable to leave replay and enter the active state. My talk would comprise of how the outage presented itself, how we investigated the error, the tools we used to investigate and ultimately resolve the issue, and the subsequent preventative measures we’ve taken where hopefully this talk will encourage further discussion amongst the attendees to share their own disaster recovery experiences.
+<a href="/assets/pdfs/events/2025/ceph-day-london/12 anatomy_of_a_CephFS_metadata_disaster_v5.pdf">slides</a>
    </td>
    <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/clayson_ivan.jpg" width="400" />Ivan Clayson (MRC Laboratory of Molecular Biology)</strong></center>
    </td>
@@ -181,6 +188,7 @@ For this Ceph day in London, I would like to present a talk discussing a major C
    <td><strong>NVMeoF in Ceph - What's New and What's Next</strong>
 <p>
 Ceph's NVMe over Fabrics (NVMeoF) support, introduced in the Tentacle release, marks a significant step forward in the project's scalability and performance. This session will explore the key features supported in the Tentacle release, including enhancements for NVMeoF, and provide an overview of the ongoing development of new features. Topics will include the upcoming Stretch cluster support, Virtual Volumes (vVols), reservations, the cancel command, and more. Join us for an in-depth discussion of Ceph’s NVMeoF future and how it is evolving to meet the growing demands of modern storage environments.</p>
+<a href="src/assets/pdfs/events/2025/ceph-day-london/13.1 NVMeoF in Ceph - Whats New and Whats Next.pdf">slides</a>
    </td>
    <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/Aviv Caro.jpg" width="400" />Aviv Caro (IBM)</strong></center>
    </td>
@@ -191,6 +199,7 @@ Ceph's NVMe over Fabrics (NVMeoF) support, introduced in the Tentacle release, m
    <td><strong>Lightning Talk (LT): Optimising Erasure Coding: The testing that makes us confident</strong>
 <p>
 An overview of the test tooling we developed for Erasure Coding, why it was developed, how it works and what specifically it tests. This talk will give an insight into the test tooling created and used during the development process.
+<a href="/assets/pdfs/events/2025/ceph-day-london/14 LT JonathanBaileyErasureCodingTesting.pdf">slides</a>
    </td>
    <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/JonathanBaileyHeadshot.jpeg" width="400" />Jonathan Bailey (IBM)</strong></center>
    </td>
@@ -201,6 +210,7 @@ An overview of the test tooling we developed for Erasure Coding, why it was deve
    <td><strong>Lightning Talk (LT): 56 weeks later: becoming a jack of all trades</strong>
 <p>
 Opensource and Ceph in particular have provided me with an invaluable empirical technical growing experience. In this my first year in the project, I summarise the opportunities to tackle the challenges: from writing my own automating testing infrastructure to generate performance test reports, to contributing to existing github projects, and creating my own. From learning and applying new programming languages, to deploy containers. I am very grateful to the Ceph community that encourages our technical grow and expertise in a constructive environment.
+<a href="/assets/pdfs/events/2025/ceph-day-london/15 LT Crimson56WeeksLater.pdf">slides</a>
    </td>
    <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/CDL_JJPP_IBM.jpeg" width="400" />Jose J Palacios-Perez (IBM)</strong></center>
    </td>
@@ -213,6 +223,7 @@ Opensource and Ceph in particular have provided me with an invaluable empirical 
 MicroCeph is the quickest and easiest way to deploy a Ceph cluster. Its an opinionated solution to provide single commands for deployment and management of a Ceph cluster.
 <p>
 This LT will give an update on the new funtionaility added to MicroCeph in the last year, API driven RBD-Mirror support, support for QAT, and more.  It will also discuss where people are using it and whats coming next for MicroCeph.
+<a href="/assets/pdfs/events/2025/ceph-day-london/16 LT What’s new in MicroCeph_ - Ceph Day London">slides</a>
    </td>
    <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/Phil Williams.jpg" width="400" />Phil Williams (Canonical)</strong></center>
    </td>
@@ -231,6 +242,7 @@ This LT will give an update on the new funtionaility added to MicroCeph in the l
     <td><strong>Zero trust data lakehouse</strong>
 <p>
 This talk examines the integration of Ceph with Apache Polaris, an advanced technical catalog for Apache Iceberg. Polaris introduces credential vending, where it generates session tokens for engines to use with object stores that are scoped according to catalog namespace and table policies. In doing so, table and namespace level access controls are enforced at the storage level, instead of requiring the engine itself to be a trusted policy enforcement point. We will demonstrate live the integration, and explain in full detail the mechanics of how this functionality works in conjunction with Ceph’s IAM and STS capabilities.
+<a href="/assets/pdfs/events/2025/ceph-day-london/19 Ceph Days London_ZeroTrust LakeHouse.pdf">slides</a>
    </td>
    <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/Daniel Parkes.jpg" width="400" />Daniel Parkes (IBM)</strong></center>
    </td>
@@ -241,6 +253,7 @@ This talk examines the integration of Ceph with Apache Polaris, an advanced tech
    <td><strong>Ceph-SMB: Opening Windows to the Ceph world</strong>
 <p>
 Ceph-SMB provides a managed SMB support to Ceph allowing Microsoft Windows clients to mount Cephfs volumes. We look at how we can use the SMB manager module to deploy and manage SMB shares using the imperative and declarative methods. We then connect to these newly created shares using Windows and Linux clients. We also take a peak under the hood to look at the underlying services run to make this happen.
+<a href="/assets/pdfs/events/2025/ceph-day-london/20 CephDay-cephsmb.pdf">slides</a>
    </td>
    <td><center><strong><img src="/assets/bitmaps/events/2025/ceph-days-london/Sachin Prabhu.jpeg" width="400" />Sachin Prabhu (IBM)</strong></center>
    </td>
