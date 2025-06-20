@@ -4,7 +4,7 @@ date: 2025-10-28
 end: 
 location: Vancouver, Canada
 venue:
-image: "/assets/bitmaps/cephalocon-2025.jpg"
+image: "/assets/bitmaps/cephalocon-2025-announce"
 sponsors:
   - label:
     list:
@@ -20,7 +20,13 @@ Cephalocon is the premier yearly event that brings together the global
 community of operators, developers, and researchers for Ceph, the open source
 distributed storage system.
 
-Details Coming Soon...
+Call for Papers is OPEN, through July 13th. 
+
+Registration is LIVE!!
+
+For more information and all details on the event: 
+
+- [Event Page](https://events.linuxfoundation.org/cephalocon/)
 
 <br />
 
