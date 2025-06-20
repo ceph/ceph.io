@@ -4,7 +4,7 @@ date: 2025-10-28
 end: 
 location: Vancouver, Canada
 venue:
-image: "/assets/bitmaps/cephalocon-2025-announce"
+image: "/assets/bitmaps/cephalocon-2025-announce.jpg"
 sponsors:
   - label:
     list:
