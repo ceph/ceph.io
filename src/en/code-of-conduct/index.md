@@ -12,7 +12,7 @@ However, when a large and sufficiently diverse group of people work together, th
 
 No list is ever exhaustive, so we encourage members of the Ceph community to adhere to the spirit, rather than the letter, of this code, as that is how it will be enforced. Places where this code may be particularly applicable are IRC, mailing lists, Ceph Days, conferences, meetups, online events, and other direct interactions within the community. Any violations, especially continued or flagrant offenses, may affect an individual’s (or organization’s) ability to participate within the Ceph community.
 
-If you feel that someone is in violation of the code of conduct, whether in letter or in spirit, we request that you email as detailed a description as possible of the offense and offending party/parties to <conduct@ceph.com>. If you have questions, concerns, or any other inquiries please feel free to contact the Ceph community manager.
+If you feel that someone is in violation of the code of conduct, whether in letter or in spirit, we request that you email as detailed a description as possible of the offense and offending party/parties to the Ceph community manager and/or the Ceph Executive Council <council@ceph.io>.
 
 ## Rules
 
