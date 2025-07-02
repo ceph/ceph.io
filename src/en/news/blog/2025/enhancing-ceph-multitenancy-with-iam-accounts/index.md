@@ -14,7 +14,7 @@ tags:
 ### Introduction
 Efficient multitenant environment management is critical in large-scale object
 storage systems. In the Ceph Squid release, we’ve introduced a transformative
-feature as a Tech Preview: Identity and Access Management (IAM) accounts.
+feature: Identity and Access Management (IAM) accounts.
 
 This enhancement brings self-service resource management to Ceph Object Storage
 and significantly reduces administrative overhead for Ceph administrators by
