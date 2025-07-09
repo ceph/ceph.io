@@ -7,7 +7,7 @@ tags:
   - ceph
   - cephalocon
 ---
-Cephalocon 2025 is coming up, and the Event Planning Committee is excited to launch this year's Cephalocon T-Shirt Design Contest! The Cephalocon conference t-shirt is a perennial favorite, worn proudly by Ceph community members around the world. What makes it iconic? The design was created by a member of the community. And that someone could be you!
+Cephalocon 2025 is coming up, and the Events Committee is excited to launch this year's Cephalocon T-Shirt Design Contest! The Cephalocon conference t-shirt is a perennial favorite, worn proudly by Ceph community members around the world. What makes it iconic? The design was created by a member of the community. And that someone could be you!
 
 Submit your concept for the 2025 conference shirt, and you could:
 
