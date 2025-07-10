@@ -2,7 +2,7 @@
 title: "Ceph is the new black.  It goes with everything!"
 date: "2012-10-17"
 author: "scuttlemonkey"
-tags: 
+tags:
 ---
 
 In my (rather brief) time digging in to Ceph and working with the community, most discussions generally boil down to two questions: _“How does Ceph work?”_ and _“What can I do with Ceph?”_ The first question has garnered a fair amount of attention in our outreach efforts. Ross Turk’s post “[More Than an Object Store](http://ceph.com/community/more-than-an-object-store/ "More Than an Object Store")” does a fantastic job summarizing Ceph’s magic. The second question is what I will address below.
@@ -73,6 +73,6 @@ Other avenues of study could incorporate things like cluster power efficiency, m
 
 ### Conclusion
 
-Now that you have read the details, you can see our skip-to-the-end conclusion of “a blindingly awesome ton” was pretty accurate, even with today’s list. This list grows every day thanks to the creativity of our community. We are all deeply excited to see what fancy new cloud apps, massive data applications, or other incredibly creative new tools might be built on top of Ceph tomorrow! If you have questions, ideas, or requests please feel free to snag us at one of the stops on our rigorous trade show schedule, on irc (irc.oftc.net #ceph), or on Twitter ([@Ceph](http://twitter.com/ceph) or [@Inktank](http://twitter.com/inktank)). We’d love to hear from you.
+Now that you have read the details, you can see our skip-to-the-end conclusion of “a blindingly awesome ton” was pretty accurate, even with today’s list. This list grows every day thanks to the creativity of our community. We are all deeply excited to see what fancy new cloud apps, massive data applications, or other incredibly creative new tools might be built on top of Ceph tomorrow! If you have questions, ideas, or requests please feel free to snag us at one of the stops on our rigorous trade show schedule, on irc (irc.oftc.net #ceph), or on X ([@Ceph](https://x.com/ceph) or [@Inktank](https://x.com/inktank)). We’d love to hear from you.
 
 ![](http://track.hubspot.com/__ptq.gif?a=268973&k=14&bu=http://ceph.com&r=http://ceph.com/community/ceph-is-the-new-black-it-goes-with-everything/&bvt=rss&p=wordpress)

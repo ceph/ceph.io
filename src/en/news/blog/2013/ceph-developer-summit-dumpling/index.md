@@ -2,21 +2,21 @@
 title: "Ceph Developer Summit: Dumpling"
 date: "2013-04-12"
 author: "scuttlemonkey"
-tags: 
+tags:
 ---
 
 Come one, come all, to the world’s first (virtual) Ceph Developer Summit! Now that the Ceph project has moved to a regular release schedule we are trying to be more transparent about the [planning process](http://www.inktank.com/about-inktank/roadmap/). To that end, we would like to invite participation from any interested parties as the next release of Ceph (and beyond) is planned.
 
 Starting today we will be accepting blueprint submissions via the [relaunched Ceph wiki](http://wiki.ceph.com). The timeline for submissions and announcements is as follows:
 
-| Date | Milestone |
-| --- | --- |
-| 11 APR | Summit announced, blueprint submissions begin |
-| 29 APR | Blueprint submission closed |
-| 01 MAY | Summit agenda announced |
-| **07 MAY** | **Ceph Developer Summit** |
-| 08 JUL | Dumpling Feature Freeze |
-| August | Dumpling Release |
+| Date       | Milestone                                     |
+| ---------- | --------------------------------------------- |
+| 11 APR     | Summit announced, blueprint submissions begin |
+| 29 APR     | Blueprint submission closed                   |
+| 01 MAY     | Summit agenda announced                       |
+| **07 MAY** | **Ceph Developer Summit**                     |
+| 08 JUL     | Dumpling Feature Freeze                       |
+| August     | Dumpling Release                              |
 
 Interested in submitting a blueprint? Click this button. Want more details? Read on!
 
@@ -43,7 +43,7 @@ Given how geographically disparate both our development team and the general Cep
 
 The underlying purpose of the summit will be to discuss _how_ features should be implemented (rather than _which_ features should be implemented). Once blueprint submission closes, Sage will review all available documents and decide which are the most relevent features that need to be discussed. Simple stand-alone projects probably don’t need a discussion, but please still create the blueprint. Even if you don’t provide a blueprint in time, you can still land work in ‘Dumpling,’ so make sure to get that blueprint up!
 
-Keep your eyes peeled for the connection details as the event gets closer. We’ll be sure to share them via the blog, twitter, facebook, google+, irc, mailing-list, and general word of mouth. In the meantime, if you have questions, comments, or anything for the good of the cause, feel free to hit up our [community team](mailto:community@inktank.com). Looking forward to your suggestions and your bright, smiling faces at the Developer Summit.
+Keep your eyes peeled for the connection details as the event gets closer. We’ll be sure to share them via the blog, X, facebook, google+, irc, mailing-list, and general word of mouth. In the meantime, if you have questions, comments, or anything for the good of the cause, feel free to hit up our [community team](mailto:community@inktank.com). Looking forward to your suggestions and your bright, smiling faces at the Developer Summit.
 
 scuttlemonkey out
 
