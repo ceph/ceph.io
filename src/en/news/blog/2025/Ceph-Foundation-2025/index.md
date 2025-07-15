@@ -2,19 +2,19 @@
 title: "Ceph Foundation 2025: Community, Collaboration, and What’s Next"
 date: 2025-07-09
 author: Anthony Middleton
-image: "images/cephalocon-2025-header-1200x500.png"
+image: "images/octopus_photo_1200x500.png"
 tags:
   - ceph
   - cephalocon
   - community
   - governing-board
 ---
-## Ceph Foundation 2025: Community, Collaboration, and What’s Next <br/>
+## Ceph Foundation 2025: Community, Collaboration, and What’s Next
 Over the past few years, the Ceph Foundation and the wider Ceph community have undergone a tremendous transformation. A key part of this transformation has happened within the Ceph Governing Board, which in 2024 began shifting from a behind-the-scenes role to a more transparent and community-driven presence. As you read on, you’ll learn how the Ceph Board formed new working groups to improve communication and its plans to publish committee materials for community access. Despite challenges, the Ceph project remains vibrant, resilient, and uniquely positioned to drive the next era of open-source storage innovation.
 
 As we look ahead, 2025 represents a pivotal moment for the Ceph ecosystem, calling on all of us to step up, contribute, and shape the future we wish to build together, whether by participating in working groups, engaging in discussions, or advocating for Ceph in unique ways. Before we explore what’s next, let’s take a moment to acknowledge the milestones that brought us here.
 
-## Hello from Your Ceph Community Manager <br/>
+## Hello from Your Ceph Community Manager
 Hi everyone! I’m [Anthony Middleton](https://www.linkedin.com/in/middleton-anthony/), your Ceph Community Manager. Since joining the Foundation, my focus has been on building inclusive, empowered spaces where contributors feel seen, supported, and celebrated. From global developer conferences to grassroots meetups, I’ve spent the last seven years helping open-source communities grow and connect. <br/>
 
 I’m honored to help Ceph thrive in this next chapter and deeply grateful to all of you who’ve welcomed me so warmly. I’m excited to continue working together to grow our momentum.
@@ -31,7 +31,7 @@ The Ceph Governing Board has been hard at work behind the scenes to ensure that 
 
 In 2024, the board prioritized deeper collaboration with technical leadership and community contributors. One of the most important initiatives was the overhaul of the 2025 foundation budget. Built democratically from scratch, this new budget reflects our core values: sustainability, inclusivity, and impact.
 
-### 2025 Budget Highlights <br/>
+### 2025 Budget Highlights
 * Funding a Ceph Community Manager: With private sponsorship for this role ending, the board stepped in to directly fund a full-time Community Manager to support growth and engagement.
 * New investments in engagement, including Community Hackathons, Ambassador Program efforts, and global outreach, now have dedicated funding.
 * Supporting the Upstream Lab: We maintained investment in our hosted lab environment and added hardware replacement capacity to support testing and development.
@@ -51,7 +51,7 @@ Committees include:
 * Outreach-Committee
 * Technical-Writing-Committee
 
-You can explore the repo under the [Ceph Governing Board Committee](https://github.com/ceph/ceph-committee-template) and join the work that speaks to you. These spaces aren’t just documentation, they’re invitations.
+You can explore the repository under the [Ceph Governing Board Committee](https://github.com/ceph/ceph-committee-template) and join the work that resonates with you. These spaces aren’t just documentation; they’re invitations.
 
 ### Ceph Funding Request Form  
 To support grassroots innovation, we've introduced the [Ceph Funding Request Form](https://github.com/ceph/ceph-committee-template/blob/main/funding-request/ceph-foundation-funding-request-template.md), a streamlined way for community members to apply for financial support for initiatives that benefit the Ceph ecosystem.
