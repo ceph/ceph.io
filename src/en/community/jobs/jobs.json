@@ -1,6 +1,12 @@
 {
   "jobs": [
     {
+      "company": "Clyso Technologies - Remote",
+      "date": "2025-07-17",
+      "title": "Ceph Solutions Architect",
+      "url": "https://www.indeed.com/cmp/Clyso-Technologies/jobs?jk=af6ec2d8f1783159&start=0&clearPrefilter=1"
+    },
+    {
       "company": "Boson AI",
       "date": "2025-03-21",
       "title": "Senior Software Engineer - Ceph",
@@ -17,12 +23,6 @@
       "date": "2025-02-13",
       "title": "Senior Software Engineer (m/f/x) - Ceph Object Storage",
       "url": "https://hetzner-cloud.de/en/jobs/1945594"
-    },
-    {
-      "company": "Ceph Foundation",
-      "date": "2025-02-12",
-      "title": "Community Manager",
-      "url": "https://jobs.smartrecruiters.com/LinuxFoundation/744000040847755-community-manager-ceph-foundation-contractor"
     },
     {
       "company": "42on",
