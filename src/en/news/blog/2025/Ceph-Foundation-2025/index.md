@@ -91,4 +91,4 @@ Feel free to connect with me on [Slack](https://ceph.io/en/foundation/). I’d l
 — <br/>
 Anthony Middleton <br/>
 Community Manager, Ceph Foundation <br/>
-[community-manager@cehp.io](mailto:community-manager@ceph.io)
+[community-manager@ceph.io](mailto:community-manager@ceph.io)

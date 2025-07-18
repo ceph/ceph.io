@@ -170,7 +170,7 @@ successful investment in the creation of shared technology.
 
 The Ceph Foundation welcomes any organization who is engaged in an
 working to support the Ceph project. For more information, contact
-<membership@linuxfoundation.org>
+<membership@cephfoundation.org>
 
 </details>
 
