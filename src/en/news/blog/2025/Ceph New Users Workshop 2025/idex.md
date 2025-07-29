@@ -2,7 +2,6 @@
 title: "Welcome to the Ceph New Users Workshop 2025"
 date: 2025-07-28
 author: Anthony Middleton
-image: "images/background-photo.png"
 tags:
   - Ceph Users
   - cephalocon
