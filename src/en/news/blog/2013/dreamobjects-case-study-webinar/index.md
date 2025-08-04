@@ -2,7 +2,7 @@
 title: "DreamObjects Case Study Webinar"
 date: "2013-02-06"
 author: "syndicated"
-tags: 
+tags:
 ---
 
 [![](images/do.png)](http://www.inktank.com/wp-content/uploads/2013/02/do.png "DreamObjects Case Study Webinar")
@@ -20,6 +20,6 @@ You can register for the webinar [here](http://www.inktank.com/news-events/webin
 
 Kyle
 
-[@mmgaggle](https://twitter.com/mmgaggle)
+[@mmgaggle](https://x.com/mmgaggle)
 
 ![](http://track.hubspot.com/__ptq.gif?a=265024&k=14&bu=http%3A%2F%2Fwww.inktank.com&r=http%3A%2F%2Fwww.inktank.com%2Finktank-blog%2Fdreamobjects-case-study-webinar%2F&bvt=rss&p=wordpress)
