@@ -15,26 +15,28 @@ In Luminous, [multiple active metadata servers](http://ceph.com/community/new-lu
 
 You can view the current subtree divisions of the file system by querying the admin socket of each MDS (on the host each MDS is operating on):
 
-    $ ceph fs status
-    cephfs - 0 clients
-    ========
-    +------+--------+-----+---------------+-------+-------+
-    | Rank | Stat e | MDS | Activity      | dns   | inos  |
-    +------+--------+-----+---------------+-------+-------+
-    | 0    | active | b   | Reqs: 0 /s    |     0 |     0 |
-    | 1    | active | c   | Reqs: 0 /s    |     0 |     0 |
-    | 2    | active | a   | Reqs: 0 /s    |     0 |     0 |
-    +------+--------+-----+---------------+-------+-------+
-    +-------------------+----------+-------+-------+
-    | Pool              | type     | used  | avail |
-    +-------------------+----------+-------+-------+
-    | cephfs_metadata   | metadata |  4098 | 9554M |
-    | cephfs_data       | data     |     0 | 9554M |
-    +-------------------+----------+-------+-------+
-    $ bin/ceph daemon mds.a get subtrees | jq '.[] | [.dir.path, .auth_first]'
-    ["~mds2", 2]
-    ["", 0]
-    ["/tmp", 2]
+```
+$ ceph fs status
+cephfs - 0 clients
+========
++------+--------+-----+---------------+-------+-------+
+| Rank | Stat e | MDS | Activity      | dns   | inos  |
++------+--------+-----+---------------+-------+-------+
+| 0    | active | b   | Reqs: 0 /s    |     0 |     0 |
+| 1    | active | c   | Reqs: 0 /s    |     0 |     0 |
+| 2    | active | a   | Reqs: 0 /s    |     0 |     0 |
++------+--------+-----+---------------+-------+-------+
++-------------------+----------+-------+-------+
+| Pool              | type     | used  | avail |
++-------------------+----------+-------+-------+
+| cephfs_metadata   | metadata |  4098 | 9554M |
+| cephfs_data       | data     |     0 | 9554M |
++-------------------+----------+-------+-------+
+$ bin/ceph daemon mds.a get subtrees | jq '.[] | [.dir.path, .auth_first]'
+["~mds2", 2]
+["", 0]
+["/tmp", 2]
+```
 
 The “” subtree is the root of the file system (“/”) and is always managed by rank 0. The “/tmp” subtree is being managed by rank 2. (A subtree path beginning with “~” is an internal subtree and not part of the file system hierarchy.)
 
@@ -48,15 +50,17 @@ For example, it can prevent a directory from splitting into multiple subtrees an
 
 Pinning a directory to a particular rank is done by setting an extended attribute:
 
-    $ setfattr -n ceph.dir.pin -v 2 /mnt/cephfs/tmp
-
+```
+$ setfattr -n ceph.dir.pin -v 2 /mnt/cephfs/tmp
+```
 This has the effect of preventing the CephFS directory “/tmp” from being split into smaller subtrees and also pinning “/tmp” to rank 2 (if that rank exists). Once this is done, you may query the rank 2 MDS to see its subtree map:
 
-    $ ceph daemon mds.b get subtrees | jq '.[] | [.dir.path, .auth_first, .export_pin]'
-    ["", 0, -1]
-    ["~mds0", 0, -1]
-    ["/tmp", 2, 2]
-
+```
+$ ceph daemon mds.b get subtrees | jq '.[] | [.dir.path, .auth_first, .export_pin]'
+["", 0, -1]
+["~mds0", 0, -1]
+["/tmp", 2, 2]
+```
 Here we can see that “/tmp” has its export_pin set to 2 and rank 2 is authoritative (auth_first).
 
 (N.B. a pinned directory is only shipped to its rank if it is not empty.)
@@ -65,15 +69,16 @@ Here we can see that “/tmp” has its export_pin set to 2 and rank 2 is author
 
 You may also have a hierarchy of pins. This means a child directory can have a pin set which overrides the pin of a parent. So we may have:
 
-    $ setfattr -n ceph.dir.pin -v 0 /mnt/cephfs/users/
-    $ setfattr -n ceph.dir.pin -v 1 /mnt/cephfs/users/joe/
-    $ ceph daemon mds.b get subtrees | jq '.[] | [.dir.path, .auth_first, .export_pin]'
-    ["", 0, -1]
-    ["~mds0", 0, -1]
-    ["/tmp", 2, 2]
-    ["/users/joe", 1, 1]
-    ["/users", 0, 0]
-
+```
+$ setfattr -n ceph.dir.pin -v 0 /mnt/cephfs/users/
+$ setfattr -n ceph.dir.pin -v 1 /mnt/cephfs/users/joe/
+$ ceph daemon mds.b get subtrees | jq '.[] | [.dir.path, .auth_first, .export_pin]'
+["", 0, -1]
+["~mds0", 0, -1]
+["/tmp", 2, 2]
+["/users/joe", 1, 1]
+["/users", 0, 0]
+```
 The “/users” subtree sets a “default” pin for itself and its children (home directories) to rank 0. However, “/users/joe” has a pin to rank 1 which overrides the “/users” pin.
 
 ### Future Direction
