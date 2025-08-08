@@ -9,6 +9,7 @@ sponsors:
   - label:
     list:
       - name: Ceph Amassadors Program
+        logo: /assets/bitmaps/Ceph_Logo_Stacked_RGB_120411_fa.png
 tags:
   - ceph users
   - cephalocon
