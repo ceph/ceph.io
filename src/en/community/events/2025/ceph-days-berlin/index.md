@@ -28,3 +28,7 @@ The second day will focus on further promote Ceph learning.
 - **Speakers receive confirmation of acceptance:** 2025-10-03
 - **Schedule Announcement:** 2025-10-17
 - **Event Date:** 2025-11-12 to 2025-11-13
+
+<a class="button" href="https://forms.gle/FF4FdU1pzD51vhZ26">Apply to be a Presenter!</a>
+
+<br />
