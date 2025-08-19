@@ -3,10 +3,10 @@ title: Ceph Developer Summit - Tentacle
 date: 2025-09-3
 end: 2025-09-12
 image: "/assets/bitmaps/CDS-2025.png"
+categories: "community"
 tags:
   - Ceph Developer Summit
 ---
-
 <p><strong>
 Ceph Developer Summit for Umbrella is coming! Join us online September 3 – 12, 2025, as we shape the future of Ceph together.
 </strong></p>
