@@ -1,6 +1,6 @@
 ---
 title: Ceph Developer Summit - Tentacle
-date: 2025-09-3
+date: 2025-09-03
 end: 2025-09-12
 image: "/assets/bitmaps/CDS-2025.png"
 categories: "community"
