@@ -1,5 +1,5 @@
 ---
-title: "Improving Persistent Bucket Notifications"
+title: "Improving Persistent Bucket Notifications Parallelism"
 
 date: 2025-08-20
 author: Adarsh Ashokan
