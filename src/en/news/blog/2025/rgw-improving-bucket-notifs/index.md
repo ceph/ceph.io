@@ -18,9 +18,9 @@ For a good background, see the [existing blog post on ceph.io](https://ceph.io/e
 
 In brief, this post deals with **improving the performance** of persistent bucket notifications.  
 
-Currently, the implementation doesn’t fully leverage RADOS’ distributed capabilities. Each topic is tied to a **single RADOS object** (a **2 Phase Commit Queue**, `2pc_cls_queue`).  
+Currently, the implementation doesn’t fully leverage RADOS’ distributed capabilities. Each topic is tied to a **2 Phase Commit Queue** implemented as a   **single RADOS object**.
 
-This design creates a bottleneck. A **sharded queue implementation** allows notifications to be distributed across multiple RADOS objects, enabling **parallel writes to multiple OSDs**.  
+This design creates a bottleneck. A **sharded queue implementation** allows notifications to be distributed across multiple RADOS objects, enabling **parallel writes via multiple OSDs**.  
 
 ---
 
