@@ -9,7 +9,7 @@ tags:
   - notifications
 ---
 
-## Improving Persistent Bucket Notifications
+## Improving Persistent Bucket Notifications Parallelism
 
 ### Problem at Hand  
 
@@ -24,13 +24,13 @@ This design creates a bottleneck. A **sharded queue implementation** allows noti
 
 ---
 
-### Example  
+<!-- ### Example  
 
 - Suppose you create **10,000 objects** in a Ceph bucket.  
 - In the current design, all `"Object Created"` notifications are directed to a **single queue object**, causing contention on a single OSD.  
 - With **sharded topic queues**, notifications are split across multiple queue objects. Multiple OSDs now handle writes in parallel, removing the bottleneck.  
 
----
+--- -->
 
 ### What Was Done  
 
@@ -54,11 +54,11 @@ rgw_bucket_persistent_notif_num_shards
 
 Topic operations updated to support sharded queues:  
 
-| Operation          | Behavior                                                                 |
-|--------------------|---------------------------------------------------------------------------|
-| **Create topic**   | Creates multiple `2pc_cls_queue` objects as shards                        |
-| **Delete topic**   | Deletes all associated shards                                             |
-| **Set topic**      | Supports toggling persistent ↔ non-persistent, with shard cleanup if needed |
+| Operation        | Behavior                                                                    |
+| ---------------- | --------------------------------------------------------------------------- |
+| **Create topic** | Creates multiple `2pc_cls_queue` objects as shards                          |
+| **Delete topic** | Deletes all associated shards                                               |
+| **Set topic**    | Supports toggling persistent ↔ non-persistent, with shard cleanup if needed |
 
 ---
 
@@ -80,9 +80,7 @@ hash("bucket:object") % (# of shards)
 
 #### Dequeue  
 - Each shard is an independent `2pc_cls_queue`.  
-- Each RGW daemon attempts to obtain a lock on a shard.  
-- If successful, it dequeues notifications from that shard.  
-- No changes were needed here as the shards are still added to the global list of queues.
+- Since each shard is handled by a different RGW, we can see that multiple RGW's will dequeue notifications for the same topic at the same time. i.e, more work is done by multiple workers at the same time rather than one RGW trying to dequeue all notifications for a single topic every time.
 
 ---
 
@@ -95,13 +93,81 @@ hash("bucket:object") % (# of shards)
 ### Limitations & Points to Keep in Mind  
 
 - **Per-key ordering not guaranteed during upgrades** on topics created during upgrades.  
-  - In a mixed cluster, older RGWs are unaware of shards and enqueue to a single shard.  
+  - In a mixed cluster, older RGWs are unaware of shards and enqueue to the first shard always.  
 
 ---
 
-### Performance & Stats  
+### Benchmarking Setup 
 
-Performance tests were run using the setup described [here](https://gist.github.com/yuvalif/6a320a4254aca2795d117d0a3480c824).  
+Performance tests were run on the following machine using the setup described below.
+
+* Machine specifications
+
+```
+ lsblk
+NAME           MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+sda              8:0    0 893.8G  0 disk
+└─sda1           8:1    0 893.7G  0 part /
+nvme1n1        259:0    0   1.5T  0 disk
+nvme0n1        259:1    0   1.5T  0 disk
+├─vg_nvme-lv_1 253:0    0  89.4G  0 lvm
+├─vg_nvme-lv_2 253:1    0  89.4G  0 lvm
+├─vg_nvme-lv_3 253:2    0  89.4G  0 lvm
+├─vg_nvme-lv_4 253:3    0  89.4G  0 lvm
+└─vg_nvme-lv_5 253:4    0  14.9G  0 lvm  /var/lib/ceph
+nvme3n1        259:2    0   1.5T  0 disk
+nvme4n1        259:3    0   1.5T  0 disk
+nvme2n1        259:4    0   1.5T  0 disk
+nvme6n1        259:5    0   1.5T  0 disk
+nvme5n1        259:6    0   1.5T  0 disk
+nvme7n1        259:7    0   1.5T  0 disk
+```
+* Cluster Setup 
+
+```
+sudo MON=1 OSD=2 MDS=0 MGR=0 RGW=1 ../src/vstart.sh -n -X --nolockdep --bluestore \
+    --bluestore-devs "/dev/nvme7n1,/dev/nvme6n1,/dev/nvme5n1,/dev/nvme4n1,/dev/nvme3n1,/dev/nvme2n1" \
+    -o "bluestore_block_size=1500000000000" -o "rgw_max_concurrent_requests=8192" \
+    -o "rgw_dynamic_resharding=false" -o "osd_pool_default_pg_num=128" -o "osd_pool_default_pgp_num=128" \
+    -o "mon_max_pg_per_osd=32768" -o "mon_pg_warn_max_per_osd=32768" -o "osd_pool_default_pg_autoscale_mode=warn"
+```
+
+* Running hsbench baseline with 1 M objects
+
+```
+hsbench -a 0555b35654ad1656d804 -s h7GhxuBLTrlhVUyxSPUKUV8r/2EI4ngqJxD7iBdBYLhwluN30JaT3Q== \
+  -u http://localhost:8000 -bp bk -m ipd -t 64 -z 4K -l 1 -b 1
+```
+
+* Setting up persistent notifications
+
+```
+aws --region=default --endpoint-url http://localhost:8000 sns create-topic --name=fishtopic0  \
+  --attributes='{"push-endpoint": "kafka://localhost", "persistent": "true"}'
+aws --region=default --endpoint-url http://localhost:8000 s3api put-bucket-notification-configuration \
+  --bucket bk000000000000 --notification-configuration='{"TopicConfigurations": [{"Id": "notif1", "TopicArn": "arn:aws:sns:default::fishtopic0", "Events": []}]}'
+```
+
+* Run hsbench again
+```
+hsbench -a 0555b35654ad1656d804 -s h7GhxuBLTrlhVUyxSPUKUV8r/2EI4ngqJxD7iBdBYLhwluN30JaT3Q== \
+  -u http://localhost:8000 -bp bk -m pd -t 64 -z 4K -l 1 -b 1
+```
+
+* Now with code that supports sharded queue. Run baseline setting with num_shards options as 1. 
+
+```
+sudo MON=1 OSD=2 MDS=0 MGR=0 RGW=1 ../src/vstart.sh -n -X --nolockdep --bluestore \
+    -o "rgw_bucket_persistent_notif_num_shards=1" \
+    --bluestore-devs "/dev/nvme7n1,/dev/nvme6n1,/dev/nvme5n1,/dev/nvme4n1,/dev/nvme3n1,/dev/nvme2n1" \
+    -o "bluestore_block_size=1500000000000" -o "rgw_max_concurrent_requests=8192" \
+    -o "rgw_dynamic_resharding=false" -o "osd_pool_default_pg_num=128" -o "osd_pool_default_pgp_num=128" \
+    -o "mon_max_pg_per_osd=32768" -o "mon_pg_warn_max_per_osd=32768" -o "osd_pool_default_pg_autoscale_mode=warn"
+```
+
+* Compare results with a run where num_shards option is set to default (i.e 11)
+
+### Performance Stats
 
 #### Small Objects (4 KB)  
 
