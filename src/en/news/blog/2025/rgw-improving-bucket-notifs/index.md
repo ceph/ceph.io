@@ -34,10 +34,10 @@ This design creates a bottleneck. A **sharded queue implementation** allows noti
 
 ### What Was Done  
 
-- In the **old design**, each topic was mapped to **one RADOS object** (one `2pc_cls_queue`).  
-- In the **new design**, each topic maps to **multiple RADOS objects** (multiple `2pc_cls_queue` objects).  
+- In the **old design**, each topic was mapped to **one RADOS object** (one 2-Phase Commit Queue).  
+- In the **new design**, each topic maps to **multiple RADOS objects** (multiple 2-Phase Commit Queue objects).  
 
-Each `2pc_cls_queue` object associated with a topic is called a **shard**.  
+Each 2-phase commit queue RADOS object associated with a topic is called a **shard**.  
 
 The number of shards is configurable via:  
 
@@ -56,7 +56,7 @@ Topic operations updated to support sharded queues:
 
 | Operation        | Behavior                                                                    |
 | ---------------- | --------------------------------------------------------------------------- |
-| **Create topic** | Creates multiple `2pc_cls_queue` objects as shards                          |
+| **Create topic** | Creates multiple RADOS objects as shards                                    |
 | **Delete topic** | Deletes all associated shards                                               |
 | **Set topic**    | Supports toggling persistent ↔ non-persistent, with shard cleanup if needed |
 
@@ -66,33 +66,58 @@ Topic operations updated to support sharded queues:
 
 #### Enqueue  
 - Ordering is guaranteed at the **per-key level** (per object in a bucket).  
-- The **target shard** is computed as:  
+- The **target shard** is computed using the followig formula:  
 
 ```
 hash("bucket:object") % (# of shards)
 ```  
 
-- Once computed, the notification is enqueued into the chosen shard (`2pc_cls_queue`).  
+- Once computed, the notification is enqueued into the chosen shard.  
   
 - The shards for a topic are named as per the follwing convention. 
-    - The first shard is just named as `topic_name`. This ensures that old RGW's unaware of shards can still enqueue notifications to a valid queue.
-    - The others Shards from 1 to (n - 1) are named as `topic_name.x`, where x is anywhere in `1` and `(n - 1)`.
+    - The first shard just named `topic_name`. This ensures that old RGW's unaware of shards can still enqueue notifications to a valid queue.
+    - The other shards from 1 to (n - 1) are named as `topic_name.x`, where x is anywhere in `1` and `(n-1)`.
+  
+User can verify the shards created in the RADOS object pool using the `rados ls` command. 
+
+```bash
+##inside /build dir
+bin/rados -c ceph.conf ls --pool default.rgw.log --namespace notif
+```
+
+##### Example
+
+```bash
+### create a persistent topic called fishtopic
+$ bin/rados -c ceph.conf ls --pool default.rgw.log --namespace notif
+:fishtopic.7
+:fishtopic.5
+:fishtopic.2
+:fishtopic.10
+:fishtopic.1
+:fishtopic.4
+:fishtopic.8
+:fishtopic
+:fishtopic.3
+:fishtopic.6
+queues_list_object
+:fishtopic.9
+```
 
 #### Dequeue  
 - Each shard is an independent `2pc_cls_queue`.  
-- Since each shard is handled by a different RGW, we can see that multiple RGW's will dequeue notifications for the same topic at the same time. i.e, more work is done by multiple workers at the same time rather than one RGW trying to dequeue all notifications for a single topic every time.
-
+- The key difference is that in the sharded setup, each shard is treated as an independent queue, which can be processed by a different RGW. This enables better load balancing across RGWs, even when the number of topics is small.
 ---
 
 ### Other Impacted Areas  
 
-- **Topic dump stats**: Now aggregate across all shards for size and count.  
+- **Topic dump stats**: This command now aggregates across all shards of a topic to determine size and count.  
 
 ---
 
 ### Limitations & Points to Keep in Mind  
 
-- **Per-key ordering not guaranteed during upgrades** on topics created during upgrades.  
+- **Per-key ordering is not guaranteed during upgrades** on topics created during upgrades.  
   - In a mixed cluster, older RGWs are unaware of shards and enqueue to the first shard always.  
 
 ---
@@ -122,7 +147,7 @@ nvme6n1        259:5    0   1.5T  0 disk
 nvme5n1        259:6    0   1.5T  0 disk
 nvme7n1        259:7    0   1.5T  0 disk
 ```
-* Cluster Setup 
+* Cluster Setup using `vstart`
 
 ```
 sudo MON=1 OSD=2 MDS=0 MGR=0 RGW=1 ../src/vstart.sh -n -X --nolockdep --bluestore \
@@ -130,13 +155,6 @@ sudo MON=1 OSD=2 MDS=0 MGR=0 RGW=1 ../src/vstart.sh -n -X --nolockdep --bluestor
     -o "bluestore_block_size=1500000000000" -o "rgw_max_concurrent_requests=8192" \
     -o "rgw_dynamic_resharding=false" -o "osd_pool_default_pg_num=128" -o "osd_pool_default_pgp_num=128" \
     -o "mon_max_pg_per_osd=32768" -o "mon_pg_warn_max_per_osd=32768" -o "osd_pool_default_pg_autoscale_mode=warn"
-```
-
-* Running hsbench baseline with 1 M objects
-
-```
-hsbench -a 0555b35654ad1656d804 -s h7GhxuBLTrlhVUyxSPUKUV8r/2EI4ngqJxD7iBdBYLhwluN30JaT3Q== \
-  -u http://localhost:8000 -bp bk -m ipd -t 64 -z 4K -l 1 -b 1
 ```
 
 * Setting up persistent notifications
@@ -148,13 +166,8 @@ aws --region=default --endpoint-url http://localhost:8000 s3api put-bucket-notif
   --bucket bk000000000000 --notification-configuration='{"TopicConfigurations": [{"Id": "notif1", "TopicArn": "arn:aws:sns:default::fishtopic0", "Events": []}]}'
 ```
 
-* Run hsbench again
-```
-hsbench -a 0555b35654ad1656d804 -s h7GhxuBLTrlhVUyxSPUKUV8r/2EI4ngqJxD7iBdBYLhwluN30JaT3Q== \
-  -u http://localhost:8000 -bp bk -m pd -t 64 -z 4K -l 1 -b 1
-```
 
-* Now with code that supports sharded queue. Run baseline setting with num_shards options as 1. 
+* Run baseline setting with `rgw_bucket_persistent_notif_num_shards` set to 1. 
 
 ```
 sudo MON=1 OSD=2 MDS=0 MGR=0 RGW=1 ../src/vstart.sh -n -X --nolockdep --bluestore \
@@ -165,7 +178,7 @@ sudo MON=1 OSD=2 MDS=0 MGR=0 RGW=1 ../src/vstart.sh -n -X --nolockdep --bluestor
     -o "mon_max_pg_per_osd=32768" -o "mon_pg_warn_max_per_osd=32768" -o "osd_pool_default_pg_autoscale_mode=warn"
 ```
 
-* Compare results with a run where num_shards option is set to default (i.e 11)
+* Compare results with a run where `rgw_bucket_persistent_notif_num_shards` is set to default (i.e 11)
 
 ### Performance Stats
 
