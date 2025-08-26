@@ -89,7 +89,7 @@ bin/rados -c ceph.conf ls --pool default.rgw.log --namespace notif
 
 ```bash
 ### create a persistent topic called fishtopic
-$ bin/rados -c ceph.conf ls --pool default.rgw.log --namespace notif
+$ bin/rados -c ceph.conf ls --pool default.rgw.log --namespace notif | grep fishtopic
 :fishtopic.7
 :fishtopic.5
 :fishtopic.2
@@ -100,12 +100,12 @@ $ bin/rados -c ceph.conf ls --pool default.rgw.log --namespace notif
 :fishtopic
 :fishtopic.3
 :fishtopic.6
-queues_list_object
 :fishtopic.9
 ```
 
-#### Dequeue  
-- Each shard is an independent `2pc_cls_queue`.  
+**Note**: `:fishtopic` is the name of the first shard to support backward compatibility and clusters having RGWs of different versions.
+
+#### Dequeue   
 - The key difference is that in the sharded setup, each shard is treated as an independent queue, which can be processed by a different RGW. This enables better load balancing across RGWs, even when the number of topics is small.
 ---
 
