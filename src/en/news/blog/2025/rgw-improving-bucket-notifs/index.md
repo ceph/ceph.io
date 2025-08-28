@@ -147,10 +147,11 @@ nvme6n1        259:5    0   1.5T  0 disk
 nvme5n1        259:6    0   1.5T  0 disk
 nvme7n1        259:7    0   1.5T  0 disk
 ```
-* Cluster Setup using `vstart`
-
+* Cluster Setup using `vstart` for baseline notification setup - `rgw_bucket_persistent_notif_num_shards` set to 1.
+  
 ```
 sudo MON=1 OSD=2 MDS=0 MGR=0 RGW=1 ../src/vstart.sh -n -X --nolockdep --bluestore \
+    -o "rgw_bucket_persistent_notif_num_shards=1" \
     --bluestore-devs "/dev/nvme7n1,/dev/nvme6n1,/dev/nvme5n1,/dev/nvme4n1,/dev/nvme3n1,/dev/nvme2n1" \
     -o "bluestore_block_size=1500000000000" -o "rgw_max_concurrent_requests=8192" \
     -o "rgw_dynamic_resharding=false" -o "osd_pool_default_pg_num=128" -o "osd_pool_default_pgp_num=128" \
@@ -167,24 +168,29 @@ aws --region=default --endpoint-url http://localhost:8000 s3api put-bucket-notif
 ```
 
 
-* Run baseline setting with `rgw_bucket_persistent_notif_num_shards` set to 1. 
+* Now change `rgw_bucket_persistent_notif_num_shards`
+to 11 under `build` dir.
 
 ```
-sudo MON=1 OSD=2 MDS=0 MGR=0 RGW=1 ../src/vstart.sh -n -X --nolockdep --bluestore \
-    -o "rgw_bucket_persistent_notif_num_shards=1" \
-    --bluestore-devs "/dev/nvme7n1,/dev/nvme6n1,/dev/nvme5n1,/dev/nvme4n1,/dev/nvme3n1,/dev/nvme2n1" \
-    -o "bluestore_block_size=1500000000000" -o "rgw_max_concurrent_requests=8192" \
-    -o "rgw_dynamic_resharding=false" -o "osd_pool_default_pg_num=128" -o "osd_pool_default_pgp_num=128" \
-    -o "mon_max_pg_per_osd=32768" -o "mon_pg_warn_max_per_osd=32768" -o "osd_pool_default_pg_autoscale_mode=warn"
+bin/ceph config set client.rgw.8000 rgw_bucket_persistent_notif_num_shards 11 --conf /ceph.conf
 ```
 
-* Compare results with a run where `rgw_bucket_persistent_notif_num_shards` is set to default (i.e 11)
+* Create a new topic and notification for this setting.
+
+```
+aws --region=default --endpoint-url http://localhost:8000 sns create-topic --name=fishtopic1  \
+  --attributes='{"push-endpoint": "kafka://localhost", "persistent": "true"}'
+aws --region=default --endpoint-url http://localhost:8000 s3api put-bucket-notification-configuration \
+  --bucket bk000000000000 --notification-configuration='{"TopicConfigurations": [{"Id": "notif1", "TopicArn": "arn:aws:sns:default::fishtopic1", "Events": []}]}'
+```
+
+* Compare results of this run where `rgw_bucket_persistent_notif_num_shards` is set to default (i.e, 11) with baseline performance.
 
 ### Performance Stats
 
 #### Small Objects (4 KB)  
 
-- **Baseline (no notifications):**  
+- **No notifications :**  
 ```
 PUT:  542,690 ops (IO/s: 9,044, Lat avg: 7.1 ms)
 DEL:  542,690 ops (IO/s: 9,768, Lat avg: 6.5 ms)
@@ -210,7 +216,7 @@ DEL:  363,486 ops (IO/s: 6,428, Lat avg: 10.0 ms)
 
 Notification overhead is smaller since notification size (~1 KB) is small relative to object size (4 MB).  
 
-- **Baseline (no notifications):**
+- **No notifications :**
 ```
 PUT:  24,034 ops (IO/s: 400, Lat avg: 159.9 ms)
 DEL:  24,014 ops (IO/s: 8,862, Lat avg: 7.2 ms)
