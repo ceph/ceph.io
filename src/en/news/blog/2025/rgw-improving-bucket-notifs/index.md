@@ -13,40 +13,36 @@ tags:
 
 ### Problem at Hand  
 
-Persistent Bucket Notifications were first rolled out in **Ceph Pacific** as part of the **RADOS Gateway (RGW) project**.  
+Persistent Bucket Notifications were first rolled out in Ceph Pacific as part of the RADOS Gateway (RGW) project.  
 For a good background, see the [existing blog post on ceph.io](https://ceph.io/en/news/blog/2021/persistent-bucket-notifications-deep-dive/).  
 
-In brief, this post deals with **improving the performance** of persistent bucket notifications.  
+In brief, this post deals with improving the performance of persistent bucket notifications.  
 
-Currently, the implementation doesn’t fully leverage RADOS’ distributed capabilities. Each topic is tied to a **2 Phase Commit Queue** implemented as a   **single RADOS object**.
+Currently, the implementation doesn’t fully leverage RADOS’ distributed capabilities. Each topic is tied to a 2 Phase Commit Queue implemented as a   single RADOS object.
 
-This design creates a bottleneck. A **sharded queue implementation** allows notifications to be distributed across multiple RADOS objects, enabling **parallel writes via multiple OSDs**.  
+This design creates a bottleneck. A sharded queue implementation allows notifications to be distributed across multiple RADOS objects, enabling parallel writes via multiple OSDs.  
 
 ---
 
 <!-- ### Example  
 
-- Suppose you create **10,000 objects** in a Ceph bucket.  
-- In the current design, all `"Object Created"` notifications are directed to a **single queue object**, causing contention on a single OSD.  
-- With **sharded topic queues**, notifications are split across multiple queue objects. Multiple OSDs now handle writes in parallel, removing the bottleneck.  
+- Suppose you create 10,000 objects in a Ceph bucket.  
+- In the current design, all `"Object Created"` notifications are directed to a single queue object, causing contention on a single OSD.  
+- With sharded topic queues, notifications are split across multiple queue objects. Multiple OSDs now handle writes in parallel, removing the bottleneck.  
 
 --- -->
 
 ### What Was Done  
 
-- In the **old design**, each topic was mapped to **one RADOS object** (one 2-Phase Commit Queue).  
-- In the **new design**, each topic maps to **multiple RADOS objects** (multiple 2-Phase Commit Queue objects).  
+- In the old design, each topic was mapped to one RADOS object (one 2-Phase Commit Queue).  
+- In the new design, each topic maps to multiple RADOS objects (multiple 2-Phase Commit Queue objects).  
 
-Each 2-phase commit queue RADOS object associated with a topic is called a **shard**.  
+Each 2-phase commit queue RADOS object associated with a topic is called a shard.  
 
-The number of shards is configurable via:  
+The number of shards is configurable via the `rgw_bucket_persistent_notif_num_shards` central configuration option.
 
-```bash
-rgw_bucket_persistent_notif_num_shards
-```
-
-- **Default value:** 11  
-- **Note:** Existing topics are **not** re-sharded. To extend this feature for existing topics, you must delete and recreate the topic.  
+- Default value: 11  
+- Note: Existing topics are not re-sharded. To extend this feature for existing topics, you must delete and recreate the topic.  
 
 ---
 
@@ -54,19 +50,19 @@ rgw_bucket_persistent_notif_num_shards
 
 Topic operations updated to support sharded queues:  
 
-| Operation        | Behavior                                                                    |
-| ---------------- | --------------------------------------------------------------------------- |
-| **Create topic** | Creates multiple RADOS objects as shards                                    |
-| **Delete topic** | Deletes all associated shards                                               |
-| **Set topic**    | Supports toggling persistent ↔ non-persistent, with shard cleanup if needed |
+| Operation    | Behavior                                                                    |
+| ------------ | --------------------------------------------------------------------------- |
+| Create topic | Creates multiple RADOS objects as shards                                    |
+| Delete topic | Deletes all associated shards                                               |
+| Set topic    | Supports toggling persistent ↔ non-persistent, with shard cleanup if needed |
 
 ---
 
 ### Design Details  
 
 #### Enqueue  
-- Ordering is guaranteed at the **per-key level** (per object in a bucket).  
-- The **target shard** is computed using the followig formula:  
+- Ordering is guaranteed at the per-key level (per object in a bucket).  
+- The target shard is computed using the following formula:  
 
 ```
 hash("bucket:object") % (# of shards)
@@ -74,11 +70,11 @@ hash("bucket:object") % (# of shards)
 
 - Once computed, the notification is enqueued into the chosen shard.  
   
-- The shards for a topic are named as per the follwing convention. 
-    - The first shard just named `topic_name`. This ensures that old RGW's unaware of shards can still enqueue notifications to a valid queue.
-    - The other shards from 1 to (n - 1) are named as `topic_name.x`, where x is anywhere in `1` and `(n-1)`.
+- The shards for a topic are named as per the following convention. 
+    - The first shard just named `topic_name`. This ensures that old RGW instances unaware of shards can still enqueue notifications to a valid queue.
+    - The other shards from 1 to (n - 1) are named as `topic_name.x`, where x is between `1` and `(n-1)`.
   
-User can verify the shards created in the RADOS object pool using the `rados ls` command. 
+Admins can verify the shards created in the RADOS object pool using the `rados ls` command. 
 
 ```bash
 ##inside /build dir
@@ -103,7 +99,7 @@ $ bin/rados -c ceph.conf ls --pool default.rgw.log --namespace notif | grep fish
 :fishtopic.9
 ```
 
-**Note**: `:fishtopic` is the name of the first shard to support backward compatibility and clusters having RGWs of different versions.
+Note: `:fishtopic` is the name of the first shard to support backward compatibility and clusters having RGWs of different versions.
 
 #### Dequeue   
 - The key difference is that in the sharded setup, each shard is treated as an independent queue, which can be processed by a different RGW. This enables better load balancing across RGWs, even when the number of topics is small.
@@ -111,13 +107,13 @@ $ bin/rados -c ceph.conf ls --pool default.rgw.log --namespace notif | grep fish
 
 ### Other Impacted Areas  
 
-- **Topic dump stats**: This command now aggregates across all shards of a topic to determine size and count.  
+- Topic dump stats: This command now aggregates across all shards of a topic to determine size and count.  
 
 ---
 
 ### Limitations & Points to Keep in Mind  
 
-- **Per-key ordering is not guaranteed during upgrades** on topics created during upgrades.  
+- Per-key ordering is not guaranteed during upgrades on topics created during upgrades.  
   - In a mixed cluster, older RGWs are unaware of shards and enqueue to the first shard always.  
 
 ---
@@ -190,25 +186,25 @@ aws --region=default --endpoint-url http://localhost:8000 s3api put-bucket-notif
 
 #### Small Objects (4 KB)  
 
-- **No notifications :**  
+- No notifications :  
 ```
 PUT:  542,690 ops (IO/s: 9,044, Lat avg: 7.1 ms)
 DEL:  542,690 ops (IO/s: 9,768, Lat avg: 6.5 ms)
 ```  
 
-- **With notifications, 1 shard (`rgw_bucket_persistent_notif_num_shards=1`):**  
+- With notifications, 1 shard (`rgw_bucket_persistent_notif_num_shards=1`):  
 ```
 PUT:  191,572 ops (IO/s: 3,192, Lat avg: 20.0 ms)
 DEL:  191,572 ops (IO/s: 3,204, Lat avg: 20.0 ms)
 ```  
 
-- **With notifications, 11 shards (default):**  
+- With notifications, 11 shards (default):  
 ```
 PUT:  363,486 ops (IO/s: 6,057, Lat avg: 10.6 ms)
 DEL:  363,486 ops (IO/s: 6,428, Lat avg: 10.0 ms)
 ```  
 
-- **Existing code (pre-change) ≈ single shard performance.**  
+- Existing code (pre-change) ≈ single shard performance.  
 
 ---
 
@@ -216,19 +212,19 @@ DEL:  363,486 ops (IO/s: 6,428, Lat avg: 10.0 ms)
 
 Notification overhead is smaller since notification size (~1 KB) is small relative to object size (4 MB).  
 
-- **No notifications :**
+- No notifications :
 ```
 PUT:  24,034 ops (IO/s: 400, Lat avg: 159.9 ms)
 DEL:  24,014 ops (IO/s: 8,862, Lat avg: 7.2 ms)
 ```  
 
-- **With notifications, 1 shard:**  
+- With notifications, 1 shard:  
 ```
 PUT:  22,167 ops (IO/s: 369, Lat avg: 173.3 ms)
 DEL:  22,167 ops (IO/s: 3,027, Lat avg: 21.1 ms)
 ```  
 
-- **With notifications, 11 shards:**  
+- With notifications, 11 shards:  
 ```
 PUT:  24,848 ops (IO/s: 413, Lat avg: 154.7 ms)
 DEL:  24,848 ops (IO/s: 6,342, Lat avg: 10.1 ms)
