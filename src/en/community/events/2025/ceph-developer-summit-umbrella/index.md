@@ -2,7 +2,7 @@
 title: Ceph Developer Summit - Umbrella
 date: 2025-09-03
 end: 2025-09-11
-image: "/assets/bitmaps/CDS-2025.png"
+image: "/assets/bitmaps/CDS 2025.png"
 categories: "community"
 tags:
   - Ceph Developer Summit
@@ -40,6 +40,27 @@ discussions</a></strong>
    <td>Crimson / SeaStore Session
    </td>
    <td><a href="https://meet.jit.si/CephDeveloperSummitCrimsonSeaStore">Join session</a>
+   </td>
+  </tr>
+</table>
+
+## September 4 (Thursday)
+
+<table>
+  <tr>
+   <td width="20%"><strong>Time</strong>
+   </td>
+   <td width="50%"><strong>Session</strong>
+   </td>
+   <td width="30%"><strong>Meeting Link</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>8:00 - 9:00 AM PDT
+   </td>
+   <td>BlueStore
+   </td>
+   <td><a href="https://meet.jit.si/ThursdayBlueStore">Join session</a>
    </td>
   </tr>
 </table>
@@ -106,6 +127,14 @@ discussions</a></strong>
    </td>
   </tr>
   <tr>
+   <td>6:00 - 7:00 AM PDT
+   </td>
+   <td>Telemetry
+   </td>
+   <td><a href="https://meet.jit.si/CephDeveloperSummitTelemetry">Join session</a>
+   </td>
+  </tr>
+  <tr>
    <td>8:00 - 9:00 AM PDT
    </td>
    <td>Cephadm
@@ -124,6 +153,14 @@ discussions</a></strong>
    <td width="50%"><strong>Session</strong>
    </td>
    <td width="30%"><strong>Meeting Link</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>8:30 - 9:30 AM PDT
+   </td>
+   <td>RGW <a href="https://pad.ceph.com/p/rgw-cds2025">Pad</a>
+   </td>
+   <td><a href="https://meet.google.com/mmj-uzzv-qce">Join session</a>
    </td>
   </tr>
   <tr>
