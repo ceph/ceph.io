@@ -29,6 +29,8 @@ The second day will focus on further promote Ceph learning.
 - **Schedule Announcement:** 2025-10-17
 - **Event Date:** 2025-11-12 to 2025-11-13
 
+You can view the event schedule and venue details on the registration page. <a class="button" href="https://luma.com/217aro8t">Register Here!</a>
+
 <a class="button" href="https://forms.gle/FF4FdU1pzD51vhZ26">Apply to be a Presenter!</a>
 
 <br />
