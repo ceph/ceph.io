@@ -200,4 +200,12 @@ discussions</a></strong>
    <td><a href="https://meet.jit.si/CephDeveloperSummit-NVMe-oFgateway">Join session</a>
    </td>
   </tr>
+  <tr>
+   <td>9:00 - 10:00 AM PDT
+   </td>
+   <td>RADOS CDS
+   </td>
+   <td><a href="https://meet.jit.si/CDS-RADOS-CDS">Join session</a>
+   </td>
+  </tr>
 </table>
