@@ -1,0 +1,34 @@
+---
+layout: null
+permalink: /en/news/blog/feed.xml
+eleventyExcludeFromCollections: true
+override:tags: []
+title: Ceph Blog
+base: https://ceph.io
+url: /en/news/blog/
+collection: en-blog-post
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ title }}</title>
+  <link href="{{ permalink | absoluteUrl(base) }}" rel="self" />
+  <link href="{{ url | absoluteUrl(base) }}" />
+  <updated>{{ collections[collection] | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <id>{{ url | absoluteUrl(base) }}</id>
+  {%- for post in collections[collection] | reverse | getItems(20) %}
+  {%- set absolutePostUrl = post.page.url | absoluteUrl(base) %}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ absolutePostUrl }}" />
+    <updated>{{ post.page.date | dateToRfc3339 }}</updated>
+    <id>{{ absolutePostUrl }}</id>
+    <author>
+      <name>{{ post.data.author }}</name>
+    </author>
+    {%- for tag in post.data.tags %}
+      <category term="{{ tag }}" />
+    {%- endfor %}
+    <content type="html" xml:base="{{ absolutePostUrl }}">{{ post.content }}</content>
+  </entry>
+  {%- endfor %}
+</feed>
