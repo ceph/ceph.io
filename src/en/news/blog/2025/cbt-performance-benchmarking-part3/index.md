@@ -6,7 +6,6 @@ tags:
   - ceph
   - benchmarks
   - performance
-  - analysis
 ---
 
 ## Outline of the Blog Series  
@@ -20,7 +19,7 @@ tags:
 
 ## Introduction  
 
-Now that we have created our erasure coded (EC) cluster (from **Part 1**) and defined our YAML workloads (from **Part 2**), we can finally start a CBT run and analyse the performance results.  
+Now that we have created our erasure coded (EC) cluster (from **Part 1**) and defined our YAML file and workloads (from **Part 2**), we can finally start a CBT run and analyse the performance results.  
 
 This part will cover:  
 
@@ -28,13 +27,22 @@ This part will cover:
 2. Processing the results  
 3. Analysing the results  
 4. Comparing Jerasure vs CLAY EC pools  
-5. Running tests with an OSD down  
+5. Running tests with an OSD stopped 
 
 ---
 
-## Step 1: Run the performance test  
+<details>
+<summary>Step 1: Run the performance test</summary>
 
-First, clone the **CBT repository**:  
+First, clone the [CBT repository](https://github.com/ceph/cbt) into a directory of your choice on the machine you are using and `cd` into it.
+
+This is an example of the command to run a CBT performance test:
 
 ```bash
-git clone https://github.com/ceph/cbt.git
+  python /cbt/cbt.py -a /tmp/cbt -c /example/ceph.conf /example/<yaml_file> 2>&1 | tee /tmp/cbt.out
+```
+
+You will specify the location of your `cbt.py` file. Provide an archive folder where your results will be generated `/tmp/cbt`. Provide a config folder `/example/ceph.conf`
+
+</details>
+
