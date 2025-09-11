@@ -100,7 +100,7 @@ Firstly, what is **queue depth**?
 
 Queue depth can be defined as the number of concurrent commands that are outstanding.
 
-There are two ways of expressing the queue depth per volume in CBT
+There are two ways of expressing the queue depth per volume in CBT:
 1. Using the `iodepth` attribute
 2. Using the `total_iodepth` attribute
 
@@ -116,6 +116,5 @@ Now the reason we use `total_iodepth` over `iodepth` is because we can have a fi
 
 We have lots of different levels of IOs for our writes and reads because we want to get test results for all the different scenarios that happen in the real world. Also to test the different bottlenecks that could be holding back the ceph cluster. Different scenarios could include a bank returning a single customer's payment to them, this would be a random read. On the other hand netflix streaming involves sequential reading of data and displaying that. 
 - In terms of bottlenecks:
-
- - Short IOs will usually have a CPU bottleneck (this is why the x axis is IOPs for small IOs)
- - Larger IOs are more likely to suffer from network and device storage bottlenecks (this is why the x axis turns to Bandwidth for the larger IO sizes)
+   - Short IOs will usually have a CPU bottleneck (this is why the x axis is IOPs for small IOs)
+   - Larger IOs are more likely to suffer from network and device storage bottlenecks (this is why the x axis turns to Bandwidth for the larger IO sizes)
