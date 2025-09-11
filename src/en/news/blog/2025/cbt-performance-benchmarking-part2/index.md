@@ -16,6 +16,7 @@ tags:
 - **Part 4** - How to integrate CBT with Teuthology  
 
 ---
+![alt text](images/yaml.png "Example of YAML workload")
 
 ## Introduction: What goes into the YAML file?  
 
