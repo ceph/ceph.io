@@ -27,46 +27,57 @@ The YAML file defines what tests we will run on the cluster.
 
 ---
 
-## Key sections of the YAML file  
+## Key sections of the YAML file:  
 
-### Benchmark module  
+<details>
+<summary>Benchmark module</summary> 
 
 In our example, we will be using **librbdfio**.  
+</details>
 
 ---
 
-### How long should the run be?  
+<details>
+<summary>Length of run</summary> 
 
 We configure a **ramp** and a **time** for each test:  
 
 - **Ramp** → warmup period where no data is collected.  
 - **Time** → duration for which each test will run and collect results.  
+</details>
 
 ---
 
-### Volume size  
+<details>
+<summary>Volume size</summary>
 
 This is the amount of data used to prefill each volume.  
 
 - Ideally, this should match the volume size created in **Part 1** when setting up the EC profile.  
 - If this value is lower, then only that amount of data will be written.  
+</details>
 
 ---
 
-### Number of volumes  
+<details>
+<summary>Number of volumes</summary>
 
 This is the same number of volumes you defined in **Part 1**.  
+</details>
 
 ---
 
-### Prefill and precondition  
+<details>
+<summary>Prefill & Precondition </summary> 
 
 - **Prefill** → filling all volumes with sequential writes.  
-- **Precondition** → adding random writes to simulate real-world workloads.  
+- **Precondition** → adding random writes to simulate real-world workloads.
+</details>  
 
 ---
 
-### Workloads (tests)  
+<details>
+<summary>Workloads</summary>
 
 Example:  
 
@@ -77,3 +88,5 @@ Seq32kwrite:
   op_size: 32768
   numjobs: [ 1 ]
   total_iodepth: [ 2, 4, 8, 16, 32, 64, 128, 256, 512, 768 ]
+```
+</details>
