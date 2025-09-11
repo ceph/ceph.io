@@ -33,6 +33,15 @@ The YAML file defines what tests we will run on the cluster.
 <summary>Benchmark module</summary> 
 
 In our example, we will be using **librbdfio**.  
+
+Example:
+
+```yaml
+benchmarks:
+  librbdfio:
+    rbdname: "cbt-librbdfio"
+    <insert details here>
+```
 </details>
 
 ---
@@ -44,6 +53,14 @@ We configure a **ramp** and a **time** for each test:
 
 - **Ramp** → warmup period where no data is collected.  
 - **Time** → duration for which each test will run and collect results.  
+
+Example: 
+
+```yaml
+  librbdfio:
+    time: 90
+    ramp: 30
+```
 </details>
 
 ---
@@ -55,6 +72,13 @@ This is the amount of data used to prefill each volume.
 
 - Ideally, this should match the volume size created in **Part 1** when setting up the EC profile.  
 - If this value is lower, then only that amount of data will be written.  
+
+Example:
+
+```yaml
+  librbdfio:
+    vol_size: 52500
+```
 </details>
 
 ---
@@ -63,6 +87,12 @@ This is the amount of data used to prefill each volume.
 <summary>Number of volumes</summary>
 
 This is the same number of volumes you defined in **Part 1**.  
+
+Example:
+```yaml
+  librbdfio:
+    volumes_per_client: [8]
+```
 </details>
 
 ---
@@ -72,6 +102,25 @@ This is the same number of volumes you defined in **Part 1**.
 
 - **Prefill** → filling all volumes with sequential writes.  
 - **Precondition** → adding random writes to simulate real-world workloads.
+
+Example:
+
+```yaml
+  librbdfio:
+    prefill:
+      blocksize: '64k'
+      numjobs: 1
+
+    workloads:
+      precondition:
+        jobname: 'precond1rw'
+        mode: 'randwrite'
+        time: 600
+        op_size: 65536
+        numjobs: [ 1 ]
+        total_iodepth: [ 16 ]
+        monitor: False
+```
 </details>  
 
 ---
@@ -82,12 +131,14 @@ This is the same number of volumes you defined in **Part 1**.
 Example:  
 
 ```yaml
-Seq32kwrite:
-  jobname: 'seqwrite'
-  mode: 'write'
-  op_size: 32768
-  numjobs: [ 1 ]
-  total_iodepth: [ 2, 4, 8, 16, 32, 64, 128, 256, 512, 768 ]
+librbdfio:
+  workloads:
+    Seq32kwrite:
+      jobname: 'seqwrite'
+      mode: 'write'
+      op_size: 32768
+      numjobs: [ 1 ]
+      total_iodepth: [ 2, 4, 8, 16, 32, 64, 128, 256, 512, 768 ]
 ```
 The above is an example of a 32k sequential write, we configure different levels of total_iodepth.
 </details>
@@ -109,6 +160,10 @@ There are two ways of expressing the queue depth per volume in CBT:
 `total_iodepth` will use that queue depth across all volumes. For example, if `total_iodepth` is set to 16 and the number of configured volumes is 8, then the queue depth per volume will be 2 (16/8). 
 
 Now the reason we use `total_iodepth` over `iodepth` is because we can have a finer grain of control over the queue depth across the system. For example, let's say we have a total_iodepth of 17 with 8 volumes. Each volume will initially have a queue depth of 2 as we go through each volume, but volume 1 will have a queue depth of 3, as we have a remainder of 1, whereas all the other volumes will have a queue depth of 2. So using total_iodepth we can have volumes with different queue depth values, whereas using iodepth means each volume has the same queue depth.
+
+A good way to look at the relationship between these terms if you're struggling, is:
+
+`total_iodepth = volumes x queue depth`
 
 ---
 
