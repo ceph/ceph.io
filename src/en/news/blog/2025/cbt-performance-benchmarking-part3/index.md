@@ -103,7 +103,7 @@ total_iodepth: [ 2, 4, 8, 12, 16, 24, 32, 64, 96, 128, 192 ]
 <details>
 <summary>Step 4: Comparing the results</summary>
 
-I will now generate a performance report for CLAY EC pool, just like I have done for Jerasure, the results are [here](https://github.com/Jakesquelch/cbt_results/blob/main/22-08-2025_03-48-07_cbt_run_results/performance_report_250822_034811.pdf):
+I will now generate a performance report for CLAY EC pool, just like I have done for Jerasure, the results are [here](https://github.com/Jakesquelch/cbt_results/blob/main/22-08-2025_03-48-07_cbt_run_results/performance_report_250822_034811.pdf).
 
 With CBT, as well as performance reports we can also generate comparison reviews quickly. Now that we have our results for our CLAY and Jerasure test, we can generate a performance report. I will use the following command to do so:  
 
@@ -137,3 +137,38 @@ When we move onto looking at higher block sizes for writes we see that CLAY has 
 Our sequential write benchmarks show that Jerasure delivers more consistent write performance across all block sizes, while CLAY is more volatile, performing better at some smaller sizes but much worse at large sequential writes. This shows CLAY’s design priorities: it is optimised for reduced recovery bandwidth rather than raw write performance.
 
 </details>
+
+<details>
+<summary>Step 5: Running a test with OSD down</summary>
+
+So before was a CLAY and Jerasure EC pool compared with one another. We will now deliberately kill an OSD prior to running the CBT test, to simulate real world failures that could occur, to see how the performance between the two differs when it comes to OSD recovery. 
+
+When you stop an OSD your cluster health status will look like the following:
+
+![alt text](images/cluster_example.png "Cluster example")
+
+As you can see, there are 5 OSDs running out of the 6. You can see that the cluster is serving IO while operating in a degraded mode. This means that the system doesn’t have all the available data and needs to reconstruct the missing pieces on-the-fly. You can see from the above picture, the percentage of data degraded and misplaced within the placement groups.
+
+So the following report shows a CLAY and Jerasure curve and both of these have 1 OSD that has been stopped, I did this so we could focus on the differences between the performance of the two. The report can be found [here](https://github.com/Jakesquelch/cbt_results/blob/main/08-09-2025_clay_jerasure_osd_down_comparison/comparitive_performance_report_250908_105933.pdf).
+
+Reads are relatively tolerant of one OSD down because the missing data can usually be reconstructed efficiently from the parity chunks. The graphs become most varied when we get to the random writes (shown below):
+
+![alt text](images/seq_writes.png "4 Random write curves")
+
+Small random writes amplify the read-modify-write overhead which leads to both CLAY and Jerasure tanking badly at small block sizes.
+
+We can see that when an OSD goes down, the recovery of data hits performance, particularly for write-heavy workloads. I did a comparison report of the two curves above compared to when all OSDs are up [here](https://github.com/Jakesquelch/cbt_results/blob/main/08-09-2025_clay_jerasure_osd_down_up_comparison/comparitive_performance_report_250908_120537.md).
+
+![alt text](images/1024seq.png "1024k sequential write")
+
+A majority of the tests show that Jerasure with all OSDs up is the best for performance across the board. However mixed workloads highlight CLAY’s design edge in larger block workloads, but with one OSD down, small-block mixes still collapse.
+
+![alt text](images/final_4.png "4 Random read/write curves")
+
+</details>
+
+## In Conclusion
+
+In conclusion, with all the OSDs running, CLAY shows some strengths over Jerasure, especially at large block and mixed workloads. But when one OSD is down, it has some poor performance results, for example the small block size random writes where throughput throughput drops by half and latency can triple. CLAY’s repair locality helps for large objects, but it actually suffers worse than Jerasure on small random operations.
+
+I hope this demonstrates the seamless experience of CBT and how it can generate helpful reports and curves that will allow you to analyse cluster setups with ease.
