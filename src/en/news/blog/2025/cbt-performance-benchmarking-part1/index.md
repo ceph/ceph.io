@@ -24,6 +24,9 @@ tags:
 - Simplifying the cluster creation process and having CBT do it  
 - Running a deterministic suite of tests with response curves (throughput vs latency) with a wide variety of workloads  
 - Tooling to generate comparison reports, ability to compare two or more (up to 6) response curve runs and identify differences in performance within the response curve  
+
+Here is an example of what a CBT comparison report would look like: (this will all be explained in more detail later, in **part 3**)
+
 ![alt text](images/cbtrun.png "Example CBT comparison report")
 
 The objective of this blog is to demonstrate how CBT (Ceph Benchmarking Tool) can be used to run tests for Ceph in a deterministic and repeatable manner that can be replicated.  
