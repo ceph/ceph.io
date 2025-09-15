@@ -3,11 +3,16 @@ title: "Google Summer of Code 2025: Ceph Showcase"
 date: 2025-10-08
 end: 2025-10-08
 location: Online
+venue: Online
 image: "/assets/bitmaps/GSoC25.png"
+sponsors:
+  - label:
+    list:
+      - name: 
+        logo: 
 tags:
   - Google Summer of Code
 ---
-
 ## Ceph Community: Google Summer of Code 2025 Intern Showcase
 
 Google Summer of Code (GSoC) is Google's global mentorship program that helps new contributors gain real-world experience in open source software.
@@ -27,7 +32,7 @@ Explore the full list of projects and descriptions below, and be inspired by the
 **Mentee(s):** Parfait Detchenou  
 
 **Description:**  
-`ceph-devstack` is an in-development tool that utilizes rootless Podman containers to deploy a scaled-down Teuthology lab. It has proven useful for testing changes to Teuthology and its related services, allowing us to make changes to components more easily and flexibly without worrying about causing outages.  
+ceph-devstack is an in-development tool that utilizes rootless Podman containers to deploy a scaled-down Teuthology lab. It has proven useful for testing changes to Teuthology and its related services, allowing us to make changes to components more easily and flexibly without worrying about causing outages.  
 
 It had some basic ability to run Ceph tests, and this GSoC project has extended that capability, including enabling support for multiple OSD deployments per test node container with configurable device sizes.
 
@@ -67,4 +72,4 @@ The first step was selecting the right tool, feeding it the AWS S3 OpenAPI spec,
 **Description:**  
 The Ceph Dashboard is Ceph's management and monitoring tool. It's a web application with Angular/Typescript on the frontend and Python on the backend.  
 
-This project focused on improving the usability and workflow of notification management in the Dashboard to enhance user experience for Ceph administrators.  
+This project focused on improving the usability and workflow of notification management in the Dashboard to enhance user experience for Ceph administrators.
