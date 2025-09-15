@@ -1,8 +1,9 @@
 ---
 title: "Google Summer of Code 2025: Ceph Showcase"
 date: 2025-10-08
-location: Online
-categories: community
+end: 2025-10-08
+image: "/assets/bitmaps/GSoC25.png"
+categories: "community"
 tags:
   - Google Summer of Code
 ---
@@ -14,6 +15,8 @@ Google Summer of Code (GSoC) is Google's global mentorship program that helps ne
 This summer, Ceph mentees took on ambitious projects that improved subcomponents like RGW and the Ceph Integration Test Framework, while sharpening their skills in Python, C++, containerization, Dashboard development, and Linux administration. Their work strengthens Ceph for the entire community.
 
 Join us on **October 8 at 10:00 am EDT / 7:00 am PDT** to celebrate their achievements! Each mentee will present their project, share what they learned, and highlight how their contributions make Ceph better.
+
+The event is on the [Ceph Community Calendar](https://calendar.google.com/calendar/embed?src=9ts9c7lt7u1vic2ijvvqqlfpo0%40group.calendar.google.com&ctz=America%2FChicago)
 
 Explore the full list of projects and descriptions below, and be inspired by the next generation of open source contributors.
 
