@@ -3,12 +3,13 @@ title: "Google Summer of Code 2025: Ceph Showcase"
 date: 2025-10-08
 end: 2025-10-08
 image: "/assets/bitmaps/GSoC25.png"
-categories: "community"
+categories:
+  - community
 tags:
   - Google Summer of Code
 ---
 
-## Google Summer of Code 2025: Ceph Showcase 
+## Ceph Community: Google Summer of Code 2025 Intern Showcase
 
 Google Summer of Code (GSoC) is Google's global mentorship program that helps new contributors gain real-world experience in open source software.
 
