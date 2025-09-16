@@ -414,7 +414,7 @@ For further details on the Squid release, check Laura Flores' [blog post](https:
 
 #### Footnote
 
-The atuhors would like to thank IBM for supporting the community by facilitating our time to create these posts.
+The authors would like to thank IBM for supporting the community with our time to create these posts.
 
 
 
