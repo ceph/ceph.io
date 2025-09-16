@@ -1,12 +1,11 @@
 ---
 title: "Google Summer of Code 2025: Ceph Showcase"
 date: 2025-10-08
-end: 2025-10-08
 image: "/assets/bitmaps/GSoC25.png"
 categories:
   - community
 tags:
-  - Google Summer of Code
+  - gsoc
 ---
 
 <p><strong>
