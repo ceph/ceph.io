@@ -8,6 +8,7 @@ categories:
 tags:
   - Google Summer of Code
 ---
+
 <p><strong>
 Ceph Community: Google Summer of Code 2025 Intern Showcase
 </strong></p>
