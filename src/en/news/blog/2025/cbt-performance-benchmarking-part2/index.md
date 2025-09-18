@@ -55,6 +55,9 @@ We configure a **ramp** and a **time** for each test:
 - **Ramp** → warmup period where no data is collected.  
 - **Time** → duration for which each test will run and collect results.  
 
+- It's important to note that the specified amount of time and ramp within librbdfio will apply to all workloads elsewhere specified in the YAML.
+- However, these can be overridden by specifying a time or ramp within a specific workload. You will see an example of this within the precondition section, where time is overridden to 600 (10 minutes).
+
 Example: 
 
 ```yaml
@@ -69,10 +72,11 @@ Example:
 <details>
 <summary>Volume size</summary>
 
-This is the amount of data used to prefill each volume.  
+This is the volume size in Megabytes, specified to FIO on the --size attribute.
 
 - Ideally, this should match the volume size created in **Part 1** when setting up the EC profile.  
-- If this value is lower, then only that amount of data will be written.  
+- If this value is lower than the RBD image size, then only that amount of data specified will be written.  
+- If the value is grater, then only the amount of data equivalent to the RBD image size will be written.
 
 Example:
 
@@ -122,6 +126,8 @@ Example:
         total_iodepth: [ 16 ]
         monitor: False
 ```
+
+- Note here that the time here is overriding the time specified in the librbdfio (global) section of the YAML. Not specifying a time will use the default value spceified in the outer section.
 </details>  
 
 ---
@@ -160,7 +166,24 @@ There are two ways of expressing the queue depth per volume in CBT:
 
 **total_iodepth** will use that `queue depth` across all volumes. For example, if `total_iodepth` is set to 16 and the number of configured volumes is 8, then the `queue depth` per volume will be 2 (16/8). 
 
-Now the reason we use `total_iodepth` over `iodepth` is because we can have a finer grain of control over the `queue depth` across the system. For example, let's say we have a `total_iodepth` of 17 with 8 volumes. Each volume will initially have a `queue depth` of 2 as we go through each volume, but volume 1 will have a `queue depth` of 3, as we have a remainder of 1, whereas all the other volumes will have a `queue depth` of 2. So using `total_iodepth` we can have volumes with different `queue depth` values, whereas using `iodepth` means each volume has the same `queue depth`.
+### The main drawback of iodepth over total_iodepth:
+
+Example: If you have a large number of volumes eg. 32. If you specified:
+```yaml
+  iodepth: [1, 2, 4, 8]
+```
+All 32 volumes will be exercised, and therefore this is equivalent to writing a YAML that does:
+```yaml
+total_iodepth: [32, 64, 128, 256]
+```
+As you can see, your control over the queue depth scales according to the number of volumes you have configured in the YAML.
+
+Now with `total_iodepth`, you can go finer grain than this, like so:
+```yaml
+total_iodepth: [1, 2, 4, 8, 16, 32]
+```
+
+CBT will only use a subset of the volumes if the `total_iodepth` configured is less than the `total_iodepth` in the YAML and where the number of volumes configured does not divide into `total_iodepth` evenly. This means some volumes will have a different `queue depth` than others, but CBT will try to start FIO with an iodepth that is as even as possible over the volumes.
 
 A good way to look at the relationship between these terms if you're struggling, is:
 

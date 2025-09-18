@@ -59,7 +59,7 @@ Therefore you need to consider:
   - Two seamlessly like-for-like systems could produce varying performance results because one drive could have a different generation of Flash memory within it.  
   - So Ideally, to get like for like comparisons, tests need to be run on the same system.  
 
-- The system must be prefilled (if applicable, perhaps not so many for Object/RGW evaluation) and preconditioned in the same way.  
+- The system must be prefilled (if applicable, perhaps not so important for Object/RGW evaluation) and preconditioned in the same way.  
   - Pre-filling involves filling the volume or pool with sequential writes and pre-conditioning is adding random writes to simulate real world testing - since most production systems will have been running for many months/years.  
   - A storage system that is almost empty will perform very differently from one that has a lot of data on it due to metadata access, garbage collection, fragmentation etc.  
 
