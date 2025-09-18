@@ -77,8 +77,6 @@ Example:
 <details>
 <summary>Volume size</summary>
 
-This is the volume size in Megabytes, specified to FIO on the --size attribute.
-
 Storage systems may give different performance depending how full they are, where there are fixed sized caches the cache hit ratio will be higher when testing a smaller quantity of storage, dealing with fragmentation and garbage colleciton takes more time when there is less free capacity.
 Ideally configure the performance test to use over 50% of the physical storage to get measurements representative of real world use.
 
@@ -90,7 +88,7 @@ Example:
 
 ```yaml
   librbdfio:
-    vol_size: 52500
+    vol_size: 52500 #in megabytes
 ```
 </details>
 
