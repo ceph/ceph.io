@@ -84,17 +84,24 @@ As well as the summary above, hockey stick curves plotting the performance for a
 
 ## How do we read the curves generated?
 
-Let’s take this 4K sequential read curve shown above. Each data point on the curve represents a set of measured data: It’s the latency (average response time) over an amount of time where data is being read, at a constant IO load. Latencies include the switch/network overheads, they are times seen by an application on a server. All performance shown in this graph represents steady-state, achievable and repeatable performance (not a “lab special” burst)
+Let’s take this 4K sequential read curve shown above:
 
 We can find out the specified `total iodepths` for this test by checking the yaml file we previously used in this test, and it is also stated within the performance report under the “Configuration yaml” section. For the above example it is: 
 ```yaml
 total_iodepth: [ 2, 4, 8, 12, 16, 24, 32, 64, 96, 128, 192 ] 
 ```
- And each of these total iodepths represent a point on the curve. For example the 6th iodepth point (24) represents where the 6th red vertical line intersects the curve. The vertical red lines represent standard deviations. So we can go into the json to find specifics or we can use the graph. From the graph we know at a total IO depth of 24, there is an average latency of around 0.58ms when the throughput is around 41000IOps.
+ And each of these total iodepths represent a point on the curve. For example the 6th iodepth point (24) represents where the 6th red vertical line intersects the curve. The vertical red lines (error bars) shows the amount of standard deviation/variance in the performance for that specific point in the curve. So we can go into the json to find specifics or we can use the graph. From the graph we know at a total IO depth of 24, there is an average latency of around 0.58ms when the throughput is around 41000IOps.
+
+- For an FIO workload, CBT will start 1 instance of FIO per volume. 
+- It's also to note that the graph produced by reports do not include the results during the "ramp" period.
+
+The post processing tools will sum the IOPs to generate a total IOPs for the response curve and calculate an average latency over all the volumes. The IOPS vs latency is then plotted on the response curve for that point of the curve for that specific iodepth.
+
+ ![alt text](images/read_graphs.png "How to read graphs")
 
  ## What are we looking for in these graphs?
 
- We are looking for a curve that is flat and consistent. We do not want to have a low number of IOPs leading to high latencies, as this will mean performance is bad when there is little demand. We also do not want the latency to spike randomly throughout the graph, this shows inconsistencies. We want clients and users to achieve a consistent latency for the amount of IOPs that they will be reaching. 
+ We are looking for a curve that is flat and consistent. We do not want to have a low number of IOPs leading to high latencies, as this will mean performance is bad when there is little demand. We also do not want the latency to spike randomly throughout the graph, this shows inconsistencies. We can look at the error bars also, and we would want the error bars to have a reasonable amount of variance, nothing too excessive. We want clients and users to achieve a consistent latency for the amount of IOPs that they will be reaching. 
 
 </details>
 
