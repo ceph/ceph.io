@@ -29,11 +29,11 @@ Here is an example of what a CBT comparison report would look like: (this will a
 
 ![alt text](images/cbtrun.png "Example CBT comparison report")
 
-The objective of this blog is to demonstrate how CBT (Ceph Benchmarking Tool) can be used to run tests for Ceph in a deterministic and repeatable manner that can be replicated.  
+The objective of this blog is to demonstrate how CBT (Ceph Benchmarking Tool) can be used to run tests for Ceph in a deterministic manner.  
 
 The goal of this 4 part blog is to demonstrate how to set up a Ceph cluster for use with CBT to make your life simpler by automating a lot of the manual effort that is required to set up a performance test.  
 
-It is important to note for the purpose of this example we are using an erasure coded pool setup.  
+For a real life example this blog will try and answer the quesiton "Does using the CLAY erasure code plugin give better performance than using the default JErasure or ISA-L plugins?" showing how CBT can be used to conduct a set of experiments and produce reports to answer this question.
 
 I hope you find this tutorial simple to understand and you will get to learn the benefits of using CBT to make your performance benchmarking a whole lot easier.  
 
@@ -79,7 +79,10 @@ This could be down to something as minimal as workload ordering, this can have a
 
 The objective of evaluating performance should be to obtain accurate benchmarks for different ceph clusters with varying configurations.  
 
-It should be done in a deterministic and repeatable way, if done correctly, the amount of manual effort needed to regression test performance will be significantly reduced.  
+If the same performance test is repeated on the same system we want to be able to measure the same results (or with a little variance between runs as possible). This predicability is important if we are going to try and compare different configurations to see which is better.
+
+Ideally we also want to be able to come back and run the same test 6 months later on the same system and get the same results. This is harder because things can change over time. Ideally if someone configures an equivalent system to the one the performance test was run on we would like to get the same results.
+If done correctly, the amount of manual effort needed to regression test performance will be significantly reduced. 
 
 Creating results that can be shared within the community and compared to others would be ideal.  
 

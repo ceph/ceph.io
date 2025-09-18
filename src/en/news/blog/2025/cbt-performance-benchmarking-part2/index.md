@@ -55,6 +55,11 @@ We configure a **ramp** and a **time** for each test:
 - **Ramp** → warmup period where no data is collected.  
 - **Time** → duration for which each test will run and collect results.  
 
+The `ramp` time ensures that the I/O test gets into a steady state before the I/O measurement starts, it is quite common that write caches give unrealistically high performance at the start of the test while the cache fills up and that read caches give slightly lower performance at the start of the test while they are filled. Caches may be implemented in the drives or in the software.
+
+A very short `duration` test will get performance measurements quicker but might not reflect the performance you will see in real use. Reasons for this include background processes that periodically perform work to clean up and issues such as fragmentation that typically become worse the longer the test is run for.
+If running a performance run multiple times gives different results then it is possible that the test duration is too short.
+
 - It's important to note that the specified amount of time and ramp within librbdfio will apply to all workloads elsewhere specified in the YAML.
 - However, these can be overridden by specifying a time or ramp within a specific workload. You will see an example of this within the precondition section, where time is overridden to 600 (10 minutes).
 
@@ -62,8 +67,8 @@ Example:
 
 ```yaml
   librbdfio:
-    time: 90
-    ramp: 30
+    time: 90 #in seconds
+    ramp: 30 #in seconds
 ```
 </details>
 
@@ -72,7 +77,8 @@ Example:
 <details>
 <summary>Volume size</summary>
 
-This is the volume size in Megabytes, specified to FIO on the --size attribute.
+Storage systems may give different performance depending how full they are, where there are fixed sized caches the cache hit ratio will be higher when testing a smaller quantity of storage, dealing with fragmentation and garbage colleciton takes more time when there is less free capacity.
+Ideally configure the performance test to use over 50% of the physical storage to get measurements representative of real world use.
 
 - Ideally, this should match the volume size created in **Part 1** when setting up the EC profile.  
 - If this value is lower than the RBD image size, then only that amount of data specified will be written.  
@@ -82,7 +88,7 @@ Example:
 
 ```yaml
   librbdfio:
-    vol_size: 52500
+    vol_size: 52500 #in megabytes
 ```
 </details>
 
