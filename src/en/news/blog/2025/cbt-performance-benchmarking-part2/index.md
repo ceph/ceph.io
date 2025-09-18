@@ -168,7 +168,7 @@ There are two ways of expressing the queue depth per volume in CBT:
 
 ### The main drawback of iodepth over total_iodepth:
 
-Example: If you have a large number of volumes eg. 32. If you specified
+Example: If you have a large number of volumes eg. 32. If you specified:
 ```yaml
   iodepth: [1, 2, 4, 8]
 ```
@@ -178,12 +178,12 @@ total_iodepth: [32, 64, 128, 256]
 ```
 As you can see, your control over the queue depth scales according to the number of volumes you have configured in the YAML.
 
-Now with total_iodepth, you can go finer grain than this:
+Now with `total_iodepth`, you can go finer grain than this, like so:
 ```yaml
 total_iodepth: [1, 2, 4, 8, 16, 32]
 ```
 
-CBT will only use a subset of the volumes if the total_iodepth configured is less than the total_iodepth in the YAML and where the number of volumes configured does not divide into total_iodepth evenly. This means some volumes will have different queue depth than others, but CBT will try to start FIO with an iodepth that is as even as possible over the volumes.
+CBT will only use a subset of the volumes if the `total_iodepth` configured is less than the `total_iodepth` in the YAML and where the number of volumes configured does not divide into `total_iodepth` evenly. This means some volumes will have a different `queue depth` than others, but CBT will try to start FIO with an iodepth that is as even as possible over the volumes.
 
 A good way to look at the relationship between these terms if you're struggling, is:
 
