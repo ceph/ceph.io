@@ -33,7 +33,7 @@ The objective of this blog is to demonstrate how CBT (Ceph Benchmarking Tool) ca
 
 The goal of this 4 part blog is to demonstrate how to set up a Ceph cluster for use with CBT to make your life simpler by automating a lot of the manual effort that is required to set up a performance test.  
 
-For a real life example this blog will try and answer the quesiton "Does using the CLAY erasure code plugin give better performance than using the default JErasure or ISA-L plugins?" showing how CBT can be used to conduct a set of experiments and produce reports to answer this question.
+For a real life example this blog will try and answer the quesiton "Does using the CLAY erasure code plugin give better performance than using the default JErasure plugin?" showing how CBT can be used to conduct a set of experiments and produce reports to answer this question.
 
 I hope you find this tutorial simple to understand and you will get to learn the benefits of using CBT to make your performance benchmarking a whole lot easier.  
 
