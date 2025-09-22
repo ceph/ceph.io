@@ -20,7 +20,7 @@ Cephalocon is the premier yearly event that brings together the global
 community of operators, developers, and researchers for Ceph, the open source
 distributed storage system.
 
-Registration is LIVE!!
+<a class="button" href="https://events.linuxfoundation.org/cephalocon/register/">Register Now!</a>
 
 For more information and all details on the event: 
 
