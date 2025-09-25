@@ -29,10 +29,10 @@
   stroke: var(--color-facebook-blue);
 }
 
-.social-shares__twitter:hover svg g {
+.social-shares__X:hover svg g {
   fill: var(--color-twitter-blue);
 }
 
-.social-shares__twitter:hover svg circle {
+.social-shares__X:hover svg circle {
   stroke: var(--color-twitter-blue);
 }
