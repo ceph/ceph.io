@@ -14,7 +14,7 @@ I'm thrilled to be back at [Cephalocon](https://events.linuxfoundation.org/cepha
 The 2024 conference was packed with great sessions: Jane Zhu's (Bloomberg) crucial work on multi-site S3 synchronization and the great talks by Sungjoon Koh & Ilsoo Byun (LINE Plus Corp) on RocksDB, and Michaela Lang (Red Hat) & Daniel Parkes (IBM) on RGW Ingress Strategies. The "State of CephFS" talk by Patrick Donnelly & Venky Shankar and the interactive session with the CERN team were also highlights, perfectly showcasing the expertise of these pioneers and contributors.
 
 </br>
-<img align="center" width="500" height="400" src="images/all-ambassadors.jpg">
+<img align="center" width="832" height="473" src="images/all-ambassadors.jpg">
 </br>
 
 I'm most looking forward to this year's presentations! Specifically, Mark Nelson's talk on Bluestore fragmentation is critical for anyone managing large-scale NVMe deployments. Sam Just's on new Multi-Step Retry CRUSH algorithm, Yehuda Sadeh Weinraub's on S3 bucket snapshots, Venky Shankar's 'Smoother CephFS Experience', and Dan Van der Ster's on data durability. This year's program is just as thrilling as ever!
