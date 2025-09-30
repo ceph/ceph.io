@@ -31,6 +31,6 @@ The second day will focus on further promote Ceph learning.
 
 You can view the event schedule and venue details on the registration page. <a class="button" href="https://luma.com/217aro8t">Register Here!</a>
 
-<a class="button" href="https://forms.gle/FF4FdU1pzD51vhZ26">Apply to be a Presenter!</a>
+**Event schedule coming soon!**
 
 <br />
