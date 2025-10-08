@@ -267,7 +267,7 @@ Object Gateway (RGW) performance across small and large object workloads. We’l
 also begin analyzing the optimal Ceph Object Gateway-to-CPU ratio as we delve
 deeper into real-world benchmarking results.
 
-Read Part 3 [here](https://ceph.io/en/community/events/2025/benchmarking-object-part3/)
+Read Part 3 [here](https://ceph.io/en/news/blog/2025/benchmarking-object-part3/)
 
 
 The authors would like to thank IBM for supporting the community with our time to create these posts.

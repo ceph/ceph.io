@@ -204,6 +204,6 @@ drawn directly from production-grade testing. Whether you’re building secure
 object storage for AI pipelines, backups, or multi-tenant cloud services, stay
 tuned, there’s much more to uncover.
 
-Read Part 2 [here](https://ceph.io/en/community/events/2025/benchmarking-object-part2/).
+Read Part 2 [here](https://ceph.io/en/news/blog/2025/benchmarking-object-part2/).
 
 The authors would like to thank IBM for supporting the community with our time to create these posts.
