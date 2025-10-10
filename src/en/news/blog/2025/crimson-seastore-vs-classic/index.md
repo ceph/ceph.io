@@ -115,7 +115,7 @@ respectively.
 Latency](images/seastore_vs_classic_rc_randwrite_iops_vs_lat.png)
 
 There is clear opportunity to improve the performance of Seastore for this
-workload. This is a very active area of work, led by Samuel Just, in a number
+workload. This is a very active area of work, led by Samuel Just, involving a number
 of optimisations for Seastore. 
 
 <details>
