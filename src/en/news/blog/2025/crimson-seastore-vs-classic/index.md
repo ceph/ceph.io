@@ -15,8 +15,7 @@ We are very excited to present the performance comparison between the Classic
 OSD and Seastore, the native object storage engine in
 [Crimson](https://ceph.io/en/news/crimson/) OSD.
 
-We show that Seastore has better performance than Classic OSD for random read
-4k, and the same performance for the sequential workloads read and write 64k.
+We show that Seastore performs better than the Classic OSD for 4K random reads, and has the same performance for sequential 64K read and write workloads.
 Only the random write 4k shows a slightly lower performance for Seastore, for
 which we are actively working on optimisations, in an effort lead by Samuel Just.
 
