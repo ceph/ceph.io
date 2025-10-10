@@ -258,7 +258,7 @@ than Classic, and hence can be considered the same.
 ## Conclusions
 
 In this blog entry, we have shown the performance  of Seastore OSD vs the
-Classic OSD. This shows that Seastore has better performance for
+Classic OSD. The results show that Seastore has better performance for
 random read 4k, and the same performance for the sequential workloads read and
 write 64k. Only the random write 4k shows a lower performance for
 Seastore, for which we are actively working on optimisations. We will continue
