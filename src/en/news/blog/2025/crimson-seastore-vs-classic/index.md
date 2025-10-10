@@ -21,7 +21,7 @@ which we are actively working on optimisations, in an effort lead by Samuel Just
 
 These results remain consistent and there is no regression in terms of the
 performance of Seastore with respect to the results shown from build 6aab5c07ae (May
-2025, internal technical report and available in the Crimson slack channel).
+2025, internal technical report and available in the [Crimson slack channel](https://ceph-storage.slack.com/archives/C05N7Q52DTL)).
 
 In a nutshell, here are the key points about the comparison:
 
