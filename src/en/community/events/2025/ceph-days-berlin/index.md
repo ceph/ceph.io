@@ -48,6 +48,7 @@ Ansgar Jazdzewski from Hetzner Cloud will host an additional session for attende
 ### Location: Seminar Room 3
 
 <table>
+  <thead>
     <tr>
       <th>Start</th>
       <th>Session Title</th>
@@ -213,6 +214,7 @@ Ansgar Jazdzewski from Hetzner Cloud will host an additional session for attende
       <td></td>
       <td></td>
     </tr>
+  </tbody>
 </table>
 
 ---
@@ -390,6 +392,7 @@ Croit GmbH"
       <td>DESY, Hetzner Cloud & CLYSO</td>
       <td></td>
     </tr>
+  </tbody>
 </table>
 
 
