@@ -19,7 +19,7 @@ tags:
 
 ## Introduction  
 
-Now that we have created our erasure coded (EC) cluster (from **Part 1**) and defined our YAML file and workloads (from **Part 2**), we can finally start a CBT run and analyse the performance results.  
+Now that we have created our erasure coded (EC) cluster (from **Part 1**) and defined our YAML file and workloads (from **Part 2**), we can now start a CBT run and analyse the performance results.  
 
 This part will cover:  
 
@@ -53,17 +53,17 @@ You will specify the location of your `cbt.py` file. Provide an archive folder w
 
 Once you have ran the performance test your output files will be located wherever you specified them to go. For me, the previous command referenced `/tmp/cbt` so my results are within there. 
 
-- I now copy these files to a new directory I would like them to be within, `my_test` in this case, so I would do this for example:
+- I now copy these files to a new directory I would like them to be within, `my_test` in this case, I do this because I like to keep a directory of all my test results, and I delete `/tmp/cbt` before each run, so that is not a suitable palce. So I would do this for example:
 ```bash
 cp -r /tmp/cbt/* /perftests/my_test
 ```
 
-- Finally, it is a case of generating the performance report, which can be done by the following command for myself in this example:
+- Next, it is a case of generating the performance report, which can be done by the following command for myself in this example:
 ```bash
 PYTHONPATH=/cbt/ /cbt/tools/generate_performance_report.py --archive /perftests/my_test --output_directory /perftests/my_test_results --create_pdf
 ```
 
-Above I am referencing the location of cbt.py again at the start, I then reference the script that will generate the performance report. I state the directory, `my_test` in this case, that has the results from the performance run, and also state a desired `output-directory`, this is where the pdf for the performance report will be. You can then upload this performance report pdf onto github if you would like.
+Above I am referencing the location of cbt.py again at the start, I then reference the script that will generate the performance report (generate_performance_report.py). I state the directory, `my_test` in this case, that has the results from the performance run, and also state a desired `output-directory`, this is where the pdf for the performance report will be. Side note, you do not need to already have created the `my_test_results` directory you can see in the command above, this will be automatically done for you. You will now have a pdf file inside this new `my_test_results` folder along with a few other files, you can upload these files to GitHub if you'd like to store/view them somewhere.
 
 </details>
 
@@ -72,7 +72,13 @@ Above I am referencing the location of cbt.py again at the start, I then referen
 <details>
 <summary>Step 3: Analysing the results</summary>
 
-I generated a performance report for a Jerasure plugin EC pool, the results can be found [here](https://github.com/Jakesquelch/cbt_results/blob/main/20aug_jerasure_full_results/performance_report_250820_091150.pdf): 
+So going back to my example CBT test run and the question we started with: "Does using the CLAY erasure code plugin give better performance than using the default JErasure plugin?" 
+
+I generated a performance report for a JErasure plugin EC pool, the results can be found [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/24th_Sep_Jerasure_4%2B2_results/performance_report_250924_094912.pdf), go ahead and view the results if you wish to.
+
+I then generated a performance report for the CLAY plugin [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/13th_Oct_Clay_4%2B2%2B5_results/performance_report_251013_094658.pdf). 
+
+Now I could take a look at each individual report, however I'm interested in how Jerasure and CLAY compare with one another. So I generated a comparison report between the above two runs, that can be found [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/Jerasure_Vs_Clay_comparison/comparitive_performance_report_251015_142011.pdf). 
 
 The generated report includes a summary of the results, showing maximum throughput and latency for many different workloads:
 
