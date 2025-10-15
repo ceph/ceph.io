@@ -42,7 +42,30 @@ Ansgar Jazdzewski from Hetzner Cloud will host an additional session for attende
 - **Registration Contacts**: [kristina.seel@clyso.com](mailto:kristina.seel@clyso.com), [roberto.vanoni@clyso.com](mailto:roberto.vanoni@clyso.com)
 
 
-## Event Schedule
+<style>
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  vertical-align: top;
+  text-align: left;
+}
+th {
+  background-color: #f8f8f8;
+  font-weight: bold;
+}
+td {
+  white-space: normal;
+}
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+</style>
 
 ### Day 1 — November 12, 2025
 ### Location: Seminar Room 3
@@ -50,13 +73,15 @@ Ansgar Jazdzewski from Hetzner Cloud will host an additional session for attende
 <table>
   <thead>
     <tr>
-      <th>Start</th>
-      <th>Session Title</th>
-      <th>Abstract</th>
-      <th>Skill Level</th>
-      <th>Speaker(s)</th>
-      <th>Speaker Bio</th>
+      <th style="width: 6%;">Start</th>
+      <th style="width: 18%;">Session Title</th>
+      <th style="width: 30%;">Abstract</th>
+      <th style="width: 10%;">Skill Level</th>
+      <th style="width: 15%;">Speaker(s)</th>
+      <th style="width: 21%;">Speaker Bio</th>
     </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>09:00</td>
       <td><strong>Registration &amp; Welcome Coffee</strong></td>
@@ -394,6 +419,4 @@ Croit GmbH"
     </tr>
   </tbody>
 </table>
-
-
 
