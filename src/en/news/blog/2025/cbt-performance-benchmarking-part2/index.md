@@ -204,6 +204,7 @@ We have lots of different levels of IOs for our writes and reads within the yaml
    - **Larger IOs** are more likely to suffer from network and device storage bottlenecks (this is why the x axis turns to Bandwidth for the larger IO sizes)
 
 ---
+Here is an example of a full YAML file, containing the components mentioned above:
 
 <details>
 <summary>Example YAML file</summary> 
