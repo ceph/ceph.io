@@ -157,12 +157,21 @@ Our sequential write benchmark show that Jerasure delivers more consistent write
 
 So before was a CLAY and Jerasure EC pool compared with one another. The results solidified our hypothesis that Jerasure would likely perform better because of the more complex computations used to recover data. So now we will do an additional run and deliberately kill an OSD prior to running the CBT test, to simulate real world failures that could occur, to see how the performance between the two differs when it comes to OSD recovery. 
 
-
-
-
-
-
 So the following comparison report shows a CLAY and Jerasure curve where both of the plugins have 1 OSD that has been stopped, I did this so we could focus on the differences between the performance of the two. The report can be found [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/Jerasure_Vs_Clay_down_comparison/comparitive_performance_report_251015_154505.pdf).
+
+We will now take a look at 1024k Sequential read from the above comparison report: 
+
+![alt text](images/down_1024_seq_read.png "1024k sequential read")
+
+Now we expect CLAY to have better performance here due to it's supposedly more efficient data recovery. However this is not the case as shown by the diagram above. The above CLAY plugin has a 4k chunk size and therefore the subchunk that CLAY is using is 512 bytes. This could mean that CLAY is actually still reading all of the data and therefore not recovering data more efficiently, therefore Jerasure appears to perform better. We will test this hypothesis now by changing the chunk size and analysing the sub chunk to see if this improves performance.
+
+
+
+
+
+
+
+
 
 Reads are relatively tolerant of one OSD down because the missing data can usually be reconstructed efficiently from the parity chunks. The graphs become most varied when we get to the random writes (shown below):
 
