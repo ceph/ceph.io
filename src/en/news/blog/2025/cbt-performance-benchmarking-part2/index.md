@@ -198,10 +198,18 @@ A good way to look at the relationship between these terms if you're struggling,
 
 ## Why do we have lots of different IO values in the yaml?
 
-We have lots of different levels of IOs for our writes and reads within the yaml because we want to get test results for all the different scenarios that happen in the real world. Also to test the different bottlenecks that could be holding back the ceph cluster. Different scenarios could include a bank returning a single customer's payment to them, this would be a `random read`. On the other hand netflix streaming involves `sequential reading` of data and displaying that. 
+We have lots of different levels of IOs for our writes and reads within the yaml because we want to get test results for all the different scenarios that happen in the real world. Also to test the different bottlenecks that could be holding back the ceph cluster. 
 - In terms of bottlenecks:
    - **Short IOs** will usually have a CPU bottleneck (this is why the x axis is IOPs for small IOs)
    - **Larger IOs** are more likely to suffer from network and device storage bottlenecks (this is why the x axis turns to Bandwidth for the larger IO sizes)
+
+- In terms of real world scenarios:
+   - A database, or more generally **OLTP** (Online Transaction Processing) running on block or file storage generally issues small **random read** and **write** I/Os. Often there is a higher percentage of read I/Os to write I/Os so this might be represented by a 70% read, 30% overwrite 4K I/O workload.
+   - An application creating a backup is likely to make larger **read** and **write** I/Os and these are likely to be fairly sequential. If the backup is being written to other storage then the I/O workload will be 100% sequentail reads, if the backup is being read from elsewhere and written to the storage the I/O workload will be 100% sequential writes.
+   - A traditional S3 object store contains large objects that are **read** and **written sequentially**. S3 objects are not overwritten so the I/O workload would be a mixture of large sequential reads and writes. While the S3 object may be GB in size, RGW will typically split the S3 object into 4MB chunks.
+   - S3 object stores can be used to store small objects as well, and some applications store indexes and tables within objects and make **short random** accesses to data within the object. These applications may generate I/O workloads where the reads are more similar to OLTP workloads.
+   - A storage cluster is likely to be used by more than one application, each with its own I/O workload. The I/O workload to the cluster can consequently become quite complicated.
+Measuring the performance for I/O workloads with just one type of I/O is a good way of characterising the performance. This data can then be used to predict the performance of more complex I/O workloads with a mixture of I/O types in different ratios by calculating a harmonic mean. 
 
 ---
 Here is an example of a full YAML file, containing the components mentioned above:
