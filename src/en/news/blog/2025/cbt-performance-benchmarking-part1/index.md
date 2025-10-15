@@ -257,4 +257,6 @@ My EC (Erasure Coding) setup is as follows:
 Now we have set up and configured an erasure coded ceph cluster!
 </details>
 
+---
+
 Now move onto part 2 of the blog if you so wish, where you can take a look at defining a YAML file that will outline the workloads (tests) that you will be running on your ceph cluster!
