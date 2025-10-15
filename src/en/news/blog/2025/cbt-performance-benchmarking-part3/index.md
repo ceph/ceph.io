@@ -134,15 +134,15 @@ Using the above command I generated a comparison report between the above two ru
 
 Jerasure is a generic reed-solomon erasure coding library, it is matrix-based, not CPU-optimised. It is fairly balanced between read and write. CLAY is designed for faster recovery at the cost of more complicated write paths. So we are expecting to see better performance from CLAY potentially when it comes to smaller IO sizes, but as the writes get bigger we may see a decline in performance from CLAY leading to better Jerasure results. Furthermore in terms of reads we expect fairly similar results across the board as they are implemented very similar, the main difference is when it comes to writes.
 
-So now I will analyse the results from this comparison report. Firstly I will take a look at a 1024k **sequential read**:
+So now I will analyse the results from this comparison report. Firstly I will take a look at a **1024k sequential read**:
 
 ![alt text](images/1024k_seq_read.png "1024k Sequential Read curve")
 
-As shown by the diagram, the orange line is our CLAY EC pool, and the blue curve is our Jerasure EC pool. Now as you can see the difference between the two curves really isn’t anything too substantial, they follow very similar paths, and that was expected. The curves are very similar too for larger block sizes eg 1M. This is because for a normal read, ceph only needs to fetch data chunks (not parity chunks). Both Jerasure and CLAY are basically just returning the stored object, there is no real difference unless a failure occurs.
+As shown by the diagram, the orange curve is our CLAY EC pool, and the blue curve is our Jerasure EC pool. Now as you can see the difference between the two curves really isn’t anything too substantial, they follow very similar paths, and that was expected. This is because for a normal read, ceph only needs to fetch data chunks (not parity chunks). Both Jerasure and CLAY are basically just returning the stored object, there is no real difference unless a failure occurs.
 
-However when we take a look at **sequential writes** it gets more interesting:
+Now lets look at the **1024k sequential write** it gets more interesting:
 
-![alt text](images/4_more_graphs.png "4 Sequential Write curves")
+![alt text](images/1024k_seq_write.png "1024k Sequential Write curve")
 
 We can see for the writes that at a low block size of 4K-16K, both CLAY and Jerasure are suffering from reading, modifying and then writing the data out again. At 16k CLAY actually appears to perform better, this could be because its layered encoding handles stripe alignment more efficiently once the block size grows slightly.
 
