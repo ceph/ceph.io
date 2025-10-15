@@ -140,17 +140,13 @@ So now I will analyse the results from this comparison report. Firstly I will ta
 
 As shown by the diagram, the orange curve is our CLAY EC pool, and the blue curve is our Jerasure EC pool. Now as you can see the difference between the two curves really isn’t anything too substantial, they follow very similar paths, and that was expected. This is because for a normal read, ceph only needs to fetch data chunks (not parity chunks). Both Jerasure and CLAY are basically just returning the stored object, there is no real difference unless a failure occurs.
 
-Now lets look at the **1024k sequential write** it gets more interesting:
+Now lets look at the **1024k sequential write**:
 
 ![alt text](images/1024k_seq_write.png "1024k Sequential Write curve")
 
-We can see for the writes that at a low block size of 4K-16K, both CLAY and Jerasure are suffering from reading, modifying and then writing the data out again. At 16k CLAY actually appears to perform better, this could be because its layered encoding handles stripe alignment more efficiently once the block size grows slightly.
+Looking at the graph above writes we see that CLAY has 20-60% higher latency, with throughput dropping compared to Jerasure. This is likely due to extra CPU and network demands in CLAY. Larger writes mean bigger encoding matrices/layers, and CLAY has more complexity per write than Jerasure, laeding to the higher latency.
 
-![alt text](images/final_2_graphs.png "4 Sequential Write curves")
-
-When we move onto looking at higher block sizes for writes we see that CLAY has 20-60% higher latency at 1MB, with throughput dropping significantly. This is likely due to extra CPU and network demands in CLAY. Larger writes mean bigger encoding matrices/layers, and CLAY has more complexity per write than Jerasure.
-
-Our sequential write benchmarks show that Jerasure delivers more consistent write performance across all block sizes, while CLAY is more volatile, performing better at some smaller sizes but much worse at large sequential writes. This shows CLAY’s design priorities: it is optimised for reduced recovery bandwidth rather than raw write performance.
+Our sequential write benchmark show that Jerasure delivers more consistent write performance across all block sizes, while CLAY is more volatile, performing better at some smaller sizes but much worse at large sequential writes. This shows CLAY’s design priorities: it is optimised for reduced recovery bandwidth rather than raw write performance.
 
 </details>
 
@@ -159,15 +155,14 @@ Our sequential write benchmarks show that Jerasure delivers more consistent writ
 <details>
 <summary>Step 5: Running a test with OSD down</summary>
 
-So before was a CLAY and Jerasure EC pool compared with one another. We will now deliberately kill an OSD prior to running the CBT test, to simulate real world failures that could occur, to see how the performance between the two differs when it comes to OSD recovery. 
+So before was a CLAY and Jerasure EC pool compared with one another. The results solidified our hypothesis that Jerasure would likely perform better because of the more complex computations used to recover data. So now we will do an additional run and deliberately kill an OSD prior to running the CBT test, to simulate real world failures that could occur, to see how the performance between the two differs when it comes to OSD recovery. 
 
-When you stop an OSD your cluster health status will look like the following:
 
-![alt text](images/cluster_example.png "Cluster example")
 
-As you can see, there are 5 OSDs running out of the 6. You can see that the cluster is serving IO while operating in a degraded mode. This means that the system doesn’t have all the available data and needs to reconstruct the missing pieces on-the-fly. You can see from the above picture, the percentage of data degraded and misplaced within the placement groups.
 
-So the following report shows a CLAY and Jerasure curve and both of these have 1 OSD that has been stopped, I did this so we could focus on the differences between the performance of the two. The report can be found [here](https://github.com/Jakesquelch/cbt_results/blob/main/08-09-2025_clay_jerasure_osd_down_comparison/comparitive_performance_report_250908_105933.pdf).
+
+
+So the following comparison report shows a CLAY and Jerasure curve where both of the plugins have 1 OSD that has been stopped, I did this so we could focus on the differences between the performance of the two. The report can be found [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/Jerasure_Vs_Clay_down_comparison/comparitive_performance_report_251015_154505.pdf).
 
 Reads are relatively tolerant of one OSD down because the missing data can usually be reconstructed efficiently from the parity chunks. The graphs become most varied when we get to the random writes (shown below):
 
