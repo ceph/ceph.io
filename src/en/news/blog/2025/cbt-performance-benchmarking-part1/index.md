@@ -23,17 +23,17 @@ tags:
 
 - Simplifying the cluster creation process and having CBT do it  
 - Running a deterministic suite of tests with response curves (throughput vs latency) with a wide variety of workloads  
-- Tooling to generate comparison reports, ability to compare two or more (up to 6) response curve runs and identify differences in performance within the response curve  
+- Tooling to performance reports and comparison reports, ability to compare two or more (up to 6) response curve runs and identify differences in performance within the response curve  
 
 Here is an example of what a CBT comparison report would look like: (this will all be explained in more detail later, in **part 3**)
 
-![alt text](images/cbtrun.png "Example CBT comparison report")
+![alt text](images/cbt_example_results.png "Example CBT comparison report")
 
 The objective of this blog is to demonstrate how CBT (Ceph Benchmarking Tool) can be used to run tests for Ceph in a deterministic manner.  
 
 The goal of this 4 part blog is to demonstrate how to set up a Ceph cluster for use with CBT to make your life simpler by automating a lot of the manual effort that is required to set up a performance test.  
 
-For a real life example this blog will try and answer the quesiton "Does using the CLAY erasure code plugin give better performance than using the default JErasure plugin?" showing how CBT can be used to conduct a set of experiments and produce reports to answer this question.
+For a real life example, this blog will try and answer the quesiton "Does using the CLAY erasure code plugin give better performance than using the default JErasure plugin?" showing how CBT can be used to conduct a set of experiments and produce reports to answer this question.
 
 I hope you find this tutorial simple to understand and you will get to learn the benefits of using CBT to make your performance benchmarking a whole lot easier.  
 
@@ -51,7 +51,7 @@ There are several aspects to consider when evaluating performance, the main aspe
 - The effect of additional network bandwidth  
 - The effect of upgrading CPU in a Ceph Node  
 
-Therefore you need to consider:  
+**Therefore you need to consider:**
 
 - The results generated must be compared against a like-for-like system with the test repeated in the same way as the original results.  
   - This includes the **same** cpu, number of OSDs, drive type, number of RBD volumes, Ceph nodes, ethernet port/type.  
@@ -66,7 +66,7 @@ Therefore you need to consider:
 - Same workload amount, e.g. 1M, 4k, 8k, 64k etc. And this has to be with the same sequential/random method.  
 
 - There is always going to be some element of variance in the results, even if everything is done like for like.  
-This could be down to something as minimal as workload ordering, this can have an effect on performance of later workloads. For example if you sequentially write then read, that will have significantly better performance than if you were to randomly write then sequentially read.
+This could be down to something as minimal as workload ordering, this can have an effect on performance of later workloads. For example, if you sequentially write then read, that will have significantly better performance than if you were to randomly write then sequentially read.
   - So if the test results in a pass, fail, you need to allow for variance, typically 10% is probably acceptable if you are just looking at the average performance during the duration of the time.  
   - The shorter the run time, the greater the degree of variance.  
   - Also to help minimise variance it’s important to pick an appropriate run time for each test, 5 minutes is usually a good amount.  
@@ -79,16 +79,12 @@ This could be down to something as minimal as workload ordering, this can have a
 
 The objective of evaluating performance should be to obtain accurate benchmarks for different ceph clusters with varying configurations.  
 
-If the same performance test is repeated on the same system we want to be able to measure the same results (or with a little variance between runs as possible). This predicability is important if we are going to try and compare different configurations to see which is better.
+If the same performance test is repeated on the same system we want to be able to measure the same results (or with as little variance between runs as possible). This predictability is important if we are going to try and compare different configurations to see which is better.
 
-Ideally we also want to be able to come back and run the same test 6 months later on the same system and get the same results. This is harder because things can change over time. Ideally if someone configures an equivalent system to the one the performance test was run on we would like to get the same results.
+Ideally we also want to be able to come back and run the same test 6 months later, on the same system, and get the same results. This is harder because things can change over time. Ideally, if someone configures an equivalent system to the one the performance test was run on we would like to get the same results.
 If done correctly, the amount of manual effort needed to regression test performance will be significantly reduced. 
 
-Creating results that can be shared within the community and compared to others would be ideal.  
-
-This can lead to findings and optimisations to be made within the way data is stored, for example reading or writing data with specific configurations for different purposes.  
-
-As well as experimenting and accurately understanding the flaws and benefits of different plugins, volume sizes, OSD configurations, etc.  
+Creating results that can be shared within the community and compared to others would be ideal. This can lead to findings and optimisations to be made within the way data is stored, for example reading or writing data with specific configurations for different purposes. As well as experimenting and accurately understanding the flaws and benefits of different plugins, volume sizes, OSD configurations, etc.  
 
 Ultimately, we would like the community to use CBT and start sharing the performance data generated by CBT, this will enable simpler client sizing of Ceph systems for all by using pre-generated sizing data.  
 
@@ -96,9 +92,9 @@ Ultimately, we would like the community to use CBT and start sharing the perform
 
 ## Starting up a ceph cluster for a performance run  
 
-For these blogs we will be focusing on using **Cephadm** to start our ceph clusters, though `vstart` or by hand are also feasible options.  
+For these blogs we will be focusing on using `Cephadm` to start our ceph clusters, though `vstart` or by hand are also feasible options.  
 
-This section will describe the basic steps to get a ceph cluster up and running, ready for a performance run.  
+This section will describe the basic steps to get a ceph cluster up and running, ready to start a performance run.  
 
 ---
 <details>
@@ -119,11 +115,11 @@ We will want to ssh into our machine that we will be using.
 
 When we create a cluster using cephadm and run a CBT test, log files will be created in specified locations.  
 
-So if you have done a test before and know there will be old log files at a location, begin by deleting them, if you have never done a CBT run before, you can move onto step 3.  
+So if you have done a test before and know there will be old log files at a specific location, begin by deleting them, if you have never done a CBT run before, you can move onto `Step 3: Building a container`.  
 
-Next I will remove a previous cluster if I had one running, so that I am starting from a clean slate.  
+Now I will remove a previous cluster that I had running, so that I am starting from a clean slate.  
 
-There are 2 areas that you will have to delete to complete this step:  
+There are 2 areas you will have to delete to complete this step:  
 
 1. Wherever the `tmp_dir` line within your yaml file points to:  
 
@@ -133,9 +129,9 @@ There are 2 areas that you will have to delete to complete this step:
 2. The -a argument when you run a performance run: 
 
    ```bash
-   -a /tmp/cbt (example)
+   -a /tmp/cbt
    ```
-So before my CBT run I will always make sure to 
+As you can see, both my YAML and argument point to the same directory, so before my CBT run I will always make sure to:
 
    ```bash
    rm -rf /tmp/cbt/*
@@ -146,7 +142,7 @@ So before my CBT run I will always make sure to
 <details>
 <summary>Step 3: Building a container</summary>
 
-Next we will have to get a build container that we are going to use to construct our ceph cluster. You can obtain this container id from [Builds ceph](https://shaman.ceph.com/builds/ceph). Click on your desired build and then copy the sha1, this is also known as container id. The build I’m using can be seen within the system setup section previously. 
+Next we will have to get a build container that we are going to use to construct our ceph cluster. You can obtain this container id from [Builds ceph](https://shaman.ceph.com/builds/ceph). Click on your desired build and then copy the **sha1**, this is also known as the **container id**. The build I’m using can be seen within the `Step 1: Setup` section previously. 
 
 - We will now pull down the desired build container using podman 
 
@@ -156,6 +152,7 @@ Next we will have to get a build container that we are going to use to construct
   ```bash
   podman pull quay.ceph.io/ceph-ci/ceph:<sha1>
   ```
+  Make sure to paste your specific **sha1** into the above command!
 </details>
 </details>
 
@@ -163,7 +160,7 @@ Next we will have to get a build container that we are going to use to construct
 <details>
 <summary>Step 4: Creating a cluster</summary>
 
-Now we will run a script to remove the volume groups 
+Now we will run a script to remove the volume groups:
 
 <details>
 <summary>Click here to see script</summary>
@@ -177,9 +174,7 @@ done
 
 </details>
 
-Next, use cephadm with your container id you previously pulled down, to create your ceph cluster. 
-
-The command for that looks like the following:
+Next, use cephadm with your container id you previously pulled down, to create your ceph cluster, like so:
 
 ```bash
 cephadm --image quay.ceph.io/ceph-ci/ceph:<sha1> bootstrap --single-host-defaults --log-to-file --mon-ip <ip_of_node> --allow-mismatched-release
@@ -239,7 +234,7 @@ Now we have a basic cluster setup, we can view our cluster to make sure it is up
   ```
 </details>
 
-So the above is an example of a similar script to what I run. It defines a 4 + 2 EC profile named reedsol. An EC profile is essentially a template that defines how Ceph should encode and store data using EC. We create two pools (rbd_erasure & rbd_replicated), enable EC overwrites and EC optimisations, then initialise pools and create an RBD image backed by the EC pool.
+So the above is an example of a similar script to what I run. It defines a 4 + 2 EC profile named **reedsol**. An EC profile is essentially a template that defines how Ceph should encode and store data using EC. We create two pools (**rbd_erasure** & **rbd_replicated**), enable EC overwrites and EC optimisations, then initialise pools and create an RBD image backed by the EC pool.
 
 Within creating the EC setup you will be:
 - Defining the amount of data OSDs (k) and parity OSDs (m)
@@ -261,3 +256,7 @@ My EC (Erasure Coding) setup is as follows:
 
 Now we have set up and configured an erasure coded ceph cluster!
 </details>
+
+---
+
+Now move onto part 2 of the blog if you so wish, where you can take a look at defining a YAML file that will outline the workloads (tests) that you will be running on your ceph cluster!
