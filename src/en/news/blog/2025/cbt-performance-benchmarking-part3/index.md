@@ -76,9 +76,7 @@ So going back to my example CBT test run and the question we started with: "Does
 
 I generated a performance report for a JErasure plugin EC pool, the results can be found [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/24th_Sep_Jerasure_4%2B2_results/performance_report_250924_094912.pdf), go ahead and view the results if you wish to.
 
-I then generated a performance report for the CLAY plugin [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/13th_Oct_Clay_4%2B2%2B5_results/performance_report_251013_094658.pdf). 
-
-Now I could take a look at each individual report, however I'm interested in how Jerasure and CLAY compare with one another. So I generated a comparison report between the above two runs, that can be found [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/Jerasure_Vs_Clay_comparison/comparitive_performance_report_251015_142011.pdf). 
+I then generated a performance report for the CLAY plugin [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/13th_Oct_Clay_4%2B2%2B5_results/performance_report_251013_094658.pdf).  
 
 You will see hockey stick curves plotted to show the performance within the reports generated, for example this is the curve for a 4K Sequential Read of the Jerasure EC setup:
 
@@ -90,9 +88,11 @@ Let’s take this 4K sequential read curve shown above:
 
 We can find out the specified `total iodepths` for this test by checking the yaml file we previously used in this test, and it is also stated within the performance report under the “Configuration yaml” section. For the above example it is: 
 ```yaml
-total_iodepth: [ 2, 4, 8, 12, 16, 24, 32, 64, 96, 128, 192 ] 
+total_iodepth: [ 2, 4, 8, 12, 16, 24, 32, 64, 96, 128, 192, 288, 384 ] 
 ```
- And each of these total iodepths represent a point on the curve. For example the 6th iodepth point (24) represents where the 6th red vertical line intersects the curve. So we can go into the json to find specifics or we can use the graph. From the graph we know at a total IO depth of 24, there is an average latency of around 0.58ms when the throughput is around 41000IOps.
+And each of these total iodepths represent a point on the curve. For example the 6th iodepth point (24) represents where the 6th red vertical line intersects the curve. So we can go into the json to find specifics or we can use the graph. From the graph we know at a total IO depth of 24, there is an average latency of around 0.5ms when the throughput is around 57000IOps.
+
+The vertical red lines (error bars) shows the amount of standard deviation/variance in the performance for that specific point in the curve. If the standard deviations are small it shows that performance is stable with that workload. As the response curve starts to curve upwards performance bceomes more variable and the standard deviation increases.
 
 - For an FIO workload, CBT will start 1 instance of FIO per volume. 
 - It's also to note that the graph produced by reports do not include the results during the "ramp" period.
@@ -100,8 +100,6 @@ total_iodepth: [ 2, 4, 8, 12, 16, 24, 32, 64, 96, 128, 192 ]
 The post processing tools will sum the IOPs to generate a total IOPs for the response curve and calculate an average latency over all the volumes. The IOPS vs latency is then plotted on the response curve for that point of the curve for that specific iodepth.
 
 ![alt text](images/read_graphs.png "How to read graphs")
-
- The vertical red lines (error bars) shows the amount of standard deviation/variance in the performance for that specific point in the curve. If the standard deviations are small it shows that performance is stable with that workload. As the response curve starts to curve upwards performance bceomes more variable and the standard deviation increases.
 
  ## What are we looking for in these graphs?
 
@@ -123,24 +121,22 @@ In practice response curves are never perfect, a good response curve will have a
 <details>
 <summary>Step 4: Comparing the results</summary>
 
-I will now generate a performance report for CLAY EC pool, just like I have done for Jerasure, the results are [here](https://github.com/Jakesquelch/cbt_results/blob/main/22-08-2025_03-48-07_cbt_run_results/performance_report_250822_034811.pdf).
-
-With CBT, as well as performance reports we can also generate **comparison reports** quickly. Now that we have our results for our CLAY and Jerasure test, we can generate a performance report. I will use the following command to do so:  
+With CBT, as well as performance reports we can also generate **comparison reports** quickly. Now that we have ran our tests for our CLAY and Jerasure test, we can generate a performance report. I will use the following command to do so:  
 
 ```bash
 PYTHONPATH=/cbt/ /cbt/tools/generate_comparison_performance_report.py --baseline /perftests/jerasure_test/ --archives /perftests/clay_test/ --output_directory /perftests/clay_vs_jerasure_comparison --create_pdf
 ```
-In the above command we will have to specify what our baseline is, we will use our test folder from the Jerasure performance report, and then our archive curve will be our CLAY performance report test folder. And we will generate a comparison report in our chosen output directory. 
+In the above command we will have to specify what our baseline is, we will use our test folder from the Jerasure performance report, and then our archive curve will be our CLAY performance report test folder. It is important here that in the above command you are inputting the test folders for Jerasure and CLAY **NOT** the results folders that were generated from the previous performance runs. We we will generate a comparison report in our chosen output directory. 
+
+Using the above command I generated a comparison report between the above two runs, that can be found [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/Jerasure_Vs_Clay_comparison/comparitive_performance_report_251015_142011.pdf).
 
 ### What results are we expecting?
 
 Jerasure is a generic reed-solomon erasure coding library, it is matrix-based, not CPU-optimised. It is fairly balanced between read and write. CLAY is designed for faster recovery at the cost of more complicated write paths. So we are expecting to see better performance from CLAY potentially when it comes to smaller IO sizes, but as the writes get bigger we may see a decline in performance from CLAY leading to better Jerasure results. Furthermore in terms of reads we expect fairly similar results across the board as they are implemented very similar, the main difference is when it comes to writes.
 
-Using the above command we now have a comparison report between CLAY and Jerasure that can be viewed [here](https://github.com/Jakesquelch/cbt_results/blob/main/27-08-2025_clay_vs_jerasure_comparison/comparitive_performance_report_250827_094606.pdf).
+So now I will analyse the results from this comparison report. Firstly I will take a look at a 1024k **sequential read**:
 
-So now I will analyse the results from this comparison report. Firstly I will take a look at the **sequential reads**:
-
-![alt text](images/4_graphs.png "4 Sequential Read curves")
+![alt text](images/1024k_seq_read.png "1024k Sequential Read curve")
 
 As shown by the diagram, the orange line is our CLAY EC pool, and the blue curve is our Jerasure EC pool. Now as you can see the difference between the two curves really isn’t anything too substantial, they follow very similar paths, and that was expected. The curves are very similar too for larger block sizes eg 1M. This is because for a normal read, ceph only needs to fetch data chunks (not parity chunks). Both Jerasure and CLAY are basically just returning the stored object, there is no real difference unless a failure occurs.
 
