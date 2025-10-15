@@ -152,7 +152,7 @@ Next we will have to get a build container that we are going to use to construct
   ```bash
   podman pull quay.ceph.io/ceph-ci/ceph:<sha1>
   ```
-  Make sure to paste your specific sha1 into the above command!
+  Make sure to paste your specific **sha1** into the above command!
 </details>
 </details>
 
@@ -160,7 +160,7 @@ Next we will have to get a build container that we are going to use to construct
 <details>
 <summary>Step 4: Creating a cluster</summary>
 
-Now we will run a script to remove the volume groups 
+Now we will run a script to remove the volume groups:
 
 <details>
 <summary>Click here to see script</summary>
@@ -174,9 +174,7 @@ done
 
 </details>
 
-Next, use cephadm with your container id you previously pulled down, to create your ceph cluster. 
-
-The command for that looks like the following:
+Next, use cephadm with your container id you previously pulled down, to create your ceph cluster, like so:
 
 ```bash
 cephadm --image quay.ceph.io/ceph-ci/ceph:<sha1> bootstrap --single-host-defaults --log-to-file --mon-ip <ip_of_node> --allow-mismatched-release
@@ -236,7 +234,7 @@ Now we have a basic cluster setup, we can view our cluster to make sure it is up
   ```
 </details>
 
-So the above is an example of a similar script to what I run. It defines a 4 + 2 EC profile named reedsol. An EC profile is essentially a template that defines how Ceph should encode and store data using EC. We create two pools (rbd_erasure & rbd_replicated), enable EC overwrites and EC optimisations, then initialise pools and create an RBD image backed by the EC pool.
+So the above is an example of a similar script to what I run. It defines a 4 + 2 EC profile named **reedsol**. An EC profile is essentially a template that defines how Ceph should encode and store data using EC. We create two pools (**rbd_erasure** & **rbd_replicated**), enable EC overwrites and EC optimisations, then initialise pools and create an RBD image backed by the EC pool.
 
 Within creating the EC setup you will be:
 - Defining the amount of data OSDs (k) and parity OSDs (m)
@@ -258,3 +256,5 @@ My EC (Erasure Coding) setup is as follows:
 
 Now we have set up and configured an erasure coded ceph cluster!
 </details>
+
+Now move onto part 2 of the blog if you so wish, where you can take a look at defining a YAML file that will outline the workloads (tests) that you will be running on your ceph cluster!
