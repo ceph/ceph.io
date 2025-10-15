@@ -82,7 +82,7 @@ Now I could take a look at each individual report, however I'm interested in how
 
 You will see hockey stick curves plotted to show the performance within the reports generated, for example this is the curve for a 4K Sequential Read of the Jerasure EC setup:
 
-![alt text](images/example_4k_seq_read.png"4K Sequential Read Graph")
+![alt text](images/example_4k_seq_read.png "4K Sequential Read Graph")
 
 ## How do we read the curves generated?
 
@@ -99,7 +99,7 @@ total_iodepth: [ 2, 4, 8, 12, 16, 24, 32, 64, 96, 128, 192 ]
 
 The post processing tools will sum the IOPs to generate a total IOPs for the response curve and calculate an average latency over all the volumes. The IOPS vs latency is then plotted on the response curve for that point of the curve for that specific iodepth.
 
- ![alt text](images/read_graphs.png "How to read graphs")
+![alt text](images/read_graphs.png "How to read graphs")
 
  The vertical red lines (error bars) shows the amount of standard deviation/variance in the performance for that specific point in the curve. If the standard deviations are small it shows that performance is stable with that workload. As the response curve starts to curve upwards performance bceomes more variable and the standard deviation increases.
 
