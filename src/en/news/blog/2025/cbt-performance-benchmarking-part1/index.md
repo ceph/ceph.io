@@ -27,7 +27,7 @@ tags:
 
 Here is an example of what a CBT comparison report would look like: (this will all be explained in more detail later, in **part 3**)
 
-![alt text](images/cbtrun.png "Example CBT comparison report")
+![alt text](images/cbt_example_results.png "Example CBT comparison report")
 
 The objective of this blog is to demonstrate how CBT (Ceph Benchmarking Tool) can be used to run tests for Ceph in a deterministic manner.  
 
