@@ -80,13 +80,9 @@ I then generated a performance report for the CLAY plugin [here](https://github.
 
 Now I could take a look at each individual report, however I'm interested in how Jerasure and CLAY compare with one another. So I generated a comparison report between the above two runs, that can be found [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/Jerasure_Vs_Clay_comparison/comparitive_performance_report_251015_142011.pdf). 
 
-The generated report includes a summary of the results, showing maximum throughput and latency for many different workloads:
+You will see hockey stick curves plotted to show the performance within the reports generated, for example this is the curve for a 4K Sequential Read of the Jerasure EC setup:
 
-![alt text](images/table_results.png "Table Summary Of Results")
-
-As well as the summary above, hockey stick curves plotting the performance for all of the above are generated, for example this is the curve for a 4K Sequential Read of the Jerasure EC setup:
-
-![alt text](images/4k_seq_read.png "4K Sequential Read Graph")
+![alt text](images/example_4k_seq_read.png"4K Sequential Read Graph")
 
 ## How do we read the curves generated?
 
