@@ -12,6 +12,9 @@ tags:
 
 ## SMB Meets Squid: Introducing the New Ceph SMB Manager Module for SMB Service Management in Ceph
 
+Note: Some of the features described are only partially available as of Squid 19.2.3.
+      Complete support will come with Tentacle.
+
 ### Introduction
 
 SMB (Server Message Block) is a widely-used network protocol that facilitates the

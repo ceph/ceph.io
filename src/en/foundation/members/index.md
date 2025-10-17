@@ -15,37 +15,35 @@ order: 3
 <div class="grid grid--align-center grid--cols-2 md:grid--cols-3 md:w-3-4">
   <a href="https://www.45drives.com" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-45drives.png" /></a>
   <a href="https://bloomberg.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-bloomberg.png" /></a>
+  <a href="https://www.clyso.com/en/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-clyso.png" /></a>  
   <a href="http://www.ibm.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-ibm.png" /></a>
 </div>
 
 ### Platinum Members
 
 <div class="grid grid--align-center grid--cols-2 md:grid--cols-3 md:w-3-4">
-  <a href="https://www.clyso.com/en/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-clyso.png" /></a>
-</div>
-
-### Premier Members
-
-<div class="grid grid--align-center grid--cols-2 md:grid--cols-3 md:w-3-4">
-  <a href="https://www.ovh.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-ovh.png" /></a>
+  <a href="https://www.westerndigital.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/western-digital-corporation.svg" /></a>
 </div>
 
 ### Gold Members
 
 <div class="grid grid--align-center grid--cols-2 md:grid--cols-3 md:w-3-4">
   <a href="http://www.42on.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-42on.png" /></a>
-  <a href="https://www.canonical.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-ubuntu.png" /></a>
+  <a href="https://www.ovh.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-ovh.png" /></a>
   <a href="https://samsung.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-samsung.png" /></a>
 </div>
 
 ### Silver Members
 
 <div class="grid grid--align-center grid--cols-2 md:grid--cols-3 md:w-3-4">
+  <a href="https://www.canonical.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-ubuntu.png" /></a>  
+  <a href="https://cloudferro.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/cloudferro-logo.svg" /></a>    
   <a href="http://www.croit.io/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-croit.png" /></a>
   <a href="https://www.digitalocean.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-digitalocean.png" /></a>
   <a href="http://www.intel.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-intel.png" /></a>
   <a href="http://iss-integration.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-intelligent-systems.png" /></a>
   <a href="https://www.osnexus.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-osnexus.png" /></a>
+  <a href="https://sonyinteractive.com/en/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/sony-interactive-entertainment-llc.svg" /></a>
 </div>
 
 ### Associate Members
