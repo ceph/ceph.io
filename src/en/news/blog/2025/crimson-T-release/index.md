@@ -12,7 +12,12 @@ tags:
 The Crimson project continues to progress, with the Squid release marking the first technical preview available for Crimson.
 The Tentacle release introduces a host of improvements and new functionalities that enhance the robustness, performance, and usability
 of both Crimson-OSD and the Seastore object store.
-Below, we highlight some of the recent work included in the latest release, moving us closer to fully replacing the existing Classical OSD in the future.
+In this release, Seastore can now be deployed alongside the Crimson-OSD!
+Early testing and experimentation are highly encouraged and we’d greatly appreciate any initial feedback rounds from the community to help guide future improvements.
+Please note that Crimson Tentacle release include updates made until July 2025.
+In order to benefit from all the recent changes in the project,
+it's also recommended to check the latest version of the main branch as the project continues to evolve rapidly.
+Below, we highlight some of the work included in the latest release, moving us closer to fully replacing the existing Classical OSD in the future.
 If you're new to the Crimson project, please visit the [project page](https://ceph.io/en/news/crimson) for more information and resources.
 
 ## Crimson Tentacle Updates:
