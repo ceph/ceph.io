@@ -11,8 +11,13 @@ tags:
 
 The Crimson project continues to progress, with the Squid release marking the first technical preview available for Crimson.
 The Tentacle release introduces a host of improvements and new functionalities that enhance the robustness, performance, and usability
-of both Crimson-OSD and the Seastore object store.
-Below, we highlight some of the recent work included in the latest release, moving us closer to fully replacing the existing Classical OSD in the future.
+of both Crimson-OSD and the SeaStore object store.
+In this release, SeaStore is available as a tech preview and can now be deployed alongside the Crimson-OSD!
+Early testing and experimentation are highly encouraged and we’d greatly appreciate any initial feedback rounds from the community to help guide future improvements.
+Please note that Crimson Tentacle release includes updates made until July 2025.
+In order to benefit from all the recent changes in the project,
+it's also recommended to check the latest version of the main branch as the project continues to evolve rapidly.
+Below, we highlight some of the work included in the latest release, moving us closer to fully replacing the existing Classical OSD in the future.
 If you're new to the Crimson project, please visit the [project page](https://ceph.io/en/news/crimson) for more information and resources.
 
 ## Crimson Tentacle Updates:
@@ -42,7 +47,7 @@ See the latest test [runs](https://pulpito.ceph.com/teuthology-2025-04-05_20:56:
 - **Allow for Per-object Processing**:
   Rework the client I/O pipeline to enable concurrent processing of one request per object.
   Writes still need to serialize at submission time. For random reads with high concurrency,
-  this results in increased throughput on a single OSD with Seastore.
+  this results in increased throughput on a single OSD with SeaStore.
   For more details, see the [pull request](https://github.com/ceph/ceph/pull/61005).
 
 - **PG Splitting and Merging:**
@@ -68,7 +73,7 @@ The common components used by both the Classical OSD and Crimson might need slig
 For example, Crimson does not require mutexes due to its lockless shard-nothing design, so ceph::mutex is overridden to use a "dummy_mutex" under the hood.
 To differentiate between the two types when compiling the OSD, we've introduced the `WITH_SEASTAR` macro.
 
-Crimson supports both native (Seastar-based object stores, such as Seastore, and non-native object stores, like Bluestore.
+Crimson supports both native (Seastar-based) object stores, such as SeaStore, and non-native object stores, like Bluestore.
 To accommodate this, further adjustments to our common components' usage were necessary. For this reason,
 the `WITH_ALIENSTORE` macro was used in combination with the `SEASTAR` macro.
 
@@ -103,7 +108,7 @@ Therefore, we've updated both package-based and Cephadm deployments to increase 
 
 For more details, see the [pull request](https://github.com/ceph/ceph/pull/60611).
 
-### Seastore
+### SeaStore
 
 **Lookup Optimizations:** SeaStore is responsible for managing RADOS objects, including their data and metadata.
 As such, optimizing lookup operations is a critical aspect of performance improvements. These optimizations primarily focus on the B+ tree implementations, balancing performance and complexity.
@@ -122,7 +127,7 @@ For example, see:
 - [Batch remap operations PR](https://github.com/ceph/ceph/pull/57818)
 - [Write ool without padding PR](https://github.com/ceph/ceph/pull/58250)
 - [Split out root meta PR](https://github.com/ceph/ceph/pull/60655)
-- [Seastore fadvise support PR](https://github.com/ceph/ceph/pull/60891)
+- [SeaStore fadvise support PR](https://github.com/ceph/ceph/pull/60891)
 - [Promote logical address to be block aligned PR](https://github.com/ceph/ceph/pull/59182)
 
 **Periodic Status Reports:** To monitor and understand internal operations, periodic reports can be enabled in the logs to summarize the latest status from various aspects. These reports are primarily for development and optimization purposes and are continuously evolving.
@@ -140,4 +145,4 @@ Despite the inevitable increase in complexity, we continuously fix unexpected bu
 This sometimes leads to major refactors, as developing and reviewing based on inappropriate or overly complicated structures can be more challenging.
 These efforts typically account for nearly half of the total work, and sometimes even more.
 
-**SeaStore CI:** tests have been implemented to ensure confidence in promoting Seastore as the default option.
+**SeaStore CI:** tests have been implemented to ensure confidence in promoting SeaStore as the default option.
