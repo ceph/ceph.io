@@ -25,19 +25,41 @@ Contents:
 
 *See the sections below for more details on these items.*
 
-Integrated SMB Support
+CephFS
 
-* Ceph clusters now offer an SMB Manager module that
-  works like the existing NFS subsystem. The new SMB support allows the Ceph
-  cluster to automatically create Samba-backed SMB file shares connected to
-  CephFS. The ``smb`` module can configure both basic Active Directory domain
-  or standalone user authentication. The Ceph cluster can host one or more
-  virtual SMB clusters which can be truly clustered using Samba's CTDB technology.
-  The ``smb`` module requires a cephadm-enabled Ceph cluster and deploys container images
+* Directories may now be configured with case-insensitive or normalized
+  directory entry names.
+* Modifying the FS setting variable ``max_mds`` when a cluster is unhealthy
+  now requires users to pass the confirmation flag (``--yes-i-really-mean-it``).
+* ``EOPNOTSUPP`` (Operation not supported) is now returned by the CephFS FUSE
+  client for ``fallocate`` for the default case (i.e. ``mode == 0``).
+
+Dashboard
+
+* Support has been added for NVMe/TCP gateway groups and multiple
+  namespaces, multi-cluster management, OAuth 2.0 integration, and enhanced
+  RGW/SMB features including multi-site automation, tiering, policies,
+  lifecycles, notifications, and granular replication.
+
+Integrated SMB support
+
+* Ceph clusters now offer an SMB Manager module that works like the existing
+  NFS subsystem. The new SMB support allows the Ceph cluster to automatically
+  create Samba-backed SMB file shares connected to CephFS. The ``smb`` module
+  can configure both basic Active Directory domain or standalone user
+  authentication. The Ceph cluster can host one or more virtual SMB clusters
+  which can be truly clustered using Samba's CTDB technology. The ``smb``
+  module requires a cephadm-enabled Ceph cluster and deploys container images
   provided by the ``samba-container`` project. The Ceph dashboard can be used
   to configure SMB clusters and shares. A new ``cephfs-proxy`` daemon is
   automatically deployed to improve scalability and memory usage when connecting
   Samba to CephFS.
+
+MGR
+
+* Users now have the ability to force-disable always-on modules.
+* The ``restful`` and ``zabbix`` modules (deprecated since 2020) have been
+  officially removed.
 
 RADOS
 
@@ -49,13 +71,6 @@ RADOS
 * OMAP: All components have been switched to the faster OMAP iteration
   interface, which improves RGW bucket listing and scrub operations.
 
-Dashboard
-
-* Support has been added for NVMe/TCP gateway groups and multiple
-  namespaces, multi-cluster management, OAuth 2.0 integration, and enhanced
-  RGW/SMB features including multi-site automation, tiering, policies,
-  lifecycles, notifications, and granular replication.
-
 RBD
 
 * New live migration features: RBD images can now be instantly imported
@@ -63,14 +78,8 @@ RBD
   external sources/formats.
 * There is now support for RBD namespace remapping while mirroring between
   Ceph clusters.
-* Several commands related to group and snap info were added or improved,
-  and ``rbd device map`` now defaults to ``msgr2``.
-
-MGR
-
-* Users now have the ability to force-disable always-on modules.
-* The ``restful`` and ``zabbix`` modules (deprecated since 2020) have been
-  officially removed.
+* Several commands related to group and group snap info were added or
+  improved, and ``rbd device map`` command now defaults to ``msgr2``.
 
 RGW
 
@@ -82,14 +91,21 @@ RGW
   write operations. This should significantly reduce the client-visible impact
   of resharding on large buckets.
 
-CephFS
+### Crimson / SeaStore
 
-* Directories may now be configured with case-insensitive or normalized
-  directory entry names.
-* Modifying the FS setting variable ``max_mds`` when a cluster is unhealthy
-  now requires users to pass the confirmation flag (``--yes-i-really-mean-it``).
-* ``EOPNOTSUPP`` (Operation not supported) is now returned by the CephFS FUSE
-  client for ``fallocate`` for the default case (i.e. ``mode == 0``).
+The Crimson project continues to progress, with the Squid release marking the
+first technical preview available for Crimson. The Tentacle release introduces
+a host of improvements and new functionalities that enhance the robustness,
+performance, and usability of both Crimson-OSD and the SeaStore object store.
+In this release, SeaStore can now be deployed alongside the Crimson-OSD! Early
+testing and experimentation are highly encouraged and we’d greatly appreciate any
+initial feedback rounds from the community to help guide future improvements.
+Check out the Crimson project updates blog post for Tentacle where we highlight
+some of the work included in the latest release, moving us closer to fully replacing
+the existing Classical OSD in the future: https://ceph.io/en/news/blog/2025/crimson-T-release/
+
+If you’re new to the Crimson project, please visit the project page for more information
+and resources: https://ceph.io/en/news/crimson
 
 ### CephFS
 
@@ -273,6 +289,23 @@ CephFS
 
 ### RBD
 
+* RBD images can now be instantly imported from another Ceph cluster. The
+  migration source spec for ``native`` format has grown ``cluster_name`` and
+  ``client_name`` optional fields for connecting to the source cluster after
+  parsing the respective ``ceph.conf``-like configuration file.
+
+* With the help of the new NBD stream (``"type": "nbd"``), RBD images can now
+  be instantly imported from a wide variety of external sources/formats. The
+  exact set of supported formats and their features depends on the capabilities
+  of the NBD server.
+
+* While mirroring between Ceph clusters, the local and remote RBD namespaces
+  don't need to be the same anymore (but the pool names still do). Using the
+  new ``--remote-namespace`` option of ``rbd mirror pool enable`` command, it's
+  now possible to pair a local namespace with an arbitrary remote namespace in
+  the respective pool, including mapping a default namespace to a non-default
+  namespace and vice versa, at the time mirroring is configured.
+
 * All Python APIs that produce timestamps now return "aware" ``datetime``
   objects instead of "naive" ones (i.e., those including time zone information
   instead of those not including it). All timestamps remain in UTC, but
@@ -289,9 +322,20 @@ CephFS
   that was shown as ``ok`` is now shown as ``complete``, which is more
   descriptive.
 
+* In ``rbd mirror image status`` and ``rbd mirror pool status --verbose``
+  outputs, ``mirror_uuids`` field has been renamed to ``mirror_uuid`` to
+  highlight that the value is always a single UUID and never a list of any
+  kind.
+
 * Moving an image that is a member of a group to trash is no longer
   allowed. The ``rbd trash mv`` command now behaves the same way as ``rbd rm``
   in this scenario.
+
+* ``rbd device map`` command now defaults to ``msgr2`` for all device types.
+  ``-o ms_mode=legacy`` can be passed to continue using ``msgr1`` with krbd.
+
+* The family of diff-iterate APIs has been extended to allow diffing from or
+  between non-user type snapshots which can only be referred to by their IDs.
 
 * Fetching the mirroring mode of an image is invalid if the image is
   disabled for mirroring. The public APIs -- C++ ``mirror_image_get_mode()``,
@@ -352,10 +396,6 @@ CephFS
   flag, which will allow us to gauge feature adoption for the new
   FastEC improvements.
   To opt into telemetry, run ``ceph telemetry on``.
-
-### Crimson / Seastore
-
-* Check out the latest news on Crimson here: https://ceph.io/en/news/crimson/
 
 ## <a id="upgrade"></a>Upgrading from Reef or Squid
 
