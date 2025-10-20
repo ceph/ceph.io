@@ -91,22 +91,6 @@ RGW
   write operations. This should significantly reduce the client-visible impact
   of resharding on large buckets.
 
-### Crimson / SeaStore
-
-The Crimson project continues to progress, with the Squid release marking the
-first technical preview available for Crimson. The Tentacle release introduces
-a host of improvements and new functionalities that enhance the robustness,
-performance, and usability of both Crimson-OSD and the SeaStore object store.
-In this release, SeaStore can now be deployed alongside the Crimson-OSD! Early
-testing and experimentation are highly encouraged and we’d greatly appreciate any
-initial feedback rounds from the community to help guide future improvements.
-Check out the Crimson project updates blog post for Tentacle where we highlight
-some of the work included in the latest release, moving us closer to fully replacing
-the existing Classical OSD in the future: https://ceph.io/en/news/blog/2025/crimson-T-release/
-
-If you’re new to the Crimson project, please visit the project page for more information
-and resources: https://ceph.io/en/news/crimson
-
 ### CephFS
 
 * Directories may now be configured with case-insensitive or
@@ -158,6 +142,22 @@ and resources: https://ceph.io/en/news/crimson
   field will be ``N/A``. Regular subvolumes do not have a source subvolume and
   therefore the output for them will not contain a "source" field regardless of
   the release.
+
+### Crimson / SeaStore
+
+The Crimson project continues to progress, with the Squid release marking the
+first technical preview available for Crimson. The Tentacle release introduces
+a host of improvements and new functionalities that enhance the robustness,
+performance, and usability of both Crimson-OSD and the SeaStore object store.
+In this release, SeaStore can now be deployed alongside the Crimson-OSD! Early
+testing and experimentation are highly encouraged and we’d greatly appreciate any
+initial feedback rounds from the community to help guide future improvements.
+Check out the Crimson project updates blog post for Tentacle where we highlight
+some of the work included in the latest release, moving us closer to fully replacing
+the existing Classical OSD in the future: https://ceph.io/en/news/blog/2025/crimson-T-release/
+
+If you’re new to the Crimson project, please visit the project page for more information
+and resources: https://ceph.io/en/news/crimson
 
 ### Dashboard
 
