@@ -149,7 +149,7 @@ tr:nth-child(even) {
 
 **​10:35 AM:** Scale Multiple Ceph-clusters Horizontally - Ansgar Jazdzewski.
 
-**​11:10 AM:** Building an All-NVMe, Six-Data Centre, Ceph Cluster - Stuart Hardy & Zaid Bester.
+**​11:10 AM:** Ceph Rados Gateway as an Interface to Tape Storage - Stuart Hardy & Zaid Bester.
 
 **​11:20 AM:** Coffee Break
 
