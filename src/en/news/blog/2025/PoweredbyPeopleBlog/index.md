@@ -2,6 +2,7 @@
 title: "Finding My Place in the Ceph Community: Reflections Ahead of Cephalocon 2025"
 date: 2025-10-22
 author: Anthony Middleton 
+image: "images/LoveCeph.png"
 tags:
   - ceph
   - cephalocon
