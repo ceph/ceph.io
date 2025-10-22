@@ -2,7 +2,7 @@
 title: "Getting Involved with Ceph"
 date: "2012-11-19"
 author: "scuttlemonkey"
-tags: 
+tags:
 ---
 
 The Ceph community is made up of many individuals with a wide variety of backgrounds, from FOSS hacker to corporate architect. We feel very fortunate to have such a great, and active, community. Even more so lately, as we have been fielding a number of questions on how best to become a more active participant in the Ceph community. With that in mind we decided it was time to sketch out a brief menu of different engagement opportunities to make it easy for anyone (not just developers) to take part in our digital revolution.
@@ -48,7 +48,7 @@ If you would like to pass along anything doc-related, feel free to simply drop a
 
 [![](images/hands-holding-ceph.jpg)](http://objects.dreamhost.com/community/newsletter/img/hands-holding-ceph.jpg)
 
-We love it that you are interested in Ceph! Please help us spread the word wherever you might find yourself. From the enterprise to college campuses, we have tons of stuff going on for just about any audience. We do love it when new friends play in our sandboxes, so feel free to find us on [Facebook](https://www.facebook.com/cephstorage), [Twitter](http://twitter.com/ceph), [Google+](https://plus.google.com/100228383599142686318/posts), and [GitHub](https://github.com/ceph/).
+We love it that you are interested in Ceph! Please help us spread the word wherever you might find yourself. From the enterprise to college campuses, we have tons of stuff going on for just about any audience. We do love it when new friends play in our sandboxes, so feel free to find us on [Facebook](https://www.facebook.com/cephstorage), [X](https://x.com/ceph), [Google+](https://plus.google.com/100228383599142686318/posts), and [GitHub](https://github.com/ceph/).
 
 As you can see there are tons of ways to be a part of the Ceph community and all it generally takes is poking someone with a semi-sharp stick. We’re happy to help anyone that has questions, whether it’s a quick chat on IRC or ongoing support via [Inktank](http://inktank.com). We look forward to building “The Future of Storage” with you.
 

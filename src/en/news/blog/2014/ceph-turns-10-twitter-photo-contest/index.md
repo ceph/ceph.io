@@ -1,5 +1,5 @@
 ---
-title: "Ceph Turns 10 Twitter Photo Contest"
+title: "Ceph Turns 10 X Photo Contest"
 date: "2014-07-21"
 author: "scuttlemonkey"
 ---

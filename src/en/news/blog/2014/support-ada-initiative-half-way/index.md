@@ -10,9 +10,7 @@ A few days ago I made a [challenge to the open storage community](http://ceph.co
 
 I'm quite pleased to see Linux, [Lustre](http://lustre.opensfs.org/), [GlusterFS](http://blog.gluster.org/2014/10/adding-voices-support-the-ada-initiative/), and [OpenZFS](http://open-zfs.org/wiki/Main_Page) / [Illumos](http://wiki.illumos.org/display/illumos/About+illumos) represented on this list! It's also great to see that this is an issue that the Illumos community has already identified and recently called out:
 
- 
-
-<blockquote class="twitter-tweet" lang="en"><a href="https://twitter.com/hashtag/illumos?src=hash">#illumos</a> is a 4 year old project, ~150 unique contributors. Not a single female engineer is involved yet. What can we do? <a href="https://twitter.com/gedamore">@gedamore</a><div></div>— Magnus Hedemark (@Magnus919) <a href="https://twitter.com/Magnus919/status/515857841727750144">September 27, 2014</a></blockquote> 
+<blockquote class="X-tweet" lang="en"><a href="https://x.com/hashtag/illumos?src=hash">#illumos</a> is a 4 year old project, ~150 unique contributors. Not a single female engineer is involved yet. What can we do? <a href="https://x.com/gedamore">@gedamore</a><div></div>— Magnus Hedemark (@Magnus919) <a href="https://x.com/Magnus919/status/515857841727750144">September 27, 2014</a></blockquote> 
 
 Increasing awareness of the issue and showing broad support for these campaigns is just as important as the money raised, so please contribute or help spread the word even if it is a token amount!
 
