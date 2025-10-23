@@ -1,5 +1,5 @@
 ---
-title: "Benchmarking with CBT: Running and Analysing a Performance Test. Part Three"
+title: "Benchmarking Performance with CBT: Running and Analysing a Performance Test. Part Three"
 date: 2025-09-12
 author: Jake Squelch (IBM)
 tags:
@@ -13,7 +13,6 @@ tags:
 - **Part 1** - How to start a Ceph cluster for a performance benchmark with CBT  
 - **Part 2** - Defining YAML contents  
 - **Part 3** - How to start a CBT run - Things to consider when evaluating performance  
-- **Part 4** - How to integrate CBT with Teuthology  
 
 ---
 
@@ -200,4 +199,4 @@ A majority of the tests show that Jerasure with all OSDs up is the best for perf
 
 In conclusion, with all the OSDs running, CLAY shows some strengths over Jerasure, especially at large block and mixed workloads. But when one OSD is down, it has some poor performance results, for example the small block size random writes where throughput throughput drops by half and latency can triple. CLAY’s repair locality helps for large objects, but it actually suffers worse than Jerasure on small random operations.
 
-I hope this demonstrates the seamless experience of CBT and how it can generate helpful reports and curves that will allow you to analyse cluster setups with ease.
+I hope this demonstrates the seamless experience of CBT and how it can generate helpful reports and curves that will allow you to benchmark performance of Ceph cluster setups with ease.
