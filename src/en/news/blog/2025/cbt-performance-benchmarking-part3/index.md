@@ -168,8 +168,7 @@ Now we expect CLAY to have better performance here due to it's supposedly more e
 
 
 
-
-
+**THIS IS WHERE IM UP TO**
 
 
 
@@ -192,6 +191,12 @@ A majority of the tests show that Jerasure with all OSDs up is the best for perf
 ---
 
 ## In Conclusion
+
+
+
+**THIS LIKELY NEEDS CHANGING?**
+
+
 
 In conclusion, with all the OSDs running, CLAY shows some strengths over Jerasure, especially at large block and mixed workloads. But when one OSD is down, it has some poor performance results, for example the small block size random writes where throughput throughput drops by half and latency can triple. CLAY’s repair locality helps for large objects, but it actually suffers worse than Jerasure on small random operations.
 
