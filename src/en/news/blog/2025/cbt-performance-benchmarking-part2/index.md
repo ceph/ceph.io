@@ -1,5 +1,5 @@
 ---
-title: "Benchmarking with CBT: Defining YAML Contents. Part Two"
+title: "Benchmarking Performance with CBT: Defining YAML Contents. Part Two"
 date: 2025-09-11
 author: Jake Squelch (IBM)
 tags:
@@ -13,7 +13,6 @@ tags:
 - **Part 1** - How to start a Ceph cluster for a performance benchmark with CBT  
 - **Part 2** - Defining YAML contents  
 - **Part 3** - How to start a CBT run - Things to consider when evaluating performance  
-- **Part 4** - How to integrate CBT with Teuthology  
 
 ---
 An example of contents from a YAML file:

@@ -1,5 +1,5 @@
 ---
-title: "Benchmarking with CBT: A guide to setup a Ceph cluster. Part One"
+title: "Benchmarking Performance with CBT: A guide to setup a Ceph cluster. Part One"
 date: 2025-09-10
 author: Jake Squelch (IBM)
 tags:
@@ -13,7 +13,6 @@ tags:
 - **Part 1** - How to start a Ceph cluster for a performance benchmark with CBT  
 - **Part 2** - Defining YAML contents  
 - **Part 3** - How to start a CBT run - Things to consider when evaluating performance  
-- **Part 4** - How to integrate CBT with Teuthology  
 
 ---
 
@@ -31,7 +30,7 @@ Here is an example of what a CBT comparison report would look like: (this will a
 
 The objective of this blog is to demonstrate how CBT (Ceph Benchmarking Tool) can be used to run tests for Ceph in a deterministic manner.  
 
-The goal of this 4 part blog is to demonstrate how to set up a Ceph cluster for use with CBT to make your life simpler by automating a lot of the manual effort that is required to set up a performance test.  
+The goal of this 3 part blog is to demonstrate how to set up a Ceph cluster for use with CBT to make your life simpler by automating a lot of the manual effort that is required to set up a performance test.  
 
 For a real life example, this blog will try and answer the quesiton "Does using the CLAY erasure code plugin give better performance than using the default JErasure plugin?" showing how CBT can be used to conduct a set of experiments and produce reports to answer this question.
 
