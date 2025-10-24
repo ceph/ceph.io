@@ -162,20 +162,13 @@ We will now take a look at 1024k Sequential read from the above comparison repor
 
 ![alt text](images/down_1024_seq_read.png "1024k sequential read")
 
-Now we expect CLAY to have better performance here due to it's supposedly more efficient data recovery. However this is not the case as shown by the diagram above. The above CLAY plugin has a 4k chunk size and therefore the subchunk that CLAY is using is 512 bytes. This could mean that CLAY is actually still reading all of the data and therefore not recovering data more efficiently, therefore Jerasure appears to perform better. We will test this hypothesis now by changing the chunk size and analysing the sub chunk to see if this improves performance.
+Now we expect CLAY to have better performance here due to it's supposedly more efficient data recovery. However this is not the case as shown by the diagram above. 
 
+### So what does this mean?
 
+This has led to me exploring the CLAY plugin further to understand what is going on here, and why there is no improvements when we compare CLAY to Jerasure. The worse performance from CLAY is due to CPU overheads that come along with CLAY. When we have a chunk size of 4k we are getting a subchunk size of 512, subchunks are a smaller unit within a chunk. For reads of less than 4K they get rounded up to a whole 4K block, therefore CLAY sometimes ends up reading the same data more than once and discarding different parts of what is read, this therefore is not good for performance and concludes that a small subchunk size doesn't work alongside NVMe drive block size of 4k. I've also notices that Squid recovery also always tries to read 2MB from each stripe and expects the read to be truncated if the object is smaller than 2MB * number of stripes. With CLAY this results in a lot of small reads being issued beyond the end of the object. 
 
-
-**THIS IS WHERE IM UP TO**
-
-
-
-Reads are relatively tolerant of one OSD down because the missing data can usually be reconstructed efficiently from the parity chunks. The graphs become most varied when we get to the random writes (shown below):
-
-![alt text](images/seq_writes.png "4 Random write curves")
-
-Small random writes amplify the read-modify-write overhead which leads to both CLAY and Jerasure tanking badly at small block sizes.
+CLAY (in Squid but not in Tentacle) is only transmitting ~50% of the amount of data between OSDs during the recovery, so this will be good if network bandwisth is the bottleneck. However, if CPU utilisation or drice IOPs is a bottleneck then CLAY will **not** be the correct choice, as this will lead to a further decrease in performance. This is due to a lot more read IOs to the backend drives.
 
 We can see that when an OSD goes down, the recovery of data hits performance, particularly for write-heavy workloads. I did a comparison report of the two curves above compared to when all OSDs are up [here](https://github.com/Jakesquelch/cbt_results/blob/main/08-09-2025_clay_jerasure_osd_down_up_comparison/comparitive_performance_report_250908_120537.md).
 
@@ -191,12 +184,8 @@ A majority of the tests show that Jerasure with all OSDs up is the best for perf
 
 ## In Conclusion
 
+In conclusion, with all the OSDs running, CLAY shows some strengths over Jerasure, especially at large block and mixed workloads. But when one OSD is down, it has some poor performance results, for example the small block size random writes where throughput drops by half and latency can triple. CLAY’s repair locality helps for large objects, but it actually suffers worse than Jerasure on small random operations, due to what we discussed earlier.
 
-
-**THIS LIKELY NEEDS CHANGING?**
-
-
-
-In conclusion, with all the OSDs running, CLAY shows some strengths over Jerasure, especially at large block and mixed workloads. But when one OSD is down, it has some poor performance results, for example the small block size random writes where throughput throughput drops by half and latency can triple. CLAY’s repair locality helps for large objects, but it actually suffers worse than Jerasure on small random operations.
+This brings us back to the benefits of CBT benchmarking. Through generating these performance results we noticed that there was a problem when it came to CLAY at recovering data, and this can lead to improvements to be made to it. For example, the reads are currently issued in series which will add a lot of latency to the recovery, issuing the reads in parallel would be better. 
 
 I hope this demonstrates the seamless experience of CBT and how it can generate helpful reports and curves that will allow you to benchmark performance of Ceph cluster setups with ease.
