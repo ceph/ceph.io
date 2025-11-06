@@ -1,6 +1,12 @@
 {
   "jobs": [
     {
+      "company": "Voleon",
+      "date": "2025-11-06",
+      "title": "Storage Team Lead",
+      "url": "https://jobs.lever.co/voleon/ba1f99e9-6bdb-4bd6-9965-8e45f7ae631c"
+    },
+    {
       "company": "Index Exchange",
       "date": "2025-10-21",
       "title": "Staff Storage Engineer- Ceph",
