@@ -314,6 +314,8 @@ benchmarks:
 ```
 </details>
 
+---
+
 ## Summary
 
 In part 2 you have learnt about YAML files, workloads, and how they are incorporated within CBT performance benchmarking. We will now move onto part 3 of the blog, which will discuss factors to consider when benchmarking performance, and also how to start your first CBT performance benchmark!
