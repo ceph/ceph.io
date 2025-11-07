@@ -22,7 +22,7 @@ tags:
 
 - Simplifying the cluster creation process and having CBT do it  
 - Running a deterministic suite of tests with response curves (throughput vs latency) with a wide variety of workloads  
-- Tooling to automatically post process data from a performance run and generate performance reports and comparison reports, ability to compare two or more (up to 6) response curve runs and identify differences in performance within the response curves  
+- Tooling to automatically post process data from a performance benchmark and generate performance reports and comparison reports, ability to compare two or more (up to 6) response curve runs and identify differences in performance within the response curves  
 
 Here is an example of what a CBT comparison report would look like: (this will all be explained in more detail later, in **part 3**)
 
@@ -41,7 +41,7 @@ I hope you find this tutorial simple to understand and you will get to learn the
 
 ---
 
-## What do we have to consider when we are benchmarking storage systems?  
+## What do you have to consider when you are benchmarking storage systems?  
 
 There are several aspects to consider when evaluating performance, the main aspect to consider is what is the goal of measuring performance, this may be:  
 
@@ -74,30 +74,30 @@ This could be down to something as minimal as workload ordering, this can have a
   - The shorter the run time, the greater the degree of variance.  
   - Also to help minimise variance it’s important to pick an appropriate run time for each test, 5 minutes is usually a good amount.  
 
-- Turning off the balancer, scrub, deep scrub, autoscaler will help with reducing variance as the performance run will just be measuring client performance and not measuring any of the background processes in Ceph that can affect performance such as backfill, pg splitting/merging, and scrubbing.  
+- Turning off the balancer, scrub, deep scrub, autoscaler will help generate more repeatable results as the performance benchmark will just be measuring client performance and not measuring any of the background processes in Ceph that can affect performance such as backfill, pg splitting/merging, and scrubbing. Leaving these features enabled will generate real world results, but likely will generate more variance and a few % difference in performance.
 
 ---
 
-## What are we looking to achieve from the performance benchmark?   
+## What are you looking to achieve from the performance benchmark?   
 
-If the same performance test is repeated on the same system we want to be able to measure the same results (or with as little variance between runs as possible). This predictability is important if we are going to try and compare different configurations to see which is better.
+If the same performance test is repeated on the same system you want to be able to measure the same results (or with as little variance between runs as possible). This predictability is important if you are going to try and compare different configurations to see which is better.
 
-Ideally we also want to be able to come back and run the same test 6 months later, on the same system, and get the same results. This is harder because things can change over time. Ideally, if someone configures an equivalent system to the one the performance test was run on we would like to get the same results.
+Ideally you also want to be able to come back and run the same test 6 months later, on the same system, and get the same results. This is harder because things can change over time. Ideally, if someone configures an equivalent system to the one the performance test was run on you would like to get the same results.
 If done correctly, the amount of manual effort needed to regression test performance will be significantly reduced. 
 
 ---
 
-## Starting up a ceph cluster for a performance run  
+## Starting up a ceph cluster for a performance benchmark  
 
-For these blogs we will be focusing on using `Cephadm` to start our ceph clusters, though `vstart` or by hand are also feasible options.  
+For these blogs we will be focusing on using `Cephadm` to start our ceph clusters, though `vstart` or by hand are also feasible options. It's also important to note that I am using `RBD volumes` as the storage type with `FIO` as the IO exerciser interface. The same rules for capacity filling etc apply equally to other storage types, except the maths for calculating the pool size will differ.
 
-This section will describe the basic steps to get a ceph cluster up and running, ready to start a performance run.  
+This section will describe the basic steps to get a ceph cluster up and running, ready to start a performance benchmark.  
 
 ---
 <details>
 <summary>Step 1: Setup</summary>
 
-We will want to ssh into our machine that we will be using.  
+You will want to ssh into our machine that we will be using.  
 
 **My system has the following setup:**  
 
@@ -110,7 +110,7 @@ We will want to ssh into our machine that we will be using.
 <details>
 <summary>Step 2: Clean up</summary>
 
-When we create a cluster using cephadm and run a CBT test, log files will be created in specified locations.  
+When you create a cluster using cephadm and run a CBT test, log files will be created in specified locations.  
 
 So if you have done a test before and know there will be old log files at a specific location, begin by deleting them, if you have never done a CBT run before, you can move onto `Step 3: Building a container`.  
 
@@ -123,11 +123,15 @@ There are 2 areas you will have to delete to complete this step:
    ```yaml
    tmp_dir: "/tmp/cbt"
    ```
-2. The -a argument when you run a performance run: 
+   
+   This directory contains the temporarily log files from the IO exercisor, eg the FIO json files.
+2. The -a argument when you run a performance benchmark: 
 
    ```bash
    -a /tmp/cbt
    ```
+
+   This argument directory contains the performance results of the performance benchmark.
 As you can see, both my YAML and argument point to the same directory, so before my CBT run I will always make sure to:
 
    ```bash
@@ -139,7 +143,7 @@ As you can see, both my YAML and argument point to the same directory, so before
 <details>
 <summary>Step 3: Building a container</summary>
 
-Next we will have to get a build container that we are going to use to construct our ceph cluster. You can obtain this container id from [Builds ceph](https://shaman.ceph.com/builds/ceph). Click on your desired build and then copy the **sha1**, this is also known as the **container id**. The build I’m using can be seen within the `Step 1: Setup` section previously. 
+Next you will have to get a build container that we are going to use to construct our ceph cluster. You can obtain this container id from [Builds ceph](https://shaman.ceph.com/builds/ceph). Click on your desired build and then copy the **sha1**, this is also known as the **container id**. The build I’m using can be seen within the `Step 1: Setup` section previously. 
 
 - We will now pull down the desired build container using podman 
 
@@ -266,6 +270,9 @@ Which would result in, for our example:
 `52500 x 8` Therefore the **working set** = 420000 (420GB)
 
 We can see here for our example that the working set is 420GB and the RAM is 210GB therefore this is satisfactory.
+
+If you are not using RBD volumes with EC and you are using Replica pools instead, the maths would look like this, to get the **RBD Volume size**:
+`(Physical drive size * Number of OSDS / Number of copies * 0.5) / Number of Volumes`
 
 </details>
 
