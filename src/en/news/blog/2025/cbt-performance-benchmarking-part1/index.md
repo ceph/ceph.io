@@ -22,15 +22,18 @@ tags:
 
 - Simplifying the cluster creation process and having CBT do it  
 - Running a deterministic suite of tests with response curves (throughput vs latency) with a wide variety of workloads  
-- Tooling to performance reports and comparison reports, ability to compare two or more (up to 6) response curve runs and identify differences in performance within the response curve  
+- Tooling to automatically post process data from a performance run and generate performance reports and comparison reports, ability to compare two or more (up to 6) response curve runs and identify differences in performance within the response curves  
 
 Here is an example of what a CBT comparison report would look like: (this will all be explained in more detail later, in **part 3**)
 
 ![alt text](images/cbt_example_results.png "Example CBT comparison report")
 
-The objective of this blog is to demonstrate how CBT (Ceph Benchmarking Tool) can be used to run tests for Ceph in a deterministic manner.  
+Now I understand that the above example curves could be a totally knew concept for a lot of people so will go over the fundamentals of them: 
+- The perfect response curve would be a flat horizontal line showing constant latency as the quantity of I/O increases until we reach the saturation point (where the system can handle no more I/O), at this point we would expect the curve to become a vertical line showing that attempting to do more I/O than the system can handle, just results in I/Os being queued and hence the latency increasing.
+- In practice response curves are never perfect, a good response curve will have a fairly horizontal line with the latency increasing gradually as the I/O load increases, curving upwards towards a vertical line where we reach the saturation point.
+- Our comparison curves will be explained in more detail in **part 3** of the blog, so a basic understanding is more than fine for now.
 
-The goal of this 3 part blog is to demonstrate how to set up a Ceph cluster for use with CBT to make your life simpler by automating a lot of the manual effort that is required to set up a performance test.  
+The objective of this blog is to demonstrate how CBT (Ceph Benchmarking Tool) can be used to run tests for Ceph in a deterministic manner. It's also to show how to setu up a Ceph cluster for use with CBT to make your life simpler by automating a lot of the manual effort that is required to set up a performance test. 
 
 For a real life example, this blog will try and answer the quesiton "Does using the CLAY erasure code plugin give better performance than using the default JErasure plugin?" showing how CBT can be used to conduct a set of experiments and produce reports to answer this question.
 
