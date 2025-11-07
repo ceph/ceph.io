@@ -169,7 +169,7 @@ CLAY (in Squid but not in Tentacle) is only transmitting ~50% of the amount of d
 
 We can see that when an OSD goes down, the recovery of data hits performance, particularly for write-heavy workloads. I did a comparison report of the two curves above compared to when all OSDs are up [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/Jerasure_Vs_Clay_Full_comparison/comparitive_performance_report_251013_114008.pdf).
 
-![alt text](images/1024seq_read_all.png "1024k sequential write")
+![alt text](images/1024kseq_read_all.png "1024k sequential write")
 
 We can see a majpority of the tests show that Jerasure with all OSDs up is the best for performance across the board.
 
