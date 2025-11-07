@@ -123,7 +123,7 @@ There are 2 areas you will have to delete to complete this step:
    ```yaml
    tmp_dir: "/tmp/cbt"
    ```
-   
+
    This directory contains the temporarily log files from the IO exercisor, eg the FIO json files.
 2. The -a argument when you run a performance benchmark: 
 
@@ -137,23 +137,35 @@ As you can see, both my YAML and argument point to the same directory, so before
    ```bash
    rm -rf /tmp/cbt/*
    ```
+
+   We delete these files as if you don't, CBT assumes there is already a run ongoing and CBT will attempt to protect the previous data and skip tests throughout the YAML. 
 </details>
 
 ---
 <details>
 <summary>Step 3: Building a container</summary>
 
-Next you will have to get a build container that we are going to use to construct our ceph cluster. You can obtain this container id from [Builds ceph](https://shaman.ceph.com/builds/ceph). Click on your desired build and then copy the **sha1**, this is also known as the **container id**. The build I’m using can be seen within the `Step 1: Setup` section previously. 
+Next you will have to get a build container that you are going to use to construct our ceph cluster. You can obtain this container id from [Builds ceph](https://shaman.ceph.com/builds/ceph). Click on your desired build and then copy the **sha1**, this is also known as the **container id**. The build I’m using can be seen within the `Step 1: Setup` section previously. 
 
-- We will now pull down the desired build container using podman 
+- You will now pull down the desired build container using podman 
 
 <details>
-<summary>Click to see details</summary>
+<summary>Click to see details for upstream</summary>
 
   ```bash
   podman pull quay.ceph.io/ceph-ci/ceph:<sha1>
   ```
   Make sure to paste your specific **sha1** into the above command!
+</details>
+
+Note: The above is using the upstream development containers. You can also pull released downstream containers (for Squid/Reef etc), from [here](https://quay.io/repository/ceph/ceph?tab=tags&tag=latest).
+
+<details>
+<summary>Click to see details for downstream</summary>
+
+  ```bash
+  podman pull quay.ceph.io/ceph/ceph:v19.2.3
+  ```
 </details>
 </details>
 
@@ -161,7 +173,7 @@ Next you will have to get a build container that we are going to use to construc
 <details>
 <summary>Step 4: Creating a cluster</summary>
 
-Now we will run a script to remove the volume groups:
+Now you will run a script to remove the volume groups:
 
 <details>
 <summary>Click here to see script</summary>
@@ -175,12 +187,12 @@ done
 
 </details>
 
-Next, use cephadm with your container id you previously pulled down, to create your ceph cluster, like so:
+Next, use cephadm with your container `id` you previously pulled down, to create your ceph cluster, like so:
 
 ```bash
 cephadm --image quay.ceph.io/ceph-ci/ceph:<sha1> bootstrap --single-host-defaults --log-to-file --mon-ip <ip_of_node> --allow-mismatched-release
 ```
-Of course replace `sha1` and `ip_of_node` with your corresponding values. We are specifying the container image, using `bootstrap` to initialise a new Ceph cluster. `--single-host-defaults` is optimising the bootstrap for a single node. `--log-to-file` makes Ceph daemons log to files on disk. `--mon-ip` tells what IP address to bind the first monitor to. `--allow-mismatched-release` lets you bootstrap with an image that does not match the cephadm version of the host.
+Of course replace `sha1` and `ip_of_node` with your corresponding values. You are specifying the container image, using `bootstrap` to initialise a new Ceph cluster. `--single-host-defaults` is optimising the bootstrap for a single node. `--log-to-file` makes Ceph daemons log to files on disk. `--mon-ip` tells what IP address to bind the first monitor to. `--allow-mismatched-release` lets you bootstrap with an image that does not match the cephadm version of the host.
 
 It is also common in performance benchmarking to reset the system into a known state prior to starting any benchmarks because factors such as fragmentation of stored data can affect results. Therefore it is advisable to delete and recreate the cluster between every run.
 </details>
@@ -188,7 +200,7 @@ It is also common in performance benchmarking to reset the system into a known s
 ---
 <details>
 <summary>Step 5: Configure cluster</summary>
-Now we have a basic cluster setup, we can view our cluster to make sure it is up and running:
+Now you have a basic cluster setup, you can view your cluster to make sure it is up and running:
 
 - `ceph orch device ls` to check all the OSDs you need are available
 - If not available, you have to use `ceph orch zap device <osd>` to make them available. A script like this will solve the OSD unavailability problem:
@@ -218,7 +230,7 @@ Now we have a basic cluster setup, we can view our cluster to make sure it is up
   ```
 </details>
 
-- Next, we will create our Erasure Coding (EC) setup. This script can be customised however you’d like your EC setup to be, I will provide a simple example version of mine here:
+- Next, you will create our Erasure Coding (EC) setup. This script can be customised however you’d like your EC setup to be, I will provide a simple example version of mine here:
 
 <details>
 <summary>Click to see details</summary>
@@ -235,7 +247,7 @@ Now we have a basic cluster setup, we can view our cluster to make sure it is up
   ```
 </details>
 
-So the above is an example of a similar script to what I run. It defines a 4 + 2 EC profile named **reedsol**. An EC profile is essentially a template that defines how Ceph should encode and store data using EC. We create two pools (**rbd_erasure** & **rbd_replicated**), enable EC overwrites and EC optimisations, then initialise pools and create an RBD image backed by the EC pool.
+So the above is an example of a similar script to what I run. It defines a 4 + 2 EC profile named **reedsol**. An EC profile is essentially a template that defines how Ceph should encode and store data using EC. You create two pools (**rbd_erasure** & **rbd_replicated**), enable EC overwrites and EC optimisations, then initialise pools and create an RBD image backed by the EC pool.
 
 Within creating the EC setup you will be:
 - Defining the amount of data OSDs (k) and parity OSDs (m)
@@ -255,21 +267,21 @@ My EC (Erasure Coding) setup is as follows:
 - Single EC pool
 - Chunk size = 4K
 
-Now we have set up and configured an erasure coded ceph cluster!
+Now you have set up and configured an erasure coded ceph cluster!
 
-I will go a bit more in depth here regarding prefilling, as mentioned above we are aiming to prefill 50% of the physical capacity. You need to choose a **working set**, (the amount of logical capacity to utilise over during the course of the benchmark) is very important, this is so that all the IO doesn't just go straight into cache in systems with large amounts of memory. Therefore, it is important to have the total working set to be significantly larger than the RAM in the system.
+I will go a bit more in depth here regarding prefilling, as mentioned above you are aiming to prefill 50% of the physical capacity. You need to choose a **working set**, (the amount of logical capacity to utilise over during the course of the benchmark) is very important, this is so that all the IO doesn't just go straight into cache in systems with large amounts of memory. Therefore, it is important to have the total working set to be significantly larger than the RAM in the system.
 
-In this example we are using RBD volumes with erasure coding. This is the calculation you would do to find out how much you need to write to fill the physical capacity to 50% (this is represented by 0.5), this is known as the RBD Volume size.
+In this example you are using RBD volumes with erasure coding. This is the calculation you would do to find out how much you need to write to fill the physical capacity to 50% (this is represented by 0.5), this is known as the RBD Volume size.
 `(Physical drive size * K * 0.5 / No. of volumes`
-Therefore for our example, we would get:
+Therefore for our example above, you would get:
 `(210000 * 4 * 0.5) / 8` Therefore the **RBD Volume size** = 52500 (52.5GB)
 
-We can then calculate the **total working set**, by doing:
+You can then calculate the **total working set**, by doing:
 `RBD Volume size * No. of volumes`
 Which would result in, for our example:
 `52500 x 8` Therefore the **working set** = 420000 (420GB)
 
-We can see here for our example that the working set is 420GB and the RAM is 210GB therefore this is satisfactory.
+You can see here for our example that the working set is 420GB and the RAM is 210GB therefore this is satisfactory.
 
 If you are not using RBD volumes with EC and you are using Replica pools instead, the maths would look like this, to get the **RBD Volume size**:
 `(Physical drive size * Number of OSDS / Number of copies * 0.5) / Number of Volumes`
