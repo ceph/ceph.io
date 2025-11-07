@@ -171,7 +171,7 @@ We can see that when an OSD goes down, the recovery of data hits performance, pa
 
 ![alt text](images/1024kseq_read_all.png "1024k sequential write")
 
-We can see a majpority of the tests show that Jerasure with all OSDs up is the best for performance across the board.
+We can see a majority of the tests show that Jerasure with all OSDs up is the best for performance across the board.
 
 </details>
 
