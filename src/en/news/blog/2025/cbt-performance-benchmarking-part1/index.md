@@ -104,6 +104,7 @@ You will want to ssh into our machine that we will be using.
 - 6 Sata Drive SSD’s 210GB  
 - ceph version `20.3.0-2198-gb0ae68b0 (b0ae68b0ccceed5a913d81c5a8cb0b4e9c5a5f6b)` tentacle (dev)  
 - OS: Red Hat Enterprise Linux 9.6 (Plow)  
+Note: This is a single node system and you are running the IO client on the same system as Ceph. However, there is nothing stopping you from running CBT on a multi-node server. The YAML format allows it to SSH into Ceph nodes.
 </details>
 
 ---
@@ -183,7 +184,7 @@ Note: The above is using the upstream development containers. You can also pull 
 Now you will run a script to remove the volume groups:
 
 <details>
-<summary>Click here to see script</summary>
+<summary>Click here to see removevgs script</summary>
 
 ```bash
 for i in /dev/ceph*
