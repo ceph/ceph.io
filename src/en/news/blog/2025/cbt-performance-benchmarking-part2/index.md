@@ -22,6 +22,11 @@ Once you have finished `Part 1 (How to start a Ceph cluster for a performance be
 
 The YAML file defines what tests we will run on the cluster.  
 
+We could briefly describe the YAML file as having 3 main sections to it:
+1. cluster section: Where the YAML describes how CBT communicated with the cluster. Eg user ID, clients, OSDs, ceph binary paths etc.
+2. monitoring_profiles section: Where the YAML describes the monitoring tools used (collectl in our case) to collect statistics.
+3. benchmarks section: Where the benchmarking technique is specified (librbdfio) in our case, and also where the workloads are placed.
+
 ---
 
 ## Key sections of the YAML file:  
