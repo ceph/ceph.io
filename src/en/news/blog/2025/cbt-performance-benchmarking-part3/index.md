@@ -167,13 +167,11 @@ This has led to me exploring the CLAY plugin further to understand what is going
 
 CLAY (in Squid but not in Tentacle) is only transmitting ~50% of the amount of data between OSDs during the recovery, so this will be good if network bandwidth is the bottleneck. However, if CPU utilisation or drive IOPs is a bottleneck then CLAY will **not** be the correct choice, as this will lead to a further decrease in performance. This is due to a lot more read IOs to the backend drives.
 
-We can see that when an OSD goes down, the recovery of data hits performance, particularly for write-heavy workloads. I did a comparison report of the two curves above compared to when all OSDs are up [here](https://github.com/Jakesquelch/cbt_results/blob/main/08-09-2025_clay_jerasure_osd_down_up_comparison/comparitive_performance_report_250908_120537.md).
+We can see that when an OSD goes down, the recovery of data hits performance, particularly for write-heavy workloads. I did a comparison report of the two curves above compared to when all OSDs are up [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/Jerasure_Vs_Clay_Full_comparison/comparitive_performance_report_251013_114008.pdf).
 
-![alt text](images/1024seq.png "1024k sequential write")
+![alt text](images/1024seq_read_all.png "1024k sequential write")
 
-A majority of the tests show that Jerasure with all OSDs up is the best for performance across the board. However mixed workloads highlight CLAY’s design edge in larger block workloads, but with one OSD down, small-block mixes still collapse.
-
-![alt text](images/final_4.png "4 Random read/write curves")
+We can see a majpority of the tests show that Jerasure with all OSDs up is the best for performance across the board.
 
 </details>
 
