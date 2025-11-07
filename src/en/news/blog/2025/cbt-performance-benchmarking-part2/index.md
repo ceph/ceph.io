@@ -15,8 +15,6 @@ tags:
 - **Part 3** - How to start a CBT run - Things to consider when evaluating performance  
 
 ---
-An example of contents from a YAML file:
-![alt text](images/yaml-contents.png "Example of YAML workload")
 
 ## Introduction: What goes into the YAML file?  
 
@@ -153,6 +151,11 @@ librbdfio:
 ```
 The above is an example of a 32k sequential write, we configure different levels of total_iodepth.
 </details>
+
+---
+
+An example of contents from a YAML file:
+![alt text](images/yaml-contents.png "Example of YAML workload")
 
 ---
 
