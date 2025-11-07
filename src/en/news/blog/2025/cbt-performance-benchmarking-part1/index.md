@@ -166,6 +166,13 @@ Note: The above is using the upstream development containers. You can also pull 
   ```bash
   podman pull quay.ceph.io/ceph/ceph:v19.2.3
   ```
+  The above is an example for the latest squid build
+
+  ```bash
+  podman pull quay.ceph.io/ceph/ceph:v19.2.3
+  ```
+  The above is for the tentacle RC candidate
+
 </details>
 </details>
 
