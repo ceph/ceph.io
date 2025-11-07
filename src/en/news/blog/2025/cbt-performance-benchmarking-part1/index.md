@@ -62,7 +62,8 @@ There are several aspects to consider when evaluating performance, the main aspe
   - So Ideally, to get like for like comparisons, tests need to be run on the same system.  
 
 - The system must be prefilled (if applicable, perhaps not so important for Object/RGW evaluation) and preconditioned in the same way.  
-  - Pre-filling involves filling the volume or pool with sequential writes and pre-conditioning is adding random writes to simulate real world testing - since most production systems will have been running for many months/years.  
+  - Pre-filling involves filling the volume or pool with sequential writes prior to any performance benchmarking. 
+  - Pre-conditioning is adding random overwrites after prefilling the system to simulate a real world application, to add some garbage collection/fragmentation since most production systems will have been running for many months/years and therefore will have generated many overwrites and updates to data written.
   - A storage system that is almost empty will perform very differently from one that has a lot of data on it due to metadata access, garbage collection, fragmentation etc.  
 
 - Same workload amount, e.g. 1M, 4k, 8k, 64k etc. And this has to be with the same sequential/random method.  
@@ -77,9 +78,7 @@ This could be down to something as minimal as workload ordering, this can have a
 
 ---
 
-## What is the objective of evaluating performance?  
-
-The objective of evaluating performance should be to obtain accurate benchmarks for different ceph clusters with varying configurations.  
+## What are we looking to achieve from the performance benchmark?   
 
 If the same performance test is repeated on the same system we want to be able to measure the same results (or with as little variance between runs as possible). This predictability is important if we are going to try and compare different configurations to see which is better.
 
