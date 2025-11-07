@@ -15,14 +15,17 @@ tags:
 - **Part 3** - How to start a CBT run - Things to consider when evaluating performance  
 
 ---
-An example of contents from a YAML file:
-![alt text](images/yaml-contents.png "Example of YAML workload")
 
 ## Introduction: What goes into the YAML file?  
 
 Once you have finished `Part 1 (How to start a Ceph cluster for a performance benchmark with CBT)` you should have an erasure coded Ceph cluster setup now, and you're nearly ready to run a CBT test on it! However, before we can do that, we need to understand what **YAML contents** we want.  
 
 The YAML file defines what tests we will run on the cluster.  
+
+We could briefly describe the YAML file as having 3 main sections to it:
+1. `cluster` section: Where the YAML describes how CBT communicated with the cluster. Eg user ID, clients, OSDs, ceph binary paths etc.
+2. `monitoring_profiles` section: Where the YAML describes the monitoring tools used (collectl in our case) to collect statistics.
+3. `benchmarks` section: Where the benchmarking technique is specified (librbdfio) in our case, and also where the workloads are placed.
 
 ---
 
@@ -46,7 +49,7 @@ benchmarks:
 ---
 
 <details>
-<summary>Length of run</summary> 
+<summary>Length of the benchmark</summary> 
 
 We configure a **ramp** and a **time** for each test:  
 
@@ -76,7 +79,7 @@ Example:
 <summary>Volume size</summary>
 
 Storage systems may give different performance depending how full they are, where there are fixed sized caches the cache hit ratio will be higher when testing a smaller quantity of storage, dealing with fragmentation and garbage colleciton takes more time when there is less free capacity.
-Ideally configure the performance test to use over 50% of the physical storage to get measurements representative of real world use.
+Ideally configure the performance test to use over 50% of the physical storage to get measurements representative of real world use. We went over how to calculate the RBD volume size in **part 1**, so it's important that your calculation there, matches with the `vol_size` attribute within your yaml file.
 
 - Ideally, this should match the volume size created in **Part 1** when setting up the EC profile.  
 - If this value is lower than the RBD image size, then only that amount of data specified will be written.  
@@ -109,6 +112,8 @@ Example:
 <details>
 <summary>Prefill & Precondition </summary> 
 
+These are discussed more in depth in **part 1** so please refer to that section if you need a recap.
+
 - **Prefill** → filling all volumes with sequential writes.  
 - **Precondition** → adding random writes to simulate real-world workloads.
 
@@ -131,7 +136,9 @@ Example:
         monitor: False
 ```
 
-- Note here that the time here is overriding the time specified in the librbdfio (global) section of the YAML. Not specifying a time will use the default value spceified in the outer (librbdfio) section.
+So the above is issuing random 64K writes at a total_iodepth of 16 (across all volumes), so with an 8 volume configuration, each volume will be using a queue depth of 2 per volume. 
+
+- Note: The time here is overriding the time specified in the librbdfio (global) section of the YAML. Not specifying a time will use the default value spceified in the outer (librbdfio) section.
 </details>  
 
 ---
@@ -151,8 +158,13 @@ librbdfio:
       numjobs: [ 1 ]
       total_iodepth: [ 2, 4, 8, 16, 32, 64, 128, 256, 512, 768 ]
 ```
-The above is an example of a 32k sequential write, we configure different levels of total_iodepth.
+The above is an example of a 32k sequential write, we configure different levels of total_iodepth. So the way this test would work is that it would start with a total_iodepth of 2 with a ramp of 30 seconds and 90 seconds of IO with stats collected, then the same would occur for total_iodepth 4, and so on for the increasing total_iodepth values. Each of these total_iodepth points are one of the points that are represented on the curve diagram.
 </details>
+
+---
+
+An example of contents from a YAML file:
+![alt text](images/yaml-contents.png "Example of YAML workload")
 
 ---
 
@@ -301,3 +313,9 @@ benchmarks:
         total_iodepth: [ 4, 8, 12, 16, 32, 48, 64, 128, 256, 384, 588, 768 ]
 ```
 </details>
+
+---
+
+## Summary
+
+In part 2 you have learnt about YAML files, workloads, and how they are incorporated within CBT performance benchmarking. We will now move onto part 3 of the blog, which will discuss factors to consider when benchmarking performance, and also how to start your first CBT performance benchmark!
