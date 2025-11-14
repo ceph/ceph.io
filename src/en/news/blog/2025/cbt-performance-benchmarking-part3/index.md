@@ -25,7 +25,8 @@ This part will cover:
 
 1. Running a performance test  
 2. Processing the results  
-3. How to read response time curves  
+3. Comparing the results
+4. How to read response time curves  
 
 ---
 
@@ -62,6 +63,40 @@ PYTHONPATH=/cbt/ /cbt/tools/generate_performance_report.py --archive /perftests/
 ```
 
 Above I am referencing the location of cbt.py again at the start, I then reference the script that will generate the performance report (generate_performance_report.py). I state the directory, `my_test` in this case, that has the results from the performance run, and also state a desired `output-directory`, this is where the pdf for the performance report will be. Side note, you do not need to already have created the `my_test_results` directory you can see in the command above, this will be automatically done for you. You will now have a pdf file inside this new `my_test_results` folder along with a few other files, you can upload these files to GitHub if you'd like to store/view them somewhere.
+
+</details>
+
+---
+
+<details>
+<summary>Step 3: Comparing the results</summary>
+
+With CBT, as well as performance reports we can also generate **comparison reports** quickly. Now that we have ran our tests for our CLAY and Jerasure test, we can generate a performance report. I will use the following command to do so:  
+
+```bash
+PYTHONPATH=/cbt/ /cbt/tools/generate_comparison_performance_report.py --baseline /perftests/jerasure_test/ --archives /perftests/clay_test/ --output_directory /perftests/clay_vs_jerasure_comparison --create_pdf
+```
+In the above command we will have to specify what our baseline is, we will use our test folder from the Jerasure performance report, and then our archive curve will be our CLAY performance report test folder. It is important here that in the above command you are inputting the test folders for Jerasure and CLAY **NOT** the results folders that were generated from the previous performance runs. We we will generate a comparison report in our chosen output directory. 
+
+Using the above command I generated a comparison report between the above two runs, that can be found [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/Jerasure_Vs_Clay_comparison/comparitive_performance_report_251015_142011.pdf).
+
+### What results are we expecting?
+
+Jerasure is a generic reed-solomon erasure coding library, it is matrix-based, not CPU-optimised. It is fairly balanced between read and write. CLAY is designed for faster recovery at the cost of more complicated write paths. So we are expecting to see better performance from CLAY potentially when it comes to smaller IO sizes, but as the writes get bigger we may see a decline in performance from CLAY leading to better Jerasure results. Furthermore in terms of reads we expect fairly similar results across the board as they are implemented very similar, the main difference is when it comes to writes.
+
+So now I will analyse the results from this comparison report. Firstly I will take a look at a **1024k sequential read**:
+
+![alt text](images/1024k_seq_read.png "1024k Sequential Read curve")
+
+As shown by the diagram, the orange curve is our CLAY EC pool, and the blue curve is our Jerasure EC pool. Now as you can see the difference between the two curves really isn’t anything too substantial, they follow very similar paths, and that was expected. This is because for a normal read, ceph only needs to fetch data chunks (not parity chunks). Both Jerasure and CLAY are basically just returning the stored object, there is no real difference unless a failure occurs.
+
+Now lets look at the **1024k sequential write**:
+
+![alt text](images/1024k_seq_write.png "1024k Sequential Write curve")
+
+Looking at the graph above writes we see that CLAY has 20-60% higher latency, with throughput dropping compared to Jerasure. This is likely due to extra CPU and network demands in CLAY. Larger writes mean bigger encoding matrices/layers, and CLAY has more complexity per write than Jerasure, laeding to the higher latency.
+
+Our sequential write benchmark show that Jerasure delivers more consistent write performance across all block sizes, while CLAY is more volatile, performing better at some smaller sizes but much worse at large sequential writes. This shows CLAY’s design priorities: it is optimised for reduced recovery bandwidth rather than raw write performance.
 
 </details>
 
@@ -107,8 +142,4 @@ As mentioned in part 1 of the blog, the perfect response curve would be a flat h
 
 ## In Conclusion
 
-In conclusion, with all the OSDs running, CLAY shows some strengths over Jerasure, especially at large block and mixed workloads. But when one OSD is down, it has some poor performance results, for example the small block size random writes where throughput drops by half and latency can triple. CLAY’s repair locality helps for large objects, but it actually suffers worse than Jerasure on small random operations, due to what we discussed earlier.
-
-This brings us back to the benefits of CBT benchmarking. Through generating these performance results we noticed that there was a problem when it came to CLAY at recovering data, and this can lead to improvements to be made to it. For example, the reads are currently issued in series which will add a lot of latency to the recovery, issuing the reads in parallel would be better. 
-
-I hope this demonstrates the seamless experience of CBT and how it can generate helpful reports and curves that will allow you to benchmark performance of Ceph cluster setups with ease.
+So that demonstrates the seamless experience of how you can generate a CBT performance benchmark run from start to finish, generating response curves and comparison reports along the way. If you are interested in understanding the analysis of my example Jerasure and CLAY run, you can check out **Part 4** of the blog, where I go into a lot more detail discussing that.
