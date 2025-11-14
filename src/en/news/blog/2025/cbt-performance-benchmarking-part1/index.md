@@ -34,7 +34,7 @@ Now I understand that the above example curves could be a totally knew concept f
 - In practice response curves are never perfect, a good response curve will have a fairly horizontal line with the latency increasing gradually as the I/O load increases, curving upwards towards a vertical line where we reach the saturation point.
 - Our comparison curves will be explained in more detail in **part 3** of the blog, so a basic understanding is more than fine for now.
 
-The objective of this blog is to demonstrate how CBT (Ceph Benchmarking Tool) can be used to run tests for Ceph in a deterministic manner. It's also to show how to setu up a Ceph cluster for use with CBT to make your life simpler by automating a lot of the manual effort that is required to set up a performance test. 
+The objective of this blog is to demonstrate how CBT (Ceph Benchmarking Tool) can be used to run tests for Ceph in a deterministic manner. It's also to show how to set up a Ceph cluster for use with CBT to make your life simpler by automating a lot of the manual effort that is required to set up a performance test. 
 
 For a real life example, this blog will try and answer the quesiton "Does using the CLAY erasure code plugin give better performance than using the default JErasure plugin?" showing how CBT can be used to conduct a set of experiments and produce reports to answer this question.
 
@@ -182,7 +182,7 @@ Note: The above is using the upstream development containers. You can also pull 
 <details>
 <summary>Step 4: Creating a cluster</summary>
 
-Now you will run a script to remove the volume groups:
+Firstly, run command `lsblk` to see if there are any ceph partitions on the block devices you are going to use for ceph. If so, you will need to run the `removevgs` script below, to remove the volume groups:
 
 <details>
 <summary>Click here to see removevgs script</summary>
