@@ -12,7 +12,8 @@ tags:
 
 - **Part 1** - How to start a Ceph cluster for a performance benchmark with CBT  
 - **Part 2** - Defining YAML contents  
-- **Part 3** - How to start a CBT run - Things to consider when evaluating performance  
+- **Part 3** - How to start a CBT performance benchmark 
+- **Part 4** - Analysing a CBT performance benchmark 
 
 ---
 
