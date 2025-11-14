@@ -26,7 +26,8 @@ This part will cover:
 1. Running a performance test  
 2. Processing the results  
 3. Comparing the results
-4. How to read response time curves  
+4. Running a performance test with an OSD down
+5. How to read response time curves  
 
 ---
 
@@ -102,6 +103,35 @@ Our sequential write benchmark show that Jerasure delivers more consistent write
 
 ---
 
+<details>
+<summary>Step 4: Running a test with OSD down</summary>
+
+So before was a CLAY and Jerasure EC pool compared with one another. The results solidified our hypothesis that Jerasure would likely perform better because of the more complex computations used to recover data. So now we will do an additional run and deliberately kill an OSD prior to running the CBT test, to simulate real world failures that could occur, to see how the performance between the two differs when it comes to OSD recovery. 
+
+So the following comparison report shows a CLAY and Jerasure curve where both of the plugins have 1 OSD that has been stopped, I did this so we could focus on the differences between the performance of the two. The report can be found [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/Jerasure_Vs_Clay_down_comparison/comparitive_performance_report_251015_154505.pdf).
+
+We will now take a look at 1024k Sequential read from the above comparison report: 
+
+![alt text](images/down_1024_seq_read.png "1024k sequential read")
+
+Now we expect CLAY to have better performance here due to it's supposedly more efficient data recovery. However this is not the case as shown by the diagram above. 
+
+### So what does this mean?
+
+This has led to me exploring the CLAY plugin further to understand what is going on here, and why there is no improvements when we compare CLAY to Jerasure. The worse performance from CLAY is due to CPU overheads that come along with CLAY. When we have a chunk size of 4k we are getting a subchunk size of 512, subchunks are a smaller unit within a chunk. For reads of less than 4K they get rounded up to a whole 4K block, therefore CLAY sometimes ends up reading the same data more than once and discarding different parts of what is read, this therefore is not good for performance and concludes that a small subchunk size doesn't work alongside NVMe drive block size of 4k. I've also noticed that Squid recovery also always tries to read 2MB from each stripe and expects the read to be truncated if the object is smaller than 2MB * number of stripes. With CLAY this results in a lot of small reads being issued beyond the end of the object. 
+
+CLAY (in Squid but not in Tentacle) is only transmitting ~50% of the amount of data between OSDs during the recovery, so this will be good if network bandwidth is the bottleneck. However, if CPU utilisation or drive IOPs is a bottleneck then CLAY will **not** be the correct choice, as this will lead to a further decrease in performance. This is due to a lot more read IOs to the backend drives.
+
+We can see that when an OSD goes down, the recovery of data hits performance, particularly for write-heavy workloads. I did a comparison report of the two curves above compared to when all OSDs are up [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/Jerasure_Vs_Clay_Full_comparison/comparitive_performance_report_251013_114008.pdf).
+
+![alt text](images/1024kseq_read_all.png "1024k sequential write")
+
+We can see a majority of the tests show that Jerasure with all OSDs up is the best for performance across the board.
+
+</details>
+
+---
+
 ## How to read response time curves
 
 So going back to my example CBT test run and the question we started with: "Does using the CLAY erasure code plugin give better performance than using the default JErasure plugin?" 
@@ -142,4 +172,4 @@ As mentioned in part 1 of the blog, the perfect response curve would be a flat h
 
 ## In Conclusion
 
-So that demonstrates the seamless experience of how you can generate a CBT performance benchmark run from start to finish, generating response curves and comparison reports along the way. If you are interested in understanding the analysis of my example Jerasure and CLAY run, you can check out **Part 4** of the blog, where I go into a lot more detail discussing that.
+So that demonstrates the seamless experience of how you can generate a CBT performance benchmark run from start to finish, generating response curves and comparison reports along the way. If you are interested in understanding the analysis of my example Jerasure and CLAY run, why Jerasure performed better than CLAY, **Part 4** of the blog series will be coming soon. I'll go into a lot more detail discussing how writes and reads work, and the IO breakdown for Clay and Jerasure to provide more clarity on why CLAY performs worse.
