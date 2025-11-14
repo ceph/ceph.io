@@ -270,7 +270,7 @@ We have lots of different levels of IOs for our writes and reads within the yaml
 
 - In terms of real world scenarios:
    - A database, or more generally **OLTP** (Online Transaction Processing) running on block or file storage generally issues small **random read** and **write** I/Os. Often there is a higher percentage of read I/Os to write I/Os so this might be represented by a 70% read, 30% overwrite 4K I/O workload.
-   - An application creating a backup is likely to make larger **read** and **write** I/Os and these are likely to be fairly sequential. If the backup is being written to other storage then the I/O workload will be 100% sequentail reads, if the backup is being read from elsewhere and written to the storage the I/O workload will be 100% sequential writes.
+   - An application creating a backup is likely to make larger **read** and **write** I/Os and these are likely to be fairly sequential. If the backup is being written to other storage then the I/O workload will be 100% sequential reads, if the backup is being read from elsewhere and written to the storage the I/O workload will be 100% sequential writes.
    - A traditional S3 object store contains large objects that are **read** and **written sequentially**. S3 objects are not overwritten so the I/O workload would be a mixture of large sequential reads and writes. While the S3 object may be GB in size, RGW will typically split the S3 object into 4MB chunks.
    - S3 object stores can be used to store small objects as well, and some applications store indexes and tables within objects and make **short random** accesses to data within the object. These applications may generate I/O workloads where the reads are more similar to OLTP workloads.
    - A storage cluster is likely to be used by more than one application, each with its own I/O workload. The I/O workload to the cluster can consequently become quite complicated.
@@ -372,4 +372,4 @@ benchmarks:
 
 ## Summary
 
-In part 2 you have learnt about YAML files, workloads, and how they are incorporated within CBT performance benchmarking. We will now move onto part 3 of the blog, which will discuss factors to consider when benchmarking performance, and also how to start your first CBT performance benchmark!
+In part 2 you have learnt about YAML files, workloads, and how they are incorporated within CBT performance benchmarking. We will now move onto part 3 of the blog, which will discuss factors to consider and how to start your first CBT performance benchmark!
