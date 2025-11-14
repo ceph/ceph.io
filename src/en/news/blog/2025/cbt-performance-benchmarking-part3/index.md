@@ -75,21 +75,16 @@ I generated a performance report for a JErasure plugin EC pool, the results can 
 
 I then generated a performance report for the CLAY plugin [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/13th_Oct_Clay_4%2B2%2B5_results/performance_report_251013_094658.pdf).  
 
-You will see hockey stick curves plotted to show the performance within the reports generated, for example this is the curve for a 4K Sequential Read of the Jerasure EC setup:
-
-![alt text](images/example_4k_seq_read.png "4K Sequential Read Graph")
+Within the generated reports above you will see hockey stick curves plotted to show the performance of each configuration. 
 
 ## How do we read the curves generated?
 
-Let’s take this 4K sequential read curve shown above:
+![alt text](images/how_to_read.png "How to read graphs")
 
-We can find out the specified `total iodepths` for this test by checking the yaml file we previously used in this test, and it is also stated within the performance report under the “Configuration yaml” section. For the above example it is: 
+Here is an example of the `total_iodepth` value. As stated above we can find out the specified `total iodepths` for this test by checking the yaml file we previously used in this test, and it is also stated within the performance report under the “Configuration yaml” section. For the above example it is: 
 ```yaml
 total_iodepth: [ 2, 4, 8, 12, 16, 24, 32, 64, 96, 128, 192, 288, 384 ] 
 ```
-And each of these total iodepths represent a point on the curve. For example the 6th iodepth point (24) represents where the 6th red vertical line intersects the curve. So we can go into the json to find specifics or we can use the graph. From the graph we know at a total IO depth of 24, there is an average latency of around 0.5ms when the throughput is around 57000IOps. Therefore each data point on the curve represents a set of measured data; it's the average response time (latency) over approximately a 5-minute period of data collection at a constant IO load.
-
-Response times include the switch/network overheads, they are times seen by an application on a server.
 
 The vertical red lines (error bars) shows the amount of standard deviation/variance in the performance for that specific point in the curve. If the standard deviations are small it shows that performance is stable with that workload. As the response curve starts to curve upwards performance bceomes more variable and the standard deviation increases.
 
