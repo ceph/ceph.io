@@ -12,7 +12,8 @@ tags:
 
 - **Part 1** - How to start a Ceph cluster for a performance benchmark with CBT  
 - **Part 2** - Defining YAML contents  
-- **Part 3** - How to start a CBT run - Things to consider when evaluating performance  
+- **Part 3** - How to start a CBT performance benchmark 
+- **Part 4** - Analysing a CBT performance benchmark
 
 ---
 
@@ -29,11 +30,11 @@ Here is an example of what a CBT comparison report would look like: (this will a
 ![alt text](images/cbt_example_results.png "Example CBT comparison report")
 
 Now I understand that the above example curves could be a totally knew concept for a lot of people so will go over the fundamentals of them: 
-- The perfect response curve would be a flat horizontal line showing constant latency as the quantity of I/O increases until we reach the saturation point (where the system can handle no more I/O), at this point we would expect the curve to become a vertical line showing that attempting to do more I/O than the system can handle, just results in I/Os being queued and hence the latency increasing.
+- The perfect response curve would be a flat horizontal line showing constant latency as the quantity of I/O increases until we reach the saturation point. This is where we reach a bottleneck in the system, such as in CPU, network, drive utilisation or some other resource limitation which could also be in the software. At this point we would expect the curve to become a vertical line showing that attempting to do more I/O than the system can handle, just results in I/Os being queued and hence the latency increasing.
 - In practice response curves are never perfect, a good response curve will have a fairly horizontal line with the latency increasing gradually as the I/O load increases, curving upwards towards a vertical line where we reach the saturation point.
 - Our comparison curves will be explained in more detail in **part 3** of the blog, so a basic understanding is more than fine for now.
 
-The objective of this blog is to demonstrate how CBT (Ceph Benchmarking Tool) can be used to run tests for Ceph in a deterministic manner. It's also to show how to setu up a Ceph cluster for use with CBT to make your life simpler by automating a lot of the manual effort that is required to set up a performance test. 
+The objective of this blog is to demonstrate how CBT (Ceph Benchmarking Tool) can be used to run tests for Ceph in a deterministic manner. It's also to show how to set up a Ceph cluster for use with CBT to make your life simpler by automating a lot of the manual effort that is required to set up a performance test. 
 
 For a real life example, this blog will try and answer the quesiton "Does using the CLAY erasure code plugin give better performance than using the default JErasure plugin?" showing how CBT can be used to conduct a set of experiments and produce reports to answer this question.
 
@@ -181,7 +182,7 @@ Note: The above is using the upstream development containers. You can also pull 
 <details>
 <summary>Step 4: Creating a cluster</summary>
 
-Now you will run a script to remove the volume groups:
+Firstly, run command `lsblk` to see if there are any ceph partitions on the block devices you are going to use for ceph. If so, you will need to run the `removevgs` script below, to remove the volume groups:
 
 <details>
 <summary>Click here to see removevgs script</summary>
@@ -200,7 +201,7 @@ Next, use cephadm with your container `id` you previously pulled down, to create
 ```bash
 cephadm --image quay.ceph.io/ceph-ci/ceph:<sha1> bootstrap --single-host-defaults --log-to-file --mon-ip <ip_of_node> --allow-mismatched-release
 ```
-Of course replace `sha1` and `ip_of_node` with your corresponding values. You are specifying the container image, using `bootstrap` to initialise a new Ceph cluster. `--single-host-defaults` is optimising the bootstrap for a single node. `--log-to-file` makes Ceph daemons log to files on disk. `--mon-ip` tells what IP address to bind the first monitor to. `--allow-mismatched-release` lets you bootstrap with an image that does not match the cephadm version of the host.
+Of course replace `sha1` and `ip_of_node` with your corresponding values. You are specifying the container image, using `bootstrap` to initialise a new Ceph cluster. `--single-host-defaults` is optimising the bootstrap for a single node, note that if you are creating a multi-node Ceph cluster, this option is not needed. `--log-to-file` makes Ceph daemons log to files on disk. `--mon-ip` tells what IP address to bind the first monitor to. `--allow-mismatched-release` lets you bootstrap with an image that does not match the cephadm version of the host.
 
 It is also common in performance benchmarking to reset the system into a known state prior to starting any benchmarks because factors such as fragmentation of stored data can affect results. Therefore it is advisable to delete and recreate the cluster between every run.
 </details>
