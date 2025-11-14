@@ -35,15 +35,33 @@ We could briefly describe the YAML file as having 3 main sections to it:
 <details>
 <summary>Cluster</summary> 
 
-In our example, we will be using **librbdfio**.  
+Here you will be describing your ceph cluster configuration.  
 
 Example:
 
 ```yaml
-benchmarks:
-  librbdfio:
-    rbdname: "cbt-librbdfio"
-    <insert details here>
+cluster:
+  user: 'exampleUser'
+  head: "exampleHostAddress"
+  clients: ["exampleHostAddress"]
+  osds: ["exampleHostAddress"]
+  mons:
+    exampleHostAddress:
+      a: "exampleIPAddress"
+  mgrs:
+    exampleHostAddress:
+      a: ~
+  osds_per_node: 8
+  conf_file: '/etc/ceph/ceph.conf'
+  clusterid: "ceph"
+  tmp_dir: "/tmp/cbt"
+  ceph-osd_cmd: "/usr/bin/ceph-osd"
+  ceph-mon_cmd: "/usr/bin/ceph-mon"
+  ceph-run_cmd: "/usr/bin/ceph-run"
+  rados_cmd: "/usr/bin/rados"
+  ceph_cmd: "/usr/bin/ceph"
+  rbd_cmd: "/usr/bin/rbd"
+  ceph-mgr_cmd: "/usr/bin/ceph-mgr"
 ```
 </details>
 
