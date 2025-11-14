@@ -12,7 +12,8 @@ tags:
 
 - **Part 1** - How to start a Ceph cluster for a performance benchmark with CBT  
 - **Part 2** - Defining YAML contents  
-- **Part 3** - How to start a CBT run - Things to consider when evaluating performance  
+- **Part 3** - How to start a CBT performance benchmark 
+- **Part 4** - Analysing a CBT performance benchmark 
 
 ---
 
@@ -32,6 +33,40 @@ We could briefly describe the YAML file as having 3 main sections to it:
 ## Key sections of the YAML file:  
 
 <details>
+<summary>Cluster</summary> 
+
+In our example, we will be using **librbdfio**.  
+
+Example:
+
+```yaml
+benchmarks:
+  librbdfio:
+    rbdname: "cbt-librbdfio"
+    <insert details here>
+```
+</details>
+
+---
+
+<details>
+<summary>Monitoring Profiles</summary> 
+
+In our example, we will be using **librbdfio**.  
+
+Example:
+
+```yaml
+benchmarks:
+  librbdfio:
+    rbdname: "cbt-librbdfio"
+    <insert details here>
+```
+</details>
+
+---
+
+<details>
 <summary>Benchmark module</summary> 
 
 In our example, we will be using **librbdfio**.  
@@ -47,6 +82,8 @@ benchmarks:
 </details>
 
 ---
+
+### Other important sections of the YAML file:  
 
 <details>
 <summary>Length of the benchmark</summary> 
@@ -163,7 +200,7 @@ The above is an example of a 32k sequential write, we configure different levels
 
 ---
 
-An example of contents from a YAML file:
+An example of workloads from a YAML file:
 ![alt text](images/yaml-contents.png "Example of YAML workload")
 
 ---
