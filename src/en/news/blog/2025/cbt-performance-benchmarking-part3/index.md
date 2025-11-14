@@ -67,8 +67,7 @@ Above I am referencing the location of cbt.py again at the start, I then referen
 
 ---
 
-<details>
-<summary>Step 3: How to read response time curves</summary>
+## How to read response time curves
 
 So going back to my example CBT test run and the question we started with: "Does using the CLAY erasure code plugin give better performance than using the default JErasure plugin?" 
 
@@ -108,8 +107,6 @@ The post processing tools will sum the IOPs to generate a total IOPs for the res
 5. Most users do not want to operate above around 70% of maximum throughput, as this provides some headroom for expansion and allows for sudden bursts in a workload so that high latency can be tolerated.
 
 As mentioned in part 1 of the blog, the perfect response curve would be a flat horizontal line showing constant latency as the quantity of I/O increases until we reach the saturation point where the system can handle no more I/O. This is because it highlights that performance is consistent with less variance.
-
-</details>
 
 ---
 
