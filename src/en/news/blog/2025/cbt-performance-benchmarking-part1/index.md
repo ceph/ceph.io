@@ -12,8 +12,8 @@ tags:
 
 - **Part 1** - How to start a Ceph cluster for a performance benchmark with CBT  
 - **Part 2** - Defining YAML contents  
-- **Part 3** - How to start a CBT run - Things to consider when evaluating performance  
-- **Part 4** - How to start a CBT run - Things to consider when evaluating performance  
+- **Part 3** - How to start a CBT performance benchmark 
+- **Part 4** - Analysing a CBT performance benchmark
 
 ---
 
@@ -201,7 +201,7 @@ Next, use cephadm with your container `id` you previously pulled down, to create
 ```bash
 cephadm --image quay.ceph.io/ceph-ci/ceph:<sha1> bootstrap --single-host-defaults --log-to-file --mon-ip <ip_of_node> --allow-mismatched-release
 ```
-Of course replace `sha1` and `ip_of_node` with your corresponding values. You are specifying the container image, using `bootstrap` to initialise a new Ceph cluster. `--single-host-defaults` is optimising the bootstrap for a single node. `--log-to-file` makes Ceph daemons log to files on disk. `--mon-ip` tells what IP address to bind the first monitor to. `--allow-mismatched-release` lets you bootstrap with an image that does not match the cephadm version of the host.
+Of course replace `sha1` and `ip_of_node` with your corresponding values. You are specifying the container image, using `bootstrap` to initialise a new Ceph cluster. `--single-host-defaults` is optimising the bootstrap for a single node, note that if you are creating a multi-node Ceph cluster, this option is not needed. `--log-to-file` makes Ceph daemons log to files on disk. `--mon-ip` tells what IP address to bind the first monitor to. `--allow-mismatched-release` lets you bootstrap with an image that does not match the cephadm version of the host.
 
 It is also common in performance benchmarking to reset the system into a known state prior to starting any benchmarks because factors such as fragmentation of stored data can affect results. Therefore it is advisable to delete and recreate the cluster between every run.
 </details>
