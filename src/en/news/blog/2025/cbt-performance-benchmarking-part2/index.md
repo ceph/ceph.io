@@ -70,15 +70,14 @@ cluster:
 <details>
 <summary>Monitoring Profiles</summary> 
 
-In our example, we will be using **librbdfio**.  
+In our example, we will be using **collectl**, to collect statistics. 
 
 Example:
 
 ```yaml
-benchmarks:
-  librbdfio:
-    rbdname: "cbt-librbdfio"
-    <insert details here>
+monitoring_profiles:
+  collectl:
+     args: '-c 18 -sCD -i 10 -P -oz -F0 --rawtoo --sep ";" -f {collectl_dir}'
 ```
 </details>
 
