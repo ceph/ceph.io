@@ -30,7 +30,7 @@ Here is an example of what a CBT comparison report would look like: (this will a
 ![alt text](images/cbt_example_results.png "Example CBT comparison report")
 
 Now I understand that the above example curves could be a totally knew concept for a lot of people so will go over the fundamentals of them: 
-- The perfect response curve would be a flat horizontal line showing constant latency as the quantity of I/O increases until we reach the saturation point (where the system can handle no more I/O), at this point we would expect the curve to become a vertical line showing that attempting to do more I/O than the system can handle, just results in I/Os being queued and hence the latency increasing.
+- The perfect response curve would be a flat horizontal line showing constant latency as the quantity of I/O increases until we reach the saturation point. This is where we reach a bottleneck in the system, such as in CPU, network, drive utilisation or some other resource limitation which could also be in the software. At this point we would expect the curve to become a vertical line showing that attempting to do more I/O than the system can handle, just results in I/Os being queued and hence the latency increasing.
 - In practice response curves are never perfect, a good response curve will have a fairly horizontal line with the latency increasing gradually as the I/O load increases, curving upwards towards a vertical line where we reach the saturation point.
 - Our comparison curves will be explained in more detail in **part 3** of the blog, so a basic understanding is more than fine for now.
 
