@@ -1,6 +1,6 @@
 ---
 title: "v20.2.0 Tentacle released"
-date: "2025-10-20"
+date: "2025-11-18"
 author: "Laura Flores"
 tags:
   - "release"
