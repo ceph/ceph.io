@@ -2,7 +2,7 @@
 title: "KV Caching with vLLM, LMCache, and Ceph"
 image: "images/image1.png"
 date: 2025-11-20
-author: Kyle Bader
+author: Kyle Bader, Tushar Gohad
 tags:
   - ceph
   - rgw
@@ -10,9 +10,11 @@ tags:
 ---
 
 
-Inference accounts for 90% of the machine learning costs for deployed AI
+Inference accounts for [90% of the machine learning
+costs](https://www.sciencedirect.com/science/article/pii/S2210537923000124) for deployed AI
 systems, and it is no surprise that inference optimization is a burgeoning topic
-in the research community. IDC estimates that global enterprises will invest
+in the research community. [IDC
+estimates](https://info.idc.com/futurescape-generative-ai-2025-predictions.html) that global enterprises will invest
 $307 billion on AI solutions in 2025, and that number is expected to grow
 aggressively year-over-year.
 
@@ -44,7 +46,7 @@ progress to CPU memory, and if there is again a cache miss it will try to
 retrieve cache blocks over any configured KV connectors. LMCache works with vLLM
 over this KV connector interface - vLLM sends or requests cache blocks and
 LMCache works to diligently store or stream cache blocks it locates. vLLM also
-introduced the technique of Paged Attention, which breaks up prompts into fixed
+introduced the technique of [Paged Attention](https://arxiv.org/pdf/2309.06180), which breaks up prompts into fixed
 sized token sequences referred to as a block, 16 tokens by default. LMCache uses
 a larger 256 token block by default, presumably to reduce the overhead of
 managing reference to many blocks and to better amortize the per-block transfer
@@ -53,8 +55,8 @@ for space and IO, might naturally wonder what this translates to in terms of
 block sizes expressed in bytes. The bytes-per-token is model dependent, because
 it’s a product of the model’s hidden size, number of key-value heads, number of
 hidden layers, head dimension, and data type size. For a model like Qwen3-32B
-this works out to be approximately 62.5 MiB. There is a convenient KV Cache
-calculator available on the documentation page for LMCache if you want to see
+this works out to be approximately 62.5 MiB. There is a convenient [KV Cache
+calculator](https://docs.lmcache.ai/getting_started/kv_cache_calculator.html) available on the documentation page for LMCache if you want to see
 how much KV space would be required for any given model or number of tokens.
 
 ## Content addressable KV storage
@@ -69,7 +71,8 @@ that exists it will flip the corresponding bit in the mask. The elegance of this
 approach is that there is no information about which cache blocks are where that
 need to be persisted, and no coordination necessary when there are multiple
 instances of vLLM+LMCache running across different hosts. In fact, there is no
-requirement that the LMCache controller be configured at all. This design also
+requirement that the [LMCache
+controller](https://docs.lmcache.ai/kv_cache_management/index.html) be configured at all. This design also
 permits flexible eviction, because a storage system could implement time-based
 eviction through a Lifecycle configuration on a bucket without leaving dangling
 references in some sort of cache block directory, if a cache block is removed
@@ -98,7 +101,8 @@ to the GPU. This is a clever way of working around most of the limitations of
 aws-crt-python, but to get true zero-copy it will require changes to the
 bindings.
 
-After some preliminary testing with the native S3 connector LMCache PR#1939
+After some preliminary testing with the native S3 connector [LMCache
+PR#1939](https://github.com/LMCache/LMCache/pull/1939)
 caught our eye because it leveraged NVIDIA Inference Xfer Library (NIXL). This
 PR introduces the ability to directly read S3 data into page-locked NIXL
 buffers, bypassing files on /dev/shm and the associated memory copy. It also
@@ -123,7 +127,8 @@ Drawing from over a decade of experience selecting hardware for Ceph storage
 systems we had an idea of what sort of system we would want to build to
 maximize throughput, while also drawing inspiration from choices made by major
 AI practitioners like Meta and OpenAI. Enter Meta’s contribution to the Open
-Compute project – the Yosemite V3.5 Sierra Point server platform. The YV3.5
+Compute project – the [Yosemite
+V3.5](https://www.opencompute.org/documents/yosemite-v3-5-platform-design-specification-v1-2-pdf) Sierra Point server platform. The YV3.5
 cubby occupies 3 OU and can be populated with 6x Sierra Point blades. Unlike
 conventional enterprise blade systems the YV3.5 platform does not have an
 integrated ethernet switch, instead each Sierra Point blade has OCP 3.0 slot
@@ -135,7 +140,8 @@ Supermicro X14 2U 4-node GrandTwin Rear IO.
 
 ![](images/smci-x14-grandtwin.png)
 
-Supermicro X14 2U 4-node GrandTwin Rear IO
+[Supermicro X14 2U 4-node GrandTwin Rear
+IO](https://www.supermicro.com/en/products/system/datasheet/sys-212gt-hnr)
 
 Each node:
 •	1x Intel Xeon 6 6740E 96C/96T, 205W
@@ -149,7 +155,8 @@ the AI solution using IBM Storage Ceph 8.1.
 
 ![](images/smci-gaudi3.png)
 
-Supermicro Gaudi 3 AI Server SYS-822GA-NGR3
+[Supermicro Gaudi 3 AI Server
+SYS-822GA-NGR3](https://www.supermicro.com/en/products/system/datasheet/sys-822ga-ngr3)
 
 •	2x Intel Xeon 6 6960P 72C/144T
 •	24x 64GB DDR5-6400
@@ -163,7 +170,8 @@ and LMCache, leveraging Gaudi 3 accelerators from Intel.
 
 ![](images/smci-gpu-aplus.png)
 
-Supermicro GPU A+ Server AS -8125GS-TNMR2
+[Supermicro GPU A+ Server AS
+-8125GS-TNMR2](https://www.supermicro.com/en/products/system/datasheet/as-8125gs-tnmr2)
 
 •	1x AMD EPYC 9654 96C/192T
 •	24x 96GB DDR5-4800
@@ -177,7 +185,8 @@ and LMCache, leveraging MI300X accelerators from AMD.
 
 ![](images/smci-400-sw.png)
 
-SSE-T7132S - 400Gb Ethernet Switch
+[SSE-T7132S - 400Gb Ethernet
+Switch](https://www.supermicro.com/en/products/accessories/Networking/SSE-T7132SR.php)
 
 •	32x QSFP-DD 400GbE, or 64x QSFP56 / 128x QSFP28 with breakout cables
 •	25.6Tb/s switching capacity
@@ -418,7 +427,8 @@ s3.cephlab.com.         0       IN      A       172.19.65.44
 ## Baseline performance
 
 To establish the baseline performance of the storage cluster before we introduce
-vLLM and LMCache we assessed the performance using elbencho to generate load
+vLLM and LMCache we assessed the performance using
+[elbencho](https://github.com/breuner/elbencho) to generate load
 from the Gaudi3 GPU host and direct it towards the Ceph S3 endpoints. We used a
 62MB block size to match the expected size of KV cache blocks being persisted by
 LMCache. This shows that we’re able to multiplex connections across the
@@ -432,7 +442,7 @@ traffic from even a single host, topping out at nearly 60 GB/s.
 At the time of our testing the vllm production stack did not support our
 end-to-end workflows, so we created customized vLLM container images that
 incorporated a LMCache development release, including one that incorporated the
-latest vllm-gaudi development for our testing.
+latest [vllm-gaudi](https://github.com/vllm-project/vllm-gaudi) development for our testing.
 
 AMD Container
 * vLLM: 
@@ -541,7 +551,7 @@ VLLM_EXPONENTIAL_BUCKETING=False
 We wanted to characterize the reduction in time-to-first-token for a 100% cache
 hit rate from remote storage with Ceph across various context lengths, and chart
 it relative to computational prefill. For this we selected the LMCache
-long_doc_qa.py. We developed the following methodology for TTFT data collection:
+[long_doc_qa.py](https://github.com/LMCache/LMCache/blob/dev/benchmarks/long_doc_qa/long_doc_qa.py). We developed the following methodology for TTFT data collection:
 
 1.	Start vLLM
 2.	Run long_doc_qa.py and record TTFT for the warm-up round (computational
@@ -597,10 +607,14 @@ GPU cycles for decode – potentially reducing time-per-output-token (TPOT).
 
 We shared our results with the llm-d team at Red Hat and have sarted to work
 with them to commodify KV caching by establishing KV caching with Ceph as a
-well-lit path. We believe that our approach is perhaps the most accessible
+[well-lit
+path](https://www.redhat.com/en/topics/ai/what-is-llm-d#what-are-well-lit-paths). We believe that our approach is perhaps the most accessible
 because it uses standard object protocols like S3, standard TCP/IP networking,
 works with a variety of accelerators from different vendors, and because Ceph
 object is ubiquitously deployed in OpenShift clusters through OpenShift Data
-Foundation and IBM Fusion.  Our next phase of testing will utilize llm-d, with
+Foundation and IBM Fusion. Our next phase of testing will utilize llm-d, with
 the GPU hosts serving as worker nodes, and exploring more sophisticated
 scenarios like PD disaggregation and cache blending.
+
+If you have any questions about Data or AI workloads for Ceph, please [reach out](mailto:kbader@ibm.com).
+
