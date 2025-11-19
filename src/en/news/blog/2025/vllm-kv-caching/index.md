@@ -1,6 +1,6 @@
 ---
 title: "KV Caching with vLLM, LMCache, and Ceph"
-image: "images/image1.png"
+image: "images/title.png"
 date: 2025-11-20
 author: Kyle Bader, Tushar Gohad
 tags:
