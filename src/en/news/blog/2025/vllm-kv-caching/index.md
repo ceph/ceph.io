@@ -435,7 +435,7 @@ LMCache. This shows that we’re able to multiplex connections across the
 concentrator endpoints on each host and drive a considerable amount of S3
 traffic from even a single host, topping out at nearly 60 GB/s.
 
-< elbencho chart >
+![](images/elbencho.png)
 
 ## vLLM
 
