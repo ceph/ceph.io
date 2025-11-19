@@ -41,7 +41,6 @@ Ansgar Jazdzewski from Hetzner Cloud will host an additional session for attende
 - **Duration**: 60-90 minutes, including Q&A.
 - **Registration Contacts**: [kristina.seel@clyso.com](mailto:kristina.seel@clyso.com), [roberto.vanoni@clyso.com](mailto:roberto.vanoni@clyso.com)
 
-
 <style>
 table {
   width: 100%;
@@ -68,9 +67,11 @@ tr:nth-child(even) {
 </style>
 
 ### Day 1 — November 12, 2025
+
 ### Location: Seminar Room 3
 
 ## ​What to Expect: A Two-Day Journey
+
 ### Day 1: Foundation, Strategy & Ecosystem (Wednesday, Nov 12)
 
 ​Day 1 focuses on the foundational principles and strategic value of Ceph. The sessions are designed to provide a comprehensive overview, making this day perfectly suited for newcomers while also serving as a valuable opportunity for seasoned experts to engage in high-level discussions and share their insights.
@@ -87,7 +88,7 @@ tr:nth-child(even) {
 
 **​10:15 AM:** Morning Keynote: Learn how DESY migrated its Linux home directories to CephFS, including the architecture and detailed migration process. - Ingo Ebel.
 
-**​10:50 AM:** Buzzword Bingo: Digital Sovereignty -  Markus Wendland and Heiko Krämer.
+**​10:50 AM:** Buzzword Bingo: Digital Sovereignty - Markus Wendland and Heiko Krämer.
 
 **​11:25 AM:** SURFin' the Ceph Wave - Jean-Marie de Boer.
 
@@ -95,11 +96,11 @@ tr:nth-child(even) {
 
 **​12:15 PM:** It's All About the Latency, Not the Bandwidth! - Wido den Hollander.
 
-**​12:50 PM:** Running a Small OpenStack Cluster with a Full NVMe Ceph Cluster -  Kevin Honka.
+**​12:50 PM:** Running a Small OpenStack Cluster with a Full NVMe Ceph Cluster - Kevin Honka.
 
 **​1:20 PM:** Lunch Break & Networking
 
-**​2:50 PM:** Principles for Storage Management -  Benedikt Bürk.
+**​2:50 PM:** Principles for Storage Management - Benedikt Bürk.
 
 **​3:25 PM:** Beyond Backup: S3 Data Management with Ceph RGW Tiering, and Chorus - Sirisha Guduru & Artem Torubarov.
 
@@ -107,17 +108,15 @@ tr:nth-child(even) {
 
 **​4:35 PM:** How RGW Stores S3 Objects in RADOS - Tobias Brunnwieser.
 
-​**5:10 PM:** A Generic Ceph Sizer for the Community - Matthias Münch.
+​**5:10 PM:** [A Generic Ceph Sizer for the Community - Matthias Münch](./assets/10_Ceph_Days_Berlin_2025_Matthias_Muench_Ceph-Sizer.pdf)
 
-​**5:25 PM:** AI, ML, and the Ceph Advantage: Scalable Storage for Smarter Workflows - Kenneth Tan.
+​**5:25 PM:** [AI, ML, and the Ceph Advantage: Scalable Storage for Smarter Workflows - Kenneth Tan](./assets/11_Ceph_Days_Berlin_Kenneth_Tan_AI,_ML,_and_the_Ceph_Advantage.pdf)
 
-​***********************
+​**********\*\*\***********
 
 **​Parallel Workshop on Day 1 (November 12th)**
 
-​Ansgar Jazdzewski will host an additional session for attendees titled "Deep Dive & Hands-on Workshop in Ceph: Create Your Own Ceph-Test-System."
-
-​Location/Time: Seminar Room 1. After lunch, starting at 2:30 PM.
+​Ansgar Jazdzewski will host an additional session for attendees titled "Deep Dive & Hands-on Workshop in Ceph: Create Your Own Ceph-Test-System."​Location/Time: Seminar Room 1. After lunch, starting at 2:30 PM.
 
 ​Requirements: Attendees must bring their own laptops with Docker Container installed.
 
@@ -125,16 +124,17 @@ tr:nth-child(even) {
 
 ​Duration: 60-90 minutes, including Q&A.
 
-​Registration Contacts: kristina.seel@clyso.com, roberto.vanoni@clyso.com 
+​Registration Contacts: kristina.seel@clyso.com, roberto.vanoni@clyso.com
 
-​***********************
+​**********\*\*\***********
 
 ​
-**6:00 PM - 10:00 PM: Networking Reception & Evening Event.** 
+**6:00 PM - 10:00 PM: Networking Reception & Evening Event.**
 
 ​The evening reception will be hosted at the same place as the conference, the DESY Berlin Facilities. Enjoy a variety of drinks and food from food trucks while networking with the Ceph community.
 
 ### Day 2: Expert Deep Dive & Community Exchange (Thursday, Nov 13)
+
 ​This day is tailored for the experienced Ceph community to dive into technical specifics.
 
 **​Ideal for:** Ceph experts, customers, partners, and active community developers.
@@ -145,11 +145,11 @@ tr:nth-child(even) {
 
 **​9:30 AM:** Good Morning & Coffee
 
-**​10:00 AM:** Morning Keynote: Focus on Object Storage in Transition - Joachim Kraftmayer.
+**​10:00 AM:** [Morning Keynote: Focus on Object Storage in Transition - Joachim Kraftmayer](./assets/12_Ceph_Days_Berlin_Joachim_Kraftmayer__Ceph_Storage_in_Transition.pdf)
 
-**​10:35 AM:** Scale Multiple Ceph-clusters Horizontally - Ansgar Jazdzewski.
+**​10:35 AM:** [Scale Multiple Ceph-clusters Horizontally - Ansgar Jazdzewski](./assets/13_Ceph_Days_Berlin_Ansgar_Jazdzewski_Seamless_S3_at_scale.pdf)
 
-**​11:10 AM:** Ceph Rados Gateway as an Interface to Tape Storage - Stuart Hardy & Zaid Bester.
+**​11:10 AM:** [Ceph Rados Gateway as an Interface to Tape Storage - Stuart Hardy & Zaid Bester](./assets/14_Ceph-Days-Berlin_Stuart-Hardy_Zaid-Bester_Ceph_Rados_Gateway.pdf)
 
 **​11:20 AM:** Coffee Break
 
@@ -170,9 +170,8 @@ tr:nth-child(even) {
 **​4:00 PM:** Concluding Session: Speaker Panel, Q&A, and Summary email to all registered attendees.
 
 ​🎟️ Registration & Accommodation:
+
 - ​Register to attend at this page
 - Hotel Recommendations: We have secured special rates at several Berlin hotels for our attendees. For the list of partner hotels and booking details, please contact Kristina Seel at kristina.seel@clyso.com.
 
 ​We look forward to seeing you in Berlin!
-
-
