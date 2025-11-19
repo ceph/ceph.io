@@ -41,7 +41,6 @@ Ansgar Jazdzewski from Hetzner Cloud will host an additional session for attende
 - **Duration**: 60-90 minutes, including Q&A.
 - **Registration Contacts**: [kristina.seel@clyso.com](mailto:kristina.seel@clyso.com), [roberto.vanoni@clyso.com](mailto:roberto.vanoni@clyso.com)
 
-
 <style>
 table {
   width: 100%;
@@ -68,9 +67,11 @@ tr:nth-child(even) {
 </style>
 
 ### Day 1 — November 12, 2025
+
 ### Location: Seminar Room 3
 
 ## ​What to Expect: A Two-Day Journey
+
 ### Day 1: Foundation, Strategy & Ecosystem (Wednesday, Nov 12)
 
 ​Day 1 focuses on the foundational principles and strategic value of Ceph. The sessions are designed to provide a comprehensive overview, making this day perfectly suited for newcomers while also serving as a valuable opportunity for seasoned experts to engage in high-level discussions and share their insights.
@@ -83,11 +84,11 @@ tr:nth-child(even) {
 
 **​9:00 AM:** Registration & Welcome Coffee
 
-**​10:00 AM:** Welcome Session with Joachim Kraftmayer, Ceph Ambassador DACH and Dr. Markus Ackermann, Deputy Site Manager, DESY.
+**​10:00 AM:** [Welcome Session with Joachim Kraftmayer, Ceph Ambassador DACH and Dr. Markus Ackermann, Deputy Site Manager, DESY](./assets/1_Ceph_Days_Berlin_Dr-Markus-Ackermann_DESY_Overview_CEPH.pdf)
 
 **​10:15 AM:** Morning Keynote: Learn how DESY migrated its Linux home directories to CephFS, including the architecture and detailed migration process. - Ingo Ebel.
 
-**​10:50 AM:** Buzzword Bingo: Digital Sovereignty -  Markus Wendland and Heiko Krämer.
+**​10:50 AM:** Buzzword Bingo: Digital Sovereignty - Markus Wendland and Heiko Krämer.
 
 **​11:25 AM:** SURFin' the Ceph Wave - Jean-Marie de Boer.
 
@@ -95,11 +96,11 @@ tr:nth-child(even) {
 
 **​12:15 PM:** It's All About the Latency, Not the Bandwidth! - Wido den Hollander.
 
-**​12:50 PM:** Running a Small OpenStack Cluster with a Full NVMe Ceph Cluster -  Kevin Honka.
+**​12:50 PM:** Running a Small OpenStack Cluster with a Full NVMe Ceph Cluster - Kevin Honka.
 
 **​1:20 PM:** Lunch Break & Networking
 
-**​2:50 PM:** Principles for Storage Management -  Benedikt Bürk.
+**​2:50 PM:** Principles for Storage Management - Benedikt Bürk.
 
 **​3:25 PM:** Beyond Backup: S3 Data Management with Ceph RGW Tiering, and Chorus - Sirisha Guduru & Artem Torubarov.
 
@@ -111,7 +112,7 @@ tr:nth-child(even) {
 
 ​**5:25 PM:** AI, ML, and the Ceph Advantage: Scalable Storage for Smarter Workflows - Kenneth Tan.
 
-​***********************
+​**********\*\*\***********
 
 **​Parallel Workshop on Day 1 (November 12th)**
 
@@ -125,16 +126,17 @@ tr:nth-child(even) {
 
 ​Duration: 60-90 minutes, including Q&A.
 
-​Registration Contacts: kristina.seel@clyso.com, roberto.vanoni@clyso.com 
+​Registration Contacts: kristina.seel@clyso.com, roberto.vanoni@clyso.com
 
-​***********************
+​**********\*\*\***********
 
 ​
-**6:00 PM - 10:00 PM: Networking Reception & Evening Event.** 
+**6:00 PM - 10:00 PM: Networking Reception & Evening Event.**
 
 ​The evening reception will be hosted at the same place as the conference, the DESY Berlin Facilities. Enjoy a variety of drinks and food from food trucks while networking with the Ceph community.
 
 ### Day 2: Expert Deep Dive & Community Exchange (Thursday, Nov 13)
+
 ​This day is tailored for the experienced Ceph community to dive into technical specifics.
 
 **​Ideal for:** Ceph experts, customers, partners, and active community developers.
@@ -153,26 +155,25 @@ tr:nth-child(even) {
 
 **​11:20 AM:** Coffee Break
 
-**​11:45 AM:** The Need for Speed: Accelerating OpenStack with NVMe-oF & Ceph - Kritik Sachdeva.
+**​11:45 AM:** [The Need for Speed: Accelerating OpenStack with NVMe-oF & Ceph - Kritik Sachdeva](./assets/15_Ceph_Days_Berlin_Kritik_Sachdeva_The_Need_for_Speed.pdf)
 
-**​12:20 PM:** Speed Up Your Deployments Using the Ansible Cephadm Collection - Piotr Parczewski.
+**​12:20 PM:** [Speed Up Your Deployments Using the Ansible Cephadm Collection - Piotr Parczewski](./assets/16_Ceph_Days_Berlin_Piotr_Parczewski_Ansible_Cephadm.pdf)
 
 ​**12:35 PM:** Integrating Ceph RGW with Kubernetes: A Hands-On Demonstration of CSI-S3 Capabilities - Nilesh Chandekar.
 
 **​1:05 PM:** Lunch Break & Networking
 
-**​2:45 PM:** Ceph-CSI Support for AES-GCM: Challenges and Opportunities - David Mohren.
+**​2:45 PM:** [Ceph-CSI Support for AES-GCM: Challenges and Opportunities - David Mohren](./assets/18_David_Mohren_CephDaysBerlin_30min.pptx.pdf)
 
-**​3:20 PM:** Faster CephFS Mirroring with Bounded-Frontier Concurrency - Md Mahamudur Rahaman Sajib.
+**​3:20 PM:** [Faster CephFS Mirroring with Bounded-Frontier Concurrency - Md Mahamudur Rahaman Sajib](./assets/17_Ceph_Days_Berlin_Md_Mahamudur_Rahaman_Sajib_Speeding_Up_CephFS_Mirroring.pdf)
 
 **​3:35 PM:** AI-Driven Certificate & Key Lifecycle Automation in Ceph Storage Compliance - Harishkumar Bhokare.
 
 **​4:00 PM:** Concluding Session: Speaker Panel, Q&A, and Summary email to all registered attendees.
 
 ​🎟️ Registration & Accommodation:
+
 - ​Register to attend at this page
 - Hotel Recommendations: We have secured special rates at several Berlin hotels for our attendees. For the list of partner hotels and booking details, please contact Kristina Seel at kristina.seel@clyso.com.
 
 ​We look forward to seeing you in Berlin!
-
-
