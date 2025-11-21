@@ -36,6 +36,7 @@ We could briefly describe the YAML file as having 3 main sections to it:
 <summary>Cluster</summary> 
 
 Here you will be describing your ceph cluster configuration. 
+
 Now the reason `user`, `head`, `clients`, `osds`, `mons` etc fields are required is because CBT uses a parallel distributed shell (**pdsh**) with SSH to login to the various entities of the cluster that have been defined in the cluster section. This enables "ceph" commands and also the ability to start up the benchmark tool (such as **FIO**) on the client endpoints (which are defined in the "**clients**" field).
 
 A typical use case of Ceph is that there is a **separately attached** host server dedicated for reading and writing data to the storage. Therefore it is possible to run CBT on a completely separate server from the cluster itself, and the performance data can be collected on the attached server. So the separately attached server is orchestrating the starting and stopping of the benchmark tools on the Ceph cluster.
@@ -76,6 +77,8 @@ cluster:
 <summary>Monitoring Profiles</summary> 
 
 In our example, we will be using **collectl**, to collect statistics. 
+
+In more detail, the benchmark IO exercisor (**FIO**) starts up. When the `ramp` period expires, the monitoring tool (**collectl**) is started to begin statistics collection, so that no data is collected during the warmup/ramp period. Once the `time` period of the IO exerciser has expired, CBT stops the monitor tool. 
 
 Example:
 
