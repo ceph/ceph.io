@@ -35,17 +35,22 @@ We could briefly describe the YAML file as having 3 main sections to it:
 <details>
 <summary>Cluster</summary> 
 
-Here you will be describing your ceph cluster configuration.  
+Here you will be describing your ceph cluster configuration. 
+Now the reason `user`, `head`, `clients`, `osds`, `mons` etc fields are required is because CBT uses a parallel distributed shell (**pdsh**) with SSH to login to the various entities of the cluster that have been defined in the cluster section. This enables "ceph" commands and also the ability to start up the benchmark tool (such as **FIO**) on the client endpoints (which are defined in the "**clients**" field).
+
+A typical use case of Ceph is that there is a **separately attached** host server dedicated for reading and writing data to the storage. Therefore it is possible to run CBT on a completely separate server from the cluster itself, and the performance data can be collected on the attached server. So the separately attached server is orchestrating the starting and stopping of the benchmark tools on the Ceph cluster.
+
+**Important side note:** A requirement of CBT is that passwordless SSH has to be `enabled` from the server running CBT to the Ceph nodes defined in the `head`, `clients` and `osds` fields.
 
 Example:
 
 ```yaml
 cluster:
-  user: 'exampleUser'
-  head: "exampleHostAddress"
-  clients: ["exampleHostAddress"]
-  osds: ["exampleHostAddress"]
-  mons:
+  user: 'exampleUser' # the SSH user ID that is going to be used for accessing the ceph cluster
+  head: "exampleHostAddress" # node where general ceph commands are run
+  clients: ["exampleHostAddress"] # nodes that will run benchmarks or other client tools
+  osds: ["exampleHostAddress"] # nodes where OSDs will live
+  mons: # nodes where mons will live
     exampleHostAddress:
       a: "exampleIPAddress"
   mgrs:
