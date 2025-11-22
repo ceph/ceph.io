@@ -144,7 +144,7 @@ Within the generated reports above you will see hockey stick curves plotted to s
 
 ## How do we read the curves generated?
 
-![alt text](images/how_to_read.png "How to read graphs")
+![alt text](images/Example_Response_Curve.png "How to read graphs")
 
 Here is an example of the `total_iodepth` value. As stated above we can find out the specified `total iodepths` for this test by checking the yaml file we previously used in this test, and it is also stated within the performance report under the “Configuration yaml” section. For the above example it is: 
 ```yaml
