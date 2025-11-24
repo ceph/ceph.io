@@ -268,7 +268,7 @@ Write appends are where new data is being appended to the end of an existing obj
 
 These results highlight the following benefits:
 
-- A significant latency reduction for all writes upto 512k and modest increase at 1Mbyte.
+- A significant latency reduction for all writes upto 512k and modest improvement at 1Mbyte.
 - For small block writes upto 16k, there is a significant increase in IOPs throughput available.
 - For writes 16k to 64k there is a modest increase in throughput available also.
 - No degradation in performance for 512k and 1Mbyte writes whilst improving latency significantly.
