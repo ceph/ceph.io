@@ -84,7 +84,7 @@ tr:nth-child(even) {
 
 **​9:00 AM:** Registration & Welcome Coffee
 
-**​10:00 AM:** Welcome Session with Joachim Kraftmayer, Ceph Ambassador DACH and Dr. Markus Ackermann, Deputy Site Manager, DESY.
+**​10:00 AM:** [Welcome Session with Joachim Kraftmayer, Ceph Ambassador DACH and Dr. Markus Ackermann, Deputy Site Manager, DESY](./assets/1_Ceph_Days_Berlin_Dr-Markus-Ackermann_DESY_Overview_CEPH.pdf)
 
 **​10:15 AM:** [Morning Keynote: Learn how DESY migrated its Linux home directories to CephFS, including the architecture and detailed migration process. - Ingo Ebel.](./assets/2_Ceph_Days-Berlin_Ingo_Ebel_AFS.pdf)
 
@@ -153,17 +153,17 @@ tr:nth-child(even) {
 
 **​11:20 AM:** Coffee Break
 
-**​11:45 AM:** The Need for Speed: Accelerating OpenStack with NVMe-oF & Ceph - Kritik Sachdeva.
+**​11:45 AM:** [The Need for Speed: Accelerating OpenStack with NVMe-oF & Ceph - Kritik Sachdeva](./assets/15_Ceph_Days_Berlin_Kritik_Sachdeva_The_Need_for_Speed.pdf)
 
-**​12:20 PM:** Speed Up Your Deployments Using the Ansible Cephadm Collection - Piotr Parczewski.
+**​12:20 PM:** [Speed Up Your Deployments Using the Ansible Cephadm Collection - Piotr Parczewski](./assets/16_Ceph_Days_Berlin_Piotr_Parczewski_Ansible_Cephadm.pdf)
 
 ​**12:35 PM:** Integrating Ceph RGW with Kubernetes: A Hands-On Demonstration of CSI-S3 Capabilities - Nilesh Chandekar.
 
 **​1:05 PM:** Lunch Break & Networking
 
-**​2:45 PM:** Ceph-CSI Support for AES-GCM: Challenges and Opportunities - David Mohren.
+**​2:45 PM:** [Ceph-CSI Support for AES-GCM: Challenges and Opportunities - David Mohren](./assets/18_David_Mohren_CephDaysBerlin_30min.pptx.pdf)
 
-**​3:20 PM:** Faster CephFS Mirroring with Bounded-Frontier Concurrency - Md Mahamudur Rahaman Sajib.
+**​3:20 PM:** [Faster CephFS Mirroring with Bounded-Frontier Concurrency - Md Mahamudur Rahaman Sajib](./assets/17_Ceph_Days_Berlin_Md_Mahamudur_Rahaman_Sajib_Speeding_Up_CephFS_Mirroring.pdf)
 
 **​3:35 PM:** AI-Driven Certificate & Key Lifecycle Automation in Ceph Storage Compliance - Harishkumar Bhokare.
 
