@@ -90,7 +90,7 @@ tr:nth-child(even) {
 
 **​10:50 AM:** [Buzzword Bingo: Digital Sovereignty - Markus Wendland and Heiko Krämer](./assets/3_Ceph-Days-Berlin_Markus-Wendland-Heiko-Kraemer_Buzzword_Bingo_Digital_Sovereignty.pdf)
 
-**​11:25 AM:** SURFin' the Ceph Wave - Jean-Marie de Boer.
+**​11:25 AM:** [SURFin' the Ceph Wave - Jean-Marie de Boer](./assets/4_Ceph-Days-Berlin_Jean-Marie-de-Boer_Surfin_the_Ceph_wave.pdf)
 
 **​11:35 AM:** Coffee Break & Networking
 
