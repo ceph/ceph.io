@@ -88,7 +88,7 @@ tr:nth-child(even) {
 
 **​10:15 AM:** [Morning Keynote: Learn how DESY migrated its Linux home directories to CephFS, including the architecture and detailed migration process. - Ingo Ebel.](./assets/2_Ceph_Days-Berlin_Ingo_Ebel_AFS.pdf)
 
-**​10:50 AM:** Buzzword Bingo: Digital Sovereignty - Markus Wendland and Heiko Krämer.
+**​10:50 AM:** [Buzzword Bingo: Digital Sovereignty - Markus Wendland and Heiko Krämer](./assets/3_Ceph-Days-Berlin_Markus-Wendland-Heiko-Kraemer_Buzzword_Bingo_Digital_Sovereignty.pdf)
 
 **​11:25 AM:** SURFin' the Ceph Wave - Jean-Marie de Boer.
 
