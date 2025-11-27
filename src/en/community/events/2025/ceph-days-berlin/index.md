@@ -108,17 +108,15 @@ tr:nth-child(even) {
 
 **​4:35 PM:** How RGW Stores S3 Objects in RADOS - Tobias Brunnwieser.
 
-​**5:10 PM:** A Generic Ceph Sizer for the Community - Matthias Münch.
+​**5:10 PM:** [A Generic Ceph Sizer for the Community - Matthias Münch](./assets/10_Ceph_Days_Berlin_2025_Matthias_Muench_Ceph-Sizer.pdf)
 
-​**5:25 PM:** AI, ML, and the Ceph Advantage: Scalable Storage for Smarter Workflows - Kenneth Tan.
+​**5:25 PM:** [AI, ML, and the Ceph Advantage: Scalable Storage for Smarter Workflows - Kenneth Tan](./assets/11_Ceph_Days_Berlin_Kenneth_Tan_AI,_ML,_and_the_Ceph_Advantage.pdf)
 
 ​**********\*\*\***********
 
 **​Parallel Workshop on Day 1 (November 12th)**
 
-​Ansgar Jazdzewski will host an additional session for attendees titled "Deep Dive & Hands-on Workshop in Ceph: Create Your Own Ceph-Test-System."
-
-​Location/Time: Seminar Room 1. After lunch, starting at 2:30 PM.
+​Ansgar Jazdzewski will host an additional session for attendees titled "Deep Dive & Hands-on Workshop in Ceph: Create Your Own Ceph-Test-System."​Location/Time: Seminar Room 1. After lunch, starting at 2:30 PM.
 
 ​Requirements: Attendees must bring their own laptops with Docker Container installed.
 
@@ -147,11 +145,11 @@ tr:nth-child(even) {
 
 **​9:30 AM:** Good Morning & Coffee
 
-**​10:00 AM:** Morning Keynote: Focus on Object Storage in Transition - Joachim Kraftmayer.
+**​10:00 AM:** [Morning Keynote: Focus on Object Storage in Transition - Joachim Kraftmayer](./assets/12_Ceph_Days_Berlin_Joachim_Kraftmayer__Ceph_Storage_in_Transition.pdf)
 
-**​10:35 AM:** Scale Multiple Ceph-clusters Horizontally - Ansgar Jazdzewski.
+**​10:35 AM:** [Scale Multiple Ceph-clusters Horizontally - Ansgar Jazdzewski](./assets/13_Ceph_Days_Berlin_Ansgar_Jazdzewski_Seamless_S3_at_scale.pdf)
 
-**​11:10 AM:** Ceph Rados Gateway as an Interface to Tape Storage - Stuart Hardy & Zaid Bester.
+**​11:10 AM:** [Ceph Rados Gateway as an Interface to Tape Storage - Stuart Hardy & Zaid Bester](./assets/14_Ceph-Days-Berlin_Stuart-Hardy_Zaid-Bester_Ceph_Rados_Gateway.pdf)
 
 **​11:20 AM:** Coffee Break
 
