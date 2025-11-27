@@ -157,15 +157,11 @@ tr:nth-child(even) {
 
 **​12:20 PM:** [Speed Up Your Deployments Using the Ansible Cephadm Collection - Piotr Parczewski](./assets/16_Ceph_Days_Berlin_Piotr_Parczewski_Ansible_Cephadm.pdf)
 
-​**12:35 PM:** Integrating Ceph RGW with Kubernetes: A Hands-On Demonstration of CSI-S3 Capabilities - Nilesh Chandekar.
-
 **​1:05 PM:** Lunch Break & Networking
 
 **​2:45 PM:** [Ceph-CSI Support for AES-GCM: Challenges and Opportunities - David Mohren](./assets/18_David_Mohren_CephDaysBerlin_30min.pptx.pdf)
 
 **​3:20 PM:** [Faster CephFS Mirroring with Bounded-Frontier Concurrency - Md Mahamudur Rahaman Sajib](./assets/17_Ceph_Days_Berlin_Md_Mahamudur_Rahaman_Sajib_Speeding_Up_CephFS_Mirroring.pdf)
-
-**​3:35 PM:** AI-Driven Certificate & Key Lifecycle Automation in Ceph Storage Compliance - Harishkumar Bhokare.
 
 **​4:00 PM:** Concluding Session: Speaker Panel, Q&A, and Summary email to all registered attendees.
 
