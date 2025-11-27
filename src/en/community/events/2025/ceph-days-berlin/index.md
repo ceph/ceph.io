@@ -94,19 +94,19 @@ tr:nth-child(even) {
 
 **​11:35 AM:** Coffee Break & Networking
 
-**​12:15 PM:** It's All About the Latency, Not the Bandwidth! - Wido den Hollander.
+**​12:15 PM:** [It's All About the Latency, Not the Bandwidth! - Wido den Hollander](./assets/5_Ceph-Days-Berlin_Wido-den-Hollander_Latency-not-Bandwidth.pdf)
 
-**​12:50 PM:** Running a Small OpenStack Cluster with a Full NVMe Ceph Cluster - Kevin Honka.
+**​12:50 PM:** [Running a Small OpenStack Cluster with a Full NVMe Ceph Cluster - Kevin Honka](./assets/6_Ceph_Days_Berlin_Kevin-Honka_Running_a_small_Openstack_Cluster_with_a_full_NVMe_Ceph_Cluster.pdf)
 
 **​1:20 PM:** Lunch Break & Networking
 
-**​2:50 PM:** Principles for Storage Management - Benedikt Bürk.
+**​2:50 PM:** [Principles for Storage Management - Benedikt Bürk](./assets/7_Ceph_Days_Berlin_Benedikt-Buerk_Storage_Management_Principles.pdf)
 
-**​3:25 PM:** Beyond Backup: S3 Data Management with Ceph RGW Tiering, and Chorus - Sirisha Guduru & Artem Torubarov.
+**​3:25 PM:** [Beyond Backup: S3 Data Management with Ceph RGW Tiering, and Chorus - Sirisha Guduru & Artem Torubarov](./assets/8_Ceph_Days_Berlin_Sirisha_Guduru-Artem_Torubarov_RGW_tiering_and_chorus.pdf)
 
 **​3:55 PM:** Coffee Break & Networking
 
-**​4:35 PM:** How RGW Stores S3 Objects in RADOS - Tobias Brunnwieser.
+**​4:35 PM:** [How RGW Stores S3 Objects in RADOS - Tobias Brunnwieser](./assets/9_Ceph_Days_Berlin_Tobias-Brunnwieser_How-RGW-Stores-S3-Objects-in-RADOS.pdf)
 
 ​**5:10 PM:** [A Generic Ceph Sizer for the Community - Matthias Münch](./assets/10_Ceph_Days_Berlin_2025_Matthias_Muench_Ceph-Sizer.pdf)
 
