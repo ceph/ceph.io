@@ -86,33 +86,55 @@ tr:nth-child(even) {
 
 **​10:00 AM:** [Welcome Session with Joachim Kraftmayer, Ceph Ambassador DACH and Dr. Markus Ackermann, Deputy Site Manager, DESY](./assets/1_Ceph_Days_Berlin_Dr-Markus-Ackermann_DESY_Overview_CEPH.pdf)
 
+[Video](https://www.youtube.com/watch?v=ClRRxKWzzfY)
+
 **​10:15 AM:** [Morning Keynote: Learn how DESY migrated its Linux home directories to CephFS, including the architecture and detailed migration process. - Ingo Ebel.](./assets/2_Ceph_Days-Berlin_Ingo_Ebel_AFS.pdf)
+
+[Video](https://www.youtube.com/watch?v=1ZFG8_wXo78)
 
 **​10:50 AM:** [Buzzword Bingo: Digital Sovereignty - Markus Wendland and Heiko Krämer](./assets/3_Ceph-Days-Berlin_Markus-Wendland-Heiko-Kraemer_Buzzword_Bingo_Digital_Sovereignty.pdf)
 
+[Video](https://www.youtube.com/watch?v=3OLPnBnXIEU)
+
 **​11:25 AM:** [SURFin' the Ceph Wave - Jean-Marie de Boer](./assets/4_Ceph-Days-Berlin_Jean-Marie-de-Boer_Surfin_the_Ceph_wave.pdf)
+
+[Video](https://www.youtube.com/watch?v=TpbS4yETSaY)
 
 **​11:35 AM:** Coffee Break & Networking
 
 **​12:15 PM:** [It's All About the Latency, Not the Bandwidth! - Wido den Hollander](./assets/5_Ceph-Days-Berlin_Wido-den-Hollander_Latency-not-Bandwidth.pdf)
 
+[Video](https://www.youtube.com/watch?v=12F1hpgp6Gs)
+
 **​12:50 PM:** [Running a Small OpenStack Cluster with a Full NVMe Ceph Cluster - Kevin Honka](./assets/6_Ceph_Days_Berlin_Kevin-Honka_Running_a_small_Openstack_Cluster_with_a_full_NVMe_Ceph_Cluster.pdf)
+
+[Video](https://www.youtube.com/watch?v=7QcIK9pxidA)
 
 **​1:20 PM:** Lunch Break & Networking
 
 **​2:50 PM:** [Principles for Storage Management - Benedikt Bürk](./assets/7_Ceph_Days_Berlin_Benedikt-Buerk_Storage_Management_Principles.pdf)
 
+[Video](https://www.youtube.com/watch?v=vc3UxvK74aw)
+
 **​3:25 PM:** [Beyond Backup: S3 Data Management with Ceph RGW Tiering, and Chorus - Sirisha Guduru & Artem Torubarov](./assets/8_Ceph_Days_Berlin_Sirisha_Guduru-Artem_Torubarov_RGW_tiering_and_chorus.pdf)
+
+[Video](https://www.youtube.com/watch?v=PGWw2KaRg5M)
 
 **​3:55 PM:** Coffee Break & Networking
 
 **​4:35 PM:** [How RGW Stores S3 Objects in RADOS - Tobias Brunnwieser](./assets/9_Ceph_Days_Berlin_Tobias-Brunnwieser_How-RGW-Stores-S3-Objects-in-RADOS.pdf)
 
+[Video](https://www.youtube.com/watch?v=s18a7NkTkDA)
+
 ​**5:10 PM:** [A Generic Ceph Sizer for the Community - Matthias Münch](./assets/10_Ceph_Days_Berlin_2025_Matthias_Muench_Ceph-Sizer.pdf)
+
+[Video](https://www.youtube.com/watch?v=3UaAyutk51w)
 
 ​**5:25 PM:** [AI, ML, and the Ceph Advantage: Scalable Storage for Smarter Workflows - Kenneth Tan](./assets/11_Ceph_Days_Berlin_Kenneth_Tan_AI,_ML,_and_the_Ceph_Advantage.pdf)
 
-​**********\*\*\***********
+[Video](https://www.youtube.com/watch?v=OyGddU8p7PI)
+
+​****\*\*****\*\*\*****\*\*****
 
 **​Parallel Workshop on Day 1 (November 12th)**
 
@@ -126,7 +148,7 @@ tr:nth-child(even) {
 
 ​Registration Contacts: kristina.seel@clyso.com, roberto.vanoni@clyso.com
 
-​**********\*\*\***********
+​****\*\*****\*\*\*****\*\*****
 
 ​
 **6:00 PM - 10:00 PM: Networking Reception & Evening Event.**
@@ -147,21 +169,35 @@ tr:nth-child(even) {
 
 **​10:00 AM:** [Morning Keynote: Focus on Object Storage in Transition - Joachim Kraftmayer](./assets/12_Ceph_Days_Berlin_Joachim_Kraftmayer__Ceph_Storage_in_Transition.pdf)
 
+[Video](https://www.youtube.com/watch?v=BjOMN9P9Lqc)
+
 **​10:35 AM:** [Scale Multiple Ceph-clusters Horizontally - Ansgar Jazdzewski](./assets/13_Ceph_Days_Berlin_Ansgar_Jazdzewski_Seamless_S3_at_scale.pdf)
 
+[Video](https://www.youtube.com/watch?v=Fh0YnFh3sJg)
+
 **​11:10 AM:** [Ceph Rados Gateway as an Interface to Tape Storage - Stuart Hardy & Zaid Bester](./assets/14_Ceph-Days-Berlin_Stuart-Hardy_Zaid-Bester_Ceph_Rados_Gateway.pdf)
+
+[Video](https://www.youtube.com/watch?v=aUKAGY0_Wk4)
 
 **​11:20 AM:** Coffee Break
 
 **​11:45 AM:** [The Need for Speed: Accelerating OpenStack with NVMe-oF & Ceph - Kritik Sachdeva](./assets/15_Ceph_Days_Berlin_Kritik_Sachdeva_The_Need_for_Speed.pdf)
 
+[Video](https://www.youtube.com/watch?v=E8DsUEKosK0)
+
 **​12:20 PM:** [Speed Up Your Deployments Using the Ansible Cephadm Collection - Piotr Parczewski](./assets/16_Ceph_Days_Berlin_Piotr_Parczewski_Ansible_Cephadm.pdf)
+
+[Video](https://www.youtube.com/watch?v=M750BvIj3VU)
 
 **​1:05 PM:** Lunch Break & Networking
 
 **​2:45 PM:** [Ceph-CSI Support for AES-GCM: Challenges and Opportunities - David Mohren](./assets/18_David_Mohren_CephDaysBerlin_30min.pptx.pdf)
 
+[Video](https://www.youtube.com/watch?v=qG9h2XNkN2I)
+
 **​3:20 PM:** [Faster CephFS Mirroring with Bounded-Frontier Concurrency - Md Mahamudur Rahaman Sajib](./assets/17_Ceph_Days_Berlin_Md_Mahamudur_Rahaman_Sajib_Speeding_Up_CephFS_Mirroring.pdf)
+
+[Video](https://www.youtube.com/watch?v=JY-UXvNuJ8g)
 
 **​4:00 PM:** Concluding Session: Speaker Panel, Q&A, and Summary email to all registered attendees.
 
