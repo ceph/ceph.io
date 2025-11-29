@@ -78,7 +78,7 @@ Within the community, `stripe_unit` is commonly referred to as a **chunk**. For 
 
 Users have been mainly using replica-3 pools for block and file workloads. A replica-3 pool stores 3 copies of the data on different OSDs so can survive two OSD failures without loss of data. The most common double failure is a drive failure plus a medium error on another drive. Replica-3 pools have a 300% storage overhead - for every 3GB of raw capacity you can store 1GB of application data.
 
-With erasure coding pools you create an erasure code profile choosing values for **K+M**. The minimum number of OSDs required for an erasure code pool is **K+M**, and just like replica-3 pools it is recommended that these OSDs are in different servers for fault tolerance. The choice of **M** defines how much redundancy you have, **M=2** means you can survive two OSD failures - the same as a replica-3 pool. The storage overhead for an erasure coded pool is **(K+M / M)**, so a 4+2 pool has a 150% storage overhead.
+With erasure coding pools you create an erasure code profile choosing values for **K+M**. The minimum number of OSDs required for an erasure code pool is **K+M**, and just like replica-3 pools it is recommended that these OSDs are in different servers for fault tolerance. The choice of **M** defines how much redundancy you have, **M=2** means you can survive two OSD failures - the same as a replica-3 pool. The storage overhead for an erasure coded pool is **(K+M / K)**, so a 4+2 pool has a 150% storage overhead.
 
 This blog focuses on Erasure code performance with **M=2** as this gives the same level of protection as a replica-3 pool.
 
@@ -268,7 +268,7 @@ Write appends are where new data is being appended to the end of an existing obj
 
 These results highlight the following benefits:
 
-- A significant latency reduction for all writes upto 512k and modest increase at 1Mbyte.
+- A significant latency reduction for all writes upto 512k and modest improvement at 1Mbyte.
 - For small block writes upto 16k, there is a significant increase in IOPs throughput available.
 - For writes 16k to 64k there is a modest increase in throughput available also.
 - No degradation in performance for 512k and 1Mbyte writes whilst improving latency significantly.

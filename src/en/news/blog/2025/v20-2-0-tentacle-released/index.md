@@ -935,6 +935,7 @@ Silent &squf;
 Simon Jürgensmeyer &squf;
 Soumya Koduri &squf;
 Sridhar Seshasayee &squf;
+Srinivasa Bharath Kanta &squf;
 Stellios Williams &squf;
 Steven Chien &squf;
 Sun Lan &squf;
