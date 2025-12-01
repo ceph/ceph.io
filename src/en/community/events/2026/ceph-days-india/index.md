@@ -17,7 +17,12 @@ Join us for a full day dedicated to the transformative power of Ceph and the thr
 
 Engage with the expert Ceph team, customers, and partners to discuss the latest in the Ceph project, improvements, and community news.
 
-The Call for Papers (CFP) will open on December 2, 2025, and close on January 9, 2026. Submit your presentation proposals [here](https://t.ly/CephDaysIndiaCFP).
+The Call for Papers (CFP) will open on December 2, 2025, and close on January 9, 2026. 
+
+Submit your presentation proposals [here](https://t.ly/CephDaysIndiaCFP).
+</br>
+<a class="button" href="https://t.ly/CephDaysIndiaCFP">Submit</a>
+
 
 Don’t miss the networking reception at the end of the day to connect with fellow enthusiasts. More details will follow. We look forward to seeing you there!
 
