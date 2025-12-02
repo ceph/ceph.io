@@ -45,4 +45,4 @@ updates:
 - [Ceph Community list](https://lists.ceph.io/postorius/lists/community.ceph.io/)
 - [LinkedIn](https://www.linkedin.com/company/ceph/)
 - [Twitter](https://twitter.com/ceph)
-- [Blucsky](https://bsky.app/profile/ceph.io)
+- [Bluesky](https://bsky.app/profile/ceph.io)
