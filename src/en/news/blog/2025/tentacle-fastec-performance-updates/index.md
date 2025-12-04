@@ -140,8 +140,8 @@ Here is an example table of profile vs the write size just for illustration:
 | ------------ | ----------- | ---------- | ------------------ | ----------------------- |
 | 2+2          | 16k         | 4 to 16k   | 3 reads+3 writes   | `1 read+3 writes`       |
 | 4+2          | 16k         | 4 to 16k   | `3 reads+3 writes` | 3 reads+3 writes        |
-| 6+2          | 16k         | 4 to 16k   | `3 reads+3 writes` | 3 reads+3 writes        |
-| 6+2          | 16k         | 32k        | 4 reads+4 writes   | `2 reads+4 rites`       |
+| 6+2          | 16k         | 4 to 16k   | `3 reads+3 writes` | 5 reads+3 writes        |
+| 6+2          | 16k         | 32k        | `4 reads+4 writes` | 4 reads+4 writes        |
 | 8+2          | 16k         | 4 to 16k   | `3 reads+3 writes` | 7 reads+3 writes        |
 | 8+2          | 16k         | 32k        | `4 reads+4 writes` | 6 reads+4 writes        |
 
