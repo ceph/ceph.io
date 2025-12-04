@@ -9,6 +9,8 @@ tags:
   - performance
 ---
 
+CBT Performance Benchmarking - Part 2. What is a YAML file and how do we use them within CBT?
+
 ## Outline of the Blog Series  
 
 - [**Part 1**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part1/) - How to start a Ceph cluster for a performance benchmark with CBT  
