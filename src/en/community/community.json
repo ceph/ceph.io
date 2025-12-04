@@ -1,6 +1,13 @@
 {
   "tech_talks": [
     {
+      "date": "2026-01-14",
+      "title": "Running Teuthology Outside of the Sepia",
+      "presenter": "Devansh Singh",
+      "url": "",
+      "slides": ""
+    },
+    {
       "date": "2023-08-16",
       "title": "Making Teuthology Friendly",
       "presenter": "Devansh Singh and Medhavi Singh",
