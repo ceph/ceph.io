@@ -9,6 +9,8 @@ tags:
   - performance
 ---
 
+CBT Performance Benchmarking - Part 1. What is CBT and how can we use it?
+
 ## Outline of the Blog Series  
 
 - **Part 1** - How to start a Ceph cluster for a performance benchmark with CBT  
