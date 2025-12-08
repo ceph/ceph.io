@@ -11,7 +11,7 @@ tags:
 
 CBT Performance Benchmarking - Part 3. How do we run and analyse a performance test?
 
-## <a id="outline">Outline of the Blog Series  
+## <a id="outline"></a>Outline of the Blog Series  
 
 - [**Part 1**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part1/) - How to start a Ceph cluster for a performance benchmark with CBT  
 - [**Part 2**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part2/) - Defining YAML contents  
