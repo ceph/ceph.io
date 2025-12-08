@@ -2,22 +2,32 @@
 title: "Benchmarking Performance with CBT: Running and Analysing a Performance Test. Part Three"
 date: 2025-09-12
 author: Jake Squelch (IBM)
+image: "images/thumbnail.png"
 tags:
   - ceph
   - benchmarks
   - performance
 ---
 
+CBT Performance Benchmarking - Part 3. How do we run and analyse a performance test?
+
 ## Outline of the Blog Series  
 
-- **Part 1** - How to start a Ceph cluster for a performance benchmark with CBT  
-- **Part 2** - Defining YAML contents  
+- [**Part 1**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part1/) - How to start a Ceph cluster for a performance benchmark with CBT  
+- [**Part 2**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part3/) - Defining YAML contents  
 - **Part 3** - How to start a CBT performance benchmark 
-- **Part 4** - Analysing a CBT performance benchmark 
 
 ---
 
-## Introduction  
+Contents:
+- [Introduction](#intro)
+- [How to read response time curves](#read)
+- [What values to read from a response curve?](#values)
+- [Conclusion](#conslusion)
+
+---
+
+## <a id="intro">Introduction  
 
 Now that we have created our erasure coded (EC) cluster (from **Part 1**) and defined our YAML file and workloads (from **Part 2**), we can now start a CBT performance benchmark test.
 
@@ -53,7 +63,7 @@ You will specify the location of your `cbt.py` file. Provide an archive folder w
 
 Once you have ran the performance test your output files will be located wherever you specified them to go. For me, the previous command referenced `/tmp/cbt` so my results are within there. 
 
-- I now copy these files to a new directory I would like them to be within, `my_test` in this case, I do this because I like to keep a directory of all my test results, and I delete `/tmp/cbt` before each run, so that is not a suitable palce. So I would do this for example:
+- I now copy these files to a new directory I would like them to be within, `my_test` in this case, I do this because I like to keep a directory of all my test results, and I delete `/tmp/cbt` before each run, so that is not a suitable place. So I would do this for example:
 ```bash
 cp -r /tmp/cbt/* /perftests/my_test
 ```
@@ -132,7 +142,7 @@ We can see a majority of the tests show that Jerasure with all OSDs up is the be
 
 ---
 
-## How to read response time curves
+## <a id="read">How to read response time curves
 
 So going back to my example CBT test run and the question we started with: "Does using the CLAY erasure code plugin give better performance than using the default JErasure plugin?" 
 
@@ -142,7 +152,7 @@ I then generated a performance report for the CLAY plugin [here](https://github.
 
 Within the generated reports above you will see hockey stick curves plotted to show the performance of each configuration. 
 
-## How do we read the curves generated?
+### So how do we read the curves generated?
 
 ![alt text](images/Example_Response_Curve.png "How to read graphs")
 
@@ -158,7 +168,7 @@ The vertical red lines (error bars) shows the amount of standard deviation/varia
 
 The post processing tools will sum the IOPs to generate a total IOPs for the response curve and calculate an average latency over all the volumes. The IOPS vs latency is then plotted on the response curve for that point of the curve for that specific iodepth.
 
-## What values to read from a response curve?
+## <a id="values">What values to read from a response curve?
 
 1. If you know how much I/O your application is generating then you can use the response curve to work out what latency you should expect
 2. If you want to see the maximum amount of I/O that the storage controller can process look for the right most point on the curve and find the value on the X axis.
@@ -170,6 +180,6 @@ As mentioned in part 1 of the blog, the perfect response curve would be a flat h
 
 ---
 
-## In Conclusion
+## <a id="conclusion">Conclusion
 
 So that demonstrates the seamless experience of how you can generate a CBT performance benchmark run from start to finish, generating response curves and comparison reports along the way. If you are interested in understanding the analysis of my example Jerasure and CLAY run, why Jerasure performed better than CLAY, **Part 4** of the blog series will be coming soon. I'll go into a lot more detail discussing how writes and reads work, and the IO breakdown for Clay and Jerasure to provide more clarity on why CLAY performs worse.
