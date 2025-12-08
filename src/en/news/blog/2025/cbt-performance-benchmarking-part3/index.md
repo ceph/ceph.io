@@ -14,7 +14,7 @@ CBT Performance Benchmarking - Part 3. How do we run and analyse a performance t
 ## Outline of the Blog Series  
 
 - [**Part 1**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part1/) - How to start a Ceph cluster for a performance benchmark with CBT  
-- [**Part 2**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part3/) - Defining YAML contents  
+- [**Part 2**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part2/) - Defining YAML contents  
 - **Part 3** - How to start a CBT performance benchmark 
 
 ---
@@ -29,15 +29,14 @@ Contents:
 
 ## <a id="intro">Introduction  
 
-Now that we have created our erasure coded (EC) cluster (from **Part 1**) and defined our YAML file and workloads (from **Part 2**), we can now start a CBT performance benchmark test.
+Now that we have created our erasure coded (EC) cluster (from [**Part 1**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part1/)) and defined our YAML file and workloads (from [**Part 2**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part2/)), we can now start a CBT performance benchmark test.
 
 This part will cover:  
 
 1. Running a performance test  
-2. Processing the results  
-3. Comparing the results
-4. Running a performance test with an OSD down
-5. How to read response time curves  
+2. Processing & comparing the results  
+3. Running a performance test with an OSD down
+4. How to read response time curves  
 
 ---
 
@@ -52,7 +51,7 @@ This is an example of the command to run a CBT performance test:
   python /cbt/cbt.py -a /tmp/cbt -c /example/ceph.conf /example/<yaml_file> 2>&1 | tee /tmp/cbt.out
 ```
 
-You will specify the location of your `cbt.py` file. Provide an archive folder where your results will be generated `/tmp/cbt`. Provide a config folder `/example/ceph.conf` to allow CBT to connect with the cluster. Finally we specify our `yaml_file` which will outline what tests/workloads will be running.
+You will specify the location of your cbt file (`cbt.py`) file. Provide an archive folder where your results will be generated (`/tmp/cbt`). Provide a config folder (`/example/ceph.conf`) to allow CBT to connect with the cluster. Finally we specify our (`yaml_file`) which will outline what tests/workloads will be running.
 
 </details>
 
@@ -61,41 +60,80 @@ You will specify the location of your `cbt.py` file. Provide an archive folder w
 <details>
 <summary>Step 2: Processing the results</summary>
 
-Once you have ran the performance test your output files will be located wherever you specified them to go. For me, the previous command referenced `/tmp/cbt` so my results are within there. 
+Once you have ran the performance test your result files will be outputed at the location you specified them to go in **Step 1**. For me, the previous command referenced `/tmp/cbt` so my results are within there. 
 
-- I now copy these files to a new directory I would like them to be within, `my_test` in this case, I do this because I like to keep a directory of all my test results, and I delete `/tmp/cbt` before each run, so that is not a suitable place. So I would do this for example:
+- You can now copy these output files to a new directory if you wish. I would like them to be within `/perftests/my_test` in this case, I do this because I like to keep a directory of all my test results, and I delete `/tmp/cbt` before each performance test, so that is not a suitable place. So I would do this for example:
+
 ```bash
 cp -r /tmp/cbt/* /perftests/my_test
 ```
 
 - Next, it is a case of generating the performance report, which can be done by the following command for myself in this example:
+
 ```bash
 PYTHONPATH=/cbt/ /cbt/tools/generate_performance_report.py --archive /perftests/my_test --output_directory /perftests/my_test_results --create_pdf
 ```
 
-Above I am referencing the location of cbt.py again at the start, I then reference the script that will generate the performance report (generate_performance_report.py). I state the directory, `my_test` in this case, that has the results from the performance run, and also state a desired `output-directory`, this is where the pdf for the performance report will be. Side note, you do not need to already have created the `my_test_results` directory you can see in the command above, this will be automatically done for you. You will now have a pdf file inside this new `my_test_results` folder along with a few other files, you can upload these files to GitHub if you'd like to store/view them somewhere.
+Above you reference the location of cbt.py again at the start, you then reference the script that will generate the performance report (`generate_performance_report.py`). I state the directory, `/perftests/my_test` in this case, that has the results from the performance run, and you should also state a desired `output-directory`, this is where the files for the performance report will be. 
+
+**Side note:** you do not need to already have created the `my_test_results` directory you can see in the command above, this will be automatically done for you. After these steps, you should now have a pdf file inside this new `my_test_results` folder along with a few other files, you can upload these files to GitHub if you'd like to store/view them somewhere. You now have your performance reports generated!
+
+[Here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/24th_Sep_Jerasure_4%2B2_results/performance_report_250924_094912.pdf) is the performance report for our **Jerasure** test if you're interested. 
+
+Now the curves shown within the performance report above may seem slightly confusing at first glance if you've never seen them before. So before moving onto **Step 3** where we compare the results, let's talk about how to understand these graphs that are generated.
 
 </details>
+
+---
+
+## <a id="read">How to read response time curves
+
+So going back to my example CBT test run and the question we started with: "Does using the CLAY erasure code plugin give better performance than using the default JErasure plugin?" 
+
+I generated a performance report for a JErasure plugin EC pool, the results can be found [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/24th_Sep_Jerasure_4%2B2_results/performance_report_250924_094912.pdf), go ahead and view the results if you wish to.
+
+I then generated a performance report for the CLAY plugin [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/13th_Oct_Clay_4%2B2%2B5_results/performance_report_251013_094658.pdf).  
+
+Within the generated reports above you will see hockey stick curves plotted to show the performance of each configuration. 
+
+### So how do we read the curves generated?
+
+![alt text](images/Example_Response_Curve.png "How to read graphs")
+
+Here is an example of the `total_iodepth` value. As stated above we can find out the specified `total iodepths` for this test by checking the yaml file we previously used in this test, and it is also stated within the performance report under the “Configuration yaml” section. For the above example it is: 
+```yaml
+total_iodepth: [ 2, 4, 8, 12, 16, 24, 32, 64, 96, 128, 192, 288, 384 ] 
+```
+
+The vertical red lines (error bars) shows the amount of standard deviation/variance in the performance for that specific point in the curve. If the standard deviations are small it shows that performance is stable with that workload. As the response curve starts to curve upwards performance bceomes more variable and the standard deviation increases.
+
+- For an FIO workload, CBT will start 1 instance of FIO per volume. 
+- It's also to note that the graph produced by reports do not include the results during the "ramp" period.
+
+The post processing tools will sum the IOPs to generate a total IOPs for the response curve and calculate an average latency over all the volumes. The IOPS vs latency is then plotted on the response curve for that point of the curve for that specific iodepth.
 
 ---
 
 <details>
 <summary>Step 3: Comparing the results</summary>
 
-With CBT, as well as performance reports we can also generate **comparison reports** quickly. Now that we have ran our tests for our CLAY and Jerasure test, we can generate a performance report. I will use the following command to do so:  
+With CBT, as well as performance reports, we can also generate **comparison reports** quickly. Now that I have ran the tests for **CLAY** and **Jerasure**, we can generate a performance report for them. I will use the following command to do so:  
 
 ```bash
 PYTHONPATH=/cbt/ /cbt/tools/generate_comparison_performance_report.py --baseline /perftests/jerasure_test/ --archives /perftests/clay_test/ --output_directory /perftests/clay_vs_jerasure_comparison --create_pdf
 ```
-In the above command we will have to specify what our baseline is, we will use our test folder from the Jerasure performance report, and then our archive curve will be our CLAY performance report test folder. It is important here that in the above command you are inputting the test folders for Jerasure and CLAY **NOT** the results folders that were generated from the previous performance runs. We we will generate a comparison report in our chosen output directory. 
+
+In the above command we will have to specify what our baseline is, we will use the **Jerasure** test folder as the **baseline curve** as shown above. Our **archive curve** will be our **CLAY** performance report test folder. It is important here that in the above command you are inputting the **test** folders for Jerasure and CLAY **NOT** the **results** folders that were generated from the previous performance runs. The above command we will generate a comparison report in our chosen output directory. 
 
 Using the above command I generated a comparison report between the above two runs, that can be found [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/Jerasure_Vs_Clay_comparison/comparitive_performance_report_251015_142011.pdf).
 
-### What results are we expecting?
+You will now take a look at how we can read and understand these response curves that are generated within the comparison report
 
-Jerasure is a generic reed-solomon erasure coding library, it is matrix-based, not CPU-optimised. It is fairly balanced between read and write. CLAY is designed for faster recovery at the cost of more complicated write paths. So we are expecting to see better performance from CLAY potentially when it comes to smaller IO sizes, but as the writes get bigger we may see a decline in performance from CLAY leading to better Jerasure results. Furthermore in terms of reads we expect fairly similar results across the board as they are implemented very similar, the main difference is when it comes to writes.
+### What results were we expecting?
 
-So now I will analyse the results from this comparison report. Firstly I will take a look at a **1024k sequential read**:
+Let's first give a bit of a background on our two erasure coding profiles: **Jerasure** is a generic reed-solomon erasure coding library, it is matrix-based, not CPU-optimised. It is fairly balanced between read and write. **CLAY** is designed for faster recovery at the cost of more complicated write paths. So we are expecting to see **better** performance from CLAY potentially when it comes to smaller IO sizes, but as the writes get bigger we may see a decline in performance from CLAY leading to better Jerasure results. Furthermore in terms of reads we expect fairly similar results across the board as they are implemented very similar, the main difference is when it comes to the writes.
+
+So now we can analyse the results from this comparison report. Firstly, lets take a look at a **1024k sequential read**:
 
 ![alt text](images/1024k_seq_read.png "1024k Sequential Read curve")
 
@@ -141,32 +179,6 @@ We can see a majority of the tests show that Jerasure with all OSDs up is the be
 </details>
 
 ---
-
-## <a id="read">How to read response time curves
-
-So going back to my example CBT test run and the question we started with: "Does using the CLAY erasure code plugin give better performance than using the default JErasure plugin?" 
-
-I generated a performance report for a JErasure plugin EC pool, the results can be found [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/24th_Sep_Jerasure_4%2B2_results/performance_report_250924_094912.pdf), go ahead and view the results if you wish to.
-
-I then generated a performance report for the CLAY plugin [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/13th_Oct_Clay_4%2B2%2B5_results/performance_report_251013_094658.pdf).  
-
-Within the generated reports above you will see hockey stick curves plotted to show the performance of each configuration. 
-
-### So how do we read the curves generated?
-
-![alt text](images/Example_Response_Curve.png "How to read graphs")
-
-Here is an example of the `total_iodepth` value. As stated above we can find out the specified `total iodepths` for this test by checking the yaml file we previously used in this test, and it is also stated within the performance report under the “Configuration yaml” section. For the above example it is: 
-```yaml
-total_iodepth: [ 2, 4, 8, 12, 16, 24, 32, 64, 96, 128, 192, 288, 384 ] 
-```
-
-The vertical red lines (error bars) shows the amount of standard deviation/variance in the performance for that specific point in the curve. If the standard deviations are small it shows that performance is stable with that workload. As the response curve starts to curve upwards performance bceomes more variable and the standard deviation increases.
-
-- For an FIO workload, CBT will start 1 instance of FIO per volume. 
-- It's also to note that the graph produced by reports do not include the results during the "ramp" period.
-
-The post processing tools will sum the IOPs to generate a total IOPs for the response curve and calculate an average latency over all the volumes. The IOPS vs latency is then plotted on the response curve for that point of the curve for that specific iodepth.
 
 ## <a id="values">What values to read from a response curve?
 
