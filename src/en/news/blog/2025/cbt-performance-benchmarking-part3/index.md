@@ -27,7 +27,7 @@ Contents:
 
 ---
 
-## <a id="intro">Introduction  
+## <a id="intro"></a>Introduction  
 
 Now that we have created our erasure coded (EC) cluster (from [**Part 1**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part1/)) and defined our YAML file and workloads (from [**Part 2**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part2/)), we can now start a CBT performance benchmark test.
 
@@ -85,7 +85,7 @@ The next section will go over the performance reports generate, and how to under
 
 ---
 
-## <a id="read">How to read response time curves
+## <a id="read"></a>How to read response time curves
 
 Now you have generated your performance report for your test you may be looking at them and slightly confused by the graphs shown, this section will go over how we can read the response time curves and reach conclusions based on the data points. 
 
@@ -117,7 +117,7 @@ The post processing tools will sum the IOPs to generate a total IOPs for the res
 
 ---
 
-## <a id="values">What values to read from a response curve?
+## <a id="values"></a>What values to read from a response curve?
 
 1. If you know how much I/O your application is generating then you can use the response curve to work out what latency you should expect
 2. If you want to see the maximum amount of I/O that the storage controller can process look for the right most point on the curve and find the value on the X axis.
@@ -193,7 +193,7 @@ We can see a majority of the tests show that Jerasure with all OSDs up is the be
 
 ---
 
-## <a id="conclusion">Conclusion
+## <a id="conclusion"></a>Conclusion
 
 In conlusion this blog demonstrates the seamless experience of how you can generate a CBT performance benchmark run from start to finish, generating performance reports along the way and enabling analysis/comparison of performance. If you are interested in understanding further the analysis of the example Jerasure and CLAY run, drop me an email and I will happily go into more detail discussing how writes and reads work, and the IO breakdown for Clay and Jerasure to provide more clarity on why CLAY performs was worse!
 
