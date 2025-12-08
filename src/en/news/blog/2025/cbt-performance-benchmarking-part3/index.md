@@ -101,7 +101,7 @@ Within the generated reports above you will see hockey stick curves plotted to s
 
 Here is an example of a curve generated within a performance report:
 
-![alt text](images/Example_Response_Curve.png "How to read graphs")
+![alt text](images/example_curve.png "How to read graphs")
 
 Below is an example of the `total_iodepth` value. As stated above we can find out each specified `total iodepth` point for this test by checking the yaml file we previously used in this test, and it is also stated within the performance report under the “Configuration yaml” section. For the above example it is: 
 ```yaml
