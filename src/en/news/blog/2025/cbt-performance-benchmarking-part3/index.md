@@ -23,7 +23,7 @@ Contents:
 - [Introduction: Running a performance benchmark](#intro)
 - [How to read response time curves](#read)
 - [What values to read from a response curve?](#values)
-- [Conclusion](#conslusion)
+- [Conclusion](#conclusion)
 
 ---
 
