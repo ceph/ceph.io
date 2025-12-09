@@ -10,12 +10,12 @@ tags:
 ---
 
 
-Inference accounts for [90% of the machine learning
+Inference accounts for [90% of machine learning
 costs](https://www.sciencedirect.com/science/article/pii/S2210537923000124) for deployed AI
 systems, and it is no surprise that inference optimization is a burgeoning topic
 in the research community. [IDC
 estimates](https://info.idc.com/futurescape-generative-ai-2025-predictions.html) that global enterprises will invest
-$307 billion on AI solutions in 2025, and that number is expected to grow
+$307 billion USD on AI solutions in 2025, and that number is expected to grow
 aggressively year-over-year.
 
 ## Understanding the workload
@@ -84,14 +84,14 @@ lookup.
 
 ## Retrieving cache blocks
 
-We began exploring LMCache by testing it's native S3 connector with Ceph, as it
+We began exploring LMCache by testing its native S3 connector with Ceph, as it
 provides an accessible entry point for most existing environments. The other
 appeal of the native S3 connector in LMCache is that it leverages an AWS common
 runtime library (CRT), which means that the connections in the client’s
 connection pool will be multiplexed across endpoints that are returned in the
 DNS response for the object store’s FQDN. The downside is that the bindings in
-the AWS common runtime library for Python only support recv\_filepath and
-send\_filepath, which limits the ability of LMCache to stream the response body
+the AWS common runtime library for Python only support `recv_filepath` and
+`send_filepath`, which limits the ability of LMCache to stream the response body
 of a GetObject call directly to page-locked memory buffers allocated by the 
 LocalCPUBackend. To work around this limitation the connector pre-allocates and
 mmaps files on a tmpfs mounted at /dev/shm (one per concurrent request), in this
@@ -103,7 +103,7 @@ will require changes to the bindings.
 
 After some preliminary testing with the native S3 connector [LMCache
 PR#1939](https://github.com/LMCache/LMCache/pull/1939)
-caught our eye because it leveraged NVIDIA Inference Xfer Library (NIXL). This
+caught our eye because leveraged the NVIDIA Inference Xfer Library (NIXL). This
 PR introduces the ability to directly read S3 data into page-locked NIXL
 buffers, bypassing files on /dev/shm and the associated memory copy. It also
 introduced a presence cache to eliminate redundant GetObjectInfo requests that
@@ -248,7 +248,7 @@ ceph osd pool application enable default.rgw.buckets.non-ec
 ### RGW service
 
 This RGW service configuration will create 4x RGW instances on each of the 4
-hosts, with a concentrator bind to the host IP address at port 80.
+hosts, with a concentrator bound to the host IP address at port 80.
 
 ```
 ---
@@ -272,7 +272,7 @@ spec:
 ### Traffic management
 
 Like many applications, LMCache expects a single S3 endpoint. For us to maximize
-bandwidth to storage cluster we decided to leverage Hashicorp Consul and CoreDNS
+bandwidth to storage cluster we decided to leverage [Hashicorp Consul and CoreDNS](https://ceph.io/en/news/blog/2025/consul-lb1/)
 to return multiple DNS records in response to queries for our chosen object
 FQDN. As stated earlier, this works perfectly with AWS CRT libraries like those
 utilized by LMCache’s native S3 connector.
@@ -394,8 +394,8 @@ example.hosts s3.ecmp.cephlab.com {
 #### Testing DNS balancing
 
 To validate that the Hashicorp Consul and CoreDNS based approach is functioning
-properly, we can test DNS resolution of the FQDN of our object endpoint. Note
-that we’re seeing 4 records returned, which is exactly what we want.
+properly, we can test DNS resolution of our object FQDN of our object endpoint.
+Note that we’re seeing 4 records returned, which is exactly what we want.
 
 ```
 [cephuser@ceph-osd01 ~]$ dig s3.cephlab.com
