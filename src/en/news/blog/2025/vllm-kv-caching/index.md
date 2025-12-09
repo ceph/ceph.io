@@ -596,7 +596,7 @@ python3 ~/LMCache/benchmarks/long_doc_qa/long_doc_qa.py \
 
 Considerable reduction in TTFT with both Intel Guadi3 and AMD MI300X
 accelerators, with up to 23x reduction with the longest context length tested at
-the tensor parallelism set to 1 with Llama3.3-70B-Instruct. This testing also
+the tensor parallelism set to 2 with Llama3.3-70B-Instruct on MI300x. This testing also
 illustrates how KV caching can reduce TTFT more than using tensor parallelism to
 spread prefill across multiple GPUs in a system and that combing these
 techniques can deliver the lowest TTFT. It’s also worth pointing out that in
