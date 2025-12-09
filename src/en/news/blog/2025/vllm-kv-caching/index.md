@@ -25,18 +25,21 @@ forward pass, which itself is broken up into two distinct phases: prefill and
 decode. Each phase has a unique workload profile – prefill tends to be
 computation bound, consuming every ounce of floating-point arithmetic capability
 the system can garner, followed by decode, which is principally limited by
-memory bandwidth. While the prefill phase can easily be parallelized across
-GPUs because all the tokens that represent the prompt are known once a request
-is sent to the model API, the computation grows quadratically with each
-additional token because key and value weights need to be updated across all
-layers. This complicates the deployment of inference services where context
-lengths are growing rapidly to accommodate larger code bases, longer documents,
-and retrieval augmented generation. KV caching is where the computed key and
-value weights that correspond with token sequences in a prompt are saved for
-later, and then retrieved when they are used in a subsequent prompt to avoid
-the cost of computation (GPU hours) and to reduce the time between when the
-prompt was submitted as a request and the first response token (time-to-first
-token, or TTFT).
+memory bandwidth. 
+
+The computational complexity of both prefill and decode phases grows
+quadratically with each additional token. Prefill is easily parallelized across
+GPUs - all prompt tokens are known up front when a request arrives at the model
+API. The decode phase brings in the transformer multi-headed attention mechanism
+and must compute the attention states across all previous tokens - including any
+prompt(s) and generated responses. This complicates the deployment of inference
+services where context lengths are growing rapidly to accommodate larger code
+bases, longer documents, and retrieval augmented generation. KV caching is where
+the computed key and value weights that correspond with token sequences in a
+prompt are saved for later, and then retrieved when they are used in a
+subsequent prompt to avoid the cost of computation (GPU hours) and to reduce
+the time between when the prompt was submitted as a request and the first
+response token (time-to-first-token, or TTFT).
 
 ## Cache blocks in vLLM and LMCache
 
@@ -68,38 +71,35 @@ in, and LMCache will return a bitmask indicating which cache blocks it can
 provide. Under the covers the LMCache S3 connector will make GetObjectAttributes
 calls with each block identifier (hash of the token sequence) and for each block
 that exists it will flip the corresponding bit in the mask. The elegance of this
-approach is that there is no information about which cache blocks are where that
-need to be persisted, and no coordination necessary when there are multiple
-instances of vLLM+LMCache running across different hosts. In fact, there is no
-requirement that the [LMCache
+approach is that there is no cache block map that needs to be persisted, and no
+coordination necessary when there are multiple instances of vLLM+LMCache running
+across different hosts. In fact, there is no requirement that the [LMCache
 controller](https://docs.lmcache.ai/kv_cache_management/index.html) be configured at all. This design also
-permits flexible eviction, because a storage system could implement time-based
-eviction through a Lifecycle configuration on a bucket without leaving dangling
-references in some sort of cache block directory, if a cache block is removed
-from the underlying bucket, it is treated the same way as a cache miss. In the
-end you get fully elastic content addressable storage for KV cache blocks with
-flexible eviction. Anyone familiar with Ceph will truly appreciate the notion of
-computing the location of data over performing a lookup.
+permits flexible eviction: a storage system could implement time-based
+expiration via Lifecycle configurations, and any deleted block simply registers
+as a miss. In the end you get fully elastic content addressable storage for KV
+cache blocks with flexible eviction. Anyone familiar with Ceph will truly
+appreciate the notion of computing the location of data over performing a
+lookup.
 
 ## Retrieving cache blocks
 
-For this post we chose to start by exploring the native S3 connector in LMCache
-with Ceph, because we felt that it would be the most accessible way to introduce
-KV caching into most existing environments. The other appeal of the native S3
-connector in LMCache is that it leverages an AWS common runtime library, which
-means that the connections in the client’s connection pool will be multiplexed
-across endpoints that are returned in the DNS response for the object store’s
-FQDN. The downside is that the bindings in the AWS common runtime library for
-Python only support recv_filepath and send_filepath, which limits the ability of
-LMCache to stream the response body of a GetObject call directly to page-locked
-memory buffers allocated by the LocalCPUBackend. To work around this limitation
-the connector pre-allocates and mmaps files on a tmpfs mounted at /dev/shm (one
-per concurrent request), in this way the CRT client can pass the file
-descriptors of memory mapped files and then memcpy from their corresponding
-buffers to page-locked LocalCPUBackend buffers that are used for DMA transfers
-to the GPU. This is a clever way of working around most of the limitations of
-aws-crt-python, but to get true zero-copy it will require changes to the
-bindings.
+We began exploring LMCache by testing it's native S3 connector with Ceph, as it
+provides an accessible entry point for most existing environments. The other
+appeal of the native S3 connector in LMCache is that it leverages an AWS common
+runtime library (CRT), which means that the connections in the client’s
+connection pool will be multiplexed across endpoints that are returned in the
+DNS response for the object store’s FQDN. The downside is that the bindings in
+the AWS common runtime library for Python only support recv\_filepath and
+send\_filepath, which limits the ability of LMCache to stream the response body
+of a GetObject call directly to page-locked memory buffers allocated by the 
+LocalCPUBackend. To work around this limitation the connector pre-allocates and
+mmaps files on a tmpfs mounted at /dev/shm (one per concurrent request), in this
+way the CRT client can pass the file descriptors of memory mapped files and then
+memcpy from their corresponding buffers to page-locked LocalCPUBackend buffers
+that are used for DMA transfers to the GPU. This is a clever way of working
+around most of the limitations of aws-crt-python, but to get true zero-copy it
+will require changes to the bindings.
 
 After some preliminary testing with the native S3 connector [LMCache
 PR#1939](https://github.com/LMCache/LMCache/pull/1939)
@@ -108,18 +108,18 @@ PR introduces the ability to directly read S3 data into page-locked NIXL
 buffers, bypassing files on /dev/shm and the associated memory copy. It also
 introduced a presence cache to eliminate redundant GetObjectInfo requests that
 are used to determine if a cache block exists for a given sequence. We had
-experimented with the NIXL obj plugin already and had ran some rudimentary
-nixlbench tests. What we found was that the NIXL obj plugin alone wanted a
-pre-allocated pool of object keys, and that it required either the LMCache
-coordinator or Dynamo KVBM to maintain device ID, offset, and length information
-for each cache block. Unlike other NIXL plugins, the obj plugin could only write
-a single cache block to each device ID (1:1 mapping with object key), because
-object APIs like S3 do not support writes to arbitrary offsets. This is all
-addressed by PR1939, because instead of using a pool of object keys and tracking
-cache block metadata, it preserves the content addressable approach of LMCache’s
-native S3 connector. The only remaining downside with NIXL is that it used
-S3Client instead of S3CrtClient, the latter of which supports multipathing
-across S3 endpoints.
+experimented with the NIXL obj plugin already and ran some rudimentary nixlbench
+tests. What we found was that the NIXL obj plugin alone wanted a pre-allocated
+pool of object keys, and that it required either the LMCache coordinator or
+Dynamo KVBM to maintain device ID, offset, and length information for each cache
+block. Unlike other NIXL plugins, the obj plugin could only write a single cache
+block to each device ID (1:1 mapping with object key), because object APIs like
+S3 do not support writes to arbitrary offsets. This is all addressed by PR1939,
+because instead of using a pool of object keys and tracking cache block
+metadata, it preserves the content addressable approach of LMCache’s native S3
+connector. The only remaining downside with NIXL is that it used S3Client
+instead of S3CrtClient, the latter of which supports multipathing across S3
+endpoints.
 
 ## Hyperscale AI deployments
 
@@ -147,7 +147,7 @@ Each node:
 •	1x Intel Xeon 6 6740E 96C/96T, 205W
 •	16x16GB DDR5-6400
 •	1x Broadcom 57608 2x200GbE
-•	6x 2.5” Kioxia CM6-R, 7.68TB Gen4 NVMe
+•	6x 2.5” Kioxia CM6-R, 7.68TB Gen4 NVMe SSD
 •	RAID1 2x 480TB NVMe (boot) 
 
 This system is utilized to provide high-bandwidth all-flash object storage for
@@ -161,8 +161,8 @@ SYS-822GA-NGR3](https://www.supermicro.com/en/products/system/datasheet/sys-822g
 •	2x Intel Xeon 6 6960P 72C/144T
 •	24x 64GB DDR5-6400
 •	8x Gaudi 3 HL-325L accelerators
-•	Drives
-•	GPU-to-GPU networking?
+•	Up to 8x 2.5" Gen5 NVMe SSD
+•	Scale-up networking: 21x 200GbE Gaudi NICs
 •	2x Broadcom 57608 1x400GbE
 
 This system is utilized to run inference workloads with the combination of vLLM
@@ -176,14 +176,14 @@ and LMCache, leveraging Gaudi 3 accelerators from Intel.
 •	1x AMD EPYC 9654 96C/192T
 •	24x 96GB DDR5-4800
 •	8x AMD MI300X accelerators
-•	Drives
-•	GPU-to-GPU networking?
-•	Storage networking
+•	Up to 8x 2.5" Gen5 NVMe SSD
+•	Scale-up networking: 4x400GbE
+•	Storage and GPU scale-out networking: 4x NVIDIA MT28908 ConnectX-6 200GbE
 
 This system is utilized to run inference workloads with the combination of vLLM
 and LMCache, leveraging MI300X accelerators from AMD.
 
-![](images/smci-400-sw.png)
+![](images/smci-sw.png)
 
 [SSE-T7132S - 400Gb Ethernet
 Switch](https://www.supermicro.com/en/products/accessories/Networking/SSE-T7132SR.php)
@@ -454,9 +454,8 @@ Gaudi Container
 * LMCache:
 * NIXL:
 
-The Dockerfiles that were used to build images like those used for our testing
-can be found here. Below you will find the configuration files and command line
-arguments we used to run vLLM and LMCache together.
+Below you will find the configuration files and command line arguments we used
+to run vLLM and LMCache together.
 
 .aws/credentials
 ```
@@ -586,11 +585,12 @@ python3 ~/LMCache/benchmarks/long_doc_qa/long_doc_qa.py \
 
 ## Results
 
-![](images/amd-tp1-sweep.png)
+![](images/amd-tp1-sweep-qwen.png)
 ![](images/amd-tp-qwen.png)
 ![](images/amd-tp-llama.png)
 
-![](images/gaudi3-tp1-sweep.png)
+![](images/gaudi3-tp2-sweep-qwen.png)
+![](images/gaudi3-tp2-sweep-llama.png)
 ![](images/gaudi3-tp-qwen.png)
 ![](images/gaudi3-tp-llama.png)
 
@@ -616,5 +616,7 @@ Foundation and IBM Fusion. Our next phase of testing will utilize llm-d, with
 the GPU hosts serving as worker nodes, and exploring more sophisticated
 scenarios like PD disaggregation and cache blending.
 
-If you have any questions about Data or AI workloads for Ceph, please [reach out](mailto:kbader@ibm.com).
+Finally, we'd like to thank Supermicro for providing the environment for these
+testing efforts. If you have any questions about Data or AI workloads for Ceph,
+please [reach out](mailto:kbader@ibm.com).
 
