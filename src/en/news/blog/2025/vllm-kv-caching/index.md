@@ -585,20 +585,23 @@ python3 ~/LMCache/benchmarks/long_doc_qa/long_doc_qa.py \
 
 ## Results
 
-![](images/amd-tp1-sweep-qwen.png)
-![](images/amd-tp-qwen.png)
-![](images/amd-tp-llama.png)
+### Intel Gaudi 3 Results
 
 ![](images/gaudi3-tp2-sweep-qwen.png)
 ![](images/gaudi3-tp2-sweep-llama.png)
 ![](images/gaudi3-tp-qwen.png)
 ![](images/gaudi3-tp-llama.png)
 
+### AMD MI300X Results
+
+![](images/amd-tp1-sweep-qwen.png)
+![](images/amd-tp-qwen.png)
+![](images/amd-tp-llama.png)
+
 Considerable reduction in TTFT with both Intel Guadi3 and AMD MI300X
-accelerators, with up to 23x reduction with the longest context length tested at
-the tensor parallelism set to 2 with Llama3.3-70B-Instruct on MI300x. This testing also
-illustrates how KV caching can reduce TTFT more than using tensor parallelism to
-spread prefill across multiple GPUs in a system and that combing these
+accelerators, with the largest measured speed-up of 23x reduction. This testing
+also illustrates how KV caching can reduce TTFT more than using tensor parallelism
+to spread prefill across multiple GPUs in a system and that combing these
 techniques can deliver the lowest TTFT. It’s also worth pointing out that in
 addition to reducing TTFT, prefix caching derives additional value by conserving
 GPU cycles for decode – potentially reducing time-per-output-token (TPOT).
