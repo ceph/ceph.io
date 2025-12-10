@@ -23,6 +23,7 @@ Contents:
 - [Introduction: Running a performance benchmark](#intro)
 - [How to read response time curves](#read)
 - [What values to read from a response curve?](#values)
+- [Summary](#summary)
 - [Conclusion](#conclusion)
 
 ---
@@ -130,7 +131,7 @@ As mentioned in part 1 of the blog, the perfect response curve would be a flat h
 ---
 
 <details>
-<summary>Step 3: Comparing the results</summary>
+<summary>Step 3: Generating a comparison report</summary>
 
 With CBT, as well as performance reports, we can also generate **comparison reports** quickly. Now that I have ran the tests for **CLAY** and **Jerasure**, we can generate a performance report for them. I will use the following command to do so:  
 
@@ -142,23 +143,39 @@ In the above command we will have to specify what our baseline is, we will use t
 
 Using the above command I generated a comparison report between the above two runs, that can be found [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/Jerasure_Vs_Clay_comparison/comparitive_performance_report_251015_142011.pdf).
 
-### What results were we expecting?
+### Basic analysis of the comparison report:
 
 Let's first give a bit of a background on our two erasure coding profiles: **Jerasure** is a generic reed-solomon erasure coding library, it is matrix-based, not CPU-optimised. It is fairly balanced between read and write. **CLAY** is designed for faster recovery at the cost of more complicated write paths. So we are expecting to see **better** performance from CLAY potentially when it comes to smaller IO sizes, but as the writes get bigger we may see a decline in performance from CLAY leading to better Jerasure results. Furthermore in terms of reads we expect fairly similar results across the board as they are implemented very similar, the main difference is when it comes to the writes.
 
-So now we can analyse the results from this comparison report. Firstly, lets take a look at a **1024k sequential read**:
+So lets now take a look at our comparison report, first comparing smaller workloads so let's start with a **4K Random Reads**, this is the corresponding graph:
+
+![alt text](images/4k_rand_read.png "4k random read curve")
+
+As shown by the diagram, the orange curve is our CLAY EC pool, and the blue curve is our Jerasure EC pool. We can see for 4k random reads there is very little change in performance. Both the **Jerasure** and **CLAY** curves have almost identical latencies and IOps.
+
+We can also take a look at the **4K Random Writes** curve:
+
+![alt text](images/4k_rand_write.png "4k random write curve")
+
+The performance is similar until we get to the saturation point around **14000** IOps, where we can see latency sky rockets for both **Jerasure** and **CLAY**. The IOps for **Jerasure** are marginally better than CLAY at this point but nothing substantial.
+
+So overall at small workloads we can see very similar performance between **Jerasure** and **CLAY**.
+
+Lets now move onto larger workloads, starting with **1024k sequential read**:
 
 ![alt text](images/1024k_seq_read.png "1024k Sequential Read curve")
 
-As shown by the diagram, the orange curve is our CLAY EC pool, and the blue curve is our Jerasure EC pool. Now as you can see the difference between the two curves really isn’t anything too substantial, they follow very similar paths, and that was expected. This is because for a normal read, ceph only needs to fetch data chunks (not parity chunks). Both Jerasure and CLAY are practically just returning the stored object, there is no real difference unless a failure occurs.
+Once again the two curves barely differ and they follow very similar paths, and that was expected. This is because for a normal read, ceph only needs to fetch data chunks (not parity chunks). Both Jerasure and CLAY are practically just returning the stored object, there is no real difference unless a failure occurs.
 
 Now lets look at the **1024k sequential write**:
 
 ![alt text](images/1024k_seq_write.png "1024k Sequential Write curve")
 
-Now when we take a look at the writes we see that **CLAY** has 20-60% higher latency, with throughput dropping compared to **Jerasure**. This is likely due to extra CPU and network demands in **CLAY**. Larger writes mean bigger encoding matrices/layers, and CLAY has more complexity per write than Jerasure, likely leading to the higher latency shown.
+Now when we take a look at the writes we see that **CLAY** has 20-60% higher latency, with throughput dropping compared to **Jerasure**. This is likely due to extra CPU and network demands in **CLAY**. Larger writes mean bigger encoding matrices/layers, and CLAY has more complexity per write than Jerasure, likely leading to the higher latency shown. 
 
 Our sequential write benchmark show that Jerasure delivers more consistent write performance across all block sizes, while CLAY is more volatile, performing better at some smaller sizes but much worse at large sequential writes. This shows CLAY’s design priorities: it is optimised for reduced recovery bandwidth rather than raw write performance.
+
+This means that if your I/O workload is mainly large sequential reads, for example a data lake for AI training, then switching to CLAY isn't going to affect performance. However, if your I/O workload is mainly heavy sequential writes, for example storage archives or backups, then switching to CLAY will have a substantial negative performance impact, as shown by the diagrams.
 
 </details>
 
@@ -181,8 +198,14 @@ Now we expect CLAY to have better performance here due to it's supposedly more e
 
 ---
 
+## <a id="summary"></a>Summary
+
+Within this part we have used CBT to successfully compare Jerasure and CLAY for a variety of different workloads. We have generated results that are repeatable and show that for both good path I/O and I/O when there is an OSD down (hence data needs to be recronstucted using erasure coding), there is no benefit to using CLAY. In fact, there are extra overheads which mean that performance may be worse when using CLAY.
+
+---
+
 ## <a id="conclusion"></a>Conclusion
 
-In conlusion this blog demonstrates the seamless experience of how you can generate a CBT performance benchmark run from start to finish, generating performance reports along the way and enabling analysis/comparison of performance. If you are interested in understanding further the analysis of the example Jerasure and CLAY run, drop me an email and I will happily go into more detail discussing how writes and reads work, and the IO breakdown for Clay and Jerasure to provide more clarity on why CLAY performs was worse!
+In conlusion this blog has demonstrated the seamless experience of how you can generate a CBT performance benchmark run from start to finish, generating performance reports along the way and enabling analysis/comparison of performance. We used **CLAY** and **Jerasure** as an example of how to easily do a performance benchmark but sometimes the results can be unexpected and lead to more questions arousing than answers being received. This can lead to further experiments to deep-dive into why certain results occured, and this is what I'll be doing in **Part 4** of the blog that will be coming in the near future. **Part 4** will probide more detailed analysis and IO breakdown for Clay and Jerasure to provide more clarity on why CLAY performs was worse!
 
 [Links to previous parts of the blog series](#outline)
