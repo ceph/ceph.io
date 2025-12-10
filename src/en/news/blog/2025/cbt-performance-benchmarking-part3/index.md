@@ -53,7 +53,7 @@ This is an example of the command to run a CBT performance test:
   python /cbt/cbt.py -a /tmp/cbt -c /example/ceph.conf /example/<yaml_file> 2>&1 | tee /tmp/cbt.out
 ```
 
-You will specify the location of your cbt file (`cbt.py`) file. Provide an archive folder where your results will be generated (`/tmp/cbt`). Provide a config folder (`/example/ceph.conf`) to allow CBT to connect with the cluster. Finally we specify our (`yaml_file`) which will outline what tests/workloads will be running.
+You will specify the location of your cbt file (`cbt.py`). Provide an archive folder where your results will be generated (`/tmp/cbt`). Provide a config folder (`/example/ceph.conf`) to allow CBT to connect with the cluster. Finally, we specify our (`yaml_file`) which will outline what tests/workloads will be running.
 
 </details>
 
@@ -62,9 +62,9 @@ You will specify the location of your cbt file (`cbt.py`) file. Provide an archi
 <details>
 <summary>Step 2: Generate a performance report</summary>
 
-Once you have ran the performance test your result files will be outputed at the location you specified them to go in **Step 1**. For me, the previous command referenced `/tmp/cbt` so my results are within there. 
+Once you have ran the performance test by following **Pat 1** your result files will be outputed at the location you specified them to go in **Step 1** after the archive argument (`-a`). For me, the previous command referenced `/tmp/cbt`, so my results are there. 
 
-- You can now copy these output files to a new directory if you wish. I would like them to be within `/perftests/my_test` in this case, I do this because I like to keep a directory of all my test results, and I delete `/tmp/cbt` before each performance test, so that is not a suitable place. So I would do this for example:
+- You can now copy these result files to a new directory if you wish. I would like them to be within `/perftests/my_test` in this case, I do so because I like to keep a directory of all my CBT test results, and I delete `/tmp/cbt` before each performance test, so that is not a suitable place to keep them stored. So I would do this for example:
 
 ```bash
 cp -r /tmp/cbt/* /perftests/my_test
@@ -76,11 +76,11 @@ cp -r /tmp/cbt/* /perftests/my_test
 PYTHONPATH=/cbt/ /cbt/tools/generate_performance_report.py --archive /perftests/my_test --output_directory /perftests/my_test_results --create_pdf
 ```
 
-Above you reference the location of cbt.py again at the start, you then reference the script that will generate the performance report (`generate_performance_report.py`). I state the directory, `/perftests/my_test` in this case, that has the results from the performance run, and you should also state a desired `output-directory`, this is where the files for the performance report will be. 
+Above you reference the location of `cbt.py` again at the start, you then reference the script that will generate the performance report (`generate_performance_report.py`). I state the directory, `/perftests/my_test` in this case, that has the results from the performance run, and you should also state a desired `output_directory`, this is where the files for the performance report will be. 
 
-**Side note:** you do not need to already have created the `my_test_results` directory you can see in the command above, this will be automatically done for you. After these steps, you should now have a pdf file inside this new `my_test_results` folder along with a few other files, you can upload these files to GitHub if you'd like to store/view them somewhere. You now have your performance reports generated!
+**Side note:** you do not need to have already created the specified `output_directory` you see in the command above, this will be automatically created for you if need be. After these steps, you should now have the result files inside your new `output_directory`, in my case, `my_test_results` folder. You have now successfully generated your **performance report**! I normally upload these result files to GitHub to create a main repository to store and view the reports.
 
-The next section will go over the performance reports generate, and how to understand your own one.
+The next section will go over the performance report generated, and how to understand your own one.
 
 </details>
 
@@ -88,22 +88,20 @@ The next section will go over the performance reports generate, and how to under
 
 ## <a id="read"></a>How to read response time curves
 
-Now you have generated your performance report for your test you may be looking at them and slightly confused by the graphs shown, this section will go over how we can read the response time curves and reach conclusions based on the data points. 
+Now you have generated your performance report for your test you may be looking at the pdf or md file and be slightly confused by the graphs shown. This section will cover how we read the response time curves and reach conclusions based on the data points. 
 
-So lets go back to our example CBT test run and the question we started with: **"Does using the CLAY erasure code plugin give better performance than using the default JErasure plugin?"**
+So lets go back to our example CBT test run and the question we started with: **"Does using the CLAY erasure code plugin give better performance than using the default Jerasure plugin?"**
 
-I generated a performance report for a JErasure plugin EC pool, the results can be found [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/24th_Sep_Jerasure_4%2B2_results/performance_report_250924_094912.pdf), go ahead and view the results if you wish to.
+I generated a performance report for a **Jerasure** plugin EC pool, the results can be found [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/24th_Sep_Jerasure_4%2B2_results/performance_report_250924_094912.pdf).
 
-I then did the same for the CLAY plugin, [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/13th_Oct_Clay_4%2B2%2B5_results/performance_report_251013_094658.pdf).  
+I then did the same for the **CLAY** plugin, [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/13th_Oct_Clay_4%2B2%2B5_results/performance_report_251013_094658.pdf).  
 
 Within the generated reports above you will see hockey stick curves plotted to show the performance of each configuration. 
 
 ### So how do we read the curves generated?
 
 Here is an example of a curve generated within a performance report:
-
 ![alt text](images/example_curve.png "How to read graphs")
-
 Below is an example of the `total_iodepth` value. As stated above we can find out each specified `total iodepth` point for this test by checking the yaml file we previously used in this test, and it is also stated within the performance report under the “Configuration yaml” section. For the above example it is: 
 ```yaml
 total_iodepth: [ 2, 4, 8, 12, 16, 24, 32, 64, 96, 128, 192, 288, 384 ] 
@@ -126,7 +124,7 @@ The post processing tools will sum the IOPs to generate a total IOPs for the res
 4. Most of the time you don't know exactly how much I/O an application is going to generate, and want to ensure that if there are any peaks or bursts in the amount of I/O that this doesn't cause a big change in latency. Where the response curve is flat there will be little change in latency if the amount of I/O varies, where the response curve is bending upwards a fairly small variation in amount of I/O can have a big impact on latency. Choosing a point on the response curve just before it starts increasing too rapidly gives a good indication of the maximum amount of I/O you can do with stable performance.
 5. Most users do not want to operate above around 70% of maximum throughput, as this provides some headroom for expansion and allows for sudden bursts in a workload so that high latency can be tolerated.
 
-As mentioned in part 1 of the blog, the perfect response curve would be a flat horizontal line showing constant latency as the quantity of I/O increases until we reach the saturation point where the system can handle no more I/O. This is because it highlights that performance is consistent with less variance.
+As mentioned in [**Part 1**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part1/) of the blog, the perfect response curve would be a flat horizontal line showing constant latency as the quantity of I/O increases until we reach the saturation point where the system can handle no more I/O. This is because it highlights that performance is consistent with less variance.
 
 ---
 
@@ -139,43 +137,35 @@ With CBT, as well as performance reports, we can also generate **comparison repo
 PYTHONPATH=/cbt/ /cbt/tools/generate_comparison_performance_report.py --baseline /perftests/jerasure_test/ --archives /perftests/clay_test/ --output_directory /perftests/clay_vs_jerasure_comparison --create_pdf
 ```
 
-In the above command we will have to specify what our baseline is, we will use the **Jerasure** test folder as the **baseline curve** as shown above. Our **archive curve** will be our **CLAY** performance report test folder. It is important here that in the above command you are inputting the **test** folders for Jerasure and CLAY **NOT** the **results** folders that were generated from the previous performance runs. The above command we will generate a comparison report in our chosen output directory. 
+In the above command we will have to specify what our baseline is, we will use the **Jerasure** test folder as the **baseline curve** as shown above. Our **archive curve** will be our **CLAY** performance report test folder. It is important here that in the above command you are inputting the **test** folders for Jerasure and CLAY **NOT** the **results** folder that was generated from the previous steps. The above command will generate a comparison report in our specified `output_directory`. 
 
-Using the above command I generated a comparison report between the above two runs, that can be found [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/Jerasure_Vs_Clay_comparison/comparitive_performance_report_251015_142011.pdf).
+You have now successfully generated your **comparison report**! Mine can be found [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/Jerasure_Vs_Clay_comparison/comparitive_performance_report_251015_142011.pdf).
 
 ### Basic analysis of the comparison report:
 
-Let's first give a bit of a background on our two erasure coding profiles: **Jerasure** is a generic reed-solomon erasure coding library, it is matrix-based, not CPU-optimised. It is fairly balanced between read and write. **CLAY** is designed for faster recovery at the cost of more complicated write paths. So we are expecting to see **better** performance from CLAY potentially when it comes to smaller IO sizes, but as the writes get bigger we may see a decline in performance from CLAY leading to better Jerasure results. Furthermore in terms of reads we expect fairly similar results across the board as they are implemented very similar, the main difference is when it comes to the writes.
+Let's first give a bit of a background on our two erasure coding profiles: **Jerasure** is a generic reed-solomon erasure coding library, it is matrix-based, not CPU-optimised. It is fairly balanced between read and write. **CLAY** is designed for faster recovery at the cost of more complicated write paths. So we are expecting to see **better** performance from CLAY potentially when it comes to **smaller** IO sizes, but as the writes get **larger** we may see a decline in performance from CLAY leading to better Jerasure results. Furthermore, in terms of reads we expect fairly similar results across the board as they are implemented very similar, the main difference is when it comes to the writes.
 
 So lets now take a look at our comparison report, first comparing smaller workloads so let's start with a **4K Random Reads**, this is the corresponding graph:
-
 ![alt text](images/4k_rand_read.png "4k random read curve")
+As shown by the diagram, the orange curve is our CLAY EC pool, and the blue curve is our Jerasure EC pool. We can see for 4k random reads there is very little change in performance, as we expected. Both the curves have almost identical latencies and IOps.
 
-As shown by the diagram, the orange curve is our CLAY EC pool, and the blue curve is our Jerasure EC pool. We can see for 4k random reads there is very little change in performance. Both the **Jerasure** and **CLAY** curves have almost identical latencies and IOps.
-
-We can also take a look at the **4K Random Writes** curve:
-
+We can also take a look at the **4K Random Writes**:
 ![alt text](images/4k_rand_write.png "4k random write curve")
+The performance is similar until we get to the saturation point around **14,000** IOps, where we can see latency sky rocket for both Jerasure and CLAY. The IOps for **Jerasure** are marginally better than CLAY at this point but nothing substantial.
 
-The performance is similar until we get to the saturation point around **14000** IOps, where we can see latency sky rockets for both **Jerasure** and **CLAY**. The IOps for **Jerasure** are marginally better than CLAY at this point but nothing substantial.
+So overall, we can see at small workloads there is very similar performance between **Jerasure** and **CLAY**.
 
-So overall at small workloads we can see very similar performance between **Jerasure** and **CLAY**.
-
-Lets now move onto larger workloads, starting with **1024k sequential read**:
-
+Lets now move onto larger workloads, starting with **1024K Sequential Read**:
 ![alt text](images/1024k_seq_read.png "1024k Sequential Read curve")
-
 Once again the two curves barely differ and they follow very similar paths, and that was expected. This is because for a normal read, ceph only needs to fetch data chunks (not parity chunks). Both Jerasure and CLAY are practically just returning the stored object, there is no real difference unless a failure occurs.
 
-Now lets look at the **1024k sequential write**:
-
+Now lets look at the **1024K Sequential Write**:
 ![alt text](images/1024k_seq_write.png "1024k Sequential Write curve")
+Now when we take a look at the writes we see that **CLAY** has 20-60% higher latency, with throughput dropping compared to **Jerasure**. This is likely due to extra CPU and network demands in CLAY. Larger writes mean bigger encoding matrices/layers, and CLAY has more complexity per write than Jerasure, likely leading to the higher latency shown. 
 
-Now when we take a look at the writes we see that **CLAY** has 20-60% higher latency, with throughput dropping compared to **Jerasure**. This is likely due to extra CPU and network demands in **CLAY**. Larger writes mean bigger encoding matrices/layers, and CLAY has more complexity per write than Jerasure, likely leading to the higher latency shown. 
+Our sequential write benchmarks shows that Jerasure delivers more consistent write performance across all the block sizes, while CLAY is more volatile, performing better at some smaller sizes but much worse at large sequential writes. This shows CLAY’s design priorities: it is optimised for reduced recovery bandwidth rather than raw write performance.
 
-Our sequential write benchmark show that Jerasure delivers more consistent write performance across all block sizes, while CLAY is more volatile, performing better at some smaller sizes but much worse at large sequential writes. This shows CLAY’s design priorities: it is optimised for reduced recovery bandwidth rather than raw write performance.
-
-This means that if your I/O workload is mainly large sequential reads, for example a data lake for AI training, then switching to CLAY isn't going to affect performance. However, if your I/O workload is mainly heavy sequential writes, for example storage archives or backups, then switching to CLAY will have a substantial negative performance impact, as shown by the diagrams.
+This means that if your I/O workload is mainly large sequential reads, for example a **data lake** for AI training, then switching to CLAY isn't going to affect performance. However, if your I/O workload is mainly heavy sequential writes, for example **storage archives or backups**, then switching to CLAY will have a substantial negative performance impact, as shown by the diagrams.
 
 </details>
 
@@ -184,14 +174,12 @@ This means that if your I/O workload is mainly large sequential reads, for examp
 <details>
 <summary>Step 4: Running a test with OSD down</summary>
 
-So, before we had a CLAY and Jerasure EC pool compared with one another. The results solidified our hypothesis that Jerasure would likely perform better because of the more complex computations used to recover data. So now we will do an additional run and deliberately kill an OSD prior to running the CBT test, to simulate real world failures that could occur, to see how the performance between the two differs when it comes to OSD recovery. 
+So, before we had a CLAY and Jerasure EC pool compared with one another. The results solidified our hypothesis that Jerasure would likely perform better because of the more complex computations used to recover data. Now we will do an additional run and deliberately kill an OSD prior to running the CBT test, to simulate real world failures that could occur, to see how the performance between the two differs when it comes to OSD recovery. 
 
-So the following comparison report shows a CLAY and Jerasure curve where both of the plugins have 1 OSD that has been stopped, I did this so we could focus on the differences between the performance of the two. The report can be found [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/Jerasure_Vs_Clay_down_comparison/comparitive_performance_report_251015_154505.pdf).
+The following comparison report shows CLAY and Jerasure curves where both of the plugins have 1 OSD down. The report can be found [here](https://github.com/Jakesquelch/cbt_results/blob/main/Blog/Jerasure_Vs_Clay_down_comparison/comparitive_performance_report_251015_154505.pdf).
 
-We will now take a look at **1024k Sequential read** from the above comparison report: 
-
+We will now take a look at **1024K Sequential Read** from the above comparison report: 
 ![alt text](images/down_1024_seq_read.png "1024k sequential read")
-
 Now we expect CLAY to have better performance here due to it's supposedly more efficient data recovery. However this is not the case as shown by the diagram above. 
 
 </details>
@@ -206,6 +194,6 @@ Within this part we have used CBT to successfully compare Jerasure and CLAY for 
 
 ## <a id="conclusion"></a>Conclusion
 
-In conlusion this blog has demonstrated the seamless experience of how you can generate a CBT performance benchmark run from start to finish, generating performance reports along the way and enabling analysis/comparison of performance. We used **CLAY** and **Jerasure** as an example of how to easily do a performance benchmark but sometimes the results can be unexpected and lead to more questions arousing than answers being received. This can lead to further experiments to deep-dive into why certain results occured, and this is what I'll be doing in **Part 4** of the blog that will be coming in the near future. **Part 4** will probide more detailed analysis and IO breakdown for Clay and Jerasure to provide more clarity on why CLAY performs was worse!
+In conlusion this blog has demonstrated the seamless experience of how you can generate a CBT performance benchmark run from start to finish, generating performance reports along the way and enabling analysis/comparison of performance. We used **CLAY** and **Jerasure** as an example of how to easily do a performance benchmark but sometimes the results can be unexpected and lead to more questions arousing than answers being received. This can lead to further experiments to deep-dive into why certain results occured, and this is what I'll be doing in **Part 4** of the blog that will be coming in the near future. **Part 4** will provide more detailed analysis and IO breakdown for CLAY and Jerasure to provide more clarity on why CLAY performance was worse!
 
 [Links to previous parts of the blog series](#outline)
