@@ -144,11 +144,11 @@ Supermicro X14 2U 4-node GrandTwin Rear IO.
 IO](https://www.supermicro.com/en/products/system/datasheet/sys-212gt-hnr)
 
 Each node:
-•	1x Intel Xeon 6 6740E 96C/96T, 205W
-•	16x16GB DDR5-6400
-•	1x Broadcom 57608 2x200GbE
-•	6x 2.5” Kioxia CM6-R, 7.68TB Gen4 NVMe SSD
-•	RAID1 2x 480TB NVMe (boot) 
+* 1x Intel Xeon 6 6740E 96C/96T, 205W
+* 16x16GB DDR5-6400
+* 1x Broadcom 57608 2x200GbE
+* 6x 2.5” Kioxia CM6-R, 7.68TB Gen4 NVMe SSD
+* RAID1 2x 480TB NVMe (boot) 
 
 This system is utilized to provide high-bandwidth all-flash object storage for
 the AI solution using IBM Storage Ceph 8.1.
@@ -158,12 +158,12 @@ the AI solution using IBM Storage Ceph 8.1.
 [Supermicro Gaudi 3 AI Server
 SYS-822GA-NGR3](https://www.supermicro.com/en/products/system/datasheet/sys-822ga-ngr3)
 
-•	2x Intel Xeon 6 6960P 72C/144T
-•	24x 64GB DDR5-6400
-•	8x Gaudi 3 HL-325L accelerators
-•	Up to 8x 2.5" Gen5 NVMe SSD
-•	Scale-up networking: 21x 200GbE Gaudi NICs
-•	2x Broadcom 57608 1x400GbE
+* 2x Intel Xeon 6 6960P 72C/144T
+* 24x 64GB DDR5-6400
+* 8x Gaudi 3 HL-325L accelerators
+* Up to 8x 2.5" Gen5 NVMe SSD
+* Scale-up networking: 21x 200GbE Gaudi NICs
+* 2x Broadcom 57608 1x400GbE
 
 This system is utilized to run inference workloads with the combination of vLLM
 and LMCache, leveraging Gaudi 3 accelerators from Intel. 
@@ -173,12 +173,12 @@ and LMCache, leveraging Gaudi 3 accelerators from Intel.
 [Supermicro GPU A+ Server AS
 -8125GS-TNMR2](https://www.supermicro.com/en/products/system/datasheet/as-8125gs-tnmr2)
 
-•	1x AMD EPYC 9654 96C/192T
-•	24x 96GB DDR5-4800
-•	8x AMD MI300X accelerators
-•	Up to 8x 2.5" Gen5 NVMe SSD
-•	Scale-up networking: 4x400GbE
-•	Storage and GPU scale-out networking: 4x NVIDIA MT28908 ConnectX-6 200GbE
+* 1x AMD EPYC 9654 96C/192T
+* 24x 96GB DDR5-4800
+* 8x AMD MI300X accelerators
+* Up to 8x 2.5" Gen5 NVMe SSD
+* Scale-up networking: 4x400GbE
+* Storage and GPU scale-out networking: 4x NVIDIA MT28908 ConnectX-6 200GbE
 
 This system is utilized to run inference workloads with the combination of vLLM
 and LMCache, leveraging MI300X accelerators from AMD.
@@ -188,10 +188,10 @@ and LMCache, leveraging MI300X accelerators from AMD.
 [SSE-T7132S - 400Gb Ethernet
 Switch](https://www.supermicro.com/en/products/accessories/Networking/SSE-T7132SR.php)
 
-•	32x QSFP-DD 400GbE, or 64x QSFP56 / 128x QSFP28 with breakout cables
-•	25.6Tb/s switching capacity
-•	SONiC OS
-•	RoCEv2/RDMA support with PFC
+* 32x QSFP-DD 400GbE, or 64x QSFP56 / 128x QSFP28 with breakout cables
+* 25.6Tb/s switching capacity
+* SONiC OS
+* RoCEv2/RDMA support with PFC
 
 For simplicity we used a single fixed-port 400Gb switch for both GPU-to-GPU and
 the storage fabric.
@@ -589,14 +589,12 @@ python3 ~/LMCache/benchmarks/long_doc_qa/long_doc_qa.py \
 
 ![](images/gaudi3-tp2-sweep-qwen.png)
 ![](images/gaudi3-tp2-sweep-llama.png)
-![](images/gaudi3-tp-qwen.png)
-![](images/gaudi3-tp-llama.png)
+![](images/gaudi3-tp-charts.png)
 
 ### AMD MI300X Results
 
 ![](images/amd-tp1-sweep-qwen.png)
-![](images/amd-tp-qwen.png)
-![](images/amd-tp-llama.png)
+![](images/amd-tp-charts.png)
 
 Considerable reduction in TTFT with both Intel Guadi3 and AMD MI300X
 accelerators, with the largest measured speed-up of 23x reduction. This testing
