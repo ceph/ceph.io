@@ -26,7 +26,7 @@ their storage backend without modification.
 A fundamental principle governing RGW's design is its stateless nature. This
 critical architectural decision is the bedrock of its massive horizontal
 scalability and high availability. Since RGW daemons maintain no persistent
-tate related to client sessions, you can achieve near-linear performance
+state related to client sessions, you can achieve near-linear performance
 scaling simply by deploying more RGW instances behind a standard load balancer.
 The failure of any single RGW daemon is a non-critical event because the load
 balancer can redirect client traffic to the remaining healthy instances, making
@@ -112,7 +112,7 @@ will create that pool with the values of the config options ``osd_pool_default_p
 and ``osd_pool_default_pgp_num``. These defaults are sufficient for some pools, but others
 (especially those listed in placement_pools for the bucket index and data) will require
 additional tuning. Note that when the PG autoscaler is enabled it will adjust the placement
-group values for these pools automatically, with an increated ``BIAS`` for ``.index`` pools
+group values for these pools automatically, with an increased ``BIAS`` for ``.index`` pools
 so that they are allocated more than their aggregate data would otherwise inform.
 For the autoscaler to work best with the constellation of RGW pools, we suggest raising the
 following values from their defaults:
@@ -404,7 +404,7 @@ value (217 bytes) :
 
 When we add more S3 objects to our bucket, we see new key/value entries for each
 added to the shards available for the bucket. In this example ``file1``, ``file2``,``file4``, ``file10``
-landed inn shard ``2``:
+landed in shard ``2``:
 
 ```bash
 $ rados -p default.rgw.buckets.index listomapkeys .dir.7fb0a3df-9553-4a76-938d-d23711e67677.34162.1.2
@@ -453,7 +453,7 @@ the OSD DB partition is essential for maximizing bucket index performance.
 As a bucket scales to hundreds of thousands or millions of S3 objects, its
 index can become a performance bottleneck. By default, a single shard can
 become "hot" as it accumulates too many entries. The threshold for the number of
-S3 objects per shard is configurable, defaulting to 100,000. Very larger numbers of
+S3 objects per shard is configurable, defaulting to 100,000. Very large numbers of
 S3 objects per bucket reintroduce the serialization problem that sharding was
 designed to solve. To combat this, RGW features an advanced, automated mechanism
 known as Dynamic Bucket Resharding (DBR).
