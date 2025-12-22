@@ -12,7 +12,7 @@ tags:
 
 ## Introduction
 
-In the [first](https: https://ceph.io/en/news/blog/2025/rgw-deep-dive-1)
+In the [first](https:https://ceph.io/en/news/blog/2025/rgw-deep-dive-1)
 and [second](https:https://ceph.io/en/news/blog/2025/rgw-deep-dive-2) parts of
 this deep dive series, we dissected the core foundations of Ceph RGW: stateless
 frontends, specialized RADOS pools, bucket index mechanics, and the head/tail
