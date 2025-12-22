@@ -101,8 +101,8 @@ Two identical clusters, each with
     * 2x Intel E5-2660 v4 (28 total cores, 56 threads)
     * 256 GB RAM
        
-* 192x OSDs (BluesStore): 24 2TB HDD and 2x 800GB NVMe for WAL/DB per node
-* Pool: `site{1,2}.rgw.buckets.data = EC 4+2, `pg_num=4096`
+* 192x OSDs (BluesStore): 24 2TB HDD and 2x 800GB NVMe SSD for WAL/DB per node
+* Pool: `site{1,2}.rgw.buckets.data` EC 4+2, `pg_num=4096`
 
 ## The "Free Lunch" is Real: Significant Space Savings at Zero Performance Cost
 
@@ -120,19 +120,19 @@ effectively eliminates the traditional trade-off.
 
 *Graph 1. CPU Consumption for Small Objects*
 
-![](images/7a80e345-6972-4b18-9c05-860c5a64ab05.png align="center")
+![](images/7a80e345-6972-4b18-9c05-860c5a64ab05.png)
 
 *Graph 2. CPU Consumption for Large Objects*
 
-![](images/d26761a5-1bd4-4115-8ac8-5c5976046026.png align="center")
+![](images/d26761a5-1bd4-4115-8ac8-5c5976046026.png)
 
 *Graph 3. Throughput for Small Object Writes*
 
-![](images/a588ee07-7f0c-4903-a8ab-3b11f0f543d8.png align="center")
+![](images/a588ee07-7f0c-4903-a8ab-3b11f0f543d8.png)
 
 *Graph 4. Throughput for Small Object Reads*
 
-![](images/3c36de86-7470-4204-a50e-f644e166567d.png align="center")
+![](images/3c36de86-7470-4204-a50e-f644e166567d.png)
 
 The results confirm that using RocksDB compression has no detrimental
 effect on either throughput or resource consumption in Ceph, while
@@ -173,7 +173,7 @@ capacity bottleneck on the expensive, high-speed NVMe drives. Compressing
 RocksDB directly compresses this RGW metadata, providing massive and immediate
 relief on that fast tier.
 
-![](images/1953bdb1-9871-44db-90b6-d1ce81fde788.png align="center")
+![](images/1953bdb1-9871-44db-90b6-d1ce81fde788.png)
 
 ## It's Not Just for Small Objects: Large Objects Also See a Clear Benefit
 
@@ -183,7 +183,7 @@ source report highlights the most dramatic space savings for small objects, it
 explicitly notes that the positive effect across both sets of object sizes is
 evident, making compression a clear win for large-object workloads as well.
 
-![](images/94f71417-270f-4009-8e87-37c762dcf998.png align="center")
+![](images/94f71417-270f-4009-8e87-37c762dcf998.png)
 
 Furthermore, our test plan included stressful OSD failure scenarios to measure
 behavior under duress. The overall conclusion of "no detrimental effect" on
@@ -193,11 +193,11 @@ also a stable and robust feature under pressure.
 
 *Graph 5. Throughput for Small Object Reads During Failure*
 
-![](images/23fe5bea-9c23-440a-9e84-b9bddd035c9e.png align="center")
+![](images/23fe5bea-9c23-440a-9e84-b9bddd035c9e.png)
 
 *Graph 6. Throughput for Small Object Writes During Failure*
 
-![](images/34f1ad7f-cb59-4e47-8be8-e1e0659e9d5b.png align="center")
+![](images/34f1ad7f-cb59-4e47-8be8-e1e0659e9d5b.png)
 
 ## Conclusion: A Feature That Should Be Enabled By Default
 
@@ -207,7 +207,7 @@ must come at the expense of performance. The evidence points to a clear win:
 substantial storage savings on the metadata layer, with no measurable
 trade-off in throughput or CPU usage.
 
-![](images/1de07550-5ebe-49cd-9e74-c58aaed0dea4.png align="center")
+![](images/1de07550-5ebe-49cd-9e74-c58aaed0dea4.png)
 
 This led to a simple conclusion: given the potential for substantial space
 savings with no performance downside, the decision was to enable RocksDB LZ4
