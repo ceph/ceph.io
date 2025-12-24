@@ -16,7 +16,7 @@ CBT Performance Benchmarking - Part 4. What can we say about CLAY?
 - [**Part 1**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part1/) - How to start a Ceph cluster for a performance benchmark with CBT  
 - [**Part 2**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part2/) - Defining YAML contents  
 - [**Part 3**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part3/) - How to start a CBT performance benchmark 
-- [**Part 4**] - Analysing CLAY
+- **Part 4** - Analysing CLAY
 
 ---
 
@@ -39,7 +39,7 @@ As a refresher lets quickly reflect on [**Part 3**](https://ceph.io/en/news/blog
 If we look back to Step 3 in Part 3 [**Part 3**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part3/) of the blog `(Generating a comparison report)`, we saw that **reads** had practically identical curves between CLAY & Jerasure (we provided `4K random read` and `1024K sequential read` diagrams).
 When we compared **writes** between CLAY & Jerasure we saw that the performance hit to CLAY was substantially larger, particularly for higher bandwidths. The `1024k Sequential Wrties` diagram showed this.
 
-### Client IO with an OSD down
+## Client IO with an OSD down
 
 Plan for this section: its worse, point to part 3 and show that and analyse it (worse for both reads and writes)
 
@@ -69,7 +69,27 @@ CLAY is doing a lot more read IOs to the backend drives which is bad news if the
 
 Squid recovery also always tries to read 2MB from each stripe and expects the read to be truncated if the object is smaller than 2MB * number of stripes. With Clay this results in a lot of small reads being issued beyond the end of the object. While these as quickly failed and do not stop Clay recovering the data this does waste additional CPU resources.
 
+The above can also be referred to as "Fragmented reads", ie when the sub-chunk size is less than the drive block size. Results have been shown that encoding data can take up to 70% longer in terms of CPU usage, if your cluster isn't CPU limited then you won't notice this. These results also showed dramatic savings in backfill/recovery time - but they were done on a system that was network limited and used much wider erasure codes (26 node cluster) than most people would use.
+
 There is scope to improve the implementation of Clay - the reads are currently issued in series which will add a lot of latency to the recovery, issuing the reads in parallel using readv would be better, however it would be even more efficient to issue just 1 read to the drive for the whole stripe and then just transmit the subset of data required across the network. Whilst this will increase drive bandwidth in some cases, it will considerably reduce drive IOPs and CPU utilization.
+
+### More in depth:
+
+CLAY uses the traditional JErasure like erasure encodings and decodings ("RS", "PRT" and "PFT")
+
+Encoding is done in 3 phases:
+1. 50% of the data is encoded using PRT, 50% of the data is copied to form an intermediate set of buffers
+2. All the intermediate data is encoded using RS to form a 2nd set of intermediate buffers
+3. 50% of this data is encoded using PFT, 50% of the data is copied to form the output buffers
+
+Because of this there is 2x the amount of encoding + 1x memcpy of the data for CLAY versus 1x encoding for Jerasure. Hence why we are seeing slower performance of the encode.
+
+Decoding is also done in 3 phases, but on half the quantity of data:
+1. 25% of the data is decoded using PRT, 25% of the data is copied to form an intermediate set of buffers
+2. All (50%) of the intermediate data is decoded using RS to form a 2nd set of intermediate buffers
+3. 25% of the data is decoded using PFT, 25% of the data is copied to form the output data
+
+Therefore there is 1x the amount of decodes + 0.5x memcpy of the data for CLAY versus 1x decoding for Jerasure. Hence there is slightly more overhead for CLAY (memcpy's + slight inefficiencies from performing several smaller decodes rather than one large decode). CLAY requires less data to perform the recover so can save on network bandwidth (and if implemented correctly disk bandwidth)
 
 ---
 
