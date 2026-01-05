@@ -75,6 +75,8 @@ There is scope to improve the implementation of Clay - the reads are currently i
 
 ### More in depth:
 
+Referencing this paper: [here](https://people.iith.ac.in/mynav/pdfs/talks/Clay_Fast18.pdf)
+
 CLAY uses the traditional JErasure like erasure encodings and decodings ("RS", "PRT" and "PFT")
 
 Encoding is done in 3 phases:
