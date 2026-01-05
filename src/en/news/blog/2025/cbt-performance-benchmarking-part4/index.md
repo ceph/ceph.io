@@ -82,14 +82,20 @@ Encoding is done in 3 phases:
 2. All the intermediate data is encoded using RS to form a 2nd set of intermediate buffers
 3. 50% of this data is encoded using PFT, 50% of the data is copied to form the output buffers
 
-Because of this there is 2x the amount of encoding + 1x memcpy of the data for CLAY versus 1x encoding for Jerasure. Hence why we are seeing slower performance of the encode.
+We are using Jerasure as the baseline here so will say it has 1x cost for encode or decode and use this is as a comparison point against CLAY.
+Because of this there is **2x the amount of encoding + 1x memcpy of the data** for CLAY versus **1x encoding** for Jerasure. Hence why we are seeing slower performance of the encode.
 
 Decoding is also done in 3 phases, but on half the quantity of data:
 1. 25% of the data is decoded using PRT, 25% of the data is copied to form an intermediate set of buffers
 2. All (50%) of the intermediate data is decoded using RS to form a 2nd set of intermediate buffers
 3. 25% of the data is decoded using PFT, 25% of the data is copied to form the output data
 
-Therefore there is 1x the amount of decodes + 0.5x memcpy of the data for CLAY versus 1x decoding for Jerasure. Hence there is slightly more overhead for CLAY (memcpy's + slight inefficiencies from performing several smaller decodes rather than one large decode). CLAY requires less data to perform the recover so can save on network bandwidth (and if implemented correctly disk bandwidth)
+Therefore there is **1x the amount of decodes + 0.5x memcpy of the data** for CLAY versus **1x decoding** for Jerasure. Hence there is slightly more overhead for CLAY (memcpy's + slight inefficiencies from performing several smaller decodes rather than one large decode). CLAY requires less data to perform the recover so can save on network bandwidth (and if implemented correctly disk bandwidth)
+
+To round off:
+- Clay has higher encoding costs and the same decoding cost
+- Clay has some memcpy's  that JErasure does not have
+- Clay has multiple encode/decode steps and there will be some small overheads/inefficiencies from for example encoding 12K of data in 3 batches of 4K (Clay) versus encoding 12K of data in 1 batch (JErasure)
 
 ---
 
