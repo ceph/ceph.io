@@ -1,10 +1,16 @@
 {
   "jobs": [
     {
+      "company": "IBM",
+      "date": "2025-01-06",
+      "title": "Storage Software Engineer, CephFS",
+      "url": "https://ibmglobal.avature.net/en_US/careers/Jobdetail?jobId=77753"
+    },
+    {
       "company": "Walmart Global Tech",
-      "date": "2025-12-01",
-      "title": "Principal Software Engineer - Ceph",
-      "url": "https://careers.walmart.com/us/jobs/WD2321814-principal-software-engineer-cloud-storage"
+      "date": "2025-12-02",
+      "title": "Principal, Software Engineer - Cloud Storage",
+      "url": "https://careers.walmart.com/us/en/jobs/R-2321814"
     },
     {
       "company": "Walmart Global Tech",
@@ -17,18 +23,6 @@
       "date": "2025-10-21",
       "title": "Staff Storage Engineer- Ceph",
       "url": "https://jobs.gem.com/index-exchange/6351680"
-    },
-    {
-      "company": "Boson AI",
-      "date": "2025-03-21",
-      "title": "Senior Software Engineer - Ceph",
-      "url": "https://jobs.lever.co/bosonai/6bbaa016-7594-4b26-9765-758592195add"
-    },
-    {
-      "company": "GoDaddy",
-      "date": "2025-02-20",
-      "title": "Senior Ceph Engineer",
-      "url": "https://careers.godaddy/jobs/senior-ceph-engineer-united-states?gh_jid=6352759003"
     },
     {
       "company": "Hetzner Cloud",
