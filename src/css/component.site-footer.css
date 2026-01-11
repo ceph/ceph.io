@@ -83,6 +83,22 @@
   transition: fill var(--animation-duration) var(--animation-easing);
 }
 
+/* Ensure all footer social icons (svg and raster) render at identical size */
+.site-footer__social a {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.site-footer__social svg,
+.site-footer__social img,
+.site-footer__twitter-icon {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 /* support raster/svg img icons (footer now uses an <img>) */
 .site-footer__social img,
 .site-footer__twitter-icon {
