@@ -25,36 +25,23 @@
   margin: 0 0 var(--size-4);
 }
 
-.site-footer__twitter {
-  position: relative;
+.site-footer__support {
+  font-size: var(--font-size-xs);
+  line-height: var(--size-4);
+  margin: 0 0 var(--size-4);
 }
 
-/* stacked images: grey below, blue-red above; crossfade on hover */
-.site-footer__twitter img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  transition: opacity var(--animation-duration) var(--animation-easing), transform var(--animation-duration) var(--animation-easing),
-    filter var(--animation-duration) var(--animation-easing);
+.site-footer__site a,
+.site-footer__support a {
+  color: var(--color-white);
+  display: inline-block;
+  text-decoration: none;
 }
-.site-footer__twitter-icon {
-  z-index: 1; /* base grey */
-  opacity: 1;
-}
-.site-footer__twitter-hover {
-  z-index: 2; /* hover state */
-  opacity: 0;
-}
-.site-footer__twitter:hover .site-footer__twitter-hover {
-  opacity: 1;
-  transform: translateY(-2px) scale(1.08);
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.25));
-}
-.site-footer__twitter:hover .site-footer__twitter-icon {
-  opacity: 0;
+
+.site-footer__site a:hover,
+.site-footer__support a:hover,
+.site-footer [aria-current="page"] {
+  text-decoration: underline;
 }
 
 .site-footer__site > li > a {
@@ -94,80 +81,6 @@
 
 .site-footer__social svg {
   transition: fill var(--animation-duration) var(--animation-easing);
-}
-
-/* Ensure all footer social icons (svg and raster) render at identical size */
-.site-footer__social a {
-  width: 24px;
-  height: 24px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-.site-footer__social svg,
-.site-footer__social img,
-.site-footer__twitter-icon {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-/* support raster/svg img icons (footer now uses an <img>) */
-.site-footer__social img,
-.site-footer__twitter-icon {
-  display: inline-block;
-  transition: transform var(--animation-duration) var(--animation-easing), opacity var(--animation-duration) var(--animation-easing),
-    filter var(--animation-duration) var(--animation-easing);
-}
-
-.site-footer__twitter:hover img,
-.site-footer__twitter:hover .site-footer__twitter-icon {
-  transform: translateY(-2px) scale(1.08);
-  opacity: 0.95;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.25));
-}
-
-/* show the alternate blue/red twitter SVG on hover by revealing a ::after background */
-.site-footer__twitter {
-  position: relative;
-  display: inline-block;
-}
-/* no ::after swap — use inline SVG fill change instead */
-
-/* force the twitter anchor to be a fixed 24x24 box and scale images to fill */
-.site-footer__twitter {
-  width: 24px;
-  height: 24px;
-}
-.site-footer__twitter img,
-.site-footer__twitter-icon {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-/* reveal the blue-red twitter SVG on hover by showing a ::after background */
-.site-footer__twitter {
-  position: relative;
-}
-.site-footer__twitter::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("/assets/svgs/logo-twitter-blue-red.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
-  opacity: 0;
-  transition: opacity var(--animation-duration) var(--animation-easing);
-  pointer-events: none;
-}
-.site-footer__twitter:hover::after {
-  opacity: 1;
-}
-.site-footer__twitter:hover img,
-.site-footer__twitter:hover .site-footer__twitter-icon {
-  opacity: 0;
 }
 
 .site-footer__facebook:hover svg {
