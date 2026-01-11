@@ -83,6 +83,45 @@
   transition: fill var(--animation-duration) var(--animation-easing);
 }
 
+/* support raster/svg img icons (footer now uses an <img>) */
+.site-footer__social img,
+.site-footer__twitter-icon {
+  display: inline-block;
+  transition: transform var(--animation-duration) var(--animation-easing), opacity var(--animation-duration) var(--animation-easing),
+    filter var(--animation-duration) var(--animation-easing);
+}
+
+.site-footer__twitter:hover img,
+.site-footer__twitter:hover .site-footer__twitter-icon {
+  transform: translateY(-2px) scale(1.08);
+  opacity: 0.95;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.25));
+}
+
+/* show the alternate blue/red twitter SVG on hover by revealing a ::after background */
+.site-footer__twitter {
+  position: relative;
+  display: inline-block;
+}
+.site-footer__twitter::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/assets/svgs/logo-twitter-blue-red.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px 24px;
+  opacity: 0;
+  transition: opacity var(--animation-duration) var(--animation-easing);
+  pointer-events: none;
+}
+.site-footer__twitter:hover::after {
+  opacity: 1;
+}
+.site-footer__twitter:hover img {
+  opacity: 0;
+}
+
 .site-footer__facebook:hover svg {
   fill: var(--color-facebook-blue);
 }
