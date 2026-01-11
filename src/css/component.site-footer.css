@@ -110,7 +110,7 @@
   background-image: url("/assets/svgs/logo-twitter-blue-red.svg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 24px 24px;
+  background-size: 100% 100%;
   opacity: 0;
   transition: opacity var(--animation-duration) var(--animation-easing);
   pointer-events: none;
@@ -120,6 +120,18 @@
 }
 .site-footer__twitter:hover img {
   opacity: 0;
+}
+
+/* force the twitter anchor to be a fixed 24x24 box and scale images to fill */
+.site-footer__twitter {
+  width: 24px;
+  height: 24px;
+}
+.site-footer__twitter img,
+.site-footer__twitter-icon {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .site-footer__facebook:hover svg {
