@@ -119,24 +119,7 @@
   position: relative;
   display: inline-block;
 }
-.site-footer__twitter::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("/assets/svgs/logo-twitter-blue-red.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
-  opacity: 0;
-  transition: opacity var(--animation-duration) var(--animation-easing);
-  pointer-events: none;
-}
-.site-footer__twitter:hover::after {
-  opacity: 1;
-}
-.site-footer__twitter:hover img {
-  opacity: 0;
-}
+/* no ::after swap — use inline SVG fill change instead */
 
 /* force the twitter anchor to be a fixed 24x24 box and scale images to fill */
 .site-footer__twitter {
