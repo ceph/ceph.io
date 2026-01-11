@@ -133,6 +133,30 @@
   display: block;
 }
 
+/* reveal the blue-red twitter SVG on hover by showing a ::after background */
+.site-footer__twitter {
+  position: relative;
+}
+.site-footer__twitter::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/assets/svgs/logo-twitter-blue-red.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  opacity: 0;
+  transition: opacity var(--animation-duration) var(--animation-easing);
+  pointer-events: none;
+}
+.site-footer__twitter:hover::after {
+  opacity: 1;
+}
+.site-footer__twitter:hover img,
+.site-footer__twitter:hover .site-footer__twitter-icon {
+  opacity: 0;
+}
+
 .site-footer__facebook:hover svg {
   fill: var(--color-facebook-blue);
 }
