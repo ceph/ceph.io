@@ -25,23 +25,36 @@
   margin: 0 0 var(--size-4);
 }
 
-.site-footer__support {
-  font-size: var(--font-size-xs);
-  line-height: var(--size-4);
-  margin: 0 0 var(--size-4);
+.site-footer__twitter {
+  position: relative;
 }
 
-.site-footer__site a,
-.site-footer__support a {
-  color: var(--color-white);
-  display: inline-block;
-  text-decoration: none;
+/* stacked images: grey below, blue-red above; crossfade on hover */
+.site-footer__twitter img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: opacity var(--animation-duration) var(--animation-easing), transform var(--animation-duration) var(--animation-easing),
+    filter var(--animation-duration) var(--animation-easing);
 }
-
-.site-footer__site a:hover,
-.site-footer__support a:hover,
-.site-footer [aria-current="page"] {
-  text-decoration: underline;
+.site-footer__twitter-icon {
+  z-index: 1; /* base grey */
+  opacity: 1;
+}
+.site-footer__twitter-hover {
+  z-index: 2; /* hover state */
+  opacity: 0;
+}
+.site-footer__twitter:hover .site-footer__twitter-hover {
+  opacity: 1;
+  transform: translateY(-2px) scale(1.08);
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.25));
+}
+.site-footer__twitter:hover .site-footer__twitter-icon {
+  opacity: 0;
 }
 
 .site-footer__site > li > a {
