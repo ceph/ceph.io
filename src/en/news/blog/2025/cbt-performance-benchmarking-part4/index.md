@@ -36,6 +36,13 @@ Plan for this section: summary is performance is worse than CLAY (look at result
 
 As a refresher lets quickly reflect on [**Part 3**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part3/) of the blog and take a look at the client IO results for CLAY compared to Jerasure.
 
+<details>
+<summary>Click to see part 3 diagrams</summary>
+![alt text](images/part_3_ref.png "part 3 reference")
+
+
+</details>
+
 If we look back to Step 3 in Part 3 [**Part 3**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part3/) of the blog `(Generating a comparison report)`, we saw that **reads** had practically identical curves between CLAY & Jerasure (we provided `4K random read` and `1024K sequential read` diagrams).
 When we compared **writes** between CLAY & Jerasure we saw that the performance hit to CLAY was substantially larger, particularly for higher bandwidths. The `1024k Sequential Wrties` diagram showed this.
 
