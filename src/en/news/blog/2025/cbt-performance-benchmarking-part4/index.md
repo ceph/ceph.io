@@ -32,24 +32,27 @@ Contents:
 
 ## <a id="client"></a>Client IO results for CLAY
 
-Plan for this section: summary is performance is worse than CLAY (look at results in part 3 and say its worth for higher bandwith for high writes, reads are basically identical)
-
-As a refresher lets quickly reflect on [**Part 3**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part3/) of the blog and take a look at the client IO results for CLAY compared to Jerasure.
+As a refresher lets quickly reflect on the client IO results of CLAY compared to Jerasure.
 
 <details>
-<summary>Click to see part 3 diagrams</summary>
+<summary>Click to see Part 3 diagrams</summary>
 
 ![alt text](images/part_3_ref.png "part 3 reference")
 
-
 </details>
 
-If we look back to Step 3 in Part 3 [**Part 3**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part3/) of the blog `(Generating a comparison report)`, we saw that **reads** had practically identical curves between CLAY & Jerasure (we provided `4K random read` and `1024K sequential read` diagrams).
-When we compared **writes** between CLAY & Jerasure we saw that the performance hit to CLAY was substantially larger, particularly for higher bandwidths. The `1024k Sequential Wrties` diagram showed this.
+If we look back to Step 3 in Part 3 [**Part 3**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part3/) of the blog `(Generating a comparison report)`, we saw that **reads** had practically identical curves between CLAY & Jerasure for both `4K random reads` and `1024K sequential reads`.
+
+However, when we compared writes we saw that the performance hit to CLAY was substantially larger, particularly for higher bandwidths. The `1024k Sequential Wrties` diagram represents this. 
 
 ## Client IO with an OSD down
 
-Plan for this section: its worse, point to part 3 and show that and analyse it (worse for both reads and writes)
+<details>
+<summary>Click to see Part 3 diagrams</summary>
+
+![alt text](images/part_3_down_ref.png "part 3 reference with OSD down")
+
+</details>
 
 We then moved onto Step 4 in [**Part 3**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part3/) of the blog `(Running a test with an OSD down)`, and we saw that performance has got even worse for CLAY here. The curves are no longer identical for the `1024k sequential read`, CLAY is obviously worse, which we did not expect.
 
