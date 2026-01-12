@@ -38,6 +38,7 @@ As a refresher lets quickly reflect on [**Part 3**](https://ceph.io/en/news/blog
 
 <details>
 <summary>Click to see part 3 diagrams</summary>
+
 ![alt text](images/part_3_ref.png "part 3 reference")
 
 
