@@ -32,7 +32,7 @@ Contents:
 
 ## <a id="client"></a>Client IO results for CLAY
 
-As a refresher lets quickly reflect on the client IO results of CLAY compared to Jerasure:
+As a refresher lets quickly reflect on the client IO results of CLAY compared to JErasure:
 
 <details>
 <summary>Click to see Part 3 diagrams</summary>
@@ -41,18 +41,18 @@ As a refresher lets quickly reflect on the client IO results of CLAY compared to
 
 </details>
 
-If we look back to **Step 3** in [**Part 3**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part3/) of the blog `(Generating a comparison report)`, we saw that **reads** had practically identical curves between CLAY & Jerasure for both `4K random reads` and `1024K sequential reads`.
+If we look back to **Step 3** in [**Part 3**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part3/) of the blog `(Generating a comparison report)`, we saw that **reads** had practically identical curves between CLAY & JErasure for both `4K random reads` and `1024K sequential reads`.
 
-However, when we compared writes we saw that the performance hit to CLAY was substantially larger, particularly for higher bandwidths. The `1024k Sequential Wrties` diagram represents this. 
+However, when we compared writes we saw that the performance hit to CLAY was substantially larger, particularly for higher bandwidths. The `1024k Sequential Writes` diagram represents this. 
 
-Referencing this paper: [here](https://people.iith.ac.in/mynav/pdfs/talks/Clay_Fast18.pdf)
-
-This is because of CLAY's encoding process, it is significantly more complex. While Jerasure performs a single encoding pass, CLAY uses three phases:
+This is because of CLAY's encoding process, it is significantly more complex. While JErasure performs a single encoding pass, CLAY uses three phases:
 1. 50% of data is encoded using PRT (Product Recovery Transform), 50% of the data is copied to form an intermediate set of buffers
 2. All the intermediate data is encoded using RS (Reed-Solomon) to form a second set of intermediate buffers
 3. 50% of the result is encoded using PFT (Parity Fractional Transform), 50% of the data is copied to form the output buffers
 
-Essentially, CLAY performs 2x the encoding plus an additional memcpy (memory copy) compared to Jerasure's 1x encoding. This overhead therefore directly translates to lower write throughput as shown above.
+Essentially, CLAY performs 2x the encoding plus an additional memcpy (memory copy) compared to JErasure's 1x encoding. This overhead therefore directly translates to lower write throughput as shown by the diagrams above.
+
+Referenced this paper: ['Clay Codes: Moulding MDS Codes to Yield an MSR Code'](https://people.iith.ac.in/mynav/pdfs/talks/Clay_Fast18.pdf) above for CLAY's encoding process.
 
 ## Client IO with an OSD down
 
@@ -65,75 +65,85 @@ Essentially, CLAY performs 2x the encoding plus an additional memcpy (memory cop
 
 We then moved onto Step 4 in [**Part 3**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part3/) of the blog `(Running a test with an OSD down)`, and we saw that performance has got even worse for CLAY here. The curves are no longer identical for the `1024k sequential read`, CLAY is obviously worse, which we did not expect.
 
-This will be explained later.
+This drop occurs because CLAY is optimised for **background recovery** rather than **real-time client reconstruction**. When a client requests data from a missing shard, the OSDs have to reconstruct it on the fly. Because of the way CLAY splits the data into sub-chunks, the drive must perform many more IOPs to gather the necessary sub-chunks, leading to the increased latency for the client. 
 
 ---
 
 ## <a id="good"></a>What is CLAY good at?
 
-Plan for this section: (do we need a measurement here for network bandwith for 4+2, we should see CLAY transfering half as much data as Jerasure) Meant to help rebuild process, claims to reduce network traffic by 50%. Because its reading less data from OSDs and sending less data between OSDs. Explain backfill and recover algorithm works
+Now you may be thinking, if CLAY is slower for writes and degraded reads, why use it? The answer is for Network Bandwidth Optimisations during background processes like backfill and recovery.
 
-So you may be asking, **"So what is CLAY actually good at then?"**
+It is stated that there is approximately a 50% reduction in network traffic during recovery. For JErasure it would require k (data shards) to reconstruct one missing shard, CLAY uses `Coupled Layers` to reconstruct data using a smaller amount of data from other shards.
 
-Here do we want to show the measurement of network bandwidth for the **rebuild** (need a better term instead of rebuild, maybe **recovery scenario?**). This states there is an ~50% reduction of the amount of data between OSDs during recovery (in Squid but not in tentacle, will talk about this later). So this will be good if network bandwidth is a bottleneck. Should explain how backfill and recover algorithm works?
+The efficiency of CLAY depends on the k (data) and m (parity) values.
+ - Standard RS (4+2): Must read 4 shards to recover 1.
+ - CLAY (4+2): Can often recovery using significantly less "helper" data across the network
+
+ ![alt text](images/RS_CLAY.png "demo image")
+
+ Note: Technically, the client could see this 50% saving too. However, the current Ceph implementation prioritises background recovery for these optimisations over client-side reconstructions.
 
 ---
  
 ## <a id="read"></a>How does CLAY read data from the drive?
 
-Plan for this section: Could show spreadsheet for patterns for different shards (Bill sent me on Slack) might be able to show which bits of data are being reconstructed for each bit of the given drivel. Explain the subchunks/different patterns, those reads are being read serially/ serialised reads which is a particular problem for HDD.
+Lets take an example: Reconstruction Pattern for 4+2 CLAY, Shard 5 is missing:
+In a 4+2 setup with a 32K stripe unit and 4K sub chunks, if shard 5 (OSD 1) dies, the system will read specific "sub chunks" from the other surviving OSDs:
 
-![alt text](images/demo.png "demo image")
+![alt text](images/Table_example.png "demo image")
 
-CLAY is doing a lot more read IOs to the backend drives which is bad news if the drive IOPs or CPU is the performance bottleneck. With a sub chunk size of 512 bytes the situation with the drive is worse becase reads of less than 4K get rounded up to a whole 4K block. This means CLAY sometimes ends up reading the same data more that once and discarding different parts of what is read. This shows why the earlier read graphs when an OSD were down had poor performance. 
+### Fragmented Reads
+
+As shown above, CLAY issues **fragmented reads**. If the stripe unit gets smaller, for example 4K, the sub chunk size drops to 512 bytes, which is an even worse situation. This is because NVMe and HDD drives have a minimum block size of 4K, therefore any 512 byte read is rounded up to 4K. This could result in CLAY reading the same 4K block multiple times to extract different 512 byte sub chunks, and discarding the rest of the data. This therefore wastes CPU and drive IOPs, so if either of these are your performance bottlenecks this is not good.
 
 Squid recovery also always tries to read 2MB from each stripe and expects the read to be truncated if the object is smaller than 2MB * number of stripes. With Clay this results in a lot of small reads being issued beyond the end of the object. While these as quickly failed and do not stop Clay recovering the data this does waste additional CPU resources.
 
-The above can also be referred to as "Fragmented reads", ie when the sub-chunk size is less than the drive block size. Results have been shown that encoding data can take up to 70% longer in terms of CPU usage, if your cluster isn't CPU limited then you won't notice this. These results also showed dramatic savings in backfill/recovery time - but they were done on a system that was network limited and used much wider erasure codes (26 node cluster) than most people would use.
+Refering to the same [paper](https://people.iith.ac.in/mynav/pdfs/talks/Clay_Fast18.pdf) as before: Results have been shown that encoding data can take up to 70% longer in terms of CPU usage, if your cluster isn't CPU limited then you won't notice this. These results also showed dramatic savings in backfill/recovery time - but they were done on a system that was network limited and used much wider erasure codes (26 node cluster) than most people would typically use. 
 
-There is scope to improve the implementation of Clay - the reads are currently issued in series which will add a lot of latency to the recovery, issuing the reads in parallel using readv would be better, however it would be even more efficient to issue just 1 read to the drive for the whole stripe and then just transmit the subset of data required across the network. Whilst this will increase drive bandwidth in some cases, it will considerably reduce drive IOPs and CPU utilization.
+There is scope to improve the implementation of Clay - currently the reads are issued serially, which will add a lot of latency to the recovery. A more efficient approach would be to issue a single read in **parallel** using `readv` or to read the enter stripe into memory once, then transmit the required data for the network. The latter would be the better method. This would trade **drive bandwidth** for a considerable saving in **CPU utilisation** and **drive IOPs**. 
 
 ### More in depth:
 
-CLAY uses the traditional JErasure like erasure encodings and decodings ("RS", "PRT" and "PFT")
-
-Encoding is done in 3 phases:
-1. 50% of the data is encoded using PRT, 50% of the data is copied to form an intermediate set of buffers
-2. All the intermediate data is encoded using RS to form a 2nd set of intermediate buffers
-3. 50% of this data is encoded using PFT, 50% of the data is copied to form the output buffers
-
-We are using Jerasure as the baseline here so will say it has 1x cost for encode or decode and use this is as a comparison point against CLAY.
-Because of this there is **2x the amount of encoding + 1x memcpy of the data** for CLAY versus **1x encoding** for Jerasure. Hence why we are seeing slower performance of the encode.
-
-Decoding is also done in 3 phases, but on half the quantity of data:
+We went over the 3 phases of how CLAY encodes data earlier. Decoding is also done in 3 phases, but on half the quantity of data:
 1. 25% of the data is decoded using PRT, 25% of the data is copied to form an intermediate set of buffers
 2. All (50%) of the intermediate data is decoded using RS to form a 2nd set of intermediate buffers
 3. 25% of the data is decoded using PFT, 25% of the data is copied to form the output data
 
-Therefore there is **1x the amount of decodes + 0.5x memcpy of the data** for CLAY versus **1x decoding** for Jerasure. Hence there is slightly more overhead for CLAY (memcpy's + slight inefficiencies from performing several smaller decodes rather than one large decode). CLAY requires less data to perform the recover so can save on network bandwidth (and if implemented correctly disk bandwidth)
+Therefore, CLAY has an additional **0.5x memcpy** of the data and the **same** decoding costs, as JErasure. Hence there is slightly more overhead for CLAY (memcpy's + slight inefficiencies from performing several smaller decodes rather than one large decode). CLAY requires less data to perform the recovery so we can save on **network bandwidth** (and if implemented correctly, **drive bandwidth**)
 
 To round off:
 - Clay has higher encoding costs and the same decoding cost
-- Clay has some memcpy's  that JErasure does not have
-- Clay has multiple encode/decode steps and there will be some small overheads/inefficiencies from for example encoding 12K of data in 3 batches of 4K (Clay) versus encoding 12K of data in 1 batch (JErasure)
+- Clay has some memcpy's that JErasure does not have
+- Clay has multiple encode/decode steps and there will be some small overheads/inefficiencies from - for example, encoding 12K of data in 3 batches of 4K (Clay) versus encoding 12K of data in 1 batch (JErasure)
 
 ---
 
 ## <a id="probs"></a>Problems with using CLAY
 
-Plan for this section: Explain NVMe drives and HDD drives both have 4k block size, should be using a chunk size of 32k or bigger. However that’s not the default, and there’s a lot of drawbacks of using higher chunk size (reference Lee FastEC blog to why larger chunk size is a problem, the table section?)
+Choosing your stipe unit (SU) is critical:
+- If SU is 4K: Sub chunks become tiny (512 bytes), leading to the massive IOP overheads and reads less than 4K being rounded up to 4K as previously mentioned
+- If SU is 32K: This fixes the fragmentation issue (sub-chunks align better with 4K drive blocks), but introduces some classic and fast EC problems.
+
+In a classic Erasure Coded pool, any overwrite requiires reading the **entire** stripe, even if you only changed one byte. At 32K, small writes become incredibly expensive because of the "Read-Modify-Write" overhead. Furthermore in fast EC, for small objects or objects that are smaller than the SU, a 32K SU leads to poor space utilisation.
 
 ---
 
-## <a id="broke"></a>CLAY broken in Tentacle
+## <a id="broke"></a>CLAY is broken in Tentacle
 
-Plan for this section: Done testing on tentacle and rebuild transmits all the data.
+When I was performing benchmarking on the Tentacle release, I discovered a significant issue: The recovery benefit was non-existent.
+
+In the tests, recovery in Tentacle transmitted the full amount of data, behaving like standard JErasure but with the higher CPU overhead of CLAY. This isn't the case for Squid however.
 
 ---
 
 ## <a id="summary"></a>Summary
 
-Plan for this section: If Network bandwitch is your bottle neck there may still be a use case for CLAY. However its a computer science project and a lot of benchmarking will be needed if you want to use it. For most people it may be better to not use it. 
+CLAY is a fascinating project and definitely has potential, but for the aberage user, remains niche.
+
+I'd recommend CLAY if: Your cluster is strictly Network Bottlenecked and you use wide erasure codes (eg 20+ nodes) where the 50% saving is massive.
+I'd recommend you avoid CLAY if: You are CPU or IOPs limited, or if you primarily use HDDs, as the fragmented serial reads will cripple recovery performance.
+
+For most production environments, the simplicity and predictable performance of Jerasure remains the better choice.
 
 ---
 
