@@ -32,7 +32,7 @@ Contents:
 
 ## <a id="client"></a>Client IO results for CLAY
 
-As a refresher lets quickly reflect on the client IO results of CLAY compared to Jerasure.
+As a refresher lets quickly reflect on the client IO results of CLAY compared to Jerasure:
 
 <details>
 <summary>Click to see Part 3 diagrams</summary>
@@ -41,14 +41,23 @@ As a refresher lets quickly reflect on the client IO results of CLAY compared to
 
 </details>
 
-If we look back to Step 3 in Part 3 [**Part 3**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part3/) of the blog `(Generating a comparison report)`, we saw that **reads** had practically identical curves between CLAY & Jerasure for both `4K random reads` and `1024K sequential reads`.
+If we look back to **Step 3** in [**Part 3**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part3/) of the blog `(Generating a comparison report)`, we saw that **reads** had practically identical curves between CLAY & Jerasure for both `4K random reads` and `1024K sequential reads`.
 
 However, when we compared writes we saw that the performance hit to CLAY was substantially larger, particularly for higher bandwidths. The `1024k Sequential Wrties` diagram represents this. 
+
+Referencing this paper: [here](https://people.iith.ac.in/mynav/pdfs/talks/Clay_Fast18.pdf)
+
+This is because of CLAY's encoding process, it is significantly more complex. While Jerasure performs a single encoding pass, CLAY uses three phases:
+1. 50% of data is encoded using PRT (Product Recovery Transform), 50% of the data is copied to form an intermediate set of buffers
+2. All the intermediate data is encoded using RS (Reed-Solomon) to form a second set of intermediate buffers
+3. 50% of the result is encoded using PFT (Parity Fractional Transform), 50% of the data is copied to form the output buffers
+
+Essentially, CLAY performs 2x the encoding plus an additional memcpy (memory copy) compared to Jerasure's 1x encoding. This overhead therefore directly translates to lower write throughput as shown above.
 
 ## Client IO with an OSD down
 
 <details>
-<summary>Click to see Part 3 diagrams</summary>
+<summary>Click to see Part 3 diagram</summary>
 
 ![alt text](images/part_3_down_ref.png "part 3 reference with OSD down")
 
@@ -85,8 +94,6 @@ The above can also be referred to as "Fragmented reads", ie when the sub-chunk s
 There is scope to improve the implementation of Clay - the reads are currently issued in series which will add a lot of latency to the recovery, issuing the reads in parallel using readv would be better, however it would be even more efficient to issue just 1 read to the drive for the whole stripe and then just transmit the subset of data required across the network. Whilst this will increase drive bandwidth in some cases, it will considerably reduce drive IOPs and CPU utilization.
 
 ### More in depth:
-
-Referencing this paper: [here](https://people.iith.ac.in/mynav/pdfs/talks/Clay_Fast18.pdf)
 
 CLAY uses the traditional JErasure like erasure encodings and decodings ("RS", "PRT" and "PFT")
 
