@@ -75,29 +75,41 @@ This drop occurs because CLAY is optimised for **background recovery** rather th
 
 Now you may be thinking, if CLAY is slower for writes and degraded reads, why use it? The answer is for **Network Bandwidth Optimisations** during background processes like **backfill** and **recovery**.
 
-While JErasure requires $k$ (data shards) to reconstruct **one** missing shard, CLAY uses coupled layers to reconstruct data using a significantly smaller amount of data from the remaining shards. In a standard 4+2 setup, JErasure would need to pull 100% of the data from 4 shards to rebuild the 5th. As shown in the `Best Case` diagram below, CLAY reduces this traffic by approximately **50%**.
+While JErasure requires $k$ (data shards) to reconstruct **one** missing shard, CLAY uses coupled layers to reconstruct data using a significantly smaller amount of data from the remaining shards. In a standard 4+2 setup, JErasure would need to pull 100% of the data from 4 shards to rebuild the 5th. As shown in the **best case** diagram below, `CLAY reduces this traffic by approximately 50%`.
 
 It's important to note that the diagram below represents the data that is read from the other shards when shard `X` is missing:
 ![alt text](images/good_case.png "good case")
 
-**Note**: While the diagram shows a 50% saving in network traffic, this comes at the **cost of IOPS**. We can see how shards 4 and 5 must perform **4** individual reads per stripe to gather those specific sub-chunks. Technically, a client could see this network saving, but the current Ceph implementation prioritizes these optimisations for **background recovery** rather than real-time client reconstructions.
+**Note**: While the diagram shows a 50% saving in network traffic, this comes at the `cost of IOPS`. We can see how shards 4 and 5 must perform **4** individual reads per stripe to gather those specific sub-chunks. Technically, a client could see this network saving, but the current Ceph implementation prioritizes these optimisations for **background recovery** rather than real-time client reconstructions.
+
+As shown in the CLAY (Best Case) diagram, we achieve that **50%** network saving by only reading specific sub-chunks. In contrast, the JErasure simulation below shows the **'all-or-nothing'** approach. To recover one missing shard, the system is forced to pull **every** byte from four other shards, regardless of whether that specific data is needed for the immediate repair.
 
 This is what it would look like if we were to use JErasure and simulate a shard missing and a recovery of data:
-![alt text](images/jerasure_eg.png "good case")
+![alt text](images/jerasure_eg.png "jerasure eg")
+
+---
+
+## <a id="probs"></a>Problems with using CLAY
+
+Choosing your stripe unit (SU) is critical:
+- **If SU is 4K:** Sub-chunks become tiny (512 bytes), leading to the massive IOP overheads and reads of less than 4K being `rounded up` to 4K. (More on this later)
+
+The below diagram represents this scenario:
+![alt text](images/bad_case.png "bad case eg")
+
+As shown in the CLAY (Worst Case) diagram above, the orange section represents extra data reads because the NVMe block size is 4K. This means that recovery reads 1x to 4x the amount of data from drives but transmits 50% less data across the network, there is still many more IOPs and CPU usage in this scenario.
+
+- **If SU is 32K:** This fixes the fragmentation issue that we see above (sub-chunks align better with 4K drive blocks), but introduces some classic and fast EC problems:
+
+In a classic EC pool, any overwrite requires reading the **entire** stripe, even if you only changed **one** byte. At 32K, small writes become incredibly expensive because of the `Read-Modify-Write` overhead. Furthermore in fast EC, for small objects or objects that are smaller than the SU, a 32K SU leads to poor **space utilisation**.
 
 ---
  
 ## <a id="read"></a>How does CLAY read data from the drive?
 
-**Lets take an example: Reconstruction Pattern for 4+2 CLAY, Shard 5 is missing:**
-
-In a 4+2 setup with a 32K stripe unit and 4K sub chunks, if shard 5 (OSD 1) dies, the system will read specific "sub chunks" from the other surviving OSDs:
-
-![alt text](images/Table_example.png "demo image")
-
 ### Fragmented Reads
 
-As shown above, CLAY issues **fragmented reads**. If the stripe unit gets smaller, for example **4K**, the sub chunk size drops to **512 bytes**, which is an even worse situation. This is because NVMe and HDD drives have a minimum block size of **4K**, therefore any 512 byte read is **rounded up** to this minimum of 4K. This can result in CLAY reading the same 4K block multiple times to extract different 512 byte sub chunks, and discarding the rest of the data. This therefore wastes **CPU** and **drive IOPs**, so if either of these are your performance bottlenecks this is not a good scenario.
+As shown above, CLAY issues **fragmented reads**. If the stripe unit gets smaller, for example **4K**, the sub-chunk size drops to **512 bytes**. This is because NVMe and HDD drives have a minimum block size of **4K**, therefore any 512 byte read is **rounded up** to this minimum of 4K. This can result in CLAY reading the same 4K block multiple times to extract different 512 byte sub-chunks, and discarding the rest of the data. This therefore wastes **CPU** and **drive IOPs**, so if either of these are your performance bottlenecks this is not a good scenario.
 
 Squid recovery also always tries to read **2MB** from each stripe and expects the read to be truncated if the object is smaller than **2MB * number of stripes**. With Clay this results in a lot of small reads being issued beyond the end of the object. While these as quickly failed and do not stop Clay recovering the data, this does waste **additional CPU resources**.
 
@@ -118,16 +130,6 @@ To round off:
 - Clay has higher encoding costs and the same decoding cost
 - Clay has some memcpy's that JErasure does not have
 - Clay has multiple encode/decode steps and there will be some small overheads/inefficiencies - for example, encoding 12K of data in 3 batches of 4K (Clay) versus encoding 12K of data in 1 batch (JErasure)
-
----
-
-## <a id="probs"></a>Problems with using CLAY
-
-Choosing your stripe unit (SU) is critical:
-- **If SU is 4K:** Sub chunks become tiny (512 bytes), leading to the massive IOP overheads and reads less than 4K being rounded up to 4K as previously mentioned (not good)
-- **If SU is 32K:** This fixes the fragmentation issue (sub-chunks align better with 4K drive blocks), but introduces some classic and fast EC problems:
-
-In a classic EC pool, any overwrite requires reading the **entire** stripe, even if you only changed **one** byte. At 32K, small writes become incredibly expensive because of the `Read-Modify-Write` overhead. Furthermore in fast EC, for small objects or objects that are smaller than the SU, a 32K SU leads to poor **space utilisation**.
 
 ---
 
