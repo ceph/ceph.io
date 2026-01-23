@@ -75,15 +75,15 @@ This drop occurs because CLAY is optimised for **background recovery** rather th
 
 Now you may be thinking, if CLAY is slower for writes and degraded reads, why use it? The answer is for **Network Bandwidth Optimisations** during background processes like **backfill** and **recovery**.
 
-It is stated that there is approximately a **50%** reduction in network traffic during recovery. For JErasure it would require **k** (data shards) to reconstruct **one** missing shard, CLAY uses `Coupled Layers` to reconstruct data using a **smaller** amount of data from other shards.
+While JErasure requires $k$ (data shards) to reconstruct **one** missing shard, CLAY uses coupled layers to reconstruct data using a significantly smaller amount of data from the remaining shards. In a standard 4+2 setup, JErasure would need to pull 100% of the data from 4 shards to rebuild the 5th. As shown in the `Best Case` diagram below, CLAY reduces this traffic by approximately **50%**.
 
-The efficiency of CLAY depends on the k (data) and m (parity) values.
- - Standard RS (Read-Solomon) (4+2): Must read 4 shards to recover 1. (This is what is used in JErasure)
- - CLAY (4+2): Can often recovery using significantly less "helper" data across the network
+It's important to note that the diagram below represents the data that is read from the other shards when shard `X` is missing:
+![alt text](images/good_case.png "good case")
 
- ![alt text](images/good_case.png "demo image")
+**Note**: While the diagram shows a 50% saving in network traffic, this comes at the **cost of IOPS**. We can see how shards 4 and 5 must perform **4** individual reads per stripe to gather those specific sub-chunks. Technically, a client could see this network saving, but the current Ceph implementation prioritizes these optimisations for **background recovery** rather than real-time client reconstructions.
 
- **Note:** Technically, the client **could** see this 50% saving too. However, the current Ceph implementation prioritises background recovery for these optimisations over client-side reconstructions.
+This is what it would look like if we were to use JErasure and simulate a shard missing and a recovery of data:
+![alt text](images/jerasure_eg.png "good case")
 
 ---
  
