@@ -2,11 +2,11 @@
 title: Ceph Days India 2026
 date: 2026-03-12
 end: 2026-03-12
-location: TDB
-venue: TBD
+location: Bangalore
+venue: IBM, Embassy Golf Links Campus
 image: "/assets/bitmaps/ceph-days.png"
 sponsors:
-  - TBD
+  - Clyso, IBM
 tags:
   - ceph days
 ---
