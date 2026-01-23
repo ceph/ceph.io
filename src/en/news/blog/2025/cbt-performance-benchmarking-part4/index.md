@@ -41,9 +41,9 @@ As a refresher lets quickly reflect on the **client IO** results of **CLAY** com
 
 </details>
 
-If we look back to **Step 3** in [**Part 3**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part3/) of the blog `(Generating a comparison report)`, we saw that **reads** had practically identical curves between CLAY & JErasure for both `4K random reads` and `1024K sequential reads`.
+If we look back to **Step 3** in [**Part 3**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part3/) of the blog `(Generating a comparison report)`, we saw that **reads** had practically identical curves between CLAY & JErasure for both **4K random reads** and **1024K sequential reads**.
 
-However, when we compared **writes** we saw that the performance hit to CLAY was substantially larger, particularly for higher bandwidths. The `1024k Sequential Writes` diagram represents this. 
+However, when we compared **writes** we saw that the performance hit to CLAY was substantially larger, particularly for higher bandwidths. The **1024k Sequential Writes** diagram represents this. 
 
 **So why was this?**
 
@@ -65,7 +65,7 @@ Referenced this paper: ['Clay Codes: Moulding MDS Codes to Yield an MSR Code'](h
 
 </details>
 
-We then moved onto **Step 4** in [**Part 3**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part3/) of the blog `(Running a test with an OSD down)`, and we saw that performance had got even worse for CLAY here. The curves are no longer near identical for the reads (as shown by. he above diagram). CLAY is obviously performing worse in this scenario, which we did not expect.
+We then moved onto **Step 4** in [**Part 3**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part3/) of the blog `(Running a test with an OSD down)`, and we saw that performance had got even worse for CLAY here. The curves are no longer near identical for the reads (as shown by the above diagram). CLAY is obviously performing worse in this scenario, which we did not expect.
 
 This drop occurs because CLAY is optimised for **background recovery** rather than **real-time client reconstruction**. When a client requests data from a missing shard, the OSDs have to reconstruct it on the fly. Because of the way CLAY splits the data into sub-chunks, the drive must perform many more IOPs to gather the necessary sub-chunks, leading to the increased latency for the client. 
 
@@ -81,7 +81,7 @@ The efficiency of CLAY depends on the k (data) and m (parity) values.
  - Standard RS (Read-Solomon) (4+2): Must read 4 shards to recover 1. (This is what is used in JErasure)
  - CLAY (4+2): Can often recovery using significantly less "helper" data across the network
 
- ![alt text](images/RS_CLAY.png "demo image")
+ ![alt text](images/good_case.png "demo image")
 
  **Note:** Technically, the client **could** see this 50% saving too. However, the current Ceph implementation prioritises background recovery for these optimisations over client-side reconstructions.
 
