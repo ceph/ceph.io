@@ -23,8 +23,9 @@ CBT Performance Benchmarking - Part 4. What can we say about CLAY?
 Contents:
 - [Client IO results for CLAY](#client)
 - [What is CLAY good at?](#good)
-- [How does CLAY read data from the drive?](#read)
+- [Client IO with an OSD down](#down)
 - [Problems with using CLAY](#probs)
+- [How does CLAY read data from the drive?](#read)
 - [CLAY is broken in tentacle](#broke)
 - [Summary](#summary)
 
@@ -32,18 +33,18 @@ Contents:
 
 ## <a id="client"></a>Client IO results for CLAY
 
-As a refresher lets quickly reflect on the **client IO** results of **CLAY** compared to **JErasure**:
+As a refresher lets quickly look back on the **client IO** results of **CLAY** compared to **JErasure**:
+
+If we look back to **Step 3** in [**Part 3**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part3/) of the blog `(Generating a comparison report)`, we saw that **reads** had practically identical curves between CLAY & JErasure for both **4K random reads** and **1024K sequential reads**.
+
+However, when we compared **writes** we saw that the performance hit to CLAY was substantially larger, particularly for higher bandwidths. The **1024k Sequential Writes** diagram represents this:
 
 <details>
 <summary>Click to see Part 3 diagrams</summary>
 
 ![alt text](images/part_3_ref.png "part 3 reference")
-
 </details>
-
-If we look back to **Step 3** in [**Part 3**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part3/) of the blog `(Generating a comparison report)`, we saw that **reads** had practically identical curves between CLAY & JErasure for both **4K random reads** and **1024K sequential reads**.
-
-However, when we compared **writes** we saw that the performance hit to CLAY was substantially larger, particularly for higher bandwidths. The **1024k Sequential Writes** diagram represents this. 
+<br>
 
 **So why was this?**
 
@@ -54,20 +55,7 @@ This is because of CLAY's encoding process, it is significantly more complex. Wh
 
 Essentially, CLAY performs **2x** the encoding plus an **additional** memcpy (memory copy) compared to JErasure's 1x encoding. This overhead therefore directly translates to **lower write throughput** for CLAY, as shown by the diagrams above.
 
-Referenced this paper: ['Clay Codes: Moulding MDS Codes to Yield an MSR Code'](https://people.iith.ac.in/mynav/pdfs/talks/Clay_Fast18.pdf) above for CLAY's encoding process.
-
-## Client IO with an OSD down
-
-<details>
-<summary>Click to see Part 3 diagram</summary>
-
-![alt text](images/part_3_down_ref.png "part 3 reference with OSD down")
-
-</details>
-
-We then moved onto **Step 4** in [**Part 3**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part3/) of the blog `(Running a test with an OSD down)`, and we saw that performance had got even worse for CLAY here. The curves are no longer near identical for the reads (as shown by the above diagram). CLAY is obviously performing worse in this scenario, which we did not expect.
-
-This drop occurs because CLAY is optimised for **background recovery** rather than **real-time client reconstruction**. When a client requests data from a missing shard, the OSDs have to reconstruct it on the fly. Because of the way CLAY splits the data into sub-chunks, the drive must perform many more IOPs to gather the necessary sub-chunks, leading to the increased latency for the client. 
+Referenced this paper: ['Clay Codes: Moulding MDS Codes to Yield an MSR Code'](https://people.iith.ac.in/mynav/pdfs/talks/Clay_Fast18.pdf) above for information on CLAY's encoding process.
 
 ---
 
@@ -75,7 +63,7 @@ This drop occurs because CLAY is optimised for **background recovery** rather th
 
 Now you may be thinking, if CLAY is slower for writes and degraded reads, why use it? The answer is for **Network Bandwidth Optimisations** during background processes like **backfill** and **recovery**.
 
-While JErasure requires $k$ (data shards) to reconstruct **one** missing shard, CLAY uses coupled layers to reconstruct data using a significantly smaller amount of data from the remaining shards. In a standard 4+2 setup, JErasure would need to pull 100% of the data from 4 shards to rebuild the 5th. As shown in the **best case** diagram below, `CLAY reduces this traffic by approximately 50%`.
+While JErasure requires **k** (data shards) to reconstruct **one** missing shard, CLAY uses coupled layers to reconstruct data using a significantly smaller amount of data from the remaining shards. In a standard 4+2 setup, JErasure would need to pull 100% of the data from 4 shards to rebuild the 5th. As shown in the **best case** diagram below, `CLAY reduces this traffic by approximately 50%`.
 
 It's important to note that the diagram below represents the data that is read from the other shards when shard `X` is missing:
 ![alt text](images/good_case.png "good case")
@@ -89,19 +77,35 @@ This is what it would look like if we were to use JErasure and simulate a shard 
 
 ---
 
+## <a id="down"></a>Client IO with an OSD down
+
+<details>
+<summary>Click to see Part 3 diagram</summary>
+
+![alt text](images/part_3_down_ref.png "part 3 reference with OSD down")
+
+</details>
+
+We then moved onto **Step 4** in [**Part 3**](https://ceph.io/en/news/blog/2025/cbt-performance-benchmarking-part3/) of the blog `(Running a test with an OSD down)`, and we saw that performance had got even worse for CLAY here. The curves are no longer near identical for the reads (as shown by the above diagram). CLAY is obviously performing worse in this scenario, which we did not initially expect.
+
+This drop occurs because CLAY is optimised for **background recovery** rather than **real-time client reconstruction**. When a client requests data from a missing shard, the OSDs have to reconstruct it on the fly. Because of the way CLAY splits the data into sub-chunks, the drive must perform many more IOPs to gather the necessary sub-chunks, leading to the increased latency for the client. 
+
+---
+
 ## <a id="probs"></a>Problems with using CLAY
 
 Choosing your stripe unit (SU) is critical:
 - **If SU is 4K:** Sub-chunks become tiny (512 bytes), leading to the massive IOP overheads and reads of less than 4K being `rounded up` to 4K. (More on this later)
 
 The below diagram represents this scenario:
+
 ![alt text](images/bad_case.png "bad case eg")
 
-As shown in the CLAY (Worst Case) diagram above, the orange section represents extra data reads because the NVMe block size is 4K. This means that recovery reads 1x to 4x the amount of data from drives but transmits 50% less data across the network, there is still many more IOPs and CPU usage in this scenario.
+As shown in the CLAY (**Worst Case**) diagram above, the orange section represents extra data reads because the NVMe block size is 4K. This means that recovery reads 1x to 4x the amount of data from drives but transmits 50% less data across the network, there is still many more IOPs and CPU usage in this scenario.
 
 - **If SU is 32K:** This fixes the fragmentation issue that we see above (sub-chunks align better with 4K drive blocks), but introduces some classic and fast EC problems:
 
-In a classic EC pool, any overwrite requires reading the **entire** stripe, even if you only changed **one** byte. At 32K, small writes become incredibly expensive because of the `Read-Modify-Write` overhead. Furthermore in fast EC, for small objects or objects that are smaller than the SU, a 32K SU leads to poor **space utilisation**.
+In a classic EC pool, any overwrite requires reading the **entire** stripe, even if you only changed **one** byte. At 32K, small writes become incredibly expensive because of the `Read-Modify-Write` overhead. Furthermore in fast EC, for small objects or objects that are smaller than the SU, a 32K SU leads to poor **space utilisation**. So there are still negatives to bare in mind if you are to pick a SU of 32K.
 
 ---
  
@@ -111,11 +115,11 @@ In a classic EC pool, any overwrite requires reading the **entire** stripe, even
 
 As shown above, CLAY issues **fragmented reads**. If the stripe unit gets smaller, for example **4K**, the sub-chunk size drops to **512 bytes**. This is because NVMe and HDD drives have a minimum block size of **4K**, therefore any 512 byte read is **rounded up** to this minimum of 4K. This can result in CLAY reading the same 4K block multiple times to extract different 512 byte sub-chunks, and discarding the rest of the data. This therefore wastes **CPU** and **drive IOPs**, so if either of these are your performance bottlenecks this is not a good scenario.
 
-Squid recovery also always tries to read **2MB** from each stripe and expects the read to be truncated if the object is smaller than **2MB * number of stripes**. With Clay this results in a lot of small reads being issued beyond the end of the object. While these as quickly failed and do not stop Clay recovering the data, this does waste **additional CPU resources**.
+Squid recovery also always tries to read **2MB** from each stripe and expects the read to be truncated if the object is smaller than `2MB * number of stripes`. With CLAY this results in a lot of small reads being issued beyond the end of the object. While these as quickly fail and do not stop CLAY recovering the data, this does waste **additional CPU resources**.
 
 Refering to the same [paper](https://people.iith.ac.in/mynav/pdfs/talks/Clay_Fast18.pdf) as before: Results have been shown that encoding data can take up to **70%** longer in terms of CPU usage, if your cluster **isn't** CPU limited then you won't notice this. These results also showed dramatic savings in **backfill** & **recovery** time - but they were done on a system that was network limited and used much wider erasure codes (26 node cluster) than most people would typically use. 
 
-There is scope to improve the implementation of Clay - currently the reads are issued **serially**, which will add a lot of latency to the recovery. A more efficient approach would be to issue a single read in **parallel** using `readv` or to read the entire stripe into memory once, then transmit the required data for the network. The latter would be the better method. This would trade **drive bandwidth** for a considerable saving in **CPU utilisation** and **drive IOPs**. 
+There is scope to improve the implementation of CLAY - currently the reads are issued **serially**, which will add a lot of latency to the recovery. A more efficient approach would be to issue a single read in **parallel** using `readv` or to read the entire stripe into memory once, then transmit the required data for the network. The latter would be the better method. This would trade **drive bandwidth** for a considerable saving in **CPU utilisation** and **drive IOPs**. 
 
 ### More in depth:
 
@@ -151,6 +155,12 @@ I'd recommend you avoid CLAY if: You are **CPU** or **IOPs** limited, or if you 
 
 For most production environments, the simplicity and predictable performance of Jerasure remains the better choice I believe.
 
+Please note that there is a plan to end support for CLAY fromm thee V release. Please see [here](https://ceph.io/en/news/blog/2025/ending-support-for-ec-plugins/) for more details.
+
 ---
 
-[Links to previous parts of the blog series](#outline)
+[Link to connect with Ceph on slack](https://ceph.io/en/community/connect/)
+
+[Link to contact Ceph team and community regarding CBT](https://ceph-storage.slack.com/archives/C07G4BY6WLB)
+
+[Link to previous parts of the blog series](#outline)
