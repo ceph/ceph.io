@@ -30,7 +30,7 @@ Don’t miss the networking reception at the end of the day to connect with fell
 
 - **CFP Opens:** 2025-12-02
 - **CFP Closes: Extended to** 2026-01-18
-- **Speakers receive confirmation of acceptance:** 2026-01-29
+- **Speakers receive confirmation of acceptance:** 2026-02-03
 - **Schedule Announcement:** 2026-02-09
 - **Event Date:** 2026-03-12
 
