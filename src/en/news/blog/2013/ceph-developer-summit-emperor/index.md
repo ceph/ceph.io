@@ -2,19 +2,19 @@
 title: "Ceph Developer Summit: Emperor"
 date: "2013-07-18"
 author: "scuttlemonkey"
-tags: 
+tags:
 ---
 
 It’s that time again! Time for the (virtual) Ceph Developer Summit. We are currently [accepting community blueprints](http://wiki.ceph.com/01Planning/02Blueprints/Emperor) for ‘Emperor,’ the next stable release of Ceph, which is due out in November. This summit will be slightly different from the Dumpling summit in that it will be spread over two days to give some of our more geographically disparate community members the opportunity to participate. Below you can find the timeline for all summit activities.
 
-| Date | Milestone |
-| --- | --- |
-| 03 JUL | Blueprint submissions begin |
-| 30 JUL | Blueprint submissions end |
-| 01 AUG | Summit agenda announced |
-| 05 AUG | **Ceph Developer Summit: Day 1** |
-| 06 AUG | **Ceph Developer Summit: Day 2** |
-| November | Emperor Release |
+| Date     | Milestone                        |
+| -------- | -------------------------------- |
+| 03 JUL   | Blueprint submissions begin      |
+| 30 JUL   | Blueprint submissions end        |
+| 01 AUG   | Summit agenda announced          |
+| 05 AUG   | **Ceph Developer Summit: Day 1** |
+| 06 AUG   | **Ceph Developer Summit: Day 2** |
+| November | Emperor Release                  |
 
 If you are interested in submitting a blueprint, collaborating on an existing blueprint, or just attending to learn more about Ceph, read on!
 
@@ -22,7 +22,7 @@ If you are interested in submitting a blueprint, collaborating on an existing bl
 
 ### Planned Work
 
-The folks at Inktank are already ramping up work on the next step on [asynchronous replication](http://www.inktank.com/about-inktank/roadmap/), and the community is continuing the work on [erasure coding](http://wiki.ceph.com/01Planning/02Blueprints/Emperor/Erasure_coded_storage_backend_(step_2)) led by Cloudwatt’s Loic Dachary. There are several other blueprints slated for submission, but we could always use more! If you have an idea for work you would like to do to improve or extend Ceph, please submit it before the developer summit! We welcome all suggestions, even if you don’t have all the skills to complete the work. Now is the time to lobby for help!
+The folks at Inktank are already ramping up work on the next step on [asynchronous replication](http://www.inktank.com/about-inktank/roadmap/), and the community is continuing the work on [erasure coding](<http://wiki.ceph.com/01Planning/02Blueprints/Emperor/Erasure_coded_storage_backend_(step_2)>) led by Cloudwatt’s Loic Dachary. There are several other blueprints slated for submission, but we could always use more! If you have an idea for work you would like to do to improve or extend Ceph, please submit it before the developer summit! We welcome all suggestions, even if you don’t have all the skills to complete the work. Now is the time to lobby for help!
 
 If you are interested in looking at some of the available tasks you can also take a spin through the [Ceph Tracker](http://tracker.ceph.com/). There are many tasks ranging from novice to expert that are available to be tackled, and we love to help new community members get up to speed. Some ideas that might be interesting to newcomers are:
 
@@ -39,7 +39,7 @@ Just as with the Dumpling developer summit we will be hosting this as a virtual 
 
 As before, the underlying purpose of the summit will be to discuss how features should be implemented (rather than which features should be implemented). Once blueprint submission closes, Sage will review all available documents and decide which are the most relevent features that need to be discussed. Simple stand-alone projects probably don’t need a discussion, but please still create the blueprint.
 
-Keep your eyes peeled for the connection details as the event gets closer. We’ll be sure to share them via the blog, twitter, facebook, google+, irc, mailing-list, and general word of mouth. In the meantime, if you have questions, comments, or anything for the good of the cause, feel free to hit up our community team. Looking forward to your suggestions and your bright, smiling faces at the Developer Summit.
+Keep your eyes peeled for the connection details as the event gets closer. We’ll be sure to share them via the blog, X, facebook, google+, irc, mailing-list, and general word of mouth. In the meantime, if you have questions, comments, or anything for the good of the cause, feel free to hit up our community team. Looking forward to your suggestions and your bright, smiling faces at the Developer Summit.
 
 scuttlemonkey out
 

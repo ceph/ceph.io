@@ -240,11 +240,10 @@ MicroCeph is an opinionated ceph orchestration tool which allows for single comm
    <td><strong>Closing Remarks</strong>
   </tr>
 
-
 Join the Ceph announcement list, or follow Ceph on social media for Ceph event
 updates:
 
 - [Ceph Announcement list](https://lists.ceph.io/postorius/lists/ceph-announce.ceph.io/)
-- [Twitter](https://twitter.com/ceph)
+- [X](https://x.com/ceph)
 - [LinkedIn](https://www.linkedin.com/company/ceph/)
 - [FaceBook](https://www.facebook.com/cephstorage/)

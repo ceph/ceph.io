@@ -135,7 +135,7 @@
 
     <meta name="menu" content="Main Menu"/>
 
-    <meta name="twitter:image" content="https://www.intel.com/content/dam/logos/logo-energyblue-1x1.png"/>
+    <meta name="X:image" content="https://www.intel.com/content/dam/logos/logo-energyblue-1x1.png"/>
 
     <meta name="emtsubject" content="Subject|Information Technology (IT)|Cloud Computing;Subject|Information Technology (IT)|Big Data;Subject|Information Technology (IT)|Platform Analysis, Tuning, and Performance Monitoring;Subject|Information Technology (IT)|Storage and Memory;Subject|Information Technology (IT)|Visual Computing;Subject|Information Technology (IT)|Computer Vision;Subject|Information Technology (IT)|Networking;Subject|Information Technology (IT)|Visual Computing|Video Game Development;Subject|Information Technology (IT)|Code Modernization;Subject|Information Technology (IT)|Analytics;Subject|Information Technology (IT)|Artificial Intelligence (AI);Subject|Information Technology (IT)|Software Development;Subject|Information Technology (IT)|Enterprise Computing;Subject|Information Technology (IT)|High Performance Computing (HPC);Subject|Information Technology (IT)|Visual Computing|Rendering;Subject|Information Technology (IT)|Internet of Things (IoT);Subject|Information Technology (IT)|Visual Computing|Media Processing;"/>
 
@@ -5514,8 +5514,8 @@
                                     </li>
                                 
                                     <li>
-                                        <a href="https://twitter.com/intel" target="" aria-label="Intel on Twitter" data-wap="{&quot;linktype&quot;:&quot;footersocial&quot;}">
-                                            <i aria-hidden="true" class="fa-twitter"></i>
+                                        <a href="https://x.com/intel" target="" aria-label="Intel on X" data-wap="{&quot;linktype&quot;:&quot;footersocial&quot;}">
+                                            <i aria-hidden="true" class="fa-X"></i>
                                         </a>
                                     </li>
                                 

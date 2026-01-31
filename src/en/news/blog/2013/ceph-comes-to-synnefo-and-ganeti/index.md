@@ -2,12 +2,12 @@
 title: "Ceph Comes to Synnefo and Ganeti"
 date: "2013-02-12"
 author: "scuttlemonkey"
-tags: 
+tags:
 ---
 
 During my most recent schlep through Europe I met some really great people, and heard some awesome Ceph use cases. One particularly interesting case was the work the guys at Synnefo shared with me at [FOSDEM](https://fosdem.org/2013/) that they have been doing with Ganeti and RADOS. They were nice enough to write up some of the details on their blog and give me permission to repost here.
 
-If any of you have interesting things that you have done with Ceph we always want to hear about it. Feel free to send a link to [@Ceph](http://twitter.com/ceph) or email it to our [Community](mailto:community@inktank.com) alias. Now, on to the goods!
+If any of you have interesting things that you have done with Ceph we always want to hear about it. Feel free to send a link to [@Ceph](https://x.com/ceph) or email it to our [Community](mailto:community@inktank.com) alias. Now, on to the goods!
 
 [![](images/synnefo-logo.png "synnefo-logo")](http://www.synnefo.org/)
 
@@ -63,6 +63,6 @@ Enjoy!
 
 —————-
 
-_REPOSTED FROM:_ [http://www.synnefo-software.blogspot.com/2013/02/we-are-happy-to-announce-that-synnefo\_11.html](http://www.synnefo-software.blogspot.com/2013/02/we-are-happy-to-announce-that-synnefo_11.html)
+_REPOSTED FROM:_ [http://www.synnefo-software.blogspot.com/2013/02/we-are-happy-to-announce-that-synnefo_11.html](http://www.synnefo-software.blogspot.com/2013/02/we-are-happy-to-announce-that-synnefo_11.html)
 
 ![](http://track.hubspot.com/__ptq.gif?a=268973&k=14&bu=http://ceph.com&r=http://ceph.com/community/ceph-comes-to-synnefo-and-ganeti/&bvt=rss&p=wordpress)

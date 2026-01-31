@@ -4,9 +4,9 @@ date: "2014-08-05"
 author: "scuttlemonkey"
 ---
 
-[Twitter](http://twitter.com/ceph) || [Facebook](https://www.facebook.com/cephstorage) || [Google+](https://plus.google.com/+Cephstorage) || [Lists/IRC](http://ceph.com/resources/mailing-list-irc/)
+[X](https://x.com/ceph) || [Facebook](https://www.facebook.com/cephstorage) || [Google+](https://plus.google.com/+Cephstorage) || [Lists/IRC](http://ceph.com/resources/mailing-list-irc/)
 
-* * *
+---
 
 ![openstack-logo512](images/openstack-logo512-220x220.png)
 

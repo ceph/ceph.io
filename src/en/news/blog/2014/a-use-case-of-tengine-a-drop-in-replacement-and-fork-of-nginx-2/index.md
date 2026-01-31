@@ -2,7 +2,7 @@
 title: "A use case of Tengine, a drop-in replacement and fork of nginx"
 date: "2014-06-22"
 author: "dmsimard"
-tags: 
+tags:
   - "ceph"
 ---
 
@@ -30,7 +30,7 @@ Did I tell you that nginx can also do [SSL termination](http://nginx.com/resourc
 Enough of nginx, let’s talk about [Tengine](http://tengine.taobao.org/).
 
 Ever heard of [Taobao](http://www.taobao.com/market/global/index_new.php) ? I’ll be honest, I hadn’t until fairly recently.  
-It turns out they are number 8 on [Alexa’s top websites](http://www.alexa.com/topsites), right in front of Twitter.  
+It turns out they are number 8 on [Alexa’s top websites](http://www.alexa.com/topsites), right in front of X.  
 When China makes up [almost 20%](http://www.worldpopulationstatistics.com/population-of-china-2014/) of the World’s population, even a small penetration on the market is in fact huge by all means.
 
 Tengine is a fork of nginx created by the team over at Taobao. There’s a lot of features in Tengine that do not (yet) exist in nginx and some features that upstream maintainers said they would not implement.
@@ -61,11 +61,11 @@ It looks a bit like this:
                                      +-----------+
                                 +--> |  Storage  |
                                 |    +-----------+
-                                |                 
+                                |
     +-----+  File  +-------+    |    +-----------+
     | You | +----> | Proxy | +-----> |  Storage  |
     +-----+        +-------+    |    +-----------+
-                                |                 
+                                |
                                 |    +-----------+
                                 +--> |  Storage  |
                                      +-----------+
@@ -77,11 +77,11 @@ With a load balancer in front of your proxy servers, your setup now looks like 
                                              +-------+         +-----------+
                                         +--> | Proxy | +--+--> |  Storage  |
                                         |    +-------+    |    +-----------+
-                                        |                 |                 
+                                        |                 |
     +-----+  File  +---------------+    |    +-------+    |    +-----------+
     | You | +----> | Load Balancer | +-----> | Proxy | +-----> |  Storage  |
     +-----+        +---------------+    |    +-------+    |    +-----------+
-                                        |                 |                 
+                                        |                 |
                                         |    +-------+    |    +-----------+
                                         +--> | Proxy | +--+--> |  Storage  |
                                              +-------+         +-----------+

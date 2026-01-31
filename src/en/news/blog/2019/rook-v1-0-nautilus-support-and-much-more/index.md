@@ -2,7 +2,7 @@
 title: "Rook v1.0: Nautilus Support and much more!"
 date: "2019-05-02"
 author: "tnielsen"
-tags: 
+tags:
   - "ceph"
   - "rook"
   - "storage"
@@ -38,43 +38,43 @@ With Nautilus comes new support for NFS. Rook has a new Custom Resource Definiti
 
 Ever wonder what the status of the Ceph cluster is when deployed by Rook? In the past you would start up the [Rook Toolbox](https://rook.io/docs/rook/v1.0/ceph-toolbox.html) and run ceph commands to find any status information. While you may still want to fire up the toolbox occasionally, the operator now periodically queries the ceph status and saves it in the CephCluster custom resource for you. To see the status, there is a new "Health" column when you get the cluster:
 
-> $ kubectl -n rook-ceph get CephCluster rook-ceph 
+> $ kubectl -n rook-ceph get CephCluster rook-ceph
 > NAME DATADIRHOSTPATH MONCOUNT AGE STATE HEALTH
-> rook-ceph /var/lib/rook 3 5h27m Created HEALTH\_OK
+> rook-ceph /var/lib/rook 3 5h27m Created HEALTH_OK
 
 If there is ever a health warning or error, you can monitor the full details in the "status" section of the cluster:
 
 > $ kubectl -n rook-ceph get CephCluster rook-ceph -o yaml
->   ...
->  status:
->  ceph:
->  health: HEALTH\_WARN      details:
->  OSD\_DOWN:
->  message: 1 osds down
->  severity: HEALTH\_WARN
->  lastChecked: 2019-05-01T19:42:30Z
->  lastChanged: 2019-05-01T19:42:30Z      previousHealth: HEALTH\_OK 
+> ...
+> status:
+> ceph:
+> health: HEALTH_WARN details:
+> OSD_DOWN:
+> message: 1 osds down
+> severity: HEALTH_WARN
+> lastChecked: 2019-05-01T19:42:30Z
+> lastChanged: 2019-05-01T19:42:30Z previousHealth: HEALTH_OK
 
 ## Versioning
 
 One last small, but helpful feature, is to easily recognize what version of Rook and Ceph you are running in your cluster. Each deployment that starts a Ceph daemon has a version label for both Rook and Ceph. You can either inspect the individual deployments with a "kubectl describe", or you may find it useful to dump all the versions with the following command:
 
 > $ kubectl -n rook-ceph get deployments \\
->   -o jsonpath='{range .items\[\*\]}{.metadata.name}{" \\trook="}{.metadata.labels.rook-version}{" \\tceph="}{.metadata.labels.ceph-version}{"\\n"}{end}'
-> 
-> rook-ceph-mds-myfs-a 	rook=v1.0.0 ceph=14.2.1
-> rook-ceph-mds-myfs-b 	rook=v1.0.0 	ceph=14.2.1
-> rook-ceph-mgr-a 	rook=v1.0.0 	ceph=14.2.1
-> rook-ceph-mon-a 	rook=v1.0.0 	ceph=14.2.1
-> rook-ceph-osd-0 	rook=v1.0.0 ceph=14.2.1
-> rook-ceph-rgw-my-store 	rook=v1.0.0 	ceph=14.2.1 
+> -o jsonpath='{range .items\[\*\]}{.metadata.name}{" \\trook="}{.metadata.labels.rook-version}{" \\tceph="}{.metadata.labels.ceph-version}{"\\n"}{end}'
+>
+> rook-ceph-mds-myfs-a rook=v1.0.0 ceph=14.2.1
+> rook-ceph-mds-myfs-b rook=v1.0.0 ceph=14.2.1
+> rook-ceph-mgr-a rook=v1.0.0 ceph=14.2.1
+> rook-ceph-mon-a rook=v1.0.0 ceph=14.2.1
+> rook-ceph-osd-0 rook=v1.0.0 ceph=14.2.1
+> rook-ceph-rgw-my-store rook=v1.0.0 ceph=14.2.1
 
 ## Next Steps
 
 Even while Rook has come so far, we look forward to what is coming next. An initial draft of features for the 1.1 release is found in the Rook [roadmap](https://github.com/rook/rook/blob/master/ROADMAP.md). In summary, the highest priority items include:
 
 - CSI Driver: As mentioned earlier, completing the integration of the CSI driver is a top priority to add new capabilities while we transition away from the Rook flex driver.
-    - The CephFS provisioning is still the subject of some attention as we map the Kubernetes RWX PersistentVolumes (PVs) directly on the (new) first-class Ceph 'subvolume' concept for tighter integration with Ceph Nautilus.
+  - The CephFS provisioning is still the subject of some attention as we map the Kubernetes RWX PersistentVolumes (PVs) directly on the (new) first-class Ceph 'subvolume' concept for tighter integration with Ceph Nautilus.
 - External Clusters: One of our most requested features is the ability to connect to Ceph storage that is running in a separate, "external" cluster. Whether Rook has configured Ceph in the external Kubernetes cluster, or whether it is a Ceph cluster running on bare-metal, Rook and the CSI driver will enable the [ability](https://github.com/rook/rook/blob/master/design/ceph-external-cluster.md) to connect to the external cluster.
 - Improved topology awareness for mon placement and CRUSH map support through Kubernetes node labels.
 - Backing OSDs with Persistent Volumes (PVs) to enable more dynamic provisioning when running in cloud environments.
@@ -89,7 +89,7 @@ We are excited by the growth of the Rook community and we invite everyone to eng
 
 - - [Github](https://github.com/rook/rook)
 
-- - [Twitter](https://twitter.com/rook_io)
+- - [X](https://x.com/rook_io)
 
 - - [Slack](https://slack.rook.io)
 

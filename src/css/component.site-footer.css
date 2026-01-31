@@ -87,8 +87,8 @@
   fill: var(--color-facebook-blue);
 }
 
-.site-footer__twitter:hover svg {
-  fill: var(--color-twitter-blue);
+.site-footer__X:hover svg {
+  fill: var(--color-X-blue);
 }
 
 .site-footer__youtube:hover svg {

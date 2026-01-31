@@ -86,11 +86,11 @@
   --color-facebook-blue-hsl: var(--color-facebook-blue-h), var(--color-facebook-blue-s), var(--color-facebook-blue-l);
   --color-facebook-blue: hsl(var(--color-facebook-blue-hsl));
 
-  --color-twitter-blue-h: 203;
-  --color-twitter-blue-s: 89%;
-  --color-twitter-blue-l: 53%;
-  --color-twitter-blue-hsl: var(--color-twitter-blue-h), var(--color-twitter-blue-s), var(--color-twitter-blue-l);
-  --color-twitter-blue: hsl(var(--color-twitter-blue-hsl));
+  --color-X-blue-h: 203;
+  --color-X-blue-s: 89%;
+  --color-X-blue-l: 53%;
+  --color-X-blue-hsl: var(--color-twitter-blue-h), var(--color-twitter-blue-s), var(--color-twitter-blue-l);
+  --color-X-blue: hsl(var(--color-twitter-blue-hsl));
 
   --color-youtube-red-h: 360;
   --color-youtube-red-s: 100%;

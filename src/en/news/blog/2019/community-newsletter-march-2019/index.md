@@ -12,8 +12,6 @@ author: "thingee"
 
 March 19 we announced the new release of Ceph Nautilus! Take a look at our [blog post](https://ceph.com/releases/v14-2-0-nautilus-released/) that captures the major features and upgrade notes.
 
- 
-
 #### Cephalocon Barcelona May 19-20: Registration and Sponsor slots still available!
 
 We're very excited for the upcoming Cephalocon in Barcelona! We have a convenient [blog post](https://ceph.com/community/cephalocon-barcelona/) that tells you everything you need to know about the upcoming event. See our great lineup with the posted [schedule](http://ceph.com/cephalocon/barcelona-2019/cephalocon-2019-barcelona-schedule/). [Registration](https://www.cvent.com/d/p6qjsh/4W?tw=0A-C7-A7-F1-14-4C-37-96-92-DD-A4-1A-9A-96-AB-50) is still available and we still have some [sponsorship](https://www2.thelinuxfoundation.org/sponsor-cephalocon19) slots left.
@@ -41,9 +39,7 @@ In the last two months, the team working on the Dashboard was working hard on ge
 
 The community of translators was also very busy: Indonesian, Polish and Czech have been added and are (almost) complete! If you would help us with completing the existing translations or adding new ones, please see [https://www.transifex.com/ceph/ceph-dashboard/dashboard/](https://www.transifex.com/ceph/ceph-dashboard/dashboard/) and get in touch with us if you need any guidance or help.
 
- 
-
-Thanks a lot to everyone who helped with the translations, particularly Kefu Chai (zh\_CN), Danni Setiawan (id\_ID), Jarosław Owsiewski and Elzbieta Dziomdziora (pl\_PL) and Pavel Borecki (cs)!
+Thanks a lot to everyone who helped with the translations, particularly Kefu Chai (zh_CN), Danni Setiawan (id_ID), Jarosław Owsiewski and Elzbieta Dziomdziora (pl_PL) and Pavel Borecki (cs)!
 
 New features currently under review:
 
@@ -85,10 +81,10 @@ We're also taking part in [Outreachy](https://www.outreachy.org/)) and have merg
 
 ### Ceph Planet
 
-- [慢话crush-各种crush组合](https://ceph.com/planet/%e6%85%a2%e8%af%9dcrush-%e5%90%84%e7%a7%8dcrush%e7%bb%84%e5%90%88/)
+- [慢话 crush-各种 crush 组合](https://ceph.com/planet/%e6%85%a2%e8%af%9dcrush-%e5%90%84%e7%a7%8dcrush%e7%bb%84%e5%90%88/)
 - [Run ceph CLI commands from Python](https://ceph.com/planet/run-ceph-cli-commands-from-python/)
 - [OpenStack and Ceph for Distributed Hyperconverged Edge Deployments](https://ceph.com/planet/openstack-and-ceph-for-distributed-hyperconverged-edge-deployments/)
-- [ceph的pg的分布的快速查看](https://ceph.com/planet/ceph%e7%9a%84pg%e7%9a%84%e5%88%86%e5%b8%83%e7%9a%84%e5%bf%ab%e9%80%9f%e6%9f%a5%e7%9c%8b/)
+- [ceph 的 pg 的分布的快速查看](https://ceph.com/planet/ceph%e7%9a%84pg%e7%9a%84%e5%88%86%e5%b8%83%e7%9a%84%e5%bf%ab%e9%80%9f%e6%9f%a5%e7%9c%8b/)
 - [Ceph nano is getting better and better](https://ceph.com/planet/ceph-nano-is-getting-better-and-better/)
 
 ### Project meetings
@@ -107,7 +103,7 @@ We're also taking part in [Outreachy](https://www.outreachy.org/)) and have merg
 
 #### Ceph DocuBetter
 
-We're behind on uploading these. View the [full playlist](https://www.youtube.com/playlist?list=PLrBUGiINAakNe0PzkhHnr1c54O7Zh--zy) for now and watch [@Ceph](https://twitter.com/ceph) on twitter for updates.
+We're behind on uploading these. View the [full playlist](https://www.youtube.com/playlist?list=PLrBUGiINAakNe0PzkhHnr1c54O7Zh--zy) for now and watch [@Ceph](https://x.com/ceph) on X for updates.
 
 #### Ceph Testing Weekly
 
@@ -118,7 +114,7 @@ We're behind on uploading these. View the [full playlist](https://www.youtube.co
 
 #### FOSDEM
 
-We shared a [booth](https://twitter.com/gluster/status/1091626500741320705) with our Gluster friends. Thanks to FOSDEM for having us and for providing recordings from the Software Defined Storage room!
+We shared a [booth](https://x.com/gluster/status/1091626500741320705) with our Gluster friends. Thanks to FOSDEM for having us and for providing recordings from the Software Defined Storage room!
 
 - Sage Weil gave a project update with what's new in Nautilus. - [video](https://fosdem.org/2019/schedule/event/ceph_project_status_update/)
 - Ricardo Dias: Ceph wire protocol revisited - Messenger V2 - [video](https://fosdem.org/2019/schedule/event/ceph_msgrv2/)
@@ -129,7 +125,7 @@ We shared a [booth](https://twitter.com/gluster/status/1091626500741320705) with
 
 #### SUSECON
 
-The Ceph Foundation was present at [SUSECON 2019](http://susecon.com/) in Nashville, TN. We had a [booth](https://twitter.com/Ceph/status/1113132623424032768) provided by the wonderful people at SUSE. We got to meet lots of Ceph fans, [Dolly Parton](https://twitter.com/Ceph/status/1113418431108403200), and [dance like a chameleon](https://twitter.com/Ceph/status/1114251350379040768). [Lenz Grimmer](https://twitter.com/LenzGrimmer) presented some [live demos](https://twitter.com/LenzGrimmer/status/1113959707172114433) showing off the new dashboard in Nautilus!
+The Ceph Foundation was present at [SUSECON 2019](http://susecon.com/) in Nashville, TN. We had a [booth](https://x.com/Ceph/status/1113132623424032768) provided by the wonderful people at SUSE. We got to meet lots of Ceph fans, [Dolly Parton](https://x.com/Ceph/status/1113418431108403200), and [dance like a chameleon](https://x.com/Ceph/status/1114251350379040768). [Lenz Grimmer](https://x.com/LenzGrimmer) presented some [live demos](https://twitter.com/LenzGrimmer/status/1113959707172114433) showing off the new dashboard in Nautilus!
 
 ### Upcoming conferences
 

@@ -10,7 +10,7 @@ Hey Cephers! March was a very busy month for Ceph Project that we are releasing 
 
 #### Ceph user Survey
 
-It's been 5 years since [Ross Turk](https://twitter.com/rossturk) organized the [Ceph Census](https://ceph.com/geen-categorie/results-from-the-ceph-census/) and a lot of things changed since then. We created [this survey](https://www.surveymonkey.com/r/ceph2018) to collect the feedback from our community and it will be accepting answers until May 15th, 2018. The results will be shared with the community on Ceph blog.
+It's been 5 years since [Ross Turk](https://x.com/rossturk) organized the [Ceph Census](https://ceph.com/geen-categorie/results-from-the-ceph-census/) and a lot of things changed since then. We created [this survey](https://www.surveymonkey.com/r/ceph2018) to collect the feedback from our community and it will be accepting answers until May 15th, 2018. The results will be shared with the community on Ceph blog.
 
 #### Changes on Bluejeans meetings and the new Ceph Calendar
 
@@ -100,15 +100,15 @@ On March 22-23, 2018 the first Cephalocon in the world was successfully held in 
 
 #### Ceph Meetup in Santiago de Compostela, ES
 
-The [Ceph Meetup in Santiago de Compostela](https://cdtic.xunta.gal/es/ceph), ES happened on April 4th at [Amtega](https://twitter.com/amtega) and it was organized by [Javier Muñoz](https://twitter.com/javimunhoz). Approximately 50 people attended to the event which had the main goal to discuss the technology and topics including Ceph adoption, hardware, use cases, features among others. Although the event had the Galician community in mind they had participants from northwest Spain (A Coruña, Lugo, Pontevedra and Ourense) and also from Belgium and Portugal.
+The [Ceph Meetup in Santiago de Compostela](https://cdtic.xunta.gal/es/ceph), ES happened on April 4th at [Amtega](https://x.com/amtega) and it was organized by [Javier Muñoz](https://x.com/javimunhoz). Approximately 50 people attended to the event which had the main goal to discuss the technology and topics including Ceph adoption, hardware, use cases, features among others. Although the event had the Galician community in mind they had participants from northwest Spain (A Coruña, Lugo, Pontevedra and Ourense) and also from Belgium and Portugal.
 
 #### Ceph Day London
 
-On April 19th we joined our [Apache CloudStack](https://cloudstack.apache.org/) friends for the [Ceph Day in London](https://ceph.com/cephdays/london/). The event was attended by approximately 120 people and we had 11 talks about Ceph presented by community contributors including [Wido den Hollander](https://twitter.com/widodh) (42on), [John Spray](https://twitter.com/jcsp_tweets) (Red Hat), [Lars Marowsky-Brée](https://twitter.com/larsmb) (SUSE), [Kai Wagner](https://twitter.com/ImTheKai) (SUSE), [Danny Al-Gaaf](https://twitter.com/dannyalgaaf) (Deutsche Telekom) and Nick Fisk (SysGroup PLC). Special thanks to Wido for organizing the event.
+On April 19th we joined our [Apache CloudStack](https://cloudstack.apache.org/) friends for the [Ceph Day in London](https://ceph.com/cephdays/london/). The event was attended by approximately 120 people and we had 11 talks about Ceph presented by community contributors including [Wido den Hollander](https://x.com/widodh) (42on), [John Spray](https://x.com/jcsp_tweets) (Red Hat), [Lars Marowsky-Brée](https://x.com/larsmb) (SUSE), [Kai Wagner](https://x.com/ImTheKai) (SUSE), [Danny Al-Gaaf](https://x.com/dannyalgaaf) (Deutsche Telekom) and Nick Fisk (SysGroup PLC). Special thanks to Wido for organizing the event.
 
 #### TEQnation in Jaarbeurs Utrecht, NL
 
-[Kai Wagner](https://twitter.com/ImTheKai) (SUSE) presented a talk about Ceph Management and Monitoring at [TEQnation](https://teqnation.nl/) which happened from April 25th to 26th in in Jaarbeurs Utrecht, NL.
+[Kai Wagner](https://x.com/ImTheKai) (SUSE) presented a talk about Ceph Management and Monitoring at [TEQnation](https://teqnation.nl/) which happened from April 25th to 26th in in Jaarbeurs Utrecht, NL.
 
 ### Upcoming conferences
 

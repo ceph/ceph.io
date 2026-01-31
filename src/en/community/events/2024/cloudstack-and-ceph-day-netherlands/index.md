@@ -14,10 +14,10 @@ Get ready for a power-packed day, delving into all things Apache CloudStack and 
 
 #### What to expect:
 
-* **Ceph updates:** Stay updated about the latest Ceph releases, the latest features, and tap into its full potential as a storage system.
-* **Apache CloudStack updates:** Gain a sneakpeak into the future with the Apache CloudStack 4.19 release, discover fresh integrations and features that are set to redefine cloud orchestration.
-* **Real stories, real wins:** Gain insights from users who've achieved remarkable success by leveraging Ceph and Apache CloudStack together.
-* **What’s next?:** Explore the future of open-source tech, discussing the course for innovations that will shape the digital landscape.
+- **Ceph updates:** Stay updated about the latest Ceph releases, the latest features, and tap into its full potential as a storage system.
+- **Apache CloudStack updates:** Gain a sneakpeak into the future with the Apache CloudStack 4.19 release, discover fresh integrations and features that are set to redefine cloud orchestration.
+- **Real stories, real wins:** Gain insights from users who've achieved remarkable success by leveraging Ceph and Apache CloudStack together.
+- **What’s next?:** Explore the future of open-source tech, discussing the course for innovations that will shape the digital landscape.
 
 ## Important Dates
 
@@ -32,6 +32,6 @@ Join the Ceph announcement list, or follow Ceph on social media for Ceph event
 updates:
 
 - [Ceph Announcement list](https://lists.ceph.io/postorius/lists/ceph-announce.ceph.io/)
-- [Twitter](https://twitter.com/ceph)
+- [Twitter](https://x.com/ceph)
 - [LinkedIn](https://www.linkedin.com/company/ceph/)
 - [FaceBook](https://www.facebook.com/cephstorage/)
