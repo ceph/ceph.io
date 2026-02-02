@@ -24,219 +24,137 @@ apply for Ceph's projects at g.co/gsoc from March 24th - April 8, 2025.
 See the list of projects we have available for GSoC contributors and [learn how
 get started with contributions](https://ceph.io/en/developers/contribute/).
 
+In addition, for each project, mentors have detailed their expectations for usage 
+of AI tools at the end of each project description.
+
 For any questions, contact Vallari Agrawal (vallari.agrawal@ibm.com).
 
 
 <hr class="hr">
 
-## Teuthology on Podman
+## radosgw-admin UX and documentation improvements
 
-**Mentor name(s):** Zack Cerza, Kamoltat (Junior) Sirivadhna
-Aishwarya Mathuria, Vallari Agrawal
+**Mentor name(s):** Yuval Lifshitz, Jacques Heunis
 
-**Mentor email(s):** zack1@ibm.com, ksirivad@ibm.com, aishwarya.mathuria@ibm.com, vallari.agrawal@ibm.com
+**Mentor email(s):** ylifshit@ibm.com, jheunis@bloomberg.net
 
-**Difficulty:** Hard
+**Difficulty:** Advanced
 
-**Project Hours:** 175
+**Project Hours:** 350
 
-**Skills needed:** python, containerisation, linux 
+**Skills needed:** C++, (maybe python)
 
-**Subcomponent of Ceph:** [Ceph Integration Test Framework](https://github.com/ceph/teuthology)
+**Subcomponent of Ceph:** RGW
 
 **Description of project:**
 
-[ceph-devstack](https://github.com/zmc/ceph-devstack) is an in-development tool that uses rootless podman containers to deploy a scaled-down teuthology lab. It has proven useful for testing changes to teuthology and its related services, allowing us to more easily and flexibly make changes to components without worrying about causing outages.
+Currently documenting radosgw-admin commands is a manual and error prone process.
 
-It has some basic ability to run Ceph tests, but could benefit significantly from more investment in that area.
+After implementing a new command, the "usage" part should be updated accordingly in 
+the code, where there could be a mismatch between the command itself and its arguments 
+and what is documented in the usage.
 
-Improve and extend ceph-devstack's ability to perform teuthology tests against Ceph builds. This project will involve writing Python code and tests to orchestrate podman containers, and working with security systems like SELinux, CGroups, and Linux capabilities.
+After that the man page should be updated manually, as well as the admin guide. any reference to this command in other places in our documentation is also manual.
 
-For more details about the evaluation tasks, see [here](https://github.com/zmc/ceph-devstack?tab=readme-ov-file#for-gsoc-2025-applicants).
+We would like to use a more Programmatic approach towards the problem:
 
-**Standup/weekly call mentee could attend?:** Teuthology weekly meeting
+* use a cli/args framework that support auto-generation of context-aware "usage" docs
+* investigate how we can use it to auto generate the man page and admin guides (maybe using some python code)
+* see if we can easily reference these command descriptions in other places in our documentation
+* all of this, while maintaining backward compatibility with the existing behavior
+* see also: https://tracker.ceph.com/issues/74508
+
+**Standup/weekly call mentee could attend?:** RGW standup, RGW refactoring meeting
 
 **Steps to evaluate an applicant for the project:** TBD
 
 **1-2 short paragraphs about what first 2 weeks of work would look like during the internship:** TBD
 
-**Expected Outcome:**  
+**Expected Outcome:**  Detailed in the description.
 
-Extend ceph-devstack's ability to perform teuthology tests
-
-<hr class="hr">
-
-## smartmontools drivedb.h postprocessor
-
-**Mentor name(s):** Anthony D'Atri, Sunil Angadi
-
-**Mentor email(s):** anthony.datri@ibm.com, sunil.angadi@ibm.com
-
-**Difficulty:** Intermediate
-
-**Project Hours:** 90
-
-**Skills needed:** c++, maybe python or golang 
-
-**Subcomponent of Ceph:** Observability 
-
-**Description of project:**
-
-smartmontools (smartctl) is pretty much the only game in town for harvesting metrics and counters from
-storage devices:  SMART for SATA, a few things for SAS, and passthrough to nvme-cli for NVMe.
-It leverages a runtime file named drivedb.h that directs what attributes are to be found with what
-numeric IDs, and how to interpret them.  drivedb.h is a mess, and upstream smartmontools would likely
-resist wholesale refactoring.  For example, SSD wear might be labeled as "lifetime remaining" or
-"wear level" or multiple other strings.  Some devices also report wear used, others wear remaining.
-
-One task would be to add an interpretation primitive to the c++ code so that a drivedb.h entry 
-can specify that the result should be subtracted from 100.  
-The larger task would be to write a postprocessor for drivedb.h that more or less is a sequence
-of regex invocations that converges the existing freeform attribute label names into a
-normalized, defined set.  Many tools just pass through the text labels, so doing meaningful
-analysis or queries is difficult; often only a fraction of the data is actually captured as a result.
-The output also includes numeric attribute IDs, which are less varied, but relying on them instead of
-the text labels is fraught because these numeric IDs are not strictly standardized either.  I have
-seen drives that report a metric on a different numeric ID than most others, and/or that report
-a different metric on a specific numeric than most others report on that ID.
-
-For more details about the project and evaluation steps, see [here](https://gist.github.com/sunilangadi2/729ae4855ab0997b27108e6c6e60781c).
-
-**Standup/weekly call mentee could attend?:** TBD 
-
-**Steps to evaluate an applicant for the project:** 
-Ability to leverage code libraries and write the glue code.
-
-**1-2 short paragraphs about what first 2 weeks of work would look like during the internship:** TBD
+**Rules for AI usage:** https://gist.github.com/yuvalif/b07312c98ea74890e157594a456c6e6b
 
 <hr class="hr">
 
-## The More The Merrier
+
+## Kafka Security
 
 **Mentor name(s):** Yuval Lifshitz
 
 **Mentor email(s):** ylifshit@ibm.com
 
-**Difficulty:** Hard
+**Difficulty:** Advanced
 
 **Project Hours:** 350
 
-**Skills needed:** C++, Python
+**Skills needed:** Python and C++
 
-**Subcomponent of Ceph:** RGW
-
-**Description of project:**
-
-
-Detailed description of the project and evalution steps can be found [here](https://gist.github.com/yuvalif/9c5a1ed326ca14cf4851d7a0b8ba0db8).
-
-Persistent bucket notifications are a very useful and powerful feature 
-
-tech talk: https://www.youtube.com/watch?v=57Ejl6R-L20
-
-usecase example: https://www.youtube.com/watch?v=57Ejl6R-L20
-
-However, they can pose a performance issue, since the notifications regarding a specific bucket
-are written to a single RADOS queue (unlike the writes to the bucket which are distributed across multiple
-bucket shards. So, in case that small objects are written to the bucket, the overhead of the notifications is considerable.
-In this project, our goal would be to create a sharded bucket notifications queue, to allow for better performance of sending 
-persistent bucket notifications.
-
-
-**Standup/weekly call mentee could attend?:** RGW daily Standup, RGW weekly refactoring meeting
-
-**Steps to evaluate an applicant for the project:** 
-
-* build ceph from source and run basic bucket notification tests
-* fix low-hanging-fruit issues in bucket notifications
-
-**1-2 short paragraphs about what first 2 weeks of work would look like during the internship:** TBD
-
-**Expected outcome:** 
-
-* sharded implementation of persistent topic queue
-* stretch goal: perf test proving performance improvement
-
-<hr class="hr">
-
-## Warm and Fuzzy
-
-**Mentor name(s):** Yuval Lifshitz, Pritha Srivastava
-
-**Mentor email(s):** ylifshit@ibm.com, Pritha.Srivastava@ibm.com
-
-**Difficulty:** Medium 
-
-**Project Hours:** 175
-
-**Skills needed:** C++, Python and also depending with the tool
-
-**Subcomponent of Ceph:** RGW
+**Subcomponent of Ceph:** RGW (teuthology and rook as stretch goals)
 
 **Description of project:**
 
-The RGW's frontend is an S3 REST API server, and in this project we would like to use a REST API fuzzer to test the RGW for security issues (and other bugs).
-First step of the project would be to select the right tool (e.g. https://github.com/microsoft/restler-fuzzer),
-feed it with the AWS S3 OpenAPI spec, and see what happens when we let it connect to the RGW.
-Fixing issues the fuzzer finds would nice, but the real stretch goal would be to integrate these tests into teuthology.
+Bucket notification integration with Kafka is a very useful feature in the RGW.
+However, some security features needed for such integrations are missing. so, in this project we will try to make bucket notifications over kafka more secure.
 
-**Standup/weekly call mentee could attend:** RGW daily Standup, RGW weekly refactoring meeting
+The following features are missing:
 
-**Steps to evaluate an applicant for the project:** 
+* GSSAPI
+* OAUTHBEARER
+* mtls
+* passing in CA without a file (useful for rook integration)
 
-Detailed description of the project and evalution steps can be found [here](https://gist.github.com/yuvalif/4c922fd9f5e472a342e8b585be1f23ef). 
+The main challenge in the above would be in automating the tests, so they could easily run locally,
+
+* as a stretch goal, we should make sure these tests can also run in teuthology.
+* another stretch goal would be to use the integrate the above feature into rook (this would involve some golang coding as well).
+
+**Standup/weekly call mentee could attend?:** RGW daily standup, RGW weekly refactoring meeting
+
+**Steps to evaluate an applicant for the project:** TBD
 
 **1-2 short paragraphs about what first 2 weeks of work would look like during the internship:** TBD
 
-**Expected outcome:**
+**Expected outcome:** Detailed in the description.
 
-* find and fix security issues in the RGW found by the fuzzing tool
-* stretch goal: integrate tool into automated teuthology runs
-
+**Rules for AI usage:** https://gist.github.com/yuvalif/b07312c98ea74890e157594a456c6e6b
 
 <hr class="hr">
 
 
-## Ceph Dashboard Usability Improvements
+## RGW tcmalloc profiling
 
-**Mentor name(s):** Afreen Misbah
+**Mentor name(s):** Yuval Lifshitz
 
-**Mentor email(s):** afreen@ibm.com
+**Mentor email(s):** ylifshit@ibm.com
 
-**Difficulty:** Easy
+**Difficulty:** Advanced 
 
 **Project Hours:** 175
 
-**Skills needed:** Typescript, Angular, and basic understanding of HTML & CSS.
+**Skills needed:** Python and C++
 
-**Subcomponent of Ceph:** Dashboard
+**Subcomponent of Ceph:** RGW (teuthology and rook as stretch goals)
 
 **Description of project:**
 
-Ceph Dashboard is Ceph's management and monitoring tool. It's a web application tool with Angular/Typescript on frontend side and Python as backend. 
+All daemons in ceph are using tcmalloc as the memory allocator to achieve better performance.
 
-We are in an effort to provide more usability workflows and solve UX issues to make management and monitoring easy for Ceph users. 
+However, while the OSD, MON, and MDS can report the memory allocation performance, the RGW does not support that
+(see: https://docs.ceph.com/en/latest/rados/troubleshooting/memory-profiling/#memory-profiling).
 
-The task includes improving the notification system and creating a workflow for managing NVMe-oF devices from dashboard.
+In this project, we should add this reporting support to the RGW as well.
 
-Detailed description can be found [here](https://gist.github.com/afreen23/d8c2383a4239e8d6af989e05ecaec045)
+As a stretch goal, we should use the profiling information from RGW runs to tune the tcmalloc parameters so that would be more suitable for the memory use of the RGW
 
-**Standup/weekly call mentee could attend?:** Dashboard daily sync
+**Standup/weekly call mentee could attend:** RGW daily standup, RGW weekly refactoring meeting
 
-**Steps to evaluate an applicant for the project:** 
+**Steps to evaluate an applicant for the project:** TBD
 
-* Build ceph dashboard locally via docker-compose and kcli both
-* Able to understand issues and ask useful questions
-* Eagerness to learn and contribute
+**1-2 short paragraphs about what first 2 weeks of work would look like during the internship:** TBD
 
-**1-2 short paragraphs about what first 2 weeks of work would look like during the internship:** 
+**Expected outcome:** Detailed in description.
 
-Learning about ceph and storage and gradually contributing to the dashboard.
-
-**Expected Outcome:**  
-
-Improved dashboard usability.
-
+**Rules for AI usage:** https://gist.github.com/yuvalif/b07312c98ea74890e157594a456c6e6b
 
 <hr class="hr">
 
