@@ -73,7 +73,8 @@ It's important to note that the diagram below represents the data that is read f
 As shown in the CLAY (Best Case) diagram, we achieve that **50%** network saving by only reading specific sub-chunks. In contrast, the JErasure simulation below shows the **'all-or-nothing'** approach. To recover one missing shard, the system is forced to pull **every** byte from four other shards, regardless of whether that specific data is needed for the immediate repair.
 
 This is what it would look like if we were to use JErasure and simulate a shard missing and a recovery of data:
-![alt text](images/jerasure_eg.png "jerasure eg")
+
+![alt text](images/jerasure_eg.jpg "jerasure eg")
 
 ---
 
@@ -155,12 +156,12 @@ I'd recommend you avoid CLAY if: You are **CPU** or **IOPs** limited, or if you 
 
 For most production environments, the simplicity and predictable performance of Jerasure remains the better choice I believe.
 
-Please note that there is a plan to end support for CLAY fromm thee V release. Please see [here](https://ceph.io/en/news/blog/2025/ending-support-for-ec-plugins/) for more details.
+Please note that there is a plan to end support for CLAY from the V release. Please see [here](https://ceph.io/en/news/blog/2025/ending-support-for-ec-plugins/) for more details.
 
 ---
 
 [Link to connect with Ceph on slack](https://ceph.io/en/community/connect/)
 
-[Link to contact Ceph team and community regarding CBT](https://ceph-storage.slack.com/archives/C07G4BY6WLB)
+Contact us in the #cbt channel in the Ceph on slack workspace above!
 
 [Link to previous parts of the blog series](#outline)
