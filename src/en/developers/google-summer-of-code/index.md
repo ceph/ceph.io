@@ -158,3 +158,40 @@ As a stretch goal, we should use the profiling information from RGW runs to tune
 
 <hr class="hr">
 
+
+## Carbonization and UX Consistency Improvements for Ceph Dashboard
+
+**Mentor name(s):** Afreen Misbah, Abhishek Desai, Dnyaneshwari Talwekar
+
+**Mentor contact:** Join Ceph Slack from [here](https://join.slack.com/t/ceph-storage/shared_invite/zt-3jlvf8f6e-45tyKGpqkkfcC9feAUpgfQ) and reach out to: @Afreen @Abhishek Desai @Dnyaneshwari Talwekar 
+
+**Difficulty:** Easy 
+
+**Project Hours:** 350
+
+**Skills needed:** Angular, Typescript, CSS, jest, cypress, carbon library, Frontend skills
+
+**Subcomponent of Ceph:** Dashboard
+
+**Description of project:**
+
+Ceph Dashboard is Ceph’s web-based management and monitoring interface built using Angular and TypeScript on the frontend, with Python on the backend. While the dashboard is feature-complete, several parts of the UI remain partially or fully non-carbonized and exhibit inconsistent UX patterns, including layouts, forms, typography, and overview pages. These inconsistencies increase maintenance complexity and negatively impact usability.
+
+This project focuses on completing the carbonization of the Ceph Dashboard by standardizing remaining UI components using the [Carbon Design System](https://carbondesignsystem.com/). As part of this effort, an existing routed resource page pattern—already implemented for one resource—will be extended consistently across all relevant dashboard resources. The project also includes usability improvements and expanding frontend test coverage to ensure long-term maintainability and stability. 
+
+https://tracker.ceph.com/projects/dashboard/wiki/Contributing_to_dashboard
+
+
+**Standup/weekly call mentee could attend:** 1:00 PM IST Mon-Wed & 3:00 PM IST Thur | https://meet.jit.si/ceph-dashboard
+
+**Steps to evaluate an applicant for the project:** Writing quality code, active participation in slack, and good communication skills
+
+**1-2 short paragraphs about what first 2 weeks of work would look like during the internship:** TBD
+
+**Expected outcome:** 
+
+By the end of the project, the Ceph Dashboard will have a fully carbonized and UX-consistent frontend, with standardized routed resource pages across all major resources, improved usability workflows, and expanded frontend test coverage. The result will be a more maintainable, user-friendly dashboard aligned with Carbon design standards and easier for future contributors to extend.
+
+**Rules for AI usage:** TBD
+
+<hr class="hr">
