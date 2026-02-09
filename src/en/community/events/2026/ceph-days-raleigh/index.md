@@ -3,7 +3,7 @@ title: Ceph Days Raleigh 2026
 date: 2026-03-25
 location: Raleigh, North Carolina
 venue: RTP 500 Complex, 4205 S. Miami Blvd., Durham, NC 27703
-image: "/assets/bitmaps/ceph-days.png"
+image: "/assets/bitmaps/raleigh.svg"
 sponsors:
   - label:
     list:
@@ -24,7 +24,7 @@ roadmap, and Ceph community news, and more! The day ends with a networking recep
 
 ## Important Dates
 
-- **CFP Opens:** 2026-01-05
+- ~~**CFP Opens:** 2026-01-05~~
 - **CFP Closes:** 2026-02-16
 - **Registration Opens:** 2026-02-16
 - **Speakers receive confirmation of acceptance:** 2026-02-27
@@ -33,7 +33,7 @@ roadmap, and Ceph community news, and more! The day ends with a networking recep
 
 ## CFP and Registration
 
-The Call for Papers (CFP) will open on January 5, 2026, and close on February 16, 2026. During that
+The Call for Papers (CFP) is open from January 5, 2026 to February 16, 2026. During that
 window, you may submit your proposal here:
 
 <a class="button" href="https://forms.gle/9gdhimGhDrkN1gdr5">Apply to be a Presenter!</a>
@@ -71,7 +71,28 @@ with Ceph is encouraged to submit.
 
 ## Schedule
 
-The schedule will be announced on March 6, 2026. Stay tuned for details!
+The schedule will be finalized on March 6, 2026. Stay tuned for details!
+
+| Time                         | Talk                         |
+|------------------------------|------------------------------|
+| 8:30-9:30 AM (60 min)       | Check-in and Breakfast       |
+| 9:30-9:40 AM (10 min)       | Welcome                      |
+| 9:40-10:10 AM (30 min)      | Keynote - State of Ceph     |
+| 10:10-11:40 AM (30 min)     | Sessions / Lightning Talks   |
+| 11:40-12:10 PM (30 min)     | Tea/Coffee Break             |
+| 12:10-1:40 PM (30 min)      | Sessions / Lightning Talks   |
+| 1:40-2:40 PM (60 min)       | Lunch                        |
+| 2:40-4:10 PM (30 min)       | Sessions / Lightning Talks   |
+| 4:10-4:40 PM (30 min)       | Snack Break                  |
+| 4:40-5:30 PM (30 min)       | Sessions / Lightning Talks   |
+| 5:30 PM                     | Event Close                  |
+
+## Hotel Recommendations
+
+| Hotel | Website |
+|--------|---------|
+| DoubleTree Suites by Hilton Hotel Raleigh-Durham | [DoubleTree Website](https://www.hilton.com/en/hotels/rduiidt-doubletree-suites-raleigh-durham/) |
+| Marriott Raleigh Durham Research Triangle Park | [Mariott Website](https://www.marriott.com/en-us/hotels/rducp-marriott-raleigh-durham-research-triangle-park/overview/) |
 
 Join the Ceph announcement list, or follow Ceph on social media for Ceph events
 updates:
