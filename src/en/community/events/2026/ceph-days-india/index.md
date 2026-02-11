@@ -35,7 +35,7 @@ Don’t miss the networking reception at the end of the day to connect with fell
 <br />
 
 ## Schedule
-### Febuary 10, 2026
+### March 12, 2026
 <table>
   <thead>
     <tr>
@@ -52,7 +52,7 @@ Don’t miss the networking reception at the end of the day to connect with fell
       <td>Welcome &amp; Keynote</td>
       <td>State of the Cephalopod</td>
       <td>Neha Ojha</td>
-      <td>Senior Software Engineer, IBM (Ceph)</td>
+      <td>Program Director, IBM (Ceph)</td>
     </tr>
     <tr>
       <td>9:50 – 10:00</td>
