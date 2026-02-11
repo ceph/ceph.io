@@ -1,6 +1,11 @@
 {
   "tech_talks": [
     {
+      "date": "2026-02-25",
+      "title": "Get Involved with the Ceph Ambassador Program",
+      "presenter": "Anthony Middleton",
+    },
+    {
       "date": "2026-01-14",
       "title": "Running Teuthology Outside of the Sepia lab",
       "presenter": "Deepshikha Singh",
