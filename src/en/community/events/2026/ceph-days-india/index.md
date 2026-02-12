@@ -114,7 +114,7 @@ Don’t miss the networking reception at the end of the day to connect with fell
       <td>13:30 – 14:30</td>
       <td>Panel Discussion</td>
       <td>This will be a Ceph community and ecosystem discussion covering Cephadm, CSI/Rook, and operational experiences.</td>
-      <td>Venky, Aviv, Matt, Neha, Afreen, Kaleb</td>
+      <td>Venky, Aviv, Matt, Neha, Afreen, Kaleb, Vikhyat</td>
       <td>—</td>
     </tr>
     <tr>
