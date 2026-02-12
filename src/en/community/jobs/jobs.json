@@ -1,6 +1,12 @@
 {
   "jobs": [
     {
+      "company": "nemensis AG",
+      "date": "2026-02-12",
+      "title": "Ceph Developer (m/f/d)",
+      "url": "https://jobs.nemensis.de/job/67298/lang=en"
+    },
+    {
       "company": "IBM",
       "date": "2025-01-06",
       "title": "Storage Software Engineer, CephFS",
