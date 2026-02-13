@@ -20,12 +20,12 @@ community in Raleigh!
 
 Hear directly from Ceph experts, core contributors, customers, partners, and community members as
 they share the status of the Ceph project, recent Ceph project improvements and
-roadmap, and Ceph community news, and more! The day ends with a networking reception.
+roadmap, Ceph community news, and more! The day ends with a networking reception.
 
 ## Important Dates
 
 - ~~**CFP Opens:** 2026-01-05~~
-- **CFP Closes:** 2026-02-16
+- ~~**CFP Closes:** 2026-02-16~~
 - **Registration Opens:** 2026-02-16
 - **Speakers receive confirmation of acceptance:** 2026-02-27
 - **Schedule Announcement:** 2026-03-06
@@ -37,12 +37,13 @@ The Call for Papers (CFP) is open from January 5, 2026 to February 16, 2026. Dur
 window, you may submit your proposal here:
 
 <a class="button" href="https://forms.gle/9gdhimGhDrkN1gdr5">Apply to be a Presenter!</a>
+
+Registration opens on February 16, 2026.
+
 <a class="button" href="https://osnexus.regfox.com/ceph-days-raleigh-2026">Register Here!</a>
 
-Registration will open on February 16, 2026. Details pending!
-
-In the meantime, you may review the suggested proposal topics. Anyone of any background or experience level
-with Ceph is encouraged to submit.
+Anyone of any background or experience level
+with Ceph is encouraged to submit a talk.
 
 **Suggested Proposal Topics:**
 
