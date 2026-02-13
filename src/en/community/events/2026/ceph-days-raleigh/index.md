@@ -37,6 +37,7 @@ The Call for Papers (CFP) is open from January 5, 2026 to February 16, 2026. Dur
 window, you may submit your proposal here:
 
 <a class="button" href="https://forms.gle/9gdhimGhDrkN1gdr5">Apply to be a Presenter!</a>
+<a class="button" href="https://osnexus.regfox.com/ceph-days-raleigh-2026">Register Here!</a>
 
 Registration will open on February 16, 2026. Details pending!
 
