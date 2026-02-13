@@ -118,11 +118,18 @@ Don’t miss the networking reception at the end of the day to connect with fell
       <td>—</td>
     </tr>
     <tr>
-      <td>14:30 – 15:00</td>
+      <td>14:30 – 14:40</td>
       <td>Lightning Talks</td>
       <td>Why Ceph Feels Slow for HPC: WAL, BlueStore DB, and real bottlenecks at scale.</td>
       <td>James Bhattarai, Rupesh Basnet</td>
       <td>—</td>
+    </tr>
+    <tr>
+      <td>14:45 – 14:55</td>
+      <td>Lightning Talks</td>
+      <td>Don’t Get Conf’d: Making Ceph Configuration Changes Obvious.</td>
+      <td>Naveen Naidu</td>
+      <td>Senior Software Engineer, IBM</td>
     </tr>
     <tr>
       <td>15:00 – 15:30</td>
