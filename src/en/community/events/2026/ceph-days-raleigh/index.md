@@ -26,50 +26,19 @@ roadmap, Ceph community news, and more! The day ends with a networking reception
 
 - ~~**CFP Opens:** 2026-01-05~~
 - ~~**CFP Closes:** 2026-02-16~~
-- **Registration Opens:** 2026-02-16
+- ~~**Registration Opens:** 2026-02-16~~
 - **Speakers receive confirmation of acceptance:** 2026-02-27
 - **Schedule Announcement:** 2026-03-06
 - **Event Date:** 2026-03-25
 
 ## CFP and Registration
 
-The Call for Papers (CFP) is open from January 5, 2026 to February 16, 2026. During that
-window, you may submit your proposal here:
-
-<a class="button" href="https://forms.gle/9gdhimGhDrkN1gdr5">Apply to be a Presenter!</a>
-
-Registration opens on February 16, 2026.
+The Call for Papers (CFP) is now closed, but there
+is still time to register!
 
 <a class="button" href="https://osnexus.regfox.com/ceph-days-raleigh-2026">Register Here!</a>
 
-Anyone of any background or experience level
-with Ceph is encouraged to submit a talk.
-
-**Suggested Proposal Topics:**
-
-- Ceph operations, management, and development
-- New and proposed Ceph features, development status
-- Ceph development roadmap
-- Best practices
-- Ceph use-cases, solution architectures, and user experiences
-- Ceph performance and optimization
-- Platform Integrations
-- Kubernetes, OpenShift
-- OpenStack (Cinder, Manila, etc.)
-- Spark
-- Multi-site and multi-cluster data services
-- Persistent memory, ZNS SSDs, SMR HDDs, DPUs, and other new hardware technologies
-- Storage management, monitoring, and deployment automation
-- Experiences deploying and operating Ceph in production and/or at scale
-- Small-scale or edge deployments
-- Long-term, archival storage
-- Data compression, deduplication, and storage optimization
-- Developer processes, tools, challenges
-- Ceph testing infrastructure, tools
-- Ceph community issues, outreach, and project governance
-- Ceph documentation, training, and learner experience
-
-... and more!
+Speakers will receive confirmation of acceptance on February 27th, 2026. 
 
 ## Schedule
 
