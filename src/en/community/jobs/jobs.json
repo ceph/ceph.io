@@ -1,6 +1,12 @@
 {
   "jobs": [
     {
+      "company": "Ceph Foundation",
+      "date": "2026-02-18",
+      "title": "Technical Writer, Ceph Foundation (Contractor role)",
+      "url": "https://careers.linuxfoundation.org/jobs/557992-technical-writer-ceph-foundation-contractor-role"
+    },
+    {
       "company": "nemensis AG",
       "date": "2026-02-12",
       "title": "Ceph Developer (m/f/d)",
