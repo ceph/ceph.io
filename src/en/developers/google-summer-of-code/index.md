@@ -89,7 +89,7 @@ We would like to use a more Programmatic approach towards the problem:
 
 **Skills needed:** Python and C++
 
-**Subcomponent of Ceph:** RGW (teuthology and rook as stretch goals)
+**Subcomponent of Ceph:** RGW
 
 **Description of project:**
 
@@ -101,18 +101,20 @@ The following features are missing:
 * GSSAPI
 * OAUTHBEARER
 * mtls
-* passing in CA without a file (useful for rook integration)
+* passing in CA without a file (useful for Rook integration)
 
 The main challenge in the above would be in automating the tests, so they could easily run locally,
 
-* as a stretch goal, we should make sure these tests can also run in teuthology.
-* another stretch goal would be to use the integrate the above feature into rook (this would involve some golang coding as well).
+as a stretch goal, we should make sure these tests can also run in teuthology.
 
 **Standup/weekly call mentee could attend?:** RGW daily standup, RGW weekly refactoring meeting
 
-**Steps to evaluate an applicant for the project:** TBD
+**Steps to evaluate an applicant for the project:** https://gist.github.com/yuvalif/3c5439b144044223a9e70f00354ad785
 
-**1-2 short paragraphs about what first 2 weeks of work would look like during the internship:** TBD
+**1-2 short paragraphs about what first 2 weeks of work would look like during the internship:**
+
+* get to know the bucket notifications code
+* learn about kafka security
 
 **Expected outcome:** Detailed in the description.
 
