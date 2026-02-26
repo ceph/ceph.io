@@ -27,7 +27,7 @@ roadmap, Ceph community news, and more! The day ends with a networking reception
 - ~~**CFP Opens:** 2026-01-05~~
 - ~~**CFP Closes:** 2026-02-16~~
 - ~~**Registration Opens:** 2026-02-16~~
-- **Speakers receive confirmation of acceptance:** 2026-02-27
+- **Speakers receive confirmation of acceptance:** 2026-03-03
 - **Schedule Announcement:** 2026-03-06
 - **Event Date:** 2026-03-25
 
@@ -44,19 +44,19 @@ Speakers will receive confirmation of acceptance on February 27th, 2026.
 
 The schedule will be finalized on March 6, 2026. Stay tuned for details!
 
-| Time                         | Talk                         |
-|------------------------------|------------------------------|
-| 8:30-9:00 AM (30 min)       | Check-in and Breakfast       |
-| 9:00-9:10 AM (10 min)       | Welcome                      |
-| 9:10-9:40 AM (30 min)       | Keynote - State of Ceph     |
-| 9:40-11:10 AM (30 min)      | Sessions / Lightning Talks   |
-| 11:10-11:40 AM (30 min)     | Tea/Coffee Break             |
-| 11:40-1:10 PM (30 min)      | Sessions / Lightning Talks   |
-| 1:10-2:10 PM (60 min)       | Lunch                        |
-| 2:10-3:40 PM (30 min)       | Sessions / Lightning Talks   |
-| 3:40-4:10 PM (30 min)       | Snack Break                  |
-| 4:10-5:00 PM (30 min)       | Sessions / Lightning Talks   |
-| 5:00-5:30 PM (30 min)       | Networking Reception         |
+| Time           | Talk                        |
+|----------------|-----------------------------|
+| 8:30–9:00 AM   | Check-in and Breakfast      |
+| 9:00–9:10 AM   | Welcome                     |
+| 9:10–9:40 AM   | Keynote - State of Ceph     |
+| 9:40–11:10 AM  | Sessions / Lightning Talks  |
+| 11:10–11:40 AM | Tea/Coffee Break            |
+| 11:40–1:10 PM  | Sessions / Lightning Talks  |
+| 1:10–2:10 PM   | Lunch                       |
+| 2:10–3:40 PM   | Sessions / Lightning Talks  |
+| 3:40–4:10 PM   | Snack Break                 |
+| 4:10–5:00 PM   | Sessions / Lightning Talks  |
+| 5:00–5:30 PM   | Networking Reception        |
 
 ## Hotel Recommendations
 
