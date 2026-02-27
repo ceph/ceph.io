@@ -66,9 +66,12 @@ We would like to use a more Programmatic approach towards the problem:
 
 **Standup/weekly call mentee could attend?:** RGW standup, RGW refactoring meeting
 
-**Steps to evaluate an applicant for the project:** TBD
+**Steps to evaluate an applicant for the project:** https://gist.github.com/yuvalif/4a077cef5063653f337337c9ca08094e
 
-**1-2 short paragraphs about what first 2 weeks of work would look like during the internship:** TBD
+**1-2 short paragraphs about what first 2 weeks of work would look like during the internship:**
+
+* research on different commandline frameworks
+* learning the internal of the `radosgw-admin`
 
 **Expected Outcome:**  Detailed in the description.
 
