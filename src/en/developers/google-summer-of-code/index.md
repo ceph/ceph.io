@@ -126,7 +126,7 @@ as a stretch goal, we should make sure these tests can also run in teuthology.
 <hr class="hr">
 
 
-## RGW tcmalloc profiling
+## RGW tcmalloc Profiling
 
 **Mentor name(s):** Yuval Lifshitz
 
@@ -134,28 +134,32 @@ as a stretch goal, we should make sure these tests can also run in teuthology.
 
 **Difficulty:** Advanced 
 
-**Project Hours:** 175
+**Project Hours:** 90
 
 **Skills needed:** Python and C++
 
-**Subcomponent of Ceph:** RGW (teuthology and rook as stretch goals)
+**Subcomponent of Ceph:** RGW
 
 **Description of project:**
 
-All daemons in ceph are using tcmalloc as the memory allocator to achieve better performance.
-
-However, while the OSD, MON, and MDS can report the memory allocation performance, the RGW does not support that
-(see: https://docs.ceph.com/en/latest/rados/troubleshooting/memory-profiling/#memory-profiling).
-
-In this project, we should add this reporting support to the RGW as well.
-
-As a stretch goal, we should use the profiling information from RGW runs to tune the tcmalloc parameters so that would be more suitable for the memory use of the RGW
+All daemons in ceph are using [tcmalloc](https://gperftools.github.io/gperftools/tcmalloc.html) as the memory allocator to achieve better performance.
+In a [recent PR](https://github.com/ceph/ceph/pull/67446) the ability to get information on how tcmalloc performs in the RGW was added.
+In this project, we should use the profiling information from RGW runs to tune the tcmalloc parameters so that would be more suitable for the memory use of the RGW.
+The main strength of tcmalloc is using thread local cache to get lock-free memory allocations. We would like to understand how tuning the parameters that governs this behavior
+is impacting the memory usage of the RGW?
+We would also like to investigate if there are other parameters, either runtime or compile time, that can improve the performance of the RGW:
+* use more thread local cache for small memory allocations
+* keep the overall memory consumption of the RGW low
+* free unused memory back to the OS
+* any other tuning?
 
 **Standup/weekly call mentee could attend:** RGW daily standup, RGW weekly refactoring meeting
 
-**Steps to evaluate an applicant for the project:** TBD
+**Steps to evaluate an applicant for the project:** https://gist.github.com/yuvalif/9ae7508b599aa8718521109b77dbc413
 
-**1-2 short paragraphs about what first 2 weeks of work would look like during the internship:** TBD
+**1-2 short paragraphs about what first 2 weeks of work would look like during the internship:**
+* understand the different RGW workloads and how to simulate them
+* tune up the RGW to get better performence baseline
 
 **Expected outcome:** Detailed in description.
 
