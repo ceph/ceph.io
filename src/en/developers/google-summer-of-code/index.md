@@ -18,8 +18,8 @@ to work on their small, (~90 hour), medium (~175 hour) or large (~350 hour) proj
 
 GSoC is a highly competitive program, so don't wait to the last minute to
 prepare! GSoC Contributors should reach out to the mentors of projects that interest
-them once orgs are announced on February 27, 2025. Potential GSoC Contributors can
-apply for Ceph's projects at g.co/gsoc from March 24th - April 8, 2025.
+them once orgs are announced on February 19, 2026. Potential GSoC Contributors can
+apply for Ceph's projects at g.co/gsoc from March 16th - March 31st, 2026.
 
 See the list of projects we have available for GSoC contributors and [learn how
 get started with contributions](https://ceph.io/en/developers/contribute/).
