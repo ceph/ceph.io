@@ -1,10 +1,10 @@
 ---
 title: Ceph Days London 2026
-date: 2026-06-17
+date: 2026-03-06
 end: 2026-06-17
 location: London, United Kingdom
 venue: IBM UK, York Road
-image: "src/assets/bitmaps/events/2026/cephdayslondon/ceph-day-london-2026.png"
+image: "/assets/bitmaps/events/2026/cephdayslondon/ceph-day-london-2026.png"
 sponsors:
 tags:
   - ceph days
