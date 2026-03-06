@@ -1,40 +1,16 @@
 {
   "jobs": [
     {
-      "company": "Ceph Foundation",
-      "date": "2026-02-18",
-      "title": "Technical Writer, Ceph Foundation (Contractor role)",
-      "url": "https://careers.linuxfoundation.org/jobs/557992-technical-writer-ceph-foundation-contractor-role"
+      "company": "Canonical",
+      "date": "2026-02-28",
+      "title": "Software Engineer, Ceph & Distributed Storage",
+      "url": "https://job-boards.greenhouse.io/canonicaljobs/jobs/7537605?gh_src=0bnkt15d1us"
     },
     {
       "company": "nemensis AG",
       "date": "2026-02-12",
       "title": "Ceph Developer (m/f/d)",
       "url": "https://jobs.nemensis.de/job/67298/lang=en"
-    },
-    {
-      "company": "IBM",
-      "date": "2025-01-06",
-      "title": "Storage Software Engineer, CephFS",
-      "url": "https://ibmglobal.avature.net/en_US/careers/Jobdetail?jobId=77753"
-    },
-    {
-      "company": "Walmart Global Tech",
-      "date": "2025-12-02",
-      "title": "Principal, Software Engineer - Cloud Storage",
-      "url": "https://careers.walmart.com/us/en/jobs/R-2321814"
-    },
-    {
-      "company": "Walmart Global Tech",
-      "date": "2025-12-02",
-      "title": "Principal Software Engineer - Ceph",
-      "url": "https://walmart.wd5.myworkdayjobs.com/en-US/WalmartExternal/job/XMLNAME--IND--PRINCIPAL--SOFTWARE-ENGINEER_R-2321480"
-    },
-    {
-      "company": "Index Exchange",
-      "date": "2025-10-21",
-      "title": "Staff Storage Engineer- Ceph",
-      "url": "https://jobs.gem.com/index-exchange/6351680"
     },
     {
       "company": "Hetzner Cloud",
@@ -52,13 +28,7 @@
       "company": "42on",
       "date": "2023-05-12",
       "title": "Ceph Expert",
-      "url": "https://www.42on.com/jobs/ceph-expert/"
-    },
-    {
-      "company": "Canonical",
-      "date": "2022-07-26",
-      "title": "Engineering Manager, Ceph & Distributed Storage",
-      "url": "https://canonical.com/careers/4175808/engineering-manager-ceph-and-distributed-storage-remote"
+      "url": "https://42on.com/jobs/ceph-expert/"
     },
     {
       "company": "clyso",
