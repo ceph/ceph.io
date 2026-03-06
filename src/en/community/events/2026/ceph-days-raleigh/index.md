@@ -88,7 +88,7 @@ is still time to register!
   <tr>
    <td>11:15 AM - 11:45 AM</td>
    <td>🎤 Ceph CI and Developer Tooling: Past, Present, and Future</td>
-   <td><center><img src="/assets/bitmaps/events/2026/ceph_days_raleigh/andrew.jpeg"><br>David Galloway<br><em>IBM</em></center></td>
+   <td>David Galloway<br><em>IBM</em></td>
   </tr>
 
   <tr>
