@@ -40,8 +40,6 @@ is still time to register!
 
 ## Schedule
 
-## Schedule
-
 <table>
   <tr>
    <td width="10%"><strong>Time</strong></td>
