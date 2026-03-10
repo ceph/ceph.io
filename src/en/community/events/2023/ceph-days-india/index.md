@@ -3,7 +3,9 @@ title: Ceph Days India
 date: 2023-05-05
 end: 2023-05-05
 location: IBM Office
-venue: A Block, Embassy Golf Links Business Park, Challaghatta, Bengaluru, Karnataka 560071
+venue: Embassy Golf Links Campus IBM EGL A Block Ground Floor
+       100 Feet Rd, Embassy Golf Links Business Park, Challaghatta, Bengaluru, Karnataka 560071
+       https://share.google/GrjIPvmrXaDZfS2wT
 image: "/assets/bitmaps/ceph-days.png"
 tags:
   - ceph days
