@@ -3,7 +3,9 @@ title: Ceph Days India 2026
 date: 2026-03-12
 end: 2026-03-12
 location: Bangalore
-venue: IBM, Embassy Golf Links Campus
+venue: Embassy Golf Links Campus IBM EGL A Block Ground Floor
+100 Feet Rd, Embassy Golf Links Business Park, Challaghatta, Bengaluru, Karnataka 560071
+https://share.google/GrjIPvmrXaDZfS2w
 image: "/assets/bitmaps/ceph-days.png"
 sponsors:
   - Clyso, IBM
