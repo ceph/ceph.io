@@ -33,7 +33,7 @@ a networking reception, to foster more Ceph learning.
 The Call for Papers (**CFP**) is now live until April 24, 2026. During that
 window, you may submit your proposal here:
 
-<a class="button" href="https://forms.gle/dhLiUjqST4Hgqj638">Apply to be a presenter!</a>
+<a class="button" href="https://forms.gle/W8A4JSPht9YfWRA29">Apply to be a presenter!</a>
 
 Registration is coming soon for the event, please stay tuned for more details!
 
