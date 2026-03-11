@@ -30,5 +30,7 @@ a networking reception, to foster more Ceph learning.
 - **Registration Closes:** 2026-06-12
 - **Event Date:** 2026-06-17
 
+<a class="button" href="https://forms.gle/dhLiUjqST4Hgqj638">CFP Open!</a>
+
 Registration is coming soon for the event, please stay tuned for more details!
 
