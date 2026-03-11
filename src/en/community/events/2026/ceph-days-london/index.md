@@ -22,7 +22,7 @@ a networking reception, to foster more Ceph learning.
 
 ## Important Dates
 
-~~**CFP Opens:** 2026-03-16~~
+- ~~**CFP Opens:** 2026-03-16~~
 - **CFP Closes:** 2026-04-24
 - **Speakers receive confirmation of acceptance:** 2026-05-01
 - **Registration Opens:** 2026-05-01
