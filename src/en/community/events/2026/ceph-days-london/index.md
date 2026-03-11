@@ -22,7 +22,7 @@ a networking reception, to foster more Ceph learning.
 
 ## Important Dates
 
-- **CFP Opens:** 2026-03-16
+~~**CFP Opens:** 2026-03-16~~
 - **CFP Closes:** 2026-04-24
 - **Speakers receive confirmation of acceptance:** 2026-05-01
 - **Registration Opens:** 2026-05-01
@@ -30,7 +30,10 @@ a networking reception, to foster more Ceph learning.
 - **Registration Closes:** 2026-06-12
 - **Event Date:** 2026-06-17
 
-<a class="button" href="https://forms.gle/dhLiUjqST4Hgqj638">CFP Open!</a>
+The Call for Papers (**CFP**) is now live until April 24, 2026. During that
+window, you may submit your proposal here:
+
+<a class="button" href="https://forms.gle/dhLiUjqST4Hgqj638">Apply to be a presenter!</a>
 
 Registration is coming soon for the event, please stay tuned for more details!
 
