@@ -116,7 +116,7 @@ is still time to register!
   <tr>
    <td>1:45 PM - 2:00 PM</td>
    <td>⚡️ Ceph EC Performance Journey: Classic vs. Fast EC</td>
-   <td>Vikhyat Umrao<br><em>IBM</em></td>
+   <td><center><img src="/assets/bitmaps/events/2026/ceph_days_raleigh/vikhyat.jpeg"><br>Vikhyat Umrao<br><em>IBM</em></center></td>
   </tr>
 
   <tr>
