@@ -86,7 +86,7 @@ is still time to register!
   <tr>
    <td>11:15 AM - 11:45 AM</td>
    <td>🎤 Ceph CI and Developer Tooling: Past, Present, and Future</td>
-   <td>David Galloway<br><em>IBM</em></td>
+   <td><center><img src="/assets/bitmaps/events/2026/ceph_days_raleigh/david_galloway.jpeg"><br>David Galloway<br><em>IBM</em></center></td>
   </tr>
 
   <tr>
@@ -116,7 +116,7 @@ is still time to register!
   <tr>
    <td>1:45 PM - 2:00 PM</td>
    <td>⚡️ Ceph EC Performance Journey: Classic vs. Fast EC</td>
-   <td>Vikhyat Umrao<br><em>IBM</em></td>
+   <td><center><img src="/assets/bitmaps/events/2026/ceph_days_raleigh/vikhyat.jpeg"><br>Vikhyat Umrao<br><em>IBM</em></center></td>
   </tr>
 
   <tr>
@@ -145,14 +145,14 @@ is still time to register!
 
   <tr>
    <td>3:30 PM - 4:00 PM</td>
-   <td>🎤 Crushing It</td>
-   <td>Tyler Brekke<br><em>Digital Ocean</em></td>
+   <td>🎤 Closer than you think: Ceph's journey to nearest neighbor search</td>
+   <td><center><img src="/assets/bitmaps/events/2026/ceph_days_raleigh/kyle.jpeg"><br>Kyle Bader<br><em>IBM</em></center></td>
   </tr>
 
   <tr>
    <td>4:00 PM - 4:30 PM</td>
-   <td>🎤 Closer than you think: Ceph's journey to nearest neighbor search</td>
-   <td><center><img src="/assets/bitmaps/events/2026/ceph_days_raleigh/kyle.jpeg"><br>Kyle Bader<br><em>IBM</em></center></td>
+   <td>Q&A</td>
+   <td></td>
   </tr>
 
   <tr>
