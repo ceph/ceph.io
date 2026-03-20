@@ -56,13 +56,13 @@ is still time to register!
   <tr>
    <td>9:00 AM - 9:10 AM</td>
    <td>Welcome</td>
-   <td>Sam Werner<br><em>IBM</em></td>
+   <td><center><img src="/assets/bitmaps/events/2026/ceph_days_raleigh/sam_werner.jpeg"><br>Sam Werner<br><em>IBM</em></center></td>
   </tr>
 
   <tr>
    <td>9:10 AM - 9:45 AM</td>
    <td>Keynote - State of Ceph</td>
-   <td>Neha Ojha<br><em>IBM</em></td>
+   <td><center><img src="/assets/bitmaps/events/2026/ceph_days_raleigh/neha_ojha.jpg"><br>Neha Ojha<br><em>IBM</em></center></td>
   </tr>
 
   <tr>
