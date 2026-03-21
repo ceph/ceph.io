@@ -1,6 +1,6 @@
 ---
 title: "v18.2.8 Reef released"
-date: "2026-03-21"
+date: "2026-03-20"
 author: "Yuri Weinstein"
 tags:
   - "release"
@@ -11,7 +11,7 @@ This is the eighth, and expected to be last, backport release in the Reef series
 Release Date
 ------------
 
-March 31, 2026
+March 20, 2026
 
 Known Issues
 ------------
