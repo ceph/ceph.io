@@ -103,7 +103,7 @@ is still time to register!
 
   <tr>
    <td>1:00 PM - 1:30 PM</td>
-   <td>🎤 Toward One-Button Ceph: Engineering the Future of Autonomous Storage</td>
+   <td>🎤 Toward One-Click Ceph: Engineering the Future of Autonomous Storage</td>
    <td><center><img src="/assets/bitmaps/events/2026/ceph_days_raleigh/dan_van_der_ster.jpeg"><br>Dan van der Ster<br><em>Clyso</em></center></td>
   </tr>
 
