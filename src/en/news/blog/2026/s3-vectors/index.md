@@ -123,40 +123,41 @@ LanceDB is written in Rust. Ceph is C++. Bridging them required a C binding
 layer that did not previously exist. As part of this project we spearheaded the
 development of [lancedb/lancedb-c](https://github.com/lancedb/lancedb-c), a C
 API for LanceDB that is being contributed back to the LanceDB community.
-Yuval's fork at
-[github.com/yuvalif/lancedb-c](https://github.com/yuvalif/lancedb-c) carries
-the latest work as it makes its way upstream, exposing the functions RGW needs —
-`lancedb_table_create`, `lancedb_table_merge_insert`, `lancedb_table_query`,
-`lancedb_table_index_stats`, and others — as a stable C API that Ceph links
-against via FFI. The binding repository also includes a working S3 Vectors
-simulator useful for local development without a full Ceph cluster, and a test
-dataset of 693 embeddings of Ceph source code at 1,024 dimensions, with
-function name, class name, and line number metadata.
+The bindings expose the functions RGW needs — `lancedb_table_create`,
+`lancedb_table_merge_insert`, `lancedb_table_query`, `lancedb_table_index_stats`,
+and others — as a stable C API that Ceph links against via FFI. The binding
+repository also includes a working S3 Vectors simulator useful for local
+development without a full Ceph cluster, and a test dataset of 693 embeddings
+of Ceph source code at 1,024 dimensions, with function name, class name, and
+line number metadata.
 
 LanceDB accelerates K-means clustering during index generation using AVX2 SIMD,
 confirmed for Euclidean (L2) distance. Cosine acceleration is worth benchmarking
 on target hardware. Index generation could also be GPU-accelerated via PyTorch
 (`accelerator='cuda'`) in `create_index`, though Ceph gateway nodes do not
-typically have accelerators.
+typically have accelerators. If we want to go this route, we may need to look
+into using cuVS directly, since this appears to only apply to the Python
+lancedb libraries.
 
 ## Writes: merge_insert and Background Optimization
 
 `PutVectors` accepts batches of up to 500 vectors or 20 MB, whichever is
-smaller, with a rate limit of 5 calls per index per second. Under the hood we
-map this to LanceDB's `merge_insert` — an atomic upsert that checks for the
-existence of each vector by key and inserts or updates in a single operation.
-The alternative, separate read-then-write logic, introduces race conditions
-under concurrent writes.
+smaller, with a rate limitted number of calls per index per second. In AWS
+the limit is 5, but this is something we will expose as a configuration knob.
+
+Under the hood we map PutVectors to LanceDB's `merge_insert` — an atomic
+upsert that checks for the existence of each vector by key and inserts or
+updates in a single operation. The alternative, separate read-then-write
+logic, introduces race conditions under concurrent writes.
 
 After a `merge_insert`, new vectors are immediately searchable through a
 combined scan. In parallel, a background `optimize()` call can rebuild the
 IVF-PQ index without blocking concurrent writes or queries. We use LanceDB's
-built-in `index_stats()` API — added in
-[lancedb-c PR #3](https://github.com/yuvalif/lancedb-c/pull/3) — to track the
-ratio of indexed to unindexed rows and trigger a rebuild when the fraction of
-unindexed vectors exceeds a configurable threshold. This replaced an earlier
-approach that maintained external JSON counters with file locking. Letting
-LanceDB's own manifest stats do that work is simpler and more accurate.
+built-in `index_stats()` API to track the ratio of indexed to unindexed rows
+and trigger a rebuild when the fraction of unindexed vectors exceeds a
+configurable threshold. This replaced an earlier approach that maintained
+external JSON counters with file locking. Letting LanceDB's own manifest stats
+do that work is simpler and more accurate.
 
 ## Queries: IVF-PQ and the nprobes Tradeoff
 
@@ -178,21 +179,15 @@ The core problem is that within a single index, different vectors can have
 different metadata keys. LanceDB supports efficient filtering through typed
 scalar columns with `btree`, `bitmap`, or `label_list` indexes, but those
 columns have to exist at table creation time. Flattening every possible
-metadata key into a dedicated column produces an unbounded schema — impractical
-to pre-create, and the AWS API provides no mechanism to define one at index
-creation time.
+metadata key into a dedicated column produces an unbounded schema — impractical,
+and the AWS API provides no mechanism to define one at index creation time.
 
-We plan to use LanceDB's post-filtering support, passing the filter predicate
-with `prefilter=False` on the underlying search call. LanceDB handles the
-over-fetching automatically via the `refine_factor` parameter — rather than
-manually inflating the top-K request size, `refine_factor` instructs LanceDB
-to retrieve a larger candidate pool from the ANN index before applying the
-filter, returning the top-K survivors. For highly selective filters, increasing
-`refine_factor` alongside `nprobes` provides two complementary levers: `nprobes`
-controls how many IVF cells are probed during the search phase, and
-`refine_factor` controls how many candidates are evaluated before filtering —
-both reduce the likelihood of returning fewer than K results when only a small
-fraction of vectors match the predicate.
+We plan to apply our own JSON based filtering that aligns with the vectors API.
+This will require us to over-fetch by inflating the top-K request size, to
+retrieve a larger candidate pool from the ANN index before applying the filter,
+returning the top-K survivors. For highly selective filters, we could also tune
+`nprobes` to reduce the likelihood of returning fewer than K results when only
+a small fraction of vectors match the predicate.
 
 The reason we default to post-filtering rather than pre-filtering is SDK
 compatibility. Post-filtering requires no schema knowledge upfront, works
@@ -202,12 +197,13 @@ with candidate retrieval, with the caveat that fewer than K results may be
 returned for highly selective predicates.
 
 For callers who need stronger correctness or performance guarantees, the
-optional `scalarSchema` extension on `CreateIndex` defines typed scalar columns
-upfront. When those columns are present we can use LanceDB's pre-filtering
-instead, narrowing the candidate set before the vector search runs rather than
-after. Pre-filtering is generally more efficient for selective filters and
-eliminates the "fewer than K results" edge case entirely. This is a Ceph
-extension — the AWS SDKs has no field for it — but it is opt-in, not required.
+optional `filterableMetadataKeys` extension on `CreateIndex` defines typed
+scalar columns upfront. When those columns are present we can use LanceDB's
+pre-filtering instead, narrowing the candidate set before the vector search
+runs rather than after. Pre-filtering is generally more efficient for
+selective filters and eliminates the "fewer than K results" edge case entirely.
+This will be a Ceph extension — the AWS SDKs has no field for it — but it is
+opt-in, not required.
 
 The result is a tiered approach: compatible behavior by default for any client
 including the AWS SDKs, with a more precise and efficient path available through
@@ -241,17 +237,12 @@ calls work correctly without modification.
 Two open pull requests against `ceph/ceph`:
 
 **[ceph/ceph#66066](https://github.com/ceph/ceph/pull/66066)** is the main
-integration PR tracking 34 tasks. Vector bucket CRUD, IAM policy actions, index
+integration PR tracking 34 tasks. Vector bucket CRUD, IAM auth/policy, index
 management, `PutVectors`, `GetVectors`, `DeleteVectors`, `ListVectors`, and
 `QueryVectors` are implemented. Vector Bucket Policy APIs and per-index
 VectorBucket attributes — for caching schema and distance metric between calls
 rather than reconstructing them from the table on every request — are in
 progress.
-
-**[ceph/ceph#66409](https://github.com/ceph/ceph/pull/66409)** is the LanceDB
-integration layer, cherry-picked into #66066. This PR added the ANN operations,
-SigV4 auth support, and the teuthology integration test suite, which is passing
-on CentOS.
 
 Beyond these we need to work on finalizing the plumbing to the radosgw storage
 abstraction layer, implement post-filtering for `QueryVectors`, and add policy
