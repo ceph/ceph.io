@@ -110,10 +110,10 @@ disk-native, SSD-optimized, supports `L2` and cosine distance, MIT licensed,
 written in C++. The problem is that DiskANN provides only the algorithm. There
 is no built-in storage format, I/O layer, or query engine, which means
 substantial additional integration work to reach the same feature set as a
-full-stack library.
+embedded retrieval library for multimodal AI.
 
 [LanceDB](https://github.com/lancedb/lancedb) is a full-stack library built
-on the [Lance columnar format](https://lancedb.github.io/lance/), designed from
+on the [Lance columnar format](https://lance.org), designed from
 the ground up for fast random-access disk I/O. It uses IVF-PQ indexes, supports
 both distance metrics, includes hybrid ANN + scalar predicate search, and
 provides a clean API whose dataset/table/index model maps directly onto S3
