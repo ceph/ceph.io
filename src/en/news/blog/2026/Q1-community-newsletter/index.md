@@ -10,11 +10,6 @@ tags:
   - "ceph events"
 ---
 
----
-title: Ceph Q1 2026 Newsletter
-layout: post
----
-
 During this quarter, the Ceph Foundation focused on strengthening its structure by establishing new governance charters, event strategies, and financial plans. To enhance transparency as our community evolves, this newsletter offers a look behind the scenes at these foundational details. Our aim is to update Ceph Community members on the latest developments within the Foundation and to clarify how they can contribute to our ongoing growth. There are several ways to get involved with the foundation. If you have a concept for a Ceph-related project, we encourage you to take the first step toward bringing your idea to the next level and [submit a funding request](https://form.asana.com/?k=7aCHVRhp0x1Ga1nOCXlckQ&d=9283783873717) whenever you are ready. Feedback and suggestions will be offered along your journey with Ceph.
 
 ## In this issue
