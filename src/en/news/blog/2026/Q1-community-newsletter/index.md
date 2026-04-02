@@ -1,5 +1,5 @@
 ---
-title: "Ceph Q1 Newsletter"
+title: "Ceph Q1 2026 Newsletter"
 date: "2026-03-31"
 author: "Anthony Middleton"
 categories: "newsletter"
@@ -11,7 +11,7 @@ tags:
 ---
 
 ---
-title: Ceph Q1 Newsletter
+title: Ceph Q1 2026 Newsletter
 layout: post
 ---
 
