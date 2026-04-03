@@ -177,11 +177,11 @@ Instead of focusing all of our resources on a single large event like Cephalocon
 Ceph Days continues to grow as the primary way the community connects locally. There were two community-driven events that happened this March:
 
 **Ceph Days India**
-- Sponsors: IBM  
+- Sponsors: IBM and Clyso
 - Attendees: 192  
 
 **Ceph Days Raleigh**
-- Sponsors: IBM  
+- Sponsor: IBM  
 - Attendees: 78  
 
 ### Why attend
@@ -203,7 +203,7 @@ The community can now access Slack messages from the last 90 days! The [Ceph Com
 
 ### What this means
 
-- No more losing conversations after 90 days!  
+- No more losing conversations!
 - There is no additional cost to the Ceph community  
 - A more robust platform for collaboration and communication  
 
