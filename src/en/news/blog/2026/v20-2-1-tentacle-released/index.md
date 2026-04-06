@@ -6,7 +6,7 @@ tags:
   - "release"
   - "reef"
 ---
-This is the first minor backport release in the Tentacle series. 
+This is the first minor release in the Tentacle series. 
 We recommend that all users update to this release.
 
 Release Date
@@ -35,12 +35,10 @@ Monitor (mon)
 librbd & rbd-mirror
 -------------------
 
-* Transient Exclusive Locks: Introduced a new RBD_LOCK_MODE_EXCLUSIVE_TRANSIENT mode for rbd_lock_acquire(). This allows a peer to hold an exclusive lock manually for short periods, causing other peers to safely block and wait rather than instantly erroring out with EROFS.
-* Locking Transitions: Prepared ``lock_acquire()`` to allow seamless transitions between standard and transient exclusive lock policies without needing a new image handle.
-* Snapshot Replayer: Added the remote cluster fsid to the remote meta cache key to ensure robust cache isolation.
+* RBD: Introduced a new ``RBD_LOCK_MODE_EXCLUSIVE_TRANSIENT`` policy for ``rbd_lock_acquire()``. This is a low-level interface intended to allow a peer to grab exclusive lock manually for short periods of time with other peers pausing their activity and waiting for the lock to be released rather than instantly aborting I/O and returning an error. It's possible to switch from ``RBD_LOCK_MODE_EXCLUSIVE`` to ``RBD_LOCK_MODE_EXCLUSIVE_TRANSIENT`` policy and vice versa even if the lock is already held.
 
-RADOS Gateway (RGW)
--------------------
+Ceph Object Gateway (RGW)
+-------------------------
 
 * Multi-Part Operations: Fixed conditional validation handling in MultiWrite, Delete, and MultiDelete workflows.
 
@@ -56,7 +54,7 @@ mgr/dashboard
 mgr/cephadm
 -----------
 
-* Monitoring Stack: Bumped the default container image versions for the monitoring stack (Prometheus to v3.6.0, Node-exporter to v1.9.1, Alertmanager to v0.28.1, and Grafana to v12.2.0).
+* Monitoring Stack: Bumped the default container image versions for the monitoring stack: Prometheus to v3.6.0, Node-exporter to v1.9.1, Alertmanager to v0.28.1, and Grafana to v12.2.0.
 
 Security Changes
 ----------------
