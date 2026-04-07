@@ -23,17 +23,12 @@ a networking reception, to foster more Ceph learning.
 ## Important Dates
 
 - ~~**CFP Opens:** 2026-03-16~~
-- **CFP Closes:** 2026-04-24
+- ~~**CFP Closes:** 2026-04-24~~
 - **Speakers receive confirmation of acceptance:** 2026-05-01
 - **Registration Opens:** 2026-05-01
 - **Schedule Announcement:** 2026-05-11
 - **Registration Closes:** 2026-06-12
 - **Event Date:** 2026-06-17
 
-The Call for Papers (**CFP**) is now live until April 24, 2026. During that
-window, you may submit your proposal here:
-
-<a class="button" href="https://forms.gle/W8A4JSPht9YfWRA29">Apply to be a presenter!</a>
-
-Registration is coming soon for the event, please stay tuned for more details!
-
+Registration is Open! (Closing on 2025-06-12)
+<a class="button" href="https://ti.to/open-source-events/ceph-days-london-2026">Registration</a>
