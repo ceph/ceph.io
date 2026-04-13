@@ -1,6 +1,11 @@
 {
   "tech_talks": [
     {
+      "date": "2026-04-22",
+      "title": "MAAS as a Backend: Provisioning Infrastructure for Teuthology Suites",
+      "presenter": "Vaibhav Mahajan"
+    },
+    {
       "date": "2026-02-25",
       "title": "Get Involved with the Ceph Ambassador Program",
       "presenter": "Anthony Middleton",
