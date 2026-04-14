@@ -607,7 +607,7 @@ careful CRUSH configuration, correct labeling, and an appropriate data protectio
 strategy results in a resilient storage architecture that handles inter-site
 failures without compromising data integrity or service continuity.
 
-In the [final part of our series](https://ceph.io/news/blog/2025/stretch-cluuuuuuuuusters-part3)
+In the [final part of our series](https://ceph.io/en/news/blog/2025/stretch-cluuuuuuuuusters-part3/)
 we will test the stretch cluster under real-world failure conditions. We will
 explore how Ceph automatically shifts into a degraded state when a
 complete site goes offline, the impact on client I/O during the outage,

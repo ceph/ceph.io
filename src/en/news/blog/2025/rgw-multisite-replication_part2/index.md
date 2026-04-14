@@ -79,6 +79,13 @@ config, the `rgw` manager module will take care of the following steps:
 Realm(s) created correctly. Please use 'ceph rgw realm tokens' to get the token.
 ```
 
+Note: beginning with the Tentacle release, the first realm created is not
+automatically the default, so with these releases one will need to now run
+
+```
+radosgw-admin realm default --rgw-realm=$realm
+```
+
 Let’s check the realm:
 
 ```
@@ -313,8 +320,8 @@ of an RGW within the second zone.
     "user1",
     "sysuser-multisite"
 ]
-[root@ceph-node-04 ~]# radosgw-admin bucket stats --bucket testbucket | jq .bucket
-"testbucket"
+[root@ceph-node-04 ~]# radosgw-admin bucket stats --bucket firstbucket | jq .bucket
+"firstbucket"
 ```
 
 To check replication status, we can use the `radosgw-admin sync status` command.

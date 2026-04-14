@@ -1,6 +1,25 @@
 {
   "tech_talks": [
     {
+      "date": "2026-04-22",
+      "title": "MAAS as a Backend: Provisioning Infrastructure for Teuthology Suites",
+      "presenter": "Vaibhav Mahajan"
+    },
+    {
+      "date": "2026-02-25",
+      "title": "Get Involved with the Ceph Ambassador Program",
+      "presenter": "Anthony Middleton",
+      "url": "https://youtu.be/PqniV0qzq68",
+      "slides": "https://ceph.io/assets/pdfs/tech-talks/GetInvolvedCephAmbassador.pdf"
+    },
+    {
+      "date": "2026-01-14",
+      "title": "Running Teuthology Outside of the Sepia lab",
+      "presenter": "Deepshikha Singh",
+      "url": "https://youtu.be/6ovdJ79AqbM",
+      "slides": "https://ceph.io/assets/pdfs/tech-talks/Upstream-openstack.pdf"
+    },
+    {
       "date": "2023-08-16",
       "title": "Making Teuthology Friendly",
       "presenter": "Devansh Singh and Medhavi Singh",

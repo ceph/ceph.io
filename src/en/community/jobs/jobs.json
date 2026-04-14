@@ -1,28 +1,16 @@
 {
   "jobs": [
     {
-      "company": "Clyso Technologies - Remote",
-      "date": "2025-07-17",
-      "title": "Ceph Solutions Architect",
-      "url": "https://www.indeed.com/cmp/Clyso-Technologies/jobs?jk=af6ec2d8f1783159&start=0&clearPrefilter=1"
+      "company": "Index Exchange",
+      "date": "2026-04-04",
+      "title": "Senior Storage Engineer (Ceph), Toronto",
+      "url": "https://jobs.gem.com/index-exchange/am9icG9zdDoO43F7kvajqQzRUYG8lqc8"
     },
     {
-      "company": "Boson AI",
-      "date": "2025-03-21",
-      "title": "Senior Software Engineer - Ceph",
-      "url": "https://jobs.lever.co/bosonai/6bbaa016-7594-4b26-9765-758592195add"
-    },
-    {
-      "company": "GoDaddy",
-      "date": "2025-02-20",
-      "title": "Senior Ceph Engineer",
-      "url": "https://careers.godaddy/jobs/senior-ceph-engineer-united-states?gh_jid=6352759003"
-    },
-    {
-      "company": "Hetzner Cloud",
-      "date": "2025-02-13",
-      "title": "Senior Software Engineer (m/f/x) - Ceph Object Storage",
-      "url": "https://hetzner-cloud.de/en/jobs/1945594"
+      "company": "Index Exchange",
+      "date": "2026-04-04",
+      "title": "Senior Storage Engineer (Ceph), Berlin",
+      "url": "https://jobs.gem.com/index-exchange/am9icG9zdDqr4Yv_09doRI_S_sMQfULG"
     },
     {
       "company": "42on",
@@ -34,19 +22,13 @@
       "company": "42on",
       "date": "2023-05-12",
       "title": "Ceph Expert",
-      "url": "https://www.42on.com/jobs/ceph-expert/"
+      "url": "https://42on.com/jobs/ceph-expert/"
     },
     {
-      "company": "Canonical",
-      "date": "2022-07-26",
-      "title": "Engineering Manager, Ceph & Distributed Storage",
-      "url": "https://canonical.com/careers/4175808/engineering-manager-ceph-and-distributed-storage-remote"
-    },
-    {
-      "company": "clyso",
-      "date": "2023-10-13",
-      "title": "Ceph - SDS Storage Engineer",
-      "url": "https://www.clyso.com/eu/en/about/career/"
+      "company": "Clyso",
+      "date": "2026-01-01",
+      "title": "C++ Software Engineer - Ceph & Storage Systems",
+      "url": "https://clyso-gmbh.jobs.personio.com/job/2546004?language=en"
     }
   ]
 }

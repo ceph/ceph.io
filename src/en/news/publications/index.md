@@ -18,7 +18,7 @@ Following the original publication on Ceph, the PhD thesis by Sage Weil, a varie
   - Vikhyat Umrao, Michael Hackett, Karan Singh
   - November 2017
 
-* [Learning Ceph](https://www.packtpub.com/virtualization-and-cloud/learning-ceph)
+* [Learning Ceph, Second Edition](https://www.barnesandnoble.com/w/learning-ceph-second-edition-anthony-datri/1141916233)
 
   - Anthony D'Atri , Vaibhav Bhembre , Karan Singh
   - Packt Publishing
