@@ -35,9 +35,10 @@ roadmap, Ceph community news, and more! The day ends with a networking reception
 
 <a class="button" href="https://osnexus.regfox.com/ceph-days-raleigh-2026">Register Here!</a>
 
-## 📸 Photos
+## 📸 Photos and Recordings
 
 <a class="button" href="https://drive.google.com/drive/folders/1ttBmJuhe589gXT49KfbNhexRnhrzqk9c?usp=sharing">Click for Photos!</a>
+<a class="button" href="https://youtube.com/playlist?list=PLrBUGiINAakNdCMXsaHteAmu-_zzqezhZ&si=qYZpol_kTstsjJN_">Click for Recordings!</a>
 
 If you attended the event and have more photos that you want uploaded to the Drive, email them to Laura Flores at <a href="mailto:lflores@ibm.com">lflores@ibm.com</a>.
 
