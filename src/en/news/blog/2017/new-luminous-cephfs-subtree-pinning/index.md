@@ -2,7 +2,7 @@
 title: "New in Luminous: CephFS subtree pinning"
 date: "2017-10-02"
 author: "batrick"
-tags: 
+tags:
   - "cephfs"
   - "luminous"
 ---
@@ -15,26 +15,28 @@ In Luminous, [multiple active metadata servers](http://ceph.com/community/new-lu
 
 You can view the current subtree divisions of the file system by querying the admin socket of each MDS (on the host each MDS is operating on):
 
-    $ ceph fs status
-    cephfs - 0 clients
-    ========
-    +------+--------+-----+---------------+-------+-------+
-    | Rank | Stat e | MDS | Activity      | dns   | inos  |
-    +------+--------+-----+---------------+-------+-------+
-    | 0    | active | b   | Reqs: 0 /s    |     0 |     0 |
-    | 1    | active | c   | Reqs: 0 /s    |     0 |     0 |
-    | 2    | active | a   | Reqs: 0 /s    |     0 |     0 |
-    +------+--------+-----+---------------+-------+-------+
-    +-------------------+----------+-------+-------+
-    | Pool              | type     | used  | avail |
-    +-------------------+----------+-------+-------+
-    | cephfs_metadata   | metadata |  4098 | 9554M |
-    | cephfs_data       | data     |     0 | 9554M |
-    +-------------------+----------+-------+-------+
-    $ bin/ceph daemon mds.a get subtrees | jq '.[] | [.dir.path, .auth_first]'
-    ["~mds2", 2]
-    ["", 0]
-    ["/tmp", 2]
+```bash
+     $ ceph fs status
+     cephfs - 0 clients
+     ========
+     +------+--------+-----+---------------+-------+-------+
+     | Rank | Stat e | MDS | Activity      | dns   | inos  |
+     +------+--------+-----+---------------+-------+-------+
+     | 0    | active | b   | Reqs: 0 /s    |     0 |     0 |
+     | 1    | active | c   | Reqs: 0 /s    |     0 |     0 |
+     | 2    | active | a   | Reqs: 0 /s    |     0 |     0 |
+     +------+--------+-----+---------------+-------+-------+
+     +-------------------+----------+-------+-------+
+     | Pool              | type     | used  | avail |
+     +-------------------+----------+-------+-------+
+     | cephfs_metadata   | metadata |  4098 | 9554M |
+     | cephfs_data       | data     |     0 | 9554M |
+     +-------------------+----------+-------+-------+
+     $ bin/ceph daemon mds.a get subtrees | jq '.[] | [.dir.path, .auth_first]'
+     ["~mds2", 2]
+     ["", 0]
+     ["/tmp", 2]
+```
 
 The “” subtree is the root of the file system (“/”) and is always managed by rank 0. The “/tmp” subtree is being managed by rank 2. (A subtree path beginning with “~” is an internal subtree and not part of the file system hierarchy.)
 
