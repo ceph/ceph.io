@@ -4,7 +4,7 @@ date: 2026-05-28
 end: 2026-05-28
 location: Seattle, Washington, USA 
 venue: TBD
-image: "/assets/bitmaps/events/image (3).png"
+image: "/assets/bitmaps/events/ceph-days-seattle-photo.png"
 sponsors:
 tags:
   - ceph days
