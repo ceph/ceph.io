@@ -3,7 +3,7 @@ title: Ceph Days Seattle 2026
 date: 2026-05-28
 end: 2026-05-28
 location: Seattle, Washington, USA 
-venue: TBD
+venue: The SURF Incubator (Cafe space) 999 3rd Ave, Suite 700, Seattle, WA, 98104
 image: "/assets/bitmaps/events/ceph-days-seattle-photo.png"
 sponsors:
 tags:
@@ -23,10 +23,10 @@ meet fellow community members.
 
 ## Important Dates
 
-- **CFP Opens:** 2026-04-24
+- **CFP Opens:** 2026-04-22
 - **CFP Closes:** 2026-05-05
-- **Speakers receive confirmation of acceptance:** 2026-05-010
-- **Registration Opens:** 2026-05-01
+- **Speakers receive confirmation of acceptance:** 2026-05-10
+- **Registration Opens:** 2026-04-22
 - **Registration Closes:** 2026-05-28
 - **Event Date:** 2026-05-28
 
@@ -35,4 +35,10 @@ your proposal here:
 
 <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSdLpgerw3TawcpnPktObjolm9efsbbKeV0UuoA1431BQgIUSw/viewform">Apply to be a presenter!</a>
 
-Registration is coming soon for the event. Please stay tuned for more details!
+Registration is open now:
+
+<a class="button" href="https://www.osnexus.com/ceph-days-seattle-2026">Register now!</a>
+
+
+
+Please stay tuned for more details!
