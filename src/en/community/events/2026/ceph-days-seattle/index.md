@@ -10,7 +10,7 @@ tags:
   - ceph days
 ---
 
-### Bringing Ceph to London yet again
+### Bringing Ceph back to Seattle
 
 Join us for a full-day celebration of Ceph in Seattle, bringing together the people and ideas
 driving open-source storage forward.
