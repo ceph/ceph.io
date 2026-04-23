@@ -2,21 +2,21 @@
   "jobs": [
     {
       "company": "Canonical",
-      "date": "2026-02-28",
+      "date": "2026-04-23",
       "title": "Software Engineer, Ceph & Distributed Storage",
       "url": "https://job-boards.greenhouse.io/canonical/jobs/1861978"
     },
     {
-      "company": "nemensis AG",
-      "date": "2026-02-12",
-      "title": "Ceph Developer (m/f/d)",
-      "url": "https://jobs.nemensis.de/job/67298/lang=en"
+      "company": "Index Exchange",
+      "date": "2026-04-04",
+      "title": "Senior Storage Engineer (Ceph), Toronto",
+      "url": "https://jobs.gem.com/index-exchange/am9icG9zdDoO43F7kvajqQzRUYG8lqc8"
     },
     {
-      "company": "Hetzner Cloud",
-      "date": "2025-02-13",
-      "title": "Senior Software Engineer (m/f/x) - Ceph Object Storage",
-      "url": "https://hetzner-cloud.de/en/jobs/1945594"
+      "company": "Index Exchange",
+      "date": "2026-04-04",
+      "title": "Senior Storage Engineer (Ceph), Berlin",
+      "url": "https://jobs.gem.com/index-exchange/am9icG9zdDqr4Yv_09doRI_S_sMQfULG"
     },
     {
       "company": "42on",
@@ -31,10 +31,10 @@
       "url": "https://42on.com/jobs/ceph-expert/"
     },
     {
-      "company": "clyso",
-      "date": "2023-10-13",
-      "title": "Ceph - SDS Storage Engineer",
-      "url": "https://www.clyso.com/eu/en/about/career/"
+      "company": "Clyso",
+      "date": "2026-01-01",
+      "title": "C++ Software Engineer - Ceph & Storage Systems",
+      "url": "https://clyso-gmbh.jobs.personio.com/job/2546004?language=en"
     }
   ]
 }

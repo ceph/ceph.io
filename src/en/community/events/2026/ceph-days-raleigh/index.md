@@ -29,14 +29,18 @@ roadmap, Ceph community news, and more! The day ends with a networking reception
 - ~~**Registration Opens:** 2026-02-16~~
 - ~~**Speakers receive confirmation of acceptance:** 2026-03-03~~
 - ~~**Schedule Announcement:** 2026-03-06~~
-- **Event Date:** 2026-03-25
+- ~~**Event Date:** 2026-03-25~~
 
 ## CFP and Registration
 
-The Call for Papers (CFP) is now closed, but there
-is still time to register!
-
 <a class="button" href="https://osnexus.regfox.com/ceph-days-raleigh-2026">Register Here!</a>
+
+## 📸 Photos and Recordings
+
+<a class="button" href="https://drive.google.com/drive/folders/1ttBmJuhe589gXT49KfbNhexRnhrzqk9c?usp=sharing">Click for Photos!</a>
+<a class="button" href="https://youtube.com/playlist?list=PLrBUGiINAakNdCMXsaHteAmu-_zzqezhZ&si=qYZpol_kTstsjJN_">Click for Recordings!</a>
+
+If you attended the event and have more photos that you want uploaded to the Drive, email them to Laura Flores at <a href="mailto:lflores@ibm.com">lflores@ibm.com</a>.
 
 ## Schedule
 
@@ -56,18 +60,18 @@ is still time to register!
   <tr>
    <td>9:00 AM - 9:10 AM</td>
    <td>Welcome</td>
-   <td>Sam Werner<br><em>IBM</em></td>
+   <td><center><img src="/assets/bitmaps/events/2026/ceph_days_raleigh/sam_werner.jpeg"><br>Sam Werner<br><em>IBM</em></center></td>
   </tr>
 
   <tr>
    <td>9:10 AM - 9:45 AM</td>
-   <td>Keynote - State of Ceph</td>
-   <td>Neha Ojha<br><em>IBM</em></td>
+   <td>🎤 Keynote - State of Ceph (<a href="/assets/pdfs/ceph_days_raleigh/neha_ojha.pdf" target="_blank">Slides</a>)</td>
+   <td><center><img src="/assets/bitmaps/events/2026/ceph_days_raleigh/neha_ojha.jpg"><br>Neha Ojha<br><em>IBM</em></center></td>
   </tr>
 
   <tr>
    <td>9:45 AM - 10:15 AM</td>
-   <td>🎤 FastEC in Ceph Tentacle: A Technical Deep Dive into Next-Gen Erasure Coding Performance</td>
+   <td>🎤 FastEC in Ceph Tentacle: A Technical Deep Dive into Next-Gen Erasure Coding Performance (<a href="/assets/pdfs/ceph_days_raleigh/mitch_hall.pdf" target="_blank">Slides</a>)</td>
    <td><center><img src="/assets/bitmaps/events/2026/ceph_days_raleigh/mitch.jpeg"><br>Mitch Hall<br><em>45 Drives</em></center></td>
   </tr>
 
@@ -79,19 +83,19 @@ is still time to register!
 
   <tr>
    <td>10:45 AM - 11:15 AM</td>
-   <td>🎤 Squishing Squids - A Ceph Compression Guide</td>
+   <td>🎤 Squishing Squids - A Ceph Compression Guide (<a href="/assets/pdfs/ceph_days_raleigh/bryan_stillwell.pdf" target="_blank">Slides</a>)</td>
    <td><center><img src="/assets/bitmaps/events/2026/ceph_days_raleigh/bryan.jpeg"><br>Bryan Stillwell<br><em>Clyso</em></center></td>
   </tr>
 
   <tr>
    <td>11:15 AM - 11:45 AM</td>
-   <td>🎤 Ceph CI and Developer Tooling: Past, Present, and Future</td>
+   <td>🎤 Ceph CI and Developer Tooling: Past, Present, and Future (<a href="/assets/pdfs/ceph_days_raleigh/david_galloway.pdf" target="_blank">Slides</a>)</td>
    <td><center><img src="/assets/bitmaps/events/2026/ceph_days_raleigh/david_galloway.jpeg"><br>David Galloway<br><em>IBM</em></center></td>
   </tr>
 
   <tr>
    <td>11:45 AM - 12:15 PM</td>
-   <td>🎤 10 years of Ceph at Walmart</td>
+   <td>🎤 10 years of Ceph at Walmart (<a href="/assets/pdfs/ceph_days_raleigh/bharath.pdf" target="_blank">Slides</a>)</td>
    <td><center><img src="/assets/bitmaps/events/2026/ceph_days_raleigh/bharath.jpeg"><br>Bharath Krishna Maddi (pictured), Anton Thaker and Prajwal Kabbinale<br><em>Walmart Global Tech</em></center></td>
   </tr>
 
@@ -103,31 +107,31 @@ is still time to register!
 
   <tr>
    <td>1:00 PM - 1:30 PM</td>
-   <td>🎤 Toward One-Button Ceph: Engineering the Future of Autonomous Storage</td>
+   <td>🎤 Toward One-Click Ceph: Engineering the Future of Autonomous Storage (<a href="/assets/pdfs/ceph_days_raleigh/dan_van_der_ster.pdf" target="_blank">Slides</a>)</td>
    <td><center><img src="/assets/bitmaps/events/2026/ceph_days_raleigh/dan_van_der_ster.jpeg"><br>Dan van der Ster<br><em>Clyso</em></center></td>
   </tr>
 
   <tr>
    <td>1:30 PM - 1:45 PM</td>
-   <td>⚡️ BXC - An Architecture for Lazy RBD Imaging and Snapshot Exports</td>
+   <td>⚡️ BXC - An Architecture for Lazy RBD Imaging and Snapshot Exports (<a href="/assets/pdfs/ceph_days_raleigh/khayyam_saleem.pdf" target="_blank">Slides</a>)</td>
    <td><center><img src="/assets/bitmaps/events/2026/ceph_days_raleigh/khayyam.jpeg"><br>Khayyam Saleem<br><em>Digital Ocean</em><br><img src="/assets/bitmaps/events/2026/ceph_days_raleigh/alisha.jpeg"><br>Alisha KC<br><em>Digital Ocean</em></center></td>
   </tr>
 
   <tr>
    <td>1:45 PM - 2:00 PM</td>
-   <td>⚡️ Ceph EC Performance Journey: Classic vs. Fast EC</td>
+   <td>⚡️ Ceph EC Performance Journey: Classic vs. Fast EC (<a href="/assets/pdfs/ceph_days_raleigh/vikhyat_umrao.pdf" target="_blank">Slides</a>)</td>
    <td><center><img src="/assets/bitmaps/events/2026/ceph_days_raleigh/vikhyat.jpeg"><br>Vikhyat Umrao<br><em>IBM</em></center></td>
   </tr>
 
   <tr>
    <td>2:00 PM - 2:15 PM</td>
-   <td>⚡️ Why is my SSD Pool so Slow? Decoupling min_size from Write Acknowledgment</td>
+   <td>⚡️ Why is my SSD Pool so Slow? Decoupling min_size from Write Acknowledgment (<a href="/assets/pdfs/ceph_days_raleigh/andrew_malsbury.pdf" target="_blank">Slides</a>)</td>
    <td><center><img src="/assets/bitmaps/events/2026/ceph_days_raleigh/andrew.jpeg"><br>Andrew Malsbury<br><em>FoleyBridge Solutions</em></center></td>
   </tr>
 
   <tr>
    <td>2:15 PM - 2:30 PM</td>
-   <td>⚡️ Detect, Decide, Fence: Resolving Netsplits in 3-AZ Stretch Cluster</td>
+   <td>⚡️ Detect, Decide, Fence: Resolving Netsplits in 3-AZ Stretch Cluster (<a href="/assets/pdfs/ceph_days_raleigh/kamoltat_sirivadhna.pdf" target="_blank">Slides</a>)</td>
    <td><center><img src="/assets/bitmaps/events/2026/ceph_days_raleigh/kamoltat.jpeg"><br>Kamoltat Sirivadhna<br><em>IBM</em></center></td>
   </tr>
 
@@ -139,13 +143,13 @@ is still time to register!
 
   <tr>
    <td>3:00 PM - 3:30 PM</td>
-   <td>🎤 Implementing Ceph at GMU's College of Engineering and Computing</td>
+   <td>🎤 Implementing Ceph at GMU's College of Engineering and Computing (<a href="/assets/pdfs/ceph_days_raleigh/dan_o_brien.pdf" target="_blank">Slides</a>)</td>
    <td><center><img src="/assets/bitmaps/events/2026/ceph_days_raleigh/dan_obrien.jpeg"><br>Dan O'Brien<br><em>George Mason University</em></center></td>
   </tr>
 
   <tr>
    <td>3:30 PM - 4:00 PM</td>
-   <td>🎤 Closer than you think: Ceph's journey to nearest neighbor search</td>
+   <td>🎤 Closer than you think: Ceph's journey to nearest neighbor search (<a href="/assets/pdfs/ceph_days_raleigh/kyle_bader.pdf" target="_blank">Slides</a>)</td>
    <td><center><img src="/assets/bitmaps/events/2026/ceph_days_raleigh/kyle.jpeg"><br>Kyle Bader<br><em>IBM</em></center></td>
   </tr>
 
