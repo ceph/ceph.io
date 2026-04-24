@@ -1,6 +1,12 @@
 {
   "jobs": [
     {
+      "company": "Canonical",
+      "date": "2026-04-23",
+      "title": "Software Engineer, Ceph & Distributed Storage",
+      "url": "https://job-boards.greenhouse.io/canonical/jobs/1861978"
+    },
+    {
       "company": "Index Exchange",
       "date": "2026-04-04",
       "title": "Senior Storage Engineer (Ceph), Toronto",
