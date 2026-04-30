@@ -30,4 +30,7 @@ a networking reception, to foster more Ceph learning.
 - **Registration Closes:** 2026-06-12
 - **Event Date:** 2026-06-17
 
-Registration is coming soon! Please check back in May 2026.
+Registration is now live!
+
+<a href="https://ti.to/open-source-events/ceph-days-london-2026" class="btn btn-primary">Register Now!</a>
+
