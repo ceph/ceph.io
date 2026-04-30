@@ -32,4 +32,4 @@ a networking reception, to foster more Ceph learning.
 
 Registration is now open! (Closes on June 12, 2026)
 
-<a href="https://ti.to/open-source-events/ceph-days-london-2026" class="btn btn-primary">Register Now!</a>
+<a class="button" href="https://ti.to/open-source-events/ceph-days-london-2026">Register Here!</a>
