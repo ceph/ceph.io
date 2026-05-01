@@ -1,6 +1,11 @@
 {
   "tech_talks": [
     {
+      "date": "2026-06-09",
+      "title": "Building Ultra-Resilient Ceph Clusters with Xinnor and OSNexus",
+      "presenter": "Steven Umbehocker, CEO of OSNexus, and Dmitry Livshits, CEO of Xinnor"
+    },
+    {
       "date": "2026-05-11",
       "title": "Containerized deployment of Ceph with KCLI",
       "presenter": "Shraddha Agrawal, Senior Software Engineer of Ceph, IBM"
