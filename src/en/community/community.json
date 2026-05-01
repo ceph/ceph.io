@@ -1,6 +1,11 @@
 {
   "tech_talks": [
     {
+      "date": "2026-05-11",
+      "title": "Containerized deployment of Ceph with KCLI",
+      "presenter": "Shraddha Agrawal, Senior Software Engineer of Ceph, IBM"
+    },
+    {
       "date": "2026-04-22",
       "title": "MAAS as a Backend: Provisioning Infrastructure for Teuthology Suites",
       "presenter": "Vaibhav Mahajan",
