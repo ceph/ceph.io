@@ -97,7 +97,7 @@ The Ceph Governing Board, with Mark Nelson (Clyso) and Patrick Donnelly (IBM), i
 
 ### Current overview
 
-- Monthly costs over the past year have ranged between **$5K–$10K USD ** 
+- Monthly costs over the past year have ranged between **$5K–$10K USD** 
 - Spending peaked around August and has since been reduced to approximately **$7K/month**  
 - Costs remain higher than earlier in the year, prompting further review  
 
@@ -124,7 +124,7 @@ The Ceph Governing Board, with Mark Nelson (Clyso) and Patrick Donnelly (IBM), i
 
 [Ceph Tech Talks](https://ceph.io/en/community/tech-talks/) have officially returned, giving the community a consistent way to learn directly from contributors and share real-world experience. Together, we have discussed the [Running Teuthology Outside of the Sepia lab](https://youtu.be/6ovdJ79AqbM?si=an65PKQI9RyryzTf) and [How to Get Involved with the Ceph Ambassador Program](https://youtu.be/PqniV0qzq68?si=MTxdnp3xq35-QtVv).
 
-Attend the Tech Talk on April 22, 2026, at 12 pm EST/9 am PDT. Our topic will be,** MAAS as a Backend: Provisioning Infrastructure for Teuthology Suites.**
+Attend the Tech Talk on April 22, 2026, at 12 pm EST/9 am PDT. Our topic will be, **MAAS as a Backend: Provisioning Infrastructure for Teuthology Suites.**
 
 Follow the [Ceph Community Calendar](https://ceph.io/en/community/meetups/) for more information.
 

@@ -47,6 +47,10 @@
       <link rel="preload" href="{{link.href}}" as="{{link.as}}"/>
     {%- endfor -%}
 
+    {%- if atom -%}
+      <link rel="alternate" type="application/atom+xml" title="{{ title }}" href="{{ atom }}" />
+    {%- endif -%}
+
     {# Stylesheet #}
     <link rel="stylesheet" href="/css/main.css"/>
 
