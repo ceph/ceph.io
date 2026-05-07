@@ -7,7 +7,7 @@ tags:
   - community
 ---
 
-Hello, Ceph Community\! I'm Emmanuel Ameh, and I'm thrilled to be joining as your new Technical Writer. My path into technical writing started during a university internship at a manufacturing plant, where I was handed a problem that, looking back, shaped how I think about documentation to this day. The first piece of documentation I wrote was a one-page troubleshooting guide. It was a simple list of common production-line issues and their fixes, taped to a workstation. But it worked. Operators stopped escalating the same problems, uptime held steady, and that single laminated page did the job of a dozen phone calls.
+Hello, Ceph Community! I'm Emmanuel Ameh, and I'm thrilled to be joining as your new Technical Writer. My path into technical writing started during a university internship at a manufacturing plant, where I was handed a problem that, looking back, shaped how I think about documentation to this day. The first piece of documentation I wrote was a one-page troubleshooting guide. It was a simple list of common production-line issues and their fixes, taped to a workstation. But it worked. Operators stopped escalating the same problems, uptime held steady, and that single laminated page did the job of a dozen phone calls.
 
 I think about that page a lot. It wasn't elegant. It wasn't comprehensive. It didn't win any awards. But it sat exactly where the people who needed it could find it, and it told them exactly what to do. That, to me, is what good documentation looks like, whether it's protecting a production line or a petabyte-scale storage cluster.
 
