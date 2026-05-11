@@ -20,6 +20,9 @@ The meetup has been rescheduled and will now take place on June 22, 2026 at the 
 
 Whether you are new to Ceph or running production clusters at scale, this meetup is an opportunity to exchange ideas, share experiences, and connect with others working across the storage ecosystem.
 
+</br>
+<a class="button" href="https://www.meetup.com/ceph-frankfurt/events/314701240/">Register</a>
+
 ### Agenda
 
 #### Ceph Intro for New Users
