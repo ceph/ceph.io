@@ -2,19 +2,14 @@
 title: Ceph Meetup Frankfurt June 2026
 date: 2026-06-22
 end: 2026-06-22
-location: Friedrich-Ebert-Anlage 49 · Frankfurt am Main
-venue: Red Hat
-register: "https://www.meetup.com/ceph-frankfurt/events/314701240/"
+location: Frankfurt
+venue: Friedrich-Ebert-Anlage 49 · Frankfurt am Main
 image: "/assets/bitmaps/ceph-meetup-frankfurt.png"
 sponsors:
-  - label: Platinum sponsors
-    list:
-      - name: IBM
-        logo: "/assets/bitmaps/logo-ibm.png"
-        website: "https://www.ibm.com/products/storage-ceph"
+  - IBM
 tags:
-  - Meetup
-  - Ceph Community
+  - ceph meetup
+  - ceph community
 ---
 
 ## Ceph Meetup Frankfurt — June 2026
