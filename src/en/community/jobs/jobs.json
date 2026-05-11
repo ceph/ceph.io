@@ -1,16 +1,10 @@
 {
   "jobs": [
     {
-      "company": "Index Exchange",
+      "company": "IBM",
       "date": "2026-04-04",
-      "title": "Senior Storage Engineer (Ceph), Toronto",
-      "url": "https://jobs.gem.com/index-exchange/am9icG9zdDoO43F7kvajqQzRUYG8lqc8"
-    },
-    {
-      "company": "Index Exchange",
-      "date": "2026-04-04",
-      "title": "Senior Storage Engineer (Ceph), Berlin",
-      "url": "https://jobs.gem.com/index-exchange/am9icG9zdDqr4Yv_09doRI_S_sMQfULG"
+      "title": "Ceph Performance Engineer",
+      "url": "https://careers.ibm.com/en_US/careers/JobDetail?jobId=107725"
     },
     {
       "company": "42on",
@@ -29,6 +23,12 @@
       "date": "2026-01-01",
       "title": "C++ Software Engineer - Ceph & Storage Systems",
       "url": "https://clyso-gmbh.jobs.personio.com/job/2546004?language=en"
+    },
+    {
+      "company": "Clyso",
+      "date": "2026-05-05",
+      "title": "Ceph Storage Engineer - Remote India",
+      "url": "https://www.clyso.com/eu/en/about/career/ceph-storage-engineer-remote-india/"
     }
   ]
 }

@@ -92,13 +92,23 @@ overlaySubMenu: true
   <div class="wrapper">
     <h2 class="h2 mb-12 lg:mb-16 text-center">Get involved</h2>
     <ul class="grid lg:grid--cols-3 list-none m-0 p-0">
-      <li class="bg-white border-grey-500 border-px border-solid p-5 rounded-2">
-        <p class="p">
-          If you are interested in getting involved with Ceph, there are many options available. Whether you wish to contribute code or
-          simply stay updated with the latest Ceph developments, our global community will gladly welcome you.
-        </p>
-        <a class="a" href="/{{ locale }}/community/team/">Meet the Ceph team</a>
+      <li class="bg-white border-grey-500 border-px border-solid relative rounded-2">
+        <div class="grid grid--gap-0 md-to-lg:grid--cols-2 overflow-hidden rounded-2">
+          <div class="aspect-ratio aspect-ratio--16x9 aspect-ratio--cover md-to-lg:h-full tint tint--black-2">
+            <img alt="" class="absolute md-to-lg:h-full left-0 top-0" loading="lazy" src="/assets/bitmaps/photo-ink-03.jpg" />
+            <img alt="" class="absolute bottom-0 left-0 m-4 w-12 z-1" src="/assets/svgs/icon-events-white-red.svg" />
+          </div>
+          <div class="p-5">
+            <h3 class="h3">Join our community</h3>
+            <p class="p">
+              If you are interested in getting involved with Ceph, there are many options available. Whether you wish to contribute code or
+              simply stay updated with the latest Ceph developments, our global community will gladly welcome you.
+            </p>
+            <a class="a link-cover link-cover--shadow" href="/{{ locale }}/community/team/">Meet the Ceph team</a>
+          </div>
+        </div>
       </li>
+
       <li class="bg-white border-grey-500 border-px border-solid relative rounded-2">
         <div class="grid grid--gap-0 md-to-lg:grid--cols-2 overflow-hidden rounded-2">
           <div class="aspect-ratio aspect-ratio--16x9 aspect-ratio--cover md-to-lg:h-full tint tint--black-2">
@@ -108,13 +118,14 @@ overlaySubMenu: true
           <div class="p-5">
             <h3 class="h3">Where to find us</h3>
             <p class="p">
-              Become a part of Ceph’s community through area-specific mailing lists, code contributions, in-person events, monthly talks and
+              Become a part of Ceph's community through area-specific mailing lists, code contributions, in-person events, monthly talks and
               more.
             </p>
             <a class="a link-cover link-cover--shadow" href="/{{ locale }}/community/connect/">Connect with the community</a>
           </div>
         </div>
       </li>
+
       <li class="bg-white border-grey-500 border-px border-solid relative rounded-2">
         <div class="grid grid--gap-0 md-to-lg:grid--cols-2 overflow-hidden rounded-2">
           <div class="aspect-ratio aspect-ratio--16x9 aspect-ratio--cover md-to-lg:h-full tint tint--black-2">
