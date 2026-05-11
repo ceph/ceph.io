@@ -22,6 +22,7 @@ Whether you are new to Ceph or running production clusters at scale, this meetup
 
 </br>
 <a class="button" href="https://www.meetup.com/ceph-frankfurt/events/314701240/">Register</a>
+</br>
 
 ### Agenda
 
