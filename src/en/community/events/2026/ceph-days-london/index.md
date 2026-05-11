@@ -256,7 +256,7 @@ The Ceph Ambassador Program is excited to recognize outstanding contributors who
    </td>
    <td><center><strong><img src="/assets/bitmaps/events/2026/cephdayslondon/Federico.jpg" width="400" />Federico Lucifredi (IBM)
    <br>
-    <img src="/assets/bitmaps/events/2026/cephdayslondon/Gaurav.png" width="400" />Gaurav Sitlani (IBM)</strong></center>
+    <img src="/assets/bitmaps/events/2026/cephdayslondon/gaurav.jpeg" width="400" />Gaurav Sitlani (IBM)</strong></center>
    </td>
   </tr>
   <tr>
