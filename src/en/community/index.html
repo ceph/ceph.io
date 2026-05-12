@@ -5,7 +5,7 @@ order: 4
 overlaySubMenu: true
 ---
 
-{% set eventLocaleTag = locale + '-event' %} {% set eventsFuture = collections[eventLocaleTag] | getItemsInFuture | reverse | getItems(4) %}
+{% set eventLocaleTag = locale + '-event' %} {% set eventsFuture = collections[eventLocaleTag] | getItemsInFuture | getItems(4) %}
 
 <h1 class="h1 visually-hidden">{{ title }}</h1>
 

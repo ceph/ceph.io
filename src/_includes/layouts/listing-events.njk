@@ -19,7 +19,7 @@
 
 {% set eventLocaleTag = locale + '-event' %}
 {% set eventFilters = collections[eventLocaleTag] | getCollectionTags([eventLocaleTag]) %}
-{% set eventsFuture = collections[eventLocaleTag] | getItemsInFuture | reverse %}
+{% set eventsFuture = collections[eventLocaleTag] | getItemsInFuture %}
 {% set eventsPast = pagination.items %}
 
 <section class="section">

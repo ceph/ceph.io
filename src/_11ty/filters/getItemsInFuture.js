@@ -11,8 +11,15 @@
 module.exports = (collection = []) => {
   const buildDate = new Date().setHours(0, 0, 0, 0);
 
-  return collection.filter(item => {
+  const filtered = collection.filter(item => {
     const formattedDate = new Date(item.data.date).setHours(0, 0, 0, 0);
+
     return formattedDate >= buildDate;
   });
+
+  const sorted = filtered.sort(
+    (a, b) => new Date(a.data.date) - new Date(b.data.date)
+  );
+
+  return sorted;
 };
