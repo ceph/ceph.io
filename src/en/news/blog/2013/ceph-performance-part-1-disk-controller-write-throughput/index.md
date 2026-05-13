@@ -12,15 +12,15 @@ The wise and benevolent management at Inktank (Hi Guys!) agreed to allow me to g
 
 For those of you that like shiny things, here are some pictures to feast on:
 
-[![Front view of the SC847a](images/SC847a-293x220.jpg)](http://ceph.com/community/ceph-performance-part-1-disk-controller-write-throughput/attachment/sc847a/)
+![Front view of the SC847a](images/SC847a.jpg)
 
 The SC847a in all of its glory.
 
-[![Internal View of the SC847a](images/SC847a-Internal-293x220.jpg)](http://ceph.com/community/ceph-performance-part-1-disk-controller-write-throughput/attachment/sc847a-internal/)
+![Internal View of the SC847a](images/SC847a-Internal.jpg)
 
 Preview of things to come...
 
-[![Inktank Performance Lab](images/Inktank_Performance_Lab-293x220.jpg)](http://ceph.com/community/ceph-performance-part-1-disk-controller-write-throughput/attachment/inktank_performance_lab/)
+![Inktank Performance Lab](images/Inktank_Performance_Lab.jpg)
 
 The Inktank "Performance Lab"
 
@@ -36,7 +36,7 @@ Let me begin by saying the SC847A is a real beast.  Even at idle with low volta
 
 Let’s take a look at some of the controllers we’ll be testing today:
 
-[![SAS/Raid Controllers](images/controllers-400x300.jpg)](http://ceph.com/community/ceph-performance-part-1-disk-controller-write-throughput/attachment/controllers/)
+![SAS/Raid Controllers](images/controllers.jpg)
 
 The SAS/RAID Controllers we will be testing.
 
@@ -98,23 +98,25 @@ During the tests, collectl was used to record various system performance statist
 
 ###  4KB RADOS Bench Results
 
-[![Throughput- 16 Concurrent 4K Writes](images/16Concurrent4KWrite.png)](http://ceph.com/community/ceph-performance-part-1-disk-controller-write-throughput/attachment/16concurrent4kwrite/)Before we dig into these results, I want to talk a little bit about what actually happens when RADOS bench is run.  Each instance of RADOS bench concurrently generates and sends multiple chunks of data over TCP socket connections (in this case via localhost) to OSDs in various placement groups.  Depending on the replication level of the pool that is targeted, each OSD forwards the data it receives to secondary OSDs in the same placement group.  Each OSD must write its data out to the journal (or potentially the data disk in the case of BTRFS) before it can send an acknowledgement to the sender that the data has been written.  When data is written to the journal, it is appended to where the last bit of data left off.  This is ideal behavior on spinning disks because it means that fewer seeks are needed to get the data written out.  Eventually that data must be written to the OSD data disk.  Significantly more work needs to be performed (which tends to mean significantly more seeks) due to all of the various things the file system needs to do to keep track of and place the data.  This only gets worse as the file system gets older and fragments in exciting ways.  It is important to keep this in mind, because it can have a dramatic effect on performance.
+![Throughput- 16 Concurrent 4K Writes](images/16Concurrent4KWrite.png)
+
+Before we dig into these results, I want to talk a little bit about what actually happens when RADOS bench is run.  Each instance of RADOS bench concurrently generates and sends multiple chunks of data over TCP socket connections (in this case via localhost) to OSDs in various placement groups.  Depending on the replication level of the pool that is targeted, each OSD forwards the data it receives to secondary OSDs in the same placement group.  Each OSD must write its data out to the journal (or potentially the data disk in the case of BTRFS) before it can send an acknowledgement to the sender that the data has been written.  When data is written to the journal, it is appended to where the last bit of data left off.  This is ideal behavior on spinning disks because it means that fewer seeks are needed to get the data written out.  Eventually that data must be written to the OSD data disk.  Significantly more work needs to be performed (which tends to mean significantly more seeks) due to all of the various things the file system needs to do to keep track of and place the data.  This only gets worse as the file system gets older and fragments in exciting ways.  It is important to keep this in mind, because it can have a dramatic effect on performance.
 
 Are these results reasonable?  The journals are on SSDs which have been carefully chosen to exceed the throughput and IOPS capabilities of the underlying data disks.  This should hopefully keep them from being a bottleneck in this test.  The data disks, which are 7200RPM SATA drives, are capable of about 150-200 IOPS each.  With 4KB IOs and 6 disks, that’s something like 4MB/s aggregate throughput assuming there is no write coalescing happening behind the scenes.  Given these results, it doesn’t really look like much coalescing is happening.  It’s also possible however, that write coalescing is happening and that some other bottleneck is limiting us.  We have blktrace results, and in another article it would be interesting to dig deeper into these numbers to see what’s going on.
 
 What else can we say about these results?  The most obvious thing is that JBOD mode seems to be doing the best, while single array RAID0 configurations appear to be universally slow.  It’s entirely possibly that tweaks to various queue limits or other parameters may be needed to increase single OSD throughput in these kinds of setups.  The other thing to note here is that BTRFS appears to combine well with JBOD modes.  Lets take a look at some of the system monitoring data gathered with collectl during the tests to see if it gives us any clues regarding why this is.  Specifically, we will look at the average CPU utilization, the average IO wait time for the OSD data disks, and the average IO wait time for OSD journal disks.
 
-_Click on any of the images below to enlarge them…_
+(Note from the future: The images in this article were restored in 2026 but we only had the thumbnails.  Enlarging the images is no longer possible)
 
-[![CPU Utilization - 16 Concurrent 4K Writes](images/16Concurrent4KWriteCPU-220x140.png)](http://ceph.com/community/ceph-performance-part-1-disk-controller-write-throughput/attachment/16concurrent4kwritecpu/)
+![CPU Utilization - 16 Concurrent 4K Writes](images/16Concurrent4KWriteCPU.png)
 
 CPU Utilization
 
-[![Data Disk Waits - 16 Concurrent 4K Writes](images/16Concurrent4KWriteDataWait-220x140.png)](http://ceph.com/community/ceph-performance-part-1-disk-controller-write-throughput/attachment/16concurrent4kwritedatawait/)
+![Data Disk Waits - 16 Concurrent 4K Writes](images/16Concurrent4KWriteDataWait.png)
 
 Data Disk Waits
 
-[![Journal Disk Waits - 16 Concurrent 4K Writes](images/16Concurrent4KWriteJournalWait-220x140.png)](http://ceph.com/community/ceph-performance-part-1-disk-controller-write-throughput/attachment/16concurrent4kwritejournalwait/)
+![Journal Disk Waits - 16 Concurrent 4K Writes](images/16Concurrent4KWriteJournalWait.png)
 
 Journal Disk Waits
 
@@ -124,21 +126,19 @@ The journal wait times are also interesting.  I think these results are hinting
 
 Let’s see if these trends continue if we up the number of concurrent operations:
 
-[![Throughput - 256 Concurrent 4K Writes](images/256Concurrent4KWrite.png)](http://ceph.com/community/ceph-performance-part-1-disk-controller-write-throughput/attachment/256concurrent4kwrite/)
+![Throughput - 256 Concurrent 4K Writes](images/256Concurrent4KWrite.png)
 
 The performance on the higher-end RAID controllers has improved quite a bit, but only in configurations that involve multiple OSDs.  Having higher concurrent op counts may let these controllers hide latency introduced on the journal disks.  Single OSD RAID0 performance on the other hand has pretty much remained the same.  I suspect that whatever bottleneck was holding back the single OSD RAID0 performance is still present and neither the disks nor the controllers are being taxed particularly hard.  JBOD performance likewise saw little improvement.  In this case though, writes are already backing up in the disk queues so throwing more operations at the problem isn’t helping.  Let’s see if my theories pan out:
 
-_Click on any of the images below to enlarge them…_
-
-[![CPU Utilization - 256 Concurrent 4K Writes](images/256Concurrent4KWriteCPU-220x140.png)](http://ceph.com/community/ceph-performance-part-1-disk-controller-write-throughput/attachment/256concurrent4kwritecpu/)
+![CPU Utilization - 256 Concurrent 4K Writes](images/256Concurrent4KWriteCPU.png)
 
 CPU Utilization
 
-[![Data Disk Waits - 256 Concurrent 4K Writes](images/256Concurrent4KWriteDataWait-220x140.png)](http://ceph.com/community/ceph-performance-part-1-disk-controller-write-throughput/attachment/256concurrent4kwritedatawait/)
+![Data Disk Waits - 256 Concurrent 4K Writes](images/256Concurrent4KWriteDataWait.png)
 
 Data Disk Waits
 
-[![Journal Disk Waits - 256 Concurrent 4K Writes](images/256Concurrent4KWriteJournalWait-220x140.png)](http://ceph.com/community/ceph-performance-part-1-disk-controller-write-throughput/attachment/256concurrent4kwritejournalwait/)
+![Journal Disk Waits - 256 Concurrent 4K Writes](images/256Concurrent4KWriteJournalWait.png)
 
 Journal Disk Waits
 
@@ -146,41 +146,41 @@ The performance of pass-through configurations on the RAID controllers increased
 
 ###  128KB RADOS Bench Results
 
-[![Throughput - 16 Concurrent 128K Writes](images/16Concurrent128KWrite.png)](http://ceph.com/community/ceph-performance-part-1-disk-controller-write-throughput/attachment/16concurrent128kwrite/)
+![Throughput - 16 Concurrent 128K Writes](images/16Concurrent128KWrite.png)
 
 With 128K writes the story looks pretty similar with a couple of exceptions.  JBOD configurations utilizing BTRFS are again quite fast, especially on the cheaper SAS controllers and the SAS2208.  On the other hand, the 6 OSD RAID0 configuration on the SAS2208, which was fastest configuration in the 256 concurrent 4KB tests, is one of the slowest configurations in this test.  Single OSD RAID0 modes are again generally slow.  XFS performance appears to be universally slow while EXT4 is generally somewhere in-between XFS and BTRFS.
 
 _Click on any of the images below to enlarge them…_
 
-[![CPU Utilization - 16 Concurrent 128K Writes](images/16Concurrent128KWriteCPU-220x140.png)](http://ceph.com/community/ceph-performance-part-1-disk-controller-write-throughput/attachment/16concurrent128kwritecpu/)
+![CPU Utilization - 16 Concurrent 128K Writes](images/16Concurrent128KWriteCPU.png)
 
 CPU Utilization
 
-[![Data Disk Waits - 16 Concurrent 128K Writes](images/16Concurrent128KWriteDataWait-220x140.png)](http://ceph.com/community/ceph-performance-part-1-disk-controller-write-throughput/attachment/16concurrent128kwritedatawait/)
+![Data Disk Waits - 16 Concurrent 128K Writes](images/16Concurrent128KWriteDataWait.png)
 
 Data Disk Waits
 
-[![Journal Disk Waits - 16 Concurrent 128K Writes](images/16Concurrent128KWriteJournalWait-220x140.png)](http://ceph.com/community/ceph-performance-part-1-disk-controller-write-throughput/attachment/16concurrent128kwritejournalwait/)
+![Journal Disk Waits - 16 Concurrent 128K Writes](images/16Concurrent128KWriteJournalWait.png)
 
 Journal Disk Waits
 
 With 16 concurent 128K operations, BTRFS is generating higher CPU Utilization in every configuration on every controller.  This is especially true on configurations where BTRFS performs well, but is still true on configurations even where BTRFS is relatively slow.  Data disk wait times are again higher on the faster configurations, though interestingly, wait times have decreased for BTRFS while they have increased for XFS.  EXT4 wait times have remained roughly the same.  On the journals, the SAS2208 in JBOD mode is again showing the highest IO queue wait times, but is also one of the fastest configurations.
 
-[![Throughput - 256 Concurrent 128K Writes](images/256Concurrent128KWrite.png)](http://ceph.com/community/ceph-performance-part-1-disk-controller-write-throughput/attachment/256concurrent128kwrite/)
+![Throughput - 256 Concurrent 128K Writes](images/256Concurrent128KWrite.png)
 
 With 256 concurrent operations, the pass-through and 6 OSD RAID0 modes again show significant improvement, while the single OSD RAID0 modes remain slow.  BTRFS continues to dominate in terms of performance, while EXT4 puts in a relatively decent showing on the Areca ARC-1880 and LSI SAS2208.
 
 _Click on any of the images below to enlarge them…_
 
-[![CPU Utilization - 256 Concurrent 128K Writes](images/256Concurrent128KWriteCPU-220x140.png)](http://ceph.com/community/ceph-performance-part-1-disk-controller-write-throughput/attachment/256concurrent128kwritecpu/)
+![CPU Utilization - 256 Concurrent 128K Writes](images/256Concurrent128KWriteCPU.png)
 
 CPU Utilization
 
-[![Data Disk Waits - 256 Concurrent 128K Writes](images/256Concurrent128KWriteDataWait-220x140.png)](http://ceph.com/community/ceph-performance-part-1-disk-controller-write-throughput/attachment/256concurrent128kwritedatawait/)
+![Data Disk Waits - 256 Concurrent 128K Writes](images/256Concurrent128KWriteDataWait.png)
 
 Data Disk Waits
 
-[![Journal Disk Waits - 256 Concurrent 128K Writes](images/256Concurrent128KWriteJournalWait-220x140.png)](http://ceph.com/community/ceph-performance-part-1-disk-controller-write-throughput/attachment/256concurrent128kwritejournalwait/)
+![Journal Disk Waits - 256 Concurrent 128K Writes](images/256Concurrent128KWriteJournalWait.png)
 
 Journal Disk Waits
 
@@ -188,41 +188,37 @@ In the configurations where BTRFS throughput increased relative to the 16 concur
 
 ###  4MB RADOS Bench Results
 
-[![Throughput - 16 Concurrent 4M Writes](images/16Concurrent4MWrite.png)](http://ceph.com/community/ceph-performance-part-1-disk-controller-write-throughput/attachment/16concurrent4mwrite/)
+![Throughput - 16 Concurrent 4M Writes](images/16Concurrent4MWrite.png)
 
 Wow!  With just 16 concurrent IOs, we’ve got the three cheapest controllers in the bunch pushing over 600MB/s with EXT4, and nearly 700MB/s with BTRFS.  In JBOD mode (and pass-through on the ARC-1880), BTRFS is still getting a bit over 600MB/s, but neither XFS nor EXT4 can keep up.  In a surprising twist, EXT4 on the ARC-1880 is able to push around 550MB/s with a single OSD using a 6-drive RAID0 array.  This is the first time we’ve seen a RAID0 configuration get anywhere close to the performance of the 6 OSD configurations and may warrant further investigation in a later article.
 
-_Click on any of the images below to enlarge them…_
-
-[![CPU Utilization - 16 Concurrent 4M Writes](images/16Concurrent4MWriteCPU-220x140.png)](http://ceph.com/community/ceph-performance-part-1-disk-controller-write-throughput/attachment/16concurrent4mwritecpu/)
+![CPU Utilization - 16 Concurrent 4M Writes](images/16Concurrent4MWriteCPU.png)
 
 CPU Utilization
 
-[![Data Disk Waits - 16 Concurrent 4M Writes](images/16Concurrent4MWriteDataWait-220x140.png)](http://ceph.com/community/ceph-performance-part-1-disk-controller-write-throughput/attachment/16concurrent4mwritedatawait/)
+![Data Disk Waits - 16 Concurrent 4M Writes](images/16Concurrent4MWriteDataWait.png)
 
 Data Disk Waits
 
-[![Journal Disk Waits - 16 Concurrent 4M Writes](images/16Concurrent4MWriteJournalWait-220x140.png)](http://ceph.com/community/ceph-performance-part-1-disk-controller-write-throughput/attachment/16concurrent4mwritejournalwait/)
+![Journal Disk Waits - 16 Concurrent 4M Writes](images/16Concurrent4MWriteJournalWait.png)
 
 Journal Disk Waits
 
 There is nothing particularly new here.  High CPU Utilization for the BTRFS configurations.  EXT4 configurations appear to be much easier on the CPU, even when pushing nearly as much data at BTRFS.  XFS is showing much higher data disk wait times while providing lower throughput than EXT4 or BTRFS.  Presumably if we looked at the blktrace data we would see higher seek counts on the data disks using XFS.  We can verify this in a later article by using a tool called seekwatcher with the blktrace data that was recorded.  Queue wait times in JBOD modes that by-pass any on-board cache appear to be fairly high, while modes that utilize cache appear to be low.  Conversely, wait times on the SSD journal disks remain quite low on the 3 SAS controllers, but are higher to varying degrees on the RAID controllers.
 
-[![Throughput - 256 Concurrent 4M Writes](images/256Concurrent4MWrite.png)](http://ceph.com/community/ceph-performance-part-1-disk-controller-write-throughput/attachment/256concurrent4mwrite/)
+![Throughput - 256 Concurrent 4M Writes](images/256Concurrent4MWrite.png)
 
 With 256 Concurrent IOs the story is even better:  Of the 6 controllers, 4 are all capable of pushing over 130MB/s per disk when using BTRFS That’s nearly 800MB/s aggregate throughput to the 6 OSD data disks, and with journal writes, 1.6GB/s total throughput to the controller.  Not bad!  EXT4 performance is still good, but doesn’t seem to improve much with more concurrent IOs.
 
-_Click on any of the images below to enlarge them…_
-
-[![CPU Utilization - 256 Concurrent 4M Writes](images/256Concurrent4MWriteCPU-220x140.png)](http://ceph.com/community/ceph-performance-part-1-disk-controller-write-throughput/attachment/256concurrent4mwritecpu/)
+![CPU Utilization - 256 Concurrent 4M Writes](images/256Concurrent4MWriteCPU.png)
 
 CPU Utilization
 
-[![Data Disk Waits - 256 Concurrent 4M Writes](images/256Concurrent4MWriteDataWait-220x140.png)](http://ceph.com/community/ceph-performance-part-1-disk-controller-write-throughput/attachment/256concurrent4mwritedatawait/)
+![Data Disk Waits - 256 Concurrent 4M Writes](images/256Concurrent4MWriteDataWait.png)
 
 Data Disk Waits
 
-[![Journal Disk Waits - 256 Concurrent 4M Writes](images/256Concurrent4MWriteJournalWait-220x140.png)](http://ceph.com/community/ceph-performance-part-1-disk-controller-write-throughput/attachment/256concurrent4mwritejournalwait/)
+![Journal Disk Waits - 256 Concurrent 4M Writes](images/256Concurrent4MWriteJournalWait.png)
 
 Journal Disk Waits
 
