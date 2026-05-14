@@ -20,7 +20,7 @@ After writing the first article I realized that my 15 minutes of Internet fame h
 
 Here’s a recap of the system setup we’ll be testing:
 
-[![SAS/Raid Controllers](images/controllers-400x300.jpg)](http://ceph.com/community/ceph-performance-part-2-write-throughput-without-ssd-journals/attachment/controllers/)
+![SAS/Raid Controllers](images/controllers.jpg)
 
 The SAS/RAID Controllers we will be testing.
 
@@ -49,6 +49,7 @@ As far as software goes, these tests will use:
 
 In a response to the previous article, a reader asked if hardware crc32c instruction support was enabled.  Ceph itself does not currently make use of hardware crc32c (it uses a C based slice-by-8 implementation), but apparently BTRFS can.  A quick look at /proc/crypto shows:
 
+```
 name         : crc32c
 driver       : crc32c-intel
 module       : crc32c\_intel
@@ -58,6 +59,7 @@ selftest     : passed
 type         : shash
 blocksize    : 1
 digestsize   : 4
+```
 
 Theoretically BTRFS should be using hardware crc32c instructions both for the results in this article and for the results in the previous one.
 
@@ -95,33 +97,31 @@ During the tests, collectl was used to record various system performance statist
 
 ### 4KB RADOS BENCH RESULTS
 
-[![16 Concurrent 4K Writes](images/A2_16Concurrent4KWrite.png)](http://ceph.com/community/ceph-performance-part-2-write-throughput-without-ssd-journals/attachment/a2_16concurrent4kwrite/)
+![16 Concurrent 4K Writes](images/A2_16Concurrent4KWrite.png)
 
 Before we get started you may want to open the [Ceph Performance Part 1](http://ceph.com/community/ceph-performance-part-1-disk-controller-write-throughput/) article in another window and scroll down to the first set of tests.  I’ll be comparing the numbers in this article to those found in the previous one.  The first thing that you might notice here is that some of the controllers have very different performance characteristics than they did when SSDs were used for journals.  The RAID controllers that have write-back cache are now leading the pack when used in 8-OSD modes.  It looks like the cache may be helping reorder writes to mitigate extra seeks caused by the journal being stored on the same disks.  Like in the last article, using a single OSD with a big RAID0 array is pretty slow.  Surprisingly this is not the slowest configuration.  In the previous article when SSDs were used for the journals, the cheap SAS controllers in JBOD mode were among the fastest controllers tested (Specifically the SAS2308, 2720SGL, and SAS2008). Without SSD drives for the journals they are now amongst the slowest.  What happened?  I suspect the lack of on-board cache is really hurting them.  Writes are likely taking longer to complete, and I suspect that with few concurrent operations per OSD there just isn’t enough concurrency to hide it.  In the previous article we never showed RADOS Bench operation latencies for each of the tests, but we did collect the information. We’ve done so again now.  Lets compare the results and see if the theory holds up:
 
-_Click on any of the images below (and click again) to enlarge them…_
+(Note from the future: The images in this article were restored in 2026 but we only had the thumbnails.  Enlarging the images is no longer possible)
 
-[![16 Concurrent 4K Write Op Latency (BTRFS)](images/A2_16Concurrent4KWriteLatencyBTRFS-220x140.png)](http://ceph.com/community/ceph-performance-part-2-write-throughput-without-ssd-journals/attachment/a2_16concurrent4kwritelatencybtrfs/)
+![16 Concurrent 4K Write Op Latency (BTRFS)](images/A2_16Concurrent4KWriteLatencyBTRFS-293x220.png)
 
 16 Concurrent 4K Write Op Latency (BTRFS)
 
-[![16 Concurrent 4K Write Op Latency (XFS)](images/A2_16Concurrent4KWriteLatencyXFS-220x140.png)](http://ceph.com/community/ceph-performance-part-2-write-throughput-without-ssd-journals/attachment/a2_16concurrent4kwritelatencyxfs/)
+![16 Concurrent 4K Write Op Latency (XFS)](images/A2_16Concurrent4KWriteLatencyXFS-293x220.png)
 
 16 Concurrent 4K Write Op Latency (XFS)
 
-[![16 Concurrent 4K Write Op Latency (EXT4)](images/A2_16Concurrent4KWriteLatencyEXT4-220x140.png)](http://ceph.com/community/ceph-performance-part-2-write-throughput-without-ssd-journals/attachment/a2_16concurrent4kwritelatencyext4/)
+![16 Concurrent 4K Write Op Latency (EXT4)](images/A2_16Concurrent4KWriteLatencyEXT4-293x220.png)
 
 16 Concurrent 4K Write Op Latency (EXT4)
 
 Indeed, it’s pretty clear that if there are few concurrent OPs, it really helps to have a controller with on-board cache or have SSD journals.  In a bit we’ll look and see if this trend holds true with more concurrent OPs.  First though, lets look at the CPU utilization and average disk queue times.
 
-_Click on any of the images below (and click again) to enlarge them…_
-
-[![16 Concurrent 4K Writes - CPU Utilization](images/A2_16Concurrent4KWriteCPU-293x220.png)](http://ceph.com/community/ceph-performance-part-2-write-throughput-without-ssd-journals/attachment/a2_16concurrent4kwritecpu/)
+![16 Concurrent 4K Writes - CPU Utilization](images/A2_16Concurrent4KWriteCPU-293x220.png)
 
 16 Concurrent 4K Writes - CPU Utilization
 
-[![16 Concurrent 4K Writes - Disk Waits](images/A2_16Concurrent4KWriteWait-293x220.png)](http://ceph.com/community/ceph-performance-part-2-write-throughput-without-ssd-journals/attachment/a2_16concurrent4kwritewait/)
+![16 Concurrent 4K Writes - Disk Waits](images/A2_16Concurrent4KWriteWait-293x220.png)
 
 16 Concurrent 4K Writes - Disk Waits
 
@@ -129,67 +129,59 @@ If you’ve read the previous article there should be no real surprises as far a
 
 How do things change with 256 Concurrent OPs?
 
-[![256 Concurrent 4K Writes](images/A2_256Concurrent4KWrite.png)](http://ceph.com/community/ceph-performance-part-2-write-throughput-without-ssd-journals/attachment/a2_256concurrent4kwrite/)
+![256 Concurrent 4K Writes](images/A2_256Concurrent4KWrite-293x220.png)
 
 With 256 Concurrent 4K writes, the RAID controllers with BBU cache are still leading the pack in 8-OSD modes, but the cheaper SAS controllers have caught up considerably.  BTRFS performance is now equal to or maybe even slightly faster than the more expensive controllers.  XFS and EXT4 performance has improve as well, but still lags behind the performance of those filesystems on the controllers with BBU cache.  How do the latencies look?
 
-_Click on any of the images below (and click again) to enlarge them…_
-
-[![256 Concurrent 4K Write Latency (BTRFS)](images/A2_256Concurrent4KWriteLatencyBTRFS-220x140.png)](http://ceph.com/community/ceph-performance-part-2-write-throughput-without-ssd-journals/attachment/a2_256concurrent4kwritelatencybtrfs/)
+![256 Concurrent 4K Write Latency (BTRFS)](images/A2_256Concurrent4KWriteLatencyBTRFS-293x220.png)
 
 256 Concurrent 4K Write Latency (BTRFS)
 
-[![256 Concurrent 4K Write Latency (XFS)](images/A2_256Concurrent4KWriteLatencyXFS-220x140.png)](http://ceph.com/community/ceph-performance-part-2-write-throughput-without-ssd-journals/attachment/a2_256concurrent4kwritelatencyxfs/)
+![256 Concurrent 4K Write Latency (XFS)](images/A2_256Concurrent4KWriteLatencyXFS-293x220.png)
 
 256 Concurrent 4K Write Latency (XFS)
 
-[![256 Concurrent 4K Write Latency (EXT4)](images/A2_256Concurrent4KWriteLatencyEXT4-220x140.png)](http://ceph.com/community/ceph-performance-part-2-write-throughput-without-ssd-journals/attachment/a2_256concurrent4kwritelatencyext4/)
+![256 Concurrent 4K Write Latency (EXT4)](images/A2_256Concurrent4KWriteLatencyEXT4-293x220.png)
 
 256 Concurrent 4K Write Latency (EXT4)
 
 With many concurrent operations in flight, the latencies have increased across the board, but not at the same rate.  The latencies for the cheaper SAS controllers are now more in-line with the latencies of the higher end RAID controllers.  One thing you may notice in this set of tests is that with enough concurrent operations, there is basically no sustained IOP advantage to having journals on SSDs.  Nor is there any advantage to having 2 additional OSDs (Though the journals are on the same disks.)  It’s not entirely clear what this may indicate, but it may be that there are software limitations in play here.  Indeed, several improvements have been made to the OSD threading and locking code recently in the Ceph master branch that may increase performance of small writes in some cases.
 
-_Click on any of the images below (and click again) to enlarge them…_
+![256 Concurrent 4K Writes - CPU Utilization](images/A2_256Concurrent4KWriteCPU-293x220.png)
 
-[![256 Concurent 4K Writes - CPU Utilization](images/A2_256Concurrent4KWriteCPU-293x220.png)](http://ceph.com/community/ceph-performance-part-2-write-throughput-without-ssd-journals/attachment/a2_256concurrent4kwritecpu/)
+256 Concurrent 4K Writes - CPU Utilization
 
-256 Concurent 4K Writes - CPU Utilization
+![256 Concurrent 4K Writes - Disk Waits](images/A2_256Concurrent4KWriteWait-293x220.png)
 
-[![256 Concurent 4K Writes - Disk Waits](images/A2_256Concurrent4KWriteWait-293x220.png)](http://ceph.com/community/ceph-performance-part-2-write-throughput-without-ssd-journals/attachment/a2_256concurrent4kwritewait/)
-
-256 Concurent 4K Writes - Disk Waits
+256 Concurrent 4K Writes - Disk Waits
 
 Again we are seeing BTRFS use relatively more CPU in higher performance configurations.  Queue wait times are high again for BTRFS on the Areca cards which we also saw for this test when SSDs were used.  The JBOD cards are showing somewhat high queue wait times for XFS as well.
 
 ### 128KB RADOS BENCH RESULTS
 
-[![16 Concurrent 128K Writes](images/A2_16Concurrent128KWrite.png)](http://ceph.com/community/ceph-performance-part-2-write-throughput-without-ssd-journals/attachment/a2_16concurrent128kwrite/)
+![16 Concurrent 128K Writes](images/A2_16Concurrent128KWrite-293x220.png)
 
 The results with few concurrent 128K writes look similar to the 4K write results.  BTRFS is again mostly on top. Controllers with WB cache are doing well while the controllers with no cache are doing terribly.  The Areca cards specifically are doing exceptionally well; even the outdated ARC-1222.    In fact the Areca cards are performing better in this test with 8 spinning disks serving both the data and journals than in the 6 spinning disk, 2 SSD configuration.  The processors on these controllers must be doing such a good job that the journal writes have little affect on the 128k writes to the data portion of the disks.  While the SAS2208 is the next fastest controller in this test, it is quite a bit slower than the ARC-1880 and slower than the ARC-1222 when using BTRFS.
 
-_Click on any of the images below (and click again) to enlarge them…_
-
-[![16 Concurrent 128K Writes - CPU Utilization](images/A2_16Concurrent128KWriteCPU-293x220.png)](http://ceph.com/community/ceph-performance-part-2-write-throughput-without-ssd-journals/attachment/a2_16concurrent128kwritecpu/)
+![16 Concurrent 128K Writes - CPU Utilization](images/A2_16Concurrent128KWriteCPU-293x220.png)
 
 16 Concurrent 128K Writes - CPU Utilization
 
-[![16 Concurrent 128K Write - Disk Waits](images/A2_16Concurrent128KWriteWait-293x220.png)](http://ceph.com/community/ceph-performance-part-2-write-throughput-without-ssd-journals/attachment/a2_16concurrent128kwritewait/)
+![16 Concurrent 128K Write - Disk Waits](images/A2_16Concurrent128KWriteWait-293x220.png)
 
 16 Concurrent 128K Write - Disk Waits
 
 One interesting things to note about the CPU Utilization shown here is that the BTRFS results, while still quite high, appear to be much lower per unit throughput than for the same tests in the previous article.  Part of this might be because the throughput is overall slower. If you compare the fastest results from this test to those from the previous article though, it’s pretty clear that the CPU Utilization is higher with some controllers for the same level of performance than with others.  The high queue wait times for BTRFS on the Areca controllers has disappeared with 128K writes and XFS now appears to be causing higher queue wait times than the other filesystems.  The SAS2008 in RAID0 mode specifically seems to cause high queue waits despite being slow, which is something we glimpsed in the previous article as well.
 
-[![256 Concurrent 128K Writes](images/A2_256Concurrent128KWrite.png)](http://ceph.com/community/ceph-performance-part-2-write-throughput-without-ssd-journals/attachment/a2_256concurrent128kwrite/)
+![256 Concurrent 128K Writes](images/A2_256Concurrent128KWrite.png)
 
 With 256 concurrent 128K writes, the SAS2208 performance with 8 single drive RAID0 arrays has improved significantly and now holds the top spot, just barely edging out the ARC-1880.  The ARC-1880 performs significantly better with EXT4, while performing only slightly worse with BTRFS and significantly worse with XFS.  Performance of the cache-less SAS controllers has again improved and now perform roughly the same as the ARC-1222 in 8-OSD modes.  BTRFS performance on all of these controllers is relatively high, while EXT4 and XFS performance is poor.  The single OSD RAID0 mode is again quite slow on the controllers that support it.
 
-_Click on any of the images below (and click again) to enlarge them…_
-
-[![256 Concurrent 128K Writes - CPU Utilization](images/A2_256Concurrent128KWriteCPU-293x220.png)](http://ceph.com/community/ceph-performance-part-2-write-throughput-without-ssd-journals/attachment/a2_256concurrent128kwritecpu/)
+![256 Concurrent 128K Writes - CPU Utilization](images/A2_256Concurrent128KWriteCPU-293x220.png)
 
 256 Concurrent 128K Writes - CPU Utilization
 
-[![256 Concurrent 128K Writes - Disk Latency](images/A2_256Concurrent128KWriteWait-293x220.png)](http://ceph.com/community/ceph-performance-part-2-write-throughput-without-ssd-journals/attachment/a2_256concurrent128kwritewait/)
+![256 Concurrent 128K Writes - Disk Latency](images/A2_256Concurrent128KWriteWait-293x220.png)
 
 256 Concurrent 128K Writes - Disk Waits
 
@@ -197,31 +189,29 @@ CPU Utilization is still high across the board with BTRFS, but not quite as high
 
 ### 4MB RADOS BENCH RESULTS
 
-[![16 Concurrent 4M Writes](images/A2_16Concurrent4MWrite.png)](http://ceph.com/community/ceph-performance-part-2-write-throughput-without-ssd-journals/attachment/a2_16concurrent4mwrite/)
+![16 Concurrent 4M Writes](images/A2_16Concurrent4MWrite-293x220.png)
 
 With 16 concurrent 4MB writes, a very curious thing happens.  The high-end SAS2208 and ARC-1880 controllers are again in the top positions which is no surprise.  What is surprising is that the RAID0 configuration on these controllers is doing very well, but only with EXT4!  In fact with EXT4, the SAS2208 in the fastest controller in this test when configured with an 8 drive RAID0 array.  It narrowly beats out the same controller configured with single disk RAID0 arrays when using BTRFS.  The same story is true for the ARC-1880, though the performance is about 15% lower in both cases. Despite all of this, we now are starting to see some limitations when putting the journals on the same disks as the data.  Despite having 2 more spinning disks, the fastest configuration in this test is only able to hit about 450MB/s, while the cheap SAS controllers were able to hit closer to 700MB/s when SSDs were used for the journals.  Speaking of the SAS controllers, they are still slow without SSD backed journals, but at least they don’t look quite as pathetic as they did in tests with smaller writes.  The ARC-1222 is finally showing its age and despite having WB cache only barely keeps up with the SAS controllers.  Finally the SAS2008 just can’t keep up at all in RAID0 mode with its lack of cache and slower processor and falls far behind everything else.
 
-_Click on any of the images below (and click again) to enlarge them…_
-
-[![16 Concurrent 4M Writes - CPU Utilization](images/A2_16Concurrent4MWriteCPU-293x220.png)](http://ceph.com/community/ceph-performance-part-2-write-throughput-without-ssd-journals/attachment/a2_16concurrent4mwritecpu/)
+![16 Concurrent 4M Writes - CPU Utilization](images/A2_16Concurrent4MWriteCPU-293x220.png)
 
 16 Concurrent 4M Writes - CPU Utilization
 
-[![16 Concurrent 4M Writes - Disk Waits](images/A2_16Concurrent4MWriteWait-293x220.png)](http://ceph.com/community/ceph-performance-part-2-write-throughput-without-ssd-journals/attachment/a2_16concurrent4mwritewait/)
+![16 Concurrent 4M Writes - Disk Waits](images/A2_16Concurrent4MWriteWait-293x220.png)
 
 16 Concurrent 4M Writes - Disk Waits
 
 CPU Utilization with BTRFS appears to be high again in these tests, but if you look at the scale you’ll see that it only goes up to about 28%.  In the previous tests, the CPU utilization when using BTRFS was closer to 80%, though performance was also quite a bit higher.  Disk queue wait times all seem to be roughly even except for the Areca cards.  The ARC-1880 has somewhat higher queue wait times while the ARC-1222 has much higher queue wait times (especially with XFS).
 
-[![256 Concurrent 4M Writes](images/A2_256Concurrent4MWrite.png)](http://ceph.com/community/ceph-performance-part-2-write-throughput-without-ssd-journals/attachment/a2_256concurrent4mwrite/)With more concurrent ops we again see the SAS controllers improve, but not quite enough to surpass the SAS2208 and the ARC-1880.  When you factor in journal writes, all of the controllers except the ARC-1222 are now able to break 110MB/s per drive with BTRFS data partitions.  The SAS2208 and the ARC-1880 are able to push more like 120-130MB/s and are getting close to the drive throughput limits.  Sadly XFS and EXT4 performance is typically quite a bit lower and often tops out at 80-100MB/s per drive.
+![256 Concurrent 4M Writes](images/A2_256Concurrent4MWrite-293x220.png)
 
-_Click on any of the images below (and click again) to enlarge them…_
+With more concurrent ops we again see the SAS controllers improve, but not quite enough to surpass the SAS2208 and the ARC-1880.  When you factor in journal writes, all of the controllers except the ARC-1222 are now able to break 110MB/s per drive with BTRFS data partitions.  The SAS2208 and the ARC-1880 are able to push more like 120-130MB/s and are getting close to the drive throughput limits.  Sadly XFS and EXT4 performance is typically quite a bit lower and often tops out at 80-100MB/s per drive.
 
-[![256 Concurrent 4M Writes - CPU Utilization](images/A2_256Concurrent4MWriteCPU-293x220.png)](http://ceph.com/community/ceph-performance-part-2-write-throughput-without-ssd-journals/attachment/a2_256concurrent4mwritecpu/)
+![256 Concurrent 4M Writes - CPU Utilization](images/A2_256Concurrent4MWriteCPU-293x220.png)
 
 256 Concurrent 4M Writes - CPU Utilization
 
-[![256 Concurrent 4M Writes - Disk Waits](images/A2_256Concurrent4MWriteWait-293x220.png)](http://ceph.com/community/ceph-performance-part-2-write-throughput-without-ssd-journals/attachment/a2_256concurrent4mwritewait/)
+![256 Concurrent 4M Writes - Disk Waits](images/A2_256Concurrent4MWriteWait-293x220.png)
 
 256 Concurrent 4M Writes - Disk Waits
 
