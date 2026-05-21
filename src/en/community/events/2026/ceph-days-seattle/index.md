@@ -24,21 +24,90 @@ meet fellow community members.
 ## Important Dates
 
 - **CFP Opens:** 2026-04-22
-- **CFP Closes:** 2026-05-05
-- **Speakers receive confirmation of acceptance:** 2026-05-10
+- **CFP Closed:** 2026-05-12
 - **Registration Opens:** 2026-04-22
 - **Registration Closes:** 2026-05-28
 - **Event Date:** 2026-05-28
 
-The Call for Papers (**CFP**) is now live until May 5, 2026. During that window, you may submit 
-your proposal here:
+The Call for Papers (**CFP**) is now closed.
 
-<a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSdLpgerw3TawcpnPktObjolm9efsbbKeV0UuoA1431BQgIUSw/viewform">Apply to be a presenter!</a>
-
-Registration is open now:
+Registration is open. Please register if you plan to attend:
 
 <a class="button" href="https://www.osnexus.com/ceph-days-seattle-2026">Register now!</a>
 
+## Schedule
 
+<table><thead>
+  <tr>
+    <th>What</th>
+    <th>Who</th>
+    <th>When</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td>Welcome, Check-in, Coffee, Pastries</td>
+    <td></td>
+    <td>9:00 - 10:00</td>
+  </tr>
+  <tr>
+    <td>Introduction & State of the Cephalopod</td>
+    <td>Steve Umbehocker (OSNexus) + Dan van der Ster (Clyso)</td>
+    <td>10:00 - 10:30</td>
+  </tr>
+  <tr>
+    <td>Proxmox and Ceph: Ditch the old SAN</td>
+    <td>Alex Gorbachev, Intelligent Systems Services</td>
+    <td>10:30 - 11:15</td>
+  </tr>
+  <tr>
+    <td>Coffee / tea break</td>
+    <td>Everyone</td>
+    <td>11:15 - 11:30</td>
+  </tr>
+  <tr>
+    <td>Reclaim CephFS Capacity Through Pool Tiering + Migration</td>
+    <td>Anthony D'Atri, Ceph Ambassador</td>
+    <td>11:30 - 12:15</td>
+  </tr>
+  <tr>
+    <td>Lunch</td>
+    <td>Everyone</td>
+    <td>12:15 - 13:15</td>
+  </tr>
+  <tr>
+    <td>Ceph Bucket Replication</td>
+    <td>Seth Cagampang + Sheetal Garde (OSNexus)</td>
+    <td>13:15 - 14:00</td>
+  </tr>
+  <tr>
+    <td>Ceph Operations Toolkit: Ideas and Prototypes</td>
+    <td>Dan van der Ster</td>
+    <td>14:00 - 14:45</td>
+  </tr>
+  <tr>
+    <td>Coffee / tea break</td>
+    <td>Everyone</td>
+    <td>14:45 - 15:00</td>
+  </tr>
+  <tr>
+    <td>Ceph Cloud Storage Transitions and Beyond</td>
+    <td>John Shubeck (IBM)</td>
+    <td>15:00 - 15:45</td>
+  </tr>
+  <tr>
+    <td>TBD</td>
+    <td>Steve Umbehocker (OSNexus)</td>
+    <td>15:45 - 16:30</td>
+  </tr>
+  <tr>
+    <td>Speaker panel Q&A</td>
+    <td>All speakers</td>
+    <td>16:30 - 17:00</td>
+  </tr>
+  <tr>
+    <td>Networking</td>
+    <td>Everyone!</td>
+    <td>17:00 - 18:00</td>
+  </tr>
 
-Please stay tuned for more details!
+</tbody></table>
