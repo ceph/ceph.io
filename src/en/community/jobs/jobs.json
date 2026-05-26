@@ -7,12 +7,6 @@
       "url": "https://job-boards.greenhouse.io/canonical/jobs/1861978"
     },
     {
-      "company": "IBM",
-      "date": "2026-04-04",
-      "title": "Ceph Performance Engineer",
-      "url": "https://careers.ibm.com/en_US/careers/JobDetail?jobId=107725"
-    },
-    {
       "company": "42on",
       "date": "2023-05-12",
       "title": "Ceph Engineer",
@@ -25,16 +19,10 @@
       "url": "https://42on.com/jobs/ceph-expert/"
     },
     {
-      "company": "Clyso",
-      "date": "2026-01-01",
-      "title": "C++ Software Engineer - Ceph & Storage Systems",
-      "url": "https://clyso-gmbh.jobs.personio.com/job/2546004?language=en"
-    },
-    {
-      "company": "Clyso",
-      "date": "2026-05-05",
-      "title": "Ceph Storage Engineer - Remote India",
-      "url": "https://www.clyso.com/eu/en/about/career/ceph-storage-engineer-remote-india/"
+      "company": "IBM",
+      "date": "2026-05-22",
+      "title": "Technical Support Professional - Ceph Storage",
+      "url": "https://careers.ibm.com/en_US/careers/JobDetail?jobId=97476&source=IBM+Talent+Community+Page"
     }
   ]
 }
