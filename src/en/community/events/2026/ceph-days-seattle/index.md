@@ -95,7 +95,7 @@ Registration is open. Please register if you plan to attend:
     <td>15:00 - 15:45</td>
   </tr>
   <tr>
-    <td>TBD</td>
+    <td>Designing Ceph Clusters: What's the Right Durability?</td>
     <td>Steve Umbehocker (OSNexus)</td>
     <td>15:45 - 16:30</td>
   </tr>
