@@ -162,6 +162,23 @@
   transition: color var(--animation-duration) var(--animation-easing);
 }
 
+.heading-link,
+.heading-link:visited {
+  color: var(--color-red-500);
+  text-decoration: none;
+  transition: color var(--animation-duration) var(--animation-easing);
+}
+
+.heading-link:hover {
+  color: var(--color-red-500);
+  text-decoration: underline;
+}
+
+.heading-link:active {
+  color: var(--color-red-600);
+  text-decoration: underline;
+}
+
 .a:hover,
 .richtext a:hover {
   color: var(--color-red-500);
