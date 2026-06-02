@@ -30,7 +30,7 @@ a networking reception, to foster more Ceph learning.
 - ~~**Registration Closes:** 2026-06-12~~ 
 - **Event Date:** 2026-06-17
 
-Registration is now closed! (Max capacity reached)
+Registration is now closed! (**Event Sold Out**)
 
 <br />
 
