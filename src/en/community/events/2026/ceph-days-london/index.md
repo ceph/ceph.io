@@ -294,6 +294,7 @@ In this talk, we will present Ceph Dedup for RGW objects, a scale-out deduplicat
    <li>CSI</li>
    <li>Cephadm (Management)</li>
    <li>RADOS/Crimson</li>
+   <li>Users/Support</li>
    <li>EC/Core</li>
    <li>SMB</li>
    <li>Performance</li>
