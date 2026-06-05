@@ -284,7 +284,7 @@ In this talk, we will present Ceph Dedup for RGW objects, a scale-out deduplicat
    </td>
    <td><strong>Closing Panel and Remarks</strong>
    </td>
-   <td><strong>Component Leads</strong><br><br>
+   <td><strong>Representatives from:</strong><br><br>
    <ul style="text-align: left; display: inline-block;">
    <li>Dashboard</li>
    <li>NVMe</li>
