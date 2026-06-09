@@ -276,7 +276,6 @@ In this talk, we will present Ceph Dedup for RGW objects, a scale-out deduplicat
    </td>
    <td><center><strong><img src="/assets/bitmaps/events/2026/cephdayslondon/GabrielBenhanokh.jpg" width="400" />Gabriel BenHanokh (IBM)
    <br>
-    <img src="/assets/bitmaps/events/2026/cephdayslondon/Daniel-Parkes.jpg" width="400" />Daniel Parkes (IBM)</strong></center>
    </td>
   </tr>
   <tr>
