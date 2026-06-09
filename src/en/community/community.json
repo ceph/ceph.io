@@ -3,7 +3,9 @@
     {
       "date": "2026-06-09",
       "title": "Building Ultra-Resilient Ceph Clusters with Xinnor and OSNexus",
-      "presenter": "Steven Umbehocker, CEO of OSNexus & Dmitry Livshits, CEO of Xinnor"
+      "presenter": "Steven Umbehocker, CEO of OSNexus & Dmitry Livshits, CEO of Xinnor",
+      "url": "https://youtu.be/VqKvBuemX9Q",
+      "slides": "https://ceph.io/assets/pdfs/tech-talks/dual_layer_durability_xinnor.pdf"
     },
     {
       "date": "2026-05-11",
