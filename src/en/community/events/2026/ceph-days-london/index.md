@@ -27,12 +27,10 @@ a networking reception, to foster more Ceph learning.
 - ~~**Speakers receive confirmation of acceptance:** 2026-05-01~~
 - ~~**Registration Opens:** 2026-05-01~~
 - ~~**Schedule Announcement:** 2026-05-11~~
-- **Registration Closes:** 2026-06-12
+- ~~**Registration Closes:** 2026-06-12~~ 
 - **Event Date:** 2026-06-17
 
-Registration is now open! (Closes on June 12, 2026)
-
-<a class="button" href="https://ti.to/open-source-events/ceph-days-london-2026">Register Here!</a>
+**Event Sold Out!**
 
 <br />
 
@@ -286,7 +284,21 @@ In this talk, we will present Ceph Dedup for RGW objects, a scale-out deduplicat
    </td>
    <td><strong>Closing Panel and Remarks</strong>
    </td>
-   <td><center><strong>All Speakers</strong></center>
+   <td><strong>Representatives from:</strong><br><br>
+   <ul style="text-align: left; display: inline-block;">
+   <li>Dashboard</li>
+   <li>NVMe</li>
+   <li>Dedupe</li>
+   <li>CephFS</li>
+   <li>RGW</li>
+   <li>CSI</li>
+   <li>Cephadm (Management)</li>
+   <li>RADOS/Crimson</li>
+   <li>Users/Support</li>
+   <li>EC/Core</li>
+   <li>SMB</li>
+   <li>Performance</li>
+   </ul>
    </td>
   </tr>
   <tr>
