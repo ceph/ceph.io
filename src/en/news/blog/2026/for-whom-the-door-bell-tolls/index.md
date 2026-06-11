@@ -233,7 +233,7 @@ Swap the Malloc backend for `bdev_rbd` pointed at `rbd/gpuimg`, and the RADOS co
 RD_OPS 65 → 249     RD 49 KiB → 2.1 MiB     (during the GPU run)
 ```
 
-The gfx1151 iGPU drove NVMe block reads from `__device__` code → the bridge → SPDK → `librbd` → a RADOS OSD. **A GPU reading from a distributed storage cluster, no host CPU in the datapath.**
+The gfx1151 iGPU drove NVMe block reads from `__device__` code → the bridge → SPDK → `librbd` → a RADOS OSD. **A GPU reading from a distributed storage cluster, no guest CPU in the datapath.**
 
 ### Latency: stop being the bottleneck
 
