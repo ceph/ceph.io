@@ -76,7 +76,7 @@ As much as I wanted to go straight for the prize — GPU-initiated IO to a *key-
 
 [ROCm XIO](https://github.com/ROCm/rocm-xio) is the piece that lets GPU code drive an NVMe queue pair. Its `nvme-ep` ("endpoint") runs a `__device__` kernel that:
 
-1. Writes an NVMe Submission Queue Entry (a 64-byte command) into the SQ.
+1. Writes an NVMe Submission Queue Entry (SQE) — a 64-byte command — into the SQ.
 2. Rings the SQ-tail doorbell to tell the controller "go."
 3. Spins on the Completion Queue, watching the phase bit flip.
 4. Rings the CQ-head doorbell to acknowledge the completion.
