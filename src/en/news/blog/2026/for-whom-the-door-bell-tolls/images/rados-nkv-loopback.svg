@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 840" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5f6368"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="620" height="840" fill="#ffffff"/>
+
+  <!-- single-host boundary -->
+  <rect x="30" y="26" width="560" height="540" rx="14" fill="#f7f8fa" stroke="#9aa0a6" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="46" y="48" font-size="13" font-style="italic" fill="#5f6368">Single host — loopback: no VM, no network</text>
+
+  <!-- client app -->
+  <rect x="160" y="64" width="300" height="74" rx="10" fill="#dbe7fb" stroke="#4a78c2" stroke-width="1.6"/>
+  <text x="310" y="94" text-anchor="middle" font-size="17" font-weight="600" fill="#1f3b66">NVMe-KV host app</text>
+  <text x="310" y="116" text-anchor="middle" font-size="13" fill="#3a5680">store · retrieve · delete · exist</text>
+
+  <!-- arrow: vfio-user loopback -->
+  <line x1="310" y1="138" x2="310" y2="208" stroke="#5f6368" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="326" y="178" font-size="13" fill="#5f6368">vfio-user loopback</text>
+
+  <!-- SPDK process container -->
+  <rect x="116" y="212" width="388" height="300" rx="12" fill="#fdf3e3" stroke="#e0972f" stroke-width="1.8"/>
+  <text x="310" y="238" text-anchor="middle" font-size="15" font-weight="600" fill="#9a6a12">SPDK nvmf_tgt — one userspace process</text>
+
+  <!-- NVMf KV target -->
+  <rect x="152" y="256" width="316" height="86" rx="10" fill="#e6e3f5" stroke="#7a6fc0" stroke-width="1.6"/>
+  <text x="310" y="288" text-anchor="middle" font-size="16" font-weight="600" fill="#3a3173">NVMf KV target</text>
+  <text x="310" y="310" text-anchor="middle" font-size="13" fill="#544a8c">decode key</text>
+  <text x="310" y="328" text-anchor="middle" font-size="13" fill="#544a8c">read-only &amp; Exec gates</text>
+
+  <!-- arrow between target and kvdev -->
+  <line x1="310" y1="342" x2="310" y2="384" stroke="#5f6368" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- rados-nkv kvdev -->
+  <rect x="152" y="388" width="316" height="86" rx="10" fill="#e6e3f5" stroke="#7a6fc0" stroke-width="1.6"/>
+  <text x="310" y="420" text-anchor="middle" font-size="16" font-weight="600" fill="#3a3173">rados-nkv kvdev</text>
+  <text x="310" y="442" text-anchor="middle" font-size="13" fill="#544a8c">key → object</text>
+  <text x="310" y="460" text-anchor="middle" font-size="13" fill="#544a8c">async librados</text>
+
+  <!-- arrow: librados (crosses host boundary) -->
+  <line x1="310" y1="512" x2="310" y2="606" stroke="#5f6368" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="326" y="566" font-size="13" fill="#5f6368">librados</text>
+
+  <!-- RADOS cluster (outside host) -->
+  <rect x="150" y="610" width="320" height="110" rx="10" fill="#fbe3ec" stroke="#c2548a" stroke-width="1.6"/>
+  <text x="310" y="642" text-anchor="middle" font-size="17" font-weight="600" fill="#8a2c5b">Ceph / RADOS cluster</text>
+  <text x="310" y="664" text-anchor="middle" font-size="13" fill="#9d3d6b">pool = subsystem · namespace = tenant</text>
+  <text x="310" y="684" text-anchor="middle" font-size="13" fill="#9d3d6b">one RADOS object per KV pair</text>
+
+  <!-- legend -->
+  <g font-size="12.5" fill="#3c4043">
+    <rect x="78" y="762" width="15" height="15" rx="3" fill="#dbe7fb" stroke="#4a78c2"/>
+    <text x="100" y="774">NVMe-KV client app</text>
+    <rect x="338" y="762" width="15" height="15" rx="3" fill="#fdf3e3" stroke="#e0972f"/>
+    <text x="360" y="774">SPDK nvmf_tgt process</text>
+    <rect x="78" y="788" width="15" height="15" rx="3" fill="#e6e3f5" stroke="#7a6fc0"/>
+    <text x="100" y="800">KV target · kvdev (in-process)</text>
+    <rect x="338" y="788" width="15" height="15" rx="3" fill="#fbe3ec" stroke="#c2548a"/>
+    <text x="360" y="800">Ceph / RADOS cluster</text>
+  </g>
+</svg>
