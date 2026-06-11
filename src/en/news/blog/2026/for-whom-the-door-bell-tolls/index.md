@@ -318,7 +318,7 @@ That **140 µs/IO** is the same story as the block dress rehearsal, one interfac
 
 That's the thing the whole post was named for, the doorbell finally tolling for the right interface:
 
-> **A GPU, from `__device__` code, issues an NVMe key-value Retrieve; the value — sourced from a RADOS object in a distributed Ceph cluster — lands directly in GPU memory.** No host CPU in the datapath. No block-to-object lookup table. Content-addressed all the way down.
+> **A GPU, from `__device__` code, issues an NVMe key-value Retrieve; the value — sourced from a RADOS object in a distributed Ceph cluster — lands directly in GPU memory.** No guest CPU in the datapath. No block-to-object lookup table. Content-addressed all the way down.
 
 Driving GPU-initiated storage over the **key-value** command set rather than block isn't itself unprecedented — it builds on the [xNVMe](https://arxiv.org/html/2411.06980v1) lineage and its async `aisio` path, which has long unified NVMe IO across the key-value command set and points squarely at GPU-initiated access. What's new here, to my knowledge, is tying that path to **open-source software-defined storage**: the value isn't coming off a local KV SSD but out of a RADOS object in a distributed Ceph cluster. And it matters because key-value is the interface KV cache actually wants. The hash of a token sequence *is* the key; two GPUs computing the same prefix arrive at the same RADOS object with zero coordination, no central map to consult or keep coherent.
 
