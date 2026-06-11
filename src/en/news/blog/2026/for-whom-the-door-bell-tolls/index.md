@@ -44,7 +44,7 @@ The next morning I grabbed my coffee and checked in to see what sort of breakfas
 ![The rados-nkv control path: a KV host app issues Store/Retrieve/Delete/Exist over a VFIO-user loopback to SPDK's nvmf_tgt; the NVMf KV target decodes the key and applies read-only/Exec gates; the rados-nkv kvdev maps key → object via async librados; RADOS stores one object per KV pair, with pool=subsystem and namespace=tenant.](images/rados-nkv-loopback.png)
 *The KV control path, proven over a VFIO-user loopback — no VM, no network. Key → object, one RADOS object per KV pair, tenancy carried by the RADOS namespace.*
 
-We'll need some things to talk to this newfangled key-value namespace, of course. The first order of business is a [rados-nkv NIXL plugin](https://github.com/ai-dynamo/nixl/pull/1717), since NIXL is used by both [llm-d-kv-cache](#) and [LMCache](#) to offload KV-cache blocks from vLLM over the kv-connector interface. For bonus points, we'll whip up [rados-nkv-weights](#) to let vLLM stream model weights from rados-nkv.
+We'll need some things to talk to this newfangled key-value namespace, of course. The first order of business is a [rados-nkv NIXL plugin](https://github.com/ai-dynamo/nixl/pull/1717), since NIXL is used by both [llm-d-kv-cache](https://github.com/llm-d/llm-d-kv-cache) and [LMCache](https://github.com/lmcache/lmcache) to offload KV-cache blocks from vLLM over the kv-connector interface. For bonus points, we'll whip up [rados-nkv-weights](https://github.com/mmgaggle/rados-nkv-weights) to let vLLM stream model weights from rados-nkv.
 
 ## A flashback to BaM
 
