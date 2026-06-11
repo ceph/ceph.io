@@ -39,7 +39,7 @@ It was the afternoon of June 4. I had the start of a plan and the NVMe key-value
 
 The first agent made a surprising find: NVIDIA had recently added an NVMe KV client to SPDK. That undoubtedly made things easier — we had a reference client to work against. I was tapped out, time for me to sleep, while the factory whirs.
 
-The next morning I grabbed my coffee and checked in to see what sort of breakfast had been prepared. I have to say, the dish was perfectly plated, and the flavor was like a breakfast burrito from a San Diego taqueria. On this day **rados-nkv** was born — a complete SPDK controller exporting a RADOS-backed NVMe key-value namespace over VFIO-user. Tested end-to-end. Logically, it looks like this:
+The next morning I grabbed my coffee and checked in to see what sort of breakfast had been prepared. I have to say, the dish was perfectly plated, and the flavor was like a breakfast burrito from a San Diego taqueria. On this day [**rados-nkv**](https://review.spdk.io/c/spdk/spdk/+/28851) was born — a complete SPDK controller exporting a RADOS-backed NVMe key-value namespace over VFIO-user. Tested end-to-end. Logically, it looks like this:
 
 ![The rados-nkv control path: a KV host app issues Store/Retrieve/Delete/Exist over a VFIO-user loopback to SPDK's nvmf_tgt; the NVMf KV target decodes the key and applies read-only/Exec gates; the rados-nkv kvdev maps key → object via async librados; RADOS stores one object per KV pair, with pool=subsystem and namespace=tenant.](images/rados-nkv-loopback.png)
 *The KV control path, proven over a VFIO-user loopback — no VM, no network. Key → object, one RADOS object per KV pair, tenancy carried by the RADOS namespace.*
