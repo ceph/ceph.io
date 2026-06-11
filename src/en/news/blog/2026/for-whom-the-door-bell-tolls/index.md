@@ -386,7 +386,7 @@ The ROCm XIO kernel drives a **single 1024-entry submission queue** (`--num-queu
 `1024 SQEs × 256 tokens per block = 262,144 tokens`. That's **2.7× the 96k median** agentic context reported by SemiAnalysis:
 
 > We pulled data from 432k real coding-agent requests, and the median one isn't 32k, isn't 64k, but **96k input tokens** — more than the entire text of *The Great Gatsby* shoved into the model before you've even typed your question.
-> — SemiAnalysis, [*(link the source)*](#)
+> — [SemiAnalysis](https://x.com/SemiAnalysis_/status/2057869518295249373)
 
 The 256-token block isn't an arbitrary chunk, either: it's the granularity LMCache and llm-d-kv-cache already aggregate vLLM's 16-token paged blocks into before handing them across the kv-connector. We content-address at the unit the ecosystem already speaks.
 
