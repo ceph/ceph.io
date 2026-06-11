@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 940" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5f6368"/>
+    </marker>
+    <marker id="arrowc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2e8b6f"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="720" height="940" fill="#ffffff"/>
+
+  <!-- GUEST VM domain -->
+  <rect x="24" y="30" width="672" height="352" rx="14" fill="#f4f8fe" stroke="#4a78c2" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="42" y="54" font-size="13" font-style="italic" fill="#3a5680">Guest VM — iGPU passed through (vfio-pci)</text>
+
+  <!-- gfx kernel -->
+  <rect x="250" y="66" width="220" height="140" rx="10" fill="#dbe7fb" stroke="#4a78c2" stroke-width="1.6"/>
+  <text x="360" y="92" text-anchor="middle" font-size="15" font-weight="600" fill="#1f3b66">gfx1151 — __device__ kernel</text>
+  <text x="272" y="118" font-size="13" fill="#3a5680">① build SQE</text>
+  <text x="272" y="138" font-size="13" fill="#3a5680">② ring doorbell</text>
+  <text x="272" y="158" font-size="13" fill="#3a5680">③ poll CQ</text>
+  <text x="272" y="178" font-size="13" fill="#3a5680">④ ring CQ-head doorbell</text>
+
+  <!-- rocm-xio nvme-ep -->
+  <rect x="48" y="250" width="230" height="96" rx="10" fill="#dbe7fb" stroke="#4a78c2" stroke-width="1.6"/>
+  <text x="163" y="282" text-anchor="middle" font-size="15" font-weight="600" fill="#1f3b66">rocm-xio nvme-ep</text>
+  <text x="163" y="304" text-anchor="middle" font-size="12.5" fill="#3a5680">NVMe queue pair lives in</text>
+  <text x="163" y="322" text-anchor="middle" font-size="12.5" fill="#3a5680">host RAM or GPU VRAM</text>
+
+  <!-- shadow ring -->
+  <rect x="442" y="250" width="230" height="96" rx="10" fill="#e6e3f5" stroke="#7a6fc0" stroke-width="1.6"/>
+  <text x="557" y="282" text-anchor="middle" font-size="15" font-weight="600" fill="#3a3173">shadow ring — guest RAM</text>
+  <text x="557" y="304" text-anchor="middle" font-size="12.5" fill="#544a8c">GPU writes 64-byte command</text>
+  <text x="557" y="322" text-anchor="middle" font-size="12.5" fill="#544a8c">descriptors here</text>
+
+  <!-- arrows A->B, A->C -->
+  <line x1="300" y1="206" x2="190" y2="250" stroke="#5f6368" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="150" y="232" font-size="12.5" fill="#5f6368">manages queue pair</text>
+  <line x1="420" y1="206" x2="540" y2="250" stroke="#5f6368" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="500" y="232" font-size="12.5" fill="#5f6368">ring doorbell</text>
+
+  <!-- HOST domain -->
+  <rect x="24" y="410" width="672" height="448" rx="14" fill="#fffdf8" stroke="#e0972f" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="42" y="434" font-size="13" font-style="italic" fill="#9a6a12">Host</text>
+
+  <!-- pci-mmio-bridge -->
+  <rect x="442" y="452" width="230" height="104" rx="10" fill="#e6e3f5" stroke="#7a6fc0" stroke-width="1.6"/>
+  <text x="557" y="482" text-anchor="middle" font-size="15" font-weight="600" fill="#3a3173">pci-mmio-bridge (QEMU)</text>
+  <text x="557" y="504" text-anchor="middle" font-size="12.5" fill="#544a8c">polls shadow ring,</text>
+  <text x="557" y="522" text-anchor="middle" font-size="12.5" fill="#544a8c">forwards MMIO → NVMe BAR</text>
+
+  <!-- C->D crosses boundary -->
+  <line x1="557" y1="346" x2="557" y2="452" stroke="#5f6368" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="567" y="402" font-size="12.5" fill="#5f6368">doorbell MMIO</text>
+
+  <!-- SPDK -->
+  <rect x="442" y="600" width="230" height="104" rx="10" fill="#fdf3e3" stroke="#e0972f" stroke-width="1.8"/>
+  <text x="557" y="630" text-anchor="middle" font-size="15" font-weight="600" fill="#9a6a12">SPDK nvmf_tgt (vfio-user)</text>
+  <text x="557" y="652" text-anchor="middle" font-size="12.5" fill="#9a6a12">NVMe controller model</text>
+  <text x="557" y="670" text-anchor="middle" font-size="12.5" fill="#9a6a12">→ bdev_rbd</text>
+
+  <line x1="557" y1="556" x2="557" y2="600" stroke="#5f6368" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="567" y="582" font-size="12.5" fill="#5f6368">address_space_write</text>
+
+  <!-- Ceph -->
+  <rect x="442" y="748" width="230" height="88" rx="10" fill="#fbe3ec" stroke="#c2548a" stroke-width="1.6"/>
+  <text x="557" y="780" text-anchor="middle" font-size="15" font-weight="600" fill="#8a2c5b">Ceph / RADOS (vstart)</text>
+  <text x="557" y="802" text-anchor="middle" font-size="12.5" fill="#9d3d6b">rbd/gpuimg — OSD</text>
+
+  <line x1="557" y1="704" x2="557" y2="748" stroke="#5f6368" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="567" y="730" font-size="12.5" fill="#5f6368">librbd</text>
+
+  <!-- completion return path (on top, routed clear of boxes) -->
+  <path d="M 442 652 L 40 652 L 40 150 L 250 150" fill="none" stroke="#2e8b6f" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#arrowc)"/>
+  <text x="48" y="122" font-size="12.5" fill="#2e8b6f">post completion + phase bit</text>
+  <text x="48" y="140" font-size="12.5" fill="#2e8b6f">→ GPU-polled CQ</text>
+
+  <!-- legend -->
+  <g font-size="12.5" fill="#3c4043">
+    <rect x="150" y="884" width="15" height="15" rx="3" fill="#dbe7fb" stroke="#4a78c2"/>
+    <text x="172" y="896">GPU / device compute</text>
+    <rect x="400" y="884" width="15" height="15" rx="3" fill="#fdf3e3" stroke="#e0972f"/>
+    <text x="422" y="896">SPDK nvmf_tgt</text>
+    <rect x="150" y="910" width="15" height="15" rx="3" fill="#e6e3f5" stroke="#7a6fc0"/>
+    <text x="172" y="922">shadow ring · MMIO bridge</text>
+    <rect x="400" y="910" width="15" height="15" rx="3" fill="#fbe3ec" stroke="#c2548a"/>
+    <text x="422" y="922">Ceph / RADOS</text>
+  </g>
+</svg>
