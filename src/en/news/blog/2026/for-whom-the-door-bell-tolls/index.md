@@ -12,7 +12,7 @@ tags:
 
 # For whom the door-bell tolls
 
-In a [previous post](https://ceph.io/en/news/blog/2025/vllm-kv-caching/) we extolled the benefits of KV caching, a technique to save the KV states from the prefill step of LLM-based inference to reduce time to first token (TTFT) and redundant computation. I co-presented this with Tushar Gohad at [Cephalocon](https://youtu.be/axCO66f7fYA?si=VRWDSmk95nkRCdc3). Since then I've been thinking a lot about how to improve the state of the art. Really move the needle. We've made strides in a lot of areas in Ceph, especially the work going into [Fast EC](https://youtu.be/ll_T7Wphz7A?si=U_myBa2uPT5j3_C3) — if you don't know what I'm talking about you should check it out, it promises huge benefits to a large category of workloads. That's not what we're here for today, though.
+In a [previous post](https://ceph.io/en/news/blog/2025/vllm-kv-caching/) we extolled the benefits of KV caching, a technique to save the KV states from the prefill step of LLM-based inference to reduce time to first token (TTFT) and skip redundant computation. I co-presented this with Tushar Gohad at [Cephalocon](https://youtu.be/axCO66f7fYA?si=VRWDSmk95nkRCdc3). Since then I've been thinking a lot about how to improve the state of the art. Really move the needle. We've made strides in a lot of areas in Ceph, especially the work going into [Fast EC](https://youtu.be/ll_T7Wphz7A?si=U_myBa2uPT5j3_C3) — if you don't know what I'm talking about you should check it out, it promises huge benefits to a large category of workloads. That's not what we're here for today, though.
 
 Last year there was one paper that stuck in my mind, which is fairly remarkable because I read on the order of 130. That paper was [GPU-Initiated On-Demand High-Throughput Storage Access in the BaM System Architecture](https://arxiv.org/pdf/2203.04910). I struggled with this. It describes a system where a CPU loads a kernel into the GPU that allows the GPU to serve as an NVMe initiator. The struggle was rooted in the fact that block just felt like the wrong interface for KV caching. If you use block, then you need a lookup table that maps the hash of the sequences representing a cache block to a particular `(device, offset, length)` tuple. It begs for a content-addressable approach with no centralized lookup or coordination. On the other hand, what was described in the paper was just flat-out more electrically efficient. I couldn't have my cake and eat it too.
 
@@ -39,16 +39,16 @@ It was the afternoon of June 4. I had the start of a plan and the NVMe key-value
 
 The first agent made a surprising find: NVIDIA had recently [added an NVMe KV client to SPDK](https://github.com/spdk/spdk/commit/93cf1ebc57cea99caba6c68f30354f93dce90ffd). That undoubtedly made things easier — we had a reference client to work against. I was tapped out, time for me to sleep, while the factory whirs.
 
-The next morning I grabbed my coffee and checked in to see what sort of breakfast had been prepared. I have to say, the dish was perfectly plated, and the flavor was like a breakfast burrito from a San Diego taqueria. On this day [**rados-nkv**](https://review.spdk.io/c/spdk/spdk/+/28851) was born — a complete SPDK controller exporting a RADOS-backed NVMe key-value namespace over VFIO-user. Tested end-to-end. Logically, it looks like this:
+The next morning I grabbed my coffee and checked in to see what sort of breakfast had been prepared. I have to say, the dish was perfectly plated, and the flavor was like a breakfast burrito from a San Diego taqueria. On this day [**rados-nkv**](https://review.spdk.io/c/spdk/spdk/+/28851) was born — a complete SPDK controller exporting a RADOS-backed NVMe key-value namespace over [vfio-user](https://github.com/nutanix/libvfio-user). Tested end-to-end. Logically, it looks like this:
 
-![The rados-nkv control path: a KV host app issues Store/Retrieve/Delete/Exist over a VFIO-user loopback to SPDK's nvmf_tgt; the NVMf KV target decodes the key and applies read-only/Exec gates; the rados-nkv kvdev maps key → object via async librados; RADOS stores one object per KV pair, with pool=subsystem and namespace=tenant.](images/rados-nkv-loopback.png)
-*The KV control path, proven over a VFIO-user loopback — no VM, no network. Key → object, one RADOS object per KV pair, tenancy carried by the RADOS namespace.*
+![The rados-nkv control path: a KV host app issues Store/Retrieve/Delete/Exist over a vfio-user loopback to SPDK's nvmf_tgt; the NVMf KV target decodes the key and applies read-only/Exec gates; the rados-nkv kvdev maps key → object via async librados; RADOS stores one object per KV pair, with pool=subsystem and namespace=tenant.](images/rados-nkv-loopback.png)
+*The KV control path, proven over a vfio-user loopback — no VM, no network. Key → object, one RADOS object per KV pair, tenancy carried by the RADOS namespace.*
 
 We'll need some things to talk to this newfangled key-value namespace, of course. The first order of business is a [rados-nkv NIXL plugin](https://github.com/ai-dynamo/nixl/pull/1717), since NIXL is used by both [llm-d-kv-cache](https://github.com/llm-d/llm-d-kv-cache) and [LMCache](https://github.com/lmcache/lmcache) to offload KV-cache blocks from vLLM over the kv-connector interface. For bonus points, we'll whip up [rados-nkv-weights](https://github.com/mmgaggle/rados-nkv-weights) to let vLLM stream model weights from rados-nkv.
 
 ## A flashback to BaM
 
-Around this time a colleague asked me if I was going to SNIA's SDC, which triggered me to scan the sessions on the docket. Serendipitously, I saw [Stephen Bates](https://www.linkedin.com/in/stephen-bates-8791263/)'s abstract: **GPU-Initiated NVMe: Cutting the CPU Out of the Accelerator-to-Storage Data Path.** This gave me an immediate flashback to the BaM paper. The rados-nkv prototype was working, and as-is it would be a big improvement for AI workloads — but what if we could realize *GPU-initiated* IO to it? DMA-buf changes were [landing in the Linux kernel](https://lists.freedesktop.org/archives/dri-devel/2025-October/529924.html) that might just open up a viable path.
+Around this time a colleague asked me if I was going to SNIA's SDC, which triggered me to scan the sessions on the docket. Serendipitously, I saw [Stephen Bates](https://www.linkedin.com/in/stephen-bates-8791263/)'s abstract: **GPU-Initiated NVMe: Cutting the CPU Out of the Accelerator-to-Storage Data Path.** This gave me an immediate flashback to the BaM paper. The rados-nkv prototype was working, and as-is it would be a big improvement for AI workloads — but what if we could realize *GPU-initiated* IO to it? DMA-buf changes are [landing in the Linux kernel](https://lists.freedesktop.org/archives/dri-devel/2025-October/529924.html) that might just open up a viable path.
 
 I pinged Stephen on LinkedIn, who indicated that ROCm XIO was the droid I was looking for.
 
@@ -74,7 +74,7 @@ As much as I wanted to go straight for the prize — GPU-initiated IO to a *key-
 
 ## How ROCm XIO drives a queue pair
 
-ROCm XIO is the piece that lets GPU code drive an NVMe queue pair. Its `nvme-ep` ("endpoint") runs a `__device__` kernel that:
+[ROCm XIO](https://github.com/ROCm/rocm-xio) is the piece that lets GPU code drive an NVMe queue pair. Its `nvme-ep` ("endpoint") runs a `__device__` kernel that:
 
 1. Writes an NVMe Submission Queue Entry (a 64-byte command) into the SQ.
 2. Rings the SQ-tail doorbell to tell the controller "go."
@@ -87,7 +87,7 @@ A companion kernel module (`/dev/rocm-xio`) handles the privileged glue: pinning
 | --- | --- | --- | --- | --- |
 | structure | SQ | CQ | doorbell | data buffer |
 
-Mode `0x0` = everything in host RAM. Mode `0x8` = flip just the data buffer into VRAM, so the payload P2P-DMAs straight into GPU memory. Mode `0x8` is the whole point; mode `0x0` is the "make it work first" baseline.
+Mode `0x0` = everything in host RAM. Mode `0x8` = flip just the data buffer into VRAM, so the payload P2P-DMAs straight into GPU memory. Mode `0x8` is the whole point; mode `0x0` is the "make it work first" baseline. Long term the upstream NVMe Linux driver might be updated to accommodate userspace requests for IO queues, but that's a discussion for another day.
 
 On the host, SPDK's `nvmf_tgt` presents an emulated NVMe controller over the vfio-user protocol: a Unix socket that speaks the VFIO device model. QEMU connects with a `vfio-user-pci` device, and the guest sees a perfectly ordinary `/dev/nvme0`. The clever bit — which becomes central later — is that SPDK advertises the NVMe doorbell registers (BAR0 offset `0x1000`+) as a sparse-mmap'd shared page by default. The client mmaps it; doorbell writes land in shared memory; SPDK's poll loop reads the new tail value. No socket round-trip per doorbell.
 
@@ -101,7 +101,7 @@ There was another SDC session Stephen had on the agenda:
 
 > This talk presents a different approach: a standalone userspace server that emulates a complete PCIe RDMA NIC via the VFIO-user protocol. Built on Nutanix's open-source libvfio-user library, the server exposes PCI BARs to an unmodified QEMU/KVM guest, which loads a companion kernel driver and a custom rdma-core provider. Applications in the guest see a standard InfiniBand device and use ordinary libibverbs calls — `ibv_post_send`, `ibv_poll_cq`, perftest, iperf3 — with no guest-side awareness that the device is emulated.
 
-After some sleuthing, a QEMU branch Stephen had created was discovered, and in it was something wonderful: `pcie-mmio-bridge` support. The power to bind physical hardware to the software-defined world was in my hand, and I was ready to abuse the heck out of it. Rolled it into a binary, and it was game time. The moment of truth. Fizzle.
+After some sleuthing, a [QEMU branch Stephen had created](https://github.com/sbates130272/qemu) was discovered, and in it was something wonderful: `pcie-mmio-bridge` support. The power to bind physical hardware to the software-defined world was in my hand, and I was ready to abuse the heck out of it. Rolled it into a binary, and it was game time. The moment of truth. Fizzle.
 
 ```
 NVMe CQ poll timeout after 10000000 polls (cq_head=0 expected_phase=1)
