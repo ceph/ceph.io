@@ -18,7 +18,7 @@ Last year there was one paper that stuck in my mind, which is fairly remarkable 
 
 ## The idea: RADOS, spoken as NVMe key-value
 
-Last year we also saw the first ratified version of the NVMe key-value command set specification. We already have a Ceph implementation of NVMe/TCP that leverages SPDK, and it seemed like we could add support fairly easily for the key-value command set.
+In 2025 we also saw the first ratified version of the [NVMe key-value command set specification](https://nvmexpress.org/specification/key-value-command-set-specification/). We already have a Ceph implementation of NVMe/TCP that leverages SPDK, and it seemed like we could add support fairly easily for the key-value command set.
 
 For those who don't know the internal mechanics of Ceph, the native API operates against RADOS objects. RADOS is richer than most object stores: it supports reads and writes to arbitrary offsets, deletes, key-value storage (OMAP), watch/notify notifications, and a class system to execute code against objects (`cls`). How could we find an intersection between the full power of RADOS and GPU-initiated storage?
 
