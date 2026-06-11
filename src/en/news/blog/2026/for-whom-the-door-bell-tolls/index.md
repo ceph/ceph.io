@@ -37,7 +37,7 @@ The other fun idea — hold onto this one, it comes back — was a vendor-specif
 
 It was the afternoon of June 4. I had the start of a plan and the NVMe key-value specification, and it was time to `/grill-me-with-docs`. After some Q&A with my agentic pals, I decomposed the work into a task DAG, with an adversarial review task paired to each coding task — sub-agents with bounded contexts, arguing with other sub-agents for better quality, a coordinator agent running the merge queue and dispatching work as it unblocked. I set the whole thing on a loop, then went to walk the dog and peek in on the agentic factory from my phone. There's a pleasing recursion here: I was building infrastructure for AI workloads *using* AI workloads.
 
-The first agent made a surprising find: NVIDIA had recently added an NVMe KV client to SPDK. That undoubtedly made things easier — we had a reference client to work against. I was tapped out, time for me to sleep, while the factory whirs.
+The first agent made a surprising find: NVIDIA had recently [added an NVMe KV client to SPDK](https://github.com/spdk/spdk/commit/93cf1ebc57cea99caba6c68f30354f93dce90ffd). That undoubtedly made things easier — we had a reference client to work against. I was tapped out, time for me to sleep, while the factory whirs.
 
 The next morning I grabbed my coffee and checked in to see what sort of breakfast had been prepared. I have to say, the dish was perfectly plated, and the flavor was like a breakfast burrito from a San Diego taqueria. On this day [**rados-nkv**](https://review.spdk.io/c/spdk/spdk/+/28851) was born — a complete SPDK controller exporting a RADOS-backed NVMe key-value namespace over VFIO-user. Tested end-to-end. Logically, it looks like this:
 
