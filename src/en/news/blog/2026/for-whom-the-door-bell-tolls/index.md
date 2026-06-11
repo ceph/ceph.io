@@ -48,7 +48,7 @@ We'll need some things to talk to this newfangled key-value namespace, of course
 
 ## A flashback to BaM
 
-Around this time a colleague asked me if I was going to SNIA's SDC, which triggered me to scan the sessions on the docket. Serendipitously, I saw Stephen Bates's abstract: **GPU-Initiated NVMe: Cutting the CPU Out of the Accelerator-to-Storage Data Path.** This gave me an immediate flashback to the BaM paper. The rados-nkv prototype was working, and as-is it would be a big improvement for AI workloads — but what if we could realize *GPU-initiated* IO to it? DMA-buf changes were [landing in the Linux kernel](https://lists.freedesktop.org/archives/dri-devel/2025-October/529924.html) that might just open up a viable path.
+Around this time a colleague asked me if I was going to SNIA's SDC, which triggered me to scan the sessions on the docket. Serendipitously, I saw [Stephen Bates](https://www.linkedin.com/in/stephen-bates-8791263/)'s abstract: **GPU-Initiated NVMe: Cutting the CPU Out of the Accelerator-to-Storage Data Path.** This gave me an immediate flashback to the BaM paper. The rados-nkv prototype was working, and as-is it would be a big improvement for AI workloads — but what if we could realize *GPU-initiated* IO to it? DMA-buf changes were [landing in the Linux kernel](https://lists.freedesktop.org/archives/dri-devel/2025-October/529924.html) that might just open up a viable path.
 
 I pinged Stephen on LinkedIn, who indicated that ROCm XIO was the droid I was looking for.
 
