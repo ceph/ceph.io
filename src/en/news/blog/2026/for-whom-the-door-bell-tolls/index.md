@@ -81,13 +81,13 @@ As much as I wanted to go straight for the prize — GPU-initiated IO to a *key-
 3. Spins on the Completion Queue, watching the phase bit flip.
 4. Rings the CQ-head doorbell to acknowledge the completion.
 
-A companion kernel module (`/dev/rocm-xio`) handles the privileged glue: pinning queue memory, intercepting the kernel NVMe driver's admin commands to inject the right physical addresses, and exporting GPU VRAM buffers for peer-to-peer DMA. Crucially, the queues, doorbells, and data buffers can each live in host RAM or GPU VRAM, selected by a 4-bit `--memory-mode` mask:
+A companion kernel module (`/dev/rocm-xio`) handles the privileged glue: pinning queue memory, intercepting the kernel NVMe driver's admin commands to inject the right physical addresses, and exporting GPU VRAM buffers for peer-to-peer DMA. Long term the upstream NVMe Linux driver might be updated to accommodate userspace requests for IO queues, sparing this interception dance — but that's a discussion for another day. Crucially, the queues, doorbells, and data buffers can each live in host RAM or GPU VRAM, selected by a 4-bit `--memory-mode` mask:
 
 | bit | `0x1` | `0x2` | `0x4` | `0x8` |
 | --- | --- | --- | --- | --- |
 | structure | SQ | CQ | doorbell | data buffer |
 
-Mode `0x0` = everything in host RAM. Mode `0x8` = flip just the data buffer into VRAM, so the payload P2P-DMAs straight into GPU memory. Mode `0x8` is the whole point; mode `0x0` is the "make it work first" baseline. Long term the upstream NVMe Linux driver might be updated to accommodate userspace requests for IO queues, but that's a discussion for another day.
+Mode `0x0` = everything in host RAM. Mode `0x8` = flip just the data buffer into VRAM, so the payload P2P-DMAs straight into GPU memory. Mode `0x8` is the whole point; mode `0x0` is the "make it work first" baseline.
 
 On the host, SPDK's `nvmf_tgt` presents an emulated NVMe controller over the vfio-user protocol: a Unix socket that speaks the VFIO device model. QEMU connects with a `vfio-user-pci` device, and the guest sees a perfectly ordinary `/dev/nvme0`. The clever bit — which becomes central later — is that SPDK advertises the NVMe doorbell registers (BAR0 offset `0x1000`+) as a sparse-mmap'd shared page by default. The client mmaps it; doorbell writes land in shared memory; SPDK's poll loop reads the new tail value. No socket round-trip per doorbell.
 
