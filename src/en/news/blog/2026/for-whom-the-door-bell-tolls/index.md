@@ -1,20 +1,16 @@
-<!--
-  ceph.io draft — "For whom the door-bell tolls"
-  Editorial notes for Kyle (delete before publishing):
-   - The former PASTE/CONFIRM spots are now filled from the 2026-06-11 run on the
-     Strix Halo box (transcripts in ceph-gpu-initiated/captures/gpu-kv-rados-20260611.log).
-   - Remaining real-fact checks are tagged TODO/CONFIRM below.
-   - Two diagrams are referenced with captions; wire in the real image files.
-   - Confirm the surname spelling: Stephen Bates (Eideticom / SNIA SDC). Used throughout.
-   - NEW since your draft: a short "Wavefront multi-key — and a torn read" section was
-     added (Bug #3, found + fixed live). Keep or cut as you like; it's clearly delimited.
--->
+---
+title: "For whom the door-bell tolls"
+image: "images/octo-gong.png"
+date: 2026-06-11
+author: Kyle Bader
+tags:
+  - ceph
+  - rados-nkv
+  - ai
+  - gpu-initated
+---
 
 # For whom the door-bell tolls
-
-*Author: Kyle Bader*
-
-![An octopus striking a great gong — 雷鳴萬軍, "the thunder of ten thousand armies."](images/octo-gong.png)
 
 In a [previous post](#) we extolled the benefits of KV caching, a technique to save the KV states from the prefill step of LLM-based inference to reduce time to first token (TTFT) and redundant computation. I co-presented this with Tushar Gohad at [Cephalocon](#). Since then I've been thinking a lot about how to improve the state of the art. Really move the needle. We've made strides in a lot of areas in Ceph, especially the work going into [Fast EC](#) — if you don't know what I'm talking about you should check it out, it promises huge benefits to a large category of workloads. That's not what we're here for today, though.
 
