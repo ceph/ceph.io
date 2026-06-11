@@ -258,7 +258,7 @@ Iterations: 50   Average: 136.24 us   Test completed successfully!
 
 `rocm-xio` allocated the read buffer in **GPU device memory**, exported it via **P2PDMA** to a guest-physical IOVA that SPDK can reach through its vfio-user DMA map, injected that as the read command's PRP, and **SPDK DMA'd the RADOS payload directly into GPU memory** — no host bounce. It was even *faster* than mode 0 (136 µs), partly because there's no host copy and partly because the RBD object was warm.
 
-![The block GPU-init data flow: a gfx1151 __device__ kernel builds an SQE, rings the doorbell into a guest-RAM shadow ring; the pci-mmio-bridge QEMU device forwards the MMIO to the NVMe BAR via address_space_write; SPDK's vfio-user NVMe controller model drives bdev_rbd over librbd to a RADOS OSD; the completion and phase bit are posted back to the GPU-polled CQ.](images/gpu-init-block-flow.png)
+![The block GPU-init data flow: a gfx1151 __device__ kernel builds an SQE, rings the doorbell into a guest-RAM shadow ring; the pci-mmio-bridge QEMU device forwards the MMIO to the NVMe BAR via address_space_write; SPDK's vfio-user NVMe controller model drives bdev_rbd over librbd to a RADOS OSD; the completion and phase bit are posted back to the GPU-polled CQ.](images/gpu-init-block-flow.svg)
 *The block-first proof — note the backend is `bdev_rbd`/`librbd` against an RBD image, **not** rados-nkv. This is the dress rehearsal, not the headline.*
 
 Block done. Now for the thing the post is named for.
@@ -324,7 +324,7 @@ Let me be precise about what's new. GPU-initiated storage over the **key-value**
 
 What I haven't seen before is this exact stack: a GPU-initiated NVMe **key-value** command driven from an **AMD** GPU — as far as I know, a first — landing not in a local KV SSD or a proprietary appliance but in a RADOS object in a distributed Ceph cluster, on entirely **open-source software-defined storage**, with no bespoke DPU or ASIC in the path. And it matters because key-value is the interface KV cache actually wants. The hash of a token sequence *is* the key; two GPUs computing the same prefix arrive at the same RADOS object with zero coordination, no central map to consult or keep coherent.
 
-![The KV GPU-init data flow — identical to the block path up to the controller, then rados-nkv kvdev → librados → RADOS object instead of bdev_rbd.](images/gpu-init-kv-flow.png)
+![The KV GPU-init data flow — identical to the block path up to the controller, then rados-nkv kvdev → librados → RADOS object instead of bdev_rbd.](images/gpu-init-kv-flow.svg)
 *Same GPU-initiated path, KV all the way down: the value is addressed by key and the backend is rados-nkv → librados → a RADOS object.*
 
 <!-- ───────────────── NEW SECTION (added post-draft; keep or cut) ───────────────── -->

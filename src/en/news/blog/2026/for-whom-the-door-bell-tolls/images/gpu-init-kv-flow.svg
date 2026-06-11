@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 1000" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5f6368"/>
+    </marker>
+    <marker id="arrowc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2e8b6f"/>
+    </marker>
+    <marker id="arrowp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1d8fa3"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="760" height="1000" fill="#ffffff"/>
+
+  <!-- GUEST VM domain -->
+  <rect x="24" y="30" width="712" height="306" rx="14" fill="#f4f8fe" stroke="#4a78c2" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="42" y="54" font-size="13" font-style="italic" fill="#3a5680">Guest VM — AMD GPU gfx1151, passed through (vfio-pci)</text>
+
+  <!-- gfx kernel -->
+  <rect x="272" y="64" width="310" height="156" rx="10" fill="#dbe7fb" stroke="#4a78c2" stroke-width="1.6"/>
+  <text x="427" y="90" text-anchor="middle" font-size="15" font-weight="600" fill="#1f3b66">gfx1151 — __device__ kernel · kvSetup()</text>
+  <text x="292" y="118" font-size="13" fill="#3a5680">① build KV Retrieve SQE — opcode 0x02</text>
+  <text x="292" y="140" font-size="13" fill="#3a5680">② key inline (CDW2/3, CDW14/15)</text>
+  <text x="292" y="162" font-size="13" fill="#3a5680">③ value buffer (PRP) → GPU VRAM</text>
+  <text x="292" y="184" font-size="13" fill="#3a5680">④ ring doorbell    ⑤ poll CQ</text>
+
+  <!-- GPU VRAM value buffer -->
+  <rect x="70" y="232" width="186" height="88" rx="10" fill="#e3f4ec" stroke="#2e8b6f" stroke-width="1.6"/>
+  <text x="163" y="262" text-anchor="middle" font-size="15" font-weight="600" fill="#1d6b50">GPU VRAM</text>
+  <text x="163" y="284" text-anchor="middle" font-size="12.5" fill="#256e54">value buffer</text>
+  <text x="163" y="303" text-anchor="middle" font-size="12.5" fill="#256e54">(P2PDMA target)</text>
+
+  <!-- shadow SQ ring -->
+  <rect x="552" y="232" width="184" height="88" rx="10" fill="#e6e3f5" stroke="#7a6fc0" stroke-width="1.6"/>
+  <text x="644" y="262" text-anchor="middle" font-size="15" font-weight="600" fill="#3a3173">shadow SQ ring</text>
+  <text x="644" y="284" text-anchor="middle" font-size="12.5" fill="#544a8c">guest RAM —</text>
+  <text x="644" y="303" text-anchor="middle" font-size="12.5" fill="#544a8c">64-byte KV SQE</text>
+
+  <!-- enqueue SQE -->
+  <line x1="582" y1="168" x2="640" y2="232" stroke="#5f6368" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="598" y="176" font-size="12.5" fill="#5f6368">enqueue SQE</text>
+
+  <!-- HOST domain -->
+  <rect x="24" y="366" width="712" height="540" rx="14" fill="#fffdf8" stroke="#e0972f" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="42" y="390" font-size="13" font-style="italic" fill="#9a6a12">Host</text>
+
+  <!-- pci-mmio-bridge -->
+  <rect x="552" y="398" width="184" height="92" rx="10" fill="#e6e3f5" stroke="#7a6fc0" stroke-width="1.6"/>
+  <text x="644" y="426" text-anchor="middle" font-size="14" font-weight="600" fill="#3a3173">pci-mmio-bridge</text>
+  <text x="644" y="447" text-anchor="middle" font-size="12.5" fill="#544a8c">QEMU device —</text>
+  <text x="644" y="466" text-anchor="middle" font-size="12.5" fill="#544a8c">forwards MMIO → NVMe BAR</text>
+
+  <!-- shadow ring -> bridge -->
+  <line x1="644" y1="320" x2="644" y2="398" stroke="#5f6368" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="654" y="362" font-size="12.5" fill="#5f6368">doorbell MMIO</text>
+
+  <!-- SPDK container -->
+  <rect x="288" y="520" width="320" height="252" rx="12" fill="#fdf3e3" stroke="#e0972f" stroke-width="1.8"/>
+  <text x="448" y="544" text-anchor="middle" font-size="14" font-weight="600" fill="#9a6a12">SPDK target (host) — nvmf_tgt</text>
+
+  <!-- controller model -->
+  <rect x="310" y="556" width="276" height="86" rx="10" fill="#e6e3f5" stroke="#7a6fc0" stroke-width="1.6"/>
+  <text x="448" y="584" text-anchor="middle" font-size="14" font-weight="600" fill="#3a3173">vfio-user NVMe controller model</text>
+  <text x="448" y="606" text-anchor="middle" font-size="12.5" fill="#544a8c">CSI = Key Value (0x1)</text>
+  <text x="448" y="625" text-anchor="middle" font-size="12" font-style="italic" fill="#7a6fc0">identical to block path up to here</text>
+
+  <!-- kvdev -->
+  <rect x="310" y="662" width="276" height="86" rx="10" fill="#e6e3f5" stroke="#7a6fc0" stroke-width="1.6"/>
+  <text x="448" y="694" text-anchor="middle" font-size="15" font-weight="600" fill="#3a3173">rados-nkv kvdev</text>
+  <text x="448" y="716" text-anchor="middle" font-size="12.5" fill="#544a8c">kvdev_rados: key → object</text>
+
+  <!-- bridge -> controller (into right side) -->
+  <path d="M 644 490 L 644 599 L 586 599" fill="none" stroke="#5f6368" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="560" y="512" text-anchor="middle" font-size="12.5" fill="#5f6368">address_space_write</text>
+
+  <!-- controller -> kvdev -->
+  <line x1="448" y1="642" x2="448" y2="662" stroke="#5f6368" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- RADOS -->
+  <rect x="288" y="814" width="320" height="84" rx="10" fill="#fbe3ec" stroke="#c2548a" stroke-width="1.6"/>
+  <text x="448" y="846" text-anchor="middle" font-size="15" font-weight="600" fill="#8a2c5b">RADOS object — Ceph cluster</text>
+  <text x="448" y="868" text-anchor="middle" font-size="12.5" fill="#9d3d6b">content-addressed by key</text>
+
+  <!-- kvdev -> RADOS -->
+  <line x1="448" y1="748" x2="448" y2="814" stroke="#5f6368" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="458" y="784" font-size="12.5" fill="#5f6368">librados</text>
+
+  <!-- P2PDMA value path into VRAM (headline) -->
+  <path d="M 310 706 L 163 706 L 163 320" fill="none" stroke="#1d8fa3" stroke-width="3" marker-end="url(#arrowp)"/>
+  <text x="172" y="700" font-size="13" font-weight="600" fill="#15788a">value: P2PDMA → VRAM</text>
+  <text x="172" y="470" font-size="12.5" fill="#15788a">memory-mode 8 ·</text>
+  <text x="172" y="488" font-size="12.5" fill="#15788a">no host bounce</text>
+
+  <!-- completion return path -->
+  <path d="M 310 580 L 40 580 L 40 150 L 272 150" fill="none" stroke="#2e8b6f" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#arrowc)"/>
+  <text x="48" y="122" font-size="12.5" fill="#2e8b6f">post completion + phase bit</text>
+  <text x="48" y="140" font-size="12.5" fill="#2e8b6f">· length in DW0</text>
+
+  <!-- legend -->
+  <g font-size="12.5" fill="#3c4043">
+    <rect x="120" y="936" width="15" height="15" rx="3" fill="#dbe7fb" stroke="#4a78c2"/>
+    <text x="142" y="948">GPU compute</text>
+    <rect x="290" y="936" width="15" height="15" rx="3" fill="#e3f4ec" stroke="#2e8b6f"/>
+    <text x="312" y="948">GPU VRAM (value)</text>
+    <rect x="490" y="936" width="15" height="15" rx="3" fill="#e6e3f5" stroke="#7a6fc0"/>
+    <text x="512" y="948">bridge · SPDK datapath</text>
+    <rect x="120" y="962" width="15" height="15" rx="3" fill="#fdf3e3" stroke="#e0972f"/>
+    <text x="142" y="974">SPDK nvmf_tgt process</text>
+    <rect x="490" y="962" width="15" height="15" rx="3" fill="#fbe3ec" stroke="#c2548a"/>
+    <text x="512" y="974">Ceph / RADOS</text>
+  </g>
+</svg>
