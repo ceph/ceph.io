@@ -1,6 +1,6 @@
 ---
 title: "For whom the door-bell tolls"
-image: "images/octo-gong.png"
+image: "images/octo-gong.jpg"
 date: 2026-06-11
 author: Kyle Bader
 tags:
