@@ -388,7 +388,7 @@ The ROCm XIO kernel drives a **single 1024-entry submission queue** (`--num-queu
 > We pulled data from 432k real coding-agent requests, and the median one isn't 32k, isn't 64k, but **96k input tokens** — more than the entire text of *The Great Gatsby* shoved into the model before you've even typed your question.
 > — [SemiAnalysis](https://x.com/SemiAnalysis_/status/2057869518295249373)
 
-The 256-token block isn't an arbitrary chunk, either: it's the granularity LMCache and llm-d-kv-cache already aggregate vLLM's 16-token paged blocks into before handing them across the kv-connector. We content-address at the unit the ecosystem already speaks.
+The 256-token block isn't an arbitrary chunk, either: it's the granularity LMCache and llm-d-kv-cache already aggregate vLLM's 16-token paged blocks into before handing them across the kv-connector. We content-address at the unit the ecosystem already speaks. If you take a model like IBM Granite 4.0 30B, a 256-token block works out to about 32MB (128K per token).
 
 So a single SQ-tail doorbell ring submits the whole batch — meaning we can request an entire **262k-token prefix with one ring of the submission doorbell.** SPDK dispatches the work across its async reactors, which drive `librados` asynchronously to RADOS, and P2P-DMAs each value into a VRAM-backed dma-buf.
 
