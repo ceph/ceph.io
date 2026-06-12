@@ -29,14 +29,16 @@ Stick around afterward for a networking reception to meet fellow community membe
 - **Registration Closes:** 2026-10-07
 - **Event Date:** 2026-10-14
 
-Registration is now open! 
+Registration is now open! (Closes on Oct 7, 2026)
+
 </br>
 
 <a class="button" href="https://luma.com/b4d2ffox">Register Here!</a>
+
 </br>
 
+The Call for Papers is open from June 15 to Step 4.
 
-(Closes on Oct 7, 2026)
 </br>
 
 <a class="button" href="https://forms.gle/VMmjic6Uys8bDjwJA">CfP Here!</a>
