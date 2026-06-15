@@ -6,8 +6,6 @@ categories: "community"
 image: ""
 tags:
   - "ceph"
-  - "ceph days"
-  - "seattle"
   - "object storage"
 ---
 
