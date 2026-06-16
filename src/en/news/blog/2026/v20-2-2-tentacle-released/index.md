@@ -1,7 +1,7 @@
 ---
 title: "v20.2.2 Tentacle released"
-date: "2026-06-15"
-author: "Yuri Weinstein"
+date: "2026-06-16"
+author: "Yuri Weinstein, Patrick Donnelly"
 tags:
   - "release"
   - "tentacle"
@@ -12,36 +12,29 @@ We recommend that all users update to this release.
 Release Date
 ------------
 
-June 12, 2026
+June 16, 2026
 
 ## Notable Changes
 ---------------
 
-- Rocky 10 is now supported starting with v20.2.2. Please see the `supported platforms <https://docs.ceph.com/en/latest/start/os-recommendations/#platforms>`_ for current and planned support in Ceph.
+- Rocky 10 package-based installs are now supported starting with v20.2.2. Please see the [supported platforms](https://docs.ceph.com/en/latest/start/os-recommendations/#platforms) for current and planned support in Ceph.
+
 
 MDS (Metadata Server)
 ---------------------
 
-- Upgrade Testing Architecture: Split up existing upgrade sequences into distinct CentOS Stream 9 and Rocky Linux 10 automated test variants across multiple upgrade suites (including parallel, stress-split, and telemetry suites).
-- Queueing Logic Update: Retry requests are now added directly to the MDSRank wait queue rather than going through the finisher.
-- Optimization: Removed duplicate context completion calls and adjusted scan_stray_dir after refining the MDSContext class.
-- Reversion: Reverted a prior change that moved MDSContext completion handling to the finish method.
 - Segmentation fault fixed due to incorrect queueing of request retries.
 
 OSD (Object Storage Daemon)
 ---------------------------
 
-- FastEC Activation: Always updates the pwlc epoch when activating.
 - PGLog Missed List: Fixed a bug to ensure the correct version is attached to the missing list when ignoring log entries.
 - Data Integrity Asserts: Added assertions to explicitly catch potential corruption in the OSD missing list.
-- Data Structure Changes: Modified the rmissing map key type from version_t to eversion_t.
-- Rollback & Vector Fixes: Corrected rollback logic for partial write object information (OI) and optimized Erasure Coding (EC) by ensuring Twiddle creates a full-sized vector.
 
 RGW (RADOS Gateway)
 -------------------
 
 - Lifecycle Management: Fixed lifecycle transition issues affecting encrypted multipart objects.
-- Multisite Concurrency: Improved concurrency handling when a value of 1 is provided by the caller, added logging for concurrency state transitions within adj_concurrency, exposed lock latency as a performance counter for data synchronization, and fixed an uninitialized LatencyMonitor average by shifting to an exponentially weighted moving average.
 - REST & Query Handling: RESTArgs::get_string() now properly URL-decodes incoming query parameters.
 
 RADOS / librados / neorados
@@ -248,6 +241,8 @@ External Block Device (extblkdev)
 
 - mgr: fix PyObject\* refcounting in TTLCache and cleanup logic ([pr#66482](https://github.com/ceph/ceph/pull/66482), Nitzan Mordechai)
 
+- mgr: guard close_section calls in get_perf_schema_python ([pr#69436](https://github.com/ceph/ceph/pull/69436), Lumir Sliva)
+
 - mgr: isolated CherryPy to prevent global state sharing ([pr#67465](https://github.com/ceph/ceph/pull/67465), Nizamudeen A, Anmol Babu)
 
 - mon [stretch-mode]: Allow a max bucket weight diff threshold ([pr#67790](https://github.com/ceph/ceph/pull/67790), Kamoltat Sirivadhna, Kamoltat (Junior) Sirivadhna)
@@ -279,6 +274,8 @@ External Block Device (extblkdev)
 - osd/scrub: support an operator-abort command ([pr#67031](https://github.com/ceph/ceph/pull/67031), Ronen Friedman)
 
 - osd: add pg-upmap-primary to clean\_pg\_upmaps ([pr#67407](https://github.com/ceph/ceph/pull/67407), Laura Flores)
+
+- osd: Allow multiple objects with same version in missing list ([pr#69450](https://github.com/ceph/ceph/pull/69450), Alex Ainscow)
 
 - osd: Avoid assertion on empty object read when reading multiple objects ([pr#68714](https://github.com/ceph/ceph/pull/68714), Alex Ainscow)
 
