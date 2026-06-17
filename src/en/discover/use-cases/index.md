@@ -64,11 +64,11 @@ Instead of bulky payments and costly infrastructure demands, Ceph will run on yo
 
 ### Choose the hardware that matches your needs
 
-Ceph provides unparalleled flexibility in your choice of hardware, able to run on just about anything. By freeing organisations from committing to a single hardware vendor, Ceph allows for constant adpation and innovation, with all hardware components able to be swapped out as your needs change. Access object, block or file storage from one unified cluster, simplifying your data management independent of the hardware you use.
+Ceph provides unparalleled flexibility in your choice of hardware, able to run on just about anything. By freeing organisations from committing to a single hardware vendor, Ceph allows for constant adaptation and innovation, with all hardware components able to be swapped out as your needs change. Access object, block or file storage from one unified cluster, simplifying your data management independent of the hardware you use.
 
 ### Remove bottlenecks
 
-Bottlenecks that seemed acceptable in smaller deployments may rapidly become costly and unweildly at scale. As a distributed storage system, Ceph provides seamless data retrieval by enabling client applications to calculate the location of data within a cluster directly, removing the need for a traditional metadata server. By allowing this direct path to retrieving and writing data, network traffic is reduced, and a critical single point of failure negated, providing smoother, more reliable service to you and your customers.
+Bottlenecks that seemed acceptable in smaller deployments may rapidly become costly and unwieldy at scale. As a distributed storage system, Ceph provides seamless data retrieval by enabling client applications to calculate the location of data within a cluster directly, removing the need for a traditional metadata server. By allowing this direct path to retrieving and writing data, network traffic is reduced, and a critical single point of failure negated, providing smoother, more reliable service to you and your customers.
 
 ### A solution you can rely on long-term
 
