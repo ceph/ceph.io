@@ -1,6 +1,11 @@
 {
   "tech_talks": [
     {
+      "date": "2026-07-08",
+      "title": "For Whom the Doorbell Tolls, GPU-Initiated Key-Value Storage on Ceph",
+      "presenter": "Kyle Bader (IBM) and Stephen Bates (AMD)"
+    },
+    {
       "date": "2026-06-09",
       "title": "Building Ultra-Resilient Ceph Clusters with Xinnor and OSNexus",
       "presenter": "Steven Umbehocker, CEO of OSNexus & Dmitry Livshits, CEO of Xinnor",
