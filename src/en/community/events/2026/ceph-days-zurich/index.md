@@ -3,7 +3,7 @@ title: Ceph Days Zurich 2026
 date: 2026-10-14
 end: 2026-10-14
 location: Zuerich, Switzerland
-venue: University Zurich, Rämistrasse 71, CH-8006 Zurich 
+venue: University Zurich, Rämistrasse 59, CH-8006 Zurich 
 image: "/assets/bitmaps/ceph-days.png"
 sponsors: CLYSO
 tags:
