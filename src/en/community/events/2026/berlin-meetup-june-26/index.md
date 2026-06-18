@@ -3,7 +3,7 @@ title: Ceph Berlin Meetup June 2026
 date: 2026-06-29
 end: 2026-06-29
 location: Berlin
-venue: Design Offices Berlin Leipziger Platz Leipziger Pl. 16 · Berlin
+venue: Design Offices Berlin Leipziger Platz
 image: "/assets/bitmaps/berlin-meetup-26.png"
 sponsors:
   - IBM
@@ -49,7 +49,7 @@ Somebody has room for us and wants to offer a location to meet - let us know, th
 Since the location for in-person might not be shown, here it is:
 
 Red Hat, ℅ Design Offices,
-Leipziger Pl. 16, 10117 Berlin
+Leipziger Pl. 16, 10117 Berlin, Germany
 
 We'll meet on June 29th 2026 in front of the main entry facing the Leipziger Platz, between 18:40-18:50, so please be on time or give me a call 
 on +49-160-92654111 in case you're late. 
