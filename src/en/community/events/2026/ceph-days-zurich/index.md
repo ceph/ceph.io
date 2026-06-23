@@ -37,7 +37,7 @@ Registration is now open! (Closes on Oct 7, 2026)
 
 </br>
 
-The Call for Papers is open from June 15 to Step 4.
+The Call for Papers is open from June 15 to September 4.
 
 </br>
 
