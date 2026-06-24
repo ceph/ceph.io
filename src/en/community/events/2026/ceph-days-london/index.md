@@ -64,7 +64,7 @@ a networking reception, to foster more Ceph learning.
   <tr>
    <td>9:10 AM
    </td>
-    <td><strong>Keynote - State of Ceph (<a href="/assets/pdfs/events/2026/keynote-state-of-ceph.pdf" target="_blank">Slides</a>)</strong>
+    <td><strong>Keynote - State of Ceph (<a href="/assets/pdfs/events/2026/ceph-days-london/keynote-state-of-ceph.pdf" target="_blank">Slides</a>)</strong>
     <p>A look at the Ceph roadmap, current development priorities, and the latest activity in the Ceph community.
    </td>
    <td><center><strong><img src="/assets/bitmaps/events/2026/cephdayslondon/neha-ojha.jpg" width="400" />Neha Ojha (IBM)</strong></center>
@@ -89,7 +89,7 @@ Hang on to your hats, and bring questions!
   <tr>
    <td>10:00 AM
    </td>
-   <td><strong>From VMware & SAN to Proxmox & Ceph: A Practical Migration Path (<<a href="/assets/pdfs/events/2026/from-vmware-and-san-to-proxmox-and-ceph.pdf" target="_blank">Slides</a>)</strong>
+   <td><strong>From VMware & SAN to Proxmox & Ceph: A Practical Migration Path (<a href="/assets/pdfs/events/2026/from-vmware-and-san-to-proxmox-and-ceph.pdf" target="_blank">Slides</a>)</strong>
 <p>
 Organizations are increasingly moving away from traditional VMware‑plus‑SAN architectures and adopting open‑source alternatives such as Proxmox VE with Ceph. In this talk, I share our real‑world migration journey, covering not only the move from VMware/SAN to a Proxmox/Ceph platform but also our transition from a VM‑based network file‑sharing cluster (OpenAFS/NFS) to CephFS backed by SMB. I will discuss the technical challenges we encountered, the architectural decisions behind our new virtualization and storage stack, and the strategies we used to move production workloads with minimal disruption.
    </td>
