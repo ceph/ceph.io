@@ -269,7 +269,7 @@ This talk describes the physical relocation of a live Ceph cluster between datac
   <tr>
    <td>4:00 PM
    </td>
-   <td><strong>Ceph Dedup for RGW: Scalable Object Deduplication (<a href="/assets/pdfs/events/2026/ceph-days-london/ceph-dedup-for-rgw.pdf" target="_blank">Slides</a>" target="_blank">Slides</a>)</strong>
+   <td><strong>Ceph Dedup for RGW: Scalable Object Deduplication (<a href="/assets/pdfs/events/2026/ceph-days-london/ceph-dedup-for-rgw.pdf" target="_blank">Slides</a>)</strong>
 <p>
 In this talk, we will present Ceph Dedup for RGW objects, a scale-out deduplication feature that runs on RGW servers and efficiently identifies and eliminates duplicate full RGW objects. The feature is available in the main upstream code today and is targeted for the Tentacle release as a tech-preview.
    </td>
