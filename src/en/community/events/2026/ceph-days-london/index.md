@@ -64,9 +64,8 @@ a networking reception, to foster more Ceph learning.
   <tr>
    <td>9:10 AM
    </td>
-   <td><strong>Keynote - State of Ceph</strong>
-<p>
-A look at the Ceph roadmap, current development priorities, and the latest activity in the Ceph community.
+    <td><strong>Keynote - State of Ceph (<a href="/assets/pdfs/events/2026/Keynote - State of Ceph.pdf" target="_blank">Slides</a>)</strong>
+    <p>A look at the Ceph roadmap, current development priorities, and the latest activity in the Ceph community.
    </td>
    <td><center><strong><img src="/assets/bitmaps/events/2026/cephdayslondon/neha-ojha.jpg" width="400" />Neha Ojha (IBM)</strong></center>
    </td>
@@ -74,8 +73,8 @@ A look at the Ceph roadmap, current development priorities, and the latest activ
   <tr>
    <td>9:30 AM
    </td>
-   <td><strong>Ceph Storage Roadmap: Enterprise Meets Community </strong>
-<p>
+  <td><strong>Ceph Storage Roadmap: Enterprise Meets Community (<a href="/assets/pdfs/events/2026/Enterprise meets Community - Ceph Days London 2026.pdf" target="_blank">Slides</a>)</strong>
+  <p>
 Our annual Ceph storage roadmap session starts with everything that is happening in the upstream project this year and what we have planned for the future, and closes with the state of what is backed by vendor-supported products at IBM.
 
 Architectural familiarity with Ceph is required. This session contains zero vendor pitches, and it is a caffeinated tour of what the Ceph community is working on at the feature level. 
@@ -90,7 +89,7 @@ Hang on to your hats, and bring questions!
   <tr>
    <td>10:00 AM
    </td>
-   <td><strong>From VMware & SAN to Proxmox & Ceph: A Practical Migration Path</strong>
+   <td><strong>From VMware & SAN to Proxmox & Ceph: A Practical Migration Path (<a href="/assets/pdfs/events/2026/From VMware & SAN to Proxmox & Ceph.pdf" target="_blank">Slides</a>)</strong>
 <p>
 Organizations are increasingly moving away from traditional VMware‑plus‑SAN architectures and adopting open‑source alternatives such as Proxmox VE with Ceph. In this talk, I share our real‑world migration journey, covering not only the move from VMware/SAN to a Proxmox/Ceph platform but also our transition from a VM‑based network file‑sharing cluster (OpenAFS/NFS) to CephFS backed by SMB. I will discuss the technical challenges we encountered, the architectural decisions behind our new virtualization and storage stack, and the strategies we used to move production workloads with minimal disruption.
    </td>
@@ -108,7 +107,7 @@ Organizations are increasingly moving away from traditional VMware‑plus‑SAN 
   <tr>
    <td>11:00 AM
    </td>
-   <td><strong>Lightning Talk (LT): Non disruptive data migration between pools</strong>
+   <td><strong>Lightning Talk (LT): Non disruptive data migration between pools (<a href="/assets/pdfs/events/2026/Non disruptive data migration between pools.pdf" target="_blank">Slides</a>)</strong>
 <p>
 Pool migration is a new feature being developed to allow all the objects in a pool to be migrated to a new pool non-disruptively, to facilitate changing the erasure code profile and converting between replica and erasure coded pools. We will discuss how the this feature works, what limitations there will be, and some of the challenges we found during development.
    </td>
@@ -120,7 +119,7 @@ Pool migration is a new feature being developed to allow all the objects in a po
   <tr>
    <td>11:10 AM
    </td>
-   <td><strong>Lightning Talk (LT): Optimizing Teuthology: Turning Failures into faster Ceph Fixes</strong>
+   <td><strong>Lightning Talk (LT): Optimizing Teuthology: Turning Failures into faster Ceph Fixes (<a href="/assets/pdfs/events/2026/Optimizing Teuthology.pdf" target="_blank">Slides</a>)</strong>
 <p>
 Lee has been working on Ceph for over 2 years, this lightning talk is sharing his insight and experience with teuthology and the optimisations that will reduce execution time of your tests and improve the efficiency of systems within the teuthology suite which will speed up execution times of the lives of developers within the Ceph community for developing fixes.
    </td>
@@ -130,7 +129,7 @@ Lee has been working on Ceph for over 2 years, this lightning talk is sharing hi
   <tr>
    <td>11:20 AM
    </td>
-   <td><strong>Lightning Talk (LT): NVMEoF - What is new in Tentacle?</strong>
+   <td><strong>Lightning Talk (LT): NVMEoF - What is new in Tentacle? (<a href="/assets/pdfs/events/2026/NVMEoF-What is new in Tentacle.pdf" target="_blank">Slides</a>)</strong>
 <p>
 The Tentacle release of Ceph introduces key NVMEoF enhancements, in this lightning talk we summarise the new features:
 
@@ -153,7 +152,7 @@ As well as many more features.
   <tr>
      <td>11:30 AM
    </td>
-   <td><strong>Cuttle Out the Middleman: Direct Shard Access in Erasure Coded Pools</strong>
+   <td><strong>Cuttle Out the Middleman: Direct Shard Access in Erasure Coded Pools (<a href="/assets/pdfs/events/2026/Cuttle out the Middleman.pdf" target="_blank">Slides</a>)</strong>
 <p>
 This session explores the architectural shifts required to allow clients to bypass the Primary entirely and fetch data directly from the OSDs. We will discuss the mechanics of offloading data retrieval, decoding, and validation to the client side. Finally, we will share an in-depth performance analysis, highlighting the reduction in overall network latency and improvements in tail latencies across various workload profiles.
    </td>
@@ -163,7 +162,7 @@ This session explores the architectural shifts required to allow clients to bypa
   <tr>
      <td>12:00 PM
    </td>
-   <td><strong>Scaling CephFS MDS for Front Developer Workspaces on Kubernetes</strong>
+   <td><strong>Scaling CephFS MDS for Front Developer Workspaces on Kubernetes (<a href="/assets/pdfs/events/2026/Scaling CephFS MDS.pdf" target="_blank">Slides</a>)</strong>
 <p>
 Modern frontend development ecosystems, particularly Node.js, are notorious for generating enormous metadata footprints. A single 'node_modules' directory can easily contain over 100,000 files and deeply nested directory trees. Now multiply that by dozens or hundreds of concurrent developer workspaces, all backed by CephFS, and you have a perfect storm hitting your MDS layer.
  
@@ -185,7 +184,7 @@ We will walk through the journey from identifying the MDS as the bottleneck to i
    <tr>
    <td>1:30 PM
    </td>
-   <td><strong>Ceph-SMB: Latest Updates and Future Roadmap</strong>
+   <td><strong>Ceph-SMB: Latest Updates and Future Roadmap (<a href="/assets/pdfs/events/2026/Ceph-SMB Updates and Future Roadmap.pdf" target="_blank">Slides</a>)</strong>
 <p>
 This talk will begin with a brief introduction of the Ceph-SMB service followed by an overview of the latest developments in the project. We will highlight newly added features such as I/O throughput and rate limiting, Bring Your Own Key (BYOK) support, and enhanced share-level metrics. Finally, we will provide a sneak peek into upcoming features planned for future releases, offering insights into the evolving road map of Ceph-SMB.
    </td>
@@ -195,7 +194,7 @@ This talk will begin with a brief introduction of the Ceph-SMB service followed 
    <tr>
    <td>2:00 PM
    </td>
-   <td><strong>The Rise of the AI Programmer: Implications for Ceph</strong>
+   <td><strong>The Rise of the AI Programmer: Implications for Ceph (<a href="/assets/pdfs/events/2026/The Rise of AI as a Programmer.pdf" target="_blank">Slides</a>)</strong>
 <p>
 AI tools, specifically Large Language Models (LLMs), are increasingly being used to write code, review changes, and assist with operations, under the promise of significant productivity improvements (up to 50%). This raises a practical question for the Ceph community: what happens when AI becomes a contributor?
 
@@ -207,7 +206,7 @@ This talk focuses on real-world ways LLMs can and, in fact, does support Ceph de
   <tr>
    <td>2:30 PM
    </td>
-   <td><strong>Lightning Talk (LT): Crimson Project Update</strong>
+   <td><strong>Lightning Talk (LT): Crimson Project Update (<a href="/assets/pdfs/events/2026/Crimson Project Update.pdf" target="_blank">Slides</a>)</strong>
 <p>
 The Crimson project continues from strength to strength. In this talk we provide a concise update on the latest capabilities for the project.
    </td>
@@ -217,7 +216,7 @@ The Crimson project continues from strength to strength. In this talk we provide
   <tr>
    <td>2:40 PM
    </td>
-   <td><strong>Lightning Talk (LT): No More Expired Certificates: Simplifying TLS Management in Ceph with certmgr</strong>
+   <td><strong>Lightning Talk (LT): No More Expired Certificates: Simplifying TLS Management in Ceph with certmgr (<a href="/assets/pdfs/events/2026/Management in Ceph with certmgr.pdf" target="_blank">Slides</a>)</strong>
 <p>
 Managing TLS certificates in a distributed Ceph cluster can be complex and error-prone, with expired or misconfigured certificates often leading to service disruptions and operational overhead.
 
@@ -229,7 +228,7 @@ This lightning talk introduces the certmgr module in Ceph’s cephadm, which aut
   <tr>
    <td>2:50 PM
    </td>
-   <td><strong>Lightning Talk (LT): Active Benchmarking RGW</strong>
+   <td><strong>Lightning Talk (LT): Active Benchmarking RGW (<a href="/assets/pdfs/events/2026/Active benchmarking rgw.pdf" target="_blank">Slides</a>)</strong>
 <p>
 When a benchmark finishes, it gives you a number. Active benchmarking
 asks: why this number and not more?
@@ -248,7 +247,7 @@ asks: why this number and not more?
   <tr>
    <td>3:20 PM
    </td>
-   <td><strong>Tentacle Awards</strong>
+   <td><strong>Tentacle Awards (<a href="/assets/pdfs/events/2026/Tentacle Awards 2026.pdf" target="_blank">Slides</a>)</strong>
 <p>
 The Ceph Ambassador Program is excited to recognize outstanding contributors who've driven the Ceph community forward through leadership, innovation, and teamwork. These awards celebrate contributor achievements in development, advocacy, documentation, and user adoption, and shine a light on organizations that embody the open source spirit and boost the Ceph ecosystem.
    </td>
@@ -260,7 +259,7 @@ The Ceph Ambassador Program is excited to recognize outstanding contributors who
   <tr>
    <td>3:30 PM
    </td>
-    <td><strong>Dude, where's my cluster?</strong>
+    <td><strong>Dude, where's my cluster? (<a href="/assets/pdfs/events/2026/Dude wheres my cluster.pdf" target="_blank">Slides</a>)</strong>
 <p>
 This talk describes the physical relocation of a live Ceph cluster between datacentre rooms, with minimal service interruption, and with bonus hardware lifecycle replacement works along the way.
    </td>
@@ -270,7 +269,7 @@ This talk describes the physical relocation of a live Ceph cluster between datac
   <tr>
    <td>4:00 PM
    </td>
-   <td><strong>Ceph Dedup for RGW: Scalable Object Deduplication</strong>
+   <td><strong>Ceph Dedup for RGW: Scalable Object Deduplication (<a href="/assets/pdfs/events/2026/Ceph Dedup for RGW.pdf" target="_blank">Slides</a>)</strong>
 <p>
 In this talk, we will present Ceph Dedup for RGW objects, a scale-out deduplication feature that runs on RGW servers and efficiently identifies and eliminates duplicate full RGW objects. The feature is available in the main upstream code today and is targeted for the Tentacle release as a tech-preview.
    </td>
