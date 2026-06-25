@@ -9,7 +9,7 @@ tags:
   - "governance"
   - "ceph events"
 ---
-During the second quarter, the Ceph Foundation focused on strengthening collaboration across the project, expanding community programs, supporting documentation efforts, and investing in regional events. This edition highlights recent governance discussions, community elections, new contributor resources, Ceph Days events, and opportunities for community members to get involved. If you have an idea for a Ceph-related event, outreach effort, or project, we encourage you to submit a funding request and work with the Foundation to help bring it to life.
+During the second quarter, the Ceph Foundation focused on strengthening collaboration across the project, expanding community programs, supporting documentation efforts, and investing in regional events. This edition highlights recent governance discussions, community elections, new contributor resources, Ceph Days events, and opportunities for community members to get involved. If you have an idea for a Ceph-related event, outreach effort, or project, we encourage you to submit a <a href="https://form.asana.com/?k=7aCHVRhp0x1Ga1nOCXlckQ&d=9283783873717">funding request</a> and work with the Foundation to help bring it to life.
 
 ## In This Issue
 - [Board and CSC Alignment on Community Priorities](#board-and-csc-alignment-on-community-priorities)
@@ -52,7 +52,7 @@ The election also highlighted opportunities to improve ballot communication and 
 
 Thank you to all candidates who participated and to every community member who cast a ballot.
 
-Read the full election recap for additional details.
+<a href="https://pad.ceph.com/p/CSC_Election_April_2026">Read the full election recap for additional details</a>.
 
 ---
 
@@ -64,7 +64,7 @@ Emmanuel will work closely with contributors across the community to improve doc
 
 If you are interested in joining the Ceph Tech Writing committee, please contact Emmanuel at eameh@contractor.linuxfoundation.org.
 
-Read Emmanuel's introduction on the Ceph blog to learn more about his background and goals for the role.
+Read Emmanuel's introduction on the Ceph <a href="https://ceph.io/en/news/blog/2026/from-laminated-pages-to-petabytes/">introduction blog</a> to learn more about his background and goals for the role.
 
 ---
 
@@ -79,14 +79,14 @@ During the second quarter, the community gathered for two Ceph Days events:
 - **Sponsors:** OSNexus and CLYSO
 - **Attendance:** 30 community members
 
-John Shubeck, a Senior Storage Technical Specialist for IBM Object Storage, shared a detailed recap of the recent Ceph Days event in a new blog post.
+John Shubeck, a Senior Storage Technical Specialist for IBM Object Storage, shared a detailed recap of the recent Ceph Days event in a new <a href="https://ceph.io/en/news/blog/2026/cd-seattle-cloud-blog/">blog post</a>.
 
 ### Ceph Days London 2026
 - **Date:** June 17, 2026
 - **Lead Sponsor:** IBM
 - **Attendance:** 120
 
-Here are a few of the photos of the thriving Ceph community in London!
+Here are a few of the photos of the thriving <a href="https://drive.google.com/drive/folders/1qKCSZyephZp42BBqaxw-mQ1iuGnUW6sO?usp=sharing">Ceph community in London</a>!
 
 These events featured technical presentations, real-world deployment stories, community networking, and discussions about the future of Ceph.
 
@@ -118,7 +118,7 @@ Check the upcoming and tentative Ceph Days events for the rest of 2026.
 
 Interested in organizing a meetup, hosting a Ceph Day, speaking at an event, or promoting Ceph in your region? Community participation is what makes these events successful.
 
-If you need support for a Ceph event, meetup, travel, or community campaign, submit a funding request to the Ceph Foundation. Requests are reviewed by the Governing Board and Linux Foundation staff and considered based on available budget and community impact.
+If you need support for a Ceph event, meetup, travel, or community campaign, submit a <a href="https://form.asana.com/?k=7aCHVRhp0x1Ga1nOCXlckQ&d=9283783873717">funding request</a> to the Ceph Foundation. Requests are reviewed by the Governing Board and Linux Foundation staff and considered based on available budget and community impact.
 
 ---
 
@@ -126,9 +126,9 @@ If you need support for a Ceph event, meetup, travel, or community campaign, sub
 
 The community published maintenance releases for both the Squid and Tentacle release series during the quarter.
 
-- v19.2.4 Squid Released
-- v20.2.1 Tentacle Released
-- v20.2.2 Tentacle Released
+- <a href="https://ceph.io/en/news/blog/2026/v19-2-4-squid-released/">v19.2.4 Squid Released</a>
+- <a href="https://ceph.io/en/news/blog/2026/v20-2-1-tentacle-released/">v20.2.1 Tentacle Released</a>
+- <a href="https://ceph.io/en/news/blog/2026/v20-2-2-tentacle-released/">v20.2.2 Tentacle Released</a>
 
 Thank you to the many contributors, maintainers, testers, and reviewers who continue to support Ceph releases.
 
@@ -138,4 +138,4 @@ Thank you to the many contributors, maintainers, testers, and reviewers who cont
 
 Community committees are coming soon. These committee will provide opportunities for contributors to help shape the future of Ceph beyond code contributions alone. Whether your interests include events, documentation, outreach, onboarding, or community programs, there are many ways to participate.
 
-Committee participation will be shared through our social channel and mailing list. Watch upcoming community communications for additional opportunities to join working groups and contribute to Foundation-led initiatives.
+Committee participation will be shared through our <a href="https://ceph.io/en/community/connect/">social channel and mailing list</a>. Watch upcoming community communications for additional opportunities to join working groups and contribute to Foundation-led initiatives.
