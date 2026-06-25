@@ -1,6 +1,6 @@
 ---
 title: "Ceph Q2 2026 Newsletter"
-date: "2026-06-30"
+date: "2026-06-25"
 author: "Anthony Middleton"
 categories: "newsletter"
 image: "images/ceph-banner.png"
