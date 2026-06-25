@@ -64,7 +64,7 @@ Emmanuel will work closely with contributors across the community to improve doc
 
 If you are interested in joining the Ceph Tech Writing committee, please contact Emmanuel at eameh@contractor.linuxfoundation.org.
 
-Read Emmanuel's introduction on the Ceph <a href="https://ceph.io/en/news/blog/2026/from-laminated-pages-to-petabytes/">introduction blog</a> to learn more about his background and goals for the role.
+Read Emmanuel's <a href="https://ceph.io/en/news/blog/2026/from-laminated-pages-to-petabytes/">introduction blog</a> to learn more about his background and goals for the role.
 
 ---
 
