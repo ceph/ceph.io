@@ -12,16 +12,19 @@ tags:
 
 ### Bringing Ceph back to Switzerland
 
-Join us for a full-day celebration of Ceph in Zurich / Switzerland,
-bringing together the people and ideas driving open-source storage forward.
-Connect with Ceph experts, core contributors, customers, and partners as they dive into the current state of the project, 
-highlight recent improvements, preview what's on the roadmap, and share the latest community news. 
-Stick around afterward for a networking reception to meet fellow community members.
+Join us for a full-day celebration of Ceph in Zurich / Switzerland, bringing together the people and ideas driving open-source storage forward. Connect with Ceph experts, core contributors, customers, and partners as they dive into the current state of the project, highlight recent improvements, preview what's on the roadmap, and share the latest community news. Stick around afterward for a networking reception to meet fellow community members.
+
+A Note on Tickets & Accessibility
+As an open-source community event, organizers aim to bring people together while covering essential costs for hosting, venue, and catering. However, they want to ensure that financial constraints don’t keep our community away. The Ceph Foundation does not set the event's price and does not receive any money from the Ceph Day event.
+
+Here is how you can join us:
+- **Speak at Ceph Day**: Submit a talk via our Call for Papers (CFP)! All selected speakers will receive a free ticket to the event. It’s the perfect opportunity to share your expertise and shape the agenda.
+- **Financial Support**: If the ticket fee is currently a barrier for you but you would love to attend, please don't hesitate to reach out to our organizing team directly. We are committed to making this event accessible and will work with you to find a solution.
 
 
 ## Important Dates
 
-- **CFP Opens:** 2026-06-15
+- ~**CFP Opens:** 2026-06-15~
 - **CFP Closes:** 2026-09-04
 - **Speakers receive confirmation of acceptance:** 2026-09-01
 - **Registration Opens:** 2026-06-15
