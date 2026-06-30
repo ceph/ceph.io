@@ -29,11 +29,12 @@ meet fellow community members.
 - **Registration Closes:** 2026-05-28
 - **Event Date:** 2026-05-28
 
-The Call for Papers (**CFP**) is now closed.
 
-Registration is open. Please register if you plan to attend:
+</br>
+<a class="button" href="https://www.youtube.com/playlist?list=PLrBUGiINAakOCSyUapJL6ToBviCpSAEoW">Watch Presentations now!</a>
+</br>
 
-<a class="button" href="https://www.osnexus.com/ceph-days-seattle-2026">Register now!</a>
+Read the <a href="https://ceph.io/en/news/blog/2026/cd-seattle-cloud-blog/">Ceph Days Seattle recap blog post</a> by community member John Shubeck, who highlights key moments and takeaways from the event.
 
 ## Schedule
 
@@ -50,12 +51,12 @@ Registration is open. Please register if you plan to attend:
     <td>9:00 - 10:00</td>
   </tr>
   <tr>
-    <td>Introduction & State of the Cephalopod</td>
+    <td>Introduction & State of the Cephalopod(<a href="/assets/pdfs/events/2026/cs-seattle-2026/introduction_to_cepheph.pdf" target="_blank">Slides</a>)</td>
     <td>Steve Umbehocker (OSNexus) + Dan van der Ster (Clyso)</td>
     <td>10:00 - 10:30</td>
   </tr>
   <tr>
-    <td>Proxmox and Ceph: Ditch the old SAN</td>
+    <td>Proxmox and Ceph: Ditch the old SAN (<a href="/assets/pdfs/events/2026/cs-seattle-2026/proxmox_and_ceph.pdf" target="_blank">Slides</a>)</td>
     <td>Alex Gorbachev, Intelligent Systems Services</td>
     <td>10:30 - 11:15</td>
   </tr>
@@ -65,7 +66,7 @@ Registration is open. Please register if you plan to attend:
     <td>11:15 - 11:30</td>
   </tr>
   <tr>
-    <td>Reclaim CephFS Capacity Through Pool Tiering + Migration</td>
+    <td>Reclaim CephFS Capacity Through Pool Tiering + Migration (<a href="/assets/pdfs/events/2026/cs-seattle-2026/reclaim_cephfs_capacity.pdf" target="_blank">Slides</a>)</td>
     <td>Anthony D'Atri, Ceph Ambassador</td>
     <td>11:30 - 12:15</td>
   </tr>
@@ -75,7 +76,7 @@ Registration is open. Please register if you plan to attend:
     <td>12:15 - 13:15</td>
   </tr>
   <tr>
-    <td>Ceph Bucket Replication</td>
+    <td>Ceph Bucket Replication (<a href="/assets/pdfs/events/2026/cs-seattle-2026/ceph_bucket_replication.pdf" target="_blank">Slides</a>)</td>
     <td>Seth Cagampang + Sheetal Garde (OSNexus)</td>
     <td>13:15 - 14:00</td>
   </tr>
@@ -90,12 +91,12 @@ Registration is open. Please register if you plan to attend:
     <td>14:45 - 15:00</td>
   </tr>
   <tr>
-    <td>Ceph Cloud Storage Transitions and Beyond</td>
+    <td>Ceph Cloud Storage Transitions and Beyond (<a href="/assets/pdfs/events/2026/cs-seattle-2026/ceph_cloud_storage_transitions_and_beyond.pdf" target="_blank">Slides</a>)</td>
     <td>John Shubeck (IBM)</td>
     <td>15:00 - 15:45</td>
   </tr>
   <tr>
-    <td>Designing Ceph Clusters: What's the Right Durability?</td>
+    <td>Designing Ceph Clusters: What's the Right Durability? (<a href="/assets/pdfs/events/2026/cs-seattle-2026/designing_ceph_clusters.pdf" target="_blank">Slides</a>)</td>
     <td>Steve Umbehocker (OSNexus)</td>
     <td>15:45 - 16:30</td>
   </tr>
