@@ -123,7 +123,7 @@ Enter this ultimate answer to EC, CephFS, and everything:
 a [transcoder script](https://www.reddit.com/r/ceph/comments/1l1ey87/cephfs_layoutpool_migration_script/)
 posted by Reddit user `marcan42`. This script is a terrific inspiration, but
 bears a number of shortcomings. I worked with the community member to enhance the
-script, which can be found [here](https://www.reddit.com/r/ceph/comments/1l1ey87/cephfs_layoutpool_migration_script/) .
+script: my fork can be found [here](https://github.com/anthonyeleven/vcephfs_transcoder).
 
 In a nutshell, the script walks a CephFS volume or subdirectory thereof, processing
 files by creating a copy with the new file layout then atomically renaming the copy
