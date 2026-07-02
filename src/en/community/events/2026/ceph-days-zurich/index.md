@@ -1,9 +1,9 @@
 ---
-title: Ceph Days Zurich 2026
+title: Ceph Days Zürich 2026
 date: 2026-10-14
 end: 2026-10-14
-location: Zuerich, Switzerland
-venue: University Zurich, Rämistrasse 59, CH-8006 Zurich 
+location: Zürich, Switzerland
+venue: University Zürich, Rämistrasse 59, CH-8006 Zürich 
 image: "/assets/bitmaps/events/2026/ceph-days-zurich/banner.png"
 sponsors: CLYSO
 tags:
@@ -12,7 +12,7 @@ tags:
 
 ### Bringing Ceph back to Switzerland
 
-Join us for a full-day celebration of Ceph in Zurich / Switzerland, bringing together the people and ideas driving open-source storage forward. Connect with Ceph experts, core contributors, customers, and partners as they dive into the current state of the project, highlight recent improvements, preview what's on the roadmap, and share the latest community news. Stick around afterward for a networking reception to meet fellow community members.
+Join us for a full-day celebration of Ceph in Zürich / Switzerland, bringing together the people and ideas driving open-source storage forward. Connect with Ceph experts, core contributors, customers, and partners as they dive into the current state of the project, highlight recent improvements, preview what's on the roadmap, and share the latest community news. Stick around afterward for a networking reception to meet fellow community members.
 
 A Note on Tickets & Accessibility
 As an open-source community event, organizers aim to bring people together while covering essential costs for hosting, venue, and catering. However, they want to ensure that financial constraints don’t keep our community away. The Ceph Foundation does not set the event's price and does not receive any money from the Ceph Day event.
