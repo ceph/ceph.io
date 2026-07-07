@@ -6,7 +6,67 @@ title: Tentacle Award
 # {{ title }}
 
 The team recognizes the outstanding contributions of some former and present members of the Ceph Community with the Tentacle Award.
+ 
+<hr />
 
+## 2026
+ 
+- **Mark Nelson** — Performance Lead 
+- **Yuri Weinstein** — QA & Testing Lead 
+ 
+**Octopus Award**
+- **Yehuda Sadeh-Weinraub** — The Original PTLs 
+- **Sam Just** — The Original PTLs 
+- **Greg Farnum** — The Original PTLs 
+- **Josh Durgin** — The Original PTLs 
+<hr />
+
+## 2025
+ 
+<div class="grid grid--align-center grid--cols-2 md:w-3-4">
+  <div class="relative text-center">
+    <img alt="Neha Ojha" class="rounded-2 to-md:max-h-56 w-full" loading="lazy" src="src/assets/bitmaps/tentacle-award-london-25/tentacle-award-neha-ojha.png" />
+    <p class="p text-semibold">
+      Neha Ojha
+    </p>
+    RADOS Technical Lead 
+  </div>
+  <div class="relative text-center">
+    <img alt="Ken Dryer" class="rounded-2 to-md:max-h-56 w-full" loading="lazy" src="src/assets/bitmaps/tentacle-award-london-25/tentacle-award-ken-dreyer.png" />
+    <p class="p text-semibold">
+      Ken Dryer
+    </p>
+    Release Engineering 
+  </div>
+  <div class="relative text-center">
+    <img alt="Ernesto Puerta" class="rounded-2 to-md:max-h-56 w-full" loading="lazy" src="src/assets/bitmaps/tentacle-award-london-25/tentacle-award-ernesto-puerta.png" />
+    <p class="p text-semibold">
+      Ernesto Puerta
+    </p>
+    Dashboard Lead 
+  </div>
+  <div class="relative text-center">
+    <img alt="Orit Wasserman" class="rounded-2 to-md:max-h-56 w-full" loading="lazy" src="src/assets/bitmaps/tentacle-award-london-25/tentacle-award-orit-wasserman.png" />
+    <p class="p text-semibold">
+      Orit Wasserman
+    </p>
+    RGW / Multisite
+  </div>
+</div>
+ 
+## 2025 - During Cephalocon
+ 
+- **Casey Bodley** — RGW Technical Lead 2025
+- **James Page** — Ubuntu Packaging 2025
+ 
+**The InkTank Team**
+- **Ian Colle** — The InkTank Team 2025
+- **Neil Levine** — The InkTank Team 2025
+- **Wolfgang Schulze** — The InkTank Team 2025
+- **Ross Turk** — The InkTank Team 2025
+ 
+## 2022
+ 
 <div class="grid grid--align-center grid--cols-2 md:w-3-4">
 
   <div class="relative text-center">
@@ -14,8 +74,7 @@ The team recognizes the outstanding contributions of some former and present mem
     <p class="p text-semibold">
       Sage Weil
     </p>
-    Founder / Architect
-    2022
+    Founder / Architect 
   </div>
 
   <div class="relative text-center">
@@ -23,10 +82,11 @@ The team recognizes the outstanding contributions of some former and present mem
     <p class="p text-semibold">
       Sebastian Wagner
     </p>
-    Ceph Orchestrator
-    2022
+    Ceph Orchestrator 
   </div>
-
+ 
+## 2021
+ 
   <div class="relative text-center">
     <img alt="Patrick Donnelly" class="rounded-2 to-md:max-h-56 w-full" loading="lazy" src="/assets/bitmaps/tentacle-award-patrick-donnelly.jpg" />
     <p class="p text-semibold">
@@ -64,3 +124,6 @@ The team recognizes the outstanding contributions of some former and present mem
   </div>
 
 </div>
+
+<hr />
+ 
