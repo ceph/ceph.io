@@ -7,7 +7,7 @@ title: Tentacle Award
 
 The team recognizes the outstanding contributions of some former and present members of the Ceph Community with the Tentacle Award.
  
-<hr /> 
+<hr />
 
 ## 2026
  
