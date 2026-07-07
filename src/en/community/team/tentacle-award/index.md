@@ -22,31 +22,30 @@ The team recognizes the outstanding contributions of some former and present mem
 <hr />
 
 ## 2025
- 
 <div class="grid grid--align-center grid--cols-2 md:w-3-4">
   <div class="relative text-center">
-    <img alt="Neha Ojha" class="rounded-2 to-md:max-h-56 w-full" loading="lazy" src="src/assets/bitmaps/tentacle-award-london-25/tentacle-award-neha-ojha.png" />
+    <img alt="Neha Ojha" class="rounded-2 to-md:max-h-56 w-full" loading="lazy" src="src/assets/bitmaps/tentacle-award-london-25/tentacle-award-neha-ojha.jpg" />
     <p class="p text-semibold">
       Neha Ojha
     </p>
     RADOS Technical Lead 
   </div>
   <div class="relative text-center">
-    <img alt="Ken Dryer" class="rounded-2 to-md:max-h-56 w-full" loading="lazy" src="src/assets/bitmaps/tentacle-award-london-25/tentacle-award-ken-dreyer.png" />
+    <img alt="Ken Dryer" class="rounded-2 to-md:max-h-56 w-full" loading="lazy" src="src/assets/bitmaps/tentacle-award-london-25/tentacle-award-ken-dreyer.jpg" />
     <p class="p text-semibold">
       Ken Dryer
     </p>
     Release Engineering 
   </div>
   <div class="relative text-center">
-    <img alt="Ernesto Puerta" class="rounded-2 to-md:max-h-56 w-full" loading="lazy" src="src/assets/bitmaps/tentacle-award-london-25/tentacle-award-ernesto-puerta.png" />
+    <img alt="Ernesto Puerta" class="rounded-2 to-md:max-h-56 w-full" loading="lazy" src="src/assets/bitmaps/tentacle-award-london-25/tentacle-award-ernesto-puerta.jpg" />
     <p class="p text-semibold">
       Ernesto Puerta
     </p>
     Dashboard Lead 
   </div>
   <div class="relative text-center">
-    <img alt="Orit Wasserman" class="rounded-2 to-md:max-h-56 w-full" loading="lazy" src="src/assets/bitmaps/tentacle-award-london-25/tentacle-award-orit-wasserman.png" />
+    <img alt="Orit Wasserman" class="rounded-2 to-md:max-h-56 w-full" loading="lazy" src="src/assets/bitmaps/tentacle-award-london-25/tentacle-award-orit-wasserman.jpg" />
     <p class="p text-semibold">
       Orit Wasserman
     </p>
@@ -56,19 +55,17 @@ The team recognizes the outstanding contributions of some former and present mem
  
 ## 2025 - During Cephalocon
  
-- **Casey Bodley** — RGW Technical Lead 2025
-- **James Page** — Ubuntu Packaging 2025
+- **Casey Bodley** — RGW Technical Lead
+- **James Page** — Ubuntu Packaging
  
 **The InkTank Team**
-- **Ian Colle** — The InkTank Team 2025
-- **Neil Levine** — The InkTank Team 2025
-- **Wolfgang Schulze** — The InkTank Team 2025
-- **Ross Turk** — The InkTank Team 2025
+- **Ian Colle** — The InkTank Team
+- **Neil Levine** — The InkTank Team
+- **Wolfgang Schulze** — The InkTank Team
+- **Ross Turk** — The InkTank Team
  
 ## 2022
- 
 <div class="grid grid--align-center grid--cols-2 md:w-3-4">
-
   <div class="relative text-center">
     <img alt="Sage Weil" class="rounded-2 to-md:max-h-56 w-full" loading="lazy" src="/assets/bitmaps/tentacle-award-sage-weil.jpg" />
     <p class="p text-semibold">
@@ -84,9 +81,10 @@ The team recognizes the outstanding contributions of some former and present mem
     </p>
     Ceph Orchestrator 
   </div>
+</div>
  
 ## 2021
- 
+<div class="grid grid--align-center grid--cols-2 md:w-3-4">
   <div class="relative text-center">
     <img alt="Patrick Donnelly" class="rounded-2 to-md:max-h-56 w-full" loading="lazy" src="/assets/bitmaps/tentacle-award-patrick-donnelly.jpg" />
     <p class="p text-semibold">
@@ -123,7 +121,4 @@ The team recognizes the outstanding contributions of some former and present mem
     2021
   </div>
 
-</div>
-
-<hr />
- 
+</div> 
