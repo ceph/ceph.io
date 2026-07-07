@@ -6,11 +6,12 @@ title: Tentacle Award
 # {{ title }}
 
 The team recognizes the outstanding contributions of some former and present members of the Ceph Community with the Tentacle Award.
- 
 <hr />
-
+ 
+ 
 ## 2026
  
+**Tentacle Award**
 - **Mark Nelson** — Performance Lead 
 - **Yuri Weinstein** — QA & Testing Lead 
  
@@ -20,41 +21,47 @@ The team recognizes the outstanding contributions of some former and present mem
 - **Greg Farnum** — The Original PTLs 
 - **Josh Durgin** — The Original PTLs 
 <hr />
+ 
+</br>
+
 
 ## 2025
 <div class="grid grid--align-center grid--cols-2 md:w-3-4">
   <div class="relative text-center">
-    <img alt="Neha Ojha" class="rounded-2 to-md:max-h-56 w-full" loading="lazy" src="src/assets/bitmaps/tentacle-award-london-25/tentacle-award-neha-ojha.jpg" />
+    <img alt="Neha Ojha" class="rounded-2 w-full" style="height: 240px; object-fit: cover;" loading="lazy" src="/assets/bitmaps/tentacle-award-neha-ojha.jpg" />
     <p class="p text-semibold">
       Neha Ojha
     </p>
     RADOS Technical Lead 
   </div>
   <div class="relative text-center">
-    <img alt="Ken Dryer" class="rounded-2 to-md:max-h-56 w-full" loading="lazy" src="src/assets/bitmaps/tentacle-award-london-25/tentacle-award-ken-dreyer.jpg" />
+    <img alt="Ken Dryer" class="rounded-2 w-full" style="height: 240px; object-fit: cover;" loading="lazy" src="/assets/bitmaps/tentacle-award-ken-dryer.jpg" />
     <p class="p text-semibold">
       Ken Dryer
     </p>
     Release Engineering 
   </div>
   <div class="relative text-center">
-    <img alt="Ernesto Puerta" class="rounded-2 to-md:max-h-56 w-full" loading="lazy" src="src/assets/bitmaps/tentacle-award-london-25/tentacle-award-ernesto-puerta.jpg" />
+    <img alt="Ernesto Puerta" class="rounded-2 w-full" style="height: 240px; object-fit: cover;" loading="lazy" src="/assets/bitmaps/tentacle-award-ernesto-puerta.jpg" />
     <p class="p text-semibold">
       Ernesto Puerta
     </p>
     Dashboard Lead 
   </div>
   <div class="relative text-center">
-    <img alt="Orit Wasserman" class="rounded-2 to-md:max-h-56 w-full" loading="lazy" src="src/assets/bitmaps/tentacle-award-london-25/tentacle-award-orit-wasserman.jpg" />
+    <img alt="Orit Wasserman" class="rounded-2 w-full" style="height: 240px; object-fit: cover;" loading="lazy" src="/assets/bitmaps/tentacle-award-orit-wasserman.jpg" />
     <p class="p text-semibold">
       Orit Wasserman
     </p>
     RGW / Multisite
   </div>
 </div>
+<hr />
+ 
  
 ## 2025 - During Cephalocon
  
+**Tentacle Award**
 - **Casey Bodley** — RGW Technical Lead
 - **James Page** — Ubuntu Packaging
  
@@ -63,6 +70,7 @@ The team recognizes the outstanding contributions of some former and present mem
 - **Neil Levine** — The InkTank Team
 - **Wolfgang Schulze** — The InkTank Team
 - **Ross Turk** — The InkTank Team
+<hr />
  
 ## 2022
 <div class="grid grid--align-center grid--cols-2 md:w-3-4">
@@ -82,6 +90,7 @@ The team recognizes the outstanding contributions of some former and present mem
     Ceph Orchestrator 
   </div>
 </div>
+<hr />
  
 ## 2021
 <div class="grid grid--align-center grid--cols-2 md:w-3-4">
