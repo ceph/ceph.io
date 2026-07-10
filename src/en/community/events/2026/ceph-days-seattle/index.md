@@ -81,7 +81,7 @@ Read the <a href="https://ceph.io/en/news/blog/2026/cd-seattle-cloud-blog/">Ceph
     <td>13:15 - 14:00</td>
   </tr>
   <tr>
-    <td>Ceph Operations Toolkit: Ideas and Prototypes</td>
+    <td>Ceph Operations Toolkit: Ideas and Prototypes (<a href="/assets/pdfs/events/2026/cs-seattle-2026/Ceph_Day_Seattle_Tools_Demo.pdf" target="_blank">Slides</a>)</td></td>
     <td>Dan van der Ster</td>
     <td>14:00 - 14:45</td>
   </tr>

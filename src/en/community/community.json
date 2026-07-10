@@ -3,7 +3,9 @@
     {
       "date": "2026-07-08",
       "title": "For Whom the Doorbell Tolls, GPU-Initiated Key-Value Storage on Ceph",
-      "presenter": "Kyle Bader (IBM) and Stephen Bates (AMD)"
+      "presenter": "Kyle Bader (IBM) and Stephen Bates (AMD)",
+      "url": "https://youtu.be/Z7zuATuBORw",
+      "slides": "https://ceph.io/assets/pdfs/tech-talks/rados-nkv-tech-talk.pdf"
     },
     {
       "date": "2026-06-09",
