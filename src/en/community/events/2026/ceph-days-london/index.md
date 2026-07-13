@@ -20,6 +20,12 @@ join forces to discuss things like the status of the Ceph project, recent Ceph
 project improvements and roadmap, and Ceph community news. The day ends with
 a networking reception, to foster more Ceph learning.
 
+All recordings are available on the Ceph YouTube channel.
+ 
+</br>
+<a class="button" href="https://www.youtube.com/watch?v=3GTet-knEoc&list=PLDhUTUI2hFE8">Watch</a>
+ 
+
 ## Important Dates
 
 - ~~**CFP Opens:** 2026-03-16~~
