@@ -1,6 +1,6 @@
 ---
-layout: content-simple
 title: Tentacle Award
+order: 8
 ---
 
 # {{ title }}
