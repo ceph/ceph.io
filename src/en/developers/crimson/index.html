@@ -1,0 +1,174 @@
+---
+title: Crimson Project
+order: 6
+---
+
+<section class="section">
+  <h1 class="h1">{{ title }}</h1>
+
+  <img src="images/Crimson_T.jpg" alt="Crimson" class="rounded-2" loading="lazy">
+
+  <p class="p">
+    Crimson is engineered to be a high-performance Object Storage Daemon (OSD) optimized for fast storage devices such as NVMe.
+    By leveraging the random I/O capabilities and high throughput of modern hardware, Crimson aims to deliver exceptional speed and efficiency.
+  </p>
+
+  <p class="p">
+    To achieve these objectives, Crimson is built from the ground up using cutting-edge technologies including SPDK, DPDK and the C++ Seastar framework. Key elements of Crimson are:
+  </p>
+
+  <ul>
+    <li><strong>Kernel Bypass:</strong> Direct communication with networking and storage devices that support polling, eliminating the overhead of kernel involvement.</li>
+    <li><strong>Shared-Nothing Architecture:</strong> Minimizes lock contention, ensuring smoother operation and higher performance.</li>
+    <li><strong>Computational Efficiency:</strong> Balances load across multi-core systems, enabling each core to handle the same volume of I/O with reduced CPU usage.</li>
+  </ul>
+
+  <p class="p">
+    Crimson will serve as a drop-in replacement for the classic Object Storage Daemon (OSD). Our long-term vision is also to completely redesign the object storage backend, which we have named <strong>Seastore</strong>. This new backend is tailored for fast storage devices like NVMe and may not be optimal for HDDs.
+  </p>
+
+  <p class="p">
+    Since Seastore is still in its early stages, we are adapting BlueStore to work with Crimson-OSD for testing and development purposes. If Seastore proves incompatible with HDDs, we may continue to maintain BlueStore within Crimson to support HDDs.
+  </p>
+
+  <p class="p">
+    The new Crimson OSD will be compatible with the classic OSD, allowing existing users to upgrade seamlessly. Specifically, Crimson-OSD will:
+  </p>
+
+  <ul>
+    <li><strong>Support the librados protocol:</strong> Able to communicate with existing librados clients</li>
+    <li><strong>Integrate into existing Ceph clusters as an OSD</strong></li>
+    <li><strong>Support most existing OSD commands</strong></li>
+  </ul>
+</section>
+
+<section class="section section--pt-0">
+
+  <h2 class="h2">Crimson OSD Status:</h2>
+
+  <p class="p">
+    As Crimson is in under active development not all not featurewise on par with its predecessor yet.
+  </p>
+
+  <p class="p"><strong>Crimson OSD currently supports:</strong></p>
+
+  <ul>
+    <li>Librados operations including snap support</li>
+    <li>Log Based recovery and Backfill</li>
+    <li>RBD workloads on Replicated pools</li>
+    <li>Bluestore, Seastore and cyanstore (memory-based) object store backends</li>
+    <li>Deployment via Cephadm</li>
+    <li>Initial Scrub Support</li>
+    <li>Multi-Core Messenger OSD Objectstore architecture support.</li>
+  </ul>
+
+  <p class="p"><strong>Work in progeress:</strong></p>
+
+  <ul>
+    <li>EC pools</li>
+    <li>Auto-Scaling Placement Groups - Splits/Merges</li>
+    <li>Object gateway (RGW)</li>
+    <li>MClock OSD scheduler</li>
+    <li>Background Scrub Scheduling</li>
+    <li>Replace the default object store to SeaStore</li>
+  </ul>
+
+  <hr>
+
+  <h2 class="h2">Seastore Object Store Status:</h2>
+
+  <p class="p">
+    SeaStore is the second half of the Crimson project. While the first part focuses on implementing a modern OSD,
+    SeaStore is the native ObjectStore solution for Crimson OSD, which is developed with the Seastar framework and adopts the same design principles.
+    Although challenging, there are multiple reasons why Crimson must build a new local storage engine. Storage backend is the major CPU resource consumer,
+    and the Crimson OSD cannot truly scale with cores if its storage backend cannot.
+  </p>
+
+  <p class="p"><strong>SeaStore currently supports:</strong></p>
+
+  <ul>
+    <li>Most of the ObjectStore transactional interfaces operating rados objects, including read, write and clone</li>
+    <li>Most of the necessary background cleaning tasks</li>
+    <li>Segmented backend optimized for sequential writes</li>
+    <li>Random-block backend optimized for random writes</li>
+    <li>ZNS devices</li>
+    <li>Device tiering for better storage efficiency</li>
+    <li>Multi-core architecture</li>
+    <li>Profiling through metrics, admin socket commands or logs</li>
+  </ul>
+
+  <p class="p"><strong>Work in progress:</strong></p>
+
+  <ul>
+    <li>LBA iterative interface with cursor</li>
+    <li>Clonerange2 OSD operation support</li>
+    <li>Omap iterate interface</li>
+    <li>More efficient device tiering</li>
+    <li>Extend logical address width and redesign hints</li>
+    <li>Performance optimizations to the B+ trees (onode, omap, lba)</li>
+    <li>Lookup fast paths based on heterogeneous data structures</li>
+  </ul>
+
+  <p class="p"><strong>Future work:</strong></p>
+
+  <ul>
+    <li>Performance optimizations to reduce write amplification and control internal starvations</li>
+    <li>Support number of core changes</li>
+    <li>Rebalance disk usage between shards</li>
+    <li>Device tiering with random block backend</li>
+    <li>Random block background defragmentation</li>
+    <li>Block-based read checksum support</li>
+    <li>Offline tools whatever necessary</li>
+    <li>Better unit test coverage and simplify time-consuming tests</li>
+    <li>Compression, hardware offloading, etc</li>
+  </ul>
+
+  <hr>
+
+  <h2 class="h2">CI Test Coverage and Performance Review</h2>
+
+  <p class="p">
+    The <code>crimson-rados</code> suite keeps growing, stabilized and is used
+    to gate PRs merges and prevent regressions. The suite also includes performance tests which are driven by CBT.
+    Besides PR gating, the suite is set to run twice a week.
+    See all <a class="a" href="https://pulpito.ceph.com/?suite=crimson-rados">recent runs</a>.
+  </p>
+
+  <p class="p">
+    Future work will involve updating the test suite and test cases, adding CI reviewing performance to identify regressions
+    and comparing the performance of classic OSD and crimson-osd on a monthly basis.
+  </p>
+
+  <hr>
+
+  <h2 class="h2">Useful Project Links:</h2>
+
+  <ul>
+    <li><a class="a" href="https://github.com/orgs/ceph/projects/8">Github's Projects</a></li>
+    <li><a class="a" href="https://tracker.ceph.com/projects/crimson/issues">Tracker</a></li>
+    <li><a class="a" href="https://docs.ceph.com/en/latest/dev/crimson">Docs</a></li>
+    <li><a class="a" href="https://ceph-storage.slack.com">Slack</a> - #crimson</li>
+  </ul>
+
+  <hr>
+
+  <h2 class="h2">Blog Posts:</h2>
+
+  <ul>
+    <li><a class="a" href="https://ceph.io/en/news/blog/2023/crimson-multi-core-scalability">Crimson: Next-generation Ceph OSD for Multi-core Scalability</a></li>
+    <li><a class="a" href="https://ceph.io/en/news/blog/2025/crimson-T-release/">A Crimson colored Tentacle</a></li>
+  </ul>
+
+  <hr>
+
+  <h2 class="h2">Talks:</h2>
+
+  <ul>
+    <li><a class="a" href="https://www.youtube.com/watch?v=IsV3WWN-YeE">Cephalocon 2024 - Crimson Squid Project Update</a></li>
+    <li><a class="a" href="https://www.youtube.com/watch?v=LaP4YX1lQ3I">Cephalocon 2023 - Crimson Reef Project Update</a></li>
+    <li><a class="a" href="https://www.youtube.com/watch?v=8N_1WAEPw0o">From Classical to the Future</a></li>
+    <li><a class="a" href="https://www.youtube.com/watch?v=SUJjZ9bjXJc">Understanding SeaStore through profiling</a></li>
+    <li><a class="a" href="https://www.youtube.com/watch?v=vc5w2mn93cY">Ceph Virtual 2022 - What's new with Crimson and Seastore?</a></li>
+    <li><a class="a" href="https://www.youtube.com/watch?v=vzJPOA7aJMk">Ceph Month 2021: Crimson Update</a></li>
+    <li><a class="a" href="https://www.youtube.com/watch?v=3NmCPTJI1JE">Rebuilding a Faster OSD with Future</a></li>
+    <li><a class="a" href="https://www.youtube.com/watch?v=FuFmMB9rbRA">Vault '20 - Crimson: A New
