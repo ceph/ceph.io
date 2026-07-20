@@ -12,8 +12,8 @@ tags:
 
 ## Introduction
 
-In the [first](https:https://ceph.io/en/news/blog/2025/rgw-deep-dive-1)
-and [second](https:https://ceph.io/en/news/blog/2025/rgw-deep-dive-2) parts of
+In the [first](https://ceph.io/en/news/blog/2025/rgw-deep-dive-1)
+and [second](https://ceph.io/en/news/blog/2025/rgw-deep-dive-2) parts of
 this deep dive series, we dissected the core foundations of Ceph RGW: stateless
 frontends, specialized RADOS pools, bucket index mechanics, and the head/tail
 data layout. We explored how the Ceph Object Gateway(RGW) achieves massive
@@ -296,7 +296,7 @@ change constantly (logs, metrics, temporary files).
 ### Operational Consideration: Bucket Index Sharding and Many Versions
 
 Another consideration for versioned buckets concerns how RGW manages the bucket index.
-As discussed in [Part 2](https:https://ceph.io/en/news/blog/2025/rgw-deep-dive-2)
+As discussed in [Part 2](https://ceph.io/en/news/blog/2025/rgw-deep-dive-2)
 of this series, RGW distributes bucket index entries across multiple shards to maintain
 performance. However, versioning introduces a constraint: entries for all versions of a single object
 must reside on the same bucket index shard.
