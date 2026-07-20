@@ -4,7 +4,7 @@ date: 2026-09-01
 end: 2026-09-01
 location: Seoul, South Korea
 venue: Baekbeom Kim Gu Memorial Hall, 26 Imjeong-ro, Seoul, 04311
-image: "/assets/bitmaps/events/KCODK_Ceph_Korea_2026.png"
+image: "/assets/bitmaps/events/2026/KCODK_Ceph_Korea_2026-3.png"
 sponsors:
 tags:
   - ceph days
