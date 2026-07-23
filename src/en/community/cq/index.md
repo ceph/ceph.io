@@ -11,8 +11,10 @@ title: Ceph Quarterly
 Ceph Quarterly is a newsletter published four times a year. Ceph Quarterly
 provides a summary of the three months of upstream Ceph development prior to
 its publication date.
+ 
+[CQ2 - 2026 Newsletter](./Q2_2026_Ceph_Foundation_Newsletter.pdf)
 
-[CQ1 - 2026](./Ceph_Quarterly_Update_2026_Q1.pdf)
+[CQ1 - 2026 Newsletter](./Ceph_Quarterly_Update_2026_Q1.pdf)
 
 [CQ1 - A4](./Ceph_Quarterly_001_A4.pdf)
 

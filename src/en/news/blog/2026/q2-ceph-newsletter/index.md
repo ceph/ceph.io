@@ -105,7 +105,7 @@ Check the upcoming and tentative Ceph Days events for the rest of 2026.
 - **URL:** https://ceph.io/en/community/events/2026/ceph-days-zurich/
 
 ### Ceph Days New York
-- **Lead Sponsor:** Bloombreg
+- **Lead Sponsor:** Bloomberg
 - **Date:** Q3
 - **URL:** TBD
 
