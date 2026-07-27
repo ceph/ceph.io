@@ -1,7 +1,7 @@
 ---
 title: Ceph Days Chicago 2026
-date: 2026-06-17
-end: 2026-06-17
+date: 2026-11-16
+end: 2026-11-16
 location: 1201 East 60th Street
 venue: City View Room
 image: "/assets/bitmaps/ceph-days.png"
