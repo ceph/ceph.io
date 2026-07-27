@@ -17,6 +17,15 @@ const SearchOutput = {
     const urlParams = new URLSearchParams(queryString);
     const query = urlParams.get('q');
 
+    function escapeHtml(str) {
+      return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
     async function initSearchIndex() {
       if (!urlParams.has('q')) return;
 
@@ -24,13 +33,7 @@ const SearchOutput = {
         searchInput.value = query;
 
         const [searchIndex, searchOutput] = await Promise.all(
-          searchDataUrls.map(url =>
-            fetch(url, {
-              method: 'GET',
-              credentials: 'include',
-              mode: 'no-cors',
-            }).then(res => res.json())
-          )
+          searchDataUrls.map(url => fetch(url).then(res => res.json()))
         );
         const lunrIndex = lunr.Index.load(searchIndex);
 
@@ -68,10 +71,12 @@ const SearchOutput = {
 
       if (!searchresultsContainer) return;
 
+      const safeQuery = escapeHtml(query);
+
       if (!results.length) {
-        searchResultsHtml = `<p class="h3 mb-8 xl:mb-10">${noResultsString} “${query}”</p>`;
+        searchResultsHtml = `<p class=”h3 mb-8 xl:mb-10”>${noResultsString} “${safeQuery}”</p>`;
       } else {
-        searchResultsHtml = `<p class="h3 mb-8 xl:mb-10">${searchedForString} “${query}”</p>
+        searchResultsHtml = `<p class=”h3 mb-8 xl:mb-10”>${searchedForString} “${safeQuery}”</p>
       <ul class="grid md:grid--cols-2 lg:grid--cols-3 xl:grid--cols-4 list-none m-0 p-0">${results
         .map(({ author, content, date, image, title, url }) => {
           const restucturedData = {
