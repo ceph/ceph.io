@@ -20,7 +20,7 @@ In this blog, I'll share my journey of completing the project "Visual Regression
 
 My GSoC experience has been amazing, from the initial days of having zero clue of how to navigate around the codebase to successfully completing my project. Along the way I learnt:
 
-- Test Driven Developement (TDD).
+- Test Driven Development (TDD).
 - How to work on problems together.
 - Reviewing other's code.
 - Efficient communication.

@@ -23,7 +23,7 @@ Thanks to Mark Nelson for finding and fixing this issue. Thanks to Kefu Chai for
 
 ### So what does this mean?
 
-RocksDB performance is sub-optimal when built without `RelWithDebInfo`. This can be mitigated by installing "peformance" package builds. The actual performance increase depends on the cluster, but the RocksDB compaction is reduced by a factor of three. In some cases random 4K write performance is doubled. See these links [1](https://bugs.gentoo.org/733316) and [2](https://ceph.io/en/news/blog/2024/ceph-a-journey-to-1tibps/).
+RocksDB performance is sub-optimal when built without `RelWithDebInfo`. This can be mitigated by installing "performance" package builds. The actual performance increase depends on the cluster, but the RocksDB compaction is reduced by a factor of three. In some cases random 4K write performance is doubled. See these links [1](https://bugs.gentoo.org/733316) and [2](https://ceph.io/en/news/blog/2024/ceph-a-journey-to-1tibps/).
 
 ### How can I resolve this performance issue? 
 
