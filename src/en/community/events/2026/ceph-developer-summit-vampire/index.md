@@ -11,11 +11,15 @@ tags:
 Join the Ceph Community for this year's Ceph Developer Summit, highlighting the upcoming Vampire release. Join us online from August 4 to 13, 2026, as we collaborate to shape Ceph's future.
 </p>
 
+<p><strong>
+Each session is listed on the <a href="https://calendar.google.com/calendar/b/1?cid=OXRzOWM3bHQ3dTF2aWMyaWp2dnFxbGZwbzBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ">Ceph Community Calendar</a>, and will 
+be recorded, and shared on the <a href="https://www.youtube.com/@Cephstorage">Ceph YouTube Channel</a>.
+</strong></p>
+
 <p>
 Whether you're a developer, operator, user, or simply curious about Ceph, your voice matters, and you're invited!
 </p>
 
-<p><em>All sessions will be recorded and shared on the <a href="https://www.youtube.com/@Cephstorage">Ceph YouTube Channl</a>.</em></p>
 
 <strong><a href="https://pad.ceph.com/p/CDS_2026_Vampire">Etherpad for
 discussions</a></strong>
