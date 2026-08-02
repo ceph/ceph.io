@@ -18,7 +18,7 @@ Please note that Crimson Tentacle release includes updates made until July 2025.
 In order to benefit from all the recent changes in the project,
 it's also recommended to check the latest version of the main branch as the project continues to evolve rapidly.
 Below, we highlight some of the work included in the latest release, moving us closer to fully replacing the existing Classical OSD in the future.
-If you're new to the Crimson project, please visit the [project page](https://ceph.io/en/news/crimson) for more information and resources.
+If you're new to the Crimson project, please visit the [project page](https://ceph.io/en/developers/crimson) for more information and resources.
 
 ## Crimson Tentacle Updates:
 
