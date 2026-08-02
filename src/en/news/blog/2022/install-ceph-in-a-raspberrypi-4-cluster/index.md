@@ -133,7 +133,7 @@ Please consider enabling telemetry to help improve Ceph:
 
 For more information see:
 
-        https://docs.ceph.com/docs/pacific/mgr/telemetry/
+        https://docs.ceph.com/en/pacific/mgr/telemetry/
 
 Bootstrap complete.
 ```
