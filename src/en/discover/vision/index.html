@@ -1,52 +1,258 @@
 ---
-layout: content-simple
 title: Vision
 order: 3
+overlaySubMenu: true
 ---
 
 <h1 class="h1 visually-hidden">{{ title }}</h1>
 
-<section class="section" class="pt-0 section--full">
-  <div class="pb-0 section wrapper">
-    <h2 class="h2 mb-12 lg:mb-16" id="get-ceph">Get Ceph</h2>
-    <div class="grid lg:grid--cols-2 lg:max-w-256 grid--gap-14 lg:grid--gap-28">
-      <div>
-        <h2 class="h2">The future of storage</h2>
-
-        <h3 class="h3">
-          Ceph is an industry leader for effortless data storage and management at any scale, independent of hardware reliance
-        </h3>
-
-        <ul>
-          <li>Ceph enables organizations to work with data at any scale, and any budget</li>
-          <li>Ceph offers unified block, file and object storage, allowing for more efficient data backup and interopability</li>
-          <li>Ceph prioritises data durability and availability through 'self-healing' monitoring and data placement algorithms</li>
-        </ul>
-
-        <h2 class="h2">Open source innovation</h2>
-
-        <h3 class="h3">As an open source platform with a community spanning the globe, Ceph always stays one step ahead.</h3>
-
-        The worldwide network behind Ceph ensures continual development, growth and improvement. Without the confines of a proprietary
-        business model, Ceph’s community is free to create and explore, innovating outside of traditional development structures. With Ceph,
-        you can take your imagined solutions, and construct tangible technology. Want to be at the forefront of innovation?
-
-        <a class="a" href="../../community/">Join the community</a>
-
-        Stay up-to-date with Ceph’s news and community to find out how we will evolve…
-
-        <a class="a" href="../../news/">News</a>
-      </div>
-      <div>
-        <h2 class="h2 mb-12 lg:mb-16">Ceph Is Democratising Storage</h2>
-
-        <p>From academic research clusters to hyperscale cloud infrastructure, organizations worldwide use Ceph to break free from
-        proprietary storage constraints. Ceph's hardware-independent, open source model puts enterprise-grade storage within reach of
-        any organization, at any scale.</p>
-
-        <a class="a block mb-6" href="../../discover/use-cases/">See Ceph in action</a>
-        <a class="button" href="../../foundation/members/">Meet the Foundation members</a>
-      </div>
+<section class="bg-navy section section--full">
+  <div class="wrapper">
+    <div class="max-w-224 mx-auto py-16 text-center">
+      <h2 class="color-white h1">The future of storage is open.</h2>
+      <p class="color-white standout">
+        Ceph's vision is simple: every storage problem should be solvable with open source software. One platform for object, block, and
+        file storage that runs on any hardware, scales to any size, and belongs to no single vendor.
+      </p>
+      <p class="color-white mb-0 standout">
+        That vision now drives a new generation of Ceph: rebuilt for flash, native to Kubernetes, and steered in the open by the community
+        that depends on it.
+      </p>
     </div>
+  </div>
+</section>
+
+<ul class="sub-menu">
+  <li>
+    <a href="#performance"><img alt="" src="/assets/svgs/icon-performance-blue-red.svg" />Next-generation performance</a>
+  </li>
+  <li>
+    <a href="#cloud-native"><img alt="" src="/assets/svgs/icon-container-blue-red.svg" />Cloud-native storage</a>
+  </li>
+  <li>
+    <a href="#open-source"><img alt="" src="/assets/svgs/icon-innovation-blue-red.svg" />Democratizing storage</a>
+  </li>
+  <li>
+    <a href="#roadmap"><img alt="" src="/assets/svgs/icon-contribute-blue-red.svg" />An open roadmap</a>
+  </li>
+</ul>
+
+<section class="section">
+  <div class="max-w-192 mx-auto text-center">
+    <h2 class="h2" id="performance">Next-generation performance</h2>
+    <p class="mb-12 lg:mb-16 p">
+      Storage hardware has been transformed: NVMe drives serve millions of I/O operations per second, networks move hundreds of gigabits,
+      and CPUs gain cores faster than software can use them. Ceph is being rebuilt so that open source storage leads on this hardware,
+      rather than merely running on it.
+    </p>
+  </div>
+  <div class="grid lg:grid--cols-2 grid--gap-14 lg:grid--gap-28">
+    <div>
+      <h3 class="h3">Crimson and Seastore</h3>
+      <p class="p">
+        Crimson is Ceph's next-generation OSD, rebuilt from the ground up on the Seastar framework: a shared-nothing, one-thread-per-core
+        design that keeps work on the CPU core that owns it and avoids the locks, context switches, and kernel overhead that limit today's
+        storage daemons.
+      </p>
+      <p class="p">
+        Crimson shipped its first technology preview in the Squid release, and Tentacle added Seastore, Crimson's purpose-built object store
+        designed for flash rather than spinning disks. The goal is a drop-in replacement for the classic OSD: speaking the same librados
+        protocol, joining the same clusters, with Seastore as its native backend.
+      </p>
+      <a class="a block mb-4" href="/{{ locale }}/developers/crimson/">Explore the Crimson project</a>
+      <a class="a" href="/{{ locale }}/news/blog/2025/crimson-seastore-vs-classic/">Read the early Crimson benchmarks</a>
+    </div>
+    <div>
+      <h3 class="h3">Faster with every release</h3>
+      <p class="p">
+        The performance push spans the whole platform. The Tentacle (v20) release introduced fast erasure coding, making erasure-coded pools
+        a practical choice for block and file workloads, alongside a faster BlueStore write-ahead log and improved compression.
+      </p>
+      <p class="p">
+        Ceph's NVMe over TCP gateway presents block storage to any standard NVMe initiator: highly available, SAN-style access over ordinary
+        Ethernet with no proprietary hardware. And the community keeps proving what open source can do at scale, including a 10-petabyte
+        all-flash cluster sustaining a terabyte per second.
+      </p>
+      <a class="a block mb-4" href="/{{ locale }}/news/blog/2024/ceph-a-journey-to-1tibps/">How Ceph reached 1 TiB/s</a>
+      <a class="a" href="/{{ locale }}/news/blog/2025/tentacle-fastec-performance-updates/">Fast erasure coding in Tentacle</a>
+    </div>
+  </div>
+</section>
+
+<section class="pt-0 section">
+  <div class="max-w-192 mx-auto text-center">
+    <h2 class="h2" id="cloud-native">Cloud-native storage</h2>
+    <p class="mb-12 lg:mb-16 p">
+      Modern infrastructure is built on Kubernetes, and Ceph is built to live there: deployed, managed, and consumed through the same APIs
+      as the platforms it serves.
+    </p>
+  </div>
+  <div class="grid lg:grid--cols-2 grid--gap-14 lg:grid--gap-28">
+    <div>
+      <h3 class="h3">Native to Kubernetes</h3>
+      <p class="p">
+        Rook, a graduated Cloud Native Computing Foundation project, is the Ceph documentation's preferred way to run Ceph on Kubernetes: an
+        operator that deploys, configures, and manages entire clusters through Kubernetes APIs. The Ceph CSI driver provisions block and
+        file volumes for workloads dynamically, with snapshots, cloning, and volume expansion built in.
+      </p>
+      <p class="p">
+        Beyond Kubernetes, cephadm deploys and manages every Ceph daemon in containers: the same declarative, self-managing operational
+        model from bare metal to cloud. Wherever your platform runs, Ceph runs the way your platform expects.
+      </p>
+    </div>
+    <div class="bg-grey-300 p-5 rounded-2">
+      <h3 class="h3">Cloud-native resources</h3>
+      <ul class="list-none p-0">
+        <li class="mb-6">
+          <strong class="block p">Rook</strong>
+          <p class="mb-0 p">
+            The Kubernetes operator for Ceph: production-ready orchestration of file, block, and object storage. Visit
+            <a class="a" href="https://rook.io/">rook.io</a> to get started.
+          </p>
+        </li>
+        <li class="mb-6">
+          <strong class="block p">Ceph CSI</strong>
+          <p class="mb-0 p">
+            Dynamic provisioning of RBD and CephFS volumes for Kubernetes workloads, maintained in the open on
+            <a class="a" href="https://github.com/ceph/ceph-csi">GitHub</a>.
+          </p>
+        </li>
+        <li class="mb-0">
+          <strong class="block p">Block storage for containers</strong>
+          <p class="mb-0 p">
+            See how RBD backs Kubernetes volumes in the
+            <a class="a" href="https://docs.ceph.com/en/latest/rbd/rbd-kubernetes/">documentation</a>, or read about all three storage
+            interfaces on the <a class="a" href="/{{ locale }}/discover/technology/">technology page</a>.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="pt-0 section">
+  <div class="max-w-192 mx-auto text-center">
+    <h2 class="h2" id="open-source">Democratizing storage</h2>
+    <p class="mb-12 lg:mb-16 p">
+      Ceph exists to do for storage what Linux did for computing: turn essential infrastructure into open technology that anyone can use,
+      study, improve, and operate at any scale.
+    </p>
+  </div>
+  <div class="grid lg:grid--cols-2 grid--gap-14 lg:grid--gap-28">
+    <div>
+      <h3 class="h3">Open by design</h3>
+      <p class="p">
+        Ceph runs on commodity hardware from any vendor, is licensed as free and open source software, and is developed entirely in public.
+        There is no proprietary edition, no locked feature tier, and no exit penalty: the code powering the largest research and cloud
+        clusters in the world is the same code anyone can download today.
+      </p>
+      <p class="standout">
+        "A guiding vision for Ceph is to be the state of the art for reliable, scale-out storage, and to do so with 100% open source."
+      </p>
+      <p class="p">Sage Weil, Ceph creator, at the founding of the Ceph Foundation</p>
+    </div>
+    <div>
+      <h3 class="h3">A neutral home</h3>
+      <p class="p">
+        The Ceph Foundation, a directed fund under the Linux Foundation since 2018, gives the project a neutral home. The Foundation
+        supports the community with funding, events, and outreach, while technical direction stays with the community itself through the
+        Ceph Steering Committee and its elected Executive Council.
+      </p>
+      <p class="p">
+        From academic research clusters to hyperscale cloud infrastructure, organizations worldwide use Ceph to break free from proprietary
+        storage constraints.
+      </p>
+      <a class="a block mb-6" href="/{{ locale }}/discover/use-cases/">See Ceph in action</a>
+      <a class="button" href="/{{ locale }}/foundation/members/">Meet the Foundation members</a>
+    </div>
+  </div>
+</section>
+
+<section class="pt-0 section">
+  <div class="max-w-192 mx-auto text-center">
+    <h2 class="h2" id="roadmap">An open roadmap</h2>
+    <p class="mb-12 lg:mb-16 p">
+      Ceph's future is not decided behind closed doors. It is planned, debated, and built in public, and anyone can take part.
+    </p>
+  </div>
+  <div class="grid lg:grid--cols-2 grid--gap-14 lg:grid--gap-28">
+    <div>
+      <h3 class="h3">How Ceph moves forward</h3>
+      <p class="p">
+        A new named stable release ships roughly every year, and each series is supported for about two years. The current stable release is
+        Tentacle (v20), and the next, Umbrella, is already in development.
+      </p>
+      <p class="p">
+        Each cycle begins with the Ceph Developer Summit, where contributors plan the next release component by component. Open developer
+        calls, the public issue tracker, and component boards on GitHub carry that plan through the year, in full view of the community.
+      </p>
+    </div>
+    <div class="bg-grey-300 p-5 rounded-2">
+      <h3 class="h3">Follow and shape the roadmap</h3>
+      <ul class="list-none p-0">
+        <li class="mb-6">
+          <strong class="block p">Roadmap</strong>
+          <p class="mb-0 p">
+            The trackers and project boards the community plans with, collected on the
+            <a class="a" href="/{{ locale }}/developers/roadmap/">roadmap page</a>.
+          </p>
+        </li>
+        <li class="mb-6">
+          <strong class="block p">Contribute</strong>
+          <p class="mb-0 p">
+            Your first patch, the developer calls, and how review works: start on the
+            <a class="a" href="/{{ locale }}/developers/contribute/">contribute page</a>.
+          </p>
+        </li>
+        <li class="mb-6">
+          <strong class="block p">Mailing lists</strong>
+          <p class="mb-0 p">
+            Development discussion happens in the open on the
+            <a class="a" href="https://lists.ceph.io/postorius/lists/dev.ceph.io/">dev mailing list</a>.
+          </p>
+        </li>
+        <li class="mb-0">
+          <strong class="block p">Events</strong>
+          <p class="mb-0 p">
+            Ceph Days, developer summits, and meetups around the world are listed on the
+            <a class="a" href="/{{ locale }}/community/events/">events page</a>.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="bg-grey-300 section section--full">
+  <div class="wrapper">
+    <h2 class="h2 text-center">Discover more</h2>
+    <ul class="grid lg:grid--cols-3 list-none mb-0 p-0">
+      <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
+        <img class="mb-4 w-12" src="/assets/svgs/icon-rados-blue-red.svg" alt="" />
+        <h3 class="h3">Technology</h3>
+        <p class="p">
+          Object, block, and file storage built on RADOS: see how CRUSH placement, self-healing, and unified storage interfaces work under
+          the hood.
+        </p>
+        <a class="a link-cover link-cover--shadow" href="/{{ locale }}/discover/technology/">See how Ceph works</a>
+      </li>
+      <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
+        <img class="mb-4 w-12" src="/assets/svgs/icon-customers-blue-red.svg" alt="" />
+        <h3 class="h3">Use cases</h3>
+        <p class="p">
+          Businesses, academic institutions, global organizations and more streamline their data storage and scale to the exabyte level with
+          Ceph.
+        </p>
+        <a class="a link-cover link-cover--shadow" href="/{{ locale }}/discover/use-cases/">See how Ceph is used</a>
+      </li>
+      <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
+        <img class="mb-4 w-12" src="/assets/svgs/icon-meetup-blue-red.svg" alt="" />
+        <h3 class="h3">Community</h3>
+        <p class="p">
+          Join the developers and operators building the future of open source storage: events, mailing lists, chat channels, and more.
+        </p>
+        <a class="a link-cover link-cover--shadow" href="/{{ locale }}/community/">Meet the Ceph community</a>
+      </li>
+    </ul>
   </div>
 </section>
