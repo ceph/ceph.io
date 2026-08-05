@@ -245,4 +245,16 @@ discussions</a></strong>
    <td><a href="https://pad.ceph.com/p/cds-vampire-crimson">Pad</a>
    </td>
   </tr>
+  <tr>
+   <td>9:00 – 10:00 am PDT
+   </td>
+   <td>Performance
+   </td>
+   <td>Mark Nelson
+   </td>
+   <td><a href="https://meet.jit.si/CephDeveloperSummitPerformance">Join session</a>
+   </td>
+   <td><a href="https://pad.ceph.com/p/cds-vampire-performance">Pad</a>
+   </td>
+  </tr>
 </table>
