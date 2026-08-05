@@ -128,6 +128,18 @@ discussions</a></strong>
    </td>
   </tr>
   <tr>
+   <td>7:00 – 8:00 am PDT
+   </td>
+   <td>BlueStore
+   </td>
+   <td>Igor Fedotov
+   </td>
+   <td><a href="https://meet.jit.si/Ceph-Developer-Summit-BlueStore">Join session</a>
+   </td>
+   <td><a href="https://pad.ceph.com/p/cds-vampire-BlueStore">Pad</a>
+   </td>
+  </tr>
+  <tr>
    <td>8:00 – 9:00 am PDT
    </td>
    <td>Cephadm
