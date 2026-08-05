@@ -1,0 +1,67 @@
+/* ---------- COMPONENT timeline ---------- */
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.timeline::before {
+  background: var(--color-grey-500);
+  bottom: 0;
+  content: "";
+  left: var(--size-1);
+  position: absolute;
+  top: var(--size-1);
+  width: var(--size-px);
+}
+
+.timeline__item {
+  padding-bottom: var(--size-10);
+  padding-left: var(--size-10);
+  position: relative;
+}
+
+.timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline__item::before {
+  background: var(--color-red-500);
+  border-radius: 50%;
+  content: "";
+  height: var(--size-3);
+  left: calc(var(--size-1) - var(--size-3) / 2 + var(--size-px) / 2);
+  position: absolute;
+  top: var(--size-1);
+  width: var(--size-3);
+}
+
+.timeline__year {
+  color: var(--color-navy);
+  font-weight: var(--font-weight-semibold);
+  margin: 0 0 var(--size-2);
+}
+
+@media (--mq-lg) {
+  .timeline::before {
+    left: calc(var(--size-24) + var(--size-14) / 2);
+  }
+
+  .timeline__item {
+    column-gap: var(--size-14);
+    display: grid;
+    grid-template-columns: var(--size-24) minmax(0, 1fr);
+    padding-left: 0;
+  }
+
+  .timeline__item::before {
+    left: calc(var(--size-24) + var(--size-14) / 2 - var(--size-3) / 2 + var(--size-px) / 2);
+  }
+
+  .timeline__year {
+    margin: 0;
+    text-align: right;
+  }
+}
