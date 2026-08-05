@@ -40,23 +40,23 @@ order: 3
   <a href="https://www.digitalocean.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-digitalocean.png" /></a>
   <a href="http://iss-integration.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-intelligent-systems.png" /></a>  
   <a href="https://www.osnexus.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-osnexus.png" /></a>
-  <a href="https://www.ovh.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-ovh.png" /></a>
+  <a href="https://www.ovhcloud.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-ovh.png" /></a>
   <a href="https://sonyinteractive.com/en/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/sony-interactive-entertainment-llc.svg" /></a>
 </div>
 
 ### Associate Members
 
 <div class="grid grid--align-center grid--cols-2 md:grid--cols-3 md:w-3-4">
-  <a href="http://www.bu.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-boston-university.png" /></a>
+  <a href="https://www.bu.edu/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-boston-university.png" /></a>
   <a href="https://home.cern/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-cern.png" /></a>
   <a href="http://cross.ucsc.edu/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-cross.png" /></a>
   <a href="https://www.rc.fas.harvard.edu/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-fas.png" /></a>
   <a href="https://grnet.gr/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-grnet.png" /></a>
   <a href="http://www.monash.edu/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-monash.png" /></a>
-  <a href="http://www.ska.ac.za/about/sarao/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-sarao.png" /></a>
-  <a href="https://openinfra.dev" rel="noreferrer noopener" target="_blank"><img alt="OpenInfra Foundation" loading="lazy" src="/assets/bitmaps/logo-openinfra.png" /></a>
+  <a href="https://www.sarao.ac.za/about/sarao/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-sarao.png" /></a>
+  <a href="https://openinfra.org" rel="noreferrer noopener" target="_blank"><img alt="OpenInfra Foundation" loading="lazy" src="/assets/bitmaps/logo-openinfra.png" /></a>
   <a href="https://www6.slac.stanford.edu/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-slac.svg" /></a>
-  <a href="https://stfc.ukri.org/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-science-and-technology-council.png" /></a>
+  <a href="https://www.ukri.org/councils/stfc/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-science-and-technology-council.png" /></a>
   <a href="https://switch.ch/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-switch.png" /></a>
   <a href="http://www.osris.org/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-umich.png" /></a>
 </div>
