@@ -7,7 +7,6 @@ venue: Melbourne Cricket Ground (MCG)
 image: "/assets/bitmaps/event-meetup.png"
 sponsors:
 tags:
-  - ceph meetup
 ---
 
 ### Bringing Ceph to eResearch in Melbourne
