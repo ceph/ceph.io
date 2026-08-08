@@ -48,16 +48,16 @@ overlaySubMenu: true
   </div>
   <div class="grid lg:grid--cols-2 grid--gap-14 lg:grid--gap-28">
     <div>
-      <h3 class="h3">Crimson and Seastore</h3>
+      <h3 class="h3">Crimson and SeaStore</h3>
       <p class="p">
         Crimson is Ceph's next-generation OSD, rebuilt from the ground up on the Seastar framework: a shared-nothing, one-thread-per-core
         design that keeps work on the CPU core that owns it and avoids the locks, context switches, and kernel overhead that limit today's
         storage daemons.
       </p>
       <p class="p">
-        Crimson shipped its first technology preview in the Squid release, and Tentacle added Seastore, Crimson's purpose-built object store
-        designed for flash rather than spinning disks. The goal is a drop-in replacement for the classic OSD: speaking the same librados
-        protocol, joining the same clusters, with Seastore as its native backend.
+        Crimson shipped its first technology preview in the Squid release, and Tentacle added SeaStore, Crimson's purpose-built object store
+        designed for flash rather than spinning disks. The goal is a drop-in replacement for the classic OSD: speaking the same RADOS
+        protocol, joining the same clusters, with SeaStore as its native backend.
       </p>
       <a class="a block mb-4" href="/{{ locale }}/developers/crimson/">Explore the Crimson project</a>
       <a class="a" href="/{{ locale }}/news/blog/2025/crimson-seastore-vs-classic/">Read the early Crimson benchmarks</a>
@@ -99,6 +99,7 @@ overlaySubMenu: true
         Beyond Kubernetes, cephadm deploys and manages every Ceph daemon in containers: the same declarative, self-managing operational
         model from bare metal to cloud. Wherever your platform runs, Ceph runs the way your platform expects.
       </p>
+      <a class="a" href="/{{ locale }}/users/cloud-native/">Run Ceph on Kubernetes</a>
     </div>
     <div class="bg-grey-300 p-5 rounded-2">
       <h3 class="h3">Cloud-native resources</h3>
