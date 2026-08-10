@@ -17,8 +17,8 @@ module.exports = function (text) {
   const extraSpaces = /\s+/g;
 
   return result
+    .replace(lineBreaks, ' ')
     .replace(unicode, '')
     .replace(punctuation, '')
-    .replace(lineBreaks, ' ')
     .replace(extraSpaces, ' ');
 };
