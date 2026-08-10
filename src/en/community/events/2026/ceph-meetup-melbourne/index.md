@@ -36,8 +36,8 @@ We still start with an introduction to Ceph, covering:
  - Common use cases
  - How organisations are using Ceph today
  
-We’ll then have a few talks covering different topics, with a mix of length 
-and depth. About half way through we will break for catered morning tea. 
+We'll then have a few talks covering different topics, with a mix of length 
+and depth. About halfway through, we will break for catered morning tea. 
 Further details will be published closer to the event. Topics may include:
  - Community updates
  - Current Ceph deployments and projects
@@ -46,9 +46,9 @@ Further details will be published closer to the event. Topics may include:
  
  
 Would you like to present something, or lead a discussion? Put in a proposal
-in the for Papers - we would love to hear from you.
+in the Call for Papers - we would love to hear from you.
  
  
-<a class="button" href="https://forms.gle/Q29MLVUnZvaLq5re6">Submit</a>
+<a class="button" href="https://forms.gle/Q29MLVUnZvaLq5re6">Call for Papers</a>
  
  
