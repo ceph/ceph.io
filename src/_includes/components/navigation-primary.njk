@@ -9,6 +9,20 @@
           {{ item.title }}
         </a>
       </li>
+      {%- if item.url == '/' + locale + '/developers/' -%}
+        <li class="nav-primary__dropdown">
+          <a href="https://docs.ceph.com/">
+            Documentation<span aria-hidden="true" class="nav-primary__caret"></span>
+          </a>
+          <ul class="nav-primary__dropdown-menu">
+            {%- for link in docsNav -%}
+              <li>
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </li>
+      {%- endif -%}
     {%- endfor -%}
   </ul>
 </nav>
