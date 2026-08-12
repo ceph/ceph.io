@@ -51,16 +51,30 @@ technology in one place.
 - ~~**Early-bird Registration Opens:** 2026-04-22~~
 - ~~**Early-bird Registration Closes:** 2026-06-30~~
 - ~~**Standard Registration Opends:** 2026-07-01~~
-- **Standard Registration Closes:** 2026-09-01
+- ~~**Standard Registration Closes:** 2026-09-01~~
 - **Event Date:** 2026-09-01
   * On-site registration will also be available.
  
- 
-</br>
-<a class="button" href="https://event.plan9.co.kr/#/kcd_odk2026">Register</a>
-</br>
 
 
 ## Schedule
 
-Coming soon!
+<p>You can find the full schedule at the link below. Ceph sessions are all in Track 3. Note that Track 3 is empty in the morning, as morning sessions are shared across all three communities and are listed under Track 1.</p>
+
+<p><a href="https://kcodk2026.sessionize.com/schedule/day/20260901">Full Schedule</a></p>
+
+<h3>Ceph Track (Track 3) — Tuesday, September 1</h3>
+
+<p><strong>1:00 PM:</strong> Node-Sharing-Based Ceph Multi-Cluster Resource Orchestration: A Shared Host Pool Architecture for Resolving Resource Fragmentation</a> - Hyun Ha</p>
+
+<p><strong>1:35 PM:</strong> BlueStore Optimization That Stays Stable Regardless of Disk Utilization</a> - Chanyoung Park</p>
+
+<p><strong>2:10 PM:</strong> [SPONSOR] A Guide to Enterprise Kubernetes Cloud with Disaster Recovery Support</a> - HS Hyosung Information Systems</p>
+
+<p><strong>3:15 PM:</strong> kCephFS: RDMA-Based CephFS I/O Acceleration for AI Workloads</a> - Dae Gon Yang</p>
+
+<p><strong>3:50 PM:</strong> [SPONSOR] From Petabytes to Exabytes: Building Storage at AI Scale</a> - Seagate</p>
+
+<p><strong>4:50 PM:</strong> Building and Operating a 4PB Rook-Ceph Object Storage Cluster with NVMe-oF: Challenges and Lessons Learned</a> - Lee Myoungjun, Minho Lee</p>
+
+<p><strong>5:25 PM:</strong> Building Hyperscale Cloud-Native Storage with Ceph and Longhorn</a> - Seonyu Jang</p>
