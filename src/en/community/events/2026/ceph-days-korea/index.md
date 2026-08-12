@@ -53,7 +53,7 @@ technology in one place.
 - ~~**Standard Registration Opends:** 2026-07-01~~
 - **Standard Registration Closes:** 2026-09-01
 - **Event Date:** 2026-09-01
-- ** On-site registration will also be available.
+- **On-site registration will also be available**.
 
  
 </br>
