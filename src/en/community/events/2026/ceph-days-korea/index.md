@@ -51,12 +51,16 @@ technology in one place.
 - ~~**Early-bird Registration Opens:** 2026-04-22~~
 - ~~**Early-bird Registration Closes:** 2026-06-30~~
 - ~~**Standard Registration Opends:** 2026-07-01~~
-- ~~**Standard Registration Closes:** 2026-09-01~~
+- **Standard Registration Closes:** 2026-09-01
 - **Event Date:** 2026-09-01
-  * On-site registration will also be available.
+- ** On-site registration will also be available.
+
  
+</br>
+<a class="button" href="https://event.plan9.co.kr/#/kcd_odk2026">Register</a>
+</br>
 
-
+  
 ## Schedule
 
 <p>You can find the full schedule at the link below. Ceph sessions are all in Track 3. Note that Track 3 is empty in the morning, as morning sessions are shared across all three communities and are listed under Track 1.</p>
