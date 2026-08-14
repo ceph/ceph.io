@@ -2,6 +2,15 @@ import lunr from 'lunr';
 import articleCard from '../_11ty/shortcodes/ArticleCard.js';
 import translations from '../_data/i18n';
 
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 const SearchOutput = {
   init: () => {
     const urlParts = window.location.pathname.split('/') || [];
@@ -15,7 +24,7 @@ const SearchOutput = {
     const searchresultsContainer = document.getElementById('search-results');
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const query = urlParams.get('q');
+    const query = urlParams.get('q') || '';
 
     async function initSearchIndex() {
       if (!urlParams.has('q')) return;
@@ -25,11 +34,7 @@ const SearchOutput = {
 
         const [searchIndex, searchOutput] = await Promise.all(
           searchDataUrls.map(url =>
-            fetch(url, {
-              method: 'GET',
-              credentials: 'include',
-              mode: 'no-cors',
-            }).then(res => res.json())
+            fetch(url, { method: 'GET' }).then(res => res.json())
           )
         );
         const lunrIndex = lunr.Index.load(searchIndex);
@@ -65,13 +70,14 @@ const SearchOutput = {
         blog_search_no_results[urlLocale] || 'No results for';
       const searchedForString =
         blog_searched_for[urlLocale] || 'You searched for';
+      const safeQuery = escapeHtml(query);
 
       if (!searchresultsContainer) return;
 
       if (!results.length) {
-        searchResultsHtml = `<p class="h3 mb-8 xl:mb-10">${noResultsString} “${query}”</p>`;
+        searchResultsHtml = `<p class="h3 mb-8 xl:mb-10">${noResultsString} “${safeQuery}”</p>`;
       } else {
-        searchResultsHtml = `<p class="h3 mb-8 xl:mb-10">${searchedForString} “${query}”</p>
+        searchResultsHtml = `<p class="h3 mb-8 xl:mb-10">${searchedForString} “${safeQuery}”</p>
       <ul class="grid md:grid--cols-2 lg:grid--cols-3 xl:grid--cols-4 list-none m-0 p-0">${results
         .map(({ author, content, date, image, title, url }) => {
           const restucturedData = {
