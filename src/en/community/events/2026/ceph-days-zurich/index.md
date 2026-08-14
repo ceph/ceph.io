@@ -25,10 +25,10 @@ Here is how you can join us:
 ## Important Dates
 
 - ~~**CFP Opens:** 2026-06-15~~
-- **CFP Closes:** 2026-09-04
-- **Speakers receive confirmation of acceptance:** 2026-09-10
+- **CFP Closes:** 2026-09-11
+- **Speakers receive confirmation of acceptance:** 2026-09-18
 - **Registration Opens:** 2026-06-15
-- **Schedule Announcement:** 2026-09-11
+- **Schedule Announcement:** 2026-09-22
 - **Registration Closes:** 2026-10-07
 - **Event Date:** 2026-10-14
 
