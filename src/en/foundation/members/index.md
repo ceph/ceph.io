@@ -38,7 +38,8 @@ order: 3
   <a href="https://cloudferro.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/cloudferro-logo.svg" /></a>    
   <a href="http://www.croit.io/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-croit.svg" /></a>
   <a href="https://www.digitalocean.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-digitalocean.png" /></a>
-  <a href="http://iss-integration.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-intelligent-systems.png" /></a>  
+  <a href="http://iss-integration.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-intelligent-systems.png" /></a>
+  <a href="https://longvan.net/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-longvan.svg" /></a>
   <a href="https://www.osnexus.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-osnexus.png" /></a>
   <a href="https://www.ovhcloud.com/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/logo-ovh.png" /></a>
   <a href="https://sonyinteractive.com/en/" rel="noreferrer noopener" target="_blank"><img alt="" loading="lazy" src="/assets/bitmaps/sony-interactive-entertainment-llc.svg" /></a>
