@@ -21,6 +21,11 @@ project improvements and roadmap, and Ceph community news. The day ends with
 a networking reception, to foster more Ceph learning.
  
  
+</br>
+<a class="button" href="https://osnexus.regfox.com/ceph-days-chicago-2026">Register</a>
+</br>
+ 
+ 
 ## Important Dates
  
 TBD
