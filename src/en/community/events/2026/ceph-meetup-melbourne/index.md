@@ -22,15 +22,15 @@ and connect with others working across the storage ecosystem.
 You will need to be a registered conference attendee to come to the
 Ceph Meetup.
  
-## Important Dates
-**Registration Opens**: 2026-08-17
-**Schedule Announcement**: 2026-10-15
-**Event Date**: 2026-10-30
+## Important Dates 
+**Registration Opens**: 2026-09-01 
+**Schedule Announcement**: 2026-10-15 
+**Event Date**: 2026-10-30 
  
 <br />
  
 ## Schedule
-We still start with an introduction to Ceph, covering:
+Starting at 09:30 am, we will begin with an introduction to Ceph, covering:
  - What Ceph is
  - Core architecture and concepts
  - Common use cases
