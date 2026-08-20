@@ -23,20 +23,20 @@ You will need to be a registered conference attendee to come to the
 Ceph Meetup.
  
 ## Important Dates 
-**Registration Opens**: 2026-09-01 
-**Schedule Announcement**: 2026-10-15 
-**Event Date**: 2026-10-30 
+** - Registration Opens**: 2026-09-01 
+** - Schedule Announcement**: 2026-10-15 
+** - Event Date**: 2026-10-30 
  
 <br />
  
 ## Schedule
-Starting at 09:30 am, we will begin with an introduction to Ceph, covering:
+Starting at **9:30 am**, we will begin with an introduction to Ceph, covering:
  - What Ceph is
  - Core architecture and concepts
  - Common use cases
  - How organisations are using Ceph today
  
-Then, from about 10:00 to 12:00, we’ll have a few talks covering different 
+Then, from about **10:00 am to 12:00 pm**, we’ll have a few talks covering different 
 topics, with a mix of length and depth. About halfway through, we will break 
 for catered morning tea. Further details will be published closer to the 
 event. Topics may include:
