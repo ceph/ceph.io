@@ -23,9 +23,9 @@ You will need to be a registered conference attendee to come to the
 Ceph Meetup.
  
 ## Important Dates 
-** - Registration Opens**: 2026-09-01 
-** - Schedule Announcement**: 2026-10-15 
-** - Event Date**: 2026-10-30 
+**- Registration Opens**: 2026-09-01 </br>
+**- Schedule Announcement**: 2026-10-15 </br>
+**- Event Date**: 2026-10-30 </br>
  
 <br />
  
