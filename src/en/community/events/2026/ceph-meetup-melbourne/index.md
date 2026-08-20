@@ -36,9 +36,10 @@ Starting at 09:30 am, we will begin with an introduction to Ceph, covering:
  - Common use cases
  - How organisations are using Ceph today
  
-We'll then have a few talks covering different topics, with a mix of length 
-and depth. About halfway through, we will break for catered morning tea. 
-Further details will be published closer to the event. Topics may include:
+Then, from about 10:00 to 12:00, we’ll have a few talks covering different 
+topics, with a mix of length and depth. About halfway through, we will break 
+for catered morning tea. Further details will be published closer to the 
+event. Topics may include:
  - Community updates
  - Current Ceph deployments and projects
  - Operational experiences and lessons learned
