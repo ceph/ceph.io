@@ -26,9 +26,9 @@ Registration is now open for the Ceph Days event!
 </br>
 <a class="button" href="https://osnexus.regfox.com/ceph-days-chicago-2026">Register</a>
 </br>
- 
+</br>
 ### CFP
-The Call Fpr Papers is open till **Thirsday October 15th**!
+The Call for Papers is open till **Thirsday, October 15th**!
  
 <a class="button" href="https://forms.gle/vdcHycWuWTEyDbxz8">Sumbit Here</a>
 </br>
