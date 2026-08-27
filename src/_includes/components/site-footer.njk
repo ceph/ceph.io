@@ -55,6 +55,26 @@
         {%- endfor %}
       </ul>
       <ul class="site-footer__social">
+        {%- if social.linkedin %}
+          <li>
+            <a class="site-footer__linkedin" href="https://www.linkedin.com/company/{{social.linkedin}}" rel="noreferrer noopener" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#d3dde7" aria-hidden="true" focusable="false">
+              <path d="M22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003zM7.12 20.452H3.56V9h3.56v11.452zM5.34 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm15.112 13.019h-3.556v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.137 1.445-2.137 2.939v5.667H9.352V9h3.414v1.561h.049c.477-.9 1.637-1.85 3.368-1.85 3.6 0 4.267 2.37 4.267 5.455v6.286z"/>
+            </svg>
+            <span class="visually-hidden">LinkedIn</span>
+          </a>
+        </li>
+        {%- endif %}
+        {%- if social.bluesky %}
+          <li>
+            <a class="site-footer__bluesky" href="https://bsky.app/profile/{{social.bluesky}}" rel="noreferrer noopener" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#d3dde7" aria-hidden="true" focusable="false">
+                <path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.912 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.276-.038.417-.052-.14.022-.281.04-.417.058-3.912.552-7.398 1.983-2.832 7.02 5.014 5.323 6.87-1.14 7.825-4.474.955 3.334 2.007 9.582 7.729 4.474 4.287-4.474 1.221-6.468-2.692-7.02a8.222 8.222 0 01-.417-.058c.14.014.28.032.417.052 2.67.296 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.857-.902-2.204-.659-.299-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8z"/>
+              </svg>
+              <span class="visually-hidden">Bluesky</span>
+            </a>
+          </li>
+        {%- endif %}
         {%- if social.twitter %}
           <li>
             <a class="site-footer__twitter" href="https://twitter.com/{{social.twitter}}" rel="noreferrer noopener" target="_blank">
@@ -72,16 +92,6 @@
                 <path id="a" d="M23.75 7.079s-.25-1.65-.95-2.4c-.9-.95-1.95-.95-2.4-1-3.35-.25-8.4-.25-8.4-.25s-5.05 0-8.4.25c-.45.05-1.5.05-2.4 1-.7.75-.95 2.4-.95 2.4S0 9.029 0 10.979v1.8c0 1.95.25 3.9.25 3.9s.25 1.65.95 2.4c.9.95 2.1.95 2.65 1.05 1.9.2 8.15.25 8.15.25s5.05 0 8.4-.25c.45-.05 1.5-.05 2.4-1 .7-.75.95-2.4.95-2.4s.25-1.95.25-3.9v-1.8c0-2-.25-3.95-.25-3.95zm-14.25 7.9v-6.75l6.5 3.4-6.5 3.35z"/>
               </svg>
               <span class="visually-hidden">YouTube</span>
-            </a>
-          </li>
-        {%- endif %}
-        {%- if social.facebook %}
-          <li>
-            <a class="site-footer__facebook" href="https://www.facebook.com/{{social.facebook}}" rel="noreferrer noopener" target="_blank">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#d3dde7" aria-hidden="true" focusable="false">
-                <path d="M24 12.072C23.999 5.689 19 .423 12.626.09 6.251-.243.732 4.473.066 10.822-.601 17.17 3.82 22.929 10.125 23.926v-8.385H7.078v-3.469h3.047V9.428c0-3.007 1.792-4.669 4.532-4.669.9.013 1.798.091 2.687.235v2.953H15.83a1.735 1.735 0 00-1.955 1.875v2.25h3.328l-.532 3.469h-2.797v8.385A12 12 0 0024 12.072z"/>
-              </svg>
-              <span class="visually-hidden">Facebook</span>
             </a>
           </li>
         {%- endif %}
