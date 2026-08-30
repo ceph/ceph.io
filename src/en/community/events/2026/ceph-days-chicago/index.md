@@ -30,7 +30,7 @@ Registration is now open for the Ceph Days event!
 ### CFP
 The Call for Papers is open till **Thursday, October 15th**!
  
-<a class="button" href="https://forms.gle/vdcHycWuWTEyDbxz8">Sumbit Here</a>
+<a class="button" href="https://forms.gle/vdcHycWuWTEyDbxz8">Submit Here</a>
 </br>
  
 ## Important Dates
