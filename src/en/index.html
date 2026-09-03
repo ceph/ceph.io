@@ -1,59 +1,1328 @@
 ---
 title: Home
 layout: home
+preload:
+  - href: /assets/bitmaps/photo-squid-03.jpg
+    as: image
 ---
 
-<h1 class="h1 visually-hidden">Ceph.io {{ title }}</h1>
+{% set articleLocaleTag = locale + '-article' %} {% set recentArticles = [] %} {% for item in collections[articleLocaleTag] | reverse %} {%
+if recentArticles.length < 3 and not ('release' in (item.data.tags or [])) %} {% set _ = recentArticles.push(item) %} {% endif %} {% endfor
+%} {% set caseStudyLocaleTag = locale + '-case-study' %} {% set recentCaseStudies = collections[caseStudyLocaleTag] | reverse | getItems(3)
+%} {% set eventLocaleTag = locale + '-event' %} {% set upcomingEvents = collections[eventLocaleTag] | getItemsInFuture | getItems(3) %} {%
+set eventPhotos = ['photo-sea-life-05', 'photo-sea-life-03', 'photo-squid-03'] %}
 
-<section class="py-32 lg:py-56 relative section section--full">
-  <div class="absolute aspect-ratio aspect-ratio--cover h-full left-0 tint tint--multiply tint--royal-4 top-0 w-full">
-    <img alt="" class="absolute h-full left-0 top-0 w-full" loading="lazy" src="/assets/bitmaps/photo-squid-02.jpg" />
-  </div>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" />
 
+<style>
+  /* ---------- Landing page (home only) ---------- */
+  .lp-hero,
+  .lp-body {
+    --lp-red: #f0424d;
+    --lp-red-dark: #d8343f;
+    --lp-red-deep: #c42a35;
+    --lp-navy: hsl(237, 74%, 13%);
+    --lp-royal: hsl(237, 74%, 25%);
+    --lp-royal-bright: hsl(237, 62%, 44%);
+    --lp-royal-bright: color-mix(in oklab, var(--lp-royal) 45%, var(--lp-blue));
+    --lp-blue: #1c74e9;
+    --lp-ink: #ffffff;
+    --lp-ink-2: rgba(255, 255, 255, 0.82);
+    --lp-ink-3: rgba(255, 255, 255, 0.62);
+    --lp-line: rgba(255, 255, 255, 0.16);
+    --lp-pad: 3.5rem;
+    color: var(--lp-ink);
+    font-family: var(--font-family-brand);
+    line-height: 1.5;
+  }
+
+  @media (min-width: 64em) {
+    .lp-hero,
+    .lp-body {
+      --lp-pad: 6rem;
+    }
+  }
+
+  :where(.lp-hero, .lp-body) a {
+    color: inherit;
+  }
+
+  .lp-hero a:focus-visible,
+  .lp-body a:focus-visible,
+  .js-focus-visible .lp-hero a.focus-visible,
+  .js-focus-visible .lp-body a.focus-visible {
+    outline: 2px solid var(--lp-ink);
+    outline-offset: 3px;
+  }
+
+  /* Hero */
+  .lp-hero {
+    background: #000;
+    overflow: hidden;
+    padding-top: 8rem;
+  }
+
+  @media (min-width: 64em) {
+    .lp-hero {
+      padding-top: 10rem;
+    }
+  }
+
+  .lp-hero__grid {
+    align-items: center;
+    display: grid;
+    gap: 3rem;
+  }
+
+  .lp-hero__art {
+    margin: 0 -1rem;
+  }
+
+  .lp-hero__art img {
+    aspect-ratio: 16 / 10;
+    display: block;
+    height: auto;
+    -webkit-mask-image: radial-gradient(closest-side at 55% 50%, #000 35%, transparent 100%);
+    mask-image: radial-gradient(closest-side at 55% 50%, #000 35%, transparent 100%);
+    object-fit: cover;
+    object-position: 55% 40%;
+    width: 100%;
+  }
+
+  @media (min-width: 64em) {
+    .lp-hero__grid {
+      gap: 2rem;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    }
+
+    .lp-hero__art {
+      margin: -2rem -4rem -2rem -1rem;
+    }
+
+    .lp-hero__art img {
+      aspect-ratio: 5 / 4;
+    }
+  }
+
+  .lp-strip {
+    border-top: 1px solid var(--lp-line);
+    margin-top: 3rem;
+    padding: 1.25rem 0;
+  }
+
+  @media (min-width: 64em) {
+    .lp-strip {
+      margin-top: 4rem;
+    }
+  }
+
+  .lp-strip p {
+    align-items: center;
+    color: var(--lp-ink-2);
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.9375rem;
+    gap: 0.5rem 1.25rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .lp-strip strong {
+    color: var(--lp-ink);
+    font-weight: 600;
+  }
+
+  .lp-strip a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* One long dark band, black at the top and blue at the bottom, like the reference */
+  .lp-body {
+    background: linear-gradient(180deg, #000 0%, #000 10%, var(--lp-navy) 38%, var(--lp-royal) 72%, var(--lp-royal-bright) 100%);
+  }
+
+  .lp-section {
+    padding-bottom: var(--lp-pad);
+    padding-top: var(--lp-pad);
+  }
+
+  /* Type */
+  .lp-eyebrow {
+    color: var(--lp-ink-2);
+    font-size: 0.8125rem;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    line-height: 1.3;
+    margin: 0 0 1rem;
+    text-transform: uppercase;
+  }
+
+  .lp-eyebrow--sm {
+    color: var(--lp-ink-3);
+    font-size: 0.75rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .lp-h1 {
+    font-size: clamp(2.75rem, 6vw, 4.25rem);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+    margin: 0 0 1.5rem;
+    text-wrap: balance;
+  }
+
+  .lp-h1 sup {
+    font-size: 0.35em;
+    font-weight: 400;
+  }
+
+  .lp-h2 {
+    font-size: clamp(2.125rem, 4.5vw, 3.5rem);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    margin: 0 0 1.25rem;
+    max-width: 22ch;
+    text-wrap: balance;
+  }
+
+  .lp-h3 {
+    font-size: 1.375rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin: 0 0 0.75rem;
+    text-wrap: balance;
+  }
+
+  .lp-h3 a {
+    text-decoration: none;
+  }
+
+  .lp-h3 a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .lp-lede {
+    color: var(--lp-ink-2);
+    font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+    line-height: 1.5;
+    margin: 0 0 2rem;
+    max-width: 34ch;
+  }
+
+  .lp-text {
+    color: var(--lp-ink-2);
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin: 0 0 2rem;
+    max-width: 56ch;
+  }
+
+  .lp-center {
+    text-align: center;
+  }
+
+  .lp-center .lp-h2,
+  .lp-center .lp-text,
+  .lp-center .lp-lede {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Buttons: pills, as on the reference */
+  .lp-actions {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+  }
+
+  .lp-actions--center {
+    justify-content: center;
+  }
+
+  .lp-btn {
+    align-items: center;
+    background: transparent;
+    border: 1px solid var(--lp-ink);
+    border-radius: 999px;
+    color: var(--lp-ink);
+    display: inline-flex;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1.2;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    transition: background-color var(--animation-duration) var(--animation-easing), color var(--animation-duration) var(--animation-easing),
+      border-color var(--animation-duration) var(--animation-easing);
+    white-space: nowrap;
+  }
+
+  .lp-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .lp-btn--red {
+    background: var(--lp-red-dark);
+    border-color: var(--lp-red-dark);
+  }
+
+  .lp-btn--red:hover {
+    background: var(--lp-red-deep);
+    border-color: var(--lp-red-deep);
+  }
+
+  .lp-btn--white {
+    background: var(--lp-ink);
+    border-color: var(--lp-ink);
+    color: var(--lp-navy);
+  }
+
+  .lp-btn--white:hover {
+    background: rgba(255, 255, 255, 0.86);
+  }
+
+  .lp-btn--sm {
+    font-size: 0.875rem;
+    padding: 0.625rem 1.25rem;
+  }
+
+  /* Section header row: heading left, action right */
+  .lp-head {
+    align-items: end;
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  @media (min-width: 43.75em) {
+    .lp-head {
+      grid-template-columns: minmax(0, 1fr) auto;
+    }
+  }
+
+  .lp-head .lp-h2,
+  .lp-head .lp-text {
+    margin-bottom: 0;
+  }
+
+  .lp-head .lp-text {
+    margin-top: 1rem;
+  }
+
+  /* Logo marquee: CSS animation by default; the script below lets the pointer drive it */
+
+  .lp-logos {
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    margin-top: 1.5rem;
+    overflow: hidden;
+  }
+
+  .lp-logos__track {
+    align-items: center;
+    animation: lp-marquee 70s linear infinite;
+    display: flex;
+    width: max-content;
+  }
+
+  .lp-logos:hover .lp-logos__track {
+    animation-play-state: paused;
+  }
+
+  .lp-logos__track img {
+    filter: brightness(0) invert(1);
+    height: 2.75rem;
+    margin-right: 4rem;
+    max-width: 8.5rem;
+    object-fit: contain;
+    opacity: 0.9;
+    width: auto;
+  }
+
+  .lp-logos__track img.lp-logo--sq {
+    height: 4.5rem;
+  }
+
+  /* Logos drawn on a light box: invert, then push the box to black and the mark to white */
+  .lp-logos__track img.lp-logo--lightbox {
+    filter: grayscale(1) invert(1) brightness(0.8) contrast(2.5);
+  }
+
+  /* Same, but gentler, for a light box whose mark has a mid-tone colour that must survive */
+  .lp-logos__track img.lp-logo--lightbox-soft {
+    filter: grayscale(1) invert(1) brightness(1.4) contrast(1.5);
+  }
+
+  /* Logos drawn on a dark box: push the box to black and the mark to white */
+  .lp-logos__track img.lp-logo--darkbox {
+    filter: grayscale(1) brightness(0.8) contrast(2.5);
+  }
+
+  @keyframes lp-marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Cards */
+  .lp-cards {
+    display: grid;
+    gap: 2rem;
+  }
+
+  @media (min-width: 43.75em) and (max-width: 63.9375em) {
+    .lp-card {
+      align-items: start;
+      column-gap: 1.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    }
+
+    .lp-card__media {
+      grid-column: 1;
+      grid-row: 1 / span 4;
+      margin-bottom: 0;
+    }
+  }
+
+  @media (min-width: 64em) {
+    .lp-cards {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .lp-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .lp-card--boxed {
+    background: #000;
+    border: 1px solid var(--lp-line);
+    padding: 1.5rem;
+  }
+
+  .lp-card__media {
+    aspect-ratio: 16 / 9;
+    display: block;
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+  }
+
+  .lp-card__media img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .lp-card__text {
+    color: var(--lp-ink-2);
+    flex-grow: 1;
+    font-size: 1rem;
+    line-height: 1.55;
+    margin: 0 0 1.5rem;
+  }
+
+  /* Highlight panels */
+  .lp-panel {
+    align-items: center;
+    background: radial-gradient(75% 130% at 100% 50%, var(--lp-red) 0%, var(--lp-red-dark) 28%, rgba(216, 52, 63, 0) 72%) #000;
+    display: grid;
+    gap: 2.5rem;
+    padding: 3rem 2rem;
+  }
+
+  @media (min-width: 64em) {
+    .lp-panel {
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      padding: 5rem 4rem;
+    }
+  }
+
+  .lp-panel--black {
+    background: #000;
+  }
+
+  .lp-panel .lp-text {
+    margin-bottom: 2.5rem;
+  }
+
+  .lp-panel__mark {
+    display: flex;
+    justify-content: center;
+  }
+
+  .lp-panel__mark svg {
+    height: auto;
+    max-width: 100%;
+    width: 22rem;
+  }
+
+  .lp-panel__ring {
+    align-items: center;
+    aspect-ratio: 1;
+    border: 2px solid var(--lp-ink);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    max-width: 22rem;
+    width: 70%;
+  }
+
+  .lp-panel__ring svg {
+    width: 52%;
+  }
+
+  /* Numbers */
+  .lp-numbers {
+    display: grid;
+    gap: 3.5rem 4rem;
+    margin-top: 3rem;
+  }
+
+  @media (min-width: 43.75em) {
+    .lp-numbers {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .lp-number b {
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(90deg, var(--lp-red), var(--lp-blue));
+    background-image: linear-gradient(90deg in oklab, var(--lp-red), var(--lp-blue));
+    color: transparent;
+    display: inline-block;
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
+    font-variant-numeric: tabular-nums;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  .lp-number span {
+    color: var(--lp-ink-2);
+    display: block;
+    font-size: 1.125rem;
+    line-height: 1.4;
+    margin-top: 0.75rem;
+  }
+
+  /* Two-column rows */
+  .lp-split {
+    align-items: center;
+    display: grid;
+    gap: 3rem;
+  }
+
+  @media (min-width: 64em) {
+    .lp-split {
+      gap: 5rem;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+  }
+
+  .lp-split__art img {
+    aspect-ratio: 4 / 3;
+    display: block;
+    height: auto;
+    -webkit-mask-image: radial-gradient(closest-side, #000 40%, transparent 100%);
+    mask-image: radial-gradient(closest-side, #000 40%, transparent 100%);
+    object-fit: cover;
+    object-position: 75% 40%;
+    width: 100%;
+  }
+
+  .lp-mosaic {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lp-tile {
+    aspect-ratio: 1;
+    overflow: hidden;
+  }
+
+  .lp-tile img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .lp-tile--stat {
+    aspect-ratio: auto;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: visible;
+    padding: 1.5rem;
+  }
+
+  .lp-tile--stat b {
+    color: var(--lp-red);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+
+  .lp-tile--stat span {
+    color: var(--lp-ink-3);
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  /* Feature list */
+  .lp-features {
+    display: grid;
+    gap: 2.5rem 3rem;
+    list-style: none;
+    margin: 3rem 0 0;
+    padding: 0;
+  }
+
+  @media (min-width: 43.75em) {
+    .lp-features {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 64em) {
+    .lp-features {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .lp-features li {
+    padding-left: 1.75rem;
+    position: relative;
+  }
+
+  .lp-features li::before {
+    background: var(--lp-red);
+    border-radius: 50%;
+    content: '';
+    height: 0.625rem;
+    left: 0;
+    position: absolute;
+    top: 0.45rem;
+    width: 0.625rem;
+  }
+
+  .lp-features h3 {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin: 0 0 0.5rem;
+  }
+
+  .lp-features p {
+    color: var(--lp-ink-2);
+    font-size: 1rem;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* Events strip */
+  .lp-events {
+    display: grid;
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+
+  @media (min-width: 43.75em) {
+    .lp-events {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 64em) {
+    .lp-events {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  .lp-event {
+    aspect-ratio: 1;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+  }
+
+  @media (min-width: 64em) {
+    .lp-event {
+      aspect-ratio: 4 / 5;
+    }
+  }
+
+  .lp-event img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--animation-duration) var(--animation-easing);
+    width: 100%;
+  }
+
+  .lp-event:hover img {
+    transform: scale(1.04);
+  }
+
+  .lp-event__caption {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 40%, rgba(0, 0, 0, 0.9) 100%);
+    bottom: 0;
+    left: 0;
+    padding: 3rem 1.25rem 1.25rem;
+    position: absolute;
+    right: 0;
+  }
+
+  @media (forced-colors: active) {
+    .lp-event__caption {
+      background: Canvas;
+    }
+  }
+
+  .lp-event__caption strong {
+    display: block;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .lp-event__caption span {
+    color: var(--lp-ink-2);
+    display: block;
+    font-size: 0.9375rem;
+    line-height: 1.4;
+    margin-top: 0.25rem;
+  }
+
+  .lp-event--stat {
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+  }
+
+  .lp-event--stat b {
+    color: var(--lp-red);
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+
+  .lp-event--stat span {
+    color: var(--lp-ink-2);
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  /* Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .lp-logos {
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
+
+    .lp-logos__track {
+      animation: none;
+      flex-wrap: wrap;
+      gap: 2rem 3rem;
+      justify-content: center;
+      width: auto;
+    }
+
+    .lp-logos__track img {
+      margin-right: 0;
+    }
+
+    .lp-logos__track--clone {
+      display: none;
+    }
+
+    .lp-event img,
+    .lp-btn {
+      transition: none;
+    }
+
+    .lp-event:hover img {
+      transform: none;
+    }
+  }
+</style>
+
+<!-- Hero -->
+<section class="lp-hero section--full">
   <div class="wrapper">
-    <div class="color-white max-w-192 relative z-1">
-      <h2 class="h1 mb-8">The Future of Storage<sup>™</sup></h2>
-      <p class="mb-10 standout">Ceph is an open-source, distributed storage system.</p>
-      <a class="button" href="/{{ locale }}/users/getting-started/">Get Started with Ceph</a>
+    <div class="lp-hero__grid">
+      <div>
+        <h1 class="lp-h1">The Future of Storage<sup>™</sup></h1>
+        <p class="lp-lede">
+          Ceph is open-source, distributed storage that serves object, block, and file from one cluster, on hardware you choose.
+        </p>
+        <div class="lp-actions">
+          <a class="lp-btn lp-btn--red" href="/{{ locale }}/users/getting-started/">Get started</a>
+          <a class="lp-btn" href="https://docs.ceph.com/en/latest/">Read the docs</a>
+        </div>
+      </div>
+      <div class="lp-hero__art">
+        <img alt="" fetchpriority="high" decoding="async" src="/assets/bitmaps/photo-squid-03.jpg" width="1920" height="1080" />
+      </div>
+    </div>
+    <div class="lp-strip">
+      <!-- Hand-maintained: update with every release announcement. Date in the site's formatDate style (Mon D, YYYY). -->
+      <p>
+        <strong>Latest releases: v20.2.4 Tentacle and v19.2.6 Squid</strong>
+        <span>Aug 19, 2026</span>
+        <a href="/{{ locale }}/news/blog/2026/v20-2-4-v19-2-6-combo-released/">Read the announcement</a>
+      </p>
     </div>
   </div>
 </section>
 
-<section class="max-w-192 mx-auto section text-center">
-  <h2 class="h2">Reliable and scalable storage designed for any organization</h2>
-  <p class="mb-0 standout">
-    Use Ceph to transform your storage infrastructure. Ceph provides a unified storage service with object, block, and file interfaces from
-    a single cluster built from commodity hardware components.
-  </p>
-</section>
+<div class="lp-body section--full">
+  <!-- Foundation and member logos -->
+  <section class="lp-section wrapper">
+    <p class="lp-eyebrow">Ceph Foundation</p>
+    <h2 class="lp-h2">Backed by the organizations that build and run Ceph</h2>
+    <p class="lp-text">
+      Ceph is developed in the open and backed by the Ceph Foundation, a directed fund under the Linux Foundation whose member organizations
+      build, operate, and support Ceph at scale.
+    </p>
+    <div class="lp-actions">
+      <a class="lp-btn lp-btn--white" href="/{{ locale }}/foundation/">Visit the Ceph Foundation</a>
+    </div>
 
-<hr class="hr" />
-
-<section class="max-w-192 mx-auto section text-center">
-  <h2 class="h2">Deploy or manage a Ceph cluster</h2>
-  <p class="p mb-8">Deploy Ceph now. Use the links below to acquire Ceph and deploy a Ceph cluster.</p>
-  <a class="button mb-4" href="/{{ locale }}/users/">Deploy or manage a Ceph cluster</a>
-  <div class="flex flex--justify-center flex--wrap flex--gap-6">
-    <a class="a" href="/{{ locale }}/users/getting-started/">Getting started</a>
-    <a class="a" href="/{{ locale }}/users/documentation/">Documentation</a>
-  </div>
-</section>
-
-<section class="bg-grey-300 section section--full">
-  <div class="wrapper">
-    <div class="grid grid--align-center to-lg:max-w-160 lg:grid--cols-2">
-      <div class="aspect-ratio aspect-ratio--16x9 lg:order-2">
-        <img alt="" class="absolute left-0 top-0" loading="lazy" src="/assets/bitmaps/photo-sea-life-03.jpg" />
+    <div class="lp-logos" role="group" aria-label="Ceph Foundation members" data-lp-logos>
+      <div class="lp-logos__track">
+        <img class="lp-logo--sq" alt="45Drives" loading="lazy" src="/assets/bitmaps/logo-45drives.png" />
+        <img class="lp-logo--sq lp-logo--lightbox" alt="Bloomberg" loading="lazy" src="/assets/bitmaps/logo-bloomberg.png" />
+        <img class="lp-logo--sq" alt="Clyso" loading="lazy" src="/assets/bitmaps/logo-clyso.png" />
+        <img class="lp-logo--sq" alt="IBM" loading="lazy" src="/assets/bitmaps/logo-ibm.png" />
+        <img class="lp-logo--sq" alt="Western Digital" loading="lazy" src="/assets/bitmaps/logo-western-digital.png" />
+        <img class="lp-logo--sq" alt="42on" loading="lazy" src="/assets/bitmaps/logo-42on.png" />
+        <img class="lp-logo--sq" alt="Canonical" loading="lazy" src="/assets/bitmaps/logo-ubuntu.png" />
+        <img alt="CloudFerro" loading="lazy" src="/assets/bitmaps/cloudferro-logo.svg" />
+        <img alt="croit" loading="lazy" src="/assets/bitmaps/logo-croit.svg" />
+        <img class="lp-logo--sq" alt="DigitalOcean" loading="lazy" src="/assets/bitmaps/logo-digital-ocean.png" />
+        <img
+          class="lp-logo--sq lp-logo--darkbox"
+          alt="Intelligent Systems Services"
+          loading="lazy"
+          src="/assets/bitmaps/logo-intelligent-systems.png"
+        />
+        <img alt="Long Van" loading="lazy" src="/assets/bitmaps/logo-longvan.svg" />
+        <img class="lp-logo--sq" alt="OVHcloud" loading="lazy" src="/assets/bitmaps/logo-ovh.png" />
+        <img class="lp-logo--sq lp-logo--lightbox-soft" alt="OSNEXUS" loading="lazy" src="/assets/bitmaps/logo-osnexus.png" />
+        <img alt="Sony Interactive Entertainment" loading="lazy" src="/assets/bitmaps/sony-interactive-entertainment-llc.svg" />
+        <img class="lp-logo--sq lp-logo--darkbox" alt="Boston University" loading="lazy" src="/assets/bitmaps/logo-boston-university.png" />
+        <img class="lp-logo--sq" alt="CERN" loading="lazy" src="/assets/bitmaps/logo-cern.png" />
+        <img class="lp-logo--sq" alt="CROSS, UC Santa Cruz" loading="lazy" src="/assets/bitmaps/logo-cross.png" />
+        <img class="lp-logo--sq lp-logo--lightbox" alt="Harvard FAS Research Computing" loading="lazy" src="/assets/bitmaps/logo-fas.png" />
+        <img class="lp-logo--sq" alt="GRNET" loading="lazy" src="/assets/bitmaps/logo-grnet.png" />
+        <img class="lp-logo--sq" alt="Monash University" loading="lazy" src="/assets/bitmaps/logo-monash.png" />
+        <img class="lp-logo--sq lp-logo--lightbox" alt="SARAO" loading="lazy" src="/assets/bitmaps/logo-sarao.png" />
+        <img class="lp-logo--sq" alt="OpenInfra Foundation" loading="lazy" src="/assets/bitmaps/logo-openinfra.png" />
+        <img alt="SLAC National Accelerator Laboratory" loading="lazy" src="/assets/bitmaps/logo-slac.svg" />
+        <img
+          class="lp-logo--sq lp-logo--lightbox"
+          alt="Science and Technology Facilities Council"
+          loading="lazy"
+          src="/assets/bitmaps/logo-science-and-technology-council.png"
+        />
+        <img class="lp-logo--sq lp-logo--lightbox" alt="SWITCH" loading="lazy" src="/assets/bitmaps/logo-switch.png" />
+        <img class="lp-logo--sq lp-logo--darkbox" alt="University of Michigan" loading="lazy" src="/assets/bitmaps/logo-umich.png" />
+        <img class="lp-logos__track--clone lp-logo--sq" alt="" aria-hidden="true" loading="lazy" src="/assets/bitmaps/logo-45drives.png" />
+        <img
+          class="lp-logos__track--clone lp-logo--sq lp-logo--lightbox"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          src="/assets/bitmaps/logo-bloomberg.png"
+        />
+        <img class="lp-logos__track--clone lp-logo--sq" alt="" aria-hidden="true" loading="lazy" src="/assets/bitmaps/logo-clyso.png" />
+        <img class="lp-logos__track--clone lp-logo--sq" alt="" aria-hidden="true" loading="lazy" src="/assets/bitmaps/logo-ibm.png" />
+        <img
+          class="lp-logos__track--clone lp-logo--sq"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          src="/assets/bitmaps/logo-western-digital.png"
+        />
+        <img class="lp-logos__track--clone lp-logo--sq" alt="" aria-hidden="true" loading="lazy" src="/assets/bitmaps/logo-42on.png" />
+        <img class="lp-logos__track--clone lp-logo--sq" alt="" aria-hidden="true" loading="lazy" src="/assets/bitmaps/logo-ubuntu.png" />
+        <img class="lp-logos__track--clone" alt="" aria-hidden="true" loading="lazy" src="/assets/bitmaps/cloudferro-logo.svg" />
+        <img class="lp-logos__track--clone" alt="" aria-hidden="true" loading="lazy" src="/assets/bitmaps/logo-croit.svg" />
+        <img
+          class="lp-logos__track--clone lp-logo--sq"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          src="/assets/bitmaps/logo-digital-ocean.png"
+        />
+        <img
+          class="lp-logos__track--clone lp-logo--sq lp-logo--darkbox"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          src="/assets/bitmaps/logo-intelligent-systems.png"
+        />
+        <img class="lp-logos__track--clone" alt="" aria-hidden="true" loading="lazy" src="/assets/bitmaps/logo-longvan.svg" />
+        <img class="lp-logos__track--clone lp-logo--sq" alt="" aria-hidden="true" loading="lazy" src="/assets/bitmaps/logo-ovh.png" />
+        <img
+          class="lp-logos__track--clone lp-logo--sq lp-logo--lightbox-soft"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          src="/assets/bitmaps/logo-osnexus.png"
+        />
+        <img
+          class="lp-logos__track--clone"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          src="/assets/bitmaps/sony-interactive-entertainment-llc.svg"
+        />
+        <img
+          class="lp-logos__track--clone lp-logo--sq lp-logo--darkbox"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          src="/assets/bitmaps/logo-boston-university.png"
+        />
+        <img class="lp-logos__track--clone lp-logo--sq" alt="" aria-hidden="true" loading="lazy" src="/assets/bitmaps/logo-cern.png" />
+        <img class="lp-logos__track--clone lp-logo--sq" alt="" aria-hidden="true" loading="lazy" src="/assets/bitmaps/logo-cross.png" />
+        <img
+          class="lp-logos__track--clone lp-logo--sq lp-logo--lightbox"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          src="/assets/bitmaps/logo-fas.png"
+        />
+        <img class="lp-logos__track--clone lp-logo--sq" alt="" aria-hidden="true" loading="lazy" src="/assets/bitmaps/logo-grnet.png" />
+        <img class="lp-logos__track--clone lp-logo--sq" alt="" aria-hidden="true" loading="lazy" src="/assets/bitmaps/logo-monash.png" />
+        <img
+          class="lp-logos__track--clone lp-logo--sq lp-logo--lightbox"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          src="/assets/bitmaps/logo-sarao.png"
+        />
+        <img class="lp-logos__track--clone lp-logo--sq" alt="" aria-hidden="true" loading="lazy" src="/assets/bitmaps/logo-openinfra.png" />
+        <img class="lp-logos__track--clone" alt="" aria-hidden="true" loading="lazy" src="/assets/bitmaps/logo-slac.svg" />
+        <img
+          class="lp-logos__track--clone lp-logo--sq lp-logo--lightbox"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          src="/assets/bitmaps/logo-science-and-technology-council.png"
+        />
+        <img
+          class="lp-logos__track--clone lp-logo--sq lp-logo--lightbox"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          src="/assets/bitmaps/logo-switch.png"
+        />
+        <img
+          class="lp-logos__track--clone lp-logo--sq lp-logo--darkbox"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          src="/assets/bitmaps/logo-umich.png"
+        />
       </div>
+    </div>
+  </section>
+
+  <!-- News -->
+  <section class="lp-section wrapper">
+    <div class="lp-head">
       <div>
-        <h2 class="h2">Ceph for developers</h2>
-        <p class="p mb-8">Ceph is fully open source. Browse the code, understand the architecture, and contribute to a project used at scale across the world.</p>
-        <a class="button mb-4" href="/{{ locale }}/developers/">Study, modify and contribute to Ceph</a>
-        <div class="flex flex--wrap flex--gap-6">
-          <a class="a" href="/{{ locale }}/developers/code/">Code</a>
-          <a class="a" href="/{{ locale }}/developers/contribute/">Contribute</a>
+        <p class="lp-eyebrow">News</p>
+        <h2 class="lp-h2">What's new in Ceph</h2>
+        <p class="lp-text">Community updates, technical deep dives, and stories from the people who run Ceph.</p>
+      </div>
+      <a class="lp-btn" href="/{{ locale }}/news/">View all<span class="visually-hidden"> news</span></a>
+    </div>
+    <div class="lp-cards">
+      {% for item in recentArticles %} {% set articleTag = item.data.tags | getArticleType | i18n %}
+      <article class="lp-card">
+        <a class="lp-card__media" href="{{ item.url }}" tabindex="-1" aria-hidden="true">
+          <img
+            alt=""
+            loading="lazy"
+            width="1920"
+            height="1080"
+            src="{% if item.data.image %}{{ item.url }}{{ item.data.image }}{% else %}/assets/bitmaps/photo-texture-0{{ item.data.date | getSingleDigitFromDate }}.jpg{% endif %}"
+          />
+        </a>
+        <p class="lp-eyebrow lp-eyebrow--sm">{{ articleTag }}</p>
+        <h3 class="lp-h3"><a href="{{ item.url }}">{{ item.data.title }}</a></h3>
+        <p class="lp-card__text">{{ item.templateContent | replace('\n', ' ') | cleanCardContent | truncate(160) }}</p>
+        <div>
+          <a class="lp-btn lp-btn--sm" href="{{ item.url }}">Read the post<span class="visually-hidden">: {{ item.data.title }}</span></a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Unified storage panel -->
+  <section class="lp-section wrapper">
+    <div class="lp-panel">
+      <div>
+        <p class="lp-eyebrow">Unified storage</p>
+        <h2 class="lp-h2">One cluster. Object, block, and file.</h2>
+        <p class="lp-text">
+          Ceph provides S3-compatible object storage through RGW, RBD block devices for virtual machines and containers, and CephFS, a
+          POSIX-compliant file system, all from a single cluster on hardware you choose. No proprietary appliances, no lock-in.
+        </p>
+        <div class="lp-actions">
+          <a class="lp-btn lp-btn--white" href="/{{ locale }}/discover/technology/">Explore the technology</a>
+        </div>
+      </div>
+      <div class="lp-panel__mark">
+        <div class="lp-panel__ring">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 42" aria-hidden="true" focusable="false">
+            <g fill="#ffffff">
+              <path
+                d="M35 38c-1.4-.8-2.3-1.7-2.5-2.7s.2-2 1.3-3.3A16.2 16.2 0 0021.6 5.2h-.1A16.2 16.2 0 009.2 32c1.1 1.3 1.5 2.3 1.4 3.2S9.5 37.2 8 38a22.8 22.8 0 01-5.7-7.2A21.3 21.3 0 010 21.4 21.4 21.4 0 0121.5 0h.1A21.4 21.4 0 0143 21.4a21.6 21.6 0 01-.6 4.9 21 21 0 01-1.6 4.5 22.7 22.7 0 01-5.7 7.2"
+              />
+              <path
+                d="M27.2 42a8 8 0 01-2-2 8.7 8.7 0 01-1.6-5.3 11.8 11.8 0 01.9-4.2 12 12 0 012.3-3.7l.2-.2a10.3 10.3 0 001-1.4 7 7 0 001-2 7.5 7.5 0 00-6.3-9.2 7.3 7.3 0 00-1.1 0h-.1a7.4 7.4 0 00-4 1 7.5 7.5 0 00-2.2 2 7.5 7.5 0 00-1.2 6.2 7.2 7.2 0 00.8 2 9.7 9.7 0 001.1 1.4l.2.3a11.9 11.9 0 012.3 3.6 11.8 11.8 0 011 4.2 8.8 8.8 0 01-1.8 5.4 8 8 0 01-1.9 1.9l-1.2-.4A21.3 21.3 0 0111 40a6 6 0 003.2-5.3 6.4 6.4 0 00-1.7-4.2l-.3-.4-.9-1a12.8 12.8 0 01-.2-15 13 13 0 013.7-3.5 12.8 12.8 0 015-1.8 13.3 13.3 0 011.7-.2h.2a13.4 13.4 0 011.8.2 12.8 12.8 0 014.9 1.8A13 13 0 0132 14a12.7 12.7 0 01-.2 15l-.9 1-.3.4a6.5 6.5 0 00-1.7 4.3 6 6 0 003.1 5.4 21.4 21.4 0 01-3.6 1.5l-1.2.4"
+              />
+              <path d="M21.5 25.8a4.2 4.2 0 114.2-4.2 4.2 4.2 0 01-4.2 4.2" />
+            </g>
+          </svg>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- Case studies -->
+  <section class="lp-section wrapper">
+    <div class="lp-head">
+      <div>
+        <p class="lp-eyebrow">Case studies</p>
+        <h2 class="lp-h2">Ceph in production</h2>
+        <p class="lp-text">How research labs, service providers, and enterprises run Ceph at scale.</p>
+      </div>
+      <a class="lp-btn" href="/{{ locale }}/discover/case-studies/">View all<span class="visually-hidden"> case studies</span></a>
+    </div>
+    <div class="lp-cards">
+      {% for item in recentCaseStudies %}
+      <article class="lp-card lp-card--boxed">
+        <a class="lp-card__media" href="{{ item.url }}" tabindex="-1" aria-hidden="true">
+          <img
+            alt=""
+            loading="lazy"
+            width="1920"
+            height="1080"
+            src="{% if item.data.image %}{{ item.url }}{{ item.data.image }}{% else %}/assets/bitmaps/photo-water-02.jpg{% endif %}"
+          />
+        </a>
+        <p class="lp-eyebrow lp-eyebrow--sm">Case study</p>
+        <h3 class="lp-h3"><a href="{{ item.url }}">{{ item.data.title }}</a></h3>
+        <p class="lp-card__text">{{ item.templateContent | replace('\n', ' ') | cleanCardContent | truncate(160) }}</p>
+        <div>
+          <a class="lp-btn lp-btn--sm" href="{{ item.url }}"
+            >Read the case study<span class="visually-hidden">: {{ item.data.title }}</span></a
+          >
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Numbers -->
+  <section class="lp-section wrapper">
+    <p class="lp-eyebrow">By the numbers</p>
+    <h2 class="lp-h2">Built in the open, proven at scale</h2>
+    <!-- Hand-maintained figures (checked 2026-09-03): commits and stars from github.com/ceph/ceph; release count from docs.ceph.com/en/latest/releases/ (Argonaut, Bobtail, Cuttlefish plus the 17 in the tables). When the next stable release ships: 20 becomes 21 and "to Tentacle" changes to its name. The member count lives in the governance tile only. -->
+    <div class="lp-numbers">
+      <div class="lp-number"><b>164,000+</b><span>Commits to the Ceph repository</span></div>
+      <div class="lp-number"><b>17,000</b><span>Stars on GitHub</span></div>
+      <div class="lp-number"><b>20</b><span>Stable releases, from Argonaut to Tentacle</span></div>
+      <div class="lp-number"><b>2012</b><span>First stable release, Argonaut</span></div>
+    </div>
+  </section>
+
+  <!-- Governance -->
+  <section class="lp-section wrapper">
+    <div class="lp-split">
+      <div>
+        <p class="lp-eyebrow">Governance</p>
+        <h2 class="lp-h2">Steered in the open</h2>
+        <p class="lp-text">
+          The Ceph Foundation, a directed fund under the Linux Foundation, brings its member organizations together to fund development,
+          events, and infrastructure. Technical direction is set in public by the Ceph Steering Committee, its elected Executive Council,
+          and the project's component team leads.
+        </p>
+        <div class="lp-actions">
+          <a class="lp-btn lp-btn--white" href="/{{ locale }}/foundation/join/">Join the Ceph Foundation</a>
+          <a class="lp-btn" href="/{{ locale }}/foundation/about/">About the Ceph Foundation</a>
+        </div>
+      </div>
+      <div class="lp-mosaic">
+        <div class="lp-tile"><img alt="" loading="lazy" width="1920" height="1080" src="/assets/bitmaps/photo-squid-04.jpg" /></div>
+        <div class="lp-tile lp-tile--stat"><b>2018</b><span>Ceph Foundation founded</span></div>
+        <!-- Hand-maintained: must match the count on /en/foundation/members/ -->
+        <div class="lp-tile lp-tile--stat"><b>27</b><span>Member organizations</span></div>
+        <div class="lp-tile"><img alt="" loading="lazy" width="1920" height="1080" src="/assets/bitmaps/photo-sea-life-04.jpg" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capabilities -->
+  <section class="lp-section wrapper">
+    <p class="lp-eyebrow">Capabilities</p>
+    <h2 class="lp-h2">Storage that grows with you</h2>
+    <p class="lp-text">
+      Ceph runs the storage behind public clouds, research facilities, government agencies, and service providers, on commodity hardware, at
+      any scale.
+    </p>
+    <ul class="lp-features">
+      <li>
+        <h3>Scales out, not up</h3>
+        <p>
+          Add servers to add capacity and throughput. Grow from a handful of nodes to thousands of drives, and from terabytes to exabytes,
+          without taking storage offline.
+        </p>
+      </li>
+      <li>
+        <h3>Self-healing</h3>
+        <p>
+          CRUSH places data across the failure domains you define and clients compute placement themselves, so there is no central lookup
+          table and no single point of failure. When a drive or host fails, the cluster recovers the missing copies automatically.
+        </p>
+      </li>
+      <li>
+        <h3>Replication or erasure coding</h3>
+        <p>
+          Choose per pool: replication for latency-sensitive workloads, erasure coding for dense, cost-efficient object and archive storage.
+        </p>
+      </li>
+      <li>
+        <h3>Multi-site and disaster recovery</h3>
+        <p>RGW multi-site replicates objects between zones. RBD mirroring and CephFS mirroring keep a second cluster ready for failover.</p>
+      </li>
+      <li>
+        <h3>Runs on your hardware</h3>
+        <p>
+          Commodity servers from any vendor. Mix server generations and HDD, SSD, and NVMe drives in one cluster, and retire old hardware
+          without downtime.
+        </p>
+      </li>
+      <li>
+        <h3>Managed with cephadm</h3>
+        <p>
+          Bootstrap a cluster with one command, then add hosts, roll upgrades, and watch cluster health from the CLI or the built-in
+          Dashboard.
+        </p>
+      </li>
+      <li>
+        <h3>Cloud-native</h3>
+        <p>
+          Rook runs Ceph on Kubernetes and Ceph CSI provisions volumes for your pods. OpenStack, Proxmox VE, and CloudStack integrate with
+          Ceph out of the box.
+        </p>
+      </li>
+      <li>
+        <h3>More than three protocols</h3>
+        <p>
+          Alongside S3, RBD, and CephFS, cephadm-managed gateways export NFS, SMB, and NVMe-oF to clients that cannot speak Ceph natively.
+        </p>
+      </li>
+      <li>
+        <h3>Encryption and access control</h3>
+        <p>
+          Encrypt traffic on the wire with msgr2 secure mode and data at rest with dm-crypt OSDs and RGW server-side encryption. cephx
+          capabilities, S3 policies, and CephFS path restrictions scope every client to what it needs.
+        </p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Why Ceph -->
+  <section class="lp-section wrapper">
+    <div class="lp-split">
+      <div>
+        <p class="lp-eyebrow">Why Ceph</p>
+        <h2 class="lp-h2">Storage that keeps every option open</h2>
+        <p class="lp-text">
+          A storage platform is a decade-long commitment. Ceph runs on any hardware, at any scale, through any interface, with no license
+          fees and no vendor holding the keys.
+        </p>
+        <div class="lp-actions">
+          <a class="lp-btn" href="/{{ locale }}/discover/why-ceph/">Read the case for Ceph</a>
+        </div>
+      </div>
+      <div class="lp-split__art">
+        <img alt="" loading="lazy" width="2520" height="1080" src="/assets/bitmaps/photo-jelly-fish-02.jpg" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Community and events -->
+  <section class="lp-section wrapper">
+    <p class="lp-eyebrow">Community</p>
+    <h2 class="lp-h2">Meet the people who build and run Ceph</h2>
+    <p class="lp-text">
+      Ceph Days and meetups bring the community together around the world, and the monthly Ceph Tech Talks bring it online. Everyone is
+      welcome.
+    </p>
+    {% if upcomingEvents | length %}
+    <div class="lp-actions">
+      <a class="lp-btn" href="/{{ locale }}/community/events/">View all events</a>
+    </div>
+    <div class="lp-events">
+      {% for item in upcomingEvents %}
+      <a class="lp-event" href="{{ item.url }}">
+        <img alt="" loading="lazy" width="1920" height="1080" src="/assets/bitmaps/{{ eventPhotos[loop.index0] }}.jpg" />
+        <span class="lp-event__caption">
+          <strong>{{ item.data.title }}</strong>
+          <span>{{ item.data.date | formatDateRange(item.data.end, item.data.locale) }}</span>
+        </span>
+      </a>
+      {% endfor %}
+      <a class="lp-event lp-event--stat" href="/{{ locale }}/community/tech-talks/">
+        <b>Monthly</b>
+        <span>Ceph Tech Talks, live and on YouTube</span>
+      </a>
+    </div>
+    {% else %}
+    <div class="lp-actions">
+      <a class="lp-btn lp-btn--white" href="/{{ locale }}/community/tech-talks/">Monthly Ceph Tech Talks</a>
+      <a class="lp-btn" href="/{{ locale }}/community/events/">View all events</a>
+    </div>
+    {% endif %}
+  </section>
+
+  <!-- Open source panel -->
+  <section class="lp-section wrapper">
+    <div class="lp-panel lp-panel--black">
+      <div>
+        <p class="lp-eyebrow">Open source</p>
+        <h2 class="lp-h2">Every commit in the open</h2>
+        <p class="lp-text">
+          Ceph is developed in the open on GitHub under the LGPL (version 2.1 or 3). Read the code, report bugs on the Ceph tracker, join
+          the developer discussions, and send your first pull request.
+        </p>
+        <div class="lp-actions">
+          <a class="lp-btn lp-btn--white" href="https://github.com/ceph/ceph">View on GitHub</a>
+          <a class="lp-btn" href="/{{ locale }}/developers/contribute/">Start contributing</a>
+        </div>
+      </div>
+      <div class="lp-panel__mark">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 154 42" aria-hidden="true" focusable="false">
+          <g fill="#f0424d">
+            <path
+              d="M35 38c-1.4-.8-2.3-1.7-2.5-2.7s.2-2 1.3-3.3A16.2 16.2 0 0021.6 5.2h-.1A16.2 16.2 0 009.2 32c1.1 1.3 1.5 2.3 1.4 3.2S9.5 37.2 8 38a22.8 22.8 0 01-5.7-7.2A21.3 21.3 0 010 21.4 21.4 21.4 0 0121.5 0h.1A21.4 21.4 0 0143 21.4a21.6 21.6 0 01-.6 4.9 21 21 0 01-1.6 4.5 22.7 22.7 0 01-5.7 7.2"
+            />
+            <path
+              d="M27.2 42a8 8 0 01-2-2 8.7 8.7 0 01-1.6-5.3 11.8 11.8 0 01.9-4.2 12 12 0 012.3-3.7l.2-.2a10.3 10.3 0 001-1.4 7 7 0 001-2 7.5 7.5 0 00-6.3-9.2 7.3 7.3 0 00-1.1 0h-.1a7.4 7.4 0 00-4 1 7.5 7.5 0 00-2.2 2 7.5 7.5 0 00-1.2 6.2 7.2 7.2 0 00.8 2 9.7 9.7 0 001.1 1.4l.2.3a11.9 11.9 0 012.3 3.6 11.8 11.8 0 011 4.2 8.8 8.8 0 01-1.8 5.4 8 8 0 01-1.9 1.9l-1.2-.4A21.3 21.3 0 0111 40a6 6 0 003.2-5.3 6.4 6.4 0 00-1.7-4.2l-.3-.4-.9-1a12.8 12.8 0 01-.2-15 13 13 0 013.7-3.5 12.8 12.8 0 015-1.8 13.3 13.3 0 011.7-.2h.2a13.4 13.4 0 011.8.2 12.8 12.8 0 014.9 1.8A13 13 0 0132 14a12.7 12.7 0 01-.2 15l-.9 1-.3.4a6.5 6.5 0 00-1.7 4.3 6 6 0 003.1 5.4 21.4 21.4 0 01-3.6 1.5l-1.2.4"
+            />
+            <path d="M21.5 25.8a4.2 4.2 0 114.2-4.2 4.2 4.2 0 01-4.2 4.2" />
+          </g>
+          <g fill="#ffffff">
+            <path
+              d="M75.6 26.4c0 5.5-.5 7-1.8 8.4-.8.8-2 1.3-4.3 1.3h-8.2c-2.6 0-4.2-.4-5.3-1.5-1.7-1.8-2.2-3.8-2.2-11.8s.5-10 2.2-11.8c1-1 2.7-1.5 5.3-1.5h8c2.5 0 3.6.5 4.4 1.3 1.3 1.3 1.8 3 1.8 8h-5c-.1-3.5-.3-4-.6-4.3s-.6-.5-1.8-.5H62c-1.5 0-2 .1-2.3.5-.5.5-.7 1.5-.7 8.3s.2 7.7.7 8.2c.4.4.8.5 2.3.5h6.2c1.1 0 1.6 0 2-.4s.5-1.4.5-4.7h5M84.3 20.4h12.2c0-4.5-.3-5.5-.8-6-.3-.3-.7-.5-2.3-.5h-6c-1.6 0-2 .2-2.4.6s-.6 1.3-.7 5.9zm0 4c0 5.3.4 6.3.8 6.7s.7.5 2.2.5h7c1 0 1.4-.2 1.7-.5s.4-1 .5-3.3h5c0 4.2-.4 5.6-1.8 7-.8.8-2 1.3-4.3 1.3h-8.7c-2.6 0-4.2-.4-5.3-1.5-1.7-1.7-2.2-3.8-2.2-11.8s.5-10 2.2-11.8c1.1-1 2.7-1.5 5.3-1.5H94c2.6 0 4.3.5 5.3 1.4 1.7 1.8 2.2 3.8 2.2 11.6V24c0 .4-.1.6-.6.6H84.3M121.6 31c-.4.4-1 .6-2.7.6H115a10.1 10.1 0 01-4.8-1.5l-.3-.1V15.5a10.7 10.7 0 015-1.5h4c1.6 0 2.2.2 2.7.6.7.8 1 2.2 1 8.2s-.2 7.4-1 8.1zm-1.5-21.6h-3.6c-2.2 0-3.3.5-6.6 3.3V9.4h-5.2V42h5.2v-9c3.3 2.7 4.4 3.2 6.6 3.2h3.6c2.9 0 4.3-.5 5.5-1.6 1.4-1.5 2-3.5 2-11.8s-.6-10.3-2-11.8c-1.2-1.1-2.6-1.6-5.5-1.6M152.4 11c-1-1-2.3-1.6-4.6-1.6h-4.2c-2.2 0-3.3.5-6.7 3.3V2.5a18.8 18.8 0 00-5-2v35.6h5V15.5l1.1-.5a9.1 9.1 0 014-1h3.4c1.7 0 2.2.2 2.8.7a3.4 3.4 0 01.6 2.6V36h5.2V17c0-3.7-.6-5-1.6-6"
+            />
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final call to action -->
+  <section class="lp-section wrapper lp-center">
+    <h2 class="lp-h2">Ready to get started?</h2>
+    <p class="lp-lede">Deploy your first cluster today, or join the community that builds the future of storage.</p>
+    <div class="lp-actions lp-actions--center">
+      <a class="lp-btn lp-btn--red" href="/{{ locale }}/users/getting-started/">Get started</a>
+      <a class="lp-btn" href="/{{ locale }}/community/connect/">Join the community</a>
+    </div>
+  </section>
+</div>
+
+<script>
+  // Member logo marquee: drifts slowly on its own; while the pointer is over it, moving right runs it faster,
+  // moving left runs it in reverse, and holding still pauses it. Without JavaScript the CSS animation runs.
+  (function () {
+    var strip = document.querySelector('[data-lp-logos]');
+    var track = strip && strip.querySelector('.lp-logos__track');
+    if (!track || !window.requestAnimationFrame || !window.matchMedia) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!window.matchMedia('(hover: hover)').matches) return;
+
+    var drift = 40; // px per second when the pointer is elsewhere
+    var offset = 0;
+    var speed = drift;
+    var hovering = false;
+    var pointerSpeed = 0;
+    var lastX = null;
+    var lastMove = 0;
+    var half = 0;
+    var previous = performance.now();
+
+    function measure() {
+      half = track.scrollWidth / 2;
+    }
+
+    track.style.animation = 'none';
+    measure();
+    window.addEventListener('resize', measure);
+
+    strip.addEventListener('mouseenter', function () {
+      hovering = true;
+      pointerSpeed = 0;
+      lastX = null;
+    });
+
+    strip.addEventListener('mouseleave', function () {
+      hovering = false;
+      lastX = null;
+    });
+
+    strip.addEventListener('mousemove', function (event) {
+      var now = performance.now();
+      if (lastX !== null) {
+        var velocity = ((event.clientX - lastX) / Math.max(now - lastMove, 1)) * 1000;
+        pointerSpeed = Math.max(-1200, Math.min(1200, velocity * 0.75));
+      }
+      lastX = event.clientX;
+      lastMove = now;
+    });
+
+    function frame(now) {
+      var dt = Math.min((now - previous) / 1000, 0.1);
+      previous = now;
+      var target = drift;
+      if (hovering) {
+        target = now - lastMove > 150 ? 0 : pointerSpeed;
+      }
+      speed += (target - speed) * Math.min(1, dt * 10);
+      offset += speed * dt;
+      if (half > 0) {
+        offset = ((offset % half) + half) % half;
+      }
+      track.style.transform = 'translateX(' + -offset + 'px)';
+      window.requestAnimationFrame(frame);
+    }
+
+    window.requestAnimationFrame(frame);
+  })();
+</script>
