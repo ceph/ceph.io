@@ -3,5 +3,5 @@ module.exports = {
   youtube: 'UCno-Fry25FJ7B4RycCxOtfw',
   linkedin: 'ceph',
   bluesky: 'ceph.io',
-  reddit: 'r/ceph',
+  reddit: 'ceph',
 };
