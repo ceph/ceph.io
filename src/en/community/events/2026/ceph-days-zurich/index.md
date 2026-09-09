@@ -44,7 +44,7 @@ The Call for Papers is open from 15 June to 11 September.
 
 </br>
 
-<a class="button" href="https://forms.gle/VMmjic6Uys8bDjwJA">CfP Here!</a>
+<a class="button" href="https://forms.gle/doDsxpVdb1UDYEGa9">CfP Here!</a>
 
 <br />
 
