@@ -6,7 +6,7 @@ order: 3
 
 # {{ title }}
 
-## Ceph Foundation Membersasdf
+## Ceph Foundation Members
 
 **The Ceph Foundation has a great number of member organizations from around the globe including other Open Source platforms, industry leaders, innovative storage solutions and esteemed institutions.**
 
