@@ -64,4 +64,6 @@ export default [
   setupBuild(pluginsES5(), 'main.js', 'bundle-main.js'),
   setupBuild(pluginsES(), 'search.js', 'bundle-search.mjs'),
   setupBuild(pluginsES5(), 'search.js', 'bundle-search.js'),
+  setupBuild(pluginsES(), 'landscape-embed.js', 'bundle-landscape-embed.mjs'),
+  setupBuild(pluginsES5(), 'landscape-embed.js', 'bundle-landscape-embed.js'),
 ];
