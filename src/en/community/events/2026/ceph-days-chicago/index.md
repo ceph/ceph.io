@@ -18,15 +18,28 @@ the vibrant Ceph community with the community in Chicago!
 The expert Ceph team, Ceph’s customers and partners, and the Ceph community
 join forces to discuss things like the status of the Ceph project, recent Ceph
 project improvements and roadmap, and Ceph community news. The day ends with
-a networking reception, to foster more Ceph learning.
+a networking reception to foster more Ceph learning.
+
+### Registration
+Registration is now open for the Ceph Days event!
  
+</br>
+<a class="button" href="https://osnexus.regfox.com/ceph-days-chicago-2026">Register</a>
+</br>
+
+### CFP
+The Call for Papers is open till **Thursday, October 15th**!
+ 
+<a class="button" href="https://forms.gle/vdcHycWuWTEyDbxz8">Submit Here</a>
+</br>
  
 ## Important Dates
  
-TBD
+- CFP Opens: 2026-08-26
+- CFP Closes: 2026-10-15
+- Registration Opens: 2026-08-20
+- Event Date: 2026-11-16
  
- 
-<br />
  
 ## Schedule
  

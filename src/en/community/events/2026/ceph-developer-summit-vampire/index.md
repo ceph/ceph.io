@@ -24,6 +24,11 @@ Whether you're a developer, operator, user, or simply curious about Ceph, your v
 <strong><a href="https://pad.ceph.com/p/CDS_2026_Vampire">Etherpad for
 discussions</a></strong>
 
+Here are the recordings of each session. 
+ </br>
+<a class="button" href="https://youtube.com/playlist?list=PLAYbnnO0qf9U&si=hD-F5n91mPxyRo5K">Watch</a>
+  </br>
+
 
 ## August 4 (Tuesday)
 

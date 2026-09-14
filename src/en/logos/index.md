@@ -9,21 +9,7 @@ order: 5
 
 We recognize that people often want to use logos to call out when they are doing cool stuff with Ceph. In order to make sure you have several decent-res options for your slides, websites, and other sundry we wanted to provide an easy place to get them. If you would like something much bigger, or vector based for better scaling, just drop a line to community@lists.ceph.io.
 
-We do, however, have just have a few requests if you would like to use the Ceph logo, but we tried to keep it in plain language and relatively simple. Thanks for using Ceph!
-
-<strong>General guidelines for using Ceph logos (for full details see our <u><a href="/en/trademarks/">trademark policy</a></u>):</strong>
-
-<ol>
-  <li>Try not to suggest a partnership or association with either the Ceph project or Red Hat.</li>
-  <li>Don’t imply approval, sponsorship, or endorsement by the Ceph project or Red Hat.</li>
-  <li>Please don’t sully our good name or present us in a way that is harmful or otherwise obscene.</li>
-  <li>We don’t ask for inclusion of the ® or the ™ symbols, but try not to look like you’re taking credit for the hard work of our community.</li>
-  <li>Please don’t “mash up” our logos, or parts of them, with your own images/branding.</li>
-  <li>Try to use good design when displaying our logo so it has a decent amount of space around it without seeming cluttered or obstructed.</li>
-  <li>If we ask you to remove or change the way you are displaying our logos, please be respectful and do so quickly</li>
-  <li>By displaying Ceph logos you give up your deep space mining rights and will eschew all FTL technology in favor of ponies</li>
-  <li>Ok, everything but that last one.</li>
-</ol>
+<strong>Guidelines for using Ceph logos <u><a href="/en/trademarks/">trademark policy</a></u>.</strong>
 
 <h2>Release Logos</h2>
 <div class="grid grid--align-center grid--cols-2 md:grid--cols-3 md:w-3-4">
