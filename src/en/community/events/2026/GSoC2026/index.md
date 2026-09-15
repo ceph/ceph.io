@@ -26,6 +26,7 @@ Explore the full list of projects and descriptions below, and be inspired by the
 
 ### Project Name: radosgw admin UX and Documentation Improvements
 **Mentor(s):** Yuval Lifshitz, JacquesH
+
 **Mentee(s):** Rotem Shapira
 
 **Description:**
@@ -35,6 +36,7 @@ Replaces hand-written radosgw-admin documentation with a programmatic pipeline t
 
 ### Project Name: Kafka Security Project
 **Mentor(s):** Yuval Lifshitz
+
 **Mentee(s):** Sujay Dongre
 
 **Description:**
@@ -46,6 +48,7 @@ The project extends RGW's Kafka connection path to resolve security inputs with 
 
 ### Project Name: Ceph Dashboard Carbonization and UX Consistency Improvements
 **Mentor(s):** Afreen, Dnyaneshwari Talwekar, Abhishek Desai
+
 **Mentee(s):** Syed Ali Ul Hasan
 
 **Description:**
