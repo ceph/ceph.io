@@ -4,7 +4,7 @@ date: 2026-10-30
 end: 2026-10-30
 location: 120 Brunton Avenue, East Melbourne, VIC 300
 venue: Melbourne Cricket Ground (MCG)
-image: "/assets/bitmaps/event-meetup.png"
+image: "/assets/bitmaps/Ceph_Meetup_Australia.png"
 sponsors:
   - label: Event sponsors
     list:
