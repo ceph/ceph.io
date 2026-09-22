@@ -51,10 +51,8 @@ technology in one place.
 - ~~**Early-bird Registration Opens:** 2026-04-22~~
 - ~~**Early-bird Registration Closes:** 2026-06-30~~
 - ~~**Standard Registration Opends:** 2026-07-01~~
-- **Standard Registration Closes:** 2026-09-01
-- **Event Date:** 2026-09-01
-- **On-site registration will also be available**.
-
+- ~~**Standard Registration Closes:** 2026-09-01~~
+- ~~**Event Date:** 2026-09-01~~
  
 </br>
 <a class="button" href="https://event.plan9.co.kr/#/kcd_odk2026">Register</a>

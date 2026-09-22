@@ -1,6 +1,11 @@
 {
   "tech_talks": [
     {
+      "date": "2026-09-30",
+      "title": "Using AI and Slack to Streamline Datacenter Remote Hands Tasks",
+      "presenter": "Anthony D'Atri, Ceph Ambassador"
+    },
+    {
       "date": "2026-07-08",
       "title": "For Whom the Doorbell Tolls, GPU-Initiated Key-Value Storage on Ceph",
       "presenter": "Kyle Bader (IBM) and Stephen Bates (AMD)",
