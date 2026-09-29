@@ -29,7 +29,7 @@ and connect with others working across the storage ecosystem.
 
 You do **not** need to register as an entire conference attendee to come
 to the Ceph Meetup. You can use the Workshops only option at no cost. 
-During <a href="https://conference.eresearch.edu.au/registration/"><registration> for the eResearch conference, when you reach the 
+During <a href="https://conference.eresearch.edu.au/registration/">registration</a> for the eResearch conference, when you reach the 
 Workshops page, select **Ceph Meetup Melbourne 2026**.
 
  
