@@ -14,9 +14,9 @@ During the third quarter, the Ceph Foundation focused on strengthening the proje
 ## In This Issue
 - [Ceph Trademark Moves to the Linux Foundation](#ceph-trademark-moves-to-the-linux-foundation)
 - [Governance Roles and Accountability](#governance-roles-and-accountability)
-- [Welcome New Members: Long Van](#welcome-new-members-long-van)
+- [Welcome New Member Long Van](#welcome-new-member-long-van)
 - [Ceph Days Continue to Grow](#ceph-days-continue-to-grow)
-- [Ceph Developer Summit: Vampire](#ceph-developer-summit-vampire)
+- [Ceph Developer Summit Vampire](#ceph-developer-summit-vampire)
 - [Updated Ceph Foundation Pitch Deck](#updated-ceph-foundation-pitch-deck)
 - [Board Meeting Recordings Now on YouTube](#board-meeting-recordings-now-on-youtube)
 
@@ -45,7 +45,7 @@ The Foundation's financial health continues to improve. It now sits above its mi
 
 ---
 
-## Welcome New Members: Long Van
+## Welcome New Member Long Van
 
 The Ceph Foundation is pleased to welcome Long Van as a Silver member. New members bring fresh perspective and resources to the project, and their participation helps fund the events, documentation, and community programs covered elsewhere in this newsletter. We look forward to working with Long Van to expand their involvement in the Ceph community.
 
@@ -73,7 +73,7 @@ Check the upcoming and tentative Ceph Days events for the rest of 2026, includin
 
 ---
 
-## Ceph Developer Summit: Vampire
+## Ceph Developer Summit Vampire
 
 The Ceph Developer Summit for the upcoming Vampire release, scheduled for Spring 2027, ran online from August 4–13, 2026. Nine sessions brought together contributors across the major Ceph components to plan the next release cycle.
 
