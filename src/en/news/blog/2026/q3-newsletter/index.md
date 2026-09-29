@@ -49,7 +49,7 @@ The Foundation's financial health continues to improve. It now sits above its mi
 
 The Ceph Foundation is pleased to welcome <a href="https://longvan.net/">Long Van</a> as a Silver member. New members bring fresh perspectives and resources to the project, and their participation helps fund the events, documentation, and community programs covered elsewhere in this newsletter. We look forward to working with Long Van to expand their involvement in the Ceph community.
 
-To learn more about Long Van and other Ceph Foundation members, visit <a href="https://ceph.io/en/foundation/members/">ceph.io/foundation</a>.
+To learn more about Long Van and other Ceph Foundation members, visit <a href="https://ceph.io/en/foundation/members/">ceph.io/foundation/members</a>.
 
 ---
 
