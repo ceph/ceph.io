@@ -27,11 +27,14 @@ Whether you are new to Ceph or running production clusters at scale,
 this meetup is an opportunity to exchange ideas, share experiences,
 and connect with others working across the storage ecosystem.
 
-You will need to be a registered conference attendee to come to the
-Ceph Meetup.
+You do **not** need to register as an entire conference attendee to come
+to the Ceph Meetup. You can use the Workshops only option at no cost. 
+During <a href="https://conference.eresearch.edu.au/registration/"><registration> for the eResearch conference, when you reach the 
+Workshops page, select **Ceph Meetup Melbourne 2026**.
+
  
 ## Important Dates 
-**- Registration Opens**: 2026-09-01 </br>
+~~**- Registration Opens**: 2026-09-01 </br>~~
 **- Schedule Announcement**: 2026-10-15 </br>
 **- Event Date**: 2026-10-30 </br>
  
@@ -65,6 +68,5 @@ Would you like to present something, or lead a discussion? Put in a proposal
 in the Call for Papers - we would love to hear from you.
  
  
-<a class="button" href="https://forms.gle/Q29MLVUnZvaLq5re6">Call for Papers</a>
  
  
