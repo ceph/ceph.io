@@ -47,9 +47,9 @@ The Foundation's financial health continues to improve. It now sits above its mi
 
 ## Welcome New Member Long Van
 
-The Ceph Foundation is pleased to welcome Long Van as a Silver member. New members bring fresh perspective and resources to the project, and their participation helps fund the events, documentation, and community programs covered elsewhere in this newsletter. We look forward to working with Long Van to expand their involvement in the Ceph community.
+The Ceph Foundation is pleased to welcome <a href="https://longvan.net/">Long Van</a> as a Silver member. New members bring fresh perspectives and resources to the project, and their participation helps fund the events, documentation, and community programs covered elsewhere in this newsletter. We look forward to working with Long Van to expand their involvement in the Ceph community.
 
-To learn more about Long Van and other Ceph Foundation members, visit <a href="https://ceph.io/en/foundation/">ceph.io/foundation</a>.
+To learn more about Long Van and other Ceph Foundation members, visit <a href="https://ceph.io/en/foundation/members/">ceph.io/foundation</a>.
 
 ---
 
@@ -65,7 +65,7 @@ The Ceph community joined forces for a joint conference celebrating Kubernetes C
 - **Attendance:** Nearly 400 attendees
 - **Call for Papers:** Closed with 40 submissions across all three organizations
 - **Schedule:** 7 Ceph-related talks
-- **Registration & Sponsors:** Managed through an <a href="https://event.plan9.co.kr/#/kcd_odk2026">external event platform</a>; confirmed sponsors included 4 Platinum (AWS, Seagate, Nutanix, Hitachi), 1 Gold, and 4 Silver.
+- **Sponsors:** Confirmed sponsors included 4 Platinum (AWS, Seagate, Nutanix, Hitachi), 1 Gold, and 4 Silver.
 
 Combining three community events into one gave attendees access to a wider range of technical content in a single event. It gave Ceph a stronger presence within the broader cloud-native and open infrastructure audience in the region.
 
@@ -110,7 +110,7 @@ The Governing Board has started publishing meeting recordings on YouTube, a new 
 
 Community members can now follow board discussions directly rather than relying solely on written summaries, giving a clearer view into how funding and program decisions get made.
 
-Find the playlist of board meetings <a href="https://www.youtube.com/playlist?list=PLRSaZR21yGac">here</a>.
+Find the board meeting playlist <a href="https://www.youtube.com/playlist?list=PLRSaZR21yGac">here</a>.
 
 ---
 
@@ -118,6 +118,6 @@ Find the playlist of board meetings <a href="https://www.youtube.com/playlist?li
 
 Interested in organizing a meetup, hosting a Ceph Days, speaking at an event, or promoting Ceph in your region? Community participation is what makes these events successful. If you need support for a Ceph event, meetup, travel, or community campaign, submit a funding request to the Ceph Foundation. The Governing Board and Linux Foundation staff review requests and consider them based on available budget and community impact.
 
-<a href="https://form.asana.com/?k=7aCHVRhp0x1Ga1nOCXlckQ&d=9283783873717">Ceph Foundation Community Request Form</a>
+<a href="https://form.asana.com/?k=f6mdd2cDTRFLO-bgiN_xWw&d=9283783873717">Ceph Foundation Community Work Request Form</a>
 
 <a href="https://docs.google.com/document/d/1IhUXxaD8ofz_rGqKKgL9MTM35S2yg4HxrqgAHyuTYWE/edit?usp=sharing">Ceph Days Planning Guide</a>
