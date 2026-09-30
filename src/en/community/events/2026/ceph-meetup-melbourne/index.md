@@ -4,13 +4,10 @@ date: 2026-10-30
 end: 2026-10-30
 location: 120 Brunton Avenue, East Melbourne, VIC 300
 venue: Melbourne Cricket Ground (MCG)
-image: "/assets/bitmaps/Ceph_Meetup_Australia.png"
+image: "/assets/bitmaps/Ceph_Meetup_Australia_Banner.png"
 sponsors:
   - label: Event sponsors
     list:
-      - name: Dell
-        logo: "/assets/bitmaps/logo-dell.png"
-        website: "https://www.dell.com/"
       - name: Xenon
         logo: "/assets/bitmaps/logo-xenon.png"
         website: "https://xenon.global/"
@@ -41,7 +38,7 @@ Workshops page, select **Ceph Meetup Melbourne 2026**.
 <br />
 
 ## Sponsors
-We're grateful to <a href="https://www.dell.com/">Dell</a> and <a href="https://xenon.global/">Xenon</a> for supporting the Ceph community in
+We're grateful to <a href="https://xenon.global/">Xenon</a> for supporting the Ceph community in
 Melbourne. Their sponsorship helps make this meetup possible, giving
 local Ceph users, contributors, and operators a place to connect, share
 knowledge, and grow the community across the storage ecosystem.
