@@ -1,10 +1,16 @@
 {
   "tech_talks": [
     {
+      "date": "2026-10-19",
+      "title": "OIDC Web Identity for Ceph RGW",
+      "presenter": "Tadas Sutkaitis, DevOps Engineer, VEXXHOST Inc.",
+      "url": "https://www.linkedin.com/events/7513244736498024448?viewAsMember=true"
+    },
+    {
       "date": "2026-09-30",
       "title": "Using AI and Slack to Streamline Datacenter Remote Hands Tasks",
       "presenter": "Anthony D'Atri, Ceph Ambassador",
-     "url": "https://youtu.be/7lY-yJNkPhc",
+      "url": "https://youtu.be/7lY-yJNkPhc",
       "slides": "https://ceph.io/assets/pdfs/tech-talks/ceph-tech-talk-2026-09-30-remote-hands-ai.pdf"
     },
     {
