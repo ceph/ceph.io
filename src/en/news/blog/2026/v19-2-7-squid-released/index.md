@@ -1,6 +1,6 @@
 ---
 title: "v19.2.7 Squid released"
-date: "2026-09-10"
+date: "2026-10-12"
 author: "Yuri Weinstein"
 tags:
   - "release"
@@ -8,7 +8,7 @@ tags:
 ---
 
 This is the seventh backport release in the Squid series.
-We recommend all users update to this release.
+We recommend that all users update to this release.
 
 ## Notable Changes
 
@@ -45,7 +45,7 @@ RBD (RADOS Block Device)
 - Fixed a use-after-free releasing object map locks during deep copy.
 - Fixed memory leaks in PWL cache discard operations.
 - Fixed a race between `dispatch_deferred_writes()` and `~AbstractWriteLog()` in the SSD PWL cache.
-- `librbd/migration`'s native format now supports specifying `mon_host` and key via the migration spec.
+- It's possible to specify the source cluster's `mon_host` and `key` for `native` format migration via the migration spec now. This eliminates the dependency on a `<cluster-name>.conf` file in a known location, which is rather rigid and also challenging to disseminate in some environments. The key can be embedded in the migration spec or just referenced from there while stored in the MON config-key store.
 - Fixed strict weak ordering in `rbd-mirror`'s `PeerSpec::operator<`.
 - `rbd-mirror` now prunes obsolete primary mirror snapshots after relocation.
 - Fixed `mgr/rbd_support` perf iostat pool-spec filtering by data pool.
