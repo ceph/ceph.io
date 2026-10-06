@@ -21,7 +21,7 @@ Each mentee will present their project, share what they learned, and highlight h
 Watch all three presentation here:
  
 <iframe width="560" height="315" 
-        src="https://youtu.be/jUrze3sZMhA" 
+        src="https://www.youtube.com/embed/jUrze3sZMhA" 
         title="Ceph Community: Google Summer of Code 2026 Intern Showcase" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
