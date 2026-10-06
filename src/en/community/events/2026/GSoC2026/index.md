@@ -18,9 +18,10 @@ This summer, Ceph mentees took on ambitious projects that improved subcomponents
 
 Each mentee will present their project, share what they learned, and highlight how their contributions make Ceph better.
 
-Watch all three preseation here:
+Watch all three presentation here:
+ 
 <iframe width="560" height="315" 
-        src="" 
+        src="https://youtu.be/jUrze3sZMhA" 
         title="Ceph Community: Google Summer of Code 2026 Intern Showcase" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
