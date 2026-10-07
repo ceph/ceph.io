@@ -16,9 +16,18 @@ Google Summer of Code (GSoC) is Google's global mentorship program that helps ne
 
 This summer, Ceph mentees took on ambitious projects that improved subcomponents like RGW and the Ceph Dashboard, while sharpening their skills in Python, C++, Angular, and documentation tooling. Their work strengthens Ceph for the entire community.
 
-Join us on **October 6 at 11:00 am EDT / 8:00 am PDT** to celebrate their achievements! Each mentee will present their project, share what they learned, and highlight how their contributions make Ceph better.
+Each mentee will present their project, share what they learned, and highlight how their contributions make Ceph better.
 
-The event is on the [Ceph Community Calendar](https://calendar.google.com/calendar/embed?src=9ts9c7lt7u1vic2ijvvqqlfpo0%40group.calendar.google.com&ctz=America%2FChicago)
+Watch all three presentation here:
+ 
+<iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/jUrze3sZMhA" 
+        title="Ceph Community: Google Summer of Code 2026 Intern Showcase" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+</iframe>
 
 Explore the full list of projects and descriptions below, and be inspired by the next generation of open source contributors.
 
