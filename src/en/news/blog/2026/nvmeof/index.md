@@ -141,14 +141,19 @@ Clicking a gateway group name (e.g., `Test3`) opens its **detail view**, which h
 ![Gateway Group Overview](images/gateway_overview.png)
 _Figure: The **Test3** gateway group detail view — Overview tab showing Details (Gateway name, Gateway nodes count, Encryption: Disabled, mTLS: Disabled) and the Gateway nodes table with `ceph-node-02` at `192.168.100.102`._
 
+When encryption and mTLS are both enabled the same tab shows green indicators for both fields:
+
+![Gateway Group Overview — Encryption and mTLS Enabled](images/gateway_overview_encryption.png)
+_Figure: The **Test3** gateway group Overview tab with **Encryption: Enabled** and **mTLS: Enabled** — both shown with a green ● indicator._
+
 The **Details** section at the top of the Overview tab shows four key properties:
 
-| Property          | Description                                                                                              |
-| ----------------- | -------------------------------------------------------------------------------------------------------- |
-| **Gateway name**  | The name of the gateway group (e.g., `Test3`).                                                           |
-| **Gateway nodes** | The total number of nodes running NVMe-oF target services in this group (e.g., `1`).                     |
-| **Encryption**    | Whether group-level encryption is enabled. A red ● **Disabled** indicates it is off.                     |
-| **mTLS**          | Whether mutual TLS is active for control-plane communications. A red ● **Disabled** indicates it is off. |
+| Property          | Description                                                                                                                                  |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Gateway name**  | The name of the gateway group (e.g., `Test3`).                                                                                               |
+| **Gateway nodes** | The total number of nodes running NVMe-oF target services in this group (e.g., `1`).                                                         |
+| **Encryption**    | Whether group-level encryption is enabled. A green ● **Enabled** means it is active; red ● **Disabled** means it is off.                     |
+| **mTLS**          | Whether mutual TLS is active for control-plane communications. A green ● **Enabled** means it is active; red ● **Disabled** means it is off. |
 
 The **Gateway nodes** table below lists every node assigned to this group:
 
@@ -160,6 +165,31 @@ The **Gateway nodes** table below lists every node assigned to this group:
 | **Labels (tags)** | Any cephadm labels on the node (`-` if none).                                               |
 
 An **Add** button in the top-right corner of the Gateway nodes table lets you expand the group by adding more nodes without recreating it.
+
+##### Adding Gateway Nodes
+
+Click **Add** to open the **Add gateway nodes** dialog — _"Select NVMe-oF gateway nodes to associate with this gateway group."_
+
+![Add Gateway Nodes](images/add_gateway_nodes.png)
+_Figure: The **Add gateway nodes** dialog for gateway group `test2233` — Select gateway nodes table with `ceph-node-02` (`192.168.100.102`, Available) selected. **Add** is enabled; **Cancel** closes without changes._
+
+The dialog shows a **Select gateway nodes** table of hosts that can run NVMe-oF target pods/services:
+
+| Column            | Description                                                     |
+| ----------------- | --------------------------------------------------------------- |
+| **Hostname**      | Ceph node hostname (e.g., `ceph-node-02`).                      |
+| **IP address**    | Node IP address (e.g., `192.168.100.102`).                      |
+| **Status**        | Availability — green **Available** means the node can be added. |
+| **Labels (tags)** | Any cephadm labels on the node.                                 |
+
+Select one or more available nodes, then click **Add**. A success notification appears (e.g. _"Added hosts to gateway group 'test2233'"_), and the new nodes show up in the Gateway nodes table. Click **Cancel** to close without adding anything.
+
+![Gateway Nodes After Add](images/add_gateway_nodes_result.png)
+_Figure: Gateway group `test2233` Overview after adding a node — Details shows **Gateway nodes: 2**, success toast _"Added hosts to gateway group 'test2233'"_, and the Gateway nodes table lists `ceph-node-01` and `ceph-node-02`, both **Available**._
+
+**What happens when you add nodes:** the Dashboard updates the `nvmeof.<group-name>` service placement to include the selected hosts. Cephadm then deploys NVMe-oF gateway daemons on those nodes. Once they are healthy, they appear in the Gateway nodes table and can serve listeners/traffic for subsystems in this group. Adding a second (or more) gateway is what enables high availability — a group with only one gateway cannot provide HA. This step does not create subsystems or namespaces; it only expands the gateway capacity of the group.
+
+**Note:** Only nodes that are not already members of this gateway group (and are available for NVMe-oF) are listed. If every suitable host is already in the group, the table may be empty.
 
 #### Subsystems Tab
 
@@ -278,16 +308,38 @@ Click **Next** to proceed.
 #### Step 3 — Authentication
 
 ![Create Subsystem — Step 3: Authentication](images/create_subsystem_step_3.png)
-_Figure: Create Subsystem wizard — **Authentication** step. Authentication type: Unidirectional (selected) / Bidirectional (Requires keys on both sides badge). Host authentication details section with DHCHAP Key field for the added host NQN. Navigation: Cancel / Previous / Next._
+_Figure: Create Subsystem wizard — **Authentication** step with **Unidirectional** selected (default). Host authentication details show optional DHCHAP Key fields for each added host NQN. Navigation: Cancel / Previous / Next._
 
 Configure authentication between the subsystem and connecting hosts:
 
 - **Unidirectional** _(default)_ — each host can optionally provide a DH-HMAC-CHAP key. The subsystem does not require its own key. Description: _"Each host can provide an optional DH-HMAC-CHAP key. The subsystem does not require its own key."_
 - **Bidirectional** _(shown with a **Requires keys on both sides** badge)_ — both the subsystem and all hosts must provide DH-HMAC-CHAP keys. Description: _"Both subsystem and hosts must provide DH-HMAC-CHAP keys. All connections will be verified in both directions."_
 
-The **Host authentication details** section shows one entry per added host. The field is labelled `DHCHAP Key | <host-NQN>` with placeholder text _"Enter DHCHAP key"_. These are **Optional fields** — leave blank to skip host-level key authentication.
+##### Bidirectional authentication
 
-Click **Next** to proceed.
+Select **Bidirectional** when you need mutual verification — the subsystem authenticates the host, and the host authenticates the subsystem.
+
+![Create Subsystem — Step 3: Bidirectional Authentication](images/create_subsystem_step_3_bidirectional.png)
+_Figure: Create Subsystem wizard — **Authentication** step with **Bidirectional** selected (**Requires keys on both sides** badge). **Subsystem authentication detail** shows the mandatory **Subsystem DH-HMAC-CHAP key** field. **Host authentication details** lists each restricted host NQN with a required DHCHAP Key field (both fields filled / masked). Navigation: Cancel / Previous / Next._
+
+With **Bidirectional** selected, the form expands:
+
+| Section                             | What to enter                                                                                                                    |
+| ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| **Subsystem authentication detail** | **Mandatory.** Enter a **Subsystem DH-HMAC-CHAP key** — _"A secret key for the subsystem to authenticate itself to hosts."_      |
+| **Host authentication details**     | **All fields are required.** One `DHCHAP Key \| <host-NQN>` field appears per host added in Step 2 (Restrict to specific hosts). |
+
+Generate valid keys on a host with `nvme` installed:
+
+```bash
+nvme gen-dhchap-key
+```
+
+Run the command twice — once for the subsystem key and once for each host key. Keys look like `DHHC-1:00:<base64>:` (plain Base64 may pass the UI format check but the gateway expects this DHHC format for a successful create).
+
+**Prerequisite:** the gateway group must have **encryption** enabled with a valid encryption key. Without it, subsystem details may still create, but adding a host with a DHCHAP key fails (host access control error). Enable encryption when creating or editing the gateway group (see §1.2), wait for gateways to redeploy, then create the subsystem with Bidirectional auth.
+
+With **Unidirectional**, host DHCHAP fields remain optional — leave blank to skip host-level keys. Click **Next** to proceed.
 
 #### Step 4 — Review
 
@@ -326,19 +378,42 @@ _Figure: Subsystem detail view — **Overview** tab showing Subsystem details: S
 
 The **Subsystem details** panel contains:
 
-| Property                          | Value / Description                                                                         |
-| --------------------------------- | ------------------------------------------------------------------------------------------- |
-| **Serial number**                 | Auto-generated serial (e.g., `Ceph96660918038161`).                                         |
-| **Model Number**                  | Always `Ceph bdev Controller`.                                                              |
-| **Gateway group**                 | The gateway group this subsystem belongs to (e.g., `Test1`).                                |
-| **Subsystem Type**                | Always `NVMe`.                                                                              |
-| **Host access**                   | Current host access mode (e.g., `Restrict to specific hosts`) with an inline **Edit** link. |
-| **Authentication**                | Current auth mode — 🔴 **No authentication** with an inline **Edit** link.                  |
-| **Listeners**                     | How listeners are configured — `Auto-fetched` with an info icon ℹ.                          |
-| **Maximum Controller Identifier** | `2040`                                                                                      |
-| **Minimum Controller Identifier** | `1`                                                                                         |
-| **Namespaces**                    | Current namespace count (e.g., `0`).                                                        |
-| **Maximum allowed namespaces**    | `512`                                                                                       |
+| Property                          | Value / Description                                                                                                     |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| **Serial number**                 | Auto-generated serial (e.g., `Ceph96660918038161`).                                                                     |
+| **Model Number**                  | Always `Ceph bdev Controller`.                                                                                          |
+| **Gateway group**                 | The gateway group this subsystem belongs to (e.g., `Test1`).                                                            |
+| **Subsystem Type**                | Always `NVMe`.                                                                                                          |
+| **Host access**                   | Current host access mode (e.g., `Restrict to specific hosts`) with an inline **Edit** link.                             |
+| **Authentication**                | Current auth mode — 🔴 **No authentication**, or ✅ **Bi-directional** / unidirectional — with an inline **Edit** link. |
+| **Listeners**                     | How listeners are configured — `Auto-fetched` or `Manually selected`, with an info icon ℹ.                              |
+| **Maximum Controller Identifier** | `2040`                                                                                                                  |
+| **Minimum Controller Identifier** | `1`                                                                                                                     |
+| **Namespaces**                    | Current namespace count (e.g., `0`).                                                                                    |
+| **Maximum allowed namespaces**    | `512`                                                                                                                   |
+
+After a successful Bidirectional create, Overview shows authentication as **Bi-directional**:
+
+![Subsystem Overview — Bi-directional Authentication](images/subsystem_overview_bidirectional.png)
+_Figure: Subsystem Overview for `nqn.2001-07.com.ceph:1791346858147.test2233` in gateway group **test2233** — **Host access:** Restrict to specific hosts (Edit), **Authentication:** ✅ **Bi-directional** (Edit), Listeners: Manually selected._
+
+##### Edit Authentication
+
+Click **Edit** next to **Authentication** on the Overview tab to open the **Edit authentication** dialog. You can change the authentication type and keys without recreating the subsystem.
+
+![Edit Authentication](images/edit_authentication.png)
+_Figure: **Edit authentication** dialog — Authentication type **Bidirectional** selected (**Requires keys on both sides** badge). **Subsystem authentication detail** (mandatory **Subsystem DH-HMAC-CHAP key**). **Host authentication details** with a required DHCHAP Key field per host NQN. Buttons: Cancel / **Save changes**._
+
+The form matches Create Subsystem → Authentication (Step 3):
+
+- **Unidirectional** — optional per-host DH-HMAC-CHAP keys; no subsystem key required.
+- **Bidirectional** — mandatory **Subsystem DH-HMAC-CHAP key** plus required host DHCHAP keys for every restricted initiator.
+
+Enter or update keys (use `nvme gen-dhchap-key` for valid `DHHC-1:…` values), then click **Save changes**. Click **Cancel** to discard.
+
+**Note:** Switching from **Bidirectional** to **Unidirectional** shows a warning that the subsystem DHCHAP key will be deleted permanently, which can expose the subsystem to unauthorised access. Confirm carefully before saving.
+
+To change which hosts are allowed (allow-all vs restricted NQNs), use **Edit** next to **Host access** (opens the Add Initiator flow) or manage rows on the **Initiators** tab (including **Edit host key** for a single initiator).
 
 #### Initiators Tab
 
@@ -430,6 +505,65 @@ The **Namespaces** tab within the subsystem detail view shows all namespaces att
 | **IOPS**         | Real-time I/O operations per second for this namespace. |
 
 Click **Add** to create a namespace directly from within the subsystem context.
+
+#### Performance Tab
+
+The **Performance** tab embeds the Grafana **NVMe-oF Gateways Performance** dashboard for the selected subsystem. Use it to monitor gateway CPU, I/O latency, IOPS, and throughput without leaving the Dashboard.
+
+![Subsystem Performance Tab](images/subsystem_performance.png)
+_Figure: Subsystem **Performance** tab for `nqn.2001-07.com.ceph:1791303042638.test2233` — Grafana filters (Data Source, Cluster, Gateway Group `test2233`, Gateway Hostname, Subsystem NQN), time range **Last 1 hour**, refresh **5s**. Panels include AVG Reactor CPU Usage by Gateway, Reactor Threads CPU Usage, AVG I/O Latency, IOPS / Throughput by Gateway and by Subsystem, and TOP 5 device charts. Some panels show **No data** until the subsystem is under I/O load._
+
+**Prerequisites**
+
+- Cluster monitoring (Prometheus + Grafana) must be enabled and the Dashboard Grafana URL configured under **Cluster → Manager modules → dashboard** (or your site’s monitoring setup).
+- Your user needs **Grafana** read permission. Without it, the tab shows that Grafana permissions are required to view performance details.
+
+**Filters and controls** (top of the embedded dashboard):
+
+| Control              | Purpose                                                       |
+| -------------------- | ------------------------------------------------------------- |
+| **Data Source**      | Grafana data source (typically `Dashboard`).                  |
+| **Cluster**          | Ceph cluster FSID used by the metrics.                        |
+| **Gateway Group**    | Pre-filled with the current gateway group (e.g., `test2233`). |
+| **Gateway Hostname** | Limit charts to one gateway, or **All**.                      |
+| **Subsystem NQN**    | Pre-filled with the subsystem you opened.                     |
+| **Time range**       | Window for metrics (e.g., Last 1 hour).                       |
+| **Refresh**          | Auto-refresh interval (e.g., 5s).                             |
+
+**Typical panels**
+
+| Panel                                          | What it shows                                       |
+| ---------------------------------------------- | --------------------------------------------------- |
+| **AVG Reactor CPU Usage by Gateway**           | Average SPDK reactor CPU per gateway host.          |
+| **Reactor Threads CPU Usage**                  | Per-reactor-thread CPU usage.                       |
+| **AVG I/O Latency**                            | Average I/O latency for the subsystem.              |
+| **IOPS by Gateway** / **by NVMe-oF Subsystem** | I/O operations per second, by gateway or subsystem. |
+| **TOP 5 — IOPS by device**                     | Highest-IOPS devices for this subsystem NQN.        |
+| **Throughput by Gateway** / **by Subsystem**   | Bandwidth (read/write) by gateway or subsystem.     |
+| **TOP 5 — Throughput by device**               | Highest-throughput devices for this subsystem NQN.  |
+
+**Note:** Empty panels (**No data**) are normal when no clients are connected or no I/O is running. Generate load against a connected namespace to populate latency, IOPS, and throughput charts. CPU panels may still show low baseline activity from the gateway processes.
+
+### 2.5 Deleting a Subsystem
+
+To delete a subsystem, go to **Block → NVMe/TCP → Subsystems**, select the subsystem row, and choose **Delete** from the action menu (or the table actions bar). A **Confirm delete** dialog opens.
+
+![Delete Subsystem — Confirm (disabled)](images/delete_subsystem_step1.png)
+_Figure: **Confirm delete** dialog for `nqn.2001-07.com.ceph:1791303042638.test2233` — warning that the action cannot be undone, empty **Name of resource** field, unchecked acknowledgement checkbox, and a greyed-out **Delete Subsystem** button._
+
+The dialog warns: _"Deleting **nqn.2001-07.com.ceph:1791303042638.test2233** will remove all associated Subsystem. This action cannot be undone."_
+
+Before the destructive button activates you must:
+
+1. Type the exact subsystem NQN into the **Name of resource** field.
+2. Check **I understand this may remove resources still attached to this subsystem.**
+
+![Delete Subsystem — Ready to delete](images/delete_subsystem.png)
+_Figure: Same dialog after the full NQN is typed and the acknowledgement checkbox is checked — the red **Delete Subsystem** button is enabled._
+
+Click **Delete Subsystem** to remove it, or **Cancel** to abort.
+
+**Note:** Prefer deleting namespaces (and clearing host access) first when possible. The acknowledgement checkbox exists because deleting a subsystem can also remove resources that are still attached to it.
 
 ---
 
@@ -555,7 +689,7 @@ The **Expand namespace** dialog allows resizing a namespace's backing RBD image 
 
 ### 7. Type-to-Confirm Destructive Operations
 
-All delete and remove operations (gateway group, host, namespace) require typing the resource name or ID into a confirmation field before the destructive button activates, preventing accidental data loss.
+All delete and remove operations (gateway group, subsystem, host, namespace) require typing the resource name or ID into a confirmation field before the destructive button activates, preventing accidental data loss. Subsystem delete also requires an extra acknowledgement that attached resources may be removed.
 
 ### 8. Live Listener Discovery
 
@@ -572,11 +706,13 @@ In this walkthrough, we covered the complete end-to-end flow:
 1. **Deploying the nvmeof service** — using the Dashboard's Create service dialog to run the SPDK-based NVMe-oF daemon on the target host.
 2. **Creating a gateway group** — entering a group name, selecting target nodes, and optionally enabling encryption and mTLS (Internal CA or External with full PEM upload).
 3. **Viewing and managing gateway groups** — reading the gateway list, exploring the detail view (Overview + Subsystems tabs), editing configuration, and deleting with the type-to-confirm guard.
-4. **Creating a subsystem** — using the four-step wizard (Subsystem details → Host access control → Authentication → Review) to define the NVMe target, configure listeners, restrict host access by NQN, and set DH-HMAC-CHAP authentication.
+4. **Creating a subsystem** — using the four-step wizard (Subsystem details → Host access control → Authentication → Review) to define the NVMe target, configure listeners, restrict host access by NQN, and set Unidirectional or Bidirectional DH-HMAC-CHAP authentication (with `nvme gen-dhchap-key` and gateway-group encryption for Bidirectional).
 5. **Managing initiators** — adding hosts individually or by CSV, editing per-host DHCHAP keys, removing specific hosts or clearing the allow-all entry.
 6. **Viewing listeners** — confirming the auto-fetched TCP address and port that initiators use to connect.
 7. **Creating namespaces** — using the Create Namespace form to map gateway-provisioned or externally managed RBD images to a subsystem, with bulk creation support.
 8. **Managing namespaces** — expanding capacity in-place with the Expand dialog, and deleting with the type-to-confirm guard.
+9. **Monitoring Performance** — using the subsystem Performance tab’s embedded Grafana dashboard for reactor CPU, latency, IOPS, and throughput (requires monitoring + Grafana permission).
+10. **Deleting a subsystem** — type-to-confirm the NQN plus an acknowledgement checkbox before the red **Delete Subsystem** button activates.
 
 Whether you are powering virtual machine disks, Kubernetes persistent volumes, or bare-metal database hosts, Ceph NVMe/TCP delivers high-throughput, low-latency block storage over standard Ethernet — fully manageable through the Ceph Dashboard.
 
