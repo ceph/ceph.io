@@ -161,6 +161,31 @@ The **Gateway nodes** table below lists every node assigned to this group:
 
 An **Add** button in the top-right corner of the Gateway nodes table lets you expand the group by adding more nodes without recreating it.
 
+##### Adding Gateway Nodes
+
+Click **Add** to open the **Add gateway nodes** dialog — _"Select NVMe-oF gateway nodes to associate with this gateway group."_
+
+![Add Gateway Nodes](images/add_gateway_nodes.png)
+_Figure: The **Add gateway nodes** dialog for gateway group `test2233` — Select gateway nodes table with `ceph-node-02` (`192.168.100.102`, Available) selected. **Add** is enabled; **Cancel** closes without changes._
+
+The dialog shows a **Select gateway nodes** table of hosts that can run NVMe-oF target pods/services:
+
+| Column            | Description                                                     |
+| ----------------- | --------------------------------------------------------------- |
+| **Hostname**      | Ceph node hostname (e.g., `ceph-node-02`).                      |
+| **IP address**    | Node IP address (e.g., `192.168.100.102`).                      |
+| **Status**        | Availability — green **Available** means the node can be added. |
+| **Labels (tags)** | Any cephadm labels on the node.                                 |
+
+Select one or more available nodes, then click **Add**. A success notification appears (e.g. _"Added hosts to gateway group 'test2233'"_), and the new nodes show up in the Gateway nodes table. Click **Cancel** to close without adding anything.
+
+![Gateway Nodes After Add](images/add_gateway_nodes_result.png)
+_Figure: Gateway group `test2233` Overview after adding a node — Details shows **Gateway nodes: 2**, success toast _"Added hosts to gateway group 'test2233'"_, and the Gateway nodes table lists `ceph-node-01` and `ceph-node-02`, both **Available**._
+
+**What happens when you add nodes:** the Dashboard updates the `nvmeof.<group-name>` service placement to include the selected hosts. Cephadm then deploys NVMe-oF gateway daemons on those nodes. Once they are healthy, they appear in the Gateway nodes table and can serve listeners/traffic for subsystems in this group. Adding a second (or more) gateway is what enables high availability — a group with only one gateway cannot provide HA. This step does not create subsystems or namespaces; it only expands the gateway capacity of the group.
+
+**Note:** Only nodes that are not already members of this gateway group (and are available for NVMe-oF) are listed. If every suitable host is already in the group, the table may be empty.
+
 #### Subsystems Tab
 
 ![Gateway Group Subsystems Tab](images/gateway_overview_setp_2.png)
@@ -431,6 +456,27 @@ The **Namespaces** tab within the subsystem detail view shows all namespaces att
 
 Click **Add** to create a namespace directly from within the subsystem context.
 
+### 2.5 Deleting a Subsystem
+
+To delete a subsystem, go to **Block → NVMe/TCP → Subsystems**, select the subsystem row, and choose **Delete** from the action menu (or the table actions bar). A **Confirm delete** dialog opens.
+
+![Delete Subsystem — Confirm (disabled)](images/delete_subsystem_step1.png)
+_Figure: **Confirm delete** dialog for `nqn.2001-07.com.ceph:1791303042638.test2233` — warning that the action cannot be undone, empty **Name of resource** field, unchecked acknowledgement checkbox, and a greyed-out **Delete Subsystem** button._
+
+The dialog warns: _"Deleting **nqn.2001-07.com.ceph:1791303042638.test2233** will remove all associated Subsystem. This action cannot be undone."_
+
+Before the destructive button activates you must:
+
+1. Type the exact subsystem NQN into the **Name of resource** field.
+2. Check **I understand this may remove resources still attached to this subsystem.**
+
+![Delete Subsystem — Ready to delete](images/delete_subsystem.png)
+_Figure: Same dialog after the full NQN is typed and the acknowledgement checkbox is checked — the red **Delete Subsystem** button is enabled._
+
+Click **Delete Subsystem** to remove it, or **Cancel** to abort.
+
+**Note:** Prefer deleting namespaces (and clearing host access) first when possible. The acknowledgement checkbox exists because deleting a subsystem can also remove resources that are still attached to it.
+
 ---
 
 ## 3. Namespaces
@@ -555,7 +601,7 @@ The **Expand namespace** dialog allows resizing a namespace's backing RBD image 
 
 ### 7. Type-to-Confirm Destructive Operations
 
-All delete and remove operations (gateway group, host, namespace) require typing the resource name or ID into a confirmation field before the destructive button activates, preventing accidental data loss.
+All delete and remove operations (gateway group, subsystem, host, namespace) require typing the resource name or ID into a confirmation field before the destructive button activates, preventing accidental data loss. Subsystem delete also requires an extra acknowledgement that attached resources may be removed.
 
 ### 8. Live Listener Discovery
 
@@ -577,6 +623,7 @@ In this walkthrough, we covered the complete end-to-end flow:
 6. **Viewing listeners** — confirming the auto-fetched TCP address and port that initiators use to connect.
 7. **Creating namespaces** — using the Create Namespace form to map gateway-provisioned or externally managed RBD images to a subsystem, with bulk creation support.
 8. **Managing namespaces** — expanding capacity in-place with the Expand dialog, and deleting with the type-to-confirm guard.
+9. **Deleting a subsystem** — type-to-confirm the NQN plus an acknowledgement checkbox before the red **Delete Subsystem** button activates.
 
 Whether you are powering virtual machine disks, Kubernetes persistent volumes, or bare-metal database hosts, Ceph NVMe/TCP delivers high-throughput, low-latency block storage over standard Ethernet — fully manageable through the Ceph Dashboard.
 
