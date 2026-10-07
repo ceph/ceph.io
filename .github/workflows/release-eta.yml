@@ -1,0 +1,43 @@
+# Refresh the release schedule estimates shown on /en/users/releases/.
+# The site deploy cron rebuilds ceph.io whenever main changes, so committing
+# new data here is all it takes to publish it.
+name: release-eta
+
+on:
+  schedule:
+    - cron: "17 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-eta
+  cancel-in-progress: false
+
+jobs:
+  update:
+    if: github.repository == 'ceph/ceph.io'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Estimate release dates
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: scripts/release-eta.py --json /tmp/release-eta.json
+      - name: Commit if the estimates changed
+        run: |
+          # Ignore the timestamp so unchanged estimates don't create a commit
+          if [ -f src/_data/releaseEta.json ] &&
+             cmp -s <(jq -S 'del(.generated)' src/_data/releaseEta.json) \
+                    <(jq -S 'del(.generated)' /tmp/release-eta.json); then
+            echo "No change"
+            exit 0
+          fi
+          cp /tmp/release-eta.json src/_data/releaseEta.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/_data/releaseEta.json
+          git commit -m "releases: update release schedule estimates"
+          git push
