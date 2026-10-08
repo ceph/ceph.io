@@ -1,0 +1,234 @@
+{
+  "generated": "2026-10-07T22:06+00:00",
+  "models": {
+    "tag_to_announce": {
+      "n": 8,
+      "p25": 1,
+      "p50": 3,
+      "p75": 5,
+      "max": 9
+    },
+    "qe_to_announce": {
+      "n": 8,
+      "p25": 4,
+      "p50": 7,
+      "p75": 16,
+      "max": 45
+    },
+    "point_release_gap": {
+      "n": 8,
+      "p25": 41,
+      "p50": 60,
+      "p75": 116,
+      "max": 308
+    },
+    "rc_to_ga": {
+      "n": 8,
+      "p25": 48,
+      "p50": 58,
+      "p75": 70,
+      "max": 85
+    },
+    "last_rc_to_ga": {
+      "n": 8,
+      "p25": 11,
+      "p50": 25,
+      "p75": 49,
+      "max": 68
+    },
+    "major_release_gap": {
+      "n": 8,
+      "p25": 354,
+      "p50": 378,
+      "p75": 416,
+      "max": 475
+    },
+    "kickoff_to_ga": {
+      "n": 8,
+      "p25": 293,
+      "p50": 306,
+      "p75": 358,
+      "max": 452
+    }
+  },
+  "releases": [
+    {
+      "name": "squid",
+      "major": 19,
+      "last": {
+        "version": "19.2.6",
+        "date": "2026-08-19"
+      },
+      "next": "19.2.7",
+      "target_eol": "2026-10-31",
+      "actual_eol": null,
+      "evidence": [
+        "Release notes PR ceph.io#1198 opened 2026-09-03",
+        "squid-release branch was frozen for QA on 2026-09-03",
+        "GitHub milestone v19.2.7: 74/75 PRs merged (1 still open)",
+        "318 commits on the squid branch since v19.2.6",
+        "Running late: 34 days in this stage, usual is 7 days (longest seen 45)",
+        "releases.yml lists target EOL 2026-10-31; the two-major policy puts it after Umbrella GA instead"
+      ],
+      "links": [
+        [
+          "ceph.io#1198",
+          "https://github.com/ceph/ceph.io/pull/1198"
+        ],
+        [
+          "milestone v19.2.7",
+          "https://github.com/ceph/ceph/milestone/42"
+        ]
+      ],
+      "note": "Not the last Squid release: 19.2.8 follows Umbrella GA.",
+      "stage": "qe",
+      "eta": {
+        "basis": "QA freeze \u2192 announcement",
+        "earliest": "2026-10-07",
+        "likely": null,
+        "latest": "2026-10-18",
+        "samples": 8,
+        "overdue": true
+      },
+      "summary": "Squid 19.2.7 is in QA / release validation: overdue, could land any day (historically up to ~2026-10-18). Not the last one: Umbrella isn't GA yet (expected around 2026-11-01), and squid gets one more point release after that. Expect the final release (19.2.8) and EOL around 2026-12-02 (range 2026-11-17 \u2013 2027-01-31).",
+      "eol": {
+        "final_release": "19.2.8",
+        "successor": "Umbrella",
+        "likely": "2026-12-02",
+        "earliest": "2026-11-17",
+        "latest": "2027-01-31",
+        "far": false
+      }
+    },
+    {
+      "name": "tentacle",
+      "major": 20,
+      "last": {
+        "version": "20.2.4",
+        "date": "2026-08-19"
+      },
+      "next": "20.2.5",
+      "target_eol": "2027-06-01",
+      "actual_eol": null,
+      "evidence": [
+        "Next point release is scheduled 8 weeks after v20.2.4; in practice tentacle releases have been 60 days apart (middle half 41\u201388)",
+        "GitHub milestone v20.2.5: 125/147 PRs merged (22 still open)",
+        "460 commits on the tentacle branch since v20.2.4",
+        "releases.yml lists target EOL 2027-06-01; the two-major policy puts it after Vampire GA instead"
+      ],
+      "links": [
+        [
+          "milestone v20.2.5",
+          "https://github.com/ceph/ceph/milestone/44"
+        ]
+      ],
+      "note": "",
+      "stage": "backports",
+      "eta": {
+        "basis": "8-week cadence",
+        "likely": "2026-10-14",
+        "earliest": "2026-10-11",
+        "latest": "2026-11-15",
+        "samples": 4
+      },
+      "summary": "Tentacle 20.2.5 is collecting backports: most likely around 2026-10-14 (range 2026-10-11 \u2013 2026-11-15). EOL: after Vampire GA plus one more point release, roughly January 2028.",
+      "eol": {
+        "final_release": "20.2.13",
+        "successor": "Vampire",
+        "likely": "2028-01-05",
+        "earliest": "2027-10-26",
+        "latest": "2028-04-30",
+        "far": true
+      }
+    },
+    {
+      "name": "umbrella",
+      "major": 21,
+      "stage": "rc",
+      "next": "21.2.0",
+      "evidence": [
+        "Release candidates tagged so far: v21.1.0, v21.1.1 (first on 2026-07-16)",
+        "GitHub milestone v21.1.2: 42/43 PRs merged",
+        "GitHub milestone v21.2.0: 2/6 PRs merged",
+        "GA is later than usual: 83 days since the first RC, typical is 58",
+        "Another RC (21.1.2) is still collecting fixes; GA has historically come 25 days after the last RC"
+      ],
+      "links": [
+        [
+          "milestone v21.1.2",
+          "https://github.com/ceph/ceph/milestone/46"
+        ],
+        [
+          "milestone v21.2.0",
+          "https://github.com/ceph/ceph/milestone/48"
+        ]
+      ],
+      "note": "One more release candidate (21.1.2) comes first.",
+      "last": {
+        "version": "21.1.1",
+        "date": "2026-09-10"
+      },
+      "target_eol": null,
+      "actual_eol": null,
+      "eta": {
+        "basis": "next RC \u2192 GA",
+        "earliest": "2026-10-18",
+        "likely": "2026-11-01",
+        "latest": "2026-11-25",
+        "samples": 8
+      },
+      "summary": "Umbrella 21.2.0 (the next major release) is in release candidates, latest 21.1.1: GA is most likely around 2026-11-01 (range 2026-10-18 \u2013 2026-11-25)."
+    },
+    {
+      "name": "vampire",
+      "major": 22,
+      "stage": "planning",
+      "next": "22.2.0",
+      "evidence": [
+        "Release kickoff PR #72058 \"Vampire Checklist Kickoff\" opened 2026-09-24, not merged yet",
+        "For comparison, the Umbrella kickoff took 112 days to merge (2025-12-04 \u2192 2026-03-26)",
+        "Redmine version v22.0.0 (Vampire) is due 2027-01-18, the planned kickoff",
+        "Kickoff (x.0.0) to GA has historically taken 306 days (middle half 293\u2013358)",
+        "Major releases come 378 days apart (middle half 354\u2013416); Umbrella GA is expected around 2026-11-01",
+        "The two methods give 2027-11-20 (from kickoff) and 2027-11-14 (from major cadence)"
+      ],
+      "links": [
+        [
+          "kickoff #72058",
+          "https://github.com/ceph/ceph/pull/72058"
+        ],
+        [
+          "Redmine v22.0.0",
+          "https://tracker.ceph.com/versions/705"
+        ]
+      ],
+      "last": null,
+      "target_eol": null,
+      "actual_eol": null,
+      "note": "Rough estimate: the release kickoff hasn't merged yet.",
+      "eta": {
+        "basis": "kickoff and major-release cadence",
+        "likely": "2027-11-17",
+        "earliest": "2027-10-07",
+        "latest": "2028-01-15"
+      },
+      "summary": "Vampire 22.2.0 is the major after Umbrella. It is still being kicked off, so this is a rough estimate: GA around November 2027 (range Oct 2027 \u2013 Jan 2028)."
+    },
+    {
+      "name": "reef",
+      "major": 18,
+      "last": {
+        "version": "18.2.8",
+        "date": "2026-03-20"
+      },
+      "next": "18.2.9",
+      "target_eol": "2026-03-20",
+      "actual_eol": "2026-03-20",
+      "evidence": [],
+      "links": [],
+      "note": "",
+      "stage": "eol",
+      "summary": "Reef reached end of life on 2026-03-20. No further releases are expected; the final release was 18.2.8."
+    }
+  ]
+}

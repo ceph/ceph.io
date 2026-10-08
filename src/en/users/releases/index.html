@@ -1,0 +1,155 @@
+---
+title: Release schedule
+order: 3
+---
+
+{% set eta = releaseEta %}
+{% set stageLabels = {
+  backports: 'Collecting backports',
+  qe: 'In QA',
+  tagged: 'Tagged, awaiting announcement',
+  rc: 'Release candidates',
+  dev: 'In development',
+  planning: 'Kickoff'
+} %}
+
+<section class="section">
+  <h1 class="h1 mb-12 lg:mb-16">{{ title }}</h1>
+  <div class="grid lg:grid--cols-2 grid--gap-14 lg:grid--gap-28 mb-16">
+    <p class="mb-0 standout">When will the next Ceph release come out, and how long is each release supported?</p>
+    <div class="bg-grey-300 p-5 rounded-2">
+      <p class="p">
+        Ceph aims to publish a point release of each stable release every 8 weeks, and maintains two stable major releases at a time.
+        When a new major release goes GA, the oldest major gets one more point release and then reaches end of life.
+      </p>
+      <p class="p mb-0">
+        The dates below are estimates, not commitments. They are derived from where each release is in the release process (git tags,
+        release branches, release notes in progress) and from how long each stage has taken historically. Estimates updated
+        {{ eta.generated | formatDate }}.
+      </p>
+    </div>
+  </div>
+
+  <div class="release-eta-table mb-16" role="table" aria-label="Upcoming releases">
+    <div class="release-eta-table__head" role="row">
+      <span role="columnheader">Release</span>
+      <span role="columnheader">Stage</span>
+      <span role="columnheader">Next release</span>
+      <span role="columnheader">End of life</span>
+    </div>
+    {%- for r in eta.releases %}{% if r.stage != 'eol' %}
+    {%- if r.next.endsWith('.2.0') -%}
+      {% set steps = ['Kickoff', 'Dev', 'RC', 'GA'] %}{% set cur = ['planning', 'dev', 'rc', 'tagged'].indexOf(r.stage) %}
+    {%- else -%}
+      {% set steps = ['Backports', 'QA', 'Tagged', 'Out'] %}{% set cur = ['backports', 'qe', 'tagged'].indexOf(r.stage) %}
+    {%- endif %}
+    <div class="bg-grey-300 rounded-2 release-eta release-eta--{{ r.stage }}{% if r.eta.overdue %} release-eta--late{% endif %}" role="row">
+      <div class="release-eta__cell" role="rowheader">
+        <h2 class="h3 mb-1">{{ r.name | title }} <span class="release-eta__major">{{ r.major }}</span></h2>
+        <p class="p mb-0">Next: <strong>{{ r.next }}</strong></p>
+      </div>
+      <div class="release-eta__cell" role="cell">
+        <span class="release-eta__label">Stage</span>
+        <ol class="release-eta__steps" aria-label="Release stage">
+          {%- for step in steps %}
+          <li class="{% if loop.index0 < cur %}is-done{% elif loop.index0 == cur %}is-current{% endif %}"{% if loop.index0 == cur %} aria-current="step"{% endif %}>{{ step }}</li>
+          {%- endfor %}
+        </ol>
+        <p class="p mb-0">{{ stageLabels[r.stage] }}</p>
+      </div>
+      <div class="release-eta__cell" role="cell">
+        <span class="release-eta__label">Next release</span>
+        <p class="h4 mb-1 release-eta__date">
+          {%- if r.stage == 'planning' or r.stage == 'dev' -%}
+            ~{{ r.eta.likely | formatMonth }}
+          {%- elif r.eta.overdue -%}
+            Any day now
+          {%- else -%}
+            {{ r.eta.likely | formatDate }}
+          {%- endif -%}
+        </p>
+        <p class="p mb-0">
+          {%- if r.eta.overdue -%}
+            Running late; usually by {{ r.eta.latest | formatDate }}
+          {%- else -%}
+            Likely between {{ r.eta.earliest | formatDate }} and {{ r.eta.latest | formatDate }}
+          {%- endif -%}
+        </p>
+      </div>
+      <div class="release-eta__cell" role="cell">
+        <span class="release-eta__label">End of life</span>
+        <p class="p mb-0">
+          {%- if not r.eol -%}
+            Not yet scheduled
+          {%- elif r.eol.far -%}
+            After {{ r.eol.successor }} GA, around {{ r.eol.likely | formatMonth }}
+          {%- else -%}
+            With {{ r.eol.final_release }}, around {{ r.eol.likely | formatDate }}
+          {%- endif -%}
+        </p>
+        {%- if r.note %}
+        <p class="p mb-0 release-eta__note">{{ r.note }}</p>
+        {%- endif %}
+      </div>
+      <details class="release-eta__details">
+        <summary>How this was estimated</summary>
+        <ul>
+          {%- for e in r.evidence %}
+          <li>{{ e }}</li>
+          {%- endfor %}
+        </ul>
+        {%- for link in r.links %}
+        <a href="{{ link[1] }}" rel="noreferrer noopener" target="_blank">{{ link[0] }}</a>{% if not loop.last %} · {% endif %}
+        {%- endfor %}
+      </details>
+    </div>
+    {%- endif %}{% endfor %}
+  </div>
+
+  <h2 class="h3 mb-4">End of life</h2>
+  <ul class="mb-16">
+    {%- for r in eta.releases %}{% if r.stage == 'eol' %}
+    <li class="p">{{ r.name | title }} ({{ r.major }}): end of life since {{ r.actual_eol | formatDate }}; final release {{ r.last.version }}</li>
+    {%- endif %}{% endfor %}
+  </ul>
+
+  <p class="p">
+    Release history and notes for every version are in the
+    <a href="https://docs.ceph.com/en/latest/releases/">Ceph documentation</a>.
+  </p>
+</section>
+
+<style>
+  /* One row per release: a table on wide screens, stacked cards on narrow ones */
+  .release-eta-table { display: grid; gap: 0.75rem; }
+  .release-eta-table__head { display: none; }
+  .release-eta { display: grid; gap: 1rem; padding: 1.25rem; }
+  .release-eta__label { display: block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.375rem; opacity: 0.7; }
+  .release-eta__note { margin-top: 0.5rem; font-style: italic; }
+  @media (min-width: 1024px) {
+    .release-eta-table__head, .release-eta { grid-template-columns: 11rem minmax(16rem, 1.3fr) 1fr 1fr; column-gap: 2rem; }
+    .release-eta-table__head { display: grid; padding: 0 1.25rem; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; opacity: 0.7; }
+    .release-eta { align-items: start; row-gap: 0.75rem; }
+    .release-eta__label { display: none; }
+    .release-eta__details { grid-column: 1 / -1; }
+  }
+  .release-eta details { font-size: 0.875rem; line-height: 1.6; }
+  .release-eta details li { margin-bottom: 0.375rem; }
+  .release-eta details a { display: inline-block; margin-top: 0.25rem; }
+  .release-eta__steps { display: flex; flex-wrap: wrap; gap: 0.375rem; list-style: none; margin: 0 0 0.5rem; padding: 0; font-size: 0.75rem; font-weight: 600; line-height: 1.2; }
+  .release-eta__steps li { flex: 1 1 auto; text-align: center; white-space: nowrap; padding: 0.375rem 0.625rem; border-radius: 0.25rem; background: var(--color-white); color: hsl(var(--step-deep)); box-shadow: inset 0 0 0 1px hsla(var(--step), 0.45); }
+  /* One colour per stage: violet = collecting, amber = testing, blue = tagged, green = released.
+     --step is the solid fill, --step-ink the text on it, --step-deep the text on a tint. All >= 4.5:1. */
+  .release-eta__steps li:nth-child(1) { --step: 262, 55%, 45%; --step-deep: 262, 60%, 32%; --step-ink: #fff; }
+  .release-eta__steps li:nth-child(2) { --step: 38, 92%, 50%; --step-deep: 30, 90%, 24%; --step-ink: #1a1a1a; }
+  .release-eta__steps li:nth-child(3) { --step: 217, 76%, 45%; --step-deep: 217, 80%, 32%; --step-ink: #fff; }
+  .release-eta__steps li:nth-child(4) { --step: 152, 62%, 30%; --step-deep: 152, 70%, 22%; --step-ink: #fff; }
+  .release-eta__steps li.is-done { background: hsla(var(--step), 0.16); box-shadow: none; }
+  .release-eta__steps li.is-current { background: hsl(var(--step)); color: var(--step-ink); box-shadow: none; }
+  .release-eta--qe .release-eta__date,
+  .release-eta--tagged .release-eta__date,
+  .release-eta--late .release-eta__date { color: hsl(30, 90%, 24%); }
+  .release-eta summary { cursor: pointer; }
+  .release-eta__major { font-weight: 400; }
+  .release-eta ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+</style>
