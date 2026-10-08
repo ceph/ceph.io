@@ -1,18 +1,25 @@
 # Refresh the release schedule estimates shown on /en/users/releases/.
 # The site deploy cron rebuilds ceph.io whenever main changes, so committing
 # new data here is all it takes to publish it.
+#
+# On pull requests that touch the estimator, run it without committing and
+# show what would change in the job summary.
 name: release-eta
 
 on:
   schedule:
     - cron: "17 5 * * *"
   workflow_dispatch:
+  pull_request:
+    paths:
+      - scripts/release-eta.py
+      - .github/workflows/release-eta.yml
 
 permissions:
   contents: write
 
 concurrency:
-  group: release-eta
+  group: release-eta-${{ github.event_name }}-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -21,20 +28,44 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v6
+      # ceph/ceph.io only allows this action pinned to a reviewed commit (v8.1.0)
+      - uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b
       - name: Estimate release dates
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: scripts/release-eta.py --json /tmp/release-eta.json
-      - name: Commit if the estimates changed
+      - name: Compare with the published estimates
+        id: diff
         run: |
           # Ignore the timestamp so unchanged estimates don't create a commit
           if [ -f src/_data/releaseEta.json ] &&
              cmp -s <(jq -S 'del(.generated)' src/_data/releaseEta.json) \
                     <(jq -S 'del(.generated)' /tmp/release-eta.json); then
-            echo "No change"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No change in the release estimates." >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          {
+            echo "## Release estimate changes"
+            echo
+            # One line per release whose summary changed: before -> after
+            jq -rn --slurpfile old src/_data/releaseEta.json --slurpfile new /tmp/release-eta.json '
+              ($old[0].releases | map({(.name): .summary}) | add) as $o
+              | $new[0].releases[]
+              | select(.summary != $o[.name])
+              | "**\(.name | ascii_upcase[:1] + .[1:])**\n- before: \($o[.name] // "(new)")\n- after: \(.summary)\n"'
+            echo "<details><summary>Full data diff</summary>"
+            echo
+            echo '```diff'
+            diff -u <(jq -S 'del(.generated)' src/_data/releaseEta.json) \
+                    <(jq -S 'del(.generated)' /tmp/release-eta.json) | tail -n +3 || true
+            echo '```'
+            echo "</details>"
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Commit the new estimates
+        if: steps.diff.outputs.changed == 'true' && github.event_name != 'pull_request'
+        run: |
           cp /tmp/release-eta.json src/_data/releaseEta.json
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
