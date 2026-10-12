@@ -3,6 +3,8 @@ title: Home
 layout: home
 ---
 
+{% set articleLocaleTag = locale + '-article' %} {% set recentArticles = collections[articleLocaleTag] | reverse | getItems(4) %}
+
 <h1 class="h1 visually-hidden">Ceph.io {{ title }}</h1>
 
 <section class="py-32 lg:py-56 relative section section--full">
@@ -56,4 +58,17 @@ layout: home
       </div>
     </div>
   </div>
+</section>
+
+<section class="section">
+  <div class="flex flex--gap-6 flex--align-center flex--justify-between flex--wrap mb-12 lg:mb-16">
+    <h2 class="h2 mb-0">Recent news</h2>
+    <a class="a" href="/{{ locale }}/news/">View all news</a>
+  </div>
+
+  <ul class="grid md:grid--cols-2 lg:grid--cols-4 list-none p-0">
+    {% for item in recentArticles %} {% set articleTag = item.data.tags | getArticleType | i18n %}
+    <li>{% ArticleCard item, {label: articleTag} %}</li>
+    {% endfor %}
+  </ul>
 </section>
