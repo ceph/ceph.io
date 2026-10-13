@@ -2,8 +2,9 @@
 # The site deploy cron rebuilds ceph.io whenever main changes, so committing
 # new data here is all it takes to publish it.
 #
-# On pull requests that touch the estimator, run it without committing and
-# show what would change in the job summary.
+# The estimator itself is src/script/release-eta.py in ceph/ceph. On pull
+# requests that touch this workflow, run it without committing and show what
+# would change in the job summary.
 name: release-eta
 
 on:
@@ -12,7 +13,6 @@ on:
   workflow_dispatch:
   pull_request:
     paths:
-      - scripts/release-eta.py
       - .github/workflows/release-eta.yml
 
 permissions:
@@ -28,12 +28,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      # The estimator lives in ceph/ceph (src/script/release-eta.py), next to
+      # most of the data it reads; only its output is kept here.
+      - uses: actions/checkout@v4
+        with:
+          repository: ceph/ceph
+          ref: main
+          path: ceph
+          sparse-checkout: src/script
       # ceph/ceph.io only allows this action pinned to a reviewed commit (v8.1.0)
       - uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b
       - name: Estimate release dates
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: scripts/release-eta.py --json /tmp/release-eta.json
+        run: ceph/src/script/release-eta.py --json /tmp/release-eta.json
       - name: Compare with the published estimates
         id: diff
         run: |
