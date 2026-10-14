@@ -1,7 +1,7 @@
 ---
 title: Ceph Meetup Melbourne 2026
-date: 2026-10-30
-end: 2026-10-30
+date: 2026-10-13
+end: 2026-10-13
 location: 120 Brunton Avenue, East Melbourne, VIC 300
 venue: Melbourne Cricket Ground (MCG)
 image: "/assets/bitmaps/Ceph_Meetup_Australia_Banner.png"
@@ -14,56 +14,4 @@ sponsors:
 tags:
 ---
 
-### Bringing Ceph to eResearch in Melbourne
-
-Join the Ceph community at <a href="https://conference.eresearch.edu.au/">eResearch</a> Australasia for a morning of 
-technical discussion, collaboration, and networking with fellow 
-Ceph users, contributors, and operators.
-
-Whether you are new to Ceph or running production clusters at scale,
-this meetup is an opportunity to exchange ideas, share experiences,
-and connect with others working across the storage ecosystem.
-
-You do **not** need to register as an entire conference attendee to come
-to the Ceph Meetup. You can use the Workshops only option at no cost. 
-During <a href="https://conference.eresearch.edu.au/registration/">registration</a> for the eResearch conference, when you reach the 
-Workshops page, select **Ceph Meetup Melbourne 2026**.
-
- 
-## Important Dates 
-~~**- Registration Opens**: 2026-09-01 </br>~~
-**- Schedule Announcement**: 2026-10-15 </br>
-**- Event Date**: 2026-10-30 </br>
- 
-<br />
-
-## Sponsors
-We're grateful to <a href="https://xenon.global/">Xenon</a> for supporting the Ceph community in
-Melbourne. Their sponsorship helps make this meetup possible, giving
-local Ceph users, contributors, and operators a place to connect, share
-knowledge, and grow the community across the storage ecosystem.
-
-
-## Schedule
-Starting at **9:30 am**, we will begin with an introduction to Ceph, covering:
- - What Ceph is
- - Core architecture and concepts
- - Common use cases
- - How organisations are using Ceph today
- 
-Then, from about **10:00 am to 12:00 pm**, we’ll have a few talks covering different 
-topics, with a mix of length and depth. About halfway through, we will break 
-for catered morning tea. Further details will be published closer to the 
-event. Topics may include:
- - Community updates
- - Current Ceph deployments and projects
- - Operational experiences and lessons learned
- - Open discussion and attendee-led topics
- 
- 
-Would you like to present something, or lead a discussion? Put in a proposal
-in the Call for Papers - we would love to hear from you.
- 
- 
- 
- 
+### This event has been canceled
