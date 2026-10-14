@@ -23,9 +23,14 @@ order: 3
         When a new major release goes GA, the oldest major gets one more point release and then reaches end of life.
       </p>
       <p class="p mb-0">
-        The dates below are estimates, not commitments. They are derived from where each release is in the release process (git tags,
-        release branches, release notes in progress) and from how long each stage has taken historically. Estimates updated
-        {{ eta.generated | formatDate }}.
+        The dates below are estimates, not commitments. Where the release manager has published planned dates on the
+        <a href="/{{ locale }}/community/meetups/">Ceph community calendar</a>, those are shown. Otherwise the dates are
+        derived from where each release is in the release process and from how long each stage has taken historically.
+        Estimates updated {{ eta.generated | formatDate }}.
+      </p>
+      <p class="p mb-0">
+        These estimates are generated daily by a script that was written with the help of an LLM. They are not
+        reviewed by the release team; see the sources below.
       </p>
     </div>
   </div>
@@ -112,6 +117,24 @@ order: 3
     <li class="p">{{ r.name | title }} ({{ r.major }}): end of life since {{ r.actual_eol | formatDate }}; final release {{ r.last.version }}</li>
     {%- endif %}{% endfor %}
   </ul>
+
+  <h2 class="h3 mb-4">Sources</h2>
+  <p class="p">
+    The estimates are produced by
+    <a href="https://github.com/ceph/ceph/blob/main/src/script/release-eta.py">src/script/release-eta.py</a>
+    in the Ceph repository, which reads:
+  </p>
+  <ul class="mb-16">
+    <li class="p">Release tags (vX.Y.Z) and release branches in <a href="https://github.com/ceph/ceph">ceph/ceph</a>: when a point release was frozen for QA, tagged, or a major release entered release candidates</li>
+    <li class="p"><a href="https://github.com/ceph/ceph/milestones">GitHub milestones</a> for each upcoming version: how many backports are merged</li>
+    <li class="p">Release-notes pull requests in <a href="https://github.com/ceph/ceph.io/pulls?q=is%3Apr+%22release+notes%22">ceph/ceph.io</a>: opened when a release enters QA, merged when it is announced</li>
+    <li class="p"><a href="https://github.com/ceph/ceph/blob/main/doc/releases/releases.yml">doc/releases/releases.yml</a>: past release and end-of-life dates</li>
+    <li class="p"><a href="https://tracker.ceph.com/projects/ceph/roadmap">tracker.ceph.com versions</a> and release kickoff pull requests: the next major release's name and planned kickoff</li>
+    <li class="p">The <a href="/{{ locale }}/community/meetups/">Ceph community calendar</a>: the release manager's planned branch and release dates, and backport merge windows</li>
+  </ul>
+  <p class="p">
+    Each release above lists the specific evidence and links behind its estimate under "How this was estimated".
+  </p>
 
   <p class="p">
     Release history and notes for every version are in the
