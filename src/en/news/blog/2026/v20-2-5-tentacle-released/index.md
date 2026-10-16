@@ -60,7 +60,12 @@ CephFS
 RBD
 -----------------------
 
-- `librbd` live migration can now specify `mon_host` and `key` in the migration spec.
+- It's possible to specify the source cluster's `mon_host` and `key` for
+  `native` format migration via the migration spec now.  This eliminates the
+  dependency on a `<cluster-name>.conf` file in a known location, which is
+  rather rigid and also challenging to disseminate in some environments.  The
+  key can be embedded in the migration spec or just referenced from there while
+  stored in the MON config-key store.
 - Fixed a use-after-free in trash purge on image open error.
 - Fixed `list_snaps()` handling of non-existent groups in `pybind/rbd`.
 
