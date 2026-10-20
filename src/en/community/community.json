@@ -4,7 +4,8 @@
       "date": "2026-10-19",
       "title": "OIDC Web Identity for Ceph RGW",
       "presenter": "Tadas Sutkaitis, DevOps Engineer, VEXXHOST Inc.",
-      "url": "https://www.linkedin.com/events/7513244736498024448?viewAsMember=true"
+      "url": "https://youtu.be/xwRWG3zx2Uw",
+      "slides": "https://ceph.io/assets/pdfs/tech-talks/ceph-rgw-sts-oidc-tech-talk.pdf"
     },
     {
       "date": "2026-09-30",
