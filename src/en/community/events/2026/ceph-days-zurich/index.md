@@ -32,12 +32,6 @@ Here is how you can join us:
 - ~~**Registration Closes:** 2026-10-07~~
 - ~~**Event Date:** 2026-10-14~~
 
-Registration is now open! (Closes on Oct 7, 2026)
-
-<br/>
-
-<a class="button" href="https://luma.com/b4d2ffox">Register Here!</a>
-
 <br/>
 
 ## Schedule
