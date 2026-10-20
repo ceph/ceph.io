@@ -163,6 +163,7 @@ cephadm / Orchestrator
   TLS configuration support, RDMA handling during upgrades.
 - Crimson/seastore OSD deployment support added to cephadm and
   ceph-volume.
+- cephadm now supports CRUSH bucket-aware upgrades using the new `ok-to-upgrade` command, enabling faster and safe concurrent OSD upgrades while preserving data availability.
 
 CephFS / MDS
 ------------
