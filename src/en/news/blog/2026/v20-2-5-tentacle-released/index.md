@@ -433,8 +433,6 @@ Platform and Packaging
 
 - tools/cephfs: allow scanning and flushing journal in batches ([pr#70276](https://github.com/ceph/ceph/pull/70276), Kefu Chai, Dhairya Parmar)
 
-- V20<span></span>.2<span></span>.4 tag ([pr#71161](https://github.com/ceph/ceph/pull/71161), Ceph Release Team, Patrick Donnelly, Adam King, Adam C. Emerson, Shilpa Jagannath, Marcus Watts, Pritha Srivastava, Yehuda Sadeh, Matan Breizman, Max Kellermann, Kamoltat Sirivadhna)
-
 - vstart<span></span>.sh: only skip fs volume create when there's no mgr to run it ([pr#70019](https://github.com/ceph/ceph/pull/70019), Kefu Chai)
 
 - win32\_deps\_bild: bump openssl version ([pr#71204](https://github.com/ceph/ceph/pull/71204), Lucian Petrut)
