@@ -2,6 +2,7 @@
 title: "v20.2.5 Tentacle released"
 date: "2026-11-02"
 author: "Yuri Weinstein"
+image: "images/title-card.png"
 tags:
   - "release"
   - "tentacle"
