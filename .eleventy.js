@@ -29,6 +29,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('cleanSearchRaw', require(`${filtersDir}/cleanSearchRaw.js`));
   eleventyConfig.addFilter('endsWith', require(`${filtersDir}/endsWith.js`));
   eleventyConfig.addFilter('formatDate', require(`${filtersDir}/formatDate.js`));
+  eleventyConfig.addFilter('formatMonth', require(`${filtersDir}/formatMonth.js`));
   eleventyConfig.addFilter('formatDateRange', require(`${filtersDir}/formatDateRange.js`));
   eleventyConfig.addFilter('getArticleType', require(`${filtersDir}/getArticleType.js`));
   eleventyConfig.addFilter('getCollectionByTag', require(`${filtersDir}/getCollectionByTag.js`));
