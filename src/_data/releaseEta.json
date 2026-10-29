@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-29T06:07+00:00",
+  "generated": "2026-10-29T07:39+00:00",
   "models": {
     "tag_to_announce": {
       "n": 8,
@@ -12,15 +12,15 @@
       "n": 8,
       "p25": 4,
       "p50": 11,
-      "p75": 20,
+      "p75": 34,
       "max": 45
     },
     "point_release_gap": {
       "n": 8,
       "p25": 41,
       "p50": 52,
-      "p75": 70,
-      "max": 139
+      "p75": 88,
+      "max": 308
     },
     "rc_to_ga": {
       "n": 8,
@@ -94,7 +94,7 @@
         "successor": "Umbrella",
         "likely": "2026-12-07",
         "earliest": "2026-12-07",
-        "latest": "2026-12-21",
+        "latest": "2027-01-08",
         "far": false
       }
     },
@@ -102,40 +102,45 @@
       "name": "tentacle",
       "major": 20,
       "last": {
-        "version": "20.2.5",
-        "date": "2026-10-28"
+        "version": "20.2.4",
+        "date": "2026-08-19"
       },
-      "next": "20.2.6",
+      "next": "20.2.5",
       "target_eol": "2027-06-01",
       "actual_eol": null,
       "evidence": [
+        "Release notes PR ceph.io#1251 opened 2026-10-28",
         "tentacle-release branch was frozen for QA on 2026-10-27",
-        "GitHub milestone v20.2.6: 0/8 PRs merged (8 still open)",
-        "The v20.2.6 merge window opened 2026-11-11 (community calendar)",
+        "The v20.2.5 merge window opened 2026-08-19 (community calendar)",
+        "626 commits on the tentacle branch since v20.2.4",
         "releases.yml lists target EOL 2027-06-01; the two-major policy puts it after Vampire GA instead"
       ],
       "links": [
         [
-          "milestone v20.2.6",
-          "https://github.com/ceph/ceph/milestone/49"
+          "ceph.io#1251",
+          "https://github.com/ceph/ceph.io/pull/1251"
+        ],
+        [
+          "v20.2.5 merge window",
+          "https://tracker.ceph.com/issues/79030"
         ]
       ],
-      "note": "Not the last Tentacle release: 20.2.9 follows Vampire GA.",
+      "note": "Not the last Tentacle release: 20.2.8 follows Vampire GA.",
       "stage": "qe",
       "eta": {
         "basis": "QA freeze \u2192 announcement",
         "earliest": "2026-10-31",
         "likely": "2026-11-07",
-        "latest": "2026-11-16",
+        "latest": "2026-11-30",
         "samples": 8
       },
-      "summary": "Tentacle 20.2.6 is in QA / release validation: most likely around 2026-11-07 (range 2026-10-31 \u2013 2026-11-16). Not the last one: Vampire isn't GA yet (expected around 2027-03-31), and tentacle gets one more point release after that. Expect the final release (20.2.9) and EOL around 2027-04-24 (range 2027-04-09 \u2013 2027-05-08).",
+      "summary": "Tentacle 20.2.5 is in QA / release validation: most likely around 2026-11-07 (range 2026-10-31 \u2013 2026-11-30). Not the last one: Vampire isn't GA yet (expected around 2027-03-31), and tentacle gets one more point release after that. Expect the final release (20.2.8) and EOL around 2027-04-24 (range 2027-04-09 \u2013 2027-05-26).",
       "eol": {
-        "final_release": "20.2.9",
+        "final_release": "20.2.8",
         "successor": "Vampire",
         "likely": "2027-04-24",
         "earliest": "2027-04-09",
-        "latest": "2027-05-08",
+        "latest": "2027-05-26",
         "far": false
       }
     },
@@ -150,7 +155,7 @@
       "target_eol": "2028-10-28",
       "actual_eol": null,
       "evidence": [
-        "Next point release is scheduled 8 weeks after v21.2.0; in practice umbrella releases have been 52 days apart (middle half 41\u201370)",
+        "Next point release is scheduled 8 weeks after v21.2.0; in practice umbrella releases have been 52 days apart (middle half 41\u201388)",
         "GitHub milestone v21.2.1: 15/21 PRs merged (6 still open)",
         "The v21.2.1 merge window opened 2026-10-28 (community calendar)",
         "releases.yml lists target EOL 2028-10-28; the two-major policy puts it after 23.2.0 GA instead"
@@ -171,16 +176,16 @@
         "basis": "8-week cadence",
         "likely": "2026-12-23",
         "earliest": "2026-12-08",
-        "latest": "2027-01-06",
+        "latest": "2027-01-24",
         "samples": 8
       },
-      "summary": "Umbrella 21.2.1 is collecting backports: most likely around 2026-12-23 (range 2026-12-08 \u2013 2027-01-06). EOL: after 23.2.0 GA plus one more point release, roughly December 2028.",
+      "summary": "Umbrella 21.2.1 is collecting backports: most likely around 2026-12-23 (range 2026-12-08 \u2013 2027-01-24). EOL: after 23.2.0 GA plus one more point release, roughly December 2028.",
       "eol": {
         "final_release": "21.2.14",
         "successor": "23.2.0",
         "likely": "2028-12-20",
         "earliest": "2028-10-25",
-        "latest": "2029-02-28",
+        "latest": "2029-03-18",
         "far": true
       }
     },
