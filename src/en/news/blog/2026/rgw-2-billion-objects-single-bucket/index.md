@@ -1,6 +1,6 @@
 ---
 title: "Performance Analysis of 2 Billion Objects in a Single Bucket"
-date: 2026-10-20
+date: 2026-10-29
 author: "Andy Lin (IBM), Alexander Surma (IBM)"
 image: "images/title.png"
 tags:
@@ -56,9 +56,10 @@ otherwise specified.
 **Test Description:** We created a single bucket and pre-sharded it to
 `num-shards=20011`. This value was used to stay below the default 
 `rgw_max_objs_per_shard` value of 100000 in order to avoid resharding during
-the exercise when creating 2 billion objects.  This value was also above the 
-default limit for dynamic resharding. Then we populated the bucket to 2 billion
-64KiB objects using a realistic lakehouse prefix layout (e.g.
+the exercise when creating 2 billion objects.  The value of 
+`rgw_max_dynamic_shards` was also raised to 20011, which is above the default 
+limit of 1999. Then we populated the bucket to 2 billion 64KiB objects using a
+realistic lakehouse prefix layout (e.g.
 `warehouse/db/table/metadata/... and warehouse/db/table/data/partition/...`).
 ![](images/create2billionObjects.png)
 
@@ -96,7 +97,7 @@ performance is expected behavior. Earlier Ceph releases blocked for the entire
 reshard process; this recent optimization significantly improves the client
 experience during dynamic or manual resharding. For workloads where the number
 of RGW objects per bucket is reasonably constant, pre-sharding the bucket may
-still be beneficial. For workloads where the number of RGW objects per bucket
+still be beneficial. For workloads where the number of objects per bucket
 varies considerably over time, dynamic resharding can enable faster `LIST`
 operations when the object count is lower.
 
@@ -269,10 +270,9 @@ tracked the total objects and processing rate over time.
 of 70% `GET` and 30% `PUT` at the 64KiB object size. We let the
 workload run for 10 minutes, then we issued the `boto3` command to expire 20 million
 objects manually.
-![](images/lifecycle15.png)
-![](images/lifecycle60.png)
-During the lifecycle processing period, host I/O was impacted by about 10% for
-both cases of background load.
+![](images/lc15.png)
+![](images/lc60.png)
+
 
 ### Tuning for Lifecycle Processing
 
@@ -288,8 +288,8 @@ ceph config set client.rgw rgw_lc_max_wp_worker X
 ```
 ![](images/lifecycleTuning.png)
 
-The most aggressive lifecycle processing rate was observed when the following
-values were set:
+The most aggressive lifecycle processing rate with the shortest total runtime
+was observed when the following values were set:
 ```
 rgw_lc_max_worker=12
 rgw_lc_max_wp_worker=12
@@ -316,13 +316,42 @@ depending on the user's goals to either limit impact to host I/O or speed up
 the lifecycle processing duration during idle periods. Otherwise, the default
 values are acceptable.
 
+### Additional Recommendations for Deploying RGW Instances Dedicated to LC Processing
+**For Production-Facing RGWs:** Disable LC processing entirely to dedicate all
+thread and CPU resources to client S3/Swift API traffic.
+```
+[client.radosgw.frontend_instance]
+rgw_enable_lc_threads = false
+```
+
+**For Dedicated LC RGWs:** Deploy separate RGW instances (which do not receive
+user traffic via your load balancer) and ensure their LC threads are active.
+You can also widen the LC work window and raise the worker counts on these
+instances.
+```
+[client.radosgw.lc_dedicated_instance]
+rgw_enable_lc_threads = true
+rgw_lifecycle_work_time = 00:00-23:59
+rgw_lc_max_worker = 12
+rgw_lc_max_wp_worker = 12
+```
+At least one RGW in each zone must have `rgw_enable_lc_threads` set to
+`true`. If the parameter is disabled on every RGW, no lifecycle processing
+happens.
+
+**LC Schedule:** By default, LC processing starts once a day and runs only
+during a daily work window, set by `rgw_lifecycle_work_time` (default
+`00:00-06:00`). When it finishes, it waits for the next window. For heavy
+workloads, expect LC processing of a large number of expirations or
+transitions to span multiple days.
+
 ## Ceph Cluster Configuration
 
 | Configuration | Value |
 | ------------- | ----- |
 | Upstream Ceph release | 20.2.1 (Tentacle) |
 | `osd_memory_target_autotune` | False |
-| `osd osd_memory_target` | 12884901888 |
+| `osd_memory_target` | 12884901888 |
 | `osd_pool_default_flag_ec_optimizations` | True |
 | `osd_pool_erasure_code_stripe_unit` | 16384 |
 | `osd noscrub` | True |
@@ -337,8 +366,8 @@ values are acceptable.
 | Configuration | Value |
 | ------------- | ----- |
 | Tuned profile | `network-latency` |
-| CPU governor profile | `Performance` |
-| C-State profile | C6 Disabled |
+| CPU governor profile | `performance` |
+| C-State profile | `C6 Disabled` |
 
 ### Hardware
 
@@ -373,5 +402,4 @@ billions of objects.
 
 <hr style="width: 100%; height: 2px; background-color: gray; border: none;">
 
-Author - Andy Lin (awlin@ibm.com), Editor - Alex Surma
-(alexander.surma@ibm.com)
+Author - Andy Lin (awlin@ibm.com), Editor - Alex Surma (alexander.surma@ibm.com)
