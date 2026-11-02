@@ -1,6 +1,6 @@
 ---
 title: "Slicing the Pie: CRUSH Failure Domains and Your Capacity"
-date: "2026-11-26"
+date: "2026-11-11"
 author: "Anthony D'Atri"
 categories: "community"
 image: "images/nautilus-turkey.png"
