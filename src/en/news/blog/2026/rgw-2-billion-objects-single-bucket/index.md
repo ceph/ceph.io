@@ -1,7 +1,7 @@
 ---
 title: "Performance Analysis of 2 Billion Objects in a Single Bucket"
-date: 2026-10-29
-author: "Andy Lin (IBM), Alexander Surma (IBM)"
+date: 2026-11-03
+author: "Andy Lin (IBM)"
 image: "images/title.png"
 tags:
   - "ceph"
@@ -94,10 +94,9 @@ of X objects, where the value of X is between 1000 and 100000 objects.
 ## Resharding Disruption Window at 2 Billion Objects
 
 **Test Description:** Using `elbencho`, we started up a steady-state mixed workload
-of 70% `GET` and 30% `PUT` at the 64 KiB object size that ran at 35% of the
-system's maximum throughput. We let the workload run for ~20 minutes, then we
-issued the `radosgw-admin` command to manually reshard the bucket to
-`num_shards=25013` to observe the impact resharding has on client I/O.
+of 70% `GET` and 30% `PUT` at the 64 KiB object size. We let the workload run for 
+~20 minutes, then we issued the `radosgw-admin` command to manually reshard the 
+bucket to `num_shards=25013` to observe the impact resharding has on client I/O.
 25013 shards was selected to target an objects per shard ratio of 80%.
 ![](images/reshardDisruption.png)
 We manually resharded the bucket from 20011 to 25013, which with 2 billion
@@ -165,12 +164,12 @@ chose to invoke Structured-Delete.
 **Test Description:** Using `elbencho`, we started up a steady-state mixed workload
 of 70% `GET` and 30% `PUT` at the 64 KiB object size. We let the workload run for 10
 minutes, then we issued the `elbencho` command to Structured-Delete 19.8 million objects.
-![](images/structuredDelete15.png)
-![](images/structuredDelete60.png)
+![](images/structuredDeleteLow.png)
+![](images/structuredDeleteHigh.png)
 Structured-delete is faster to delete many objects because it is not only
 multi-threaded, but it also does not require the application to list objects before
-deleting them. Adding client I/O will not elongate the duration of the deletion
-window by much. However, impact on client I/O is high since system resources are
+deleting them. Adding client I/O will elongate the duration of the deletion
+window. However, impact on client I/O is high since system resources are
 more committed to the delete operation.
 
 ## Garbage Collection at 2 Billion Objects
@@ -201,8 +200,8 @@ took 15 minutes and 25 seconds to be fully emptied.
 **Test Description:** Using `elbencho`, we started up a steady-state mixed workload
 of 70% `GET` and 30% `PUT` at the 64 KiB object size. We let the workload run for 10
 minutes, then we issued the `elbencho` command to structured-delete 2 million 16 MiB
-objects. We let the GC queue fill fully, then we processed the queue manually after
-10 minutes.
+objects. We let the GC queue fill, then 10 minutes later we drained it manually with
+`radosgw-admin gc process`.
 
 For this test, the following variables were adjusted to focus on drain rate
 performance:
@@ -210,8 +209,8 @@ performance:
 ceph config set client.rgw rgw_gc_obj_min_wait 1800
 ceph config set client.rgw rgw_enable_gc_threads false
 ```
-![](images/gc15.png)
-![](images/gc60.png)
+![](images/gcLow.png)
+![](images/gcHigh.png)
 From the garbage collection tests we saw that the background load and GC
 processing heavily impacted each other. Once the GC process completed, the
 steady-state client I/O returned to the original performance from before the test
@@ -234,7 +233,7 @@ ceph config set client.rgw rgw_gc_max_concurrent_io 20
 ceph config set client.rgw rgw_gc_max_trim_chunk 64
 ```
 
-| Client I/O Load as a % of Max for This Cluster | 0% | 15% | 15% | 35% | 35% | 60% | 60% |
+| Client I/O Load | None | Low | Low | Medium | Medium | High | High |
 | -------------------------------------------- | -: | --: | --: | --: | --: | --: | --: |
 | **Garbage Collection Tuning** | **Default** | **Default** | **Increased** | **Default** | **Increased** | **Default** | **Increased** |
 | Mixed workload throughput during steady-state (obj/s) | - | 862 | 875 | 2187 | 2215 | 3604 | 3645 |
@@ -248,8 +247,8 @@ ceph config set client.rgw rgw_gc_max_trim_chunk 64
 
 The experiments with tuning demonstrated that system resources are limited at
 higher background loads. The "Increased" profile shortened the GC drain by
-about 9% at 15% load and about 5% at 35% load, and it was about 2% slower at
-60% load. GC tuning can't affect the `DELETE` rows, because no GC processing
+about 9% at low load and about 5% at medium load, and it was about 2% slower at
+high load. GC tuning can't affect the `DELETE` rows, because no GC processing
 happens during the deletion, so the differences between columns in those rows,
 as much as 25%, show how much results vary from run to run. The table has no
 run of the "Increased" profile without client load. The GC tuning parameters
@@ -289,21 +288,24 @@ bucket. Example:
     }
   ]
 ```
-With no client workload running, we processed the 20 million objects manually. We then
-tracked the total objects and processing rate over time.
-![](images/lifecycleBaseline.png)
-The rates in the chart's caption are objects per minute, as on its right axis,
-not objects per second.
+With no client workload running, we ran `radosgw-admin lc process` to expire the 
+20 million objects.  We then tracked the total objects and processing rate over time.
+![](images/lifecycleProcessing.png)
 
 ### Lifecycle Processing Under Load with Default Settings
 
 **Test Description:** Using `elbencho`, we started up a steady-state mixed workload
-of 70% `GET` and 30% `PUT` at the 64 KiB object size. We let the
-workload run for 10 minutes, then we issued the `boto3` command to expire 20 million
-objects manually.
-![](images/lc15.png)
-![](images/lc60.png)
-
+of 70% `GET` and 30% `PUT` at the 64 KiB object size. We let the workload run for 
+10 minutes, then we issued the `boto3` command to apply the expiration policy and 
+ran `radosgw-admin lc process` to expire the 20 million objects.
+![](images/lcLow.png)
+![](images/lcHigh.png)
+With default settings, lifecycle processing finished sooner under load
+(180 to 221 minutes) than with no load (329 minutes). We repeated the
+no-load test and saw the same pattern each time: about 125000 objects/min
+for the first hour, then a slower rate of 47000 objects/min for the rest 
+of the run. We did not find an explanation. The no-load time is therefore a 
+result for this setup, not a fixed baseline.
 
 ### Tuning for Lifecycle Processing
 
@@ -334,7 +336,7 @@ These values are for Tentacle, where `rgw_lc_max_wp_worker` defaults to 3.
 Beginning with the Umbrella release, it defaults to 128, so setting it to 12
 there would lower it.
 
-| Client I/O Load as a % of Max for This Cluster | 0% | 15% | 15% | 35% | 35% | 60% | 60% |
+| Client I/O Load | None | Low | Low | Medium | Medium | High | High |
 | -------------------------------------------- | -: | --: | --: | --: | --: | --: | --: |
 | **Lifecycle Processing Tuning** | **Default** | **Default** | **Increased** | **Default** | **Increased** | **Default** | **Increased** |
 | Mixed workload throughput (during steady-state) | - | 1024 | 982 | 2621 | 2495 | 4855 | 4861 |
@@ -344,12 +346,10 @@ there would lower it.
 | LC expiration rate (objects/min) | 60790 | 111111 | 104167 | 106383 | 90909 | 90498 | 80000 |
 
 The lifecycle processing results showed that even when storing billions of
-objects, their effects on client workloads were minimal when dealing with
+objects, their effects on client workloads were modest when dealing with
 object expiration. With default settings, lifecycle processing reduced mixed
 workload throughput by 10% to 13%, and with the "Increased" profile by 4% to
-11%. With default settings, lifecycle processing finished sooner under load
-(180 to 221 minutes) than with no load (329 minutes). Under load, the heavier
-the client I/O, the longer lifecycle processing took. Under load, the
+11%. The heavier the client I/O, the longer lifecycle processing took.  The
 "Increased" profile took longer than the defaults at every level: 192 versus
 180, 220 versus 188, and 250 versus 221 minutes. Its benefit was with no load,
 where it finished in about an hour. Raising `rgw_lc_max_worker` and
@@ -396,11 +396,19 @@ transitions to span multiple days.
 | `osd nodeep_scrub` | True |
 | `rgw_max_dynamic_shards` | 20011 |
 | `rgw_max_objs_per_shard` | 100000 |
+| Data pool protection | Erasure coding, k=2 m=2 |
+| Index pool protection | Replicated, size 3 |
 | `default.rgw.buckets.data` | pg_num 4096, pgp_num 4096 |
 | `default.rgw.buckets.index` | pg_num 512, pgp_num 512 |
+| `pg_autoscale_mode` | off (both pools) |
+| `mon_max_pg_per_osd` | 300 |
+| RGW daemons | 16 (4 on each of the 4 storage servers, co-located with the OSDs) |
 
 Scrubbing was disabled to keep it out of the measurements. Don't disable it in
 production.
+
+The `elbencho` clients connected directly to the 16 RGW endpoints. No load
+balancer or proxy was used, so the results don't include one.
 
 ### Storage & Client Node Tunables
 
@@ -428,7 +436,7 @@ production.
 
 ## Conclusion
 
-This study shows that Ceph can maintain predictable performance for a large
+This study shows that Ceph can maintain reasonable performance for a large
 bucket with 2 billion objects. No fundamental issues were found with listing,
 resharding, deletion, garbage collection, and lifecycle expiration that
 prevented continued operation even at this large bucket size. Through the
@@ -436,7 +444,7 @@ tests, it was observed that bucket size was not the limiting factor affecting
 performance but in fact it was limited to resources of the cluster. There was
 reduced throughput of object deletion and garbage collection at higher levels
 of background load in the environment. Lifecycle tuning showed that LC
-expiration rate can be increased when there is low host activity. Overall, the
+expiration rate can be increased when there is low client I/O. Overall, the
 data gathered from these tests show that companies who build large lakehouse,
 analytics, AI, and archival data can confidently scale buckets into the
 billions of objects.
