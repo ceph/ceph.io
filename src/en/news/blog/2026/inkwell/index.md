@@ -1,6 +1,6 @@
 ---
 title: "Many Arms Make Light Work: An AI Skill for the Ceph Contribution Loop"
-date: "2026-10-31"
+date: "2026-11-04"
 author: "Anthony D'Atri"
 categories: "community"
 image: "images/titlepage.png"
