@@ -204,7 +204,7 @@ closer to fully replacing the existing Classical OSD in the future:
 https://ceph.io/en/news/blog/2025/crimson-T-release/
 
 If you're new to the Crimson project, please visit the project
-page for more information and resources: https://ceph.io/en/news/crimson
+page for more information and resources: https://ceph.io/en/developers/crimson
 
 ### Dashboard
 

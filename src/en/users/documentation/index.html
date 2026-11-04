@@ -6,17 +6,92 @@ order: 2
 <section class="section">
   <h1 class="h1 mb-12 lg:mb-16">{{ title }}</h1>
   <div class="grid lg:grid--cols-2 grid--gap-14 lg:grid--gap-28">
-    <p class="mb-0 standout">The Ceph Foundation believes that all storage problems should be solvable with open-source software.</p>
-    <div class="bg-grey-300 p-5 rounded-2">
-      <p class="p">The upstream Ceph documentation is linked below.</p>
-      <p class="p">
-        The Ceph Install Guide describes how to deploy a Ceph cluster. The cephadm guide describes how to use the cephadm utility to manage
-        your Ceph cluster. If you are consulting the documentation to learn the rules and customs that govern making a pull request against
-        the ceph/ceph Github repository, read the Developer Guide. For more in-depth information about the nature of Ceph, see the
-        Architecture Guide on the page linked below.
+    <div>
+      <p class="standout">
+        The Ceph documentation covers everything from first-time installation to deep architectural reference, all at
+        <a class="a" href="https://docs.ceph.com/en/latest/">docs.ceph.com</a>.
       </p>
-      <p class="p">Once you are on the Ceph documentation site, use the left pane to navigate to the guide you want.</p>
-      <a class="button" href="https://docs.ceph.com/en/latest/">Ceph Documentation</a>
+      <p class="p">
+        Whether you're deploying your first cluster or tuning an existing one, each major guide is self-contained, so you can jump straight to the
+        section relevant to your task, or use the quick links to get there faster.
+      </p>
+      <a class="button" href="https://docs.ceph.com/en/latest/">Go to Ceph Documentation</a>
     </div>
+    <div class="bg-grey-300 p-5 rounded-2">
+      <h2 class="h3">Quick links</h2>
+      <ul class="list-none p-0">
+        <li class="mb-4 p">
+          <a class="a" href="https://docs.ceph.com/en/latest/install/">Installation Guide</a>: deploy your first cluster
+        </li>
+        <li class="mb-4 p">
+          <a class="a" href="https://docs.ceph.com/en/latest/cephadm/">Cephadm Guide</a>: manage Ceph with the official orchestrator
+        </li>
+        <li class="mb-4 p">
+          <a class="a" href="https://docs.ceph.com/en/latest/rados/">RADOS &amp; Configuration</a>: tune and operate your cluster
+        </li>
+        <li class="mb-4 p">
+          <a class="a" href="https://docs.ceph.com/en/latest/radosgw/">Object Storage (RGW)</a>: S3 and Swift interfaces
+        </li>
+        <li class="mb-4 p">
+          <a class="a" href="https://docs.ceph.com/en/latest/rbd/">Block Storage (RBD)</a>: block devices for VMs and containers
+        </li>
+        <li class="mb-4 p">
+          <a class="a" href="https://docs.ceph.com/en/latest/cephfs/">File System (CephFS)</a>: POSIX-compliant distributed filesystem
+        </li>
+        <li class="mb-4 p">
+          <a class="a" href="https://docs.ceph.com/en/latest/architecture/">Architecture Guide</a>: how Ceph works under the hood
+        </li>
+        <li class="mb-0 p">
+          <a class="a" href="https://docs.ceph.com/en/latest/dev/developer_guide/">Developer Guide</a>: contributing code and patches
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="bg-grey-300 section section--full">
+  <div class="wrapper">
+    <h2 class="h2 mb-12 lg:mb-16 text-center">What's in the documentation</h2>
+    <ul class="grid lg:grid--cols-3 list-none m-0 p-0">
+      <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
+        <img alt="" class="mb-4 w-12" src="/assets/svgs/icon-ceph-deploy-blue-red.svg" />
+        <h3 class="h3">Installation &amp; deployment</h3>
+        <p class="p">
+          Step-by-step guides for deploying Ceph with Cephadm (the recommended path), Rook for Kubernetes environments, or manual
+          installation, including hardware recommendations, network configuration, and cluster bootstrap.
+        </p>
+        <a class="a link-cover link-cover--shadow" href="https://docs.ceph.com/en/latest/install/">Installing Ceph</a>
+      </li>
+      <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
+        <img alt="" class="mb-4 w-12" src="/assets/svgs/icon-performance-blue-red.svg" />
+        <h3 class="h3">Operations &amp; administration</h3>
+        <p class="p">
+          Day-two operations: monitoring cluster health, adding and removing OSDs, upgrading between releases, performance tuning, disaster
+          recovery, and browser-based management with the Ceph Dashboard.
+        </p>
+        <a class="a link-cover link-cover--shadow" href="https://docs.ceph.com/en/latest/rados/">Cluster operations</a>
+      </li>
+      <li class="bg-white border-grey-500 border-px border-solid p-5 rounded-2">
+        <h3 class="h3">Storage interfaces</h3>
+        <p class="mb-8 lg:mb-12 p">
+          A dedicated guide for each way to consume Ceph storage: S3- and Swift-compatible object storage, block devices for VMs and
+          containers, and the POSIX-compliant CephFS file system.
+        </p>
+        <div class="flex flex--gap-4 lg:flex--gap-6 flex--justify-between flex--wrap">
+          <div class="relative text-center">
+            <img alt="" class="block mb-2 mx-auto w-12" src="/assets/svgs/icon-object-blue-red.svg" />
+            <a class="a link-cover" href="https://docs.ceph.com/en/latest/radosgw/">Object</a>
+          </div>
+          <div class="relative text-center">
+            <img alt="" class="block mb-2 mx-auto w-12" src="/assets/svgs/icon-block-blue-red.svg" />
+            <a class="a link-cover" href="https://docs.ceph.com/en/latest/rbd/">Block</a>
+          </div>
+          <div class="relative text-center">
+            <img alt="" class="block mb-2 mx-auto w-12" src="/assets/svgs/icon-files-blue-red.svg" />
+            <a class="a link-cover" href="https://docs.ceph.com/en/latest/cephfs/">File</a>
+          </div>
+        </div>
+      </li>
+    </ul>
   </div>
 </section>

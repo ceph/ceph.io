@@ -57,7 +57,7 @@ RGW
 
 Crimson/Seastore
 
-* Crimson's first tech preview release! Supporting RBD workloads on Replicated pools. For more information please visit: https://ceph.io/en/news/crimson
+* Crimson's first tech preview release! Supporting RBD workloads on Replicated pools. For more information please visit: https://ceph.io/en/developers/crimson
 
 ### Ceph
 
@@ -291,7 +291,7 @@ Crimson/Seastore
 
 * Crimson's first tech preview release!
   Supporting RBD workloads on Replicated pools.
-  For more information please visit: https://ceph.io/en/news/crimson
+  For more information please visit: https://ceph.io/en/developers/crimson
 
 ### RBD
 

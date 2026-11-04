@@ -1,0 +1,103 @@
+---
+title: Roadmap
+order: 4
+---
+
+<section class="section">
+  <h1 class="h1 mb-12 lg:mb-16">{{ title }}</h1>
+  <div class="grid lg:grid--cols-2 grid--gap-14 lg:grid--gap-28">
+    <div>
+      <p class="standout">
+        Ceph's future is planned in public. A new named stable release ships roughly every year, each supported for about two years, and
+        everything that goes into one is proposed, discussed, and tracked in the open.
+      </p>
+      <p class="p">
+        The current stable release is Tentacle (v20), with the next release, Umbrella, already in development. Each cycle begins at the
+        annual <a class="a" href="/{{ locale }}/community/events/2026/ceph-developer-summit-vampire/">Ceph Developer Summit</a>, where
+        contributors plan the following release component by component, and continues through open developer calls, the public issue
+        tracker, and the project boards below.
+      </p>
+      <a class="button" href="/{{ locale }}/discover/vision/">See our vision</a>
+    </div>
+    <div class="bg-grey-300 p-5 rounded-2">
+      <h2 class="h3">Where planning happens</h2>
+      <ul class="list-none p-0">
+        <li class="mb-6">
+          <strong class="block p">Ceph Developer Summit</strong>
+          <p class="mb-0 p">
+            An annual online summit, named for the release it plans, with recorded sessions for every component. The
+            <a class="a" href="/{{ locale }}/community/events/2026/ceph-developer-summit-vampire/">2026 summit</a> covers RADOS, RGW,
+            CephFS, RBD, Crimson, and more.
+          </p>
+        </li>
+        <li class="mb-6">
+          <strong class="block p">Developer calls</strong>
+          <p class="mb-0 p">
+            The Ceph Developer Monthly call and the component team meetings are open to everyone. Start on the
+            <a class="a" href="/{{ locale }}/developers/contribute/">contribute page</a> or browse the
+            <a class="a" href="/{{ locale }}/community/meetups/">virtual meetings</a>.
+          </p>
+        </li>
+        <li class="mb-6">
+          <strong class="block p">Mailing lists</strong>
+          <p class="mb-0 p">
+            Design discussion happens on the
+            <a class="a" href="https://lists.ceph.io/postorius/lists/dev.ceph.io/">dev mailing list</a>, in the open, with public archives.
+          </p>
+        </li>
+        <li class="mb-0">
+          <strong class="block p">Issue tracker</strong>
+          <p class="mb-0 p">
+            Bugs, features, and backports under development are tracked on
+            <a class="a" href="https://tracker.ceph.com/">tracker.ceph.com</a>.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="bg-grey-300 section section--full">
+  <div class="wrapper">
+    <h2 class="h2 text-center">Component project boards</h2>
+    <ul class="grid md:grid--cols-2 lg:grid--cols-4 list-none mb-0 p-0">
+      <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
+        <img alt="" class="mb-4 w-12" src="/assets/svgs/icon-performance-blue-red.svg" />
+        <h3 class="h3">Dashboard</h3>
+        <p class="p">Work on Ceph's built-in web-based management and monitoring interface.</p>
+        <a class="a link-cover link-cover--shadow" href="https://github.com/orgs/ceph/projects/2">Dashboard board</a>
+      </li>
+      <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
+        <img alt="" class="mb-4 w-12" src="/assets/svgs/icon-block-blue-red.svg" />
+        <h3 class="h3">NVMe-oF</h3>
+        <p class="p">The NVMe over TCP gateway: SAN-style block access to RBD for any standard NVMe initiator.</p>
+        <a class="a link-cover link-cover--shadow" href="https://github.com/orgs/ceph/projects/1/views/1">NVMe-oF board</a>
+      </li>
+      <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
+        <img alt="" class="mb-4 w-12" src="/assets/svgs/icon-reliable-blue-red.svg" />
+        <h3 class="h3">Testing</h3>
+        <p class="p">Pulpito and Teuthology, the integration testing framework and dashboards that gate every release.</p>
+        <a class="a link-cover link-cover--shadow" href="https://github.com/orgs/ceph/projects/3">Testing board</a>
+      </li>
+      <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
+        <img alt="" class="mb-4 w-12" src="/assets/svgs/icon-innovation-blue-red.svg" />
+        <h3 class="h3">Crimson</h3>
+        <p class="p">The next-generation OSD and its SeaStore backend, being rebuilt for the flash era.</p>
+        <a class="a link-cover link-cover--shadow" href="https://github.com/orgs/ceph/projects/8">Crimson board</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="h2 mb-12 lg:mb-16">The backlog</h2>
+  <div class="grid lg:grid--cols-2 grid--gap-14 lg:grid--gap-28">
+    <div>
+      <p class="standout">
+        Longer-range plans and feature ideas are collected on the public Ceph Backlog board, where anyone can see what the community is
+        considering next.
+      </p>
+      <a class="button" href="https://trello.com/b/ugTc2QFH/ceph-backlog">Ceph Backlog on Trello</a>
+    </div>
+  </div>
+</section>

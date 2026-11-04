@@ -24,6 +24,11 @@ Whether you're a developer, operator, user, or simply curious about Ceph, your v
 <strong><a href="https://pad.ceph.com/p/CDS_2026_Vampire">Etherpad for
 discussions</a></strong>
 
+Here are the recordings of each session. 
+ </br>
+<a class="button" href="https://youtube.com/playlist?list=PLAYbnnO0qf9U&si=hD-F5n91mPxyRo5K">Watch</a>
+  </br>
+
 
 ## August 4 (Tuesday)
 
@@ -125,6 +130,18 @@ discussions</a></strong>
    <td width="20%"><strong>Meeting Link</strong>
    </td>
    <td width="20%"><strong>Etherpad</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>7:00 – 8:00 am PDT
+   </td>
+   <td>BlueStore
+   </td>
+   <td>Igor Fedotov
+   </td>
+   <td><a href="https://meet.jit.si/Ceph-Developer-Summit-BlueStore">Join session</a>
+   </td>
+   <td><a href="https://pad.ceph.com/p/cds-vampire-BlueStore">Pad</a>
    </td>
   </tr>
   <tr>
@@ -231,6 +248,18 @@ discussions</a></strong>
    <td><a href="https://meet.jit.si/CephDeveloperSummitCrimsonSeaStore">Join session</a>
    </td>
    <td><a href="https://pad.ceph.com/p/cds-vampire-crimson">Pad</a>
+   </td>
+  </tr>
+  <tr>
+   <td>9:00 – 10:00 am PDT
+   </td>
+   <td>Performance
+   </td>
+   <td>Mark Nelson
+   </td>
+   <td><a href="https://meet.jit.si/CephDeveloperSummitPerformance">Join session</a>
+   </td>
+   <td><a href="https://pad.ceph.com/p/cds-vampire-performance">Pad</a>
    </td>
   </tr>
 </table>

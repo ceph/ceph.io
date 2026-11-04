@@ -1,0 +1,178 @@
+---
+title: FAQ
+order: 5
+overlaySubMenu: true
+---
+
+<h1 class="h1 visually-hidden">{{ title }}</h1>
+
+<section class="bg-navy section section--full">
+  <div class="wrapper">
+    <div class="max-w-224 mx-auto py-16 text-center">
+      <h2 class="color-white h1">Frequently asked questions</h2>
+      <p class="color-white mb-0 standout">Quick answers to common questions, with links into the documentation for the full detail.</p>
+    </div>
+  </div>
+</section>
+
+<ul class="sub-menu">
+  <li>
+    <a href="#getting-started"><img alt="" src="/assets/svgs/icon-documentation-blue-red.svg" />Getting started</a>
+  </li>
+  <li>
+    <a href="#planning"><img alt="" src="/assets/svgs/icon-crush-blue-red.svg" />Planning and hardware</a>
+  </li>
+  <li>
+    <a href="#project"><img alt="" src="/assets/svgs/icon-contribute-blue-red.svg" />The project and community</a>
+  </li>
+</ul>
+
+<section class="section">
+  <div class="grid lg:grid--cols-2 grid--gap-14 lg:grid--gap-28">
+    <div>
+      <p class="standout">
+        New to Ceph, or planning your first cluster? These are the questions we hear most often. Each answer links into the documentation,
+        where the full detail lives.
+      </p>
+      <p class="p">
+        Questions about the Ceph Foundation itself, such as membership and governance, are answered in the
+        <a class="a" href="/{{ locale }}/foundation/about/">Foundation FAQ</a>.
+      </p>
+    </div>
+    <div class="bg-grey-300 p-5 rounded-2">
+      <h2 class="h3">Where to get help</h2>
+      <ul class="list-none p-0">
+        <li class="mb-4 p"><a class="a" href="https://docs.ceph.com/en/latest/">docs.ceph.com</a>: the complete documentation</li>
+        <li class="mb-4 p">
+          <a class="a" href="https://lists.ceph.io/postorius/lists/ceph-users.ceph.io/">ceph-users mailing list</a>: operational questions
+          and community support
+        </li>
+        <li class="mb-4 p"><a class="a" href="/{{ locale }}/community/connect/">Community channels</a>: Slack, lists, and social</li>
+        <li class="mb-0 p"><a class="a" href="https://tracker.ceph.com/">tracker.ceph.com</a>: report bugs and request features</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="pt-0 section">
+  <div class="max-w-256">
+    <h2 class="h2 mb-8 lg:mb-12" id="getting-started">Getting started</h2>
+
+    <details class="details" open>
+      <summary>What is Ceph?</summary>
+      <p class="p">
+        Ceph is an open source distributed storage system that delivers object, block, and file storage in one unified platform. It runs on
+        commodity hardware, replicates data across the cluster, and heals itself when disks or nodes fail. Start with the
+        <a class="a" href="https://docs.ceph.com/en/latest/start/">introduction in the documentation</a>.
+      </p>
+    </details>
+
+    <details class="details">
+      <summary>How do I try Ceph quickly?</summary>
+      <p class="p">
+        The fastest path is cephadm: bootstrap a cluster on a single host, then expand it host by host. You need Python 3, systemd, a
+        container runtime (Podman or Docker), time synchronization, and LVM2. Follow the
+        <a class="a" href="https://docs.ceph.com/en/latest/cephadm/install/">cephadm installation guide</a> or our
+        <a class="a" href="/{{ locale }}/users/getting-started/">getting started page</a>.
+      </p>
+    </details>
+
+    <details class="details">
+      <summary>Is Ceph production ready?</summary>
+      <p class="p">
+        Yes. Ceph powers production storage for organizations worldwide, from research institutions to cloud providers. The project ships a
+        new stable release every year, supports each series for approximately 24 months, and publishes point releases every 4 to 6 weeks.
+        See the <a class="a" href="https://docs.ceph.com/en/latest/releases/general/">release cadence documentation</a> and our
+        <a class="a" href="/{{ locale }}/discover/case-studies/">case studies</a>.
+      </p>
+    </details>
+
+    <details class="details">
+      <summary>Does Ceph work with Kubernetes?</summary>
+      <p class="p">
+        Yes. The documentation recommends Rook, a graduated CNCF project, as the way to run Ceph in Kubernetes or to connect an existing
+        cluster to Kubernetes, and the Ceph CSI driver provisions block and file volumes for workloads. See our
+        <a class="a" href="/{{ locale }}/users/cloud-native/">cloud native page</a>.
+      </p>
+    </details>
+  </div>
+</section>
+
+<section class="pt-0 section">
+  <div class="max-w-256">
+    <h2 class="h2 mb-8 lg:mb-12" id="planning">Planning and hardware</h2>
+
+    <details class="details" open>
+      <summary>What hardware do I need?</summary>
+      <p class="p">
+        Ceph is designed for commodity hardware; there is no compatibility list to buy against. The documentation's guidance covers CPU,
+        memory (plan for the OSD memory target, 4 GiB by default, per OSD), separate drives for the operating system and OSD data, and at
+        least 10 Gb/s networking between hosts. Read the
+        <a class="a" href="https://docs.ceph.com/en/latest/start/hardware-recommendations/">hardware recommendations</a>.
+      </p>
+    </details>
+
+    <details class="details">
+      <summary>What is the minimum cluster size?</summary>
+      <p class="p">
+        For testing, a single monitor, manager, and OSD will run. For production, the documentation recommends at least three monitors for
+        quorum and high availability, at least two managers, and at least three OSDs (or as many as there are copies of each object). See
+        the <a class="a" href="https://docs.ceph.com/en/latest/start/">getting started documentation</a>.
+      </p>
+    </details>
+
+    <details class="details">
+      <summary>Should I use replication or erasure coding?</summary>
+      <p class="p">
+        Pools are replicated by default: simple, fast, and resilient. Erasure coding stores the same data with less raw capacity (profiles
+        like 4+2 or 6+3 roughly double the usable space compared to three-way replication) at a performance cost that is most visible on
+        hard drives and during recovery. The
+        <a class="a" href="https://docs.ceph.com/en/latest/rados/operations/erasure-code/">erasure coding documentation</a> covers the
+        tradeoffs.
+      </p>
+    </details>
+  </div>
+</section>
+
+<section class="pt-0 section">
+  <div class="max-w-256">
+    <h2 class="h2 mb-8 lg:mb-12" id="project">The project and community</h2>
+
+    <details class="details" open>
+      <summary>How does Ceph compare with proprietary or cloud storage?</summary>
+      <p class="p">
+        Ceph delivers enterprise storage capabilities as free and open source software on hardware you choose, with no license fees and no
+        lock-in, and it runs on premises, in private clouds, or alongside public cloud. See
+        <a class="a" href="/{{ locale }}/discover/why-ceph/">why Ceph</a> for the full comparison.
+      </p>
+    </details>
+
+    <details class="details">
+      <summary>Who uses Ceph?</summary>
+      <p class="p">
+        Businesses, cloud providers, universities, and research institutions around the world. Browse the
+        <a class="a" href="/{{ locale }}/discover/use-cases/">use cases</a> and
+        <a class="a" href="/{{ locale }}/discover/case-studies/">case studies</a>, or explore the
+        <a class="a" href="https://telemetry-public.ceph.com/">public telemetry dashboard</a> for opt-in statistics from real clusters.
+      </p>
+    </details>
+
+    <details class="details">
+      <summary>How do I contribute?</summary>
+      <p class="p">
+        Code, documentation, testing, and bug reports are all welcome. The
+        <a class="a" href="/{{ locale }}/developers/contribute/">contribute page</a> walks through the workflow, and the
+        <a class="a" href="https://docs.ceph.com/en/latest/dev/developer_guide/">developer guide</a> covers the details.
+      </p>
+    </details>
+
+    <details class="details">
+      <summary>What license is Ceph released under?</summary>
+      <p class="p">
+        Most of Ceph is dual licensed under the LGPL version 2.1 or 3.0, as stated in the project's COPYING file. Some bundled components
+        carry other free software licenses, such as BSD 3-clause, Boost, and Apache 2.0, and the documentation is licensed under CC BY-SA
+        3.0.
+      </p>
+    </details>
+  </div>
+</section>

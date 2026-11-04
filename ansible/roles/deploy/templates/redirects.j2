@@ -11,6 +11,14 @@
       return 301 /en/users/getting-started;
   }
 
+  location ~ ^/en/community/team/tentacle-award/?$ {
+      return 301 /en/community/tentacle-award;
+  }
+
+  location ~ ^/en/news/crimson/?$ {
+      return 301 /en/developers/crimson;
+  }
+
   location ~ ^/community/blog/?$ {
       return 301 /en/news/blog;
   }
@@ -55,8 +63,14 @@
       return 301 /en/discover/technology;
   }
 
-  location ~ ^/privacy/?$ {
-      return 301 /en/privacy;
+  # The terms of use and privacy policy are no longer hosted here; they live with the
+  # Linux Foundation.
+  location ~ ^/(en/)?terms/?$ {
+      return 301 https://www.linuxfoundation.org/legal/terms;
+  }
+
+  location ~ ^/(en/)?privacy/?$ {
+      return 301 https://www.linuxfoundation.org/legal/privacy-policy;
   }
 
   location ~ ^/publications/?$ {

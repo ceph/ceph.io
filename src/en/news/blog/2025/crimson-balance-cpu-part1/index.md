@@ -11,7 +11,7 @@ tags:
 
 ## Crimson: the new OSD high performance architecture
 
-[Crimson](https://ceph.io/en/news/crimson/) is the project name for the new OSD
+[Crimson](/en/developers/crimson/) is the project name for the new OSD
 high performance architecture.  Crimson is built on top of [Seastar
 framework](http://www.seastar-project.org/) an advanced, open-source C++
 framework for high-performance server applications on modern hardware.  Seastar

@@ -1,0 +1,139 @@
+---
+title: Cloud native
+order: 4
+overlaySubMenu: true
+---
+
+<h1 class="h1 visually-hidden">{{ title }}</h1>
+
+<section class="bg-navy section section--full">
+  <div class="wrapper">
+    <div class="max-w-224 mx-auto py-16 text-center">
+      <h2 class="color-white h1">Ceph is Kubernetes-native storage.</h2>
+      <p class="color-white mb-0 standout">
+        Deploy and manage entire Ceph clusters through Kubernetes with the Rook operator, provision block and file volumes on demand with
+        the Ceph CSI driver, and run every daemon in containers wherever your platform lives.
+      </p>
+    </div>
+  </div>
+</section>
+
+<ul class="sub-menu">
+  <li>
+    <a href="#rook"><img alt="" src="/assets/svgs/icon-container-blue-red.svg" />Rook operator</a>
+  </li>
+  <li>
+    <a href="#csi"><img alt="" src="/assets/svgs/icon-block-blue-red.svg" />Ceph CSI</a>
+  </li>
+  <li>
+    <a href="#containers"><img alt="" src="/assets/svgs/icon-ceph-deploy-blue-red.svg" />Containerized Ceph</a>
+  </li>
+</ul>
+
+<section class="section">
+  <h2 class="h2 mb-12 lg:mb-16" id="rook">Run Ceph with the Rook operator</h2>
+  <div class="grid lg:grid--cols-2 grid--gap-14 lg:grid--gap-28">
+    <div>
+      <p class="standout">
+        Rook is the Ceph documentation's preferred way to run Ceph on Kubernetes: a specialized operator that deploys, configures, upgrades,
+        and manages whole clusters through Kubernetes APIs.
+      </p>
+      <p class="p">
+        A graduated Cloud Native Computing Foundation project, Rook turns Ceph into a set of Kubernetes resources: declare the cluster you
+        want, and the operator makes it so, handling bootstrap, monitor placement, OSD provisioning, and day-two operations. It also
+        connects Kubernetes workloads to existing external Ceph clusters, so the same storage can serve platforms inside and outside
+        Kubernetes.
+      </p>
+    </div>
+    <div class="bg-grey-300 p-5 rounded-2">
+      <h3 class="h3">Get started with Rook</h3>
+      <ul class="list-none p-0">
+        <li class="mb-6">
+          <strong class="block p">Rook project</strong>
+          <p class="mb-0 p">
+            Overview, community, and releases at <a class="a" href="https://rook.io/">rook.io</a>, with development in the open on
+            <a class="a" href="https://github.com/rook/rook">GitHub</a>.
+          </p>
+        </li>
+        <li class="mb-6">
+          <strong class="block p">Quickstart</strong>
+          <p class="mb-0 p">
+            A test cluster is a few manifests away: follow the
+            <a class="a" href="https://rook.io/docs/rook/latest-release/Getting-Started/quickstart/">Rook quickstart guide</a>.
+          </p>
+        </li>
+        <li class="mb-0">
+          <strong class="block p">Recommended methods</strong>
+          <p class="mb-0 p">
+            The <a class="a" href="https://docs.ceph.com/en/latest/install/">Ceph installation guide</a> recommends Rook for Kubernetes and
+            cephadm everywhere else.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="pt-0 section">
+  <h2 class="h2 mb-12 lg:mb-16" id="csi">Volumes on demand with Ceph CSI</h2>
+  <div class="grid lg:grid--cols-2 grid--gap-14 lg:grid--gap-28">
+    <div>
+      <p class="standout">
+        The Ceph CSI driver provisions storage for Kubernetes workloads dynamically: RBD-backed block volumes and CephFS-backed shared file
+        volumes, created the moment a claim asks for them.
+      </p>
+      <p class="p">
+        Snapshots, cloning, and volume expansion are built in, so the storage features platform teams expect from a cloud arrive with your
+        own cluster. Because RBD images are striped as objects across the cluster, container volumes inherit Ceph's replication,
+        self-healing, and scale.
+      </p>
+      <a class="a block mb-4" href="https://docs.ceph.com/en/latest/rbd/rbd-kubernetes/">Block devices and Kubernetes</a>
+      <a class="a" href="https://github.com/ceph/ceph-csi">Ceph CSI on GitHub</a>
+    </div>
+  </div>
+</section>
+
+<section class="pt-0 section">
+  <h2 class="h2 mb-12 lg:mb-16" id="containers">Containerized everywhere</h2>
+  <div class="grid lg:grid--cols-2 grid--gap-14 lg:grid--gap-28">
+    <div>
+      <p class="standout">
+        Outside Kubernetes, cephadm deploys and manages every Ceph daemon in containers, using Podman or Docker under systemd.
+      </p>
+      <p class="p">
+        It is one of the two installation methods the documentation recommends, and it brings the same declarative, self-managing model to
+        bare metal and virtual machines: a containerized control plane, integrated upgrades, and orchestration through the CLI and
+        dashboard.
+      </p>
+      <a class="a" href="https://docs.ceph.com/en/latest/cephadm/">Read the cephadm guide</a>
+    </div>
+  </div>
+</section>
+
+<section class="bg-grey-300 section section--full">
+  <div class="wrapper">
+    <h2 class="h2 text-center">Discover more</h2>
+    <ul class="grid lg:grid--cols-3 list-none mb-0 p-0">
+      <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
+        <img alt="" class="mb-4 w-12" src="/assets/svgs/icon-case-study-blue-red.svg" />
+        <h3 class="h3">Cloud-native storage in practice</h3>
+        <p class="p">An introduction to persistent container storage with Ceph, from the case studies collection.</p>
+        <a class="a link-cover link-cover--shadow" href="/{{ locale }}/discover/case-studies/ceph-persistent-container-storage/"
+          >Read the case study</a
+        >
+      </li>
+      <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
+        <img alt="" class="mb-4 w-12" src="/assets/svgs/icon-innovation-blue-red.svg" />
+        <h3 class="h3">Our cloud-native vision</h3>
+        <p class="p">Why Ceph is built to live where modern platforms live, on the Vision page's cloud-native section.</p>
+        <a class="a link-cover link-cover--shadow" href="/{{ locale }}/discover/vision/#cloud-native">Read the vision</a>
+      </li>
+      <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
+        <img alt="" class="mb-4 w-12" src="/assets/svgs/icon-documentation-blue-red.svg" />
+        <h3 class="h3">Getting started</h3>
+        <p class="p">Packages, containers, and your first cluster: everything you need to begin running Ceph today.</p>
+        <a class="a link-cover link-cover--shadow" href="/{{ locale }}/users/getting-started/">Get started with Ceph</a>
+      </li>
+    </ul>
+  </div>
+</section>

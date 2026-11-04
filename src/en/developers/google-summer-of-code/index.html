@@ -1,0 +1,183 @@
+---
+title: Google Summer of Code
+order: 5
+---
+
+<section class="section">
+  <h1 class="h1 mb-12 lg:mb-16">{{ title }}</h1>
+  <div class="grid lg:grid--cols-2 grid--gap-14 lg:grid--gap-28">
+    <div>
+      <p class="standout">
+        Google Summer of Code (GSoC) is Google's mentorship program for bringing new contributors into open source. Participants aged 18 and
+        over are paired with mentors and earn a stipend while working on a real project: small (about 90 hours), medium (about 175 hours),
+        or large (about 350 hours).
+      </p>
+      <p class="p">
+        Ceph is a GSoC mentoring organization and has taken part in recent years, including the 2026 cycle. This page is Ceph's official
+        project ideas list, linked directly from our organization profile on the GSoC site. GSoC is highly competitive, so start early: read
+        the ideas below, reach out to mentors as soon as accepted organizations are announced each February, and submit your proposal on the
+        GSoC site during the application window in March.
+      </p>
+      <p class="p">
+        For general questions, contact <a class="a" href="mailto:vallari.agrawal@ibm.com">Vallari Agrawal</a> or reach the mentors through
+        the <a class="a" href="/{{ locale }}/community/connect/">community channels</a>.
+      </p>
+      <a class="button" href="https://summerofcode.withgoogle.com/">Visit the GSoC site</a>
+    </div>
+    <div>
+      <img alt="Google Summer of Code" class="mb-8 rounded-2 w-full" loading="lazy" src="/assets/bitmaps/hero-gsoc.png" />
+      <div class="bg-grey-300 p-5 rounded-2">
+        <h2 class="h3">How to apply</h2>
+        <ol class="mb-0 ol">
+          <li class="mb-4">Browse the project ideas on this page and pick the ones that match your skills and interests.</li>
+          <li class="mb-4">
+            Contact the project's mentors (each listing includes how to reach them) once accepted organizations are announced.
+          </li>
+          <li class="mb-4">
+            Prepare by exploring the codebase: the <a class="a" href="/{{ locale }}/developers/contribute/">contribute page</a> shows how to
+            build Ceph and submit your first patch.
+          </li>
+          <li class="mb-0">
+            Submit your proposal through the <a class="a" href="https://summerofcode.withgoogle.com/">official GSoC site</a> during the
+            contributor application period.
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pt-0 section">
+  <h2 class="h2 mb-12 lg:mb-16">Project ideas for the 2026 cycle</h2>
+
+  <div class="bg-grey-300 mb-8 lg:mb-12 p-5 rounded-2">
+    <h3 class="h3">radosgw-admin UX and documentation improvements</h3>
+    <p class="p">
+      <strong>Mentors:</strong> Yuval Lifshitz (<a class="a" href="mailto:ylifshit@ibm.com">ylifshit@ibm.com</a>), Jacques Heunis (<a
+        class="a"
+        href="mailto:jheunis@bloomberg.net"
+        >jheunis@bloomberg.net</a
+      >) &middot; <strong>Difficulty:</strong> Advanced &middot; <strong>Hours:</strong> 350 &middot; <strong>Component:</strong> RGW
+      &middot; <strong>Skills:</strong> C++, maybe Python
+    </p>
+    <p class="p">
+      Documenting <code>radosgw-admin</code> commands is currently a manual and error-prone process: after implementing a new command, the
+      usage text, man page, and admin guide must each be updated by hand, and they can drift apart. This project takes a programmatic
+      approach:
+    </p>
+    <ul class="ul">
+      <li>Use a CLI and argument framework that supports auto-generating context-aware usage documentation</li>
+      <li>Investigate auto-generating the man page and admin guides from it</li>
+      <li>Make these command descriptions referenceable elsewhere in the documentation</li>
+      <li>Maintain backward compatibility with existing behavior throughout</li>
+    </ul>
+    <p class="p">
+      The first two weeks involve researching command line frameworks and learning the internals of <code>radosgw-admin</code>. See the
+      <a class="a" href="https://tracker.ceph.com/issues/74508">tracker issue</a>,
+      <a class="a" href="https://gist.github.com/yuvalif/4a077cef5063653f337337c9ca08094e">applicant evaluation steps</a>, and
+      <a class="a" href="https://gist.github.com/yuvalif/b07312c98ea74890e157594a456c6e6b">rules for AI usage</a>.
+    </p>
+    <p class="mb-0 p"><strong>Calls a mentee could attend:</strong> RGW standup, RGW refactoring meeting.</p>
+  </div>
+
+  <div class="bg-grey-300 mb-8 lg:mb-12 p-5 rounded-2">
+    <h3 class="h3">Kafka security for bucket notifications</h3>
+    <p class="p">
+      <strong>Mentor:</strong> Yuval Lifshitz (<a class="a" href="mailto:ylifshit@ibm.com">ylifshit@ibm.com</a>) &middot;
+      <strong>Difficulty:</strong> Advanced &middot; <strong>Hours:</strong> 350 &middot; <strong>Component:</strong> RGW &middot;
+      <strong>Skills:</strong> Python and C++
+    </p>
+    <p class="p">
+      Bucket notification integration with Kafka is a very useful RGW feature, but some security capabilities needed for such integrations
+      are missing: GSSAPI, OAUTHBEARER, mTLS, and passing in a CA without a file (useful for Rook integration). The main challenge is
+      automating the tests so they run easily in local environments, with a stretch goal of running them in teuthology.
+    </p>
+    <p class="p">
+      The first two weeks involve getting to know the bucket notifications code and learning about Kafka security. See the
+      <a class="a" href="https://gist.github.com/yuvalif/3c5439b144044223a9e70f00354ad785">applicant evaluation steps</a> and
+      <a class="a" href="https://gist.github.com/yuvalif/b07312c98ea74890e157594a456c6e6b">rules for AI usage</a>.
+    </p>
+    <p class="mb-0 p"><strong>Calls a mentee could attend:</strong> RGW daily standup, RGW weekly refactoring meeting.</p>
+  </div>
+
+  <div class="bg-grey-300 mb-8 lg:mb-12 p-5 rounded-2">
+    <h3 class="h3">RGW tcmalloc profiling</h3>
+    <p class="p">
+      <strong>Mentor:</strong> Yuval Lifshitz (<a class="a" href="mailto:ylifshit@ibm.com">ylifshit@ibm.com</a>) &middot;
+      <strong>Difficulty:</strong> Advanced &middot; <strong>Hours:</strong> 90 &middot; <strong>Component:</strong> RGW &middot;
+      <strong>Skills:</strong> Python and C++
+    </p>
+    <p class="p">
+      All Ceph daemons use <a class="a" href="https://gperftools.github.io/gperftools/tcmalloc.html">tcmalloc</a> as their memory allocator,
+      and a <a class="a" href="https://github.com/ceph/ceph/pull/67446">recent PR</a> added the ability to profile how tcmalloc performs
+      inside RGW. This project uses that profiling data to tune tcmalloc for RGW's memory patterns: making better use of thread-local caches
+      for small allocations, keeping overall memory consumption low, returning unused memory to the OS, and exploring further runtime or
+      compile-time parameters.
+    </p>
+    <p class="p">
+      The first two weeks involve understanding the different RGW workloads, simulating them, and establishing a performance baseline. See
+      the <a class="a" href="https://gist.github.com/yuvalif/9ae7508b599aa8718521109b77dbc413">applicant evaluation steps</a> and
+      <a class="a" href="https://gist.github.com/yuvalif/b07312c98ea74890e157594a456c6e6b">rules for AI usage</a>.
+    </p>
+    <p class="mb-0 p"><strong>Calls a mentee could attend:</strong> RGW daily standup, RGW weekly refactoring meeting.</p>
+  </div>
+
+  <div class="bg-grey-300 mb-0 p-5 rounded-2">
+    <h3 class="h3">Carbonization and UX consistency improvements for the Ceph Dashboard</h3>
+    <p class="p">
+      <strong>Mentors:</strong> Afreen Misbah, Abhishek Desai, Dnyaneshwari Talwekar (reach them as @Afreen, @Abhishek Desai, and
+      @Dnyaneshwari Talwekar on the <a class="a" href="/{{ locale }}/community/connect/">Ceph Slack</a>) &middot;
+      <strong>Difficulty:</strong> Easy &middot; <strong>Hours:</strong> 350 &middot; <strong>Component:</strong> Dashboard &middot;
+      <strong>Skills:</strong> Angular, TypeScript, CSS, jest, cypress, Carbon library
+    </p>
+    <p class="p">
+      The Ceph Dashboard is Ceph's web-based management and monitoring interface, built with Angular and TypeScript on the frontend and
+      Python on the backend. While feature-complete, several parts of the UI are not yet standardized on the
+      <a class="a" href="https://carbondesignsystem.com/">Carbon Design System</a> and show inconsistent UX patterns across layouts, forms,
+      typography, and overview pages.
+    </p>
+    <p class="p">
+      This project completes the dashboard's carbonization: standardizing the remaining UI components, extending the existing routed
+      resource page pattern consistently across all relevant resources, improving usability, and expanding frontend test coverage. The
+      expected outcome is a fully carbonized, UX-consistent frontend that is easier for future contributors to extend.
+    </p>
+    <p class="mb-0 p">
+      <strong>Calls a mentee could attend:</strong> 1:00 PM IST Monday to Wednesday and 3:00 PM IST Thursday at
+      <a class="a" href="https://meet.jit.si/ceph-dashboard">meet.jit.si/ceph-dashboard</a>.
+    </p>
+  </div>
+</section>
+
+<section class="bg-grey-300 section section--full">
+  <div class="wrapper">
+    <h2 class="h2 text-center">More for applicants</h2>
+    <ul class="grid lg:grid--cols-3 list-none mb-0 p-0">
+      <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
+        <img alt="" class="mb-4 w-12" src="/assets/svgs/icon-case-study-blue-red.svg" />
+        <h3 class="h3">Past projects</h3>
+        <p class="p">
+          See what previous mentees built: the 2025 showcase covers five completed projects across RGW, Teuthology, smartmontools, and the
+          Dashboard.
+        </p>
+        <a class="a link-cover link-cover--shadow" href="/{{ locale }}/community/events/2025/GSoC2025/">GSoC 2025 showcase</a>
+      </li>
+      <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
+        <img alt="" class="mb-4 w-12" src="/assets/svgs/icon-contribute-blue-red.svg" />
+        <h3 class="h3">Start contributing</h3>
+        <p class="p">
+          The strongest proposals come from applicants who have already built Ceph and sent a small patch. The contribute page walks you
+          through the workflow.
+        </p>
+        <a class="a link-cover link-cover--shadow" href="/{{ locale }}/developers/contribute/">How to contribute</a>
+      </li>
+      <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
+        <img alt="" class="mb-4 w-12" src="/assets/svgs/icon-meetup-blue-red.svg" />
+        <h3 class="h3">Meet the community</h3>
+        <p class="p">
+          Join the Ceph Slack, the mailing lists, and the open developer calls to meet mentors and other contributors before you apply.
+        </p>
+        <a class="a link-cover link-cover--shadow" href="/{{ locale }}/community/connect/">Community channels</a>
+      </li>
+    </ul>
+  </div>
+</section>

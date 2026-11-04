@@ -29,7 +29,7 @@ The team recognizes the outstanding contributions of some former and present mem
 
 ![Patrick Donnelly with the Tentacle Award](images/tentacle-award-patrick-donnelly.jpg)
 
-[See all award members](https://ceph.io/en/community/team/tentacle-award/)
+[See all award members](https://ceph.io/en/community/tentacle-award/)
 
 ## Ceph Blog
 

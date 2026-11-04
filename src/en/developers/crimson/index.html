@@ -4,171 +4,214 @@ order: 6
 ---
 
 <section class="section">
-  <h1 class="h1">{{ title }}</h1>
-
-  <img src="images/Crimson_T.jpg" alt="Crimson" class="rounded-2" loading="lazy">
-
-  <p class="p">
-    Crimson is engineered to be a high-performance Object Storage Daemon (OSD) optimized for fast storage devices such as NVMe.
-    By leveraging the random I/O capabilities and high throughput of modern hardware, Crimson aims to deliver exceptional speed and efficiency.
-  </p>
-
-  <p class="p">
-    To achieve these objectives, Crimson is built from the ground up using cutting-edge technologies including SPDK, DPDK and the C++ Seastar framework. Key elements of Crimson are:
-  </p>
-
-  <ul>
-    <li><strong>Kernel Bypass:</strong> Direct communication with networking and storage devices that support polling, eliminating the overhead of kernel involvement.</li>
-    <li><strong>Shared-Nothing Architecture:</strong> Minimizes lock contention, ensuring smoother operation and higher performance.</li>
-    <li><strong>Computational Efficiency:</strong> Balances load across multi-core systems, enabling each core to handle the same volume of I/O with reduced CPU usage.</li>
-  </ul>
-
-  <p class="p">
-    Crimson will serve as a drop-in replacement for the classic Object Storage Daemon (OSD). Our long-term vision is also to completely redesign the object storage backend, which we have named <strong>Seastore</strong>. This new backend is tailored for fast storage devices like NVMe and may not be optimal for HDDs.
-  </p>
-
-  <p class="p">
-    Since Seastore is still in its early stages, we are adapting BlueStore to work with Crimson-OSD for testing and development purposes. If Seastore proves incompatible with HDDs, we may continue to maintain BlueStore within Crimson to support HDDs.
-  </p>
-
-  <p class="p">
-    The new Crimson OSD will be compatible with the classic OSD, allowing existing users to upgrade seamlessly. Specifically, Crimson-OSD will:
-  </p>
-
-  <ul>
-    <li><strong>Support the librados protocol:</strong> Able to communicate with existing librados clients</li>
-    <li><strong>Integrate into existing Ceph clusters as an OSD</strong></li>
-    <li><strong>Support most existing OSD commands</strong></li>
-  </ul>
+  <h1 class="h1 mb-12 lg:mb-16">{{ title }}</h1>
+  <div class="grid lg:grid--cols-2 grid--gap-14 lg:grid--gap-28">
+    <div>
+      <p class="standout">
+        Crimson is Ceph's next-generation Object Storage Daemon (OSD), rebuilt from the ground up for fast storage devices, notably NVMe
+        SSDs. By exploiting the random I/O capability and throughput of modern hardware, Crimson aims to deliver exceptional speed and
+        efficiency.
+      </p>
+      <p class="p">
+        Crimson shipped its first technology preview in the Squid release, and the Tentacle release added SeaStore, Crimson's purpose-built
+        object store, as a technology preview. Both are available today for testing and feedback; they are not yet intended for production.
+      </p>
+      <a class="button" href="https://docs.ceph.com/en/latest/crimson/crimson/">Read the Crimson guide</a>
+    </div>
+    <div>
+      <img alt="Crimson" class="rounded-2 w-full" loading="lazy" src="images/Crimson_T.jpg" />
+    </div>
+  </div>
 </section>
 
-<section class="section section--pt-0">
+<section class="bg-grey-300 section section--full">
+  <div class="wrapper">
+    <div class="max-w-192 mx-auto text-center">
+      <h2 class="h2">Built for modern hardware</h2>
+      <p class="mb-12 lg:mb-16 p">
+        Crimson is built with SPDK, DPDK, and the C++ Seastar framework, and is designed as a drop-in replacement for the classic OSD: it
+        speaks the RADOS protocol, integrates into existing Ceph clusters, and supports most existing OSD commands.
+      </p>
+    </div>
+    <ul class="grid lg:grid--cols-3 list-none mb-0 p-0">
+      <li class="bg-white border-grey-500 border-px border-solid p-5 rounded-2">
+        <img alt="" class="mb-4 w-12" src="/assets/svgs/icon-performance-blue-red.svg" />
+        <h3 class="h3">Kernel bypass</h3>
+        <p class="mb-0 p">
+          Direct communication with networking and storage devices that support polling, eliminating the overhead of kernel involvement on
+          the I/O path.
+        </p>
+      </li>
+      <li class="bg-white border-grey-500 border-px border-solid p-5 rounded-2">
+        <img alt="" class="mb-4 w-12" src="/assets/svgs/icon-scalable-blue-red.svg" />
+        <h3 class="h3">Shared-nothing architecture</h3>
+        <p class="mb-0 p">
+          One thread per core with no cross-core locking: work stays on the CPU core that owns it, minimizing lock contention and context
+          switches.
+        </p>
+      </li>
+      <li class="bg-white border-grey-500 border-px border-solid p-5 rounded-2">
+        <img alt="" class="mb-4 w-12" src="/assets/svgs/icon-innovation-blue-red.svg" />
+        <h3 class="h3">Computational efficiency</h3>
+        <p class="mb-0 p">
+          Load balanced across multi-core systems so that each core handles the same volume of I/O with less CPU, scaling with the hardware
+          instead of against it.
+        </p>
+      </li>
+    </ul>
+  </div>
+</section>
 
-  <h2 class="h2">Crimson OSD Status:</h2>
+<section class="section">
+  <h2 class="h2 mb-12 lg:mb-16">Project status</h2>
+  <div class="grid lg:grid--cols-2 grid--gap-14 lg:grid--gap-28">
+    <div class="bg-grey-300 p-5 rounded-2">
+      <h3 class="h3">Crimson OSD</h3>
+      <p class="p">Crimson is under active development and not yet at feature parity with the classic OSD.</p>
+      <p class="p"><strong>Currently supports:</strong></p>
+      <ul class="ul">
+        <li>RADOS operations, including snapshot support</li>
+        <li>Log-based recovery and backfill</li>
+        <li>RBD workloads on replicated pools</li>
+        <li>BlueStore, SeaStore, and CyanStore (memory-based) object store backends</li>
+        <li>Deployment via cephadm</li>
+        <li>Initial scrub support</li>
+        <li>Multi-core messenger, OSD, and object store architecture</li>
+      </ul>
+      <p class="p"><strong>Work in progress:</strong></p>
+      <ul class="mb-0 ul">
+        <li>Erasure-coded pools</li>
+        <li>Auto-scaling placement groups (splits and merges)</li>
+        <li>Object Gateway (RGW) workloads</li>
+        <li>mClock OSD scheduler</li>
+        <li>Background scrub scheduling</li>
+        <li>Making SeaStore the default object store</li>
+      </ul>
+    </div>
+    <div class="bg-grey-300 p-5 rounded-2">
+      <h3 class="h3">SeaStore</h3>
+      <p class="p">
+        SeaStore is Crimson's native object store, developed with the Seastar framework on the same design principles. The storage backend
+        is the major CPU consumer in an OSD, so Crimson can only truly scale with cores if its backend does too. BlueStore remains available
+        within Crimson, and may be retained for HDDs if SeaStore proves unsuited to them.
+      </p>
+      <p class="p"><strong>Currently supports:</strong></p>
+      <ul class="ul">
+        <li>Most ObjectStore transactional interfaces, including read, write, and clone</li>
+        <li>Most necessary background cleaning tasks</li>
+        <li>Segmented backend optimized for sequential writes</li>
+        <li>Random-block backend optimized for random writes</li>
+        <li>ZNS devices and device tiering</li>
+        <li>Multi-core architecture</li>
+        <li>Profiling through metrics, admin socket commands, and logs</li>
+      </ul>
+      <p class="p"><strong>Work in progress:</strong></p>
+      <ul class="mb-0 ul">
+        <li>B+ tree performance optimizations (onode, omap, LBA)</li>
+        <li>Reduced write amplification and better internal scheduling</li>
+        <li>More efficient device tiering and disk rebalancing between shards</li>
+        <li>Block-based read checksums</li>
+        <li>Compression and hardware offloading</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-  <p class="p">
-    As Crimson is in under active development not all not featurewise on par with its predecessor yet.
-  </p>
+<section class="pt-0 section">
+  <h2 class="h2 mb-12 lg:mb-16">Testing and CI</h2>
+  <div class="grid lg:grid--cols-2 grid--gap-14 lg:grid--gap-28">
+    <div>
+      <p class="standout">
+        The <code>crimson-rados</code> suite gates pull request merges to prevent regressions and runs twice a week, including CBT-driven
+        performance tests.
+      </p>
+      <p class="p">
+        Ongoing work adds performance review to CI so regressions are caught automatically, with regular comparisons between the classic OSD
+        and Crimson. See <a class="a" href="https://pulpito.ceph.com/?suite=crimson-rados">recent runs on Pulpito</a>, and browse open
+        issues on the <a class="a" href="https://tracker.ceph.com/projects/crimson/issues">Crimson tracker</a>.
+      </p>
+    </div>
+  </div>
+</section>
 
-  <p class="p"><strong>Crimson OSD currently supports:</strong></p>
+<section class="bg-grey-300 section section--full">
+  <div class="wrapper">
+    <h2 class="h2 text-center">Follow the project</h2>
+    <ul class="grid lg:grid--cols-3 list-none mb-0 p-0">
+      <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
+        <img alt="" class="mb-4 w-12" src="/assets/svgs/icon-documentation-blue-red.svg" />
+        <h3 class="h3">Documentation</h3>
+        <p class="p">
+          The Crimson guide covers current capabilities, deployment with cephadm, and how to bring up a Crimson OSD with each backend.
+        </p>
+        <a class="a link-cover link-cover--shadow" href="https://docs.ceph.com/en/latest/crimson/crimson/">Crimson guide</a>
+      </li>
+      <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
+        <img alt="" class="mb-4 w-12" src="/assets/svgs/icon-git-blue-red.svg" />
+        <h3 class="h3">Project board</h3>
+        <p class="p">
+          Development is planned in the open on the Crimson GitHub project board, with issues tracked on the Crimson section of
+          tracker.ceph.com.
+        </p>
+        <a class="a link-cover link-cover--shadow" href="https://github.com/orgs/ceph/projects/8">Crimson project board</a>
+      </li>
+      <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
+        <img alt="" class="mb-4 w-12" src="/assets/svgs/icon-meetup-blue-red.svg" />
+        <h3 class="h3">Community</h3>
+        <p class="p">
+          Discuss Crimson in the <code>#crimson</code> channel on the Ceph Slack, and join the weekly Crimson and SeaStore call listed with
+          the community's virtual meetings.
+        </p>
+        <a class="a link-cover link-cover--shadow" href="/{{ locale }}/community/meetups/">Virtual meetings</a>
+      </li>
+    </ul>
+  </div>
+</section>
 
-  <ul>
-    <li>Librados operations including snap support</li>
-    <li>Log Based recovery and Backfill</li>
-    <li>RBD workloads on Replicated pools</li>
-    <li>Bluestore, Seastore and cyanstore (memory-based) object store backends</li>
-    <li>Deployment via Cephadm</li>
-    <li>Initial Scrub Support</li>
-    <li>Multi-Core Messenger OSD Objectstore architecture support.</li>
-  </ul>
-
-  <p class="p"><strong>Work in progeress:</strong></p>
-
-  <ul>
-    <li>EC pools</li>
-    <li>Auto-Scaling Placement Groups - Splits/Merges</li>
-    <li>Object gateway (RGW)</li>
-    <li>MClock OSD scheduler</li>
-    <li>Background Scrub Scheduling</li>
-    <li>Replace the default object store to SeaStore</li>
-  </ul>
-
-  <hr>
-
-  <h2 class="h2">Seastore Object Store Status:</h2>
-
-  <p class="p">
-    SeaStore is the second half of the Crimson project. While the first part focuses on implementing a modern OSD,
-    SeaStore is the native ObjectStore solution for Crimson OSD, which is developed with the Seastar framework and adopts the same design principles.
-    Although challenging, there are multiple reasons why Crimson must build a new local storage engine. Storage backend is the major CPU resource consumer,
-    and the Crimson OSD cannot truly scale with cores if its storage backend cannot.
-  </p>
-
-  <p class="p"><strong>SeaStore currently supports:</strong></p>
-
-  <ul>
-    <li>Most of the ObjectStore transactional interfaces operating rados objects, including read, write and clone</li>
-    <li>Most of the necessary background cleaning tasks</li>
-    <li>Segmented backend optimized for sequential writes</li>
-    <li>Random-block backend optimized for random writes</li>
-    <li>ZNS devices</li>
-    <li>Device tiering for better storage efficiency</li>
-    <li>Multi-core architecture</li>
-    <li>Profiling through metrics, admin socket commands or logs</li>
-  </ul>
-
-  <p class="p"><strong>Work in progress:</strong></p>
-
-  <ul>
-    <li>LBA iterative interface with cursor</li>
-    <li>Clonerange2 OSD operation support</li>
-    <li>Omap iterate interface</li>
-    <li>More efficient device tiering</li>
-    <li>Extend logical address width and redesign hints</li>
-    <li>Performance optimizations to the B+ trees (onode, omap, lba)</li>
-    <li>Lookup fast paths based on heterogeneous data structures</li>
-  </ul>
-
-  <p class="p"><strong>Future work:</strong></p>
-
-  <ul>
-    <li>Performance optimizations to reduce write amplification and control internal starvations</li>
-    <li>Support number of core changes</li>
-    <li>Rebalance disk usage between shards</li>
-    <li>Device tiering with random block backend</li>
-    <li>Random block background defragmentation</li>
-    <li>Block-based read checksum support</li>
-    <li>Offline tools whatever necessary</li>
-    <li>Better unit test coverage and simplify time-consuming tests</li>
-    <li>Compression, hardware offloading, etc</li>
-  </ul>
-
-  <hr>
-
-  <h2 class="h2">CI Test Coverage and Performance Review</h2>
-
-  <p class="p">
-    The <code>crimson-rados</code> suite keeps growing, stabilized and is used
-    to gate PRs merges and prevent regressions. The suite also includes performance tests which are driven by CBT.
-    Besides PR gating, the suite is set to run twice a week.
-    See all <a class="a" href="https://pulpito.ceph.com/?suite=crimson-rados">recent runs</a>.
-  </p>
-
-  <p class="p">
-    Future work will involve updating the test suite and test cases, adding CI reviewing performance to identify regressions
-    and comparing the performance of classic OSD and crimson-osd on a monthly basis.
-  </p>
-
-  <hr>
-
-  <h2 class="h2">Useful Project Links:</h2>
-
-  <ul>
-    <li><a class="a" href="https://github.com/orgs/ceph/projects/8">Github's Projects</a></li>
-    <li><a class="a" href="https://tracker.ceph.com/projects/crimson/issues">Tracker</a></li>
-    <li><a class="a" href="https://docs.ceph.com/en/latest/dev/crimson">Docs</a></li>
-    <li><a class="a" href="https://ceph-storage.slack.com">Slack</a> - #crimson</li>
-  </ul>
-
-  <hr>
-
-  <h2 class="h2">Blog Posts:</h2>
-
-  <ul>
-    <li><a class="a" href="https://ceph.io/en/news/blog/2023/crimson-multi-core-scalability">Crimson: Next-generation Ceph OSD for Multi-core Scalability</a></li>
-    <li><a class="a" href="https://ceph.io/en/news/blog/2025/crimson-T-release/">A Crimson colored Tentacle</a></li>
-  </ul>
-
-  <hr>
-
-  <h2 class="h2">Talks:</h2>
-
-  <ul>
-    <li><a class="a" href="https://www.youtube.com/watch?v=IsV3WWN-YeE">Cephalocon 2024 - Crimson Squid Project Update</a></li>
-    <li><a class="a" href="https://www.youtube.com/watch?v=LaP4YX1lQ3I">Cephalocon 2023 - Crimson Reef Project Update</a></li>
-    <li><a class="a" href="https://www.youtube.com/watch?v=8N_1WAEPw0o">From Classical to the Future</a></li>
-    <li><a class="a" href="https://www.youtube.com/watch?v=SUJjZ9bjXJc">Understanding SeaStore through profiling</a></li>
-    <li><a class="a" href="https://www.youtube.com/watch?v=vc5w2mn93cY">Ceph Virtual 2022 - What's new with Crimson and Seastore?</a></li>
-    <li><a class="a" href="https://www.youtube.com/watch?v=vzJPOA7aJMk">Ceph Month 2021: Crimson Update</a></li>
-    <li><a class="a" href="https://www.youtube.com/watch?v=3NmCPTJI1JE">Rebuilding a Faster OSD with Future</a></li>
-    <li><a class="a" href="https://www.youtube.com/watch?v=FuFmMB9rbRA">Vault '20 - Crimson: A New
+<section class="section">
+  <div class="grid lg:grid--cols-2 grid--gap-14 lg:grid--gap-28">
+    <div>
+      <h2 class="h2">Blog posts</h2>
+      <ul class="ul">
+        <li><a class="a" href="/{{ locale }}/news/blog/2025/crimson-T-release/">A Crimson colored Tentacle</a></li>
+        <li>
+          <a class="a" href="/{{ locale }}/news/blog/2025/crimson-seastore-vs-classic/"
+            >Performance comparison: classic vs. Crimson OSD with SeaStore</a
+          >
+        </li>
+        <li>
+          <a class="a" href="/{{ locale }}/news/blog/2025/crimson-balance-cpu-part1/">Crimson OSD CPU core allocation, part one</a>
+        </li>
+        <li>
+          <a class="a" href="/{{ locale }}/news/blog/2023/crimson-multi-core-scalability/"
+            >Crimson: next-generation Ceph OSD for multi-core scalability</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="h2">Talks</h2>
+      <ul class="ul">
+        <li><a class="a" href="https://www.youtube.com/watch?v=IsV3WWN-YeE">Cephalocon 2024: Crimson Squid project update</a></li>
+        <li><a class="a" href="https://www.youtube.com/watch?v=LaP4YX1lQ3I">Cephalocon 2023: Crimson Reef project update</a></li>
+        <li><a class="a" href="https://www.youtube.com/watch?v=8N_1WAEPw0o">From Classical to the Future</a></li>
+        <li><a class="a" href="https://www.youtube.com/watch?v=SUJjZ9bjXJc">Understanding SeaStore through profiling</a></li>
+        <li>
+          <a class="a" href="https://www.youtube.com/watch?v=vc5w2mn93cY">Ceph Virtual 2022: what's new with Crimson and SeaStore?</a>
+        </li>
+        <li><a class="a" href="https://www.youtube.com/watch?v=vzJPOA7aJMk">Ceph Month 2021: Crimson update</a></li>
+        <li><a class="a" href="https://www.youtube.com/watch?v=3NmCPTJI1JE">Rebuilding a Faster OSD with Future</a></li>
+        <li>
+          <a class="a" href="https://www.youtube.com/watch?v=FuFmMB9rbRA"
+            >Vault '20: Crimson, a new Ceph OSD for the age of persistent memory and fast NVMe storage</a
+          >
+        </li>
+        <li><a class="a" href="https://www.youtube.com/watch?v=X4Pz-dqrwi8">A glimpse of the new Ceph messenger built on Seastar</a></li>
+        <li><a class="a" href="https://www.youtube.com/watch?v=HXfFX0wGKL4">Error handling in a futurized environment</a></li>
+        <li>
+          <a class="a" href="https://www.youtube.com/watch?v=A_25U4j7quA">Rebuilding the Ceph distributed storage solution with Seastar</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

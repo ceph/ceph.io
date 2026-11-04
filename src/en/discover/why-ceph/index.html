@@ -1,0 +1,158 @@
+---
+title: Why Ceph
+order: 6
+overlaySubMenu: true
+---
+
+{% set caseStudyLocaleTag = locale + '-case-study' %} {% set recentCaseStudies = collections[caseStudyLocaleTag] | reverse | getItems(6) %}
+
+<h1 class="h1 visually-hidden">{{ title }}</h1>
+
+<section class="bg-navy section section--full">
+  <div class="wrapper">
+    <div class="max-w-224 mx-auto py-16 text-center">
+      <h2 class="color-white h1">One storage platform. No lock-in. No limits.</h2>
+      <p class="color-white mb-0 standout">
+        Your choice of storage solution can be a decade-long commitment. Ceph is the choice that keeps every other choice open: any
+        hardware, any scale, any interface, with no license fees and no vendor holding the keys.
+      </p>
+    </div>
+  </div>
+</section>
+
+<ul class="sub-menu">
+  <li>
+    <a href="#freedom"><img alt="" src="/assets/svgs/icon-innovation-blue-red.svg" />Freedom from lock-in</a>
+  </li>
+  <li>
+    <a href="#unified"><img alt="" src="/assets/svgs/icon-rados-blue-red.svg" />One unified platform</a>
+  </li>
+  <li>
+    <a href="#compare"><img alt="" src="/assets/svgs/icon-benefits-blue-red.svg" />How Ceph compares</a>
+  </li>
+  <li>
+    <a href="#proof"><img alt="" src="/assets/svgs/icon-case-study-blue-red.svg" />Proven at scale</a>
+  </li>
+</ul>
+
+<section class="section">
+  <h2 class="h2 mb-12 lg:mb-16" id="freedom">Freedom from lock-in</h2>
+  <div class="grid lg:grid--cols-2 grid--gap-14 lg:grid--gap-28">
+    <div>
+      <p class="standout">
+        Ceph runs on commodity hardware from any vendor, and it is free and open source software: no license fees, no locked feature tiers,
+        and no penalty for leaving.
+      </p>
+      <p class="p">
+        That independence compounds over time. You choose drives and servers on price and performance rather than on a compatibility list,
+        refresh hardware on your schedule rather than a contract cycle, and mix generations and vendors freely inside one cluster. When
+        priorities change, your data does not need an exit plan: the platform moves with you, from a homelab to a data center to a hybrid
+        deployment.
+      </p>
+    </div>
+    <div class="bg-grey-300 p-5 rounded-2">
+      <h3 class="h3">Dig deeper</h3>
+      <ul class="list-none p-0">
+        <li class="mb-6">
+          <strong class="block p">The benefits of Ceph</strong>
+          <p class="mb-0 p">
+            Performance, scalability, reliability, and the economics of open source, on the
+            <a class="a" href="/{{ locale }}/discover/benefits/">benefits page</a>.
+          </p>
+        </li>
+        <li class="mb-6">
+          <strong class="block p">Hardware guidance</strong>
+          <p class="mb-0 p">
+            What to look for in CPUs, memory, drives, and networks, in the
+            <a class="a" href="https://docs.ceph.com/en/latest/start/hardware-recommendations/">hardware recommendations</a>.
+          </p>
+        </li>
+        <li class="mb-0">
+          <strong class="block p">A vendor-neutral home</strong>
+          <p class="mb-0 p">
+            Ceph is governed by its community and supported by the
+            <a class="a" href="/{{ locale }}/foundation/members/">Ceph Foundation members</a>, not owned by any single company.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="pt-0 section">
+  <h2 class="h2 mb-12 lg:mb-16" id="unified">One unified platform</h2>
+  <div class="grid lg:grid--cols-2 grid--gap-14 lg:grid--gap-28">
+    <div>
+      <p class="standout">
+        Most storage estates grow into three separate systems: one for object storage, one for block, one for file, each with its own
+        hardware, licensing, and operational playbook.
+      </p>
+      <p class="p">
+        Ceph replaces that sprawl with a single cluster built on RADOS. The same pool of storage serves S3-compatible object storage,
+        virtual machine and container block devices, and a POSIX-compliant file system, with one set of hardware, one operational model, and
+        one community behind it. Many open source storage projects solve one protocol or one niche well; Ceph is a general-purpose
+        foundation designed to carry all three, at any scale.
+      </p>
+      <a class="a" href="/{{ locale }}/discover/technology/">See how the technology works</a>
+    </div>
+  </div>
+</section>
+
+<section class="bg-grey-300 section section--full">
+  <div class="wrapper">
+    <h2 class="h2 text-center" id="compare">How Ceph compares</h2>
+    <ul class="grid lg:grid--cols-3 list-none mb-0 p-0">
+      <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
+        <img alt="" class="mb-4 w-12" src="/assets/svgs/icon-scalable-blue-red.svg" />
+        <h3 class="h3">Vs. proprietary storage</h3>
+        <p class="p">
+          Proprietary arrays couple your data to one vendor's hardware, one license, and one support contract. Ceph delivers the same
+          enterprise capabilities, replication, erasure coding, snapshots, and self-healing, as open source software on hardware you choose.
+        </p>
+        <a class="a link-cover link-cover--shadow" href="/{{ locale }}/discover/benefits/">Explore the benefits</a>
+      </li>
+      <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
+        <img alt="" class="mb-4 w-12" src="/assets/svgs/icon-reliable-blue-red.svg" />
+        <h3 class="h3">Vs. cloud-only storage</h3>
+        <p class="p">
+          Public cloud storage is convenient until the bill, the egress fees, or the compliance rules arrive. Ceph runs wherever you need
+          it: on premises, in a private cloud, at the edge, or alongside public cloud, with your data on your hardware.
+        </p>
+        <a class="a link-cover link-cover--shadow" href="/{{ locale }}/discover/use-cases/">See the use cases</a>
+      </li>
+      <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
+        <img alt="" class="mb-4 w-12" src="/assets/svgs/icon-rados-blue-red.svg" />
+        <h3 class="h3">Vs. single-purpose systems</h3>
+        <p class="p">
+          Point solutions do one thing, then multiply: more systems, more silos, more to operate. One Ceph cluster provides object, block,
+          and file storage together, so capacity and expertise pool instead of fragmenting.
+        </p>
+        <a class="a link-cover link-cover--shadow" href="/{{ locale }}/discover/technology/">One platform, three interfaces</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="max-w-192 mx-auto text-center">
+    <h2 class="h2">Open source, open governance</h2>
+    <p class="p">
+      Ceph is developed in public and governed by its community, with the Ceph Foundation providing a neutral home under the Linux
+      Foundation. The direction of the project is set by the people who build and run it, not by a product roadmap you cannot see. Read
+      about <a class="a" href="/{{ locale }}/discover/vision/#open-source">how Ceph is democratizing storage</a> or meet the
+      <a class="a" href="/{{ locale }}/foundation/">Ceph Foundation</a>.
+    </p>
+  </div>
+</section>
+
+<hr class="hr" />
+
+<section class="section">
+  <h2 class="h2 mb-12 lg:mb-16" id="proof">Proven at scale</h2>
+  <ul class="grid grid--cols-2 md:grid--cols-3 lg:grid--cols-6 list-none m-0 mb-8 lg:mb-12 p-0">
+    {% for item in recentCaseStudies %}
+    <li>{% include "components/case-study-card.njk" %}</li>
+    {% endfor %}
+  </ul>
+  <a class="a" href="/{{ locale }}/discover/case-studies/">Browse all case studies</a>
+</section>

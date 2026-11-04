@@ -4,27 +4,101 @@ order: 2
 ---
 
 <section class="section">
-  <h1 class="h1">{{ title }}</h1>
-
-  <h2 class="h2 mb-12 lg:mb-16">Start using Ceph today</h2>
+  <h1 class="h1 mb-12 lg:mb-16">{{ title }}</h1>
   <div class="grid lg:grid--cols-2 grid--gap-14 lg:grid--gap-28">
     <div>
       <p class="standout">
-        Fork and clone the Ceph Github repository today. If you prefer to work with a Ceph tarball, you'll find many Ceph tarballs at the
-        tarball link on this page.
+        The Ceph codebase lives on GitHub and is open to contributions from anyone. Every patch, review, and design discussion happens in
+        the open.
       </p>
+      <p class="p">
+        Fork the repository to start exploring the source, or read the Contributor Guide first to learn how the project is organised, how
+        patches flow, and where your skills fit.
+      </p>
+      <a class="button" href="https://github.com/ceph/ceph">View on GitHub</a>
     </div>
     <div class="bg-grey-300 p-5 rounded-2">
-      <h3 class="h3">Ceph Github Repository</h3>
-      <p class="p">
-        The Ceph Github repository contains the code for the Ceph project.
+      <h2 class="h3">Get the source</h2>
+      <p class="mb-8 lg:mb-12 p">
+        Clone the repository from GitHub to track development as it happens, download the source of any official release as a tarball, or
+        install pre-built packages.
       </p>
-      <a class="button mb-8 lg:mb-12" href="https://github.com/ceph/ceph">Ceph Github Repository</a>
-      <h3 class="h3">Ceph Tarballs</h3>
-      <p class="p">
-        Ceph tarballs are available at the link here.
-      </p>
-      <a class="button" href="https://download.ceph.com/tarballs">Ceph Tarball Downloads</a>
+      <div class="flex flex--gap-4 lg:flex--gap-6 flex--justify-between flex--wrap">
+        <div class="relative text-center">
+          <img alt="" class="block mb-2 mx-auto w-12" src="/assets/svgs/icon-git-blue-red.svg" />
+          <a class="a link-cover" href="https://github.com/ceph/ceph">GIT</a>
+        </div>
+        <div class="relative text-center">
+          <img alt="" class="block mb-2 mx-auto w-12" src="/assets/svgs/icon-tar-blue-red.svg" />
+          <a class="a link-cover" href="https://download.ceph.com/tarballs/">Tarball</a>
+        </div>
+        <div class="relative text-center">
+          <img alt="" class="block mb-2 mx-auto w-12" src="/assets/svgs/icon-package-blue-red.svg" />
+          <a class="a link-cover" href="https://docs.ceph.com/en/latest/install/get-packages/">Packages</a>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
+
+<section class="bg-grey-300 section section--full">
+  <div class="wrapper">
+    <h2 class="h2 mb-12 lg:mb-16 text-center">Key components</h2>
+    <ul class="grid lg:grid--cols-3 list-none m-0 p-0">
+      <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
+        <img alt="" class="mb-4 w-12" src="/assets/svgs/icon-rados-blue-red.svg" />
+        <h3 class="h3">RADOS</h3>
+        <p class="p">
+          The Reliable Autonomic Distributed Object Store is Ceph's foundation, handling data placement, replication, and recovery across
+          the cluster with the CRUSH algorithm. Every higher-level interface is built on top of it.
+        </p>
+        <a class="a link-cover link-cover--shadow" href="https://docs.ceph.com/en/latest/architecture/">Architecture guide</a>
+      </li>
+      <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
+        <img alt="" class="mb-4 w-12" src="/assets/svgs/icon-reliable-blue-red.svg" />
+        <h3 class="h3">OSD</h3>
+        <p class="p">
+          The Object Storage Daemon runs on every storage node and handles reads, writes, replication, and recovery. Crimson, Ceph's
+          next-generation OSD, targets improved performance on modern NVMe hardware.
+        </p>
+        <a class="a link-cover link-cover--shadow" href="https://docs.ceph.com/en/latest/dev/osd_internals/">OSD internals</a>
+      </li>
+      <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
+        <img alt="" class="mb-4 w-12" src="/assets/svgs/icon-crush-blue-red.svg" />
+        <h3 class="h3">Monitor &amp; Manager</h3>
+        <p class="p">
+          Monitors maintain the authoritative cluster map through distributed consensus, while the Manager collects metrics and hosts
+          pluggable modules for dashboards, alerting, and orchestration. Manager modules are a popular place to start contributing in Python.
+        </p>
+        <a class="a link-cover link-cover--shadow" href="https://docs.ceph.com/en/latest/mgr/">Manager modules</a>
+      </li>
+      <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
+        <img alt="" class="mb-4 w-12" src="/assets/svgs/icon-object-blue-red.svg" />
+        <h3 class="h3">RGW</h3>
+        <p class="p">
+          The RADOS Gateway provides S3- and Swift-compatible object storage, with multi-site replication, lifecycle policies, bucket
+          notifications, and IAM-compatible access control.
+        </p>
+        <a class="a link-cover link-cover--shadow" href="https://docs.ceph.com/en/latest/radosgw/">Object Gateway guide</a>
+      </li>
+      <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
+        <img alt="" class="mb-4 w-12" src="/assets/svgs/icon-block-blue-red.svg" />
+        <h3 class="h3">RBD</h3>
+        <p class="p">
+          The RADOS Block Device provides thin-provisioned block storage with snapshots, cloning, and replication. RBD images back virtual
+          machines and container volumes through the Linux kernel driver and QEMU.
+        </p>
+        <a class="a link-cover link-cover--shadow" href="https://docs.ceph.com/en/latest/rbd/">Block Device guide</a>
+      </li>
+      <li class="bg-white border-grey-500 border-px border-solid p-5 relative rounded-2">
+        <img alt="" class="mb-4 w-12" src="/assets/svgs/icon-files-blue-red.svg" />
+        <h3 class="h3">CephFS &amp; MDS</h3>
+        <p class="p">
+          CephFS is a POSIX-compliant distributed file system. Its Metadata Server manages the file system namespace and scales horizontally
+          with multiple active MDS daemons across large directory trees.
+        </p>
+        <a class="a link-cover link-cover--shadow" href="https://docs.ceph.com/en/latest/cephfs/">File System guide</a>
+      </li>
+    </ul>
   </div>
 </section>
