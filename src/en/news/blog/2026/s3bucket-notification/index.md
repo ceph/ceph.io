@@ -3,7 +3,7 @@ title: "Managing S3 Bucket Notifications with the Ceph Dashboard"
 date: "2026-11-02"
 author: "Puja Shahu, Anthony D'Atri"
 categories: "rgw"
-image: "images/notification_destination_list.png"
+image: "images/s3-notification-octopus.png"
 tags:
   - "rgw"
   - "bucket notification"
