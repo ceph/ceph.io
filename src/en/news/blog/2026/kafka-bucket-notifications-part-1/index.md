@@ -1,5 +1,5 @@
 ---
-title: "Kafka Security for Bucket Notifications in Ceph RGW — Part 1: SASL, TLS, and mTLS"
+title: "Kafka Security for Bucket Notifications in Ceph RGW, Part 1: SASL, TLS, and mTLS"
 date: "2026-11-01"
 author: "Sujay Dongre"
 categories: "rgw"
@@ -19,7 +19,7 @@ scale.
 
 The first is the **connection** between RGW and the broker: whether it is
 encrypted, and which of the two endpoints proves its identity. TLS encrypts the
-traffic and authenticates the broker to RGW — RGW verifies the broker's
+traffic and authenticates the broker to RGW: RGW verifies the broker's
 certificate against a CA. Mutual TLS adds the other direction: RGW presents a
 client certificate, and the broker derives an SSL user name from it. Neither
 carries a SASL user identity.
@@ -31,18 +31,21 @@ and `OAUTHBEARER` (OIDC), which delegate the same question to a KDC or an OIDC
 provider.
 
 The two layers are orthogonal. A SASL mechanism runs over a plaintext connection
-or a TLS connection without changing; only what carries it changes. Kafka's protocol names — `PLAINTEXT`, `SSL`, `SASL_PLAINTEXT`, `SASL_SSL`
-— are just the combinations. RGW supports all of them, selected entirely through
-SNS topic attributes.
+or a TLS connection without changing; only what carries it changes. Kafka's
+protocol names (`PLAINTEXT`, `SSL`, `SASL_PLAINTEXT`, `SASL_SSL`) are just the
+combinations. RGW supports all of them, selected entirely through SNS topic
+attributes.
 
 This post documents the configuration for each combination. Kafka's own
-documentation explains listeners and JAAS; the RGW documentation lists topic
-attributes; what follows connects the dots between the two, since a secured
-notification pipeline needs both sides configured consistently.
+documentation explains listeners and JAAS, and the
+[RGW bucket notification documentation](https://docs.ceph.com/en/latest/radosgw/notifications/)
+lists topic attributes. What follows connects the dots between the two, since a
+secured notification pipeline needs both sides configured consistently.
 
 Part 1 covers plaintext connections, TLS, mTLS, and SASL (PLAIN and SCRAM) over
 plaintext and TLS connections. SASL combined with mTLS is not covered or tested.
-Part 2 covers GSSAPI (Kerberos) and OAuthBearer.
+Part 2 covers GSSAPI (Kerberos) and OAuthBearer, which as of this writing are not
+yet in a Ceph release.
 
 ## How RGW connects to Kafka
 
@@ -55,7 +58,7 @@ broker URL, and every security attribute described below sits alongside it on th
 topic. The bucket refers to that topic by ARN and knows nothing about how RGW reaches
 the broker.
 
-![RGW bucket notification flow — S3 Client → RGW → Kafka → Consumer](images/notification_flow.png)
+![RGW bucket notification flow: S3 Client → RGW → Kafka → Consumer](images/notification_flow.png)
 
 Internally RGW uses **librdkafka**, and the security-related SNS topic attributes map
 more or less directly onto librdkafka configuration keys. That is why every mechanism
@@ -67,7 +70,7 @@ between RGW and the broker:
 
 | Connection    | Encrypted | Endpoint authentication                             | RGW topic attributes                                           |
 | ------------- | --------- | --------------------------------------------------- | -------------------------------------------------------------- |
-| Plaintext TCP | No        | None                                                | —                                                              |
+| Plaintext TCP | No        | None                                                | None                                                           |
 | TLS           | Yes       | RGW verifies the broker's certificate               | `use-ssl`, `ca-location`, `verify-ssl`                         |
 | mTLS          | Yes       | ...and the broker verifies RGW's client certificate | the above, plus `ssl-certificate-location`, `ssl-key-location` |
 
@@ -76,7 +79,7 @@ publishing:
 
 | SASL mechanism              | What the broker learns                                | RGW topic attributes                 |
 | --------------------------- | ----------------------------------------------------- | ------------------------------------ |
-| none                        | No SASL user (mTLS still yields an SSL user name)     | —                                    |
+| none                        | No SASL user (mTLS still yields an SSL user name)     | None                                 |
 | `PLAIN`                     | The user, from a username and password sent as-is     | `user-name`, `password`              |
 | `SCRAM-SHA-256`, `-SHA-512` | The same user, proven without sending the password    | `user-name`, `password`, `mechanism` |
 | `GSSAPI`, `OAUTHBEARER`     | The same user, via a KDC or an OIDC provider (Part 2) | see Part 2                           |
@@ -97,13 +100,21 @@ The examples assume:
   your `PATH`. Substitute `broker.example.com` with your broker's hostname.
 - A running Ceph cluster with at least one RGW, and S3 credentials for a user allowed
   to create SNS topics. `$RGW` below is the RGW endpoint, for example
-  `export RGW=https://rgw.example.com`.
+  `export RGW=https://rgw.example.com`. The `aws` CLI also needs a region; set
+  `export AWS_DEFAULT_REGION=default` to match the boto3 example below.
+- A Ceph release that has the attributes you plan to use. The mTLS attributes
+  (`ssl-certificate-location`, `ssl-key-location`, `ssl-key-password`) first
+  appear in Tentacle 20.2.3. `verify-ssl` takes effect for Kafka beginning with
+  Umbrella; Tentacle ignores it and always verifies the broker's certificate. The
+  [notifications documentation](https://docs.ceph.com/en/latest/radosgw/notifications/)
+  lists Kafka 3.9 and 4.x as the supported broker versions.
 - For any SASL topic whose credentials travel unencrypted on either leg:
   `ceph config set client.rgw rgw_allow_notification_secrets_in_cleartext true`.
   Without it RGW refuses to accept a topic carrying credentials over a non-HTTPS
-  S3 request — even a SASL_SSL topic — and refuses to send those credentials over
-  a non-TLS Kafka connection. Leave it off in production: use HTTPS for the S3
-  endpoint and SASL over TLS for Kafka instead.
+  S3 request (even a SASL_SSL topic), and refuses to send those credentials over
+  a non-TLS Kafka connection. `ssl-key-password` counts as a credential here too.
+  Leave the setting off in production: use HTTPS for the S3 endpoint and SASL over
+  TLS for Kafka instead.
 
 ### The two calls
 
@@ -114,8 +125,8 @@ Every section below makes the same two API calls, and only the first one changes
 2. **`PutBucketNotificationConfiguration`** on the S3 endpoint, pointing a bucket at
    the ARN that call returned. This is identical in every section.
 
-Neither is specific to the AWS CLI. In boto3 — which is what the upstream test suite
-uses — the pair looks like this:
+Neither is specific to the AWS CLI. In boto3, which is what the upstream test suite
+uses, the pair looks like this:
 
 ```python
 import boto3
@@ -143,6 +154,7 @@ s3 = boto3.client(
     endpoint_url=RGW_ENDPOINT,
     aws_access_key_id=ACCESS_KEY,
     aws_secret_access_key=SECRET_KEY,
+    region_name="default",
 )
 
 s3.put_bucket_notification_configuration(
@@ -159,8 +171,8 @@ s3.put_bucket_notification_configuration(
 )
 ```
 
-The Java and Go SDKs expose the same two calls with the same shape — an attribute
-map on `CreateTopic`, then `PutBucketNotificationConfiguration` — and the attribute
+The Java and Go SDKs expose the same two calls with the same shape (an attribute
+map on `CreateTopic`, then `PutBucketNotificationConfiguration`), and the attribute
 names are identical in all of them, because they are RGW's names, not the client's.
 Whatever you publish from, the only thing that changes between the sections below is
 the contents of that map.
@@ -172,7 +184,7 @@ attribute map, not as a recommendation to shell out.
 ### Certificates
 
 The TLS sections (TLS, SASL over TLS, mTLS) need three things: a CA certificate, a
-server certificate and key for the broker, and — for mTLS — a client certificate and
+server certificate and key for the broker, and (for mTLS) a client certificate and
 key for RGW. If you already issue certificates from an internal CA, use those; the
 only requirement specific to this setup is that the broker certificate's SAN matches
 the hostname or IP address that RGW connects to.
@@ -181,11 +193,11 @@ The files referenced below are:
 
 | File                    | Used by | Purpose                                                                        |
 | ----------------------- | ------- | ------------------------------------------------------------------------------ |
-| `y-ca.crt`              | RGW     | The CA certificate RGW checks the broker's certificate against — `ca-location` |
+| `y-ca.crt`              | RGW     | The CA certificate RGW checks the broker's certificate against (`ca-location`) |
 | `server.keystore.jks`   | Broker  | Broker private key and signed certificate                                      |
 | `server.truststore.jks` | Broker  | The CA certificate the broker checks RGW's client certificate against (mTLS)   |
-| `client.crt`            | RGW     | Client certificate — `ssl-certificate-location`                                |
-| `client.key`            | RGW     | Client private key — `ssl-key-location`                                        |
+| `client.crt`            | RGW     | Client certificate (`ssl-certificate-location`)                                |
+| `client.key`            | RGW     | Client private key (`ssl-key-location`)                                        |
 
 Here one CA signs both certificates, so `server.truststore.jks` holds the same CA
 as `y-ca.crt`; the Kafka CLI examples below reuse it as their truststore for
@@ -197,18 +209,51 @@ private key should be no more readable than that, `0600` owned by the RGW user o
 `0640` with a shared group. For a
 throwaway test environment, the Ceph source tree ships
 [`src/test/rgw/bucket_notification/kafka-security.sh`](https://github.com/ceph/ceph/blob/main/src/test/rgw/bucket_notification/kafka-security.sh),
-which generates all five files with the password `mypassword`. The broker
-certificate's SAN defaults to `localhost`; set `KAFKA_CERT_HOSTNAME` to match the
-examples in this post (and `KAFKA_CERT_IP` to add an IP SAN, if you connect by
-address):
+which generates all five files with the password `mypassword`. It needs `openssl`
+and Java's `keytool`, writes the files to the current directory (replacing any
+files with the same names), and leaves `client.key` at mode `0644`, so tighten that
+afterward. The broker certificate's SAN defaults to `localhost`; set
+`KAFKA_CERT_HOSTNAME` to match the examples in this post (and `KAFKA_CERT_IP` to add
+an IP SAN, if you connect by address):
 
 ```bash
 KAFKA_CERT_HOSTNAME=broker.example.com ./kafka-security.sh
+chmod 600 client.key
 ```
+
+The examples below expect the `.jks` files in `/etc/kafka/ssl` on the broker, and
+`y-ca.crt`, `client.crt`, and `client.key` in `/etc/ceph` on every RGW host.
+
+Under cephadm, RGW runs in a container, and the paths in the topic attributes are
+resolved inside it. cephadm doesn't mount `/etc/ceph` from the host, so add the
+files to the RGW service specification with `extra_container_args`:
+
+```yaml
+service_type: rgw
+service_id: default
+placement:
+  label: rgw
+extra_container_args:
+  - "-v"
+  - "/etc/ceph/y-ca.crt:/etc/ceph/y-ca.crt:ro"
+  - "-v"
+  - "/etc/ceph/client.crt:/etc/ceph/client.crt:ro"
+  - "-v"
+  - "/etc/ceph/client.key:/etc/ceph/client.key:ro"
+```
+
+Apply it with `ceph orch apply -i rgw.yaml`, then restart the RGW daemons with
+`ceph orch redeploy rgw.default` so that the new mounts take effect. Inside the
+container, RGW runs as the `ceph` user (UID 167), so that is the user that needs to
+be able to read the key.
 
 ### Broker configuration
 
-Enable all five listeners together. In `server.properties`:
+Enable all five listeners together by merging the following into your existing
+`server.properties`. On a KRaft broker, keep the controller listener in `listeners`
+and `listener.security.protocol.map`, on a port outside 9092-9096, as the
+[upstream test README](https://github.com/ceph/ceph/blob/main/src/test/rgw/bucket_notification/README.rst)
+describes:
 
 ```properties
 # ── Listeners ───────────────────────────────────────────────────────────────
@@ -250,7 +295,7 @@ listener.name.sasl_plaintext.plain.sasl.jaas.config=org.apache.kafka.common.secu
   password="admin-secret" \
   user_alice="alice-secret";
 
-# SCRAM users live in Kafka's metadata store, not here — see the SCRAM section
+# SCRAM users live in Kafka's metadata store, not here; see the SCRAM section
 listener.name.sasl_plaintext.scram-sha-256.sasl.jaas.config=org.apache.kafka.common.security.scram.ScramLoginModule required;
 listener.name.sasl_plaintext.scram-sha-512.sasl.jaas.config=org.apache.kafka.common.security.scram.ScramLoginModule required;
 listener.name.sasl_ssl.scram-sha-256.sasl.jaas.config=org.apache.kafka.common.security.scram.ScramLoginModule required;
@@ -281,9 +326,9 @@ kafka-topics.sh \
   --replication-factor 1
 ```
 
-Then create the SNS topic. `push-endpoint` is the broker; `kafka-ack-level` selects
-the delivery guarantee (`none` or `broker`). Use `broker` to wait for an actual ack
-from the broker:
+Then create the SNS topic. `push-endpoint` is the broker, and `kafka-ack-level`
+selects the delivery guarantee (`none` or `broker`). Use `broker` to wait for an
+actual ack from the broker:
 
 ```bash
 aws --endpoint-url $RGW sns create-topic \
@@ -329,7 +374,7 @@ echo "hello kafka" > /tmp/test.txt
 aws --endpoint-url $RGW s3 cp /tmp/test.txt s3://test-bucket/test.txt
 ```
 
-Within about a second the consumer prints the event:
+Within about a second the consumer prints the event (abbreviated here):
 
 ```json
 {
@@ -353,9 +398,15 @@ how RGW connects to the broker.
 Kafka now requires a username and password before it accepts anything. What that
 adds is a _user_ identity: the broker knows the events were published by `alice`
 and can authorize them accordingly. It says nothing about the host RGW runs on,
-and nothing about confidentiality — the connection is still plaintext, so both the
+and nothing about confidentiality: the connection is still plaintext, so both the
 password and the events travel in the clear. This belongs on a trusted internal
 network, and only there; the same mechanism over TLS is a section further down.
+
+Because the password crosses a non-TLS Kafka connection, this section and the next
+need `rgw_allow_notification_secrets_in_cleartext` set to `true` (see
+[Before you start](#before-you-start)). Without it, a topic created over an HTTPS
+S3 endpoint still succeeds, but RGW never connects to the broker, and the RGW log
+shows `Kafka connect: user/password are only allowed over secure connection`.
 
 The Kafka CLI needs matching credentials. The broker JAAS configuration above
 provides user `alice` with password `alice-secret`:
@@ -393,7 +444,7 @@ aws --endpoint-url $RGW sns create-topic \
   }'
 ```
 
-Point a bucket at it exactly as in the plaintext section — create
+Point a bucket at it exactly as in the plaintext section: create
 `sasl-bucket` and send the same notification configuration with `TopicArn` set to
 `arn:aws:sns:default::sasl-plaintext-notifications`.
 
@@ -420,14 +471,14 @@ section.
 PLAIN transmits the password verbatim. SCRAM (Salted Challenge Response
 Authentication Mechanism) addresses that specific problem: both sides exchange
 salted proofs derived from the password, and the password itself never appears on the
-wire. It identifies exactly the same thing PLAIN identifies — the user — and it is
+wire. It identifies exactly the same thing PLAIN identifies (the user), and it is
 equally indifferent to what carries it, working over a plaintext connection or TLS
 without change.
 
 The operational difference is where the credentials live. PLAIN users are declared in
 the broker's JAAS configuration; SCRAM users are registered in Kafka's metadata store
-(ZooKeeper on Kafka 3.x, KRaft on 4.x) with `kafka-configs.sh`, while the broker is
-running:
+(ZooKeeper or KRaft on Kafka 3.x, KRaft on 4.x) with `kafka-configs.sh`, while the
+broker is running:
 
 ```bash
 kafka-configs.sh \
@@ -454,9 +505,9 @@ kafka-configs.sh \
 SCRAM credential configs for user-principal 'alice' are SCRAM-SHA-256=iterations=4096, SCRAM-SHA-512=iterations=4096
 ```
 
-No broker restart is needed either way. On Kafka 4.x the credentials replicate
-through the KRaft metadata log and take effect immediately; on 3.x they are stored in
-ZooKeeper and can be registered before or after the broker starts.
+No broker restart is needed: the credentials take effect immediately. To create
+SCRAM credentials before a KRaft broker first starts, pass them to
+`kafka-storage.sh format` with `--add-scram` instead.
 
 The client configuration swaps in the SCRAM login module:
 
@@ -495,7 +546,7 @@ aws --endpoint-url $RGW sns create-topic \
 Attach it to a bucket named `scram-bucket` in the same way.
 
 `mechanism` accepts `SCRAM-SHA-256` or `SCRAM-SHA-512`, and it must match a
-credential that has actually been registered — requesting SHA-512 when only SHA-256
+credential that has actually been registered: requesting SHA-512 when only SHA-256
 was added fails at handshake time.
 
 ```bash
@@ -511,12 +562,12 @@ aws --endpoint-url $RGW s3 cp /tmp/scram-test.txt s3://scram-bucket/scram-test.t
 ```
 
 SCRAM is preferable to PLAIN on any network, and it is indifferent to what carries
-it — see the SASL over TLS section below.
+it; see the SASL over TLS section below.
 
 ## TLS: encrypt the connection and authenticate the broker
 
 Kafka calls this listener `SSL`, and it does two things: it encrypts the traffic
-between RGW and the broker, and it authenticates the broker to RGW — the broker
+between RGW and the broker, and it authenticates the broker to RGW. The broker
 presents its certificate, RGW verifies it against the CA, and the event stream is
 no longer readable on the wire.
 
@@ -544,9 +595,9 @@ kafka-topics.sh \
 ```
 
 Three new RGW attributes: `use-ssl` turns TLS on, `ca-location` points at the CA that
-signed the broker certificate, and `verify-ssl` — librdkafka's
-`enable.ssl.certificate.verification` — controls whether RGW checks that certificate
-at all.
+signed the broker certificate, and `verify-ssl` (librdkafka's
+`enable.ssl.certificate.verification`) controls whether RGW checks that certificate
+at all. Tentacle ignores `verify-ssl` and always checks it.
 
 ```bash
 aws --endpoint-url $RGW sns create-topic \
@@ -579,16 +630,22 @@ echo "hello ssl" > /tmp/ssl-test.txt
 aws --endpoint-url $RGW s3 cp /tmp/ssl-test.txt s3://ssl-bucket/ssl-test.txt
 ```
 
-The RGW log records which security options were applied when the connection was
-established, which is the authoritative answer on whether TLS was configured or
-silently skipped:
+The RGW log records the connection settings when RGW opens a connection to the
+broker. At the default log level it shows one line per connection, such as
+`Kafka connect: broker=broker.example.com:9093 use_ssl=1 user= ...`. The
+`Kafka connect: successfully configured ...` lines, which are the authoritative
+answer on whether TLS was configured or silently skipped, are logged at level 20 of
+the `rgw_notification` subsystem, so raise that level temporarily:
 
 ```bash
+ceph config set client.rgw debug_rgw_notification 20
 cephadm logs --name rgw.<id> | grep "Kafka connect:"
 ```
 
-If nothing appears, raise the log level temporarily with
-`ceph config set client.rgw debug_rgw 20` and re-run the upload.
+These lines appear only when RGW opens a new connection. RGW reuses an open
+connection and closes it after `rgw_kafka_connection_idle` seconds without traffic
+(300 by default), so a new topic with different settings, or an upload after that
+idle period, shows them.
 
 ## SASL over TLS: a user identity on an authenticated connection
 
@@ -671,7 +728,7 @@ aws --endpoint-url $RGW s3 cp /tmp/sasl-ssl-test.txt s3://sasl-ssl-bucket/sasl-s
 ```
 
 TLS is established before the SASL exchange, so the credentials themselves are
-protected in transit — which is what SASL_PLAINTEXT cannot offer.
+protected in transit, which is what SASL_PLAINTEXT cannot offer.
 
 ## mTLS: authenticate RGW with a client certificate
 
@@ -687,7 +744,7 @@ listener. It identifies whoever holds the certificate's private key, not the hos
 RGW runs on, and it is a separate identity from a SASL user name. This post does
 not cover combining SASL with mTLS; that combination is not tested.
 
-![mTLS vs SSL handshake — what mutual authentication adds](images/mtls_vs_ssl.png)
+![mTLS vs SSL handshake: what mutual authentication adds](images/mtls_vs_ssl.png)
 
 On the broker, the difference from plain SSL is one line, already present in the
 configuration above:
@@ -700,17 +757,18 @@ Confirm the broker is enforcing that before involving RGW. It takes a couple of
 minutes and separates a broker misconfiguration from an RGW one, a distinction that
 is harder to make later.
 
-Kafka's Java SSL stack cannot load a separate key file and certificate file, so the
-CLI needs them bundled into a keystore:
+The Kafka CLI reads its client certificate from a keystore (a PKCS12 or JKS file,
+or a single PEM file holding both the key and the certificate), not from separate
+key and certificate files, so bundle them first:
 
 ```bash
 openssl pkcs12 -export \
   -in client.crt \
   -inkey client.key \
   -name client \
-  -out client.p12 \
+  -out /etc/kafka/ssl/client.p12 \
   -password pass:mypassword
-chmod 600 client.p12
+chmod 600 /etc/kafka/ssl/client.p12
 
 cat > /tmp/mtls-client.properties <<'EOF'
 security.protocol=SSL
@@ -768,7 +826,8 @@ echo "hello mtls" > /tmp/mtls-test.txt
 aws --endpoint-url $RGW s3 cp /tmp/mtls-test.txt s3://mtls-bucket/mtls-test.txt
 ```
 
-With `debug_rgw` at 20, the RGW log lists each option it configured:
+With `debug_rgw_notification` at 20, the RGW log lists each option it configured
+when it opens the connection:
 
 ```bash
 cephadm logs --name rgw.<id> | grep "Kafka connect:"
@@ -790,23 +849,25 @@ certificate.
 
 ## When events do not arrive
 
-The most common causes, in rough order of frequency:
+Common causes:
 
 - **`listeners` and `advertised.listeners` mismatch.** The broker fails during startup
-  in a way that does not obviously point at this.
+  in a way that does not obviously point at this, so check the broker log before
+  suspecting RGW.
 - **The certificate SAN does not match the address being used.** Connecting to
   `localhost` with a certificate issued for `broker.example.com` fails when
   `verify-ssl` is `true`. Correct the certificate rather than disabling the check.
 - **`rgw_allow_notification_secrets_in_cleartext` is not set.** Without it RGW
   refuses to create a topic carrying `user-name`/`password` over a non-HTTPS S3
-  request, and refuses to use those credentials on a non-TLS Kafka connection.
-- **The CA certificate or client key has the wrong permissions.** The paths in the
-  topic attributes are resolved on the RGW host — inside the RGW container, for a
-  cephadm deployment — and opened by the RGW process user, so that user has to be
-  able to read them. Go no wider than it needs: a private key at mode `0777` or
-  `0644` is readable, but it is also readable by every account on the host, which is
-  not a state to leave a production key in. `0600` owned by the RGW user, or `0640`
-  with a shared group, is the target.
+  request, and refuses to use those credentials on a non-TLS Kafka connection,
+  logging `Kafka connect: user/password are only allowed over secure connection`.
+- **The CA certificate or client key is missing or unreadable.** The paths in the
+  topic attributes are resolved on the RGW host (inside the RGW container, for a
+  cephadm deployment, so the files must be mounted there) and opened by the RGW
+  process user, so that user has to be able to read them. Go no wider than it
+  needs: a private key at mode `0644` is readable by every account on the host,
+  which is not a state to leave a production key in. `0600` owned by the RGW user,
+  or `0640` with a shared group, is the target.
 - **`kafka-ack-level` is `none`.** Delivery failures become invisible. Use `broker`
   while verifying a configuration.
 
@@ -835,7 +896,9 @@ exercises these against a live broker: the plaintext baseline under the
 `kafka_test` marker, and SSL, SSL with certificate verification disabled, mTLS,
 SASL_PLAINTEXT and SASL_SSL with PLAIN, SCRAM-SHA-256 and SCRAM-SHA-512 under
 `kafka_security_test`. The listeners those tests expect are the ones in the broker
-configuration above, generated by `kafka-security.sh` from the same tree.
+configuration above, and `kafka-security.sh` in the same tree generates their
+certificates.
 
 Part 2 covers GSSAPI (Kerberos) and OAuthBearer, where authentication is delegated to
-a KDC or an OIDC provider instead of living in the topic configuration.
+a KDC or an OIDC provider instead of living in the topic configuration. As of this
+writing, neither is in a Ceph release yet.
