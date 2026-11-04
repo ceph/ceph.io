@@ -1,5 +1,5 @@
 ---
-title: "Kafka Security for Bucket Notifications in Ceph RGW Part 2: GSSAPI and OAuthBearer"
+title: "Kafka Security for Bucket Notifications in Ceph RGW, Part 2: GSSAPI and OAuthBearer"
 date: "2026-11-01"
 author: "Sujay Dongre"
 categories: "rgw"
@@ -12,6 +12,7 @@ tags:
   - "s3"
   - "security"
   - "kerberos"
+  - "oauth"
 ---
 
 [Part 1](https://ceph.io/en/news/blog/2026/kafka-bucket-notifications-part-1) split
@@ -33,9 +34,18 @@ material stays on the RGW host. OAuthBearer puts an OIDC client ID and secret th
 which are credentials for the identity provider, not for the broker; the broker only
 ever sees a signed, short-lived token.
 
+> **Note:** as of this writing, neither mechanism is in a Ceph release.
+> GSSAPI support was merged to the `main` branch in
+> [ceph/ceph#69200](https://github.com/ceph/ceph/pull/69200) and is not yet in a
+> release. OAuthBearer support is proposed in
+> [ceph/ceph#70100](https://github.com/ceph/ceph/pull/70100), which is still under
+> review, so its attribute names could change before it merges. Check the
+> [notifications documentation](https://docs.ceph.com/en/latest/radosgw/notifications/)
+> for your release before relying on either.
+
 ## What this post covers
 
-Two SASL mechanisms, each over either of the two connections Part 1 already set up:
+Two SASL mechanisms, each over a plaintext or a TLS connection from Part 1:
 
 | SASL mechanism | Connection    | Kafka protocol | TCP port |
 | -------------- | ------------- | -------------- | -------- |
@@ -78,11 +88,15 @@ to put an attribute map on the page. Part 1 shows the same two calls in boto3.
 
 ## GSSAPI (Kerberos)
 
+GSSAPI support is on the Ceph `main` branch
+([ceph/ceph#69200](https://github.com/ceph/ceph/pull/69200)) and, as of this
+writing, not yet in a release.
+
 GSSAPI (Generic Security Services Application Program Interface) is the SASL mechanism
 that carries Kerberos authentication. No password crosses the network: RGW proves
 knowledge of its key to a Key Distribution Center, and presents the resulting ticket
 to the broker. What the broker ends up with is a client principal
-(`rgw/broker.example.com@EXAMPLE.COM` below), and that is the SASL user identity, the
+(`rgw/rgw.example.com@EXAMPLE.COM` below), and that is the SASL user identity, the
 same slot `alice` occupied in Part 1. It happens to be a service principal with a
 hostname in it, but the broker is naming a Kerberos identity, not verifying a machine
 the way mTLS does. It is the usual choice where a Kerberos infrastructure (Active
@@ -97,11 +111,13 @@ Two Kerberos principals, one for the broker and one for RGW, and a keytab for ea
 | Principal                        | Used by | Keytab                                   |
 | -------------------------------- | ------- | ---------------------------------------- |
 | `kafka/broker.example.com@REALM` | Broker  | `/etc/krb5-keytabs/kafka.service.keytab` |
-| `rgw/broker.example.com@REALM`   | RGW     | `/etc/krb5-keytabs/rgw.keytab`           |
+| `rgw/rgw.example.com@REALM`      | RGW     | `/etc/krb5-keytabs/rgw.keytab`           |
 
-Throughout this section, substitute `EXAMPLE.COM` with your realm and
-`broker.example.com` with the fully qualified hostname of your Kafka broker. The
-service principal's hostname must match the hostname clients use to reach the broker.
+Throughout this section, substitute `EXAMPLE.COM` with your realm,
+`broker.example.com` with the fully qualified hostname of your Kafka broker, and
+`rgw.example.com` with your RGW host. The broker's service principal hostname must
+match the hostname clients use to reach the broker. The RGW principal is only a name,
+so any principal works there.
 
 Where a Kerberos infrastructure already exists, these are the two principals to
 request from whoever administers it, along with a keytab for each. With MIT Kerberos
@@ -110,7 +126,7 @@ itself:
 
 ```bash
 kadmin -q "addprinc -randkey kafka/broker.example.com@EXAMPLE.COM"
-kadmin -q "addprinc -randkey rgw/broker.example.com@EXAMPLE.COM"
+kadmin -q "addprinc -randkey rgw/rgw.example.com@EXAMPLE.COM"
 
 sudo mkdir -p /etc/krb5-keytabs
 
@@ -118,10 +134,14 @@ kadmin -q \
   "ktadd -k /etc/krb5-keytabs/kafka.service.keytab kafka/broker.example.com@EXAMPLE.COM"
 
 kadmin -q \
-  "ktadd -k /etc/krb5-keytabs/rgw.keytab rgw/broker.example.com@EXAMPLE.COM"
+  "ktadd -k /etc/krb5-keytabs/rgw.keytab rgw/rgw.example.com@EXAMPLE.COM"
 
 sudo chmod 640 /etc/krb5-keytabs/*.keytab
 ```
+
+`ktadd` writes the keytabs on the host where you run `kadmin`. Copy
+`kafka.service.keytab` to the broker host and `rgw.keytab` to every RGW host, at the
+same paths.
 
 Set the ownership so that the `radosgw` process user can read `rgw.keytab` and the
 broker's user can read `kafka.service.keytab`, and no wider than that. A keytab is
@@ -129,11 +149,15 @@ key material; `0640` with the right group, or `0600` owned by the reading user, 
 target. As with the client key in Part 1, the path is resolved on the RGW host, inside
 the container where RGW is containerized.
 
-On each host running an RGW, three things are required. First, the GSS-API SASL
-module, since librdkafka uses the system Cyrus SASL plugins:
-`libsasl2-modules-gssapi-mit` on Debian and Ubuntu, `cyrus-sasl-gssapi` on Fedora and
-RHEL. Second, the RGW keytab, readable by the `radosgw` process user. Third,
-`/etc/krb5.conf`, declaring the realm and pointing at the KDC:
+Each RGW needs four things:
+
+1. The GSSAPI SASL plugin, since librdkafka uses the system Cyrus SASL plugins:
+   `libsasl2-modules-gssapi-mit` on Debian and Ubuntu, `cyrus-sasl-gssapi` on Fedora
+   and RHEL.
+2. The `kinit` command (`krb5-user` on Debian and Ubuntu, `krb5-workstation` on Fedora
+   and RHEL). librdkafka runs it to get a ticket from the keytab and to renew it.
+3. The RGW keytab, readable by the `radosgw` process user.
+4. `/etc/krb5.conf`, declaring the realm and pointing at the KDC:
 
 ```ini
 [libdefaults]
@@ -156,15 +180,30 @@ RHEL. Second, the RGW keytab, readable by the `radosgw` process user. Third,
     example.com = EXAMPLE.COM
 ```
 
-> **Note:** where RGW runs in a container under cephadm, `/etc/krb5.conf` and the
-> keytab must be visible inside the container. Add them as bind mounts through
-> `extra_container_args` in the RGW service specification.
+Where RGW runs in a container under cephadm, all four must be inside the container.
+The SASL plugin and `kinit` have to be part of the RGW container image, so if your
+image doesn't include them, build a derived image that adds them. Mount
+`/etc/krb5.conf` and the keytab with `extra_container_args` in the RGW service
+specification, then apply it with `ceph orch apply -i rgw.yaml` and run
+`ceph orch redeploy rgw.default`:
+
+```yaml
+service_type: rgw
+service_id: default
+placement:
+  label: rgw
+extra_container_args:
+  - "-v"
+  - "/etc/krb5.conf:/etc/krb5.conf:ro"
+  - "-v"
+  - "/etc/krb5-keytabs/rgw.keytab:/etc/krb5-keytabs/rgw.keytab:ro"
+```
 
 Confirm the keytab works before touching Kafka:
 
 ```bash
 klist -kte /etc/krb5-keytabs/rgw.keytab
-kinit -kt /etc/krb5-keytabs/rgw.keytab rgw/broker.example.com@EXAMPLE.COM
+kinit -kt /etc/krb5-keytabs/rgw.keytab rgw/rgw.example.com@EXAMPLE.COM
 klist          # should show a valid TGT
 kdestroy
 ```
@@ -174,11 +213,10 @@ kdestroy
 Skip this if a KDC already exists. To try GSSAPI without one, a single-host Kerberos
 realm is enough:
 
+On Debian and Ubuntu:
+
 ```bash
-# Debian / Ubuntu
 sudo apt install -y krb5-kdc krb5-admin-server krb5-user
-# Fedora / RHEL
-sudo dnf install -y krb5-server krb5-workstation
 
 # Creates the realm database; prompts for a master password
 sudo kdb5_util create -s -r EXAMPLE.COM
@@ -187,6 +225,19 @@ echo '*/admin@EXAMPLE.COM    *' | sudo tee /etc/krb5kdc/kadm5.acl
 
 sudo systemctl enable --now krb5-kdc krb5-admin-server
 sudo systemctl status krb5-kdc krb5-admin-server    # both should be active
+```
+
+On Fedora and RHEL, the packages, the ACL path, and the service names differ:
+
+```bash
+sudo dnf install -y krb5-server krb5-workstation
+
+sudo kdb5_util create -s -r EXAMPLE.COM
+
+echo '*/admin@EXAMPLE.COM    *' | sudo tee /var/kerberos/krb5kdc/kadm5.acl
+
+sudo systemctl enable --now krb5kdc kadmin
+sudo systemctl status krb5kdc kadmin    # both should be active
 ```
 
 Point `kdc` and `admin_server` in `/etc/krb5.conf` at this host, make sure the
@@ -260,7 +311,7 @@ KafkaClient {
     useKeyTab=true
     storeKey=true
     keyTab="/etc/krb5-keytabs/rgw.keytab"
-    principal="rgw/broker.example.com@EXAMPLE.COM";
+    principal="rgw/rgw.example.com@EXAMPLE.COM";
 };
 EOF
 
@@ -292,11 +343,12 @@ here saves creating it again.
 
 ### GSSAPI over SASL_PLAINTEXT
 
-Set the Kerberos service name for RGW. It can be supplied per topic, but setting it
-once in the cluster configuration is simpler:
+RGW's default Kerberos service name, `rgw_kafka_sasl_kerberos_service_name`, is
+already `kafka`, which matches the broker principal here. Set it only if your
+broker's principal uses a different service name:
 
 ```bash
-ceph config set client.rgw rgw_kafka_sasl_kerberos_service_name kafka
+ceph config set client.rgw rgw_kafka_sasl_kerberos_service_name <service-name>
 ```
 
 Create the SNS topic:
@@ -310,7 +362,7 @@ aws --endpoint-url $RGW sns create-topic \
     "use-ssl": "false",
     "mechanism": "GSSAPI",
     "sasl-kerberos-service-name": "kafka",
-    "sasl-kerberos-principal": "rgw/broker.example.com@EXAMPLE.COM",
+    "sasl-kerberos-principal": "rgw/rgw.example.com@EXAMPLE.COM",
     "sasl-kerberos-keytab": "/etc/krb5-keytabs/rgw.keytab"
   }'
 ```
@@ -330,13 +382,29 @@ aws --endpoint-url $RGW sns create-topic \
 
 > **Note:** `sasl-kerberos-service-name` can also be set per topic, and a per-topic
 > value overrides `rgw_kafka_sasl_kerberos_service_name`. Where different tenants
-> authenticate as different principals, supply all three attributes per topic: RGW's
-> connection cache is keyed on the principal and keytab path, so topics with different
-> principals do not share a producer connection.
+> authenticate as different principals, supply all three attributes per topic. RGW's
+> connection cache is keyed on the connection settings, including the Kerberos
+> service name, principal, and keytab path, so topics with different principals do not
+> share a producer connection.
 
-Attach it to a bucket named `gssapi-bucket`, with the same
-`PutBucketNotificationConfiguration` call as every section of Part 1. Only the bucket
-name and the `TopicArn` differ.
+Attach it to a bucket, with the same `PutBucketNotificationConfiguration` call as
+every section of Part 1:
+
+```bash
+aws --endpoint-url $RGW s3 mb s3://gssapi-bucket
+
+aws --endpoint-url $RGW s3api put-bucket-notification-configuration \
+  --bucket gssapi-bucket \
+  --notification-configuration '{
+    "TopicConfigurations": [{
+      "Id": "gssapi-notif",
+      "TopicArn": "arn:aws:sns:default::gssapi-plaintext-notifications",
+      "Events": ["s3:ObjectCreated:*"]
+    }]
+  }'
+```
+
+The later sections change only the bucket name and the `TopicArn`.
 
 Then trigger an event and watch for it:
 
@@ -354,17 +422,21 @@ echo "hello gssapi" > /tmp/gssapi-test.txt
 aws --endpoint-url $RGW s3 cp /tmp/gssapi-test.txt s3://gssapi-bucket/gssapi-test.txt
 ```
 
-Two logs are worth checking. The RGW log shows which mechanism was configured:
+Two logs are worth checking. The RGW log shows which mechanism was configured when
+RGW opened the connection. That line is logged at level 20 of the `rgw_notification`
+subsystem, as in Part 1, so raise the level first:
 
 ```bash
-cephadm logs --name rgw.<id> | grep -E "GSSAPI|kerberos|sasl.mechanism"
+ceph config set client.rgw debug_rgw_notification 20
+cephadm logs --name rgw.<id> | grep "Kafka connect:"
+# Kafka connect: configured GSSAPI SASL
 ```
 
 The broker log shows the principal it authenticated:
 
 ```bash
 grep "Successfully authenticated" ${KAFKA_HOME}/logs/server.log
-# Successfully authenticated client: authenticationID=rgw/broker.example.com@EXAMPLE.COM; mechanism=GSSAPI
+# Successfully authenticated client: authenticationID=rgw/rgw.example.com@EXAMPLE.COM; authorizationID=rgw/rgw.example.com@EXAMPLE.COM.
 ```
 
 ### GSSAPI over SASL_SSL
@@ -406,7 +478,7 @@ aws --endpoint-url $RGW sns create-topic \
     "ca-location": "/etc/ceph/y-ca.crt",
     "mechanism": "GSSAPI",
     "sasl-kerberos-service-name": "kafka",
-    "sasl-kerberos-principal": "rgw/broker.example.com@EXAMPLE.COM",
+    "sasl-kerberos-principal": "rgw/rgw.example.com@EXAMPLE.COM",
     "sasl-kerberos-keytab": "/etc/krb5-keytabs/rgw.keytab"
   }'
 ```
@@ -431,6 +503,11 @@ aws --endpoint-url $RGW s3 cp /tmp/gssapi-ssl-test.txt \
 
 ## OAuthBearer (OIDC)
 
+OAuthBearer support is proposed in
+[ceph/ceph#70100](https://github.com/ceph/ceph/pull/70100), which as of this writing
+is still under review and not merged. The attribute names below are the ones in that
+pull request and could change before it merges.
+
 OAuthBearer is the SASL mechanism that carries an OAuth 2.0 bearer token. RGW is
 configured with an OIDC client identity; librdkafka exchanges it for a JWT at the
 identity provider's token endpoint using the `client_credentials` grant, presents that
@@ -441,8 +518,6 @@ claims.
 ![OAuthBearer OIDC token flow: RGW fetches a JWT, Kafka validates it via JWKS](images/oauthbearer_flow.png)
 
 The broker never sees the client secret: it only sees a signed, short-lived token.
-The only secret in the topic configuration is the OIDC client secret, which RGW
-stores the same way as any other notification secret.
 
 ### What you need from your identity provider
 
@@ -452,21 +527,28 @@ stores the same way as any other notification secret.
 - The **JWKS endpoint** URL, plus the expected issuer and audience, which the broker
   is configured with.
 
-All three are published in the provider's discovery document:
+The provider's discovery document lists the issuer, the token endpoint, and the JWKS
+URI. The client ID and secret come from registering the client, and the audience
+depends on the provider; it is often the client ID.
 
 ```bash
 curl -s https://idp.example.com/.well-known/openid-configuration | python3 -m json.tool
 ```
 
-Any compliant provider works: Keycloak, Entra ID, Auth0. The examples below use
-`https://idp.example.com` as the issuer and `rgw-notifications` as the client ID.
+Any OIDC provider that supports the `client_credentials` grant should work. The
+examples below use `https://idp.example.com` as the issuer,
+`https://idp.example.com/token` as the token endpoint,
+`https://idp.example.com/keys` as the JWKS endpoint, and `rgw-notifications` as the
+client ID and audience. Substitute the values from your provider's discovery
+document.
 
 ### Setting up a test provider
 
 Skip this if you already have an identity provider. For a test environment, Dex is a
-single-binary OIDC provider that supports the `client_credentials` grant. Install it
-following the [Dex documentation](https://dexidp.io/docs/getting-started/), then
-configure it:
+single-binary OIDC provider that supports the `client_credentials` grant beginning
+with Dex v2.46.0. Install it following the
+[Dex documentation](https://dexidp.io/docs/getting-started/), then configure it.
+Listing `client_credentials` under `oauth2.grantTypes` is what enables the grant:
 
 ```yaml
 issuer: http://idp.example.com:5556/dex
@@ -487,8 +569,6 @@ staticClients:
   - id: rgw-notifications
     secret: client-secret
     name: RGW Notifications
-    grantTypes:
-      - client_credentials
 
 enablePasswordDB: false
 
@@ -514,6 +594,12 @@ curl -s http://idp.example.com:5556/dex/.well-known/openid-configuration \
   | python3 -m json.tool
 ```
 
+With this configuration, Dex's issuer is `http://idp.example.com:5556/dex`, its token
+endpoint is `http://idp.example.com:5556/dex/token`, and its JWKS endpoint is
+`http://idp.example.com:5556/dex/keys`. Use those in place of the
+`https://idp.example.com` values in the rest of this section. Over plain HTTP the
+client secret reaches Dex in the clear, so keep this to a test environment.
+
 ### Broker configuration
 
 Add OAUTHBEARER to the enabled mechanisms and configure the token validator on both
@@ -527,7 +613,7 @@ sasl.enabled.mechanisms=PLAIN,SCRAM-SHA-256,SCRAM-SHA-512,GSSAPI,OAUTHBEARER
 listener.name.sasl_ssl.oauthbearer.sasl.jaas.config=\
   org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule required;
 listener.name.sasl_ssl.oauthbearer.sasl.server.callback.handler.class=\
-  org.apache.kafka.common.security.oauthbearer.secured.OAuthBearerValidatorCallbackHandler
+  org.apache.kafka.common.security.oauthbearer.OAuthBearerValidatorCallbackHandler
 listener.name.sasl_ssl.oauthbearer.sasl.oauthbearer.jwks.endpoint.url=\
   https://idp.example.com/keys
 listener.name.sasl_ssl.oauthbearer.sasl.oauthbearer.expected.audience=\
@@ -539,7 +625,7 @@ listener.name.sasl_ssl.oauthbearer.sasl.oauthbearer.expected.issuer=\
 listener.name.sasl_plaintext.oauthbearer.sasl.jaas.config=\
   org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule required;
 listener.name.sasl_plaintext.oauthbearer.sasl.server.callback.handler.class=\
-  org.apache.kafka.common.security.oauthbearer.secured.OAuthBearerValidatorCallbackHandler
+  org.apache.kafka.common.security.oauthbearer.OAuthBearerValidatorCallbackHandler
 listener.name.sasl_plaintext.oauthbearer.sasl.oauthbearer.jwks.endpoint.url=\
   https://idp.example.com/keys
 listener.name.sasl_plaintext.oauthbearer.sasl.oauthbearer.expected.audience=\
@@ -548,15 +634,25 @@ listener.name.sasl_plaintext.oauthbearer.sasl.oauthbearer.expected.issuer=\
   https://idp.example.com
 ```
 
-> **Note:** JWKS-based validation with `OAuthBearerValidatorCallbackHandler` requires
-> Kafka 3.1 or later. The broker needs only the server-side validator; no client login
-> handler is configured on the broker itself.
+> **Note:** these class names work on Kafka 3.9 and 4.x, the broker versions Ceph
+> supports. Older examples use the same classes in the
+> `org.apache.kafka.common.security.oauthbearer.secured` package, which Kafka 4.0
+> removed. The broker needs only the server-side validator; no client login handler is
+> configured on the broker itself.
 
-Restart the broker and confirm the validator initialized against the right endpoint:
+Kafka 4.0 and later also refuse to contact a JWKS or token endpoint that isn't listed
+in the `org.apache.kafka.sasl.oauthbearer.allowed.urls` JVM system property, which is
+empty by default. Add the JWKS URL to the broker's `KAFKA_OPTS`, next to the JAAS file
+from the GSSAPI section:
 
 ```bash
-grep "OAuthBearerValidatorCallbackHandler" ${KAFKA_HOME}/logs/server.log
+export KAFKA_OPTS="-Djava.security.auth.login.config=${KAFKA_HOME}/config/kafka_server_jaas.conf \
+  -Dorg.apache.kafka.sasl.oauthbearer.allowed.urls=https://idp.example.com/keys"
+
+kafka-server-start.sh ${KAFKA_HOME}/config/server.properties
 ```
+
+The validator logs nothing when it starts cleanly; the CLI check below exercises it.
 
 ### OAuthBearer over SASL_SSL
 
@@ -564,21 +660,25 @@ Use SASL_SSL for OAuthBearer. The JWT is signed, so it cannot be forged, but it 
 bearer token: anyone who reads it off the wire can use it until it expires. TLS is
 what prevents that.
 
-The Kafka CLI can fetch its own token, given the same client credentials:
+The Kafka CLI can fetch its own token, given the same client credentials. The Java
+client takes the client ID, secret, and scope as options of the login module, and its
+JVM needs the token endpoint in `allowed.urls`:
 
 ```bash
 cat > /tmp/oauthbearer-ssl-client.properties <<'EOF'
 security.protocol=SASL_SSL
 sasl.mechanism=OAUTHBEARER
-sasl.jaas.config=org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule required;
-sasl.login.callback.handler.class=org.apache.kafka.common.security.oauthbearer.secured.OAuthBearerLoginCallbackHandler
+sasl.jaas.config=org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule required \
+  clientId="rgw-notifications" \
+  clientSecret="client-secret" \
+  scope="openid";
+sasl.login.callback.handler.class=org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginCallbackHandler
 sasl.oauthbearer.token.endpoint.url=https://idp.example.com/token
-sasl.oauthbearer.client.id=rgw-notifications
-sasl.oauthbearer.client.secret=client-secret
-sasl.oauthbearer.scope=openid
 ssl.truststore.location=/etc/kafka/ssl/server.truststore.jks
 ssl.truststore.password=mypassword
 EOF
+
+export KAFKA_OPTS="-Dorg.apache.kafka.sasl.oauthbearer.allowed.urls=https://idp.example.com/token"
 
 kafka-topics.sh \
   --bootstrap-server broker.example.com:9094 \
@@ -598,8 +698,12 @@ ACCESS_TOKEN=$(curl -s -X POST https://idp.example.com/token \
   -d "grant_type=client_credentials&client_id=rgw-notifications&client_secret=client-secret&scope=openid" \
   | python3 -c "import json,sys; print(json.load(sys.stdin)['access_token'])")
 
-# The iss and aud claims must match expected.issuer and expected.audience
-echo "$ACCESS_TOKEN" | cut -d. -f2 | base64 -d 2>/dev/null | python3 -m json.tool
+# The iss and aud claims must match expected.issuer and expected.audience.
+# JWT segments are base64url without padding, which base64 -d can't decode reliably.
+echo "$ACCESS_TOKEN" | python3 -c '
+import base64, json, sys
+p = sys.stdin.read().split(".")[1]
+print(json.dumps(json.loads(base64.urlsafe_b64decode(p + "=" * (-len(p) % 4))), indent=2))'
 ```
 
 The RGW topic carries the OIDC client identity rather than a token, because
@@ -643,6 +747,8 @@ librdkafka keys they eventually map onto.
 Trigger an event:
 
 ```bash
+# Consumer terminal: needs the same KAFKA_OPTS as kafka-topics.sh above
+export KAFKA_OPTS="-Dorg.apache.kafka.sasl.oauthbearer.allowed.urls=https://idp.example.com/token"
 kafka-console-consumer.sh \
   --bootstrap-server broker.example.com:9094 \
   --consumer.config /tmp/oauthbearer-ssl-client.properties \
@@ -655,23 +761,20 @@ aws --endpoint-url $RGW s3 cp /tmp/oauthbearer-test.txt \
   s3://oauthbearer-ssl-bucket/oauthbearer-test.txt
 ```
 
-The RGW log records the mechanism and the connection:
+With `debug_rgw_notification` at 20 (see the GSSAPI section), the RGW log records the
+mechanism and the connection when RGW opens it:
 
 ```bash
-cephadm logs --name rgw.<id> | grep -i oauthbearer
+cephadm logs --name rgw.<id> | grep "Kafka connect:"
 ```
 
 ```
 Kafka connect: successfully configured OAUTHBEARER/OIDC
-Kafka connect: new connection is created: broker.example.com:9094 ... mechanism=OAUTHBEARER
+Kafka connect: new connection is created: broker.example.com:9094 ...
 ```
 
-The broker log records the validated principal:
-
-```bash
-grep "Successfully validated token" ${KAFKA_HOME}/logs/server.log
-# Successfully validated token for principal: rgw-notifications
-```
+If the broker rejects the token, both the CLI and RGW fail to connect, and decoding
+the token as shown above usually shows which claim doesn't match.
 
 ### OAuthBearer over SASL_PLAINTEXT
 
@@ -707,21 +810,16 @@ aws --endpoint-url $RGW sns create-topic \
 Create the Kafka topic `oauthbearer-plaintext-notifications` against port 9095 first,
 then attach the notification and verify delivery as above.
 
-Three points worth remembering:
-
-- RGW's Kafka connection cache is keyed on the Kerberos principal and keytab path, so
-  topics that authenticate as different principals do not share a producer connection.
-- With OAuthBearer, librdkafka owns the token lifecycle. RGW supplies the client
-  identity once, at topic creation; fetching and refreshing tokens needs no further
-  involvement from RGW.
-- Neither mechanism puts a broker password in the notification path. GSSAPI stores a
-  keytab path; OAuthBearer stores an OIDC client secret, which is handled as a
-  notification secret and is not logged.
+With OAuthBearer, librdkafka owns the token lifecycle. RGW supplies the client
+identity once, at topic creation; fetching and refreshing tokens needs no further
+involvement from RGW. As with GSSAPI, RGW's connection cache is keyed on the
+connection settings, here including the token endpoint, client ID, secret, and scope,
+so topics with different client identities don't share a producer connection.
 
 Together with Part 1, that covers the SASL mechanisms RGW offers for bucket
-notifications: PLAIN, SCRAM, GSSAPI and OAuthBearer. PLAIN and SCRAM run over any of
-the three connections, plaintext, TLS and mTLS. GSSAPI runs over the first two, for
-the reason given at the top of this post.
+notifications: PLAIN, SCRAM, GSSAPI, and OAuthBearer. PLAIN and SCRAM run over any of
+the three connections: plaintext, TLS, and mTLS. GSSAPI runs over the first two, for
+the reason in the note near the top of this post.
 
 The tests live in
 [`src/test/rgw/bucket_notification/`](https://github.com/ceph/ceph/tree/main/src/test/rgw/bucket_notification),
@@ -729,5 +827,6 @@ under the `kafka_security_test` marker. `test_notification_kafka_security_sasl_g
 and `test_notification_kafka_security_ssl_sasl_gssapi` cover the two GSSAPI
 configurations above; both skip unless the `[kerberos]` section of the test
 configuration names a service, principal and keytab, so a run that reports them as
-skipped has not exercised GSSAPI at all. The OAuthBearer tests come with the
-OAuthBearer support itself and skip in the same way, on an `[oauthbearer]` section.
+skipped has not exercised GSSAPI at all. The OAuthBearer tests are part of
+[ceph/ceph#70100](https://github.com/ceph/ceph/pull/70100), not yet merged as of this
+writing, and skip in the same way, on an `[oauthbearer]` section.
