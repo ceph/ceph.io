@@ -1,7 +1,7 @@
 ---
 title: "Kafka Security for Bucket Notifications in Ceph RGW, Part 1: SASL, TLS, and mTLS"
 date: "2026-11-01"
-author: "Sujay Dongre"
+author: "Sujay Dongre, Anthony D'Atri"
 categories: "rgw"
 image: "images/s3_ceph_kafka_pipeline_banner.png"
 tags:
