@@ -1,6 +1,6 @@
 ---
 title: "Performance Analysis of 2 Billion Objects in a Single Bucket"
-date: 2026-11-03
+date: 2026-11-04
 author: "Andy Lin (IBM)"
 image: "images/title.png"
 tags:
@@ -57,6 +57,17 @@ processing.
 | Operating system | Enterprise Linux, release 10.1 |
 | Network | 2x 100 GbE links (on one dual-port 100 GbE adapter) |
 
+The terms "Low Load", "Medium Load", and "High Load" used throughout this
+article are nominal client load levels for a steady-state workload of 70%
+`GET` and 30% `PUT`. The maximum rate measured for this configuration was
+about 11600 objects/sec. The achieved rates varied from run to run with
+warmup, fill and caching, so the table below shows the share of that maximum
+actually reached.
+ 
+| Client I/O Load | Low | Medium | High |
+| --------------- | --: | -----: | ---: |
+| Achieved share of 11,600 objects/sec | 7-9% | 19-23% | 31-42% |
+
 *Additional environment details provided at the end of the article.*
 
 ## Creating the Objects
@@ -94,10 +105,10 @@ of X objects, where the value of X is between 1000 and 100000 objects.
 ## Resharding Disruption Window at 2 Billion Objects
 
 **Test Description:** Using `elbencho`, we started up a steady-state mixed workload
-of 70% `GET` and 30% `PUT` at the 64 KiB object size. We let the workload run for 
-~20 minutes, then we issued the `radosgw-admin` command to manually reshard the 
-bucket to `num_shards=25013` to observe the impact resharding has on client I/O.
-25013 shards was selected to target an objects per shard ratio of 80%.
+of 70% `GET` and 30% `PUT` at the 64 KiB object size at high load. We let the 
+workload run for ~20 minutes, then we issued the `radosgw-admin` command to manually
+reshard the bucket to `num_shards=25013` to observe the impact resharding has on 
+client I/O.  25013 shards was selected to target an objects per shard ratio of 80%.
 ![](images/reshardDisruption.png)
 We manually resharded the bucket from 20011 to 25013, which with 2 billion
 objects required an elapsed 5 hours and 51 minutes. During the reshard,
@@ -168,8 +179,8 @@ minutes, then we issued the `elbencho` command to Structured-Delete 19.8 million
 ![](images/structuredDeleteHigh.png)
 Structured-delete is faster to delete many objects because it is not only
 multi-threaded, but it also does not require the application to list objects before
-deleting them. Adding client I/O will elongate the duration of the deletion
-window. However, impact on client I/O is high since system resources are
+deleting them. Adding client I/O will elongate the duration of the deletion window 
+and there will be a high impact on client I/O since system resources are
 more committed to the delete operation.
 
 ## Garbage Collection at 2 Billion Objects
@@ -349,10 +360,10 @@ The lifecycle processing results showed that even when storing billions of
 objects, their effects on client workloads were modest when dealing with
 object expiration. With default settings, lifecycle processing reduced mixed
 workload throughput by 10% to 13%, and with the "Increased" profile by 4% to
-11%. The heavier the client I/O, the longer lifecycle processing took.  The
-"Increased" profile took longer than the defaults at every level: 192 versus
-180, 220 versus 188, and 250 versus 221 minutes. Its benefit was with no load,
-where it finished in about an hour. Raising `rgw_lc_max_worker` and
+11%. Under load, the heavier the client I/O, the longer lifecycle processing took.
+Under load, the "Increased" profile took longer than the defaults at every level: 
+192 versus 180, 220 versus 188, and 250 versus 221 minutes. Its benefit was with no 
+load, where it finished in about an hour. Raising `rgw_lc_max_worker` and
 `rgw_lc_max_wp_worker` can speed up lifecycle processing during idle periods;
 otherwise, the default values are acceptable.
 
