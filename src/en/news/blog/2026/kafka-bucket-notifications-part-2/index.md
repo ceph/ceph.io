@@ -1,6 +1,6 @@
 ---
 title: "Kafka Security for Bucket Notifications in Ceph RGW Part 2: GSSAPI and OAuthBearer"
-date: "2026-08-23"
+date: "2026-11-01"
 author: "Sujay Dongre"
 categories: "rgw"
 image: "images/kerberos_oauth_kafka_auth_banner.png"
