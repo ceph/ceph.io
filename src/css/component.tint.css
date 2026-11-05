@@ -21,6 +21,10 @@
   background: hsla(var(--color-black-hsl), 0.2);
 }
 
+.tint--black-4::after {
+  background: hsla(var(--color-black-hsl), 0.4);
+}
+
 .tint--red-500-4::after {
   background: hsla(var(--color-red-500-hsl), 0.4);
 }
