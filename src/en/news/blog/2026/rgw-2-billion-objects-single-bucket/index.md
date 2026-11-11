@@ -227,6 +227,20 @@ processing heavily impacted each other. Once the GC process completed, the
 steady-state client I/O returned to the original performance from before the test
 began.
 
+| Client I/O Load | None | Low | Medium | High |
+| -------------------------------------------- | -: | --: | --: | --: |
+| Mixed workload throughput during steady-state (obj/s) | - | 862 | 2187 | 3604 |
+| `DELETE` elapsed time (sec) | 269 | 384 | 362 | 474 |
+| `DELETE` rate (objects/sec) | 7460 | 5225 | 5552 | 4238 |
+| Mixed workload throughput during deletion window (obj/s) | - | 645 | 1660 | 2730 |
+| Elapsed time for all entries to show in the GC queue (sec) | 567 | 625 | 662 | 761 |
+| GC drain elapsed time (sec) | 925 | 4521 | 5184 | 5441 |
+| GC drain rate (objects/sec) | 2161 | 442 | 386 | 368 |
+| Mixed workload throughput during GC processing (obj/s) | - | 580 | 1392 | 2442 |
+
+The experiments demonstrated that system resources are limited at
+higher background loads. 
+
 ### Additional Recommendations for Deploying RGW Instances Dedicated to GC Processing
 **For Production-Facing RGWs:** Disable GC processing entirely to dedicate all thread
 and CPU resources to client S3/Swift API traffic. In these examples,
@@ -282,6 +296,20 @@ no-load test and saw the same pattern each time: about 125000 objects/min
 for the first hour, then a slower rate of 47000 objects/min for the rest 
 of the run. We did not find an explanation. The no-load time is therefore a 
 result for this setup, not a fixed baseline.
+
+| Client I/O Load | None | Low | Medium | High |
+| -------------------------------------------- | -: | --: | --: | --: |
+| Mixed workload throughput (during steady-state) | - | 1024 | 2621 | 4855 |
+| Mixed workload throughput (during lifecycle processing) | - | 919 | 2280 | 4302 |
+| LC impact to client I/O | - | 10% | 13% | 11% |
+| LC elapsed time (min) | 329 | 180 | 188 | 221 |
+| LC expiration rate (objects/min) | 60790 | 111111 | 106383 | 90498 |
+
+The lifecycle processing results showed that even when storing billions of
+objects, their effects on client workloads were modest when dealing with
+object expiration. Lifecycle processing reduced mixed
+workload throughput by 10% to 13%. Under load, the heavier the client I/O, 
+the longer lifecycle processing took.
 
 ### Additional Recommendations for Deploying RGW Instances Dedicated to LC Processing
 **For Production-Facing RGWs:** Disable LC processing entirely to dedicate all
