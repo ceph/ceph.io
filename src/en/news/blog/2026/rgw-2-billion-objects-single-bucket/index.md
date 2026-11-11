@@ -66,7 +66,7 @@ actually reached.
  
 | Client I/O Load | Low | Medium | High |
 | --------------- | --: | -----: | ---: |
-| Achieved share of 11,600 objects/sec | 7-9% | 19-23% | 31-42% |
+| Achieved share of 11,600 objects/sec | 7-9% | 19-23% | 31%-42% |
 
 *Additional environment details provided at the end of the article.*
 
@@ -105,7 +105,7 @@ of X objects, where the value of X is between 1000 and 100000 objects.
 ## Resharding Disruption Window at 2 Billion Objects
 
 **Test Description:** Using `elbencho`, we started up a steady-state mixed workload
-of 70% `GET` and 30% `PUT` at the 64 KiB object size at high load. We let the 
+of 70% `GET` and 30% `PUT` at the 64 KiB object size at approximately 48% load. We let the 
 workload run for ~20 minutes, then we issued the `radosgw-admin` command to manually
 reshard the bucket to `num_shards=25013` to observe the impact resharding has on 
 client I/O.  25013 shards was selected to target an objects per shard ratio of 80%.
@@ -227,47 +227,6 @@ processing heavily impacted each other. Once the GC process completed, the
 steady-state client I/O returned to the original performance from before the test
 began.
 
-### Garbage Collection Tuning
-
-Per Ceph online documentation [Ceph RGW config
-reference](https://docs.ceph.com/en/latest/radosgw/config-ref/), garbage
-collection can be tuned to be less aggressive or more aggressive.
-
-Default GC Settings:
-```
-rgw_gc_max_concurrent_io=10
-rgw_gc_max_trim_chunk=16
-```
-Settings used to make GC more aggressive ("Increased" Profile):
-```
-ceph config set client.rgw rgw_gc_max_concurrent_io 20
-ceph config set client.rgw rgw_gc_max_trim_chunk 64
-```
-
-| Client I/O Load | None | Low | Low | Medium | Medium | High | High |
-| -------------------------------------------- | -: | --: | --: | --: | --: | --: | --: |
-| **Garbage Collection Tuning** | **Default** | **Default** | **Increased** | **Default** | **Increased** | **Default** | **Increased** |
-| Mixed workload throughput during steady-state (obj/s) | - | 862 | 875 | 2187 | 2215 | 3604 | 3645 |
-| `DELETE` elapsed time (sec) | 269 | 384 | 286 | 362 | 375 | 474 | 452 |
-| `DELETE` rate (objects/sec) | 7460 | 5225 | 7005 | 5552 | 5338 | 4238 | 4455 |
-| Mixed workload throughput during deletion window (obj/s) | - | 645 | 649 | 1660 | 1664 | 2730 | 2769 |
-| Elapsed time for all entries to show in the GC queue (sec) | 567 | 625 | 557 | 662 | 662 | 761 | 666 |
-| GC drain elapsed time (sec) | 925 | 4521 | 4103 | 5184 | 4948 | 5441 | 5575 |
-| GC drain rate (objects/sec) | 2161 | 442 | 487 | 386 | 404 | 368 | 359 |
-| Mixed workload throughput during GC processing (obj/s) | - | 580 | 564 | 1392 | 1426 | 2442 | 2415 |
-
-The experiments with tuning demonstrated that system resources are limited at
-higher background loads. The "Increased" profile shortened the GC drain by
-about 9% at low load and about 5% at medium load, and it was about 2% slower at
-high load. GC tuning can't affect the `DELETE` rows, because no GC processing
-happens during the deletion, so the differences between columns in those rows,
-as much as 25%, show how much results vary from run to run. The table has no
-run of the "Increased" profile without client load. The GC tuning parameters
-of `rgw_gc_max_concurrent_io=20` and `rgw_gc_max_trim_chunk=64` may help when
-heavy delete workloads are expected and client I/O is low, but these results
-don't show a clear benefit under load. Otherwise, the default values are
-acceptable.
-
 ### Additional Recommendations for Deploying RGW Instances Dedicated to GC Processing
 **For Production-Facing RGWs:** Disable GC processing entirely to dedicate all thread
 and CPU resources to client S3/Swift API traffic. In these examples,
@@ -284,6 +243,12 @@ ceph config set client.rgw.<gc_service_id> rgw_enable_gc_threads true
 At least one RGW in each zone must have `rgw_enable_gc_threads` set to
 `true`, or you must run `radosgw-admin gc process` yourself. Otherwise the
 space that deleted objects used is never reclaimed.
+
+### Garbage Collection Tuning
+
+Per Ceph online documentation [Ceph RGW config
+reference](https://docs.ceph.com/en/latest/radosgw/config-ref/), garbage
+collection can be tuned to be less aggressive or more aggressive.
 
 ## Lifecycle Processing at 2 Billion Objects
 
@@ -303,7 +268,7 @@ With no client workload running, we ran `radosgw-admin lc process` to expire the
 20 million objects.  We then tracked the total objects and processing rate over time.
 ![](images/lifecycleProcessing.png)
 
-### Lifecycle Processing Under Load with Default Settings
+### Lifecycle Processing Under Load
 
 **Test Description:** Using `elbencho`, we started up a steady-state mixed workload
 of 70% `GET` and 30% `PUT` at the 64 KiB object size. We let the workload run for 
@@ -311,61 +276,12 @@ of 70% `GET` and 30% `PUT` at the 64 KiB object size. We let the workload run fo
 ran `radosgw-admin lc process` to expire the 20 million objects.
 ![](images/lcLow.png)
 ![](images/lcHigh.png)
-With default settings, lifecycle processing finished sooner under load
+Lifecycle processing finished sooner under load
 (180 to 221 minutes) than with no load (329 minutes). We repeated the
 no-load test and saw the same pattern each time: about 125000 objects/min
 for the first hour, then a slower rate of 47000 objects/min for the rest 
 of the run. We did not find an explanation. The no-load time is therefore a 
 result for this setup, not a fixed baseline.
-
-### Tuning for Lifecycle Processing
-
-Per Ceph online documentation [Ceph RGW config
-reference](https://docs.ceph.com/en/latest/radosgw/config-ref/), lifecycle
-processing can be tuned to be more aggressive.
-
-The following variables were increased to observe the impact on lifecycle
-processing performance:
-```
-ceph config set client.rgw rgw_lc_max_worker X
-ceph config set client.rgw rgw_lc_max_wp_worker X
-```
-![](images/lifecycleTuning.png)
-
-With no client load, the shortest total runtime, about an hour, was observed
-when the following values were set:
-```
-rgw_lc_max_worker=12
-rgw_lc_max_wp_worker=12
-```
-The run with `rgw_lc_max_worker=3` and `rgw_lc_max_wp_worker=128` reached the
-highest peak rate, about 530000 objects/min, but took about 1.9 hours in all.
-The defaults took about 5.5 hours. We used the 12 and 12 settings for the
-"Increased" Tuning profile in the table below.
-
-These values are for Tentacle, where `rgw_lc_max_wp_worker` defaults to 3.
-Beginning with the Umbrella release, it defaults to 128, so setting it to 12
-there would lower it.
-
-| Client I/O Load | None | Low | Low | Medium | Medium | High | High |
-| -------------------------------------------- | -: | --: | --: | --: | --: | --: | --: |
-| **Lifecycle Processing Tuning** | **Default** | **Default** | **Increased** | **Default** | **Increased** | **Default** | **Increased** |
-| Mixed workload throughput (during steady-state) | - | 1024 | 982 | 2621 | 2495 | 4855 | 4861 |
-| Mixed workload throughput (during lifecycle processing) | - | 919 | 878 | 2280 | 2391 | 4302 | 4440 |
-| LC impact to client I/O | - | 10% | 11% | 13% | 4% | 11% | 9% |
-| LC elapsed time (min) | 329 | 180 | 192 | 188 | 220 | 221 | 250 |
-| LC expiration rate (objects/min) | 60790 | 111111 | 104167 | 106383 | 90909 | 90498 | 80000 |
-
-The lifecycle processing results showed that even when storing billions of
-objects, their effects on client workloads were modest when dealing with
-object expiration. With default settings, lifecycle processing reduced mixed
-workload throughput by 10% to 13%, and with the "Increased" profile by 4% to
-11%. Under load, the heavier the client I/O, the longer lifecycle processing took.
-Under load, the "Increased" profile took longer than the defaults at every level: 
-192 versus 180, 220 versus 188, and 250 versus 221 minutes. Its benefit was with no 
-load, where it finished in about an hour. Raising `rgw_lc_max_worker` and
-`rgw_lc_max_wp_worker` can speed up lifecycle processing during idle periods;
-otherwise, the default values are acceptable.
 
 ### Additional Recommendations for Deploying RGW Instances Dedicated to LC Processing
 **For Production-Facing RGWs:** Disable LC processing entirely to dedicate all
@@ -393,6 +309,12 @@ during a daily work window, set by `rgw_lifecycle_work_time` (default
 `00:00-06:00`). When it finishes, it waits for the next window. For heavy
 workloads, expect LC processing of a large number of expirations or
 transitions to span multiple days.
+
+### Tuning for Lifecycle Processing
+
+Per Ceph online documentation [Ceph RGW config
+reference](https://docs.ceph.com/en/latest/radosgw/config-ref/), lifecycle
+processing can be tuned to be more aggressive.
 
 ## Ceph Cluster Configuration
 
