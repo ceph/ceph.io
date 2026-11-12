@@ -12,7 +12,11 @@ module.exports = ({ env }) => ({
         './src/**/*.js',
       ],
       defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
-      safelist: { deep: [/^js-/], greedy: [/anchor$/] },
+      // Keep sanitize.css rules such as `:where(nav) :where(ol, ul)`: without
+      // ':where' here, purgecss drops a selector made only of :where() groups
+      // (FullHuman/purgecss#978). The selectors inside :where() are still
+      // checked against the content.
+      safelist: { standard: [':where'], deep: [/^js-/], greedy: [/anchor$/] },
     }),
     env === 'production' ? require('cssnano')({ preset: 'default' }) : null,
   ],
