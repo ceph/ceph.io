@@ -15,25 +15,11 @@ order: 3
 
 <section class="section">
   <h1 class="h1 mb-12 lg:mb-16">{{ title }}</h1>
-  <div class="grid lg:grid--cols-2 grid--gap-14 lg:grid--gap-28 mb-16">
-    <p class="mb-0 standout">When will the next Ceph release come out, and how long is each release supported?</p>
-    <div class="bg-grey-300 p-5 rounded-2">
-      <p class="p">
-        Ceph aims to publish a point release of each stable release every 8 weeks, and maintains two stable major releases at a time.
-        When a new major release goes GA, the oldest major gets one more point release and then reaches end of life.
-      </p>
-      <p class="p mb-0">
-        The dates below are estimates, not commitments. Where the release manager has published planned dates on the
-        <a href="/{{ locale }}/community/meetups/">Ceph community calendar</a>, those are shown. Otherwise the dates are
-        derived from where each release is in the release process and from how long each stage has taken historically.
-        Estimates updated {{ eta.generated | formatDate }}.
-      </p>
-      <p class="p mb-0">
-        These estimates are generated daily by a script that was written with the help of an LLM. They are not
-        reviewed by the release team; see the sources below.
-      </p>
-    </div>
-  </div>
+  <p class="standout mb-4">When will the next Ceph release come out, and how long is each release supported?</p>
+  <p class="p-sm mb-12 release-eta-meta">
+    Dates are estimates, not commitments. Updated {{ eta.generated | formatDate }}.
+    <a href="#about-these-estimates">About these estimates</a>
+  </p>
 
   <div class="release-eta-table mb-16" role="table" aria-label="Upcoming releases">
     <div class="release-eta-table__head" role="row">
@@ -118,28 +104,36 @@ order: 3
     {%- endif %}{% endfor %}
   </ul>
 
-  <h2 class="h3 mb-4">Sources</h2>
-  <p class="p">
-    The estimates are produced by
-    <a href="https://github.com/ceph/release-eta">release-eta.py</a>
-    in the ceph/release-eta repository, which reads:
-  </p>
-  <ul class="mb-16">
-    <li class="p">Release tags (vX.Y.Z) and release branches in <a href="https://github.com/ceph/ceph">ceph/ceph</a>: when a point release was frozen for QA, tagged, or a major release entered release candidates</li>
-    <li class="p"><a href="https://github.com/ceph/ceph/milestones">GitHub milestones</a> for each upcoming version: how many backports are merged</li>
-    <li class="p">Release-notes pull requests in <a href="https://github.com/ceph/ceph.io/pulls?q=is%3Apr+%22release+notes%22">ceph/ceph.io</a>: opened when a release enters QA, merged when it is announced</li>
-    <li class="p"><a href="https://github.com/ceph/ceph/blob/main/doc/releases/releases.yml">doc/releases/releases.yml</a>: past release and end-of-life dates</li>
-    <li class="p"><a href="https://tracker.ceph.com/projects/ceph/roadmap">tracker.ceph.com versions</a> and release kickoff pull requests: the next major release's name and planned kickoff</li>
-    <li class="p">The <a href="/{{ locale }}/community/meetups/">Ceph community calendar</a>: the release manager's planned branch and release dates, and backport merge windows</li>
-  </ul>
-  <p class="p">
-    Each release above lists the specific evidence and links behind its estimate under "How this was estimated".
-  </p>
-
-  <p class="p">
-    Release history and notes for every version are in the
-    <a href="https://docs.ceph.com/en/latest/releases/">Ceph documentation</a>.
-  </p>
+  <div class="release-eta-about" id="about-these-estimates">
+    <h2 class="h5 mb-3">About these estimates</h2>
+    <p class="p-sm">
+      Ceph aims to publish a point release of each stable release every 8 weeks, and maintains two stable major
+      releases at a time. When a new major release goes GA, the oldest major gets one more point release and then
+      reaches end of life.
+    </p>
+    <p class="p-sm">
+      Where the release manager has published planned dates on the
+      <a href="/{{ locale }}/community/meetups/">Ceph community calendar</a>, those are shown. Otherwise the dates
+      are derived from where each release is in the release process and from how long each stage has taken
+      historically. Each release above lists its evidence under "How this was estimated".
+    </p>
+    <p class="p-sm">
+      The estimates are generated daily by <a href="https://github.com/ceph/release-eta">release-eta.py</a>, a
+      script that was written with the help of an LLM. They are not reviewed by the release team. The script reads:
+    </p>
+    <ul class="p-sm">
+      <li>Release tags (vX.Y.Z) and release branches in <a href="https://github.com/ceph/ceph">ceph/ceph</a>: when a point release was frozen for QA, tagged, or a major release entered release candidates</li>
+      <li><a href="https://github.com/ceph/ceph/milestones">GitHub milestones</a> for each upcoming version: how many backports are merged</li>
+      <li>Release-notes pull requests in <a href="https://github.com/ceph/ceph.io/pulls?q=is%3Apr+%22release+notes%22">ceph/ceph.io</a>: opened when a release enters QA, merged when it is announced</li>
+      <li><a href="https://github.com/ceph/ceph/blob/main/doc/releases/releases.yml">doc/releases/releases.yml</a>: past release and end-of-life dates</li>
+      <li><a href="https://tracker.ceph.com/projects/ceph/roadmap">tracker.ceph.com versions</a> and release kickoff pull requests: the next major release's name and planned kickoff</li>
+      <li>The <a href="/{{ locale }}/community/meetups/">Ceph community calendar</a>: the release manager's planned branch and release dates, and backport merge windows</li>
+    </ul>
+    <p class="p-sm mb-0">
+      Release history and notes for every version are in the
+      <a href="https://docs.ceph.com/en/latest/releases/">Ceph documentation</a>.
+    </p>
+  </div>
 </section>
 
 <style>
@@ -175,4 +169,8 @@ order: 3
   .release-eta summary { cursor: pointer; }
   .release-eta__major { font-weight: 400; }
   .release-eta ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+  .release-eta-meta { opacity: 0.8; }
+  .release-eta-about { border-top: 1px solid hsla(0, 0%, 0%, 0.12); padding-top: 1.5rem; max-width: 60rem; opacity: 0.85; }
+  .release-eta-about ul { padding-left: 1.25rem; }
+  .release-eta-about li { margin-bottom: 0.25rem; }
 </style>
