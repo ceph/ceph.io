@@ -2,6 +2,10 @@
 # The site deploy cron rebuilds ceph.io whenever main changes, so committing
 # new data here is all it takes to publish it.
 #
+# main only takes reviewed pull requests. The job pushes with the
+# RELEASE_ETA_DEPLOY_KEY deploy key, which the ruleset on main lets bypass
+# that rule; GITHUB_TOKEN can't be given a bypass.
+#
 # The estimator itself is release-eta.py in ceph/release-eta. On pull
 # requests that touch this workflow, run it without committing and show what
 # would change in the job summary.
@@ -28,6 +32,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Empty on pull requests from forks; checkout then uses GITHUB_TOKEN
+          ssh-key: ${{ secrets.RELEASE_ETA_DEPLOY_KEY }}
       # The estimator lives in ceph/release-eta; only its output is kept here.
       - uses: actions/checkout@v4
         with:
