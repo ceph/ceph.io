@@ -66,7 +66,7 @@ actually reached.
  
 | Client I/O Load | Low | Medium | High |
 | --------------- | --: | -----: | ---: |
-| Achieved share of 11,600 objects/sec | 7-9% | 19-23% | 31%-42% |
+| Achieved share of 11,600 objects/sec | 7-9% | 19-23% | 31-42% |
 
 *Additional environment details provided at the end of the article.*
 
@@ -105,8 +105,10 @@ of X objects, where the value of X is between 1000 and 100000 objects.
 ## Resharding Disruption Window at 2 Billion Objects
 
 **Test Description:** Using `elbencho`, we started up a steady-state mixed workload
-of 70% `GET` and 30% `PUT` at the 64 KiB object size at approximately 48% load. We let the 
-workload run for ~20 minutes, then we issued the `radosgw-admin` command to manually
+of 70% `GET` and 30% `PUT` at the 64 KiB object size, at about 48% of the
+maximum rate. This test ran earlier than the others, at a higher load than the
+High level in the later tests. We let the workload run for ~20 minutes, then
+we issued the `radosgw-admin` command to manually
 reshard the bucket to `num_shards=25013` to observe the impact resharding has on 
 client I/O.  25013 shards was selected to target an objects per shard ratio of 80%.
 ![](images/reshardDisruption.png)
@@ -404,8 +406,7 @@ prevented continued operation even at this large bucket size. Through the
 tests, it was observed that bucket size was not the limiting factor affecting
 performance but in fact it was limited to resources of the cluster. There was
 reduced throughput of object deletion and garbage collection at higher levels
-of background load in the environment. Lifecycle tuning showed that LC
-expiration rate can be increased when there is low client I/O. Overall, the
+of background load in the environment. Overall, the
 data gathered from these tests show that companies who build large lakehouse,
 analytics, AI, and archival data can confidently scale buckets into the
 billions of objects.
