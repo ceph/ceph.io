@@ -38,6 +38,12 @@ Following the original publication on Ceph, the PhD thesis by Sage Weil, a varie
 
 **The following publications are directly related to the current design of Ceph.**
 
+- [SeaStore: Redesigning Ceph’s Storage Backend for CPU-Efficient NVMe Performance](https://dl.acm.org/doi/10.1145/3828523.3857112)
+  - Myoungwon Oh, Yingxin Cheng, Matan Breizman, Josh Durgin
+  - Korea Aerospace University, DDN, IBM
+  - Proceedings of the 2026 ACM SIGOPS Annual Technical Conference (ATC '26)
+  - 2026
+
 - [TiDedup: A New Distributed Deduplication Architecture for Ceph](https://www.usenix.org/system/files/atc23-oh.pdf)
   - Myoungwon Oh, Sungmin Lee, Samuel Just, Young Jin Yu, Duck-Ho Bae, Sage Weil, Sangyeun Cho, Heon Y. Yeom
   - Samsung Electronics Co., IBM, Ceph Foundation, Seoul National University 
