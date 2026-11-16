@@ -36,7 +36,7 @@ order: 3
     {%- endif %}
     <div class="bg-grey-300 rounded-2 release-eta release-eta--{{ r.stage }}{% if r.eta.overdue %} release-eta--late{% endif %}" role="row">
       <div class="release-eta__cell" role="rowheader">
-        <h2 class="h3 mb-1">{{ r.name | title }} <span class="release-eta__major">{{ r.major }}</span></h2>
+        <h2 class="h3 mb-1">{{ r.name | title }}</h2>
         <p class="p mb-0">Next: <strong>{{ r.next }}</strong></p>
       </div>
       <div class="release-eta__cell" role="cell">
@@ -167,7 +167,6 @@ order: 3
   .release-eta--tagged .release-eta__date,
   .release-eta--late .release-eta__date { color: hsl(30, 90%, 24%); }
   .release-eta summary { cursor: pointer; }
-  .release-eta__major { font-weight: 400; }
   .release-eta ul { padding-left: 1.25rem; margin: 0.5rem 0; }
   .release-eta-meta { opacity: 0.8; }
   .release-eta-about { border-top: 1px solid hsla(0, 0%, 0%, 0.12); padding-top: 1.5rem; max-width: 60rem; opacity: 0.85; }
