@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-16T05:23+00:00",
+  "generated": "2026-11-17T05:21+00:00",
   "models": {
     "tag_to_announce": {
       "n": 8,
@@ -64,9 +64,9 @@
       "actual_eol": null,
       "evidence": [
         "Next point release is scheduled 8 weeks after v19.2.7; in practice squid releases have been 63 days apart (middle half 48\u2013121)",
-        "GitHub milestone v19.2.8: 103/130 PRs merged (27 still open)",
+        "GitHub milestone v19.2.8: 118/130 PRs merged (12 still open)",
         "The v19.2.8 merge window opened 2026-10-14 (community calendar)",
-        "299 commits on the squid branch since v19.2.7",
+        "337 commits on the squid branch since v19.2.7",
         "releases.yml lists target EOL 2026-12-02; the two-major policy puts it after Umbrella GA instead"
       ],
       "links": [
@@ -156,9 +156,9 @@
       "actual_eol": null,
       "evidence": [
         "Next point release is scheduled 8 weeks after v21.2.0; in practice umbrella releases have been 52 days apart (middle half 41\u201372)",
-        "GitHub milestone v21.2.1: 84/103 PRs merged (19 still open)",
+        "GitHub milestone v21.2.1: 94/108 PRs merged (14 still open)",
         "The v21.2.1 merge window opened 2026-10-28 (community calendar)",
-        "239 commits on the umbrella branch since v21.2.0",
+        "261 commits on the umbrella branch since v21.2.0",
         "releases.yml lists target EOL 2028-06-01; the two-major policy puts it after 23.2.0 GA instead"
       ],
       "links": [
