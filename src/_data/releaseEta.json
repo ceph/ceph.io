@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-17T05:21+00:00",
+  "generated": "2026-11-18T05:22+00:00",
   "models": {
     "tag_to_announce": {
       "n": 8,
@@ -156,9 +156,9 @@
       "actual_eol": null,
       "evidence": [
         "Next point release is scheduled 8 weeks after v21.2.0; in practice umbrella releases have been 52 days apart (middle half 41\u201372)",
-        "GitHub milestone v21.2.1: 94/108 PRs merged (14 still open)",
+        "GitHub milestone v21.2.1: 96/107 PRs merged (11 still open)",
         "The v21.2.1 merge window opened 2026-10-28 (community calendar)",
-        "261 commits on the umbrella branch since v21.2.0",
+        "265 commits on the umbrella branch since v21.2.0",
         "releases.yml lists target EOL 2028-06-01; the two-major policy puts it after 23.2.0 GA instead"
       ],
       "links": [
