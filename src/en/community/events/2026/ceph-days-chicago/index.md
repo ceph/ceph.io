@@ -104,9 +104,6 @@ Attendees will learn how Ceph coordinates releases and QA, and what’s ahead fo
 <col style="width:20%">
 </colgroup>
 <tbody>
-<tr><td style="white-space:nowrap;">2:45 PM</td><td>The Power of RADOS: Making fsync (Almost) Free</td><td>fsync() is expensive on CephFS: it flushes dirty data to OSDs, then metadata to the MDS. Yet NFS exports may require fsync on every write, while OSDs can handle far more writes than an MDS. I developed a solution that safely bypasses the MDS, reducing fsync to one RADOS data flush—or even a no-op.
-
-This talk covers the “RADOS fsync” option, its use cases and limitations, and how RADOS’s rich interface enabled rapid development. You’ll learn about CephFS consistency and recovery, an upcoming feature for your deployment, and techniques for custom RADOS applications.</td><td>Gregory Farnum</td></tr>
 <tr><td style="white-space:nowrap;">3:15 PM</td><td>The Best of Both Worlds; Ceph Clusters with a ZFS Substrate</td><td>Designing scale-out clusters for scale, durability, and maintainability. <a href="/assets/pdfs/events/2026/cd-chicago/10-openzfsconf_ceph_with_zfs_11142026_v5.pdf">Slides</a></td><td>Steven Umbehocker</td></tr>
 <tr><td style="white-space:nowrap;">3:45 PM</td><td>Speaker Q&amp;A and Closing Remarks</td><td>TBD</td><td>TBD</td></tr>
 <tr><td style="white-space:nowrap;">4:00 PM</td><td>Reception</td><td></td><td></td></tr>
