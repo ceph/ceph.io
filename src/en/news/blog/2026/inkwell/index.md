@@ -258,8 +258,10 @@ authenticated to github.com, and a tracker.ceph.com API key for tracker
 writes. It follows the open skill format, so it works with agents that
 read `SKILL.md` skills. I use it with Claude Code.
 
-You can find it at **TODO: public link**. Please try it, break it, and
-send fixes. Like Ceph itself, it gets better with more hands.
+You can find it at
+[github.com/anthonyeleven/inkwell](https://github.com/anthonyeleven/inkwell).
+Please try it, break it, and send fixes. Like Ceph itself, it gets
+better with more hands.
 
 
 ## Many hands
