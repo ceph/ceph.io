@@ -1,7 +1,7 @@
-// returns a collection of primary navigation items
+// returns the primary navigation items of a collection
 
-module.exports = function (collectionApi) {
-  return collectionApi.getAll().filter(item => {
+module.exports = function (collection) {
+  return collection.filter(item => {
     const { tags = [] } = item.data;
 
     const excludeTags = ['support', 'error'];

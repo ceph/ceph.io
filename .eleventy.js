@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 
 // Plugins
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
@@ -17,11 +18,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('src/css');
   eleventyConfig.addWatchTarget('src/_11ty');
 
-  // Collections
-  const collectionsDir = `./src/_11ty/collections`;
-  eleventyConfig.addCollection('primary', require(`${collectionsDir}/primary.js`));
-  eleventyConfig.addCollection('sitemap', require(`${collectionsDir}/sitemap.js`));
-
   // Filters
   const filtersDir = `./src/_11ty/filters`;
   eleventyConfig.addFilter('chunkByYear', require(`${filtersDir}/chunkByYear.js`));
@@ -39,7 +35,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('getItemsInFuture', require(`${filtersDir}/getItemsInFuture.js`));
   eleventyConfig.addFilter('getItemsInPast', require(`${filtersDir}/getItemsInPast.js`));
   eleventyConfig.addFilter('getJobs', require(`${filtersDir}/getJobs.js`));
+  eleventyConfig.addFilter('getPrimaryItems', require(`${filtersDir}/getPrimaryItems.js`));
   eleventyConfig.addFilter('getSingleDigitFromDate', require(`${filtersDir}/getSingleDigitFromDate.js`));
+  eleventyConfig.addFilter('getSitemapItems', require(`${filtersDir}/getSitemapItems.js`));
   eleventyConfig.addFilter('isInFuture', require(`${filtersDir}/isInFuture.js`));
   eleventyConfig.addFilter('objectValues', require(`${filtersDir}/objectValues.js`));
   eleventyConfig.addFilter('randomize', require(`${filtersDir}/randomize.js`));
@@ -115,6 +113,26 @@ module.exports = function (eleventyConfig) {
     permalinkSymbol: '¶',
   });
 
+  // Keep the older posts rendering as they did with markdown-it 12. Since 13 it trims only spaces and tabs from paragraphs
+  // and headings, keeping NBSPs that 12 trimmed, and it links URLs before resolving backslash escapes such as \_ in them.
+  markdownLibrary.core.ruler.after('block', 'trim_inline', state => {
+    for (const token of state.tokens.filter(token => token.type === 'inline')) {
+      token.content = token.content.trim();
+    }
+  });
+  markdownLibrary.inline.ruler.disable('linkify');
+  markdownLibrary.core.ruler.before('linkify', 'join_text', state => {
+    for (const token of state.tokens.filter(token => token.type === 'inline')) {
+      token.children = token.children.reduce((children, child) => {
+        const last = children[children.length - 1];
+        if (child.type === 'text_special') child.type = 'text';
+        if (child.type === 'text' && last && last.type === 'text') last.content += child.content;
+        else children.push(child);
+        return children;
+      }, []);
+    }
+  });
+
   eleventyConfig.setLibrary('md', markdownLibrary);
 
   // Run after the build ends
@@ -123,27 +141,23 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.setServerOptions({
-    // Swapping back to Browsersync
-    // See https://www.11ty.dev/docs/dev-server/#swap-back-to-browsersync
-    module: '@11ty/eleventy-server-browsersync',
-    callbacks: {
-      ready: function (err, bs) {
-        bs.addMiddleware('*', (req, res) => {
-          // Dev mode redirect for root path to default language
-          if (req.url === '/') {
-            res.writeHead(302, {
-              location: '/en/',
-            });
-            res.end();
-          }
+    onRequest: {
+      // Dev mode redirect for root path to default language
+      '/': () => ({ status: 302, headers: { location: '/en/' } }),
 
-          // 404 on --serve
-          // https://www.11ty.dev/docs/quicktips/not-found/#with-serve
-          const content_404 = fs.readFileSync('dist/en/404.html');
-          res.write(content_404);
-          res.writeHead(404);
-          res.end();
-        });
+      // 404 on --serve for anything not in dist; the dev server's own scripts live under /.11ty/
+      // https://www.11ty.dev/docs/quicktips/not-found/#with-serve
+      '/*': ({ url }) => {
+        let pathname = url.pathname;
+        try {
+          pathname = decodeURIComponent(pathname);
+        } catch (error) {}
+        if (pathname.startsWith('/.11ty/') || fs.existsSync(path.join('dist', pathname)) || !fs.existsSync('dist/en/404.html')) return;
+        return {
+          status: 404,
+          headers: { 'content-type': 'text/html; charset=utf-8' },
+          body: fs.readFileSync('dist/en/404.html', 'utf8'),
+        };
       },
     },
   });
