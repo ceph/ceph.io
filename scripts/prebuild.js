@@ -1,6 +1,5 @@
 'use strict';
 
-const cpy = require('cpy');
 const path = require('path');
 
 const site = require('../src/_data/site');
@@ -10,6 +9,7 @@ module.exports = (async () => {
   console.log('Prebuilding...');
 
   try {
+    const { default: cpy } = await import('cpy');
     const { defaultLocale } = site;
     const supportingLocales = locales
       .filter(({ code }) => code !== defaultLocale)
@@ -24,8 +24,7 @@ module.exports = (async () => {
         path.join(process.cwd(), `src/${code}`),
         {
           cwd: path.join(process.cwd(), `src/${defaultLocale}`),
-          overwrite: false,
-          parents: true,
+          ignoreExisting: true,
         }
       );
     });

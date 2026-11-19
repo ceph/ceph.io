@@ -1,7 +1,7 @@
-// returns a collection of all pages and their language variants
+// returns the pages of a collection with their language variants
 
-module.exports = function (collectionApi) {
-  return collectionApi.getAll().map((item, index, all) => {
+module.exports = function (collection) {
+  return collection.map((item, index, all) => {
     return {
       url: item.url,
       date: item.date,
