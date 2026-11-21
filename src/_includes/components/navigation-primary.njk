@@ -1,5 +1,5 @@
 {% set localeParentKey = '/' + locale + '/' %}
-{% set primaryNav = collections.primary | eleventyNavigation(localeParentKey) %}
+{% set primaryNav = collections.all | getPrimaryItems | eleventyNavigation(localeParentKey) %}
 
 <nav aria-label="main">
   <ul class="nav-primary">

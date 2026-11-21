@@ -1,5 +1,5 @@
 {% set localeParentKey = '/' + locale + '/' %}
-{% set primaryNav = collections.primary | eleventyNavigation(localeParentKey) %}
+{% set primaryNav = collections.all | getPrimaryItems | eleventyNavigation(localeParentKey) %}
 
 <nav aria-label="secondary">
   <ul class="nav-secondary {% if overlaySubMenu %}nav-secondary--overlay{% endif %}" data-nav-secondary>
