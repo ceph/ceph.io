@@ -2,6 +2,7 @@
 title: "Breaking Ceph on purpose: letting Claude Code run my test-and-fix loop"
 date: "2026-11-10"
 author: "Alex Ainscow"
+image: "images/porpoise.png"
 categories: "community"
 tags:
   - "ceph"

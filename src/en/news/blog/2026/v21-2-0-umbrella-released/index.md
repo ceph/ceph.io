@@ -2,6 +2,7 @@
 title: "v21.2.0 Umbrella released"
 date: "2026-10-28"
 author: "Yuri Weinstein"
+image: "images/umbrella-octopus.png"
 tags:
   - "release"
   - "umbrella"
