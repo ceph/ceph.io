@@ -135,13 +135,14 @@ module.exports = function (eleventyConfig) {
               location: '/en/',
             });
             res.end();
+            return;
           }
 
           // 404 on --serve
           // https://www.11ty.dev/docs/quicktips/not-found/#with-serve
           const content_404 = fs.readFileSync('dist/en/404.html');
+          res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
           res.write(content_404);
-          res.writeHead(404);
           res.end();
         });
       },
