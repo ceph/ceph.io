@@ -23,11 +23,12 @@ a networking reception to foster more Ceph learning.
 ### Registration
 Registration is now open for the Ceph Days event!
  
-<br>
-<a class="button" href="https://osnexus.regfox.com/ceph-days-chicago-2026">Register</a>
-<br>
-
  
+<a class="button" href="https://drive.google.com/drive/folders/1AS0NYY3-ZMeDuZDminQV5p2Tg2oVEG-r?usp=sharing">Event Photos</a>
+ 
+<a class="button" href="https://www.youtube.com/playlist?list=PLJcNheMsQh3E">Recordings</a>
+ 
+  
 ## Important Dates
  
 - ~~CFP Opens: 2026-08-26~~ 
