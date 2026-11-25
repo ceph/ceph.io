@@ -20,9 +20,7 @@ join forces to discuss things like the status of the Ceph project, recent Ceph
 project improvements and roadmap, and Ceph community news. The day ends with
 a networking reception to foster more Ceph learning.
 
-### Registration
-Registration is now open for the Ceph Days event!
- 
+### Event Photos and Videos 
  
 <a class="button" href="https://drive.google.com/drive/folders/1AS0NYY3-ZMeDuZDminQV5p2Tg2oVEG-r?usp=sharing">Event Photos</a>
  
