@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25T05:23+00:00",
+  "generated": "2026-11-26T05:22+00:00",
   "models": {
     "tag_to_announce": {
       "n": 8,
@@ -64,9 +64,9 @@
       "actual_eol": null,
       "evidence": [
         "Next point release is scheduled 8 weeks after v19.2.7; in practice squid releases have been 63 days apart (middle half 48\u2013121)",
-        "GitHub milestone v19.2.8: 128/138 PRs merged (10 still open)",
+        "GitHub milestone v19.2.8: 132/141 PRs merged (9 still open)",
         "The v19.2.8 merge window opened 2026-10-14 (community calendar)",
-        "359 commits on the squid branch since v19.2.7",
+        "368 commits on the squid branch since v19.2.7",
         "releases.yml lists target EOL 2026-12-02; the two-major policy puts it after Umbrella GA instead"
       ],
       "links": [
@@ -84,11 +84,11 @@
       "eta": {
         "basis": "8-week cadence",
         "likely": "2026-12-07",
-        "earliest": "2026-11-30",
+        "earliest": "2026-12-01",
         "latest": "2027-02-10",
         "samples": 7
       },
-      "summary": "Squid 19.2.8 is collecting backports: most likely around 2026-12-07 (range 2026-11-30 \u2013 2027-02-10). Umbrella GA was 2026-10-28, so 19.2.8 is expected to be the last squid release and Squid goes EOL with it.",
+      "summary": "Squid 19.2.8 is collecting backports: most likely around 2026-12-07 (range 2026-12-01 \u2013 2027-02-10). Umbrella GA was 2026-10-28, so 19.2.8 is expected to be the last squid release and Squid goes EOL with it.",
       "eol": {
         "final_release": "19.2.8",
         "successor": "Umbrella",
@@ -110,9 +110,9 @@
       "actual_eol": null,
       "evidence": [
         "Next point release is scheduled 8 weeks after v20.2.5; in practice tentacle releases have been 71 days apart (middle half 50\u201375)",
-        "GitHub milestone v20.2.6: 1/24 PRs merged (23 still open)",
+        "GitHub milestone v20.2.6: 51/70 PRs merged (19 still open)",
         "The v20.2.6 merge window opened 2026-11-11 (community calendar)",
-        "5 commits on the tentacle branch since v20.2.5",
+        "135 commits on the tentacle branch since v20.2.5",
         "releases.yml lists target EOL 2027-06-01; the two-major policy puts it after Vampire GA instead"
       ],
       "links": [
@@ -156,9 +156,9 @@
       "actual_eol": null,
       "evidence": [
         "Next point release is scheduled 8 weeks after v21.2.0; in practice umbrella releases have been 52 days apart (middle half 41\u201372)",
-        "GitHub milestone v21.2.1: 107/110 PRs merged (3 still open)",
+        "GitHub milestone v21.2.1: 109/110 PRs merged (1 still open)",
         "The v21.2.1 merge window opened 2026-10-28 (community calendar)",
-        "308 commits on the umbrella branch since v21.2.0",
+        "319 commits on the umbrella branch since v21.2.0",
         "releases.yml lists target EOL 2028-06-01; the two-major policy puts it after 23.2.0 GA instead"
       ],
       "links": [
