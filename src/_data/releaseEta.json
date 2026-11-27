@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-26T05:22+00:00",
+  "generated": "2026-11-27T05:23+00:00",
   "models": {
     "tag_to_announce": {
       "n": 8,
@@ -83,18 +83,18 @@
       "stage": "backports",
       "eta": {
         "basis": "8-week cadence",
-        "likely": "2026-12-07",
-        "earliest": "2026-12-01",
+        "likely": "2026-12-08",
+        "earliest": "2026-12-02",
         "latest": "2027-02-10",
         "samples": 7
       },
-      "summary": "Squid 19.2.8 is collecting backports: most likely around 2026-12-07 (range 2026-12-01 \u2013 2027-02-10). Umbrella GA was 2026-10-28, so 19.2.8 is expected to be the last squid release and Squid goes EOL with it.",
+      "summary": "Squid 19.2.8 is collecting backports: most likely around 2026-12-08 (range 2026-12-02 \u2013 2027-02-10). Umbrella GA was 2026-10-28, so 19.2.8 is expected to be the last squid release and Squid goes EOL with it.",
       "eol": {
         "final_release": "19.2.8",
         "successor": "Umbrella",
-        "likely": "2026-12-07",
-        "earliest": "2026-12-07",
-        "latest": "2026-12-23",
+        "likely": "2026-12-08",
+        "earliest": "2026-12-08",
+        "latest": "2026-12-24",
         "far": false
       }
     },
