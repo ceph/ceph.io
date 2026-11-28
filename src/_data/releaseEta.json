@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-27T05:23+00:00",
+  "generated": "2026-11-28T05:21+00:00",
   "models": {
     "tag_to_announce": {
       "n": 8,
@@ -83,18 +83,18 @@
       "stage": "backports",
       "eta": {
         "basis": "8-week cadence",
-        "likely": "2026-12-08",
-        "earliest": "2026-12-02",
+        "likely": "2026-12-09",
+        "earliest": "2026-12-03",
         "latest": "2027-02-10",
         "samples": 7
       },
-      "summary": "Squid 19.2.8 is collecting backports: most likely around 2026-12-08 (range 2026-12-02 \u2013 2027-02-10). Umbrella GA was 2026-10-28, so 19.2.8 is expected to be the last squid release and Squid goes EOL with it.",
+      "summary": "Squid 19.2.8 is collecting backports: most likely around 2026-12-09 (range 2026-12-03 \u2013 2027-02-10). Umbrella GA was 2026-10-28, so 19.2.8 is expected to be the last squid release and Squid goes EOL with it.",
       "eol": {
         "final_release": "19.2.8",
         "successor": "Umbrella",
-        "likely": "2026-12-08",
-        "earliest": "2026-12-08",
-        "latest": "2026-12-24",
+        "likely": "2026-12-09",
+        "earliest": "2026-12-09",
+        "latest": "2026-12-25",
         "far": false
       }
     },
@@ -110,9 +110,9 @@
       "actual_eol": null,
       "evidence": [
         "Next point release is scheduled 8 weeks after v20.2.5; in practice tentacle releases have been 71 days apart (middle half 50\u201375)",
-        "GitHub milestone v20.2.6: 51/70 PRs merged (19 still open)",
+        "GitHub milestone v20.2.6: 52/71 PRs merged (19 still open)",
         "The v20.2.6 merge window opened 2026-11-11 (community calendar)",
-        "135 commits on the tentacle branch since v20.2.5",
+        "138 commits on the tentacle branch since v20.2.5",
         "releases.yml lists target EOL 2027-06-01; the two-major policy puts it after Vampire GA instead"
       ],
       "links": [
