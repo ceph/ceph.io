@@ -1,5 +1,5 @@
 {% set localeParentKey = '/' + locale + '/' %}
-{% set primaryNav = collections.primary | eleventyNavigation(localeParentKey) %}
+{% set primaryNav = collections.all | getPrimaryItems | eleventyNavigation(localeParentKey) %}
 {% set supportNav = collections.support | eleventyNavigation(localeParentKey) %}
 
 {#- The terms of use and privacy policy live off-site with the Linux Foundation, so they
